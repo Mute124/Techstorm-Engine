@@ -4,11 +4,7 @@
 #include <raymath.h>
 #include "../utils/DoublyLinkedList.h"
 
-#include "../physics/PhysicsCommon.h"
-
-
 namespace Techstorm {
-
 	class IGameObject abstract {
 	public:
 		int depth = 0; // Defines what layer the object is on
@@ -27,7 +23,6 @@ namespace Techstorm {
 		IGameObject() = default;*/
 
 		IGameObject() {
-
 		}
 
 		virtual ~IGameObject() = default;
@@ -47,11 +42,9 @@ namespace Techstorm {
 
 		virtual void destroy() = 0;
 		virtual void cleanup() = 0;
-		
-		
+
 	private:
 	};
-
 
 	class GameObject : public IGameObject {
 	public:
@@ -60,8 +53,5 @@ namespace Techstorm {
 		virtual void render() override;
 		virtual void update() override;
 		virtual void destroy() override;
-
-		
 	};
-	
 }

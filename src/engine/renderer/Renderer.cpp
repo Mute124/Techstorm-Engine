@@ -7,9 +7,9 @@ Camera ConvertCamera(Techstorm::CameraData* data) {
 	Camera cam = Camera();
 
 	// convert vectors in data to raylib vectors
-	Vector3 position = {data->position.x, data->position.y, data->position.z};
-	Vector3 target = {data->target.x, data->target.y, data->target.z};
-	Vector3 up = {data->up.x, data->up.y, data->up.z};
+	Vector3 position = { data->position.x, data->position.y, data->position.z };
+	Vector3 target = { data->target.x, data->target.y, data->target.z };
+	Vector3 up = { data->up.x, data->up.y, data->up.z };
 
 	cam.position = position;
 	cam.target = target;
@@ -39,26 +39,24 @@ void Techstorm::Renderer::render(GameCamera& cam)
 void Techstorm::Renderer::texture(GameCamera& cam)
 {
 	BeginTextureMode(this->mScreenBuffer);
-		ClearBackground(this->mBackgroundColor);
+	ClearBackground(WHITE);
 #ifdef TS_RENDERER_2D
 #else
-		BeginMode3D(cam.Data);
+	BeginMode3D(cam.Data);
 #endif
-		
-		mGameObjects.render();
-		
+
+	mGameObjects.render();
+
 #ifdef TS_RENDERER_2D
 #else
-		EndMode3D();
+	EndMode3D();
 #endif
 	EndTextureMode();
 }
 void Techstorm::Renderer::drawFBO() {
 	// TODO: Allow FBO shaders
-	
-	DrawTextureRec(this->mScreenBuffer.texture, Rectangle{ 0, 0, (float)(this->mScreenBuffer.texture.width), (float)(this->mScreenBuffer.texture.height) }, Vector2{ 0, 0 }, this->mFBOTint);
 
-	
+	DrawTextureRec(this->mScreenBuffer.texture, Rectangle{ 0, 0, (float)(this->mScreenBuffer.texture.width), (float)(this->mScreenBuffer.texture.height) }, Vector2{ 0, 0 }, this->mFBOTint);
 }
 void Techstorm::Renderer::addGameObject(GameObject* gameObject)
 {
@@ -78,19 +76,19 @@ void Techstorm::Renderer::cleanup()
 }
 
 #ifdef TS_RENDERER_2D
-	void Techstorm::Renderer::render2D(GameCamera& cam)
-	{
-	}
+void Techstorm::Renderer::render2D(GameCamera& cam)
+{
+}
 #else
-	void Techstorm::Renderer::render3D(GameCamera& cam)
-	{
-		UpdateCamera(&cam.Data, CAMERA_FIRST_PERSON);
-		
-		texture(cam);
-		
-		BeginDrawing();
-		drawFBO();
-		EndDrawing();
-	}
+void Techstorm::Renderer::render3D(GameCamera& cam)
+{
+	UpdateCamera(&cam.Data, CAMERA_FIRST_PERSON);
+
+	texture(cam);
+
+	BeginDrawing();
+	drawFBO();
+	EndDrawing();
+}
 
 #endif

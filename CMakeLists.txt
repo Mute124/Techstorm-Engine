@@ -1,4 +1,4 @@
-﻿cmake_minimum_required(VERSION 3.16)
+﻿cmake_minimum_required(VERSION 3.29)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # Enable Hot Reload for MSVC compilers if supported.
 if (POLICY CMP0141)
@@ -12,44 +12,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # The configurations we support
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release;Distribution")
-
-# Set project name
-project(TechStorm LANGUAGES CXX)
-
-include(cmake/cpm.cmake)
-#set(CMAKE_CONFIGURATION_TYPES "Debug;Release;Distribution")
-# Force the use of the same runtime library
-
-message(STATUS "CMAKE_CXX_FLAGS: ${CMAKE_CXX_FLAGS}")
-CPMAddPackage(
-    NAME raylib
-    GIT_REPOSITORY https://github.com/raysan5/raylib.git
-    GIT_TAG 5.0
-) 
-
-CPMAddPackage(
-    NAME ImGui
-	GIT_REPOSITORY https://github.com/ocornut/imgui.git
-	GIT_TAG v1.91.2
-)
-
-CPMADDPACKAGE(
-    NAME eventpp
-    GIT_REPOSITORY https://github.com/wqking/eventpp.git
-    GIT_TAG v0.1.3
-)
-
-CPMADDPACKAGE(
-    NAME JoltPhysics
-    GIT_REPOSITORY https://github.com/jrouwe/JoltPhysics.git
-    GIT_TAG v5.1.0
-    OPTIONS "BUILD_SHARED_LIBS=ON" "GENERATE_DEBUG_SYMBOLS=ON" "OVERRIDE_CXX_FLAGS=ON"
-)
-
-
 # Set build type if not specified
 if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Debug)
+    set(CMAKE_BUILD_TYPE Release)
 endif()
 
 
@@ -66,13 +31,68 @@ elseif(UNIX)
     set(CMAKE_SHARED_LIBRARY_SUFFIX ".so")
 endif()
 
-# Set linker flags
-#set(CMAKE_EXE_LINKER_FLAGS_DISTRIBUTION "${CMAKE_EXE_LINKER_FLAGS_RELEASE}")
-#set(JPH_SOURCE ${JoltPhysics_SOURCE_DIR})
+# Download and include CPM.cmake
+#if(NOT CPM_LOADED)
+#    set(CPM_DOWNLOAD_VERSION 0.38.0)
+#    set(CPM_DOWNLOAD_LOCATION "${CMAKE_BINARY_DIR}/CPM.cmake")
+#    if(NOT EXISTS ${CPM_DOWNLOAD_LOCATION})
+#        file(DOWNLOAD https://github.com/cpm-cmake/CPM.cmake/releases/download/v${CPM_DOWNLOAD_VERSION}/CPM.cmake
+#             ${CPM_DOWNLOAD_LOCATION})
+#    endif()
+#    include(${CPM_DOWNLOAD_LOCATION})
+#endif()
+
+
+if (WIN32)
+    set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+endif()
+# Set project name
+project(TechStorm LANGUAGES CXX)
+set(CMAKE_EXPORT_COMPILE_COMMANDS True)
+
+include(cmake/cpm.cmake)
+include(cmake/techstorm.cmake)
+#set(CMAKE_CONFIGURATION_TYPES "Debug;Release;Distribution")
+# Force the use of the same runtime library
+
+message(STATUS "CMAKE_CXX_FLAGS: ${CMAKE_CXX_FLAGS}")
+CPMAddPackage(
+    NAME raylib
+    GIT_REPOSITORY https://github.com/raysan5/raylib.git
+    GIT_TAG 5.0
+) 
+
+CPMAddPackage(
+    NAME ImGui
+	GIT_REPOSITORY https://github.com/ocornut/imgui.git
+	GIT_TAG v1.91.2
+)
+option(WIN32_LEAN_AND_MEAN ON)
+find_package(ZLIB REQUIRED)
+find_package(joltphysics REQUIRED)
+find_package(libconfig REQUIRED)
+
+set(DOUBLE_PRECISION OFF)
+set(GENERATE_DEBUG_SYMBOLS OFF)
+set(CROSS_PLATFORM_DETERMINISTIC ON)
+set(FLOATING_POINT_EXCEPTIONS_ENABLED OFF)
+set(OBJECT_LAYER_BITS 32)
+set(USE_SSE4_1 ON)
+set(USE_SSE4_2 ON)
+set(USE_AVX ON)
+set(USE_AVX2 ON)
+set(USE_AVX512 OFF)
+set(USE_LZCNT ON)
+set(USE_TZCNT ON)
+set(USE_F16C ON)
+set(USE_FMADD ON)
+set(BUILD_SHARED_LIBS ON)
+
+
 # Include subdirectories
-
-
-add_subdirectory(src/application)
-add_subdirectory(src/project)
 add_subdirectory(src/engine)
+add_subdirectory(src/project)
+add_subdirectory(src/application)
 add_subdirectory(src/tools)
+
+

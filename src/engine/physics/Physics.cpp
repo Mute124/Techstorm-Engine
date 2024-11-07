@@ -1,74 +1,34 @@
 #include "Physics.h"
 
-void Techstorm::PhysicsInitializer::preInit()
+Techstorm::GamePhysics::GamePhysics()
 {
 }
 
-void Techstorm::PhysicsInitializer::init()
+Techstorm::GamePhysics::GamePhysics(const JPH::uint maxBodies, const JPH::uint numBodyMutexes, const JPH::uint maxBodyPairs, const JPH::uint maxContactConstraints)
 {
-	// Register allocation hook. In this example we'll just let Jolt use malloc / free but you can override these if you want (see Memory.h).
-	// This needs to be done before any other Jolt function is called.
-	JPH::RegisterDefaultAllocator();
+}
+
+void Techstorm::GamePhysics::preInit(const JPH::uint maxBodies, const JPH::uint numBodyMutexes, const JPH::uint maxBodyPairs, const JPH::uint maxContactConstraints)
+{
+	/*JPH::RegisterDefaultAllocator();
 
 	// Install trace and assert callbacks
 	JPH::Trace = TraceImpl;
 	JPH::JPH_IF_ENABLE_ASSERTS(AssertFailed = AssertFailedImpl;)
-
-		// Create a factory, this class is responsible for creating instances of classes based on their name or hash and is mainly used for deserialization of saved data.
-		// It is not directly used in this example but still required.
-	JPH::Factory::sInstance = new JPH::Factory();
-
-	// Register all physics types with the factory and install their collision handlers with the CollisionDispatch class.
-	// If you have your own custom shape types you probably need to register their handlers with the CollisionDispatch before calling this function.
-	// If you implement your own default material (PhysicsMaterial::sDefault) make sure to initialize it before this function or else this function will create one for you.
+		JPH::Factory::sInstance = new JPH::Factory();
 	JPH::RegisterTypes();
 
-	// We need a temp allocator for temporary allocations during the physics update. We're
-	// pre-allocating 10 MB to avoid having to do allocations during the physics update.
-	// B.t.w. 10 MB is way too much for this example but it is a typical value you can use.
-	// If you don't want to pre-allocate you can also use TempAllocatorMalloc to fall back to
-	// malloc / free.
+	JPH::TempAllocatorImpl tempAllocator(10 * 1024 * 1024);
+	JPH::JobSystemThreadPool jobSystem(JPH::cMaxPhysicsJobs, JPH::cMaxPhysicsBarriers, std::thread::hardware_concurrency() - 1);
 
-	JPH::TempAllocatorImpl temp_allocator(10 * 1024 * 1024);
-
-	// We need a job system that will execute physics jobs on multiple threads. Typically
-	// you would implement the JobSystem interface yourself and let Jolt Physics run on top
-	// of your own job scheduler. JobSystemThreadPool is an example implementation.
-	JPH::JobSystemThreadPool job_system(JPH::cMaxPhysicsJobs, JPH::cMaxPhysicsBarriers, std::thread::hardware_concurrency() - 1);
-
-	// This is the max amount of rigid bodies that you can add to the physics system. If you try to add more you'll get an error.
-	// Note: This value is low because this is a simple test. For a real project use something in the order of 65536.
 	const JPH::uint cMaxBodies = 1024;
-
-	// This determines how many mutexes to allocate to protect rigid bodies from concurrent access. Set it to 0 for the default settings.
 	const JPH::uint cNumBodyMutexes = 0;
-
-	// This is the max amount of body pairs that can be queued at any time (the broad phase will detect overlapping
-	// body pairs based on their bounding boxes and will insert them into a queue for the narrowphase). If you make this buffer
-	// too small the queue will fill up and the broad phase jobs will start to do narrow phase work. This is slightly less efficient.
-	// Note: This value is low because this is a simple test. For a real project use something in the order of 65536.
 	const JPH::uint cMaxBodyPairs = 1024;
-
-	// This is the maximum size of the contact constraint buffer. If more contacts (collisions between bodies) are detected than this
-	// number then these contacts will be ignored and bodies will start interpenetrating / fall through the world.
-	// Note: This value is low because this is a simple test. For a real project use something in the order of 10240.
 	const JPH::uint cMaxContactConstraints = 1024;
-
-	// Create mapping table from object layer to broadphase layer
-	// Note: As this is an interface, PhysicsSystem will take a reference to this so this instance needs to stay alive!
-	BPLayerInterface broad_phase_layer_interface;
-
-	// Create class that filters object vs broadphase layers
-	// Note: As this is an interface, PhysicsSystem will take a reference to this so this instance needs to stay alive!
-	ObjectVsBroadPhaseLayerFilter object_vs_broadphase_layer_filter;
-
-	// Create class that filters object vs object layers
-	// Note: As this is an interface, PhysicsSystem will take a reference to this so this instance needs to stay alive!
-	ObjectLPF object_vs_object_layer_filter;
 
 	// Now we can create the actual physics system.
 	JPH::PhysicsSystem physics_system;
-	physics_system.Init(cMaxBodies, cNumBodyMutexes, cMaxBodyPairs, cMaxContactConstraints, broad_phase_layer_interface, object_vs_broadphase_layer_filter, object_vs_object_layer_filter);
+	physics_system.Init(cMaxBodies, cNumBodyMutexes, cMaxBodyPairs, cMaxContactConstraints, this->mBroadPhaseLayerInterface, this->mObjectVsBroadPhaseLayerFilter, this->mObjectVsObjectLayerFilter);
 
 	// A body activation listener gets notified when bodies activate and go to sleep
 	// Note that this is called from a job so whatever you do here needs to be thread safe.
@@ -76,9 +36,68 @@ void Techstorm::PhysicsInitializer::init()
 	MyBodyActivationListener body_activation_listener;
 	physics_system.SetBodyActivationListener(&body_activation_listener);
 
-	// A contact listener gets notified when bodies (are about to) collide, and when they separate again.
-	// Note that this is called from a job so whatever you do here needs to be thread safe.
-	// Registering one is entirely optional.
-	ObjectContactListener contact_listener;
-	physics_system.SetContactListener(&contact_listener);
+	physics_system.SetContactListener(this->mContactListener);
+
+	JPH::BodyInterface& body_interface = physics_system.GetBodyInterface();
+
+	JPH::Vec3 floorPos = JPH::Vec3(100.0f, 1.0f, 100.0f);
+	JPH::BoxShapeSettings floor_shape_settings(floorPos);
+
+	// Create the shape
+	JPH::ShapeSettings::ShapeResult floor_shape_result = floor_shape_settings.Create();
+	JPH::ShapeRefC floor_shape = floor_shape_result.Get(); // We don't expect an error here, but you can check floor_shape_result for HasError() / GetError()
+
+	JPH::BodyCreationSettings floor_settings(floor_shape, JPH::RVec3(0.0_r, -1.0_r, 0.0_r), JPH::Quat::sIdentity(), JPH::EMotionType::Static, Layers::NON_MOVING);
+
+	// Create the actual rigid body
+	JPH::Body* floor = body_interface.CreateBody(floor_settings); // Note that if we run out of bodies this can return nullptr
+
+	// Add it to the world
+	body_interface.AddBody(floor->GetID(), JPH::EActivation::DontActivate);
+
+	// create a box shape
+	JPH::Vec3 boxShape = JPH::Vec3(0.5f, 0.75f, 1.0f);
+	JPH::RVec3 boxPos = JPH::RVec3(0, 10, 0);
+	JPH::Body& box = *body_interface.CreateBody(JPH::BodyCreationSettings(new JPH::BoxShape(boxShape), boxPos, JPH::Quat::sIdentity(), JPH::EMotionType::Dynamic, Layers::MOVING));
+
+	// Add it to the world
+	body_interface.AddBody(box.GetID(), JPH::EActivation::Activate);
+
+	JPH::BodyCreationSettings sphere_settings(new JPH::SphereShape(0.5f), JPH::RVec3(0.0_r, 2.0_r, 0.0_r), JPH::Quat::sIdentity(), JPH::EMotionType::Dynamic, Layers::MOVING);
+	JPH::BodyID sphere_id = body_interface.CreateAndAddBody(sphere_settings, JPH::EActivation::Activate);
+
+	body_interface.SetLinearVelocity(sphere_id, JPH::Vec3(0.0f, -5.0f, 0.0f));
+
+	const float cDeltaTime = 1.0f / 60.0f;
+	physics_system.OptimizeBroadPhase();
+
+	// Now we're ready to simulate the body, keep simulating until it goes to sleep
+	JPH::uint step = 0;
+
+	// Remove the sphere from the physics system. Note that the sphere itself keeps all of its state and can be re-added at any time.
+	body_interface.RemoveBody(sphere_id);
+
+	// Destroy the sphere. After this the sphere ID is no longer valid.
+	body_interface.DestroyBody(sphere_id);
+
+	// Remove and destroy the floor
+	body_interface.RemoveBody(floor->GetID());
+	body_interface.DestroyBody(floor->GetID());
+
+	// Unregisters all types with the factory and cleans up the default material
+	JPH::UnregisterTypes();
+
+	// Destroy the factory
+	delete JPH::Factory::sInstance;
+	JPH::Factory::sInstance = nullptr;
+
+	//return 0;*/
+}
+
+void Techstorm::GamePhysics::init()
+{
+}
+
+void Techstorm::GamePhysics::update()
+{
 }

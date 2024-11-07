@@ -5,7 +5,22 @@
 
 #include "GameObjectRegistry.h"
 #include "Camera.h"
+
+#include <Jolt/Jolt.h>
+
+// Jolt includes
+#include <Jolt/RegisterTypes.h>
+#include <Jolt/Core/Factory.h>
+#include <Jolt/Core/TempAllocator.h>
+#include <Jolt/Core/JobSystemThreadPool.h>
+#include <Jolt/Physics/PhysicsSettings.h>
+#include <Jolt/Physics/PhysicsSystem.h>
+#include <Jolt/Physics/Collision/Shape/BoxShape.h>
+#include <Jolt/Physics/Collision/Shape/SphereShape.h>
+#include <Jolt/Physics/Body/BodyCreationSettings.h>
+#include <Jolt/Physics/Body/BodyActivationListener.h>
 #include <raylib.h>
+
 namespace Techstorm {
 	class GameObject;
 
@@ -14,7 +29,7 @@ namespace Techstorm {
 #ifndef TS_CUSTOM_RENDERER_CONSTRUCTOR
 		// This fucking constructor.
 		Renderer() {
-			//initialize();
+			initialize();
 		}
 #endif
 		void initialize();
@@ -40,6 +55,5 @@ namespace Techstorm {
 #else
 		void render3D(GameCamera& cam);
 #endif
-
 	};
 }
