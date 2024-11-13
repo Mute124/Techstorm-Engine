@@ -1,0 +1,109 @@
+\doxysection{Physics.\+cpp}
+\hypertarget{_physics_8cpp_source}{}\label{_physics_8cpp_source}\index{C:/Dev/Techstorm-\/v5/src/engine/physics/Physics.cpp@{C:/Dev/Techstorm-\/v5/src/engine/physics/Physics.cpp}}
+\mbox{\hyperlink{_physics_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_physics_8h}{Physics.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00003}\mbox{\hyperlink{class_techstorm_1_1_game_physics_a7db16005cf8f719e011a2a1b3fa04fc4}{00003}}\ \mbox{\hyperlink{class_techstorm_1_1_game_physics_a7db16005cf8f719e011a2a1b3fa04fc4}{Techstorm::GamePhysics::GamePhysics}}()}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00005}00005\ \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00007}\mbox{\hyperlink{class_techstorm_1_1_game_physics_a8e9adf7b584ef763e5e283241d0d0071}{00007}}\ \mbox{\hyperlink{class_techstorm_1_1_game_physics_a7db16005cf8f719e011a2a1b3fa04fc4}{Techstorm::GamePhysics::GamePhysics}}(\textcolor{keyword}{const}\ JPH::uint\ maxBodies,\ \textcolor{keyword}{const}\ JPH::uint\ numBodyMutexes,\ \textcolor{keyword}{const}\ JPH::uint\ maxBodyPairs,\ \textcolor{keyword}{const}\ JPH::uint\ maxContactConstraints)}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00009}00009\ \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00011}00011\ \textcolor{keywordtype}{void}\ Techstorm::GamePhysics::preInit(\textcolor{keyword}{const}\ JPH::uint\ maxBodies,\ \textcolor{keyword}{const}\ JPH::uint\ numBodyMutexes,\ \textcolor{keyword}{const}\ JPH::uint\ maxBodyPairs,\ \textcolor{keyword}{const}\ JPH::uint\ maxContactConstraints)}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{comment}{/*JPH::RegisterDefaultAllocator();}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00014}00014\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00015}00015\ \textcolor{comment}{\ \ \ \ //\ Install\ trace\ and\ assert\ callbacks}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00016}00016\ \textcolor{comment}{\ \ \ \ JPH::Trace\ =\ TraceImpl;}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00017}00017\ \textcolor{comment}{\ \ \ \ JPH::JPH\_IF\_ENABLE\_ASSERTS(AssertFailed\ =\ AssertFailedImpl;)}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00018}00018\ \textcolor{comment}{\ \ \ \ \ \ \ \ JPH::Factory::sInstance\ =\ new\ JPH::Factory();}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00019}00019\ \textcolor{comment}{\ \ \ \ JPH::RegisterTypes();}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00020}00020\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00021}00021\ \textcolor{comment}{\ \ \ \ JPH::TempAllocatorImpl\ tempAllocator(10\ *\ 1024\ *\ 1024);}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00022}00022\ \textcolor{comment}{\ \ \ \ JPH::JobSystemThreadPool\ jobSystem(JPH::cMaxPhysicsJobs,\ JPH::cMaxPhysicsBarriers,\ std::thread::hardware\_concurrency()\ -\/\ 1);}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00023}00023\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00024}00024\ \textcolor{comment}{\ \ \ \ const\ JPH::uint\ cMaxBodies\ =\ 1024;}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00025}00025\ \textcolor{comment}{\ \ \ \ const\ JPH::uint\ cNumBodyMutexes\ =\ 0;}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00026}00026\ \textcolor{comment}{\ \ \ \ const\ JPH::uint\ cMaxBodyPairs\ =\ 1024;}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00027}00027\ \textcolor{comment}{\ \ \ \ const\ JPH::uint\ cMaxContactConstraints\ =\ 1024;}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00028}00028\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00029}00029\ \textcolor{comment}{\ \ \ \ //\ Now\ we\ can\ create\ the\ actual\ physics\ system.}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00030}00030\ \textcolor{comment}{\ \ \ \ JPH::PhysicsSystem\ physics\_system;}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00031}00031\ \textcolor{comment}{\ \ \ \ physics\_system.Init(cMaxBodies,\ cNumBodyMutexes,\ cMaxBodyPairs,\ cMaxContactConstraints,\ this-\/>mBroadPhaseLayerInterface,\ this-\/>mObjectVsBroadPhaseLayerFilter,\ this-\/>mObjectVsObjectLayerFilter);}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00032}00032\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00033}00033\ \textcolor{comment}{\ \ \ \ //\ A\ body\ activation\ listener\ gets\ notified\ when\ bodies\ activate\ and\ go\ to\ sleep}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00034}00034\ \textcolor{comment}{\ \ \ \ //\ Note\ that\ this\ is\ called\ from\ a\ job\ so\ whatever\ you\ do\ here\ needs\ to\ be\ thread\ safe.}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00035}00035\ \textcolor{comment}{\ \ \ \ //\ Registering\ one\ is\ entirely\ optional.}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00036}00036\ \textcolor{comment}{\ \ \ \ MyBodyActivationListener\ body\_activation\_listener;}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00037}00037\ \textcolor{comment}{\ \ \ \ physics\_system.SetBodyActivationListener(\&body\_activation\_listener);}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00038}00038\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00039}00039\ \textcolor{comment}{\ \ \ \ physics\_system.SetContactListener(this-\/>mContactListener);}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00040}00040\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00041}00041\ \textcolor{comment}{\ \ \ \ JPH::BodyInterface\&\ body\_interface\ =\ physics\_system.GetBodyInterface();}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00042}00042\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00043}00043\ \textcolor{comment}{\ \ \ \ JPH::Vec3\ floorPos\ =\ JPH::Vec3(100.0f,\ 1.0f,\ 100.0f);}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00044}00044\ \textcolor{comment}{\ \ \ \ JPH::BoxShapeSettings\ floor\_shape\_settings(floorPos);}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00045}00045\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00046}00046\ \textcolor{comment}{\ \ \ \ //\ Create\ the\ shape}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00047}00047\ \textcolor{comment}{\ \ \ \ JPH::ShapeSettings::ShapeResult\ floor\_shape\_result\ =\ floor\_shape\_settings.Create();}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00048}00048\ \textcolor{comment}{\ \ \ \ JPH::ShapeRefC\ floor\_shape\ =\ floor\_shape\_result.Get();\ //\ We\ don't\ expect\ an\ error\ here,\ but\ you\ can\ check\ floor\_shape\_result\ for\ HasError()\ /\ GetError()}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00049}00049\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00050}00050\ \textcolor{comment}{\ \ \ \ JPH::BodyCreationSettings\ floor\_settings(floor\_shape,\ JPH::RVec3(0.0\_r,\ -\/1.0\_r,\ 0.0\_r),\ JPH::Quat::sIdentity(),\ JPH::EMotionType::Static,\ Layers::NON\_MOVING);}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00051}00051\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00052}00052\ \textcolor{comment}{\ \ \ \ //\ Create\ the\ actual\ rigid\ body}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00053}00053\ \textcolor{comment}{\ \ \ \ JPH::Body*\ floor\ =\ body\_interface.CreateBody(floor\_settings);\ //\ Note\ that\ if\ we\ run\ out\ of\ bodies\ this\ can\ return\ nullptr}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00054}00054\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00055}00055\ \textcolor{comment}{\ \ \ \ //\ Add\ it\ to\ the\ world}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00056}00056\ \textcolor{comment}{\ \ \ \ body\_interface.AddBody(floor-\/>GetID(),\ JPH::EActivation::DontActivate);}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00057}00057\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00058}00058\ \textcolor{comment}{\ \ \ \ //\ create\ a\ box\ shape}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00059}00059\ \textcolor{comment}{\ \ \ \ JPH::Vec3\ boxShape\ =\ JPH::Vec3(0.5f,\ 0.75f,\ 1.0f);}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00060}00060\ \textcolor{comment}{\ \ \ \ JPH::RVec3\ boxPos\ =\ JPH::RVec3(0,\ 10,\ 0);}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00061}00061\ \textcolor{comment}{\ \ \ \ JPH::Body\&\ box\ =\ *body\_interface.CreateBody(JPH::BodyCreationSettings(new\ JPH::BoxShape(boxShape),\ boxPos,\ JPH::Quat::sIdentity(),\ JPH::EMotionType::Dynamic,\ Layers::MOVING));}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00062}00062\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00063}00063\ \textcolor{comment}{\ \ \ \ //\ Add\ it\ to\ the\ world}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00064}00064\ \textcolor{comment}{\ \ \ \ body\_interface.AddBody(box.GetID(),\ JPH::EActivation::Activate);}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00065}00065\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00066}00066\ \textcolor{comment}{\ \ \ \ JPH::BodyCreationSettings\ sphere\_settings(new\ JPH::SphereShape(0.5f),\ JPH::RVec3(0.0\_r,\ 2.0\_r,\ 0.0\_r),\ JPH::Quat::sIdentity(),\ JPH::EMotionType::Dynamic,\ Layers::MOVING);}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00067}00067\ \textcolor{comment}{\ \ \ \ JPH::BodyID\ sphere\_id\ =\ body\_interface.CreateAndAddBody(sphere\_settings,\ JPH::EActivation::Activate);}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00068}00068\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00069}00069\ \textcolor{comment}{\ \ \ \ body\_interface.SetLinearVelocity(sphere\_id,\ JPH::Vec3(0.0f,\ -\/5.0f,\ 0.0f));}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00070}00070\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00071}00071\ \textcolor{comment}{\ \ \ \ const\ float\ cDeltaTime\ =\ 1.0f\ /\ 60.0f;}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00072}00072\ \textcolor{comment}{\ \ \ \ physics\_system.OptimizeBroadPhase();}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00073}00073\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00074}00074\ \textcolor{comment}{\ \ \ \ //\ Now\ we're\ ready\ to\ simulate\ the\ body,\ keep\ simulating\ until\ it\ goes\ to\ sleep}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00075}00075\ \textcolor{comment}{\ \ \ \ JPH::uint\ step\ =\ 0;}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00076}00076\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00077}00077\ \textcolor{comment}{\ \ \ \ //\ Remove\ the\ sphere\ from\ the\ physics\ system.\ Note\ that\ the\ sphere\ itself\ keeps\ all\ of\ its\ state\ and\ can\ be\ re-\/added\ at\ any\ time.}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00078}00078\ \textcolor{comment}{\ \ \ \ body\_interface.RemoveBody(sphere\_id);}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00079}00079\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00080}00080\ \textcolor{comment}{\ \ \ \ //\ Destroy\ the\ sphere.\ After\ this\ the\ sphere\ ID\ is\ no\ longer\ valid.}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00081}00081\ \textcolor{comment}{\ \ \ \ body\_interface.DestroyBody(sphere\_id);}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00082}00082\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00083}00083\ \textcolor{comment}{\ \ \ \ //\ Remove\ and\ destroy\ the\ floor}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00084}00084\ \textcolor{comment}{\ \ \ \ body\_interface.RemoveBody(floor-\/>GetID());}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00085}00085\ \textcolor{comment}{\ \ \ \ body\_interface.DestroyBody(floor-\/>GetID());}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00086}00086\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00087}00087\ \textcolor{comment}{\ \ \ \ //\ Unregisters\ all\ types\ with\ the\ factory\ and\ cleans\ up\ the\ default\ material}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00088}00088\ \textcolor{comment}{\ \ \ \ JPH::UnregisterTypes();}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00089}00089\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00090}00090\ \textcolor{comment}{\ \ \ \ //\ Destroy\ the\ factory}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00091}00091\ \textcolor{comment}{\ \ \ \ delete\ JPH::Factory::sInstance;}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00092}00092\ \textcolor{comment}{\ \ \ \ JPH::Factory::sInstance\ =\ nullptr;}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00093}00093\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00094}00094\ \textcolor{comment}{\ \ \ \ //return\ 0;*/}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00095}00095\ \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00097}\mbox{\hyperlink{class_techstorm_1_1_game_physics_a650232730f3748465a8993a2709fe8fd}{00097}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_game_physics_a650232730f3748465a8993a2709fe8fd}{Techstorm::GamePhysics::init}}()}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00098}00098\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00099}00099\ \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00101}\mbox{\hyperlink{class_techstorm_1_1_game_physics_a008fad33152cc1c1546aea04105cae2f}{00101}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_game_physics_a008fad33152cc1c1546aea04105cae2f}{Techstorm::GamePhysics::update}}()}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00102}00102\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00103}00103\ \}}
+
+\end{DoxyCode}

@@ -27,12 +27,26 @@ namespace Techstorm {
 	class Renderer {
 	public:
 #ifndef TS_CUSTOM_RENDERER_CONSTRUCTOR
-		// This fucking constructor.
+		// This damn constructor.
 		Renderer() {
-			initialize();
+			//initialize();
 		}
 #endif
 		void initialize();
+
+		void startLoop() {
+			std::cout << "Thread ID for startLoop Begin: " << std::this_thread::get_id() << "" << std::endl;
+			while (!WindowShouldClose()) {
+				std::cout << "Thread ID for startLoop in loop: " << std::this_thread::get_id() << "" << std::endl << std::endl;
+				BeginDrawing();
+				ClearBackground(RAYWHITE);
+				EndDrawing();
+			}
+		}
+
+		void test() {
+			DrawText("Welcome to the third dimension!", 10, 40, 20, DARKGRAY);
+		}
 
 		void render(GameCamera& cam);
 		void texture(GameCamera& cam);

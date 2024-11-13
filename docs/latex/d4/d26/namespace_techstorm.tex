@@ -1,0 +1,252 @@
+\doxysection{Techstorm Namespace Reference}
+\hypertarget{namespace_techstorm}{}\label{namespace_techstorm}\index{Techstorm@{Techstorm}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_techstorm_1_1_broad_phase_layers}{Broad\+Phase\+Layers}}
+\item 
+namespace \mbox{\hyperlink{namespace_techstorm_1_1_dev_tools}{Dev\+Tools}}
+\item 
+namespace \mbox{\hyperlink{namespace_techstorm_1_1_layers}{Layers}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1abstract}{abstract}}
+\begin{DoxyCompactList}\small\item\em This is an {\bfseries{abstract interface singleton}} that all projects must implement and set the {\itshape \doxylink{class_techstorm_1_1abstract_1_1_project_reference}{Project\+Reference}} singleton to their project. If this boilerplate code is not done, \doxylink{namespace_techstorm}{Techstorm} will not know what to run. In terms of functionality, this interface just holds the functions and variables that \doxylink{namespace_techstorm}{Techstorm} will call (besides some initialization). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_techstorm_1_1_b_p_layer_interface}{BPLayer\+Interface}}
+\item 
+struct \mbox{\hyperlink{struct_techstorm_1_1_camera_data}{Camera\+Data}}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_config_file_registry}{Config\+File\+Registry}}
+\item 
+struct \mbox{\hyperlink{struct_techstorm_1_1_engine_config}{Engine\+Config}}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_file_system_registry}{File\+System\+Registry}}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_game_camera}{Game\+Camera}}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_game_object}{Game\+Object}}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_game_object_registry}{Game\+Object\+Registry}}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_game_physics}{Game\+Physics}}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_gate}{Gate}}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_globals_container}{Globals\+Container}}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_input_dispatcher}{Input\+Dispatcher}}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_layer_registry}{Layer\+Registry}}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_my_body_activation_listener}{My\+Body\+Activation\+Listener}}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_object_contact_listener}{Object\+Contact\+Listener}}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_object_l_p_f}{Object\+LPF}}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_object_vs_broad_phase_l_f}{Object\+Vs\+Broad\+Phase\+LF}}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_plane_object}{Plane\+Object}}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_renderer}{Renderer}}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_singleton}{Singleton}}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_techstorm_engine}{Techstorm\+Engine}}
+\item 
+struct \mbox{\hyperlink{struct_techstorm_1_1_vec2}{Vec2}}
+\item 
+struct \mbox{\hyperlink{struct_techstorm_1_1_vec3}{Vec3}}
+\item 
+struct \mbox{\hyperlink{struct_techstorm_1_1_vec4}{Vec4}}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_window}{Window}}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_world}{World}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespace_techstorm_a49171abf7f6363db4090dfa5cf1fee47}{File\+Path\+Meta}} = \{ const std\+::string c\+Path
+\item 
+using \mbox{\hyperlink{namespace_techstorm_ae7f8562ce33e4da840f779f91dab42f7}{Directory\+Files}} = std\+::vector$<$ std\+::string $>$
+\item 
+using \mbox{\hyperlink{namespace_techstorm_a722eb734aae8dcb25139fe5173dfa372}{File\+System\+Meta}} = \{ std\+::string extension
+\item 
+using \mbox{\hyperlink{namespace_techstorm_a108468b55acfc7ab86572b8565488ad3}{Input\+Events}} = eventpp\+::\+Event\+Dispatcher$<$ int, void()$>$
+\item 
+using \mbox{\hyperlink{namespace_techstorm_a697d286da79fa47c4b623f24b1874c37}{Object\+Layer}} = JPH\+::\+Object\+Layer
+\item 
+using \mbox{\hyperlink{namespace_techstorm_ad50897445932507ea1b2caaad7cea557}{Depth}} = int
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespace_techstorm_ad005d326f9ccbbbf9be01f11f98f049d}{File\+System\+Is\+Properly\+Formatted}} (const char \texorpdfstring{$\ast$}{*}root\+Path, const char \texorpdfstring{$\ast$}{*}directory\+Map\+Path)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \& \mbox{\hyperlink{namespace_techstorm_a98e9633c11c071c2a51987a62ce1cc16}{Get\+Global}} (const std\+::string \&key)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespace_techstorm_acbd4313148ac66f22420becf6668fc8d}{Set\+Global}} (const std\+::string \&key, const T \&value)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \mbox{\hyperlink{namespace_techstorm_ab97f45c99b730373b3122f27e49f3756}{c\+Directory\+Name}}
+\item 
+std\+::string \mbox{\hyperlink{namespace_techstorm_aa33beb098b7e93e014fd874d0760fa4b}{path}}
+\item 
+std\+::string \mbox{\hyperlink{namespace_techstorm_af67668cd3c5e649019a81b8ae8a15acd}{filename}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{namespace_techstorm_ad50897445932507ea1b2caaad7cea557}\label{namespace_techstorm_ad50897445932507ea1b2caaad7cea557} 
+\index{Techstorm@{Techstorm}!Depth@{Depth}}
+\index{Depth@{Depth}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{Depth}{Depth}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_techstorm_ad50897445932507ea1b2caaad7cea557}{Techstorm\+::\+Depth}} = typedef int}
+
+
+
+Definition at line \mbox{\hyperlink{_render_layer_8h_source_l00007}{7}} of file \mbox{\hyperlink{_render_layer_8h_source}{Render\+Layer.\+h}}.
+
+\Hypertarget{namespace_techstorm_ae7f8562ce33e4da840f779f91dab42f7}\label{namespace_techstorm_ae7f8562ce33e4da840f779f91dab42f7} 
+\index{Techstorm@{Techstorm}!DirectoryFiles@{DirectoryFiles}}
+\index{DirectoryFiles@{DirectoryFiles}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{DirectoryFiles}{DirectoryFiles}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_techstorm_ae7f8562ce33e4da840f779f91dab42f7}{Techstorm\+::\+Directory\+Files}} = typedef std\+::vector$<$std\+::string$>$}
+
+
+
+Definition at line \mbox{\hyperlink{_file_system_8h_source_l00010}{10}} of file \mbox{\hyperlink{_file_system_8h_source}{File\+System.\+h}}.
+
+\Hypertarget{namespace_techstorm_a49171abf7f6363db4090dfa5cf1fee47}\label{namespace_techstorm_a49171abf7f6363db4090dfa5cf1fee47} 
+\index{Techstorm@{Techstorm}!FilePathMeta@{FilePathMeta}}
+\index{FilePathMeta@{FilePathMeta}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{FilePathMeta}{FilePathMeta}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_techstorm_a49171abf7f6363db4090dfa5cf1fee47}{Techstorm\+::\+File\+Path\+Meta}} = typedef \{ const std\+::string c\+Path}
+
+
+
+Definition at line \mbox{\hyperlink{_file_path_meta_8h_source_l00005}{5}} of file \mbox{\hyperlink{_file_path_meta_8h_source}{File\+Path\+Meta.\+h}}.
+
+\Hypertarget{namespace_techstorm_a722eb734aae8dcb25139fe5173dfa372}\label{namespace_techstorm_a722eb734aae8dcb25139fe5173dfa372} 
+\index{Techstorm@{Techstorm}!FileSystemMeta@{FileSystemMeta}}
+\index{FileSystemMeta@{FileSystemMeta}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{FileSystemMeta}{FileSystemMeta}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_techstorm_a722eb734aae8dcb25139fe5173dfa372}{Techstorm\+::\+File\+System\+Meta}} = typedef \{ std\+::string extension}
+
+
+
+Definition at line \mbox{\hyperlink{_file_system_8h_source_l00012}{12}} of file \mbox{\hyperlink{_file_system_8h_source}{File\+System.\+h}}.
+
+\Hypertarget{namespace_techstorm_a108468b55acfc7ab86572b8565488ad3}\label{namespace_techstorm_a108468b55acfc7ab86572b8565488ad3} 
+\index{Techstorm@{Techstorm}!InputEvents@{InputEvents}}
+\index{InputEvents@{InputEvents}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{InputEvents}{InputEvents}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_techstorm_a108468b55acfc7ab86572b8565488ad3}{Techstorm\+::\+Input\+Events}} = typedef eventpp\+::\+Event\+Dispatcher$<$int, void()$>$}
+
+
+
+Definition at line \mbox{\hyperlink{_input_8h_source_l00005}{5}} of file \mbox{\hyperlink{_input_8h_source}{Input.\+h}}.
+
+\Hypertarget{namespace_techstorm_a697d286da79fa47c4b623f24b1874c37}\label{namespace_techstorm_a697d286da79fa47c4b623f24b1874c37} 
+\index{Techstorm@{Techstorm}!ObjectLayer@{ObjectLayer}}
+\index{ObjectLayer@{ObjectLayer}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{ObjectLayer}{ObjectLayer}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_techstorm_a697d286da79fa47c4b623f24b1874c37}{Techstorm\+::\+Object\+Layer}} = typedef JPH\+::\+Object\+Layer}
+
+
+
+Definition at line \mbox{\hyperlink{_physics_8h_source_l00058}{58}} of file \mbox{\hyperlink{_physics_8h_source}{Physics.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespace_techstorm_ad005d326f9ccbbbf9be01f11f98f049d}\label{namespace_techstorm_ad005d326f9ccbbbf9be01f11f98f049d} 
+\index{Techstorm@{Techstorm}!FileSystemIsProperlyFormatted@{FileSystemIsProperlyFormatted}}
+\index{FileSystemIsProperlyFormatted@{FileSystemIsProperlyFormatted}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{FileSystemIsProperlyFormatted()}{FileSystemIsProperlyFormatted()}}
+{\footnotesize\ttfamily bool Techstorm\+::\+File\+System\+Is\+Properly\+Formatted (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{root\+Path,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{directory\+Map\+Path }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_file_system_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_file_system_8cpp_source}{File\+System.\+cpp}}.
+
+\Hypertarget{namespace_techstorm_a98e9633c11c071c2a51987a62ce1cc16}\label{namespace_techstorm_a98e9633c11c071c2a51987a62ce1cc16} 
+\index{Techstorm@{Techstorm}!GetGlobal@{GetGlobal}}
+\index{GetGlobal@{GetGlobal}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{GetGlobal()}{GetGlobal()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \& Techstorm\+::\+Get\+Global (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_globals_8h_source_l00031}{31}} of file \mbox{\hyperlink{_globals_8h_source}{Globals.\+h}}.
+
+
+
+References \mbox{\hyperlink{_globals_8h_source_l00023}{Techstorm\+::\+Globals\+Container\+::get()}}, and \mbox{\hyperlink{_singleton_8h_source_l00009}{Techstorm\+::\+Singleton$<$ Globals\+Container $>$\+::\+Instance()}}.
+
+Here is the call graph for this function\+:
+% FIG 0
+\Hypertarget{namespace_techstorm_acbd4313148ac66f22420becf6668fc8d}\label{namespace_techstorm_acbd4313148ac66f22420becf6668fc8d} 
+\index{Techstorm@{Techstorm}!SetGlobal@{SetGlobal}}
+\index{SetGlobal@{SetGlobal}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{SetGlobal()}{SetGlobal()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Techstorm\+::\+Set\+Global (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{const T \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_globals_8h_source_l00038}{38}} of file \mbox{\hyperlink{_globals_8h_source}{Globals.\+h}}.
+
+
+
+References \mbox{\hyperlink{_singleton_8h_source_l00009}{Techstorm\+::\+Singleton$<$ Globals\+Container $>$\+::\+Instance()}}, and \mbox{\hyperlink{_globals_8h_source_l00014}{Techstorm\+::\+Globals\+Container\+::set()}}.
+
+Here is the call graph for this function\+:
+% FIG 1
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespace_techstorm_ab97f45c99b730373b3122f27e49f3756}\label{namespace_techstorm_ab97f45c99b730373b3122f27e49f3756} 
+\index{Techstorm@{Techstorm}!cDirectoryName@{cDirectoryName}}
+\index{cDirectoryName@{cDirectoryName}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{cDirectoryName}{cDirectoryName}}
+{\footnotesize\ttfamily const std\+::string Techstorm\+::c\+Directory\+Name}
+
+
+
+Definition at line \mbox{\hyperlink{_file_path_meta_8h_source_l00007}{7}} of file \mbox{\hyperlink{_file_path_meta_8h_source}{File\+Path\+Meta.\+h}}.
+
+\Hypertarget{namespace_techstorm_af67668cd3c5e649019a81b8ae8a15acd}\label{namespace_techstorm_af67668cd3c5e649019a81b8ae8a15acd} 
+\index{Techstorm@{Techstorm}!filename@{filename}}
+\index{filename@{filename}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{filename}{filename}}
+{\footnotesize\ttfamily std\+::string Techstorm\+::filename}
+
+
+
+Definition at line \mbox{\hyperlink{_file_system_8h_source_l00015}{15}} of file \mbox{\hyperlink{_file_system_8h_source}{File\+System.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_file_system_8cpp_source_l00008}{Techstorm\+::\+File\+System\+Registry\+::\+File\+System\+Registry()}}.
+
+\Hypertarget{namespace_techstorm_aa33beb098b7e93e014fd874d0760fa4b}\label{namespace_techstorm_aa33beb098b7e93e014fd874d0760fa4b} 
+\index{Techstorm@{Techstorm}!path@{path}}
+\index{path@{path}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily std\+::string Techstorm\+::path}
+
+
+
+Definition at line \mbox{\hyperlink{_file_system_8h_source_l00014}{14}} of file \mbox{\hyperlink{_file_system_8h_source}{File\+System.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_file_system_8cpp_source_l00008}{Techstorm\+::\+File\+System\+Registry\+::\+File\+System\+Registry()}}.
+

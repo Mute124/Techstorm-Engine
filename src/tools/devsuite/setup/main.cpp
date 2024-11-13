@@ -1,8 +1,16 @@
-#include "CMDLineArgumentsHandler.h"
+#include <iostream>
+#include <string>
+#include <argh.h>
+#include <raygui.h>
+#include <raylib.h>
+#include <libconfig.h++>
 
 using namespace std;
+using namespace libconfig;
 
 int main(int argc, char* argv[]) {
-	//argh::parser cmdLineParser;
-	//cmdLineParser.parse(argc, argv, argh::parser::PREFER_PARAM_FOR_UNREG_OPTION);
+	int returnCode = EXIT_SUCCESS;
+	argh::parser cmdl(argv);
+
+	return returnCode;
 }

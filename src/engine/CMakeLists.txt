@@ -1,4 +1,6 @@
-﻿# Project shared library
+﻿
+
+# Project shared library
 add_library(engine_lib SHARED 
 	"engine.cpp"
     "engine.h" 
@@ -23,7 +25,7 @@ add_library(engine_lib SHARED
     "utils/DoublyLinkedList.h" 
     "world/world.h" 
     "renderer/RayStorm.h"   
-    "debug/Logging.h" 
+    "dbg/Logging.h" 
     "renderer/objects/PlaneObject.h"
     "world/tools/Terrain.h" 
     "renderer/IGameObjectGate.h"
@@ -41,6 +43,7 @@ add_library(engine_lib SHARED
     #"physics/PhysicsInitializer.h" 
     "physics/Physics.cpp"
     "conf/Config.h"
+    "conf/Config.cpp"
     "utils/Globals.h"
     "fs/FileSystem.h"
     "fs/FileSystem.cpp"
