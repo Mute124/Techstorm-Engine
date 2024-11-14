@@ -9,16 +9,15 @@ endif()
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-# The configurations we support
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release;Distribution")
-# Set build type if not specified
-if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Release)
+
+if(NOT DEFINED TS_CUSTOM_CONFIGURATIONS)
+    # The configurations we support
+    #set(CMAKE_CONFIGURATION_TYPES "Debug;Release;Distribution")
 endif()
 
-
 # Output directories
+
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib) # Static libraries
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin) # Shared libraries (.so/.dll)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin) # Executables (.out/.exe)
@@ -46,32 +45,63 @@ endif()
 if (WIN32)
     set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 endif()
+
+execute_process(
+    COMMAND "python3 build-scripts\\TechstormConfigure.py"
+    WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}\\build-scripts"
+    RESULT_VARIABLE result
+    OUTPUT_VARIABLE output
+    ERROR_VARIABLE error
+)
+
+if(NOT result EQUAL 0)
+    message(STATUS "Failed to configure Techstorm: ${error}")
+endif()
+
+message(STATUS "Configuring Techstorm: ${output}")
+
 # Set project name
-project(TechStorm LANGUAGES CXX)
+project(TechStorm LANGUAGES CXX C)
 set(CMAKE_EXPORT_COMPILE_COMMANDS True)
+
+
+if(CMAKE_BUILD_TYPE STREQUAL "Distribution")
+    
+    add_compile_definitions(TS_ROOT_DIR="../") # Sets the TS_ROOT_DIR macro in a way that prevents the path on a development machine from being used in distribution.
+    
+    # Your code for the Distribution configuration
+else()
+    # Your code for other configurations
+   add_compile_definitions(TS_ROOT_DIR="${CMAKE_BINARY_DIR}")
+   add_compile_definitions(TS_TOP_LAYER="${CMAKE_SOURCE_DIR}")
+endif()
+
+add_compile_definitions(TS_DATA_DIR="${TS_TOP_LAYER}/data")
 
 include(cmake/cpm.cmake)
 include(cmake/techstorm.cmake)
-#set(CMAKE_CONFIGURATION_TYPES "Debug;Release;Distribution")
+set(CMAKE_CONFIGURATION_TYPES "Debug;Release;Distribution")
 # Force the use of the same runtime library
 
 message(STATUS "CMAKE_CXX_FLAGS: ${CMAKE_CXX_FLAGS}")
+message(STATUS "Build Config: ${CMAKE_BUILD_TYPE}")
+
 CPMAddPackage(
     NAME raylib
     GIT_REPOSITORY https://github.com/raysan5/raylib.git
     GIT_TAG 5.0
-) 
-
-CPMAddPackage(
-    NAME ImGui
-	GIT_REPOSITORY https://github.com/ocornut/imgui.git
-	GIT_TAG v1.91.2
 )
-option(WIN32_LEAN_AND_MEAN ON)
-find_package(ZLIB REQUIRED)
-find_package(joltphysics REQUIRED)
-find_package(libconfig REQUIRED)
 
+option(WIN32_LEAN_AND_MEAN ON)
+
+if (NOT result EQUAL 0)
+    find_package(ZLIB)
+    find_package(joltphysics)
+    find_package(libconfig)
+    find_package(Angelscript)
+    find_package(sol2)
+
+endif()
 set(DOUBLE_PRECISION OFF)
 set(GENERATE_DEBUG_SYMBOLS OFF)
 set(CROSS_PLATFORM_DETERMINISTIC ON)

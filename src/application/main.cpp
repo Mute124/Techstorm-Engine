@@ -1,25 +1,36 @@
-#include "../project/project.h"
-#ifdef _DEBUG
-	#include <crtdbg.h>
-#endif 
-
-void initProject(Project& project, int argc, char* argv[]) {
-	project.preInit();
-	project.init(argc, argv);
-	project.postInit();
-}
-
+#include "ApplicationUtils.h"
 
 int main(int argc, char* argv[]) {
 #ifdef _DEBUG
 	// Enable leak detection
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 #endif
+	using namespace Techstorm;
 
-	Project project = Project();
+	PROJECT_TYPENAME project = PROJECT_TYPENAME();
+	project.preInit();
 
-	initProject(project, argc, argv);
+	Renderer& renderer = project.getRenderer();
+	WindowDecorations& decorations = project.getWindowDecorations();
 
-	int projectResult = project.run(argc, argv);
-	return projectResult;
+	InitWindow(decorations.width, decorations.height, decorations.title);
+
+	project.init(argc, argv);
+	project.postInit();
+
+	SetTargetFPS(decorations.targetFPS);
+
+	while (!WindowShouldClose()) {
+		project.preObjectUpdate();
+		project.objectUpdate();
+		project.postObjectUpdate();
+
+		project.prePhysicsUpdate();
+		project.physicsUpdate();
+		project.postPhysicsUpdate();
+	}
+
+	project.cleanup(0);
+
+	return 0;
 }

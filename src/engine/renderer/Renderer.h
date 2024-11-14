@@ -27,9 +27,9 @@ namespace Techstorm {
 	class Renderer {
 	public:
 #ifndef TS_CUSTOM_RENDERER_CONSTRUCTOR
-		// This fucking constructor.
+		// This damn constructor.
 		Renderer() {
-			initialize();
+			//initialize();
 		}
 #endif
 		void initialize();
@@ -56,4 +56,4 @@ namespace Techstorm {
 		void render3D(GameCamera& cam);
 #endif
 	};
-}
+	}

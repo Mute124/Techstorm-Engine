@@ -1,0 +1,80 @@
+\doxysection{Techstorm\+::Object\+Contact\+Listener Class Reference}
+\hypertarget{class_techstorm_1_1_object_contact_listener}{}\label{class_techstorm_1_1_object_contact_listener}\index{Techstorm::ObjectContactListener@{Techstorm::ObjectContactListener}}
+
+
+{\ttfamily \#include $<$Physics.\+h$>$}
+
+
+
+Inheritance diagram for Techstorm\+::Object\+Contact\+Listener\+:
+% FIG 0
+
+
+Collaboration diagram for Techstorm\+::Object\+Contact\+Listener\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual JPH\+::\+Validate\+Result \mbox{\hyperlink{class_techstorm_1_1_object_contact_listener_a9c0d743ef187801baacd8703ec5c145c}{On\+Contact\+Validate}} (const JPH\+::\+Body \&in\+Body1, const JPH\+::\+Body \&in\+Body2, JPH\+::\+RVec3\+Arg in\+Base\+Offset, const JPH\+::\+Collide\+Shape\+Result \&in\+Collision\+Result) override
+\item 
+virtual void \mbox{\hyperlink{class_techstorm_1_1_object_contact_listener_abe082bd8dd77a177bb675dd965351ef5}{On\+Contact\+Added}} (const JPH\+::\+Body \&in\+Body1, const JPH\+::\+Body \&in\+Body2, const JPH\+::\+Contact\+Manifold \&in\+Manifold, JPH\+::\+Contact\+Settings \&io\+Settings) override
+\item 
+virtual void \mbox{\hyperlink{class_techstorm_1_1_object_contact_listener_a257a2c002f9e7effb0fcc68d4c70c105}{On\+Contact\+Persisted}} (const JPH\+::\+Body \&in\+Body1, const JPH\+::\+Body \&in\+Body2, const JPH\+::\+Contact\+Manifold \&in\+Manifold, JPH\+::\+Contact\+Settings \&io\+Settings) override
+\item 
+virtual void \mbox{\hyperlink{class_techstorm_1_1_object_contact_listener_a66be260ebccc42b420025ee7c640a95d}{On\+Contact\+Removed}} (const JPH\+::\+Sub\+Shape\+IDPair \&in\+Sub\+Shape\+Pair) override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_physics_8h_source_l00304}{304}} of file \mbox{\hyperlink{_physics_8h_source}{Physics.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_techstorm_1_1_object_contact_listener_abe082bd8dd77a177bb675dd965351ef5}\label{class_techstorm_1_1_object_contact_listener_abe082bd8dd77a177bb675dd965351ef5} 
+\index{Techstorm::ObjectContactListener@{Techstorm::ObjectContactListener}!OnContactAdded@{OnContactAdded}}
+\index{OnContactAdded@{OnContactAdded}!Techstorm::ObjectContactListener@{Techstorm::ObjectContactListener}}
+\doxysubsubsection{\texorpdfstring{OnContactAdded()}{OnContactAdded()}}
+{\footnotesize\ttfamily virtual void Techstorm\+::\+Object\+Contact\+Listener\+::\+On\+Contact\+Added (\begin{DoxyParamCaption}\item[{const JPH\+::\+Body \&}]{in\+Body1,  }\item[{const JPH\+::\+Body \&}]{in\+Body2,  }\item[{const JPH\+::\+Contact\+Manifold \&}]{in\+Manifold,  }\item[{JPH\+::\+Contact\+Settings \&}]{io\+Settings }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{_physics_8h_source_l00313}{313}} of file \mbox{\hyperlink{_physics_8h_source}{Physics.\+h}}.
+
+\Hypertarget{class_techstorm_1_1_object_contact_listener_a257a2c002f9e7effb0fcc68d4c70c105}\label{class_techstorm_1_1_object_contact_listener_a257a2c002f9e7effb0fcc68d4c70c105} 
+\index{Techstorm::ObjectContactListener@{Techstorm::ObjectContactListener}!OnContactPersisted@{OnContactPersisted}}
+\index{OnContactPersisted@{OnContactPersisted}!Techstorm::ObjectContactListener@{Techstorm::ObjectContactListener}}
+\doxysubsubsection{\texorpdfstring{OnContactPersisted()}{OnContactPersisted()}}
+{\footnotesize\ttfamily virtual void Techstorm\+::\+Object\+Contact\+Listener\+::\+On\+Contact\+Persisted (\begin{DoxyParamCaption}\item[{const JPH\+::\+Body \&}]{in\+Body1,  }\item[{const JPH\+::\+Body \&}]{in\+Body2,  }\item[{const JPH\+::\+Contact\+Manifold \&}]{in\+Manifold,  }\item[{JPH\+::\+Contact\+Settings \&}]{io\+Settings }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{_physics_8h_source_l00317}{317}} of file \mbox{\hyperlink{_physics_8h_source}{Physics.\+h}}.
+
+\Hypertarget{class_techstorm_1_1_object_contact_listener_a66be260ebccc42b420025ee7c640a95d}\label{class_techstorm_1_1_object_contact_listener_a66be260ebccc42b420025ee7c640a95d} 
+\index{Techstorm::ObjectContactListener@{Techstorm::ObjectContactListener}!OnContactRemoved@{OnContactRemoved}}
+\index{OnContactRemoved@{OnContactRemoved}!Techstorm::ObjectContactListener@{Techstorm::ObjectContactListener}}
+\doxysubsubsection{\texorpdfstring{OnContactRemoved()}{OnContactRemoved()}}
+{\footnotesize\ttfamily virtual void Techstorm\+::\+Object\+Contact\+Listener\+::\+On\+Contact\+Removed (\begin{DoxyParamCaption}\item[{const JPH\+::\+Sub\+Shape\+IDPair \&}]{in\+Sub\+Shape\+Pair }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{_physics_8h_source_l00321}{321}} of file \mbox{\hyperlink{_physics_8h_source}{Physics.\+h}}.
+
+\Hypertarget{class_techstorm_1_1_object_contact_listener_a9c0d743ef187801baacd8703ec5c145c}\label{class_techstorm_1_1_object_contact_listener_a9c0d743ef187801baacd8703ec5c145c} 
+\index{Techstorm::ObjectContactListener@{Techstorm::ObjectContactListener}!OnContactValidate@{OnContactValidate}}
+\index{OnContactValidate@{OnContactValidate}!Techstorm::ObjectContactListener@{Techstorm::ObjectContactListener}}
+\doxysubsubsection{\texorpdfstring{OnContactValidate()}{OnContactValidate()}}
+{\footnotesize\ttfamily virtual JPH\+::\+Validate\+Result Techstorm\+::\+Object\+Contact\+Listener\+::\+On\+Contact\+Validate (\begin{DoxyParamCaption}\item[{const JPH\+::\+Body \&}]{in\+Body1,  }\item[{const JPH\+::\+Body \&}]{in\+Body2,  }\item[{JPH\+::\+RVec3\+Arg}]{in\+Base\+Offset,  }\item[{const JPH\+::\+Collide\+Shape\+Result \&}]{in\+Collision\+Result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{_physics_8h_source_l00307}{307}} of file \mbox{\hyperlink{_physics_8h_source}{Physics.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+Techstorm-\/v5/src/engine/physics/\mbox{\hyperlink{_physics_8h}{Physics.\+h}}\end{DoxyCompactItemize}

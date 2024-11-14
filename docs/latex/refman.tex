@@ -1,0 +1,388 @@
+  % Handle batch mode
+  % to overcome problems with too many open files
+  \let\mypdfximage\pdfximage\def\pdfximage{\immediate\mypdfximage}
+  \pdfminorversion=7
+  % Set document class depending on configuration
+  \documentclass[twoside]{book}
+  %% moved from doxygen.sty due to workaround for LaTex 2019 version and unmaintained tabu package
+  \usepackage{ifthen}
+  \ifx\requestedLaTeXdate\undefined
+    \usepackage{array}
+  \else
+    \usepackage{array}[=2016-10-06]
+  \fi
+  %%
+  % Packages required by doxygen
+  \makeatletter
+  \providecommand\IfFormatAtLeastTF{\@ifl@t@r\fmtversion}
+  % suppress package identification of infwarerr as it contains the word "warning"
+  \let\@@protected@wlog\protected@wlog
+  \def\protected@wlog#1{\wlog{package info suppressed}}
+  \RequirePackage{infwarerr}
+  \let\protected@wlog\@@protected@wlog
+  \makeatother
+  \IfFormatAtLeastTF{2016/01/01}{}{\usepackage{fixltx2e}} % for \textsubscript
+  \IfFormatAtLeastTF{2015/01/01}{\pdfsuppresswarningpagegroup=1}{}
+  \usepackage{doxygen}
+  \usepackage{graphicx}
+  \usepackage[utf8]{inputenc}
+  \usepackage{makeidx}
+  \PassOptionsToPackage{warn}{textcomp}
+  \usepackage{textcomp}
+  \usepackage[nointegrals]{wasysym}
+  \usepackage{ifxetex}
+  % NLS support packages
+  % Define default fonts
+  % Font selection
+  \usepackage[T1]{fontenc}
+  % set main and monospaced font
+  \usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+\renewcommand{\familydefault}{\sfdefault}
+  \doxyallsectionsfont{%
+    \fontseries{bc}\selectfont%
+    \color{darkgray}%
+  }
+  \renewcommand{\DoxyLabelFont}{%
+    \fontseries{bc}\selectfont%
+    \color{darkgray}%
+  }
+  \newcommand{\+}{\discretionary{\mbox{\scriptsize$\hookleftarrow$}}{}{}}
+   % Arguments of doxygenemoji:
+   % 1) ':<text>:' form of the emoji, already LaTeX-escaped
+   % 2) file with the name of the emoji without the .png extension
+   % in case image exist use this otherwise use the ':<text>:' form
+   \newcommand{\doxygenemoji}[2]{%
+     \IfFileExists{./#2.png}{\raisebox{-0.1em}{\includegraphics[height=0.9em]{./#2.png}}}{#1}%
+   }
+  % Page & text layout
+  \usepackage{geometry}
+  \geometry{%
+    a4paper,%
+    top=2.5cm,%
+    bottom=2.5cm,%
+    left=2.5cm,%
+    right=2.5cm%
+  }
+  \usepackage{changepage}
+  % Allow a bit of overflow to go unnoticed by other means
+  \tolerance=750
+  \hfuzz=15pt
+  \hbadness=750
+  \setlength{\emergencystretch}{15pt}
+  \setlength{\parindent}{0cm}
+  \newcommand{\doxynormalparskip}{\setlength{\parskip}{3ex plus 2ex minus 2ex}}
+  \newcommand{\doxytocparskip}{\setlength{\parskip}{1ex plus 0ex minus 0ex}}
+  \doxynormalparskip
+  % Redefine paragraph/subparagraph environments, using sectsty fonts
+  \makeatletter
+  \renewcommand{\paragraph}{%
+    \@startsection{paragraph}{4}{0ex}{-1.0ex}{1.0ex}{%
+      \normalfont\normalsize\bfseries\SS@parafont%
+    }%
+  }
+  \renewcommand{\subparagraph}{%
+    \@startsection{subparagraph}{5}{0ex}{-1.0ex}{1.0ex}{%
+      \normalfont\normalsize\bfseries\SS@subparafont%
+    }%
+  }
+  \makeatother
+  \makeatletter
+  \newcommand\hrulefilll{\leavevmode\leaders\hrule\hskip 0pt plus 1filll\kern\z@}
+  \makeatother
+  % Headers & footers
+  \usepackage{fancyhdr}
+  \pagestyle{fancyplain}
+  \renewcommand{\footrulewidth}{0.4pt}
+  \fancypagestyle{fancyplain}{
+    \fancyhf{}
+    \fancyhead[LE, RO]{\bfseries\thepage}
+    \fancyhead[LO]{\bfseries\rightmark}
+    \fancyhead[RE]{\bfseries\leftmark}
+    \fancyfoot[LO, RE]{\bfseries\scriptsize Generated on Tue Nov 12 2024 for Techstorm by Doxygen }
+  }
+  \fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[LO, RE]{\bfseries\scriptsize Generated on Tue Nov 12 2024 for Techstorm by Doxygen }
+    \renewcommand{\headrulewidth}{0pt}
+  }
+  \pagestyle{fancyplain}
+  \renewcommand{\chaptermark}[1]{%
+    \markboth{#1}{}%
+  }
+  \renewcommand{\sectionmark}[1]{%
+    \markright{\thesection\ #1}%
+  }
+  % ToC, LoF, LoT, bibliography, and index
+  % Indices & bibliography
+  \usepackage{natbib}
+  \usepackage[titles]{tocloft}
+  \setcounter{tocdepth}{3}
+  \setcounter{secnumdepth}{5}
+  % creating indexes
+  \makeindex
+  \usepackage{newunicodechar}
+  \makeatletter
+    \def\doxynewunicodechar#1#2{%
+    \@tempswafalse
+    \edef\nuc@tempa{\detokenize{#1}}%
+    \if\relax\nuc@tempa\relax
+      \nuc@emptyargerr
+    \else
+      \edef\@tempb{\expandafter\@car\nuc@tempa\@nil}%
+      \nuc@check
+      \if@tempswa
+        \@namedef{u8:\nuc@tempa}{#2}%
+      \fi
+    \fi
+  }
+  \makeatother
+  \doxynewunicodechar{⁻}{${}^{-}$}% Superscript minus
+  \doxynewunicodechar{²}{${}^{2}$}% Superscript two
+  \doxynewunicodechar{³}{${}^{3}$}% Superscript three
+  % Hyperlinks
+    % Hyperlinks (required, but should be loaded last)
+    \ifpdf
+      \usepackage[pdftex,pagebackref=true]{hyperref}
+    \else
+      \ifxetex
+        \usepackage[pagebackref=true]{hyperref}
+      \else
+        \usepackage[ps2pdf,pagebackref=true]{hyperref}
+      \fi
+    \fi
+    \hypersetup{%
+      colorlinks=true,%
+      linkcolor=blue,%
+      citecolor=blue,%
+      unicode,%
+      pdftitle={Techstorm},%
+      pdfsubject={The 5th iteration of the Techstorm game engine}%
+    }
+  % Custom commands used by the header
+  % Custom commands
+  \newcommand{\clearemptydoublepage}{%
+    \newpage{\pagestyle{empty}\cleardoublepage}%
+  }
+  % caption style definition
+  \usepackage{caption}
+  \captionsetup{labelsep=space,justification=centering,font={bf},singlelinecheck=off,skip=4pt,position=top}
+  % in page table of contents
+  \IfFormatAtLeastTF{2023/05/01}{\usepackage[deeplevels]{etoc}}{\usepackage[deeplevels]{etoc_doxygen}}
+  \etocsettocstyle{\doxytocparskip}{\doxynormalparskip}
+  \etocsetlevel{subsubsubsection}{4}
+  \etocsetlevel{subsubsubsubsection}{5}
+  \etocsetlevel{subsubsubsubsubsection}{6}
+  \etocsetlevel{subsubsubsubsubsubsection}{7}
+  \etocsetlevel{paragraph}{8}
+  \etocsetlevel{subparagraph}{9}
+  % prevent numbers overlap the titles in toc
+  \renewcommand{\numberline}[1]{#1~}
+% End of preamble, now comes the document contents
+%===== C O N T E N T S =====
+\begin{document}
+  \raggedbottom
+  % Titlepage & ToC
+    % To avoid duplicate page anchors due to reuse of same numbers for
+    % the index (be it as roman numbers)
+    \hypersetup{pageanchor=false,
+                bookmarksnumbered=true,
+                pdfencoding=unicode
+               }
+  \pagenumbering{alph}
+  \begin{titlepage}
+  \vspace*{7cm}
+  \begin{center}%
+  {\Large Techstorm}\\
+  [1ex]\large 0.\+0.\+3 \\
+  \vspace*{1cm}
+  {\large Generated on Tue Nov 12 2024 for Techstorm by Doxygen 1.9.8}\\
+    \vspace*{0.5cm}
+    {\small Tue Nov 12 2024 22:33:20}
+  \end{center}
+  \end{titlepage}
+  \clearemptydoublepage
+  \pagenumbering{roman}
+  \tableofcontents
+  \clearemptydoublepage
+  \pagenumbering{arabic}
+  % re-enable anchors again
+  \hypersetup{pageanchor=true}
+%--- Begin generated contents ---
+\chapter{Namespace Index}
+\input{namespaces}
+\chapter{Hierarchical Index}
+\input{hierarchy}
+\chapter{Class Index}
+\input{annotated}
+\chapter{File Index}
+\input{files}
+\chapter{Namespace Documentation}
+\input{d4/d26/namespace_techstorm}
+\input{dd/df2/namespace_techstorm_1_1_broad_phase_layers}
+\input{da/d60/namespace_techstorm_1_1_dev_tools}
+\input{dc/d28/namespace_techstorm_1_1_dev_tools_1_1_setup_tool}
+\input{d4/d09/namespace_techstorm_1_1_layers}
+\chapter{Class Documentation}
+\input{d6/d34/class_techstorm_1_1abstract}
+\input{d5/dfa/class_techstorm_1_1_b_p_layer_interface}
+\input{dc/d3d/struct_techstorm_1_1_camera_data}
+\input{d0/d85/class_techstorm_1_1_dev_tools_1_1_setup_tool_1_1_c_m_d_line_arguments_handler}
+\input{d1/dcb/class_techstorm_1_1_config_file_registry}
+\input{de/d6a/struct_techstorm_1_1_engine_config}
+\input{d5/dae/class_techstorm_1_1_file_system_registry}
+\input{d0/db5/class_techstorm_1_1_game_camera}
+\input{d4/de0/class_techstorm_1_1_game_object}
+\input{de/dc7/class_techstorm_1_1_game_object_registry}
+\input{db/df2/class_techstorm_1_1_game_physics}
+\input{d6/d46/class_techstorm_1_1_gate}
+\input{d7/d44/class_techstorm_1_1_globals_container}
+\input{d7/d74/class_techstorm_1_1_input_dispatcher}
+\input{db/d5d/class_techstorm_1_1_layer_registry}
+\input{d3/d51/class_techstorm_1_1_object_l_p_f_1_1_l_p_f_relationships}
+\input{dd/dd3/class_techstorm_1_1_my_body_activation_listener}
+\input{d9/d66/class_techstorm_1_1_object_contact_listener}
+\input{dc/d2b/class_techstorm_1_1_object_l_p_f}
+\input{d3/d19/class_techstorm_1_1_object_vs_broad_phase_l_f}
+\input{da/d48/class_techstorm_1_1_plane_object}
+\input{d9/d6e/class_project}
+\input{db/dc4/class_techstorm_1_1abstract_1_1_project_reference}
+\input{d4/d22/class_techstorm_1_1_renderer}
+\input{d5/d55/class_techstorm_1_1_singleton}
+\input{d0/de6/class_techstorm_1_1_techstorm_engine}
+\input{d4/d88/struct_techstorm_1_1_vec2}
+\input{d9/db6/struct_techstorm_1_1_vec3}
+\input{dc/d7f/struct_techstorm_1_1_vec4}
+\input{da/d10/class_techstorm_1_1_window}
+\input{d1/d78/class_techstorm_1_1_world}
+\chapter{File Documentation}
+\input{dd/d39/application_2main_8cpp}
+\input{dd/d39/application_2main_8cpp_source}
+\input{da/d55/tools_2devsuite_2setup_2main_8cpp}
+\input{da/d55/tools_2devsuite_2setup_2main_8cpp_source}
+\input{de/d90/_basic_core_8h}
+\input{de/d90/_basic_core_8h_source}
+\input{db/d1f/_common_8h}
+\input{db/d1f/_common_8h_source}
+\input{d7/dd3/_config_8cpp}
+\input{d7/dd3/_config_8cpp_source}
+\input{d4/d71/_config_8h}
+\input{d4/d71/_config_8h_source}
+\input{da/def/_logging_8h}
+\input{da/def/_logging_8h_source}
+\input{da/d5c/engine_8cpp}
+\input{da/d5c/engine_8cpp_source}
+\input{d1/d55/engine_8h}
+\input{d1/d55/engine_8h_source}
+\input{d4/da9/_engine_component_8h}
+\input{d4/da9/_engine_component_8h_source}
+\input{de/df5/_file_path_meta_8h}
+\input{de/df5/_file_path_meta_8h_source}
+\input{d1/d4c/_file_system_8cpp}
+\input{d1/d4c/_file_system_8cpp_source}
+\input{d2/d58/_file_system_8h}
+\input{d2/d58/_file_system_8h_source}
+\input{d7/d47/_input_8cpp}
+\input{d7/d47/_input_8cpp_source}
+\input{d2/d94/_input_8h}
+\input{d2/d94/_input_8h_source}
+\input{d6/d4f/_vector_8cpp}
+\input{d6/d4f/_vector_8cpp_source}
+\input{d4/d7f/_vector_8h}
+\input{d4/d7f/_vector_8h_source}
+\input{df/d62/_body_activation_listener_8h}
+\input{df/d62/_body_activation_listener_8h_source}
+\input{d7/d93/_b_p_layer_interface_8h}
+\input{d7/d93/_b_p_layer_interface_8h_source}
+\input{d9/dcc/_broad_phase_layer_registry_8h}
+\input{d9/dcc/_broad_phase_layer_registry_8h_source}
+\input{d0/d8d/_i_layer_registry_8h}
+\input{d0/d8d/_i_layer_registry_8h_source}
+\input{d7/dce/_layers_8cpp}
+\input{d7/dce/_layers_8cpp_source}
+\input{d1/d49/_layers_8h}
+\input{d1/d49/_layers_8h_source}
+\input{d4/d8c/_object_contact_listener_8h}
+\input{d4/d8c/_object_contact_listener_8h_source}
+\input{df/d2b/_object_l_p_f_8h}
+\input{df/d2b/_object_l_p_f_8h_source}
+\input{df/d38/_object_vs_broad_phase_layer_filter_8h}
+\input{df/d38/_object_vs_broad_phase_layer_filter_8h_source}
+\input{d8/d6a/_physics_8cpp}
+\input{d8/d6a/_physics_8cpp_source}
+\input{d8/d65/_physics_8h}
+\input{d8/d65/_physics_8h_source}
+\input{dd/d59/_physics_common_8cpp}
+\input{dd/d59/_physics_common_8cpp_source}
+\input{d0/d80/_physics_common_8h}
+\input{d0/d80/_physics_common_8h_source}
+\input{db/dd7/_physics_initializer_8h}
+\input{db/dd7/_physics_initializer_8h_source}
+\input{d8/d7d/engine_2_project_8h}
+\input{d8/d7d/engine_2_project_8h_source}
+\input{d1/def/project_2_project_8h}
+\input{d1/def/project_2_project_8h_source}
+\input{d1/d33/_camera_8cpp}
+\input{d1/d33/_camera_8cpp_source}
+\input{d5/d91/_camera_8h}
+\input{d5/d91/_camera_8h_source}
+\input{d9/df8/_color_8h}
+\input{d9/df8/_color_8h_source}
+\input{d3/df6/_game_object_8cpp}
+\input{d3/df6/_game_object_8cpp_source}
+\input{df/d91/_game_object_8h}
+\input{df/d91/_game_object_8h_source}
+\input{d7/d03/_game_object_registry_8cpp}
+\input{d7/d03/_game_object_registry_8cpp_source}
+\input{d9/dfc/_game_object_registry_8h}
+\input{d9/dfc/_game_object_registry_8h_source}
+\input{df/d87/_i_game_object_gate_8cpp}
+\input{df/d87/_i_game_object_gate_8cpp_source}
+\input{db/d88/_i_game_object_gate_8h}
+\input{db/d88/_i_game_object_gate_8h_source}
+\input{db/d4a/_plane_object_8cpp}
+\input{db/d4a/_plane_object_8cpp_source}
+\input{d9/dd7/_plane_object_8h}
+\input{d9/dd7/_plane_object_8h_source}
+\input{dc/d52/_ray_storm_8h}
+\input{dc/d52/_ray_storm_8h_source}
+\input{da/d84/_renderer_8cpp}
+\input{da/d84/_renderer_8cpp_source}
+\input{d3/da0/_renderer_8h}
+\input{d3/da0/_renderer_8h_source}
+\input{da/d6a/_render_layer_8cpp}
+\input{da/d6a/_render_layer_8cpp_source}
+\input{da/de1/_render_layer_8h}
+\input{da/de1/_render_layer_8h_source}
+\input{d3/db8/_window_8cpp}
+\input{d3/db8/_window_8cpp_source}
+\input{de/d42/_window_8h}
+\input{de/d42/_window_8h_source}
+\input{d9/dbe/_doubly_linked_list_8h}
+\input{d9/dbe/_doubly_linked_list_8h_source}
+\input{dc/d7f/_gate_8h}
+\input{dc/d7f/_gate_8h_source}
+\input{d8/d4d/_globals_8h}
+\input{d8/d4d/_globals_8h_source}
+\input{de/dec/_singleton_8h}
+\input{de/dec/_singleton_8h_source}
+\input{d9/d2a/_terrain_8h}
+\input{d9/d2a/_terrain_8h_source}
+\input{d0/d97/world_8h}
+\input{d0/d97/world_8h_source}
+\input{df/d18/project_8cpp}
+\input{df/d18/project_8cpp_source}
+\input{d1/d25/_dev_suite_common_8h}
+\input{d1/d25/_dev_suite_common_8h_source}
+\input{d5/dc2/_c_m_d_line_arguments_handler_8h}
+\input{d5/dc2/_c_m_d_line_arguments_handler_8h_source}
+%--- End generated contents ---
+% Index
+  \backmatter
+  \newpage
+  \phantomsection
+  \clearemptydoublepage
+  \addcontentsline{toc}{chapter}{\indexname}
+  \printindex
+% Required for some languages (in combination with latexdocumentpre from the header)
+\end{document}

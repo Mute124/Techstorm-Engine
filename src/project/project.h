@@ -1,15 +1,18 @@
 #pragma once
 #include "../engine/Project.h"
+#include <raylib.h>
 
+#define PROJECT_TYPENAME Project
+
+/// <summary>
+/// Write your project code here or do what you want with it. However,
+/// you MUST implement the IProject interface somehow and set the project reference!
+/// See <see cref="Techstorm::IProject" /> for more information on this.
+/// </summary>
+/// <inheritdoc />
 class Project : public Techstorm::IProject {
 public:
 
 	Project() : IProject() {}
 
-	// Inherited via IProject
-	int run(int argc, char* argv[]) override;
-
-	// Inherited via IProject
-	void init(int argc, char* argv[]) override;
-	void preInit() override;
 };

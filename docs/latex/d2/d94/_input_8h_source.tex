@@ -1,0 +1,21 @@
+\doxysection{Input.\+h}
+\hypertarget{_input_8h_source}{}\label{_input_8h_source}\index{C:/Dev/Techstorm-\/v5/src/engine/input/Input.h@{C:/Dev/Techstorm-\/v5/src/engine/input/Input.h}}
+\mbox{\hyperlink{_input_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_input_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_input_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <eventpp/eventdispatcher.h>}}
+\DoxyCodeLine{\Hypertarget{_input_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_input_8h_source_l00004}00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_techstorm}{Techstorm}}\ \{}
+\DoxyCodeLine{\Hypertarget{_input_8h_source_l00005}\mbox{\hyperlink{namespace_techstorm_a108468b55acfc7ab86572b8565488ad3}{00005}}\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_techstorm_a108468b55acfc7ab86572b8565488ad3}{InputEvents}}\ =\ eventpp::EventDispatcher<int,\ void()>;}
+\DoxyCodeLine{\Hypertarget{_input_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_input_8h_source_l00007}\mbox{\hyperlink{class_techstorm_1_1_input_dispatcher}{00007}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_techstorm_1_1_input_dispatcher}{InputDispatcher}}\ \{}
+\DoxyCodeLine{\Hypertarget{_input_8h_source_l00008}00008\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_input_8h_source_l00009}\mbox{\hyperlink{class_techstorm_1_1_input_dispatcher_a5df9c763aafa64dd7ceb1098a8ac846f}{00009}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_input_dispatcher_a5df9c763aafa64dd7ceb1098a8ac846f}{update}}();}
+\DoxyCodeLine{\Hypertarget{_input_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_input_8h_source_l00011}\mbox{\hyperlink{class_techstorm_1_1_input_dispatcher_a73d7a88317e86bcae99c33ab75f5307c}{00011}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_input_dispatcher_a73d7a88317e86bcae99c33ab75f5307c}{addObserver}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{void}(*callback)());}
+\DoxyCodeLine{\Hypertarget{_input_8h_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_input_8h_source_l00013}00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_a108468b55acfc7ab86572b8565488ad3}{InputEvents}}\ mEvents;}
+\DoxyCodeLine{\Hypertarget{_input_8h_source_l00014}00014\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_input_8h_source_l00015}00015\ \}}
+
+\end{DoxyCode}

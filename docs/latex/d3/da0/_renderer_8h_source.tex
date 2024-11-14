@@ -1,0 +1,65 @@
+\doxysection{Renderer.\+h}
+\hypertarget{_renderer_8h_source}{}\label{_renderer_8h_source}\index{C:/Dev/Techstorm-\/v5/src/engine/renderer/Renderer.h@{C:/Dev/Techstorm-\/v5/src/engine/renderer/Renderer.h}}
+\mbox{\hyperlink{_renderer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}../utils/Singleton.h"{}}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_object_registry_8h}{GameObjectRegistry.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_camera_8h}{Camera.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <Jolt/Jolt.h>}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00011}00011\ \textcolor{comment}{//\ Jolt\ includes}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <Jolt/RegisterTypes.h>}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <Jolt/Core/Factory.h>}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <Jolt/Core/TempAllocator.h>}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <Jolt/Core/JobSystemThreadPool.h>}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <Jolt/Physics/PhysicsSettings.h>}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <Jolt/Physics/PhysicsSystem.h>}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <Jolt/Physics/Collision/Shape/BoxShape.h>}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <Jolt/Physics/Collision/Shape/SphereShape.h>}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <Jolt/Physics/Body/BodyCreationSettings.h>}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00021}00021\ \textcolor{preprocessor}{\#include\ <Jolt/Physics/Body/BodyActivationListener.h>}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00022}00022\ \textcolor{preprocessor}{\#include\ <raylib.h>}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00024}00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_techstorm}{Techstorm}}\ \{}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{class\ }GameObject;}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00027}\mbox{\hyperlink{class_techstorm_1_1_renderer}{00027}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_techstorm_1_1_renderer}{Renderer}}\ \{}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00029}00029\ \textcolor{preprocessor}{\#ifndef\ TS\_CUSTOM\_RENDERER\_CONSTRUCTOR}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ fucking\ constructor.}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00031}\mbox{\hyperlink{class_techstorm_1_1_renderer_a8f2fe9e6c241b6ed4199fee4f554d822}{00031}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_renderer_a8f2fe9e6c241b6ed4199fee4f554d822}{Renderer}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_renderer_a78370d39c27a84bb070f46ad9f025fd9}{initialize}}();}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00034}00034\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_a78370d39c27a84bb070f46ad9f025fd9}{initialize}}();}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_a6b465cdcb206cc609273c427472f1f91}{render}}(\mbox{\hyperlink{class_techstorm_1_1_game_camera}{GameCamera}}\&\ cam);}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_ab36d231a2601557ac2e475f7195cf7e9}{texture}}(\mbox{\hyperlink{class_techstorm_1_1_game_camera}{GameCamera}}\&\ cam);}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_adf4e8737c3fcc27873a17eb6eacd5728}{drawFBO}}();}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_aaa51949aa7f6e310ea7695e7691bbefa}{addGameObject}}(\mbox{\hyperlink{class_techstorm_1_1_game_object}{GameObject}}*\ gameObject);}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_a4faa04ea2c99117addfff3961c3b3f0a}{removeGameObject}}(\mbox{\hyperlink{class_techstorm_1_1_game_object}{GameObject}}*\ gameObject);}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_a41c59d81e76eb985a2959a8a9fae3d08}{addGameObjectGate}}(IGameObjectGate*\ gameObjectGate);}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_a8aae709fbaf80d4a2d09dd895208e9bf}{removeGameObjectGate}}(IGameObjectGate*\ gameObjectGate);}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_aa01832237f6fec2ceb82e6b0889f587a}{cleanup}}();}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_game_object_registry}{GameObjectRegistry}}\ mGameObjects;}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ RenderTexture2D\ mScreenBuffer;}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ Color\ mBackgroundColor\ =\ BLACK;}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ Color\ mFBOTint\ =\ WHITE;}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00053}00053\ \textcolor{preprocessor}{\#ifdef\ TS\_RENDERER\_2D}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ render2D(\mbox{\hyperlink{class_techstorm_1_1_game_camera}{GameCamera}}\&\ cam);}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00055}00055\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ render3D(\mbox{\hyperlink{class_techstorm_1_1_game_camera}{GameCamera}}\&\ cam);}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00057}00057\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00058}00058\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00059}00059\ \}}
+
+\end{DoxyCode}
