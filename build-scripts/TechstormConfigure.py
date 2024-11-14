@@ -20,7 +20,9 @@ def DoesBuildFolderExist():
     return os.path.exists("build")
 
 def RemoveBuildFolder():
-    os.rmdir("build")
+
+    os.rmdir("../build")
+    os.chdir("build-scripts")
 
 def CheckConanStep():
     print("Checking for Conan...")
@@ -49,21 +51,52 @@ def InstallPackagesStep():
 
     if DoesBuildFolderExist() == True and removeBuildDir == True:
         print("Removing build folder...")
+        print(os.curdir.capitalize())
+        
         RemoveBuildFolder()
         print("Done removing build folder.\n")
 
-
+    profileExists = False
+    try:
+        profileExists = subprocess.check_call(['conan', 'profile', 'detect'])
+    except:
+        pass
+    else:
+        conanProfilePath = subprocess.getoutput(['conan', 'profile', 'path', 'default'])
+            
+        # Change compiler.cppstd in the file at conanProfilePath to compiler.cppstd=20
+        fileTest = open(conanProfilePath, "r")
+        lines = fileTest.readlines()
+        print(lines)
+        fileTest.close()
+        fileTest = open(conanProfilePath, "w")
+        for line in lines:
+            if "compiler.cppstd=14" in line:
+                line = line.replace("14", "20")
+            elif "compiler.cppstd=17" in line:
+                line = line.replace("17", "20")
+            elif "compiler.cppstd=20" in line:
+                break
+            fileTest.write(line)
+        fileTest.close()
+    os.chdir("..")
     if packageConfigsInstalled[0] == True:
         print("Installing debug packages...")
         subprocess.check_call(['conan', 'install', '.', '--output-folder=build', '--build=missing', '-s', 'build_type=Debug'])
+        
+        # Create a file in the cache folder that indicates that debug packages are installed
+        buildTypeIndicator = open("cache/installedDebug.pkgstate", "w")
+        buildTypeIndicator.close()
 
         print("Done installing debug packages.\n")
-
-
 
     if packageConfigsInstalled[1] == True:
         print("Installing release packages...")
         subprocess.check_call(['conan', 'install', '.', '--output-folder=build', '--build=missing', '-s', 'build_type=Release'])
+
+        # Create a file in the cache folder that indicates that release packages are installed
+        buildTypeIndicator = open("cache/installedRelease.pkgstate", "w")
+        buildTypeIndicator.close()
 
         print("Done installing release packages.\n")
 
@@ -72,53 +105,21 @@ def InstallPackagesStep():
         print("Installing distribution packages...")
         subprocess.check_call(['conan', 'install', '.', '--output-folder=build', '--build=missing', '-s', 'build_type=Distribution'])
 
+        # Create a file in the cache folder that indicates that distribution packages are installed
+        buildTypeIndicator = open("cache/installedDistribution.pkgstate", "w")
+        buildTypeIndicator.close()
+
         print("Done installing distribution packages.\n")
 
     print("Done installing packages.\n")
     return packageConfigsInstalled
 
-def GenerateProjectStep():
-    print("Generating project...")
-    os.chdir("build")
-    subprocess.check_call(['cmake', '..', '-G', 'Visual Studio 17 2022', '-DCMAKE_TOOLCHAIN_FILE=build\conan_toolchain.cmake'])
-    print("Done generating project.\n")
-
-def BuildProject(type):
-    print("Building project of type " + type + "...")
-    subprocess.check_call(['cmake', '--build', '.', '--config=' + type])
-    print("Done building project.\n")
-
 print("Configuring Techstorm...")
 
-os.chdir("../")
+lockConfigFileExists = os.path.exists("cache/lock-configure.lock")
 
-CheckConanStep()
-conf = InstallPackagesStep()
-GenerateProjectStep()
-
-print("Building project...")
-
-installedDebug = conf[0]
-installedRelease = conf[1]
-installedDistribution = conf[2]
-
-if installedDebug == True:
-    print("Building debug packages and project...")
-    BuildProject("Debug")
-    print("Done building debug packages and project.\n")
-
-if installedRelease == True:
-    print("Building release packages and project...")
-    BuildProject("Release")
-    print("Done building release packages and project.\n")
-
-if installedDistribution == True:
-    print("Building distribution packages and project...")
-    BuildProject("Distribution")
-    print("Done building distribution packages and project.\n")
-
-print("Done building project.\n")
-    
-os.chdir("..")
-
-print("Techstorm is now configured and built. Go to the build folder, and click on the Techstorm.sln solution to begin working. Happy coding, you magnificent developer! :)")
+if lockConfigFileExists == False:
+    CheckConanStep()
+    InstallPackagesStep()
+else:
+    print("Techstorm is already configured. To force reconfiguration, delete the file cache/lock-configure.lock \n")

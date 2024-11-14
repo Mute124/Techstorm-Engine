@@ -368,3 +368,5 @@ build
 out
 
 .vscode
+*.lock
+*.pkgstate
