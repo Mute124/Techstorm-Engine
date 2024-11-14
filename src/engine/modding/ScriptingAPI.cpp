@@ -1,5 +1,9 @@
 #include "ScriptingAPI.h"
 
+/// <summary>
+/// Initializes the scripting.
+/// </summary>
+/// <returns></returns>
 int Techstorm::InitializeScripting()
 {
 	return 0;
