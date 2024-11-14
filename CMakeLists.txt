@@ -1,6 +1,5 @@
 ﻿cmake_minimum_required(VERSION 3.29)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(CMAKE_BUILD_TYPE Debug)
 # Enable Hot Reload for MSVC compilers if supported.
 if (POLICY CMP0141)
   cmake_policy(SET CMP0141 NEW)
@@ -11,16 +10,11 @@ endif()
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release;Distribution")
+
 if(NOT DEFINED TS_CUSTOM_CONFIGURATIONS)
     # The configurations we support
     #set(CMAKE_CONFIGURATION_TYPES "Debug;Release;Distribution")
 endif()
-
-# Set build type if not specified
-if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Release)
-endif()
-
 
 # Output directories
 
@@ -51,6 +45,20 @@ endif()
 if (WIN32)
     set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 endif()
+
+execute_process(
+    COMMAND python3 build-scripts\TechstormConfigure.py
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}\build-scripts
+    RESULT_VARIABLE result
+    OUTPUT_VARIABLE output
+    ERROR_VARIABLE error
+)
+
+if(NOT result EQUAL 0)
+    message(FATAL_ERROR "Failed to configure Techstorm: ${error}")
+endif()
+
+message(STATUS "Configuring Techstorm: ${output}")
 
 # Set project name
 project(TechStorm LANGUAGES CXX C)
