@@ -79,7 +79,7 @@ def InstallPackagesStep():
                 break
             fileTest.write(line)
         fileTest.close()
-    os.chdir("..")
+    # os.chdir("..")
     if packageConfigsInstalled[0] == True:
         print("Installing debug packages...")
         subprocess.check_call(['conan', 'install', '.', '--output-folder=build', '--build=missing', '-s', 'build_type=Debug'])
