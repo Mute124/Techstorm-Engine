@@ -96,11 +96,11 @@ CPMAddPackage(
 )
 
 
-find_package(ZLIB)
-find_package(joltphysics)
-find_package(libconfig)
-find_package(Angelscript)
-find_package(sol2)
+find_package(ZLIB REQUIRED)
+find_package(joltphysics REQUIRED)
+find_package(libconfig REQUIRED)
+find_package(Angelscript REQUIRED)
+find_package(sol2 REQUIRED)
 
 
 set(DOUBLE_PRECISION OFF)
