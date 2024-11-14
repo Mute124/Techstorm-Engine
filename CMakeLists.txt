@@ -85,11 +85,13 @@ CPMAddPackage(
 )
 
 option(WIN32_LEAN_AND_MEAN ON)
-find_package(ZLIB REQUIRED)
-find_package(joltphysics REQUIRED)
-find_package(libconfig REQUIRED)
-find_package(Angelscript REQUIRED)
-find_package(sol2 REQUIRED)
+
+
+find_package(ZLIB)
+find_package(joltphysics)
+find_package(libconfig)
+find_package(Angelscript)
+find_package(sol2)
 
 set(DOUBLE_PRECISION OFF)
 set(GENERATE_DEBUG_SYMBOLS OFF)
