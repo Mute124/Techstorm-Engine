@@ -58,7 +58,6 @@ if lockConfigFileExists == False:
         BuildProject("Distribution")
         print("Done building distribution packages and project.\n")
 
-    os.chdir("..")
     print("Done building project.\n")
 
     print("Techstorm is now configured and built. Go to the build folder, and click on the Techstorm.sln solution to begin working. Happy coding, you magnificent developer! :)")

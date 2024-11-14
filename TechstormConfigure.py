@@ -21,7 +21,7 @@ def DoesBuildFolderExist():
 
 def RemoveBuildFolder():
 
-    os.rmdir("../build")
+    os.rmdir("build")
     os.chdir("build-scripts")
 
 def CheckConanStep():
