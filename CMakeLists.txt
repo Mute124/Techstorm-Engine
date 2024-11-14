@@ -26,21 +26,25 @@ if (WIN32)
     message(STATUS "${CMAKE_SOURCE_DIR}\\build-scripts\\build-windows.bat")
 
     if (NOT EXISTS "${CMAKE_SOURCE_DIR}/cache/lock-configure.lock")
-        write_file("${CMAKE_SOURCE_DIR}/cache/lock-configure.lock" "1")
-        execute_process(
-            # Add or remove arguments as needed. Use --debug for debug packages, --release for release packages, and --distribution for distribution packages
-            COMMAND "${CMAKE_SOURCE_DIR}/build-windows.bat"
-            RESULT_VARIABLE result
-            OUTPUT_VARIABLE output
-            ERROR_VARIABLE error_output
-        )
-        message(STATUS "${result}")
-        if(NOT ${result} EQUAL 0)
-            message(FATAL_ERROR "The command failed with error: ${error_output}, ${output}")
-        endif()
+        
+        #execute_process(
+        #    # Add or remove arguments as needed. Use --debug for debug packages, --release for release packages, and --distribution for distribution packages
+        #    COMMAND "${CMAKE_SOURCE_DIR}/build-windows.bat"
+        #    RESULT_VARIABLE result
+        #    OUTPUT_VARIABLE output
+        #    ERROR_VARIABLE error_output
+        #)
+        #message(STATUS "${result}")
+        #if(NOT ${result} EQUAL 0)
+        #    message(FATAL_ERROR "The command failed with error: ${error_output}, ${output}")
+        #endif()
 
        
-
+        #        cmake -B ${{ steps.strings.outputs.build-output-dir }}
+        #-DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }}
+        #-DCMAKE_C_COMPILER=${{ matrix.c_compiler }}
+        #-DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+        #-S ${{ github.workspace }}
     endif()
 else()
     execute_process(
