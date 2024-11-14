@@ -1,0 +1,35 @@
+\doxysection{File\+System.\+h}
+\hypertarget{_file_system_8h_source}{}\label{_file_system_8h_source}\index{C:/Dev/Techstorm-\/v5/src/engine/fs/FileSystem.h@{C:/Dev/Techstorm-\/v5/src/engine/fs/FileSystem.h}}
+\mbox{\hyperlink{_file_system_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <unordered\_set>}}
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00009}00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_techstorm}{Techstorm}}\ \{}
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00010}\mbox{\hyperlink{namespace_techstorm_ae7f8562ce33e4da840f779f91dab42f7}{00010}}\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_techstorm_ae7f8562ce33e4da840f779f91dab42f7}{DirectoryFiles}}\ =\ std::vector<std::string>;}
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00012}\mbox{\hyperlink{namespace_techstorm_a722eb734aae8dcb25139fe5173dfa372}{00012}}\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_techstorm_a722eb734aae8dcb25139fe5173dfa372}{FileSystemMeta}}\ =\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00013}00013\ \ \ \ \ \ \ \ \ std::string\ extension;}
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00014}\mbox{\hyperlink{namespace_techstorm_aa33beb098b7e93e014fd874d0760fa4b}{00014}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{namespace_techstorm_aa33beb098b7e93e014fd874d0760fa4b}{path}};}
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00015}\mbox{\hyperlink{namespace_techstorm_af67668cd3c5e649019a81b8ae8a15acd}{00015}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{namespace_techstorm_af67668cd3c5e649019a81b8ae8a15acd}{filename}};}
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00016}00016\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespace_techstorm_ad005d326f9ccbbbf9be01f11f98f049d}{FileSystemIsProperlyFormatted}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ rootPath,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ directoryMapPath);}
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//DirectoryFiles\ GetDirectoryFiles(const\ char*\ directoryMapPath);}}
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00022}\mbox{\hyperlink{class_techstorm_1_1_file_system_registry}{00022}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_techstorm_1_1_file_system_registry}{FileSystemRegistry}}\ \{}
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_file_system_registry}{FileSystemRegistry}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ rootPath);}
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ FileSystemMeta>\ files;}
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00028}00028\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_file_system_8h_source_l00029}00029\ \}}
+
+\end{DoxyCode}

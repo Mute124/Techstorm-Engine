@@ -1,9 +1,12 @@
-﻿# Project shared library
+﻿
+
+# Project shared library
 add_library(engine_lib SHARED 
 	"engine.cpp"
     "engine.h" 
     "BasicCore.h" 
     "Project.h" 
+    "Project.cpp" 
     "renderer/Window.h" 
     "renderer/Window.cpp" 
     "renderer/Renderer.h" 
@@ -23,7 +26,7 @@ add_library(engine_lib SHARED
     "utils/DoublyLinkedList.h" 
     "world/world.h" 
     "renderer/RayStorm.h"   
-    "debug/Logging.h" 
+    "dbg/Logging.h" 
     "renderer/objects/PlaneObject.h"
     "world/tools/Terrain.h" 
     "renderer/IGameObjectGate.h"
@@ -41,9 +44,14 @@ add_library(engine_lib SHARED
     #"physics/PhysicsInitializer.h" 
     "physics/Physics.cpp"
     "conf/Config.h"
+    "conf/Config.cpp"
     "utils/Globals.h"
     "fs/FileSystem.h"
     "fs/FileSystem.cpp"
+    "renderer/WindowDecorations.h"
+    "EReturnCode.h"
+    "modding/ScriptingAPI.h"
+    "modding/ScriptingAPI.cpp"
 )
 
 target_include_directories(engine_lib PRIVATE ${PROJECT_SOURCE_DIR}/include )
@@ -54,6 +62,8 @@ target_link_libraries(engine_lib PUBLIC
     joltphysics_DEPS_TARGET
     libconfig::libconfig
     libconfig_libconfig_libconfig++_DEPS_TARGET
+    sol2::sol2
+    Angelscript::angelscript
     
 )
 

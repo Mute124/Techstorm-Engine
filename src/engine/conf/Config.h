@@ -6,11 +6,11 @@
 namespace Techstorm {
 	class ConfigFileRegistry {
 	public:
-		ConfigFileRegistry(const std::string& searchPath);
+		explicit ConfigFileRegistry(const std::string& searchPath);
 		ConfigFileRegistry();
 		~ConfigFileRegistry();
 
-	protected:
+	private:
 		std::unordered_map<std::string, libconfig::Config> mRegistry;
 	};
 }

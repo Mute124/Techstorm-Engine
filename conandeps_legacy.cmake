@@ -1,0 +1,16 @@
+message(STATUS "Conan: Using CMakeDeps conandeps_legacy.cmake aggregator via include()")
+message(STATUS "Conan: It is recommended to use explicit find_package() per dependency instead")
+
+find_package(joltphysics)
+find_package(libconfig)
+find_package(fltk)
+find_package(rmlui)
+find_package(ZLIB)
+find_package(dylib)
+find_package(asio)
+find_package(argh)
+find_package(imgui)
+find_package(sol2)
+find_package(Angelscript)
+
+set(CONANDEPS_LEGACY  joltphysics::joltphysics  libconfig::libconfig  fltk::fltk  rmlui::rmlui  ZLIB::ZLIB  dylib::dylib  asio::asio  argh  imgui::imgui  sol2::sol2  Angelscript::angelscript )

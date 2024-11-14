@@ -366,3 +366,5 @@ lib
 bin
 build
 out
+
+.vscode

@@ -1,0 +1,32 @@
+\doxysection{File\+System.\+cpp}
+\hypertarget{_file_system_8cpp_source}{}\label{_file_system_8cpp_source}\index{C:/Dev/Techstorm-\/v5/src/engine/fs/FileSystem.cpp@{C:/Dev/Techstorm-\/v5/src/engine/fs/FileSystem.cpp}}
+\mbox{\hyperlink{_file_system_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_file_system_8h}{FileSystem.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <raylib.h>}}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00003}\mbox{\hyperlink{namespace_techstorm_ad005d326f9ccbbbf9be01f11f98f049d}{00003}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespace_techstorm_ad005d326f9ccbbbf9be01f11f98f049d}{Techstorm::FileSystemIsProperlyFormatted}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ rootPath,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ directoryMapPath)}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00005}00005\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00006}00006\ \}}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00008}\mbox{\hyperlink{class_techstorm_1_1_file_system_registry_ad0b57635c2c10323104941e469c99943}{00008}}\ \mbox{\hyperlink{class_techstorm_1_1_file_system_registry_ad0b57635c2c10323104941e469c99943}{Techstorm::FileSystemRegistry::FileSystemRegistry}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ rootPath)}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00010}00010\ \ \ \ \ FilePathList\ files\ =\ LoadDirectoryFilesEx(rootPath,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ files.count;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{namespace_techstorm_aa33beb098b7e93e014fd874d0760fa4b}{path}}\ =\ files.paths[i];}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{namespace_techstorm_af67668cd3c5e649019a81b8ae8a15acd}{filename}}\ =\ \mbox{\hyperlink{namespace_techstorm_aa33beb098b7e93e014fd874d0760fa4b}{path}}.substr(\mbox{\hyperlink{namespace_techstorm_aa33beb098b7e93e014fd874d0760fa4b}{path}}.find\_last\_of(\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}})\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ std::string\ extension\ =\ \mbox{\hyperlink{namespace_techstorm_af67668cd3c5e649019a81b8ae8a15acd}{filename}}.substr(\mbox{\hyperlink{namespace_techstorm_af67668cd3c5e649019a81b8ae8a15acd}{filename}}.find\_last\_of(\textcolor{stringliteral}{"{}."{}})\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_a722eb734aae8dcb25139fe5173dfa372}{FileSystemMeta}}\ meta;}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ meta.path\ =\ \mbox{\hyperlink{namespace_techstorm_aa33beb098b7e93e014fd874d0760fa4b}{path}};}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ meta.filename\ =\ \mbox{\hyperlink{namespace_techstorm_af67668cd3c5e649019a81b8ae8a15acd}{filename}};}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ meta.extension\ =\ extension;}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ this-\/>files[\mbox{\hyperlink{namespace_techstorm_af67668cd3c5e649019a81b8ae8a15acd}{filename}}]\ =\ meta;}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}File:\ "{}}\ <<\ \mbox{\hyperlink{namespace_techstorm_af67668cd3c5e649019a81b8ae8a15acd}{filename}}\ <<\ std::endl\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tat:\ "{}}\ <<\ \mbox{\hyperlink{namespace_techstorm_aa33beb098b7e93e014fd874d0760fa4b}{path}}\ <<\ std::endl\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t\(\backslash\)tWith\ Extension\ of\ :\ "{}}\ <<\ extension\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00026}00026\ \}}
+
+\end{DoxyCode}
