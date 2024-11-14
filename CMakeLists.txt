@@ -47,8 +47,8 @@ if (WIN32)
 endif()
 
 execute_process(
-    COMMAND python3 build-scripts\TechstormConfigure.py
-    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}\build-scripts
+    COMMAND "python3 build-scripts\\TechstormConfigure.py"
+    WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}\\build-scripts"
     RESULT_VARIABLE result
     OUTPUT_VARIABLE output
     ERROR_VARIABLE error
