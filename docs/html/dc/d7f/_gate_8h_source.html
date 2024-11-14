@@ -101,29 +101,25 @@ $(document).ready(function(){initNavTree('dc/d7f/_gate_8h_source.html','../../')
 <a href="../../dc/d7f/_gate_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d4/d26/namespace_techstorm.html">Techstorm</a> {</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">    * A gate is a class that acts as, well, a gate! An example of it&#39;s use is in the GameObjectRegistry class. When an GameObject is added, it will first be passed through</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">    * all the gates before being added to the registry. Think of it as an assembly line.</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="../../d6/d46/class_techstorm_1_1_gate.html">   10</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d6/d46/class_techstorm_1_1_gate.html">Gate</a> {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="../../d6/d46/class_techstorm_1_1_gate.html#aaa68be86ae0d2c83e05e62190edecfd9">   12</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/d46/class_techstorm_1_1_gate.html#aaa68be86ae0d2c83e05e62190edecfd9">process</a>(T entree) = 0;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    };</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../d6/d46/class_techstorm_1_1_gate.html">   11</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d6/d46/class_techstorm_1_1_gate.html">Gate</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../d6/d46/class_techstorm_1_1_gate.html#aaa68be86ae0d2c83e05e62190edecfd9">   19</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/d46/class_techstorm_1_1_gate.html#aaa68be86ae0d2c83e05e62190edecfd9">process</a>(T entree) = 0;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    };</div>
 </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
-<div class="ttc" id="aclass_techstorm_1_1_gate_html"><div class="ttname"><a href="../../d6/d46/class_techstorm_1_1_gate.html">Techstorm::Gate</a></div><div class="ttdef"><b>Definition</b> <a href="../../dc/d7f/_gate_8h_source.html#l00010">Gate.h:10</a></div></div>
-<div class="ttc" id="aclass_techstorm_1_1_gate_html_aaa68be86ae0d2c83e05e62190edecfd9"><div class="ttname"><a href="../../d6/d46/class_techstorm_1_1_gate.html#aaa68be86ae0d2c83e05e62190edecfd9">Techstorm::Gate::process</a></div><div class="ttdeci">virtual void process(T entree)=0</div></div>
-<div class="ttc" id="anamespace_techstorm_html"><div class="ttname"><a href="../../d4/d26/namespace_techstorm.html">Techstorm</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d90/_basic_core_8h_source.html#l00003">BasicCore.h:3</a></div></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
+<div class="ttc" id="aclass_techstorm_1_1_gate_html"><div class="ttname"><a href="../../d6/d46/class_techstorm_1_1_gate.html">Techstorm::Gate</a></div><div class="ttdoc">A class that acts as, well, a gate! It is essentially as a piece of machinery on an assembly line....</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d7f/_gate_8h_source.html#l00011">Gate.h:11</a></div></div>
+<div class="ttc" id="aclass_techstorm_1_1_gate_html_aaa68be86ae0d2c83e05e62190edecfd9"><div class="ttname"><a href="../../d6/d46/class_techstorm_1_1_gate.html#aaa68be86ae0d2c83e05e62190edecfd9">Techstorm::Gate::process</a></div><div class="ttdeci">virtual void process(T entree)=0</div><div class="ttdoc">Processes the specified entree.</div></div>
+<div class="ttc" id="anamespace_techstorm_html"><div class="ttname"><a href="../../d4/d26/namespace_techstorm.html">Techstorm</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d47/_application_utils_8h_source.html#l00013">ApplicationUtils.h:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="../../dir_ad45fcc0c842cd88b5556c32fab80eb5.html">utils</a></li><li class="navelem"><a class="el" href="../../dc/d7f/_gate_8h.html">Gate.h</a></li>
-    <li class="footer">Generated on Tue Nov 12 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu Nov 14 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

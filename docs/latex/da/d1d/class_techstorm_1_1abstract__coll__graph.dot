@@ -11,7 +11,7 @@ digraph "Techstorm::abstract&lt; K, D, T &gt;"
   Node3 -> Node1 [id="edge6_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="Techstorm::Gate\< GameObject * \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$d6/d46/class_techstorm_1_1_gate.html",tooltip=" "];
   Node4 -> Node1 [id="edge7_Node000001_Node000004",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" mRenderer",fontcolor="grey" ];
-  Node4 [id="Node000004",label="Techstorm::Renderer",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$d4/d22/class_techstorm_1_1_renderer.html",tooltip=" "];
-  Node5 -> Node1 [id="edge8_Node000001_Node000005",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" mWindow",fontcolor="grey" ];
-  Node5 [id="Node000005",label="Techstorm::Window",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$da/d10/class_techstorm_1_1_window.html",tooltip=" "];
+  Node4 [id="Node000004",label="Techstorm::Renderer",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$d4/d22/class_techstorm_1_1_renderer.html",tooltip="Serves as the renderer for the game."];
+  Node5 -> Node1 [id="edge8_Node000001_Node000005",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" mWindowDecorations",fontcolor="grey" ];
+  Node5 [id="Node000005",label="Techstorm::WindowDecorations",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$d2/d61/struct_techstorm_1_1_window_decorations.html",tooltip="Window decorations are a set of parameters that are used to configure the window. This includes title..."];
 }

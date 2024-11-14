@@ -10,11 +10,11 @@ var dir_eedbc0f69b08006c72429a8d2b33a57d =
     [ "GameObjectRegistry.h", "d9/dfc/_game_object_registry_8h.html", "d9/dfc/_game_object_registry_8h" ],
     [ "IGameObjectGate.cpp", "df/d87/_i_game_object_gate_8cpp.html", null ],
     [ "IGameObjectGate.h", "db/d88/_i_game_object_gate_8h.html", "db/d88/_i_game_object_gate_8h" ],
-    [ "RayStorm.h", "dc/d52/_ray_storm_8h.html", null ],
     [ "Renderer.cpp", "da/d84/_renderer_8cpp.html", "da/d84/_renderer_8cpp" ],
     [ "Renderer.h", "d3/da0/_renderer_8h.html", "d3/da0/_renderer_8h" ],
     [ "RenderLayer.cpp", "da/d6a/_render_layer_8cpp.html", null ],
     [ "RenderLayer.h", "da/de1/_render_layer_8h.html", "da/de1/_render_layer_8h" ],
     [ "Window.cpp", "d3/db8/_window_8cpp.html", null ],
-    [ "Window.h", "de/d42/_window_8h.html", "de/d42/_window_8h" ]
+    [ "Window.h", "de/d42/_window_8h.html", "de/d42/_window_8h" ],
+    [ "WindowDecorations.h", "d3/d19/_window_decorations_8h.html", "d3/d19/_window_decorations_8h" ]
 ];

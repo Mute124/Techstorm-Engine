@@ -32,6 +32,7 @@ var annotated_dup =
       [ "Vec3", "d9/db6/struct_techstorm_1_1_vec3.html", "d9/db6/struct_techstorm_1_1_vec3" ],
       [ "Vec4", "dc/d7f/struct_techstorm_1_1_vec4.html", "dc/d7f/struct_techstorm_1_1_vec4" ],
       [ "Window", "da/d10/class_techstorm_1_1_window.html", "da/d10/class_techstorm_1_1_window" ],
+      [ "WindowDecorations", "d2/d61/struct_techstorm_1_1_window_decorations.html", "d2/d61/struct_techstorm_1_1_window_decorations" ],
       [ "World", "d1/d78/class_techstorm_1_1_world.html", null ]
     ] ],
     [ "Project", "d9/d6e/class_project.html", "d9/d6e/class_project" ]

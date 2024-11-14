@@ -2,37 +2,42 @@
 \hypertarget{class_techstorm_1_1_renderer}{}\label{class_techstorm_1_1_renderer}\index{Techstorm::Renderer@{Techstorm::Renderer}}
 
 
+Serves as the renderer for the game.  
+
+
+
+
 {\ttfamily \#include $<$Renderer.\+h$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_techstorm_1_1_renderer_a8f2fe9e6c241b6ed4199fee4f554d822}{Renderer}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \doxylink{class_techstorm_1_1_renderer}{Renderer} class. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_techstorm_1_1_renderer_a78370d39c27a84bb070f46ad9f025fd9}{initialize}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Initializes this instance. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_techstorm_1_1_renderer_a6b465cdcb206cc609273c427472f1f91}{render}} (\mbox{\hyperlink{class_techstorm_1_1_game_camera}{Game\+Camera}} \&cam)
-\item 
+\begin{DoxyCompactList}\small\item\em Renders the render texture to the screen using the specified camera. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_techstorm_1_1_renderer_ab36d231a2601557ac2e475f7195cf7e9}{texture}} (\mbox{\hyperlink{class_techstorm_1_1_game_camera}{Game\+Camera}} \&cam)
-\item 
+\begin{DoxyCompactList}\small\item\em Textures the scene to the render texture using the specified camera. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_techstorm_1_1_renderer_adf4e8737c3fcc27873a17eb6eacd5728}{draw\+FBO}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Draws the FBO/\+Render\+Texture2D. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_techstorm_1_1_renderer_aaa51949aa7f6e310ea7695e7691bbefa}{add\+Game\+Object}} (\mbox{\hyperlink{class_techstorm_1_1_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*}game\+Object)
-\item 
+\begin{DoxyCompactList}\small\item\em Adds the game object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_techstorm_1_1_renderer_a4faa04ea2c99117addfff3961c3b3f0a}{remove\+Game\+Object}} (\mbox{\hyperlink{class_techstorm_1_1_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*}game\+Object)
-\item 
+\begin{DoxyCompactList}\small\item\em Removes a game object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_techstorm_1_1_renderer_a41c59d81e76eb985a2959a8a9fae3d08}{add\+Game\+Object\+Gate}} (IGame\+Object\+Gate \texorpdfstring{$\ast$}{*}game\+Object\+Gate)
-\item 
+\begin{DoxyCompactList}\small\item\em Adds a game object gate. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_techstorm_1_1_renderer_a8aae709fbaf80d4a2d09dd895208e9bf}{remove\+Game\+Object\+Gate}} (IGame\+Object\+Gate \texorpdfstring{$\ast$}{*}game\+Object\+Gate)
-\item 
+\begin{DoxyCompactList}\small\item\em Removes a game object gate. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_techstorm_1_1_renderer_aa01832237f6fec2ceb82e6b0889f587a}{cleanup}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Cleanups this instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Serves as the renderer for the game. 
 
-
-Definition at line \mbox{\hyperlink{_renderer_8h_source_l00027}{27}} of file \mbox{\hyperlink{_renderer_8h_source}{Renderer.\+h}}.
+Definition at line \mbox{\hyperlink{_renderer_8h_source_l00030}{30}} of file \mbox{\hyperlink{_renderer_8h_source}{Renderer.\+h}}.
 
 
 
@@ -45,14 +50,12 @@ Definition at line \mbox{\hyperlink{_renderer_8h_source_l00027}{27}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{_renderer_8h_source_l00031}{31}} of file \mbox{\hyperlink{_renderer_8h_source}{Renderer.\+h}}.
+Initializes a new instance of the \doxylink{class_techstorm_1_1_renderer}{Renderer} class. 
 
 
 
-References \mbox{\hyperlink{_renderer_8cpp_source_l00023}{initialize()}}.
+Definition at line \mbox{\hyperlink{_renderer_8h_source_l00036}{36}} of file \mbox{\hyperlink{_renderer_8h_source}{Renderer.\+h}}.
 
-Here is the call graph for this function\+:
-% FIG 0
 
 
 \doxysubsection{Member Function Documentation}
@@ -62,6 +65,15 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{addGameObject()}{addGameObject()}}
 {\footnotesize\ttfamily void Techstorm\+::\+Renderer\+::add\+Game\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_techstorm_1_1_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*}}]{game\+Object }\end{DoxyParamCaption})}
 
+
+
+Adds the game object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Object} & The game object pointer to add.\\
+\hline
+\end{DoxyParams}
 
 
 Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00061}{61}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
@@ -74,6 +86,20 @@ Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00061}{61}} of file \
 
 
 
+Adds a game object gate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Object\+Gate} & The game object gate pointer to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+IGame\+Object\+Gate
+
+
+\end{DoxySeeAlso}
+
+
 Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00071}{71}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
 
 \Hypertarget{class_techstorm_1_1_renderer_aa01832237f6fec2ceb82e6b0889f587a}\label{class_techstorm_1_1_renderer_aa01832237f6fec2ceb82e6b0889f587a} 
@@ -81,6 +107,10 @@ Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00071}{71}} of file \
 \index{cleanup@{cleanup}!Techstorm::Renderer@{Techstorm::Renderer}}
 \doxysubsubsection{\texorpdfstring{cleanup()}{cleanup()}}
 {\footnotesize\ttfamily void Techstorm\+::\+Renderer\+::cleanup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cleanups this instance. 
 
 
 
@@ -94,6 +124,10 @@ Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00074}{74}} of file \
 
 
 
+Draws the FBO/\+Render\+Texture2D. 
+
+
+
 Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
 
 \Hypertarget{class_techstorm_1_1_renderer_a78370d39c27a84bb070f46ad9f025fd9}\label{class_techstorm_1_1_renderer_a78370d39c27a84bb070f46ad9f025fd9} 
@@ -104,20 +138,27 @@ Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00056}{56}} of file \
 
 
 
+Initializes this instance. 
+
+
+
 Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
 
-
-
-Referenced by \mbox{\hyperlink{engine_2_project_8h_source_l00078}{Techstorm\+::abstract$<$ K, D, T $>$\+::init\+Renderer()}}, and \mbox{\hyperlink{_renderer_8h_source_l00031}{Renderer()}}.
-
-Here is the caller graph for this function\+:
-% FIG 1
 \Hypertarget{class_techstorm_1_1_renderer_a4faa04ea2c99117addfff3961c3b3f0a}\label{class_techstorm_1_1_renderer_a4faa04ea2c99117addfff3961c3b3f0a} 
 \index{Techstorm::Renderer@{Techstorm::Renderer}!removeGameObject@{removeGameObject}}
 \index{removeGameObject@{removeGameObject}!Techstorm::Renderer@{Techstorm::Renderer}}
 \doxysubsubsection{\texorpdfstring{removeGameObject()}{removeGameObject()}}
 {\footnotesize\ttfamily void Techstorm\+::\+Renderer\+::remove\+Game\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_techstorm_1_1_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*}}]{game\+Object }\end{DoxyParamCaption})}
 
+
+
+Removes a game object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Object} & The game object pointer to remove.\\
+\hline
+\end{DoxyParams}
 
 
 Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00066}{66}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
@@ -130,6 +171,20 @@ Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00066}{66}} of file \
 
 
 
+Removes a game object gate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Object\+Gate} & The game object gate pointer to remove.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+IGame\+Object\+Gate
+
+
+\end{DoxySeeAlso}
+
+
 Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00072}{72}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
 
 \Hypertarget{class_techstorm_1_1_renderer_a6b465cdcb206cc609273c427472f1f91}\label{class_techstorm_1_1_renderer_a6b465cdcb206cc609273c427472f1f91} 
@@ -140,6 +195,15 @@ Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00072}{72}} of file \
 
 
 
+Renders the render texture to the screen using the specified camera. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cam} & The cam.\\
+\hline
+\end{DoxyParams}
+
+
 Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.
 
 \Hypertarget{class_techstorm_1_1_renderer_ab36d231a2601557ac2e475f7195cf7e9}\label{class_techstorm_1_1_renderer_ab36d231a2601557ac2e475f7195cf7e9} 
@@ -148,6 +212,15 @@ Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00030}{30}} of file \
 \doxysubsubsection{\texorpdfstring{texture()}{texture()}}
 {\footnotesize\ttfamily void Techstorm\+::\+Renderer\+::texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_techstorm_1_1_game_camera}{Game\+Camera}} \&}]{cam }\end{DoxyParamCaption})}
 
+
+
+Textures the scene to the render texture using the specified camera. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cam} & The cam.\\
+\hline
+\end{DoxyParams}
 
 
 Definition at line \mbox{\hyperlink{_renderer_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{_renderer_8cpp_source}{Renderer.\+cpp}}.

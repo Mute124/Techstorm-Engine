@@ -1,0 +1,126 @@
+\chapter{Dependencies}
+\hypertarget{index}{}\label{index}\index{Dependencies@{Dependencies}}
+\label{index_dependencies}%
+\Hypertarget{index_dependencies}%
+ \DoxyHorRuler{0}
+
+
+As it is a game engine, \doxylink{namespace_techstorm}{Techstorm} has alot of dependencies and can be found within the conanfile.\+txt in the same folder as the main CMake\+Lists.\+txt file. In addition to this, the current dependencies are listed as listed below with it\textquotesingle{}s basic purpose.
+
+
+\begin{DoxyItemize}
+\item Jolt Physics
+\begin{DoxyItemize}
+\item Handle \doxylink{namespace_techstorm}{Techstorm}\textquotesingle{}s physics.
+\item \href{https://jrouwe.github.io/JoltPhysics/index.html}{\texttt{ Online Documentation}}
+\item \href{https://github.com/jrouwe/JoltPhysics/tree/master}{\texttt{ Github}}
+\end{DoxyItemize}
+\item Libconfig
+\begin{DoxyItemize}
+\item Handle configuration file read/write.
+\item \href{http://hyperrealm.github.io/libconfig/libconfig_manual.html}{\texttt{ Online Documentation}}
+\item \href{https://github.com/hyperrealm/libconfig}{\texttt{ Github}}
+\item \href{http://hyperrealm.github.io/libconfig/}{\texttt{ Website}}
+\end{DoxyItemize}
+\item Rml\+Ui
+\begin{DoxyItemize}
+\item Handle \doxylink{namespace_techstorm}{Techstorm}\textquotesingle{}s UI with HTML/\+CSS.
+\item \href{https://mikke89.github.io/RmlUiDoc/}{\texttt{ Online Documentation}}
+\item \href{https://github.com/mikke89/RmlUi}{\texttt{ Github}}
+\end{DoxyItemize}
+\item Asio
+\begin{DoxyItemize}
+\item Provides \doxylink{namespace_techstorm}{Techstorm}\textquotesingle{}s networking functionality
+\item \href{https://think-async.com/Asio/asio-1.30.2/doc/}{\texttt{ Online Documentation}}
+\item \href{https://think-async.com/Asio/}{\texttt{ Website}}
+\end{DoxyItemize}
+\item Argh
+\begin{DoxyItemize}
+\item Command line parsing library that is mainly used by tools.
+\item \href{https://github.com/adishavit/argh/blob/master/README.md}{\texttt{ Online Documentation}}
+\item \href{https://github.com/adishavit/argh}{\texttt{ Github}}
+\end{DoxyItemize}
+\item Dear Im\+GUI
+\begin{DoxyItemize}
+\item Provides an in-\/game debug UI for developers.
+\item \href{https://github.com/ocornut/imgui/wiki}{\texttt{ Online Documentation}}
+\item \href{https://github.com/ocornut/imgui}{\texttt{ Github}}
+\end{DoxyItemize}
+\item Sol2
+\begin{DoxyItemize}
+\item Provides Lua scripting and modding support.
+\item \href{https://sol2.readthedocs.io/en/latest/}{\texttt{ Online Documentation}}
+\item \href{https://github.com/ThePhD/sol2}{\texttt{ Github}}
+\end{DoxyItemize}
+\item Angel Script
+\begin{DoxyItemize}
+\item Provides a more advanced form of modding and scripting support.
+\item \href{https://www.angelcode.com/angelscript/documentation.html}{\texttt{ Online Documentation}}
+\item \href{https://www.angelcode.com/angelscript/}{\texttt{ Website}}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+If you want an indepth explanation of these dependencies and their implementation status, see \doxysectlink{detailed-analysis-of-dependencies}{Detailed Analysis Of Dependencies}{0}.\hypertarget{index_code-conventions}{}\doxysection{\texorpdfstring{Code Conventions}{Code Conventions}}\label{index_code-conventions}
+\DoxyHorRuler{0}
+
+
+\doxylink{namespace_techstorm}{Techstorm} tries to be as easy to read as possible by making the code read similarly to English. In addition, \doxylink{namespace_techstorm}{Techstorm} tries to be intuitive and understandable at a quick glance, hence it uses Pascal\+Case and Camel\+Case. As such, the code conventions are simple, as outlined below.
+
+Before you look at the conventions, look at the below key.\hypertarget{index_key}{}\doxysubsection{\texorpdfstring{Key}{Key}}\label{index_key}
+\DoxyHorRuler{0}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Case   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Meaning    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Case   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Meaning    }\\\cline{1-2}
+\endhead
+N/A   &Not applicable    \\\cline{1-2}
+\texorpdfstring{$\ast$}{*}   &Refers to anything depending on the whitespace.    \\\cline{1-2}
+Cap   &Capitalized. If in both the prefix {\bfseries{and}} suffix, that means the entire thing should be capitalized    \\\cline{1-2}
+\multirow{2}{*}{Cap 1st   }&First character is capitalized.    \\\cline{2-2}
+&Same as the above    \\\cline{1-2}
+See info   &See "{}\+Other Info"{}    \\\cline{1-2}
+Low   &Lower case. If in both the prefix {\bfseries{and}} suffix, that means the entire thing should be lowercase.    \\\cline{1-2}
+Low 1st   &First character is lowercase   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{index_variables}{}\doxysubsection{\texorpdfstring{Variables}{Variables}}\label{index_variables}
+\DoxyHorRuler{0}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Case   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Prefix   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Suffix   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Other info    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Case   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Prefix   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Suffix   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Other info    }\\\cline{1-4}
+\endhead
+Private Variables   &\multirow{2}{*}{m\texorpdfstring{$\ast$}{*}   }&\multirow{4}{*}{N/A   }&\\\cline{1-1}\cline{4-4}
+Protected Variables   &&&\\\cline{1-2}\cline{4-4}
+Static Variables   &s   &&\\\cline{1-2}\cline{4-4}
+Constant Variable   &c   &&\\\cline{1-4}
+Constant Global   &\multirow{2}{*}{Cap   }&\multirow{2}{*}{Cap   }&\multirow{2}{*}{For this case, it will follow snake case {\bfseries{in all caps}}    }\\\cline{1-1}
+Macro    &\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}\\\cline{1-4}
+local variable   &\multirow{2}{*}{low 1st   }&\multirow{2}{*}{N/A   }&\multirow{2}{*}{camel\+Case    }\\\cline{1-1}
+Parameter variable   &\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}\\\cline{1-4}
+\end{longtabu}
+
+
+\begin{quote}
+\mbox{[}!\+NOTE\mbox{]} Definition of a Constant Global A constant global is a variable that is not part of any type. For example, a macro. \end{quote}
+\hypertarget{index_functions}{}\doxysubsection{\texorpdfstring{Functions}{Functions}}\label{index_functions}
+\DoxyHorRuler{0}
+
+
+Functions are simple, any that are not bound to a specific object will have the first letter lowercase. If it is a static, namespace, or global function, then it will have the first letter capitalized instead. When it comes to Preprocessor functions, it will follow the same rules as Constant Global variables, as seen below\+:
+
+\begin{quote}
+ \texorpdfstring{$\vert$}{|} Constant Global \texorpdfstring{$\vert$}{|} Cap \texorpdfstring{$\vert$}{|} Cap \texorpdfstring{$\vert$}{|} For this case, it will follow snake case {\bfseries{in all caps}} \texorpdfstring{$\vert$}{|} \end{quote}

@@ -8,19 +8,21 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_techstorm_1_1_window_a0baa895bc297dd7720c63a7f5bd1c43b}{\texorpdfstring{$\sim$}{\string~}\+Window}} ()
-\item 
-int \mbox{\hyperlink{class_techstorm_1_1_window_a311516c05bd5d151a44f47bc9dd07d90}{initialize}} (uint16\+\_\+t width=600, uint16\+\_\+t height=800, const char \texorpdfstring{$\ast$}{*}title="{}Untitled Techstorm Project"{}, unsigned int window\+Config=0)
-\item 
+\begin{DoxyCompactList}\small\item\em Finalizes an instance of the \doxylink{class_techstorm_1_1_window}{Window} class. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_techstorm_1_1_window_a54d8ad108ed853f7552517f08ad59540}{initialize}} (int width=600, int height=800, const char \texorpdfstring{$\ast$}{*}title="{}Untitled Techstorm Project"{}, unsigned int window\+Config=0)
+\begin{DoxyCompactList}\small\item\em Initializes the specified width, height, title, and window configuration flags. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_techstorm_1_1_window_a461329f275325be87a740208fef6a909}{should\+Close}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Should the window close. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_techstorm_1_1_window_a4499b89994a32752cfc5e546f2dc5d8c}{is\+Ready}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Determines whether this instance is ready. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]Do not use this class as it will be removed. \end{DoxyRefDesc}
 
 
-Definition at line \mbox{\hyperlink{_window_8h_source_l00011}{11}} of file \mbox{\hyperlink{_window_8h_source}{Window.\+h}}.
+Definition at line \mbox{\hyperlink{_window_8h_source_l00012}{12}} of file \mbox{\hyperlink{_window_8h_source}{Window.\+h}}.
 
 
 
@@ -33,27 +35,47 @@ Definition at line \mbox{\hyperlink{_window_8h_source_l00011}{11}} of file \mbox
 
 
 
-Definition at line \mbox{\hyperlink{_window_8cpp_source_l00049}{49}} of file \mbox{\hyperlink{_window_8cpp_source}{Window.\+cpp}}.
+Finalizes an instance of the \doxylink{class_techstorm_1_1_window}{Window} class. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000002}{Deprecated}}]See class deprecation warning \end{DoxyRefDesc}
+
+
+Definition at line \mbox{\hyperlink{_window_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{_window_8cpp_source}{Window.\+cpp}}.
 
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_techstorm_1_1_window_a311516c05bd5d151a44f47bc9dd07d90}\label{class_techstorm_1_1_window_a311516c05bd5d151a44f47bc9dd07d90} 
+\Hypertarget{class_techstorm_1_1_window_a54d8ad108ed853f7552517f08ad59540}\label{class_techstorm_1_1_window_a54d8ad108ed853f7552517f08ad59540} 
 \index{Techstorm::Window@{Techstorm::Window}!initialize@{initialize}}
 \index{initialize@{initialize}!Techstorm::Window@{Techstorm::Window}}
 \doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
-{\footnotesize\ttfamily int Techstorm\+::\+Window\+::initialize (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{width = {\ttfamily 600},  }\item[{uint16\+\_\+t}]{height = {\ttfamily 800},  }\item[{const char \texorpdfstring{$\ast$}{*}}]{title = {\ttfamily "{}Untitled~Techstorm~Project"{}},  }\item[{unsigned int}]{window\+Config = {\ttfamily 0} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int Techstorm\+::\+Window\+::initialize (\begin{DoxyParamCaption}\item[{int}]{width = {\ttfamily 600},  }\item[{int}]{height = {\ttfamily 800},  }\item[{const char \texorpdfstring{$\ast$}{*}}]{title = {\ttfamily "{}Untitled~Techstorm~Project"{}},  }\item[{unsigned int}]{window\+Config = {\ttfamily 0} }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{_window_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{_window_8cpp_source}{Window.\+cpp}}.
+Initializes the specified width, height, title, and window configuration flags. 
 
 
+\begin{DoxyParams}{Parameters}
+{\em width} & The width.\\
+\hline
+{\em height} & The height.\\
+\hline
+{\em title} & The title.\\
+\hline
+{\em window\+Config} & The window configuration.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
 
-Referenced by \mbox{\hyperlink{engine_2_project_8h_source_l00071}{Techstorm\+::abstract$<$ K, D, T $>$\+::init\+Window()}}.
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000003}{Deprecated}}]See class deprecation warning \end{DoxyRefDesc}
 
-Here is the caller graph for this function\+:
-% FIG 0
+
+Definition at line \mbox{\hyperlink{_window_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{_window_8cpp_source}{Window.\+cpp}}.
+
 \Hypertarget{class_techstorm_1_1_window_a4499b89994a32752cfc5e546f2dc5d8c}\label{class_techstorm_1_1_window_a4499b89994a32752cfc5e546f2dc5d8c} 
 \index{Techstorm::Window@{Techstorm::Window}!isReady@{isReady}}
 \index{isReady@{isReady}!Techstorm::Window@{Techstorm::Window}}
@@ -62,7 +84,16 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{_window_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{_window_8cpp_source}{Window.\+cpp}}.
+Determines whether this instance is ready. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if this instance is ready; otherwise, {\ttfamily false}. 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000005}{Deprecated}}]See class deprecation warning \end{DoxyRefDesc}
+
+
+Definition at line \mbox{\hyperlink{_window_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{_window_8cpp_source}{Window.\+cpp}}.
 
 \Hypertarget{class_techstorm_1_1_window_a461329f275325be87a740208fef6a909}\label{class_techstorm_1_1_window_a461329f275325be87a740208fef6a909} 
 \index{Techstorm::Window@{Techstorm::Window}!shouldClose@{shouldClose}}
@@ -72,7 +103,16 @@ Definition at line \mbox{\hyperlink{_window_8cpp_source_l00039}{39}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{_window_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{_window_8cpp_source}{Window.\+cpp}}.
+Should the window close. 
+
+\begin{DoxyReturn}{Returns}
+The value of Window\+Should\+Close()
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000004}{Deprecated}}]See class deprecation warning \end{DoxyRefDesc}
+
+
+Definition at line \mbox{\hyperlink{_window_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{_window_8cpp_source}{Window.\+cpp}}.
 
 
 

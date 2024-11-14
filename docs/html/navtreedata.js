@@ -25,13 +25,17 @@
 var NAVTREE =
 [
   [ "Techstorm", "index.html", [
+    [ "Dependencies", "index.html", "index" ],
+    [ "Detailed Analysis Of Dependencies", "dc/dec/detailed-analysis-of-dependencies.html", null ],
+    [ "Deprecated List", "da/d58/deprecated.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
         [ "Functions", "namespacemembers_func.html", null ],
         [ "Variables", "namespacemembers_vars.html", null ],
-        [ "Typedefs", "namespacemembers_type.html", null ]
+        [ "Typedefs", "namespacemembers_type.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -59,8 +63,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d6/d34/class_techstorm_1_1abstract.html#aba25eb9fe166bd646e7416a15cd6c100",
-"de/dc7/class_techstorm_1_1_game_object_registry.html#af75ec8e9e2ba6166c17edfb3be3f101a"
+"d6/d34/class_techstorm_1_1abstract.html#a8dc719d2e5e4a477d1378d06fa38bab2",
+"dc/d3d/struct_techstorm_1_1_camera_data.html#a0e44e3b5921111ef0b8ef4133353bb36"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

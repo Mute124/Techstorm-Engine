@@ -82,8 +82,4 @@ digraph "C:/Dev/Techstorm-v5/src/engine/engine.cpp"
   Node7 -> Node14 [id="edge42_Node000007_Node000014",color="steelblue1",style="solid",tooltip=" "];
   Node2 -> Node35 [id="edge43_Node000002_Node000035",color="steelblue1",style="solid",tooltip=" "];
   Node35 [id="Node000035",label="renderer/Window.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$de/d42/_window_8h.html",tooltip=" "];
-  Node35 -> Node5 [id="edge44_Node000035_Node000005",color="steelblue1",style="solid",tooltip=" "];
-  Node35 -> Node14 [id="edge45_Node000035_Node000014",color="steelblue1",style="solid",tooltip=" "];
-  Node35 -> Node36 [id="edge46_Node000035_Node000036",color="steelblue1",style="solid",tooltip=" "];
-  Node36 [id="Node000036",label="rlgl.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
 }
