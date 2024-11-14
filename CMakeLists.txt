@@ -29,7 +29,7 @@ if (WIN32)
         write_file("${CMAKE_SOURCE_DIR}/cache/lock-configure.lock" "1")
         execute_process(
             # Add or remove arguments as needed. Use --debug for debug packages, --release for release packages, and --distribution for distribution packages
-            COMMAND "${CMAKE_SOURCE_DIR}/build-windows.bat"
+            COMMAND "./${CMAKE_SOURCE_DIR}/build-windows.bat"
             RESULT_VARIABLE result
             OUTPUT_VARIABLE output
             ERROR_VARIABLE error_output
