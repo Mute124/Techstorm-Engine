@@ -55,7 +55,7 @@ execute_process(
 )
 
 if(NOT result EQUAL 0)
-    message(FATAL_ERROR "Failed to configure Techstorm: ${error}")
+    message(STATUS "Failed to configure Techstorm: ${error}")
 endif()
 
 message(STATUS "Configuring Techstorm: ${output}")
@@ -94,13 +94,14 @@ CPMAddPackage(
 
 option(WIN32_LEAN_AND_MEAN ON)
 
+if (NOT result EQUAL 0)
+    find_package(ZLIB)
+    find_package(joltphysics)
+    find_package(libconfig)
+    find_package(Angelscript)
+    find_package(sol2)
 
-find_package(ZLIB)
-find_package(joltphysics)
-find_package(libconfig)
-find_package(Angelscript)
-find_package(sol2)
-
+endif()
 set(DOUBLE_PRECISION OFF)
 set(GENERATE_DEBUG_SYMBOLS OFF)
 set(CROSS_PLATFORM_DETERMINISTIC ON)
