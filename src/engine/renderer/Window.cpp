@@ -11,14 +11,14 @@ int Techstorm::Window::initialize(int width, int height, const char* title, unsi
 	int result = 0;
 #ifdef TS_RENDERER_RAYLIB
 	//SetConfigFlags(windowConfig);
-	InitWindow(this->mWidth, this->mHeight, this->mTitle);
+	//InitWindow(this->mWidth, this->mHeight, this->mTitle);
 	//rlglInit(this->mWidth, this->mHeight);
 
-	if (!IsWindowReady())
+/*	if (!IsWindowReady())
 	{
 		result = -1;
 		std::cout << "Failed to initialize window: " << std::endl;
-	}
+	}*/
 #endif
 	return result;
 }
@@ -29,7 +29,7 @@ bool Techstorm::Window::shouldClose()
 	bool result = false;
 
 #ifdef TS_RENDERER_RAYLIB
-	result = WindowShouldClose();
+	//result = WindowShouldClose();
 #endif
 
 	return result;
@@ -39,7 +39,7 @@ bool Techstorm::Window::isReady()
 {
 	bool result = false;
 #ifdef TS_RENDERER_RAYLIB
-	result = IsWindowReady();
+	//result = IsWindowReady();
 #endif
 
 	return result;
@@ -48,6 +48,6 @@ bool Techstorm::Window::isReady()
 Techstorm::Window::~Window()
 {
 #ifdef TS_RENDERER_RAYLIB
-	CloseWindow();
+	//CloseWindow();
 #endif
 }
