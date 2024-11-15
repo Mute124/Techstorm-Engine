@@ -2,7 +2,6 @@
 add_executable(setup_app "main.cpp")
 
 find_package(raylib REQUIRED)
-
 # Include directories
 target_include_directories(setup_app PRIVATE ${PROJECT_SOURCE_DIR}/include)
 #target_include_directories(setup_app PRIVATE ${PROJECT_SOURCE_DIR}/src/project)
