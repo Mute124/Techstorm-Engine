@@ -100,7 +100,7 @@ CPMAddPackage(
 )
 
 
-find_package(ZLIB REQUIRED)
+# find_package(ZLIB REQUIRED)
 find_package(joltphysics REQUIRED)
 find_package(libconfig REQUIRED)
 find_package(Angelscript REQUIRED)
