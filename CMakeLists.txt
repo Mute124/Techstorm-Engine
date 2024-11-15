@@ -95,7 +95,6 @@ CPMAddPackage(
     GIT_TAG 5.0
 )
 
-
 # find_package(ZLIB REQUIRED)
 find_package(joltphysics REQUIRED)
 find_package(libconfig REQUIRED)
