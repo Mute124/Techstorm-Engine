@@ -59,9 +59,6 @@ else()
 	endif()
 endif()
 
-
-
-
 # Platform-specific settings
 if(WIN32)
     set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)  # To export symbols from DLLs

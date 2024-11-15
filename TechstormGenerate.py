@@ -10,6 +10,9 @@ def RemoveBuildFolder():
 
 def GenerateProjectStep():
     print("Generating project...")
+
+    if DoesBuildFolderExist() == False:
+        os.mkdir("build")
     os.chdir("build")
     subprocess.check_call(['cmake', '..', '-G', 'Visual Studio 17 2022', '-DCMAKE_TOOLCHAIN_FILE=build\conan_toolchain.cmake'])
     print("Done generating project.\n")
