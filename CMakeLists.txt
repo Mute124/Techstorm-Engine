@@ -38,7 +38,6 @@ if (WIN32)
         #if(NOT ${result} EQUAL 0)
         #    message(FATAL_ERROR "The command failed with error: ${error_output}, ${output}")
         #endif()
-
        
         #        cmake -B ${{ steps.strings.outputs.build-output-dir }}
         #-DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }}
