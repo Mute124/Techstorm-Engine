@@ -10,5 +10,7 @@ var searchData=
   ['getlayername_7',['getlayername',['../d6/d34/class_techstorm_1_1abstract.html#a5f1179d895bce402db4acf68f20bf4fa',1,'Techstorm::abstract::getLayerName()'],['../db/d5d/class_techstorm_1_1_layer_registry.html#a1c31a5d5dd0c092e455b606560923b77',1,'Techstorm::LayerRegistry::getLayerName()']]],
   ['getnumbroadphaselayers_8',['GetNumBroadPhaseLayers',['../d5/dfa/class_techstorm_1_1_b_p_layer_interface.html#a0da8d7910b269f4fc48eae5578c70bf0',1,'Techstorm::BPLayerInterface']]],
   ['getproject_9',['GetProject',['../d6/d34/class_techstorm_1_1abstract.html#a9e393f6cee0d2d38f0b63783c9bf472a',1,'Techstorm::abstract']]],
-  ['getrelationship_10',['getRelationship',['../d3/d51/class_techstorm_1_1_object_l_p_f_1_1_l_p_f_relationships.html#a98430ffe5550fc8c6ba89b13b14ded8f',1,'Techstorm::ObjectLPF::LPFRelationships']]]
+  ['getrelationship_10',['getRelationship',['../d3/d51/class_techstorm_1_1_object_l_p_f_1_1_l_p_f_relationships.html#a98430ffe5550fc8c6ba89b13b14ded8f',1,'Techstorm::ObjectLPF::LPFRelationships']]],
+  ['getrenderer_11',['getRenderer',['../d6/d34/class_techstorm_1_1abstract.html#ab56d71e5112dc3bbf74416db21e961f0',1,'Techstorm::abstract']]],
+  ['getwindowdecorations_12',['getWindowDecorations',['../d6/d34/class_techstorm_1_1abstract.html#a1e1ac3ebe011afceaed6aaba2f3498ef',1,'Techstorm::abstract']]]
 ];

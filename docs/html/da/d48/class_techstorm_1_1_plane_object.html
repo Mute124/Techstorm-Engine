@@ -118,13 +118,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1be2ac56d77c3a04f81d09e263cb4e82" id="r_a1be2ac56d77c3a04f81d09e263cb4e82"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d48/class_techstorm_1_1_plane_object.html#a1be2ac56d77c3a04f81d09e263cb4e82">PlaneObject</a> ()</td></tr>
 <tr class="separator:a1be2ac56d77c3a04f81d09e263cb4e82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1b1f1708fb15875a3e388d1b765f054" id="r_ac1b1f1708fb15875a3e388d1b765f054"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d48/class_techstorm_1_1_plane_object.html#ac1b1f1708fb15875a3e388d1b765f054">render</a> () override</td></tr>
+<tr class="memdesc:ac1b1f1708fb15875a3e388d1b765f054"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders this instance. This is not a pure virtual and is empty because it is up to the user to use this as they see fit without forcing them to implement it.  <br /></td></tr>
 <tr class="separator:ac1b1f1708fb15875a3e388d1b765f054"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_techstorm_1_1_game_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_techstorm_1_1_game_object')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d4/de0/class_techstorm_1_1_game_object.html">Techstorm::GameObject</a></td></tr>
 <tr class="memitem:a185afdc862c8ef4e7da0083f2814321c inherit pub_methods_class_techstorm_1_1_game_object" id="r_a185afdc862c8ef4e7da0083f2814321c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de0/class_techstorm_1_1_game_object.html#a185afdc862c8ef4e7da0083f2814321c">GameObject</a> ()</td></tr>
 <tr class="separator:a185afdc862c8ef4e7da0083f2814321c inherit pub_methods_class_techstorm_1_1_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8420126f2adeaa0e1c4bed00c050264 inherit pub_methods_class_techstorm_1_1_game_object" id="r_af8420126f2adeaa0e1c4bed00c050264"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de0/class_techstorm_1_1_game_object.html#af8420126f2adeaa0e1c4bed00c050264">update</a> () override</td></tr>
+<tr class="memdesc:af8420126f2adeaa0e1c4bed00c050264 inherit pub_methods_class_techstorm_1_1_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates this instance and is called every frame before texturing/rendering. Keep in mind that this will run on the update thread, so make sure what you are doing is <b>thread safe</b>.  <br /></td></tr>
 <tr class="separator:af8420126f2adeaa0e1c4bed00c050264 inherit pub_methods_class_techstorm_1_1_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8808d57ba3f1196f6abb98f1d60c5c29 inherit pub_methods_class_techstorm_1_1_game_object" id="r_a8808d57ba3f1196f6abb98f1d60c5c29"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de0/class_techstorm_1_1_game_object.html#a8808d57ba3f1196f6abb98f1d60c5c29">destroy</a> () override</td></tr>
+<tr class="memdesc:a8808d57ba3f1196f6abb98f1d60c5c29 inherit pub_methods_class_techstorm_1_1_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys this instance, and is called right before the object is removed from memory. This must be implemented by the user.  <br /></td></tr>
 <tr class="separator:a8808d57ba3f1196f6abb98f1d60c5c29 inherit pub_methods_class_techstorm_1_1_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -182,6 +185,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Renders this instance. This is not a pure virtual and is empty because it is up to the user to use this as they see fit without forcing them to implement it. </p>
+
 <p>Reimplemented from <a class="el" href="../../d4/de0/class_techstorm_1_1_game_object.html#ab6b8d55fc3ce35f5db8c79a1920cd86b">Techstorm::GameObject</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/dd7/_plane_object_8h_source.html#l00013">13</a> of file <a class="el" href="../../d9/dd7/_plane_object_8h_source.html">PlaneObject.h</a>.</p>
@@ -197,7 +202,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/d26/namespace_techstorm.html">Techstorm</a></li><li class="navelem"><a class="el" href="../../da/d48/class_techstorm_1_1_plane_object.html">PlaneObject</a></li>
-    <li class="footer">Generated on Tue Nov 12 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu Nov 14 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

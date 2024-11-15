@@ -1,0 +1,25 @@
+\doxysection{Scripting\+API.\+h}
+\hypertarget{_scripting_a_p_i_8h_source}{}\label{_scripting_a_p_i_8h_source}\index{C:/Dev/Techstorm-\/v5/src/engine/modding/ScriptingAPI.h@{C:/Dev/Techstorm-\/v5/src/engine/modding/ScriptingAPI.h}}
+\mbox{\hyperlink{_scripting_a_p_i_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00002}\mbox{\hyperlink{_scripting_a_p_i_8h_af2bfaeb231432732b2fdd1c56da8e80d}{00002}}\ \textcolor{preprocessor}{\#define\ TS\_SCRIPTING\_LUA}}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00003}\mbox{\hyperlink{_scripting_a_p_i_8h_a5546a5c8c9f9db4259a42b6256bf5961}{00003}}\ \textcolor{preprocessor}{\#define\ TS\_SCRIPTING\_ANGELSCRIPT}}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00004}00004\ \textcolor{preprocessor}{\#ifdef\ TS\_SCRIPTING\_LUA}}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <sol/sol.hpp>}}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00006}00006\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00008}00008\ \textcolor{preprocessor}{\#ifdef\ TS\_SCRIPTING\_ANGELSCRIPT}}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <angelscript.h>}}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00010}00010\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}../utils/Singleton.h"{}}}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00013}00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_techstorm}{Techstorm}}\ \{}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespace_techstorm_afe4d0583ea45079bdba936b6ac4a1862}{InitializeScripting}}();}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespace_techstorm_a5f60ca8f7ae3cc28e9890e53f3629554}{RegisterLua}}(sol::state\&\ lua);}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespace_techstorm_a8085186186eadc95c01fa563b8e65a4f}{RegisterAngelScript}}();}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00032}00032\ \}}
+
+\end{DoxyCode}

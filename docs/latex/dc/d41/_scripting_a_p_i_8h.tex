@@ -1,0 +1,53 @@
+\doxysection{C\+:/\+Dev/\+Techstorm-\/v5/src/engine/modding/\+Scripting\+API.h File Reference}
+\hypertarget{_scripting_a_p_i_8h}{}\label{_scripting_a_p_i_8h}\index{C:/Dev/Techstorm-\/v5/src/engine/modding/ScriptingAPI.h@{C:/Dev/Techstorm-\/v5/src/engine/modding/ScriptingAPI.h}}
+{\ttfamily \#include $<$sol/sol.\+hpp$>$}\newline
+{\ttfamily \#include $<$angelscript.\+h$>$}\newline
+{\ttfamily \#include "{}../utils/\+Singleton.\+h"{}}\newline
+Include dependency graph for Scripting\+API.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_techstorm}{Techstorm}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_scripting_a_p_i_8h_af2bfaeb231432732b2fdd1c56da8e80d}{TS\+\_\+\+SCRIPTING\+\_\+\+LUA}}
+\item 
+\#define \mbox{\hyperlink{_scripting_a_p_i_8h_a5546a5c8c9f9db4259a42b6256bf5961}{TS\+\_\+\+SCRIPTING\+\_\+\+ANGELSCRIPT}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespace_techstorm_afe4d0583ea45079bdba936b6ac4a1862}{Techstorm\+::\+Initialize\+Scripting}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the scripting API. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespace_techstorm_a5f60ca8f7ae3cc28e9890e53f3629554}{Techstorm\+::\+Register\+Lua}} (sol\+::state \&lua)
+\begin{DoxyCompactList}\small\item\em Registers the scripting API for Lua. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespace_techstorm_a8085186186eadc95c01fa563b8e65a4f}{Techstorm\+::\+Register\+Angel\+Script}} ()
+\begin{DoxyCompactList}\small\item\em Registers the scripting API for Angel\+Script. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_scripting_a_p_i_8h_a5546a5c8c9f9db4259a42b6256bf5961}\label{_scripting_a_p_i_8h_a5546a5c8c9f9db4259a42b6256bf5961} 
+\index{ScriptingAPI.h@{ScriptingAPI.h}!TS\_SCRIPTING\_ANGELSCRIPT@{TS\_SCRIPTING\_ANGELSCRIPT}}
+\index{TS\_SCRIPTING\_ANGELSCRIPT@{TS\_SCRIPTING\_ANGELSCRIPT}!ScriptingAPI.h@{ScriptingAPI.h}}
+\doxysubsubsection{\texorpdfstring{TS\_SCRIPTING\_ANGELSCRIPT}{TS\_SCRIPTING\_ANGELSCRIPT}}
+{\footnotesize\ttfamily \#define TS\+\_\+\+SCRIPTING\+\_\+\+ANGELSCRIPT}
+
+
+
+Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00003}{3}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
+
+\Hypertarget{_scripting_a_p_i_8h_af2bfaeb231432732b2fdd1c56da8e80d}\label{_scripting_a_p_i_8h_af2bfaeb231432732b2fdd1c56da8e80d} 
+\index{ScriptingAPI.h@{ScriptingAPI.h}!TS\_SCRIPTING\_LUA@{TS\_SCRIPTING\_LUA}}
+\index{TS\_SCRIPTING\_LUA@{TS\_SCRIPTING\_LUA}!ScriptingAPI.h@{ScriptingAPI.h}}
+\doxysubsubsection{\texorpdfstring{TS\_SCRIPTING\_LUA}{TS\_SCRIPTING\_LUA}}
+{\footnotesize\ttfamily \#define TS\+\_\+\+SCRIPTING\+\_\+\+LUA}
+
+
+
+Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00002}{2}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
+

@@ -43,3 +43,13 @@ int Techstorm::IProject::cleanup(int exitCode) { return exitCode; }
 IProject* Techstorm::IProject::GetProject() {
 	return ProjectReference::Instance().project;
 }
+
+/// <summary>
+/// Sets the project reference.
+/// </summary>
+/// <param name="project">The project.</param>
+inline void Techstorm::IProject::ProjectReference::setProjectReference(IProject* project) {
+	if (project != nullptr) {
+		this->project = project;
+	}
+}

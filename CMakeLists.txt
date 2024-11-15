@@ -1,90 +1,94 @@
 ﻿cmake_minimum_required(VERSION 3.29)
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+set(CMAKE_CONFIGURATION_TYPES "Debug;Release;Distribution")
+
 # Enable Hot Reload for MSVC compilers if supported.
 if (POLICY CMP0141)
   cmake_policy(SET CMP0141 NEW)
-  set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>")
+  set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT 
+    "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,Release>:EditAndContinue>,$<$<CONFIG:Debug,Release>:ProgramDatabase>>"
+  )
 endif()
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CONFIGURATION_TYPES "Debug;Release;Distribution")
 
-if(NOT DEFINED TS_CUSTOM_CONFIGURATIONS)
-    # The configurations we support
-    #set(CMAKE_CONFIGURATION_TYPES "Debug;Release;Distribution")
-endif()
+# The version of CPM to install if it is not already installed
+set(CPM_INSTALL_VERSION 0.40.2)
 
 # Output directories
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}\\lib") # Static libraries
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}\\bin") # Shared libraries (.so/.dll)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}\\bin") # Executables (.out/.exe)
 
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib) # Static libraries
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin) # Shared libraries (.so/.dll)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin) # Executables (.out/.exe)
+if (WIN32)
+    message(STATUS "${CMAKE_SOURCE_DIR}\\build-scripts\\build-windows.bat")
+
+    if (NOT EXISTS "${CMAKE_SOURCE_DIR}/cache/lock-configure.lock")
+        
+        #execute_process(
+        #    # Add or remove arguments as needed. Use --debug for debug packages, --release for release packages, and --distribution for distribution packages
+        #    COMMAND "${CMAKE_SOURCE_DIR}/build-windows.bat"
+        #    RESULT_VARIABLE result
+        #    OUTPUT_VARIABLE output
+        #    ERROR_VARIABLE error_output
+        #)
+        #message(STATUS "${result}")
+        #if(NOT ${result} EQUAL 0)
+        #    message(FATAL_ERROR "The command failed with error: ${error_output}, ${output}")
+        #endif()
+
+       
+        #        cmake -B ${{ steps.strings.outputs.build-output-dir }}
+        #-DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }}
+        #-DCMAKE_C_COMPILER=${{ matrix.c_compiler }}
+        #-DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+        #-S ${{ github.workspace }}
+    endif()
+else()
+    execute_process(
+        # Add or remove arguments as needed. Use --debug for debug packages, --release for release packages, and --distribution for distribution packages
+        COMMAND "${CMAKE_SOURCE_DIR}\\build-scripts\\build-linux.sh" 
+        RESULT_VARIABLE result
+        OUTPUT_VARIABLE output
+        ERROR_VARIABLE error_output
+    )
+	if(NOT ${result} EQUAL 0)
+	    message(FATAL_ERROR "The command failed with error: ${error_output}, ${output}")
+	endif()
+endif()
 
 # Platform-specific settings
 if(WIN32)
     set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)  # To export symbols from DLLs
     set(CMAKE_RUNTIME_OUTPUT_NAME_SUFFIX ".exe")
+    set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 elseif(UNIX)
     set(CMAKE_SHARED_LIBRARY_SUFFIX ".so")
 endif()
 
-# Download and include CPM.cmake
-#if(NOT CPM_LOADED)
-#    set(CPM_DOWNLOAD_VERSION 0.38.0)
-#    set(CPM_DOWNLOAD_LOCATION "${CMAKE_BINARY_DIR}/CPM.cmake")
-#    if(NOT EXISTS ${CPM_DOWNLOAD_LOCATION})
-#        file(DOWNLOAD https://github.com/cpm-cmake/CPM.cmake/releases/download/v${CPM_DOWNLOAD_VERSION}/CPM.cmake
-#             ${CPM_DOWNLOAD_LOCATION})
-#    endif()
-#    include(${CPM_DOWNLOAD_LOCATION})
-#endif()
-
-
-if (WIN32)
-    set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
-endif()
-
-execute_process(
-    COMMAND "python3 build-scripts\\TechstormConfigure.py"
-    WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}\\build-scripts"
-    RESULT_VARIABLE result
-    OUTPUT_VARIABLE output
-    ERROR_VARIABLE error
-)
-
-if(NOT result EQUAL 0)
-    message(STATUS "Failed to configure Techstorm: ${error}")
-endif()
-
-message(STATUS "Configuring Techstorm: ${output}")
-
+set(CMAKE_EXPORT_COMPILE_COMMANDS True)
 # Set project name
 project(TechStorm LANGUAGES CXX C)
-set(CMAKE_EXPORT_COMPILE_COMMANDS True)
 
 
+# Set compilation definitions
+add_compile_definitions(TS_DATA_DIR="${TS_TOP_LAYER}\\data")
 if(CMAKE_BUILD_TYPE STREQUAL "Distribution")
-    
-    add_compile_definitions(TS_ROOT_DIR="../") # Sets the TS_ROOT_DIR macro in a way that prevents the path on a development machine from being used in distribution.
+    add_compile_definitions(TS_ROOT_DIR="..\\") # Sets the TS_ROOT_DIR macro in a way that prevents the path on a development machine from being used in distribution.
     
     # Your code for the Distribution configuration
 else()
-    # Your code for other configurations
    add_compile_definitions(TS_ROOT_DIR="${CMAKE_BINARY_DIR}")
    add_compile_definitions(TS_TOP_LAYER="${CMAKE_SOURCE_DIR}")
+
+    # Your code for other configurations
+
 endif()
 
-add_compile_definitions(TS_DATA_DIR="${TS_TOP_LAYER}/data")
 
-include(cmake/cpm.cmake)
-include(cmake/techstorm.cmake)
-set(CMAKE_CONFIGURATION_TYPES "Debug;Release;Distribution")
-# Force the use of the same runtime library
-
-message(STATUS "CMAKE_CXX_FLAGS: ${CMAKE_CXX_FLAGS}")
-message(STATUS "Build Config: ${CMAKE_BUILD_TYPE}")
+include("cmake\\cpm.cmake")
 
 CPMAddPackage(
     NAME raylib
@@ -92,16 +96,14 @@ CPMAddPackage(
     GIT_TAG 5.0
 )
 
-option(WIN32_LEAN_AND_MEAN ON)
 
-if (NOT result EQUAL 0)
-    find_package(ZLIB)
-    find_package(joltphysics)
-    find_package(libconfig)
-    find_package(Angelscript)
-    find_package(sol2)
+# find_package(ZLIB REQUIRED)
+find_package(joltphysics REQUIRED)
+find_package(libconfig REQUIRED)
+find_package(Angelscript REQUIRED)
+find_package(sol2 REQUIRED)
 
-endif()
+
 set(DOUBLE_PRECISION OFF)
 set(GENERATE_DEBUG_SYMBOLS OFF)
 set(CROSS_PLATFORM_DETERMINISTIC ON)
@@ -118,11 +120,10 @@ set(USE_F16C ON)
 set(USE_FMADD ON)
 set(BUILD_SHARED_LIBS ON)
 
-
 # Include subdirectories
-add_subdirectory(src/engine)
-add_subdirectory(src/project)
-add_subdirectory(src/application)
-add_subdirectory(src/tools)
+add_subdirectory("src\\engine")
+add_subdirectory("src\\project")
+add_subdirectory("src\\application")
+add_subdirectory("src\\tools")
 
 

@@ -17,7 +17,7 @@ namespace Techstorm {
 	protected:
 		Techstorm::Renderer mRenderer;
 		WindowDecorations mWindowDecorations;
-		
+
 		/// <summary>
 		/// Represents a polymorphic singleton reference to the user's project instance through a pointer of Techstorm::IProject. This is
 		/// mandatory for Techstorm to run the user's engine.
@@ -30,11 +30,7 @@ namespace Techstorm {
 			/// Sets the project reference.
 			/// </summary>
 			/// <param name="project">The project.</param>
-			void setProjectReference(IProject* project) {
-				if (project != nullptr) {
-					this->project = project;
-				}
-			}
+			void setProjectReference(IProject* project);
 		};
 
 	public:

@@ -18,16 +18,16 @@ Collaboration diagram for Techstorm\+::Plane\+Object\+:
 \mbox{\hyperlink{class_techstorm_1_1_plane_object_a1be2ac56d77c3a04f81d09e263cb4e82}{Plane\+Object}} ()
 \item 
 void \mbox{\hyperlink{class_techstorm_1_1_plane_object_ac1b1f1708fb15875a3e388d1b765f054}{render}} () override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Renders this instance. This is not a pure virtual and is empty because it is up to the user to use this as they see fit without forcing them to implement it. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_techstorm_1_1_game_object}{Techstorm\+::\+Game\+Object}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_techstorm_1_1_game_object_a185afdc862c8ef4e7da0083f2814321c}{Game\+Object}} ()
 \item 
 virtual void \mbox{\hyperlink{class_techstorm_1_1_game_object_af8420126f2adeaa0e1c4bed00c050264}{update}} () override
-\item 
+\begin{DoxyCompactList}\small\item\em Updates this instance and is called every frame before texturing/rendering. Keep in mind that this will run on the update thread, so make sure what you are doing is {\bfseries{thread safe}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_techstorm_1_1_game_object_a8808d57ba3f1196f6abb98f1d60c5c29}{destroy}} () override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destroys this instance, and is called right before the object is removed from memory. This must be implemented by the user. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -56,6 +56,10 @@ Definition at line \mbox{\hyperlink{_plane_object_8h_source_l00008}{8}} of file 
 \index{render@{render}!Techstorm::PlaneObject@{Techstorm::PlaneObject}}
 \doxysubsubsection{\texorpdfstring{render()}{render()}}
 {\footnotesize\ttfamily void Techstorm\+::\+Plane\+Object\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders this instance. This is not a pure virtual and is empty because it is up to the user to use this as they see fit without forcing them to implement it. 
 
 
 

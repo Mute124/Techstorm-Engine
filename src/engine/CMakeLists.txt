@@ -25,7 +25,6 @@ add_library(engine_lib SHARED
     "renderer/GameObjectRegistry.cpp" 
     "utils/DoublyLinkedList.h" 
     "world/world.h" 
-    "renderer/RayStorm.h"   
     "dbg/Logging.h" 
     "renderer/objects/PlaneObject.h"
     "world/tools/Terrain.h" 
@@ -57,7 +56,6 @@ add_library(engine_lib SHARED
 target_include_directories(engine_lib PRIVATE ${PROJECT_SOURCE_DIR}/include )
 target_link_libraries(engine_lib PUBLIC
     raylib 
-    ZLIB::ZLIB 
     joltphysics::joltphysics 
     joltphysics_DEPS_TARGET
     libconfig::libconfig
