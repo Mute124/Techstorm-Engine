@@ -5,4 +5,5 @@ if __name__ == "__main__":
     if (os.name == "nt"):
         subprocess.call("build-windows.bat")
     else:
-        subprocess.call("build-linux.sh") 
+        subprocess.call("chmod +x build-linux.sh")
+        subprocess.call("./build-linux.sh") 
