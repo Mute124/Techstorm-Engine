@@ -26,7 +26,7 @@ def BuildProject(type):
 lockConfigFileExists = os.path.exists("cache/lock-configure.lock")
 
 if lockConfigFileExists == False:
-    os.chdir("..")
+    #os.chdir("..")
 
     GenerateProjectStep()
 

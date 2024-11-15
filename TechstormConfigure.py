@@ -85,7 +85,7 @@ def InstallPackagesStep():
         subprocess.check_call(['conan', 'install', '.', '--output-folder=build', '--build=missing', '-s', 'build_type=Debug'])
         
         # Create a file in the cache folder that indicates that debug packages are installed
-        buildTypeIndicator = open("../cache/installedDebug.pkgstate", "w")
+        buildTypeIndicator = open("cache/installedDebug.pkgstate", "w")
         buildTypeIndicator.close()
 
         print("Done installing debug packages.\n")

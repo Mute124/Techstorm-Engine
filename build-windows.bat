@@ -13,4 +13,5 @@
 ::cmake --build . --config=Debug
 ::cd ../build-scripts
 python3 TechstormConfigure.py --debug
+echo "Generating project"
 python3 TechstormGenerate.py
