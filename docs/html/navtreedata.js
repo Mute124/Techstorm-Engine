@@ -27,6 +27,7 @@ var NAVTREE =
   [ "Techstorm", "index.html", [
     [ "Dependencies", "index.html", "index" ],
     [ "Detailed Analysis Of Dependencies", "dc/dec/detailed-analysis-of-dependencies.html", null ],
+    [ "building", "dd/da6/md_building.html", null ],
     [ "Deprecated List", "da/d58/deprecated.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
