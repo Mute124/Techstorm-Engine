@@ -15,6 +15,13 @@ int main(int argc, char* argv[]) {
 
 	InitWindow(decorations.width, decorations.height, decorations.title);
 
+	const char* iconPath = TextFormat("%s%s", TS_ASSET_DIR.c_str(), decorations.icon);
+
+	Image icon = LoadImage(iconPath);
+	ImageFormat(&icon, PIXELFORMAT_UNCOMPRESSED_R8G8B8A8);
+
+	SetWindowIcons(&icon, 1);
+
 	project.init(argc, argv);
 	project.postInit();
 
@@ -32,5 +39,6 @@ int main(int argc, char* argv[]) {
 
 	project.cleanup(0);
 
+	CloseWindow();
 	return 0;
 }

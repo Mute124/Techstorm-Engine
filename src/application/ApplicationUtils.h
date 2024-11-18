@@ -18,4 +18,6 @@ namespace Techstorm::Application {
 	int RunUpdateThread();
 	int RunPhysicsThread();
 	int RunWorkerThread();
+
+	void DecorateWindow(WindowDecorations& decorations);
 }

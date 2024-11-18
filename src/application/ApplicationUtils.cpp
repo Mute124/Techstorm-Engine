@@ -14,10 +14,9 @@ Techstorm::Application::GameThreadInfo Techstorm::Application::CalculateGameThre
 {
 	GameThreadInfo threadInfo;
 
-	if (gameSettings.cMaxThreads == -1) {
+	if(gameSettings.cMaxThreads == -1) {
 		int maxThreads = std::thread::hardware_concurrency();
-	}
-	else {
+	} else {
 		//threadInfo.cMaxThreads = gameSettings.threadCount;
 	}
 
@@ -28,7 +27,7 @@ int Techstorm::Application::RunUpdateThread()
 {
 	int exitCode = 0;
 
-	while (exitCode == 0) {
+	while(exitCode == 0) {
 	}
 
 	return 0;
@@ -42,4 +41,8 @@ int Techstorm::Application::RunPhysicsThread()
 int Techstorm::Application::RunWorkerThread()
 {
 	return 0;
+}
+
+void Techstorm::Application::DecorateWindow(WindowDecorations& decorations)
+{
 }

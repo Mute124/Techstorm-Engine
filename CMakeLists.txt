@@ -18,12 +18,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CPM_INSTALL_VERSION 0.40.2)
 
 # Output directories
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}\\lib") # Static libraries
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}\\bin") # Shared libraries (.so/.dll)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}\\bin") # Executables (.out/.exe)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib") # Static libraries
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin") # Shared libraries (.so/.dll)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin") # Executables (.out/.exe)
 
 if (WIN32)
-    message(STATUS "${CMAKE_SOURCE_DIR}\\build-scripts\\build-windows.bat")
+    message(STATUS "${CMAKE_SOURCE_DIR}/build-scripts/build-windows.bat")
 
     if (NOT EXISTS "${CMAKE_SOURCE_DIR}/cache/lock-configure.lock")
         
@@ -48,7 +48,7 @@ if (WIN32)
 else()
     execute_process(
         # Add or remove arguments as needed. Use --debug for debug packages, --release for release packages, and --distribution for distribution packages
-        COMMAND "${CMAKE_SOURCE_DIR}\\build-scripts\\build-linux.sh" 
+        COMMAND "${CMAKE_SOURCE_DIR}/build-scripts/build-linux.sh" 
         RESULT_VARIABLE result
         OUTPUT_VARIABLE output
         ERROR_VARIABLE error_output
@@ -71,12 +71,10 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS True)
 # Set project name
 project(TechStorm LANGUAGES CXX C)
 
-
 # Set compilation definitions
-add_compile_definitions(TS_DATA_DIR="${TS_TOP_LAYER}\\data")
 if(CMAKE_BUILD_TYPE STREQUAL "Distribution")
-    add_compile_definitions(TS_ROOT_DIR="..\\") # Sets the TS_ROOT_DIR macro in a way that prevents the path on a development machine from being used in distribution.
-    
+    add_compile_definitions(TS_ROOT_DIR="../") # Sets the TS_ROOT_DIR macro in a way that prevents the path on a development machine from being used in distribution.
+    add_compile_definitions(TS_TOP_LAYER="${CMAKE_SOURCE_DIR}")
     # Your code for the Distribution configuration
 else()
    add_compile_definitions(TS_ROOT_DIR="${CMAKE_BINARY_DIR}")
@@ -87,7 +85,7 @@ else()
 endif()
 
 
-include("cmake\\cpm.cmake")
+include("cmake/cpm.cmake")
 
 CPMAddPackage(
     NAME raylib
@@ -119,9 +117,9 @@ set(USE_FMADD ON)
 set(BUILD_SHARED_LIBS ON)
 
 # Include subdirectories
-add_subdirectory("src\\engine")
-add_subdirectory("src\\project")
-add_subdirectory("src\\application")
-add_subdirectory("src\\tools")
+add_subdirectory("src/engine")
+add_subdirectory("src/project")
+add_subdirectory("src/application")
+add_subdirectory("src/tools")
 
 
