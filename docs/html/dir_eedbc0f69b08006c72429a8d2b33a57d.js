@@ -2,8 +2,9 @@ var dir_eedbc0f69b08006c72429a8d2b33a57d =
 [
     [ "objects", "dir_26e8b83038726c96012623c58c19f668.html", "dir_26e8b83038726c96012623c58c19f668" ],
     [ "Camera.cpp", "d1/d33/_camera_8cpp.html", null ],
-    [ "Camera.h", "d5/d91/_camera_8h.html", "d5/d91/_camera_8h" ],
     [ "Color.h", "d9/df8/_color_8h.html", null ],
+    [ "GameCamera.cpp", "d9/d6a/_game_camera_8cpp.html", null ],
+    [ "GameCamera.h", "d3/d41/_game_camera_8h.html", "d3/d41/_game_camera_8h" ],
     [ "GameObject.cpp", "d3/df6/_game_object_8cpp.html", null ],
     [ "GameObject.h", "df/d91/_game_object_8h.html", "df/d91/_game_object_8h" ],
     [ "GameObjectRegistry.cpp", "d7/d03/_game_object_registry_8cpp.html", null ],

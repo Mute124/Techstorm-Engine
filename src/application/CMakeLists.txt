@@ -1,9 +1,18 @@
 ﻿# Application: Main executable
+
+if(WIN32)
+	set(TS_MAIN_APPLICATION_RC "Application.rc")
+else()
+	set(TS_MAIN_APPLICATION_RC "")
+endif()
+
 add_executable(main_app 
 	"main.cpp"
 	"ApplicationUtils.h"
 	"ApplicationUtils.cpp"
+	${TS_MAIN_APPLICATION_RC}
 )
+
 # Link to the project shared library
 target_link_libraries(main_app PRIVATE project_lib)
 

@@ -1,3 +1,41 @@
+## What is Techstorm {#what-is-techstorm}
+
+---
+
+Techstorm is the response to the lack of a free game engine that is built for large open worlds.  
+
+## Architecture {#architecture}
+
+---
+
+Due to the inherent nature of Techstorm, the architecture can be complex. In terms of building, there are a few things that are required to understand how Techstorm works. There are 4 groups that are used to build the engine, as outlined below:
+- Application
+- Engine
+- Project
+- Tools
+The Application is responsible for loading the engine and handling the project, as seen below. 
+
+![Game Engine Application Flow Chart](flowchart.png "Techstorm's high level flow chart")
+
+### Graphics Architecture {#graphics-architecture}
+
+---
+
+#### Graphics Introduction {#graphics-introduction}
+
+---
+
+Despite the fact Techstorm tries to make graphics easier, it can become complex due to the nature of 3D graphics. For this reason, it is imperative that you read this carefully in order to reduce future headache. In addition, if you are not well versed in how OpenGL and Raylib works, please read the online book/tutorial [Learn OpenGL](https://learnopengl.com/) and \ref using-raylib respectably.  
+
+
+#### How Cameras Work {#how-cameras-work}
+
+---
+
+##### Graphics Terminology {#graphics-terminology}
+
+---
+
 ## Dependencies {#dependencies}
 
 ---
@@ -88,3 +126,5 @@ Before you look at the conventions, look at the below key.
 Functions are simple, any that are not bound to a specific object will have the first letter lowercase. If it is a static, namespace, or global function, then it will have the first letter capitalized instead. When it comes to Preprocessor functions, it will follow the same rules as Constant Global variables, as seen below:
 
 >  | Constant Global     | Cap     | Cap    | For this case, it will follow snake case **in all caps** |
+
+

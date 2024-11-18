@@ -8,5 +8,6 @@ var searchData=
   ['analysis_20of_20dependencies_5',['Detailed Analysis Of Dependencies',['../dc/dec/detailed-analysis-of-dependencies.html',1,'']]],
   ['analysis_2ddependencies_2emd_6',['analysis-dependencies.md',['../d2/d09/analysis-dependencies_8md.html',1,'']]],
   ['applicationutils_2ecpp_7',['ApplicationUtils.cpp',['../df/d02/_application_utils_8cpp.html',1,'']]],
-  ['applicationutils_2eh_8',['ApplicationUtils.h',['../dd/d47/_application_utils_8h.html',1,'']]]
+  ['applicationutils_2eh_8',['ApplicationUtils.h',['../dd/d47/_application_utils_8h.html',1,'']]],
+  ['architecture_9',['architecture',['../index.html#architecture',1,'Architecture'],['../index.html#graphics-architecture',1,'Graphics Architecture']]]
 ];

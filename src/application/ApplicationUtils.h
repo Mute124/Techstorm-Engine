@@ -1,6 +1,7 @@
 #pragma once
 #include "project.h"
 #include "EReturnCode.h"
+#include "modding/ScriptingAPI.h"
 #ifdef _DEBUG
 #include <crtdbg.h>
 #endif
@@ -18,4 +19,6 @@ namespace Techstorm::Application {
 	int RunUpdateThread();
 	int RunPhysicsThread();
 	int RunWorkerThread();
+
+	void DecorateWindow(WindowDecorations& decorations);
 }

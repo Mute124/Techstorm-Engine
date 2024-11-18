@@ -4,7 +4,7 @@
 #include "../utils/Singleton.h"
 
 #include "GameObjectRegistry.h"
-#include "Camera.h"
+#include "GameCamera.h"
 
 // Jolt includes
 #include <Jolt/Jolt.h>
@@ -94,6 +94,9 @@ namespace Techstorm {
 		RenderTexture2D mScreenBuffer;
 		Color mBackgroundColor = BLACK;
 		Color mFBOTint = WHITE;
+		GameCamera mCamera;
+
+
 #ifdef TS_RENDERER_2D
 		/// <summary>
 		/// Renders the 2d scene.

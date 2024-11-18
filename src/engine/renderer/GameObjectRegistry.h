@@ -41,7 +41,5 @@ namespace Techstorm {
 		std::vector<IGameObjectGate*> mGameObjectsGateSink;
 
 		friend class Renderer;
-		//std::vector<IDynamicGameObject*> mDynamicObjectsSink;
-		//std::vector<IStaticGameObject*> mStaticObjectsSink;
 	};
 }

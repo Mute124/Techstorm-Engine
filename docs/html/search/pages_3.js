@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['of_20dependencies_0',['Detailed Analysis Of Dependencies',['../dc/dec/detailed-analysis-of-dependencies.html',1,'']]]
+  ['is_20techstorm_0',['What is Techstorm',['../index.html',1,'']]]
 ];

@@ -1,5 +1,6 @@
 #pragma once
-#include <cstdint>
+
+#include "../Common.h"
 
 namespace Techstorm {
 	/// <summary>
@@ -11,5 +12,6 @@ namespace Techstorm {
 		uint32_t height = 720; /// <summary> The height of the window. </summary>
 		unsigned int windowConfig = -1; ///<summary> For available config flags, see <see cref="ConfigFlags"/> in the raylib documentation.</summary>
 		unsigned int targetFPS = 60; /// <summary> The target FPS for the window. </summary>
+		const char* icon = "engine/techstorm.png";
 	};
 }

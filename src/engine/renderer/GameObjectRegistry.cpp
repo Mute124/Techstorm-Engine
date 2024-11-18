@@ -3,7 +3,6 @@
 void Techstorm::GameObjectRegistry::addGameObject(GameObject* gameObject)
 {
 	if (gameObject != nullptr) {
-
 		for (auto& gate : mGameObjectsGateSink) {
 			gate->process(gameObject);
 		}
@@ -19,7 +18,9 @@ void Techstorm::GameObjectRegistry::addGameObjectGate(IGameObjectGate* gameObjec
 
 void Techstorm::GameObjectRegistry::update()
 {
-
+	for (auto& obj : this->mGameObjectsSink) {
+		obj->update();
+	}
 }
 
 void Techstorm::GameObjectRegistry::render()
@@ -28,5 +29,3 @@ void Techstorm::GameObjectRegistry::render()
 		obj->render();
 	}
 }
-
-

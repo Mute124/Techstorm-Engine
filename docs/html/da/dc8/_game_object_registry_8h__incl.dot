@@ -30,10 +30,14 @@ digraph "C:/Dev/Techstorm-v5/src/engine/renderer/GameObjectRegistry.h"
   Node11 -> Node12 [id="edge13_Node000011_Node000012",color="steelblue1",style="solid",tooltip=" "];
   Node12 [id="Node000012",label="cstdarg",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node11 -> Node13 [id="edge14_Node000011_Node000013",color="steelblue1",style="solid",tooltip=" "];
-  Node13 [id="Node000013",label="thread",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node1 -> Node14 [id="edge15_Node000001_Node000014",color="steelblue1",style="solid",tooltip=" "];
-  Node14 [id="Node000014",label="IGameObjectGate.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$db/d88/_i_game_object_gate_8h.html",tooltip=" "];
-  Node14 -> Node15 [id="edge16_Node000014_Node000015",color="steelblue1",style="solid",tooltip=" "];
-  Node15 [id="Node000015",label="../utils/Gate.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$dc/d7f/_gate_8h.html",tooltip=" "];
-  Node14 -> Node4 [id="edge17_Node000014_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="cstdint",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node11 -> Node14 [id="edge15_Node000011_Node000014",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="string",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node11 -> Node15 [id="edge16_Node000011_Node000015",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="thread",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node1 -> Node16 [id="edge17_Node000001_Node000016",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="IGameObjectGate.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$db/d88/_i_game_object_gate_8h.html",tooltip=" "];
+  Node16 -> Node17 [id="edge18_Node000016_Node000017",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="../utils/Gate.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$dc/d7f/_gate_8h.html",tooltip=" "];
+  Node16 -> Node4 [id="edge19_Node000016_Node000004",color="steelblue1",style="solid",tooltip=" "];
 }
