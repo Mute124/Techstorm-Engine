@@ -25,7 +25,7 @@
 var NAVTREE =
 [
   [ "Techstorm", "index.html", [
-    [ "Dependencies", "index.html", "index" ],
+    [ "What is Techstorm", "index.html", "index" ],
     [ "Detailed Analysis Of Dependencies", "dc/dec/detailed-analysis-of-dependencies.html", null ],
     [ "building", "dd/da6/md_building.html", null ],
     [ "Deprecated List", "da/d58/deprecated.html", null ],
@@ -55,6 +55,7 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -64,8 +65,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d6/d34/class_techstorm_1_1abstract.html#a8dc719d2e5e4a477d1378d06fa38bab2",
-"dc/d3d/struct_techstorm_1_1_camera_data.html#a0e44e3b5921111ef0b8ef4133353bb36"
+"d6/d34/class_techstorm_1_1abstract.html#a4a5949bcde32483abd8b15105a2eda10",
+"db/d5d/class_techstorm_1_1_layer_registry.html#af9d0b1f70047143779fd67cd3b66bc8e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

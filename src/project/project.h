@@ -15,4 +15,10 @@ public:
 
 	Project() : IProject() {}
 
+	void preInit() override {
+		IProject::preInit();
+
+		this->mLuaLibraries.push_back(sol::lib::base);
+	}
+
 };

@@ -15,7 +15,7 @@ add_executable(main_app
 
 # Link to the project shared library
 target_link_libraries(main_app PRIVATE project_lib)
-#target_sources(main_app PRIVATE ${TS_MAIN_APPLICATION_RC})
+
 # Include directories
 target_include_directories(main_app PRIVATE ${PROJECT_SOURCE_DIR}/include)
 target_include_directories(main_app PRIVATE ${PROJECT_SOURCE_DIR}/src/project)

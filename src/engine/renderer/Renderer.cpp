@@ -42,7 +42,7 @@ void Techstorm::Renderer::texture(GameCamera& cam)
 	ClearBackground(WHITE);
 #ifdef TS_RENDERER_2D
 #else
-	BeginMode3D(cam.Data);
+	BeginMode3D(cam.getCameraData());
 #endif
 
 	mGameObjects.render();
@@ -82,7 +82,7 @@ void Techstorm::Renderer::render2D(GameCamera& cam)
 #else
 void Techstorm::Renderer::render3D(GameCamera& cam)
 {
-	UpdateCamera(&cam.Data, CAMERA_FIRST_PERSON);
+	UpdateCamera(&cam.mCameraData, CAMERA_FIRST_PERSON);
 
 	texture(cam);
 

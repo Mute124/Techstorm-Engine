@@ -5,9 +5,6 @@ WindowDecorations& Techstorm::IProject::getWindowDecorations() { return mWindowD
 
 void Techstorm::IProject::setWindowDecorations(WindowDecorations& windowDecorations) { mWindowDecorations = windowDecorations; }
 
-void Techstorm::IProject::preInit() {
-}
-
 void Techstorm::IProject::init(int argc, char* argv[]) {
 	std::cout << "Thread ID for IProject init" << std::this_thread::get_id() << std::endl;
 }

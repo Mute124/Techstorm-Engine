@@ -107,53 +107,64 @@ $(document).ready(function(){initNavTree('dd/d39/application_2main_8cpp_source.h
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <span class="comment">// Enable leak detection</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">using namespace </span><a class="code hl_namespace" href="../../d4/d26/namespace_techstorm.html">Techstorm</a>;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <a class="code hl_define" href="../../d1/def/project_2_project_8h.html#ad07ec4803fb514a35902f4d7b85638df">PROJECT_TYPENAME</a> project = <a class="code hl_define" href="../../d1/def/project_2_project_8h.html#ad07ec4803fb514a35902f4d7b85638df">PROJECT_TYPENAME</a>();</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    project.preInit();</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_class" href="../../d4/d22/class_techstorm_1_1_renderer.html">Renderer</a>&amp; renderer = project.getRenderer();</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_struct" href="../../d2/d61/struct_techstorm_1_1_window_decorations.html">WindowDecorations</a>&amp; decorations = project.getWindowDecorations();</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    InitWindow(decorations.<a class="code hl_variable" href="../../d2/d61/struct_techstorm_1_1_window_decorations.html#a273a970284e324b89ba9c7611c0145fa">width</a>, decorations.<a class="code hl_variable" href="../../d2/d61/struct_techstorm_1_1_window_decorations.html#a0660189429bb5ed37d721cc2b6009b17">height</a>, decorations.<a class="code hl_variable" href="../../d2/d61/struct_techstorm_1_1_window_decorations.html#a4da13fe3c3fa928c3e1f584fae3c0ee6">title</a>);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    project.init(argc, argv);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    project.postInit();</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">using namespace </span><a class="code hl_namespace" href="../../d4/d26/namespace_techstorm.html">Techstorm</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_define" href="../../d1/def/project_2_project_8h.html#ad07ec4803fb514a35902f4d7b85638df">PROJECT_TYPENAME</a> project = <a class="code hl_define" href="../../d1/def/project_2_project_8h.html#ad07ec4803fb514a35902f4d7b85638df">PROJECT_TYPENAME</a>();</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    project.preInit();</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_class" href="../../d4/d22/class_techstorm_1_1_renderer.html">Renderer</a>&amp; renderer = project.getRenderer();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_struct" href="../../d2/d61/struct_techstorm_1_1_window_decorations.html">WindowDecorations</a>&amp; decorations = project.getWindowDecorations();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    InitWindow(decorations.<a class="code hl_variable" href="../../d2/d61/struct_techstorm_1_1_window_decorations.html#a273a970284e324b89ba9c7611c0145fa">width</a>, decorations.<a class="code hl_variable" href="../../d2/d61/struct_techstorm_1_1_window_decorations.html#a0660189429bb5ed37d721cc2b6009b17">height</a>, decorations.<a class="code hl_variable" href="../../d2/d61/struct_techstorm_1_1_window_decorations.html#a4da13fe3c3fa928c3e1f584fae3c0ee6">title</a>);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* iconPath = TextFormat(<span class="stringliteral">&quot;%s%s&quot;</span>, <a class="code hl_variable" href="../../db/d1f/_common_8h.html#a72ba4f35051f760d2253c5d175be8a7d">TS_ASSET_DIR</a>.c_str(), decorations.<a class="code hl_variable" href="../../d2/d61/struct_techstorm_1_1_window_decorations.html#a0d9d9ccf12fa5480c5ac21c28c09accc">icon</a>);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    SetTargetFPS(decorations.<a class="code hl_variable" href="../../d2/d61/struct_techstorm_1_1_window_decorations.html#a06c54d45bb16b660ccb1ffabd71e7291">targetFPS</a>);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">while</span> (!WindowShouldClose()) {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        project.preObjectUpdate();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        project.objectUpdate();</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        project.postObjectUpdate();</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        project.prePhysicsUpdate();</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        project.physicsUpdate();</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        project.postPhysicsUpdate();</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    project.cleanup(0);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    Image icon = LoadImage(iconPath);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    ImageFormat(&amp;icon, PIXELFORMAT_UNCOMPRESSED_R8G8B8A8);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    SetWindowIcons(&amp;icon, 1);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    project.init(argc, argv);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    project.postInit();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    SetTargetFPS(decorations.<a class="code hl_variable" href="../../d2/d61/struct_techstorm_1_1_window_decorations.html#a06c54d45bb16b660ccb1ffabd71e7291">targetFPS</a>);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">while</span> (!WindowShouldClose()) {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        project.preObjectUpdate();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        project.objectUpdate();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        project.postObjectUpdate();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        project.prePhysicsUpdate();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        project.physicsUpdate();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        project.postPhysicsUpdate();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    project.cleanup(0);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    CloseWindow();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
 </div>
 <div class="ttc" id="a_application_utils_8h_html"><div class="ttname"><a href="../../dd/d47/_application_utils_8h.html">ApplicationUtils.h</a></div></div>
+<div class="ttc" id="a_common_8h_html_a72ba4f35051f760d2253c5d175be8a7d"><div class="ttname"><a href="../../db/d1f/_common_8h.html#a72ba4f35051f760d2253c5d175be8a7d">TS_ASSET_DIR</a></div><div class="ttdeci">const std::string TS_ASSET_DIR</div><div class="ttdef"><b>Definition</b> <a href="../../db/d1f/_common_8h_source.html#l00009">Common.h:9</a></div></div>
 <div class="ttc" id="aapplication_2main_8cpp_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="../../dd/d39/application_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d39/application_2main_8cpp_source.html#l00003">main.cpp:3</a></div></div>
 <div class="ttc" id="aclass_techstorm_1_1_renderer_html"><div class="ttname"><a href="../../d4/d22/class_techstorm_1_1_renderer.html">Techstorm::Renderer</a></div><div class="ttdoc">Serves as the renderer for the game.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/da0/_renderer_8h_source.html#l00030">Renderer.h:30</a></div></div>
 <div class="ttc" id="anamespace_techstorm_html"><div class="ttname"><a href="../../d4/d26/namespace_techstorm.html">Techstorm</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d47/_application_utils_8h_source.html#l00013">ApplicationUtils.h:13</a></div></div>
 <div class="ttc" id="aproject_2_project_8h_html_ad07ec4803fb514a35902f4d7b85638df"><div class="ttname"><a href="../../d1/def/project_2_project_8h.html#ad07ec4803fb514a35902f4d7b85638df">PROJECT_TYPENAME</a></div><div class="ttdeci">#define PROJECT_TYPENAME</div><div class="ttdef"><b>Definition</b> <a href="../../d1/def/project_2_project_8h_source.html#l00005">project.h:5</a></div></div>
-<div class="ttc" id="astruct_techstorm_1_1_window_decorations_html"><div class="ttname"><a href="../../d2/d61/struct_techstorm_1_1_window_decorations.html">Techstorm::WindowDecorations</a></div><div class="ttdoc">Window decorations are a set of parameters that are used to configure the window. This includes title...</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d19/_window_decorations_8h_source.html#l00008">WindowDecorations.h:8</a></div></div>
-<div class="ttc" id="astruct_techstorm_1_1_window_decorations_html_a0660189429bb5ed37d721cc2b6009b17"><div class="ttname"><a href="../../d2/d61/struct_techstorm_1_1_window_decorations.html#a0660189429bb5ed37d721cc2b6009b17">Techstorm::WindowDecorations::height</a></div><div class="ttdeci">uint32_t height</div><div class="ttdoc">The width of the window.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d19/_window_decorations_8h_source.html#l00011">WindowDecorations.h:11</a></div></div>
-<div class="ttc" id="astruct_techstorm_1_1_window_decorations_html_a06c54d45bb16b660ccb1ffabd71e7291"><div class="ttname"><a href="../../d2/d61/struct_techstorm_1_1_window_decorations.html#a06c54d45bb16b660ccb1ffabd71e7291">Techstorm::WindowDecorations::targetFPS</a></div><div class="ttdeci">unsigned int targetFPS</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d19/_window_decorations_8h_source.html#l00013">WindowDecorations.h:13</a></div></div>
-<div class="ttc" id="astruct_techstorm_1_1_window_decorations_html_a273a970284e324b89ba9c7611c0145fa"><div class="ttname"><a href="../../d2/d61/struct_techstorm_1_1_window_decorations.html#a273a970284e324b89ba9c7611c0145fa">Techstorm::WindowDecorations::width</a></div><div class="ttdeci">uint32_t width</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d19/_window_decorations_8h_source.html#l00010">WindowDecorations.h:10</a></div></div>
-<div class="ttc" id="astruct_techstorm_1_1_window_decorations_html_a4da13fe3c3fa928c3e1f584fae3c0ee6"><div class="ttname"><a href="../../d2/d61/struct_techstorm_1_1_window_decorations.html#a4da13fe3c3fa928c3e1f584fae3c0ee6">Techstorm::WindowDecorations::title</a></div><div class="ttdeci">const char * title</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d19/_window_decorations_8h_source.html#l00009">WindowDecorations.h:9</a></div></div>
+<div class="ttc" id="astruct_techstorm_1_1_window_decorations_html"><div class="ttname"><a href="../../d2/d61/struct_techstorm_1_1_window_decorations.html">Techstorm::WindowDecorations</a></div><div class="ttdoc">Window decorations are a set of parameters that are used to configure the window. This includes title...</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d19/_window_decorations_8h_source.html#l00009">WindowDecorations.h:9</a></div></div>
+<div class="ttc" id="astruct_techstorm_1_1_window_decorations_html_a0660189429bb5ed37d721cc2b6009b17"><div class="ttname"><a href="../../d2/d61/struct_techstorm_1_1_window_decorations.html#a0660189429bb5ed37d721cc2b6009b17">Techstorm::WindowDecorations::height</a></div><div class="ttdeci">uint32_t height</div><div class="ttdoc">The width of the window.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d19/_window_decorations_8h_source.html#l00012">WindowDecorations.h:12</a></div></div>
+<div class="ttc" id="astruct_techstorm_1_1_window_decorations_html_a06c54d45bb16b660ccb1ffabd71e7291"><div class="ttname"><a href="../../d2/d61/struct_techstorm_1_1_window_decorations.html#a06c54d45bb16b660ccb1ffabd71e7291">Techstorm::WindowDecorations::targetFPS</a></div><div class="ttdeci">unsigned int targetFPS</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d19/_window_decorations_8h_source.html#l00014">WindowDecorations.h:14</a></div></div>
+<div class="ttc" id="astruct_techstorm_1_1_window_decorations_html_a0d9d9ccf12fa5480c5ac21c28c09accc"><div class="ttname"><a href="../../d2/d61/struct_techstorm_1_1_window_decorations.html#a0d9d9ccf12fa5480c5ac21c28c09accc">Techstorm::WindowDecorations::icon</a></div><div class="ttdeci">const char * icon</div><div class="ttdoc">The target FPS for the window.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d19/_window_decorations_8h_source.html#l00015">WindowDecorations.h:15</a></div></div>
+<div class="ttc" id="astruct_techstorm_1_1_window_decorations_html_a273a970284e324b89ba9c7611c0145fa"><div class="ttname"><a href="../../d2/d61/struct_techstorm_1_1_window_decorations.html#a273a970284e324b89ba9c7611c0145fa">Techstorm::WindowDecorations::width</a></div><div class="ttdeci">uint32_t width</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d19/_window_decorations_8h_source.html#l00011">WindowDecorations.h:11</a></div></div>
+<div class="ttc" id="astruct_techstorm_1_1_window_decorations_html_a4da13fe3c3fa928c3e1f584fae3c0ee6"><div class="ttname"><a href="../../d2/d61/struct_techstorm_1_1_window_decorations.html#a4da13fe3c3fa928c3e1f584fae3c0ee6">Techstorm::WindowDecorations::title</a></div><div class="ttdeci">const char * title</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d19/_window_decorations_8h_source.html#l00010">WindowDecorations.h:10</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_844f6ab5c2ae79211596f3dcdd81adb7.html">application</a></li><li class="navelem"><a class="el" href="../../dd/d39/application_2main_8cpp.html">main.cpp</a></li>
-    <li class="footer">Generated on Fri Nov 15 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Mon Nov 18 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

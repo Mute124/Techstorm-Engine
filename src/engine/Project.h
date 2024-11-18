@@ -3,6 +3,7 @@
 #include "renderer/Window.h"
 #include "renderer/WindowDecorations.h"
 #include "utils/Singleton.h"
+#include "modding/ScriptingAPI.h"
 #include "GameSettings.h"
 #include <stdint.h>
 
@@ -17,6 +18,8 @@ namespace Techstorm {
 	protected:
 		Techstorm::Renderer mRenderer;
 		WindowDecorations mWindowDecorations;
+		LuaLibraryRegistry mLuaLibraries;
+		LuaFunctionRegistry mLuaFunctions;
 
 		/// <summary>
 		/// Represents a polymorphic singleton reference to the user's project instance through a pointer of Techstorm::IProject. This is
@@ -35,6 +38,19 @@ namespace Techstorm {
 
 	public:
 		GameSettings settings;
+
+		/// <summary>
+		/// Gets the lua libraries.
+		/// </summary>
+		/// <returns>A reference to mLuaLibraries</returns>
+		LuaLibraryRegistry& getLuaLibraries() { return mLuaLibraries; }
+
+		/// <summary>
+		/// Gets the lua functions.
+		/// </summary>
+		/// <returns>A reference to mLuaFunctions</returns>
+		LuaFunctionRegistry& getLuaFunctions() { return mLuaFunctions; }
+
 		/// <summary>
 		/// Gets the window decorations. This includes the window title, icon, size, etc.
 		/// </summary>
@@ -66,7 +82,8 @@ namespace Techstorm {
 		/// This is the first function that will be called on startup. This is empty because it is an optional feature but is highly reccomended to clearly outline initialization phases.
 		/// </summary>
 		/// <inheritdoc />
-		virtual void preInit();;
+		virtual void preInit() {
+		}
 
 		/// <summary>
 		/// Initializes your project. Any code you need done before the loop starts, call it here. <b>THIS MUST BE OVERRIDEN BY YOUR PROJECT CLASS!</b>

@@ -1,8 +1,36 @@
-\chapter{Dependencies}
-\hypertarget{index}{}\label{index}\index{Dependencies@{Dependencies}}
-\label{index_dependencies}%
-\Hypertarget{index_dependencies}%
+\chapter{What is Techstorm}
+\hypertarget{index}{}\label{index}\index{What is Techstorm@{What is Techstorm}}
+\label{index_what-is-techstorm}%
+\Hypertarget{index_what-is-techstorm}%
  \DoxyHorRuler{0}
+
+
+\doxylink{namespace_techstorm}{Techstorm} is the response to the lack of a free game engine that is built for large open worlds. ~\newline
+\hypertarget{index_architecture}{}\doxysection{\texorpdfstring{Architecture}{Architecture}}\label{index_architecture}
+\DoxyHorRuler{0}
+
+
+Due to the inherent nature of \doxylink{namespace_techstorm}{Techstorm}, the architecture can be complex. In terms of building, there are a few things that are required to understand how \doxylink{namespace_techstorm}{Techstorm} works. There are 4 groups that are used to build the engine, as outlined below\+:
+\begin{DoxyItemize}
+\item Application
+\item Engine
+\item \doxylink{class_project}{Project}
+\item Tools The Application is responsible for loading the engine and handling the project, as seen below.
+\end{DoxyItemize}
+
+\hypertarget{index_graphics-architecture}{}\doxysubsection{\texorpdfstring{Graphics Architecture}{Graphics Architecture}}\label{index_graphics-architecture}
+\DoxyHorRuler{0}
+\hypertarget{index_graphics-introduction}{}\doxysubsubsection{\texorpdfstring{Graphics Introduction}{Graphics Introduction}}\label{index_graphics-introduction}
+\DoxyHorRuler{0}
+
+
+Despite the fact \doxylink{namespace_techstorm}{Techstorm} tries to make graphics easier, it can become complex due to the nature of 3D graphics. For this reason, it is imperative that you read this carefully in order to reduce future headache. In addition, if you are not well versed in how Open\+GL and Raylib works, please read the online book/tutorial \href{https://learnopengl.com/}{\texttt{ Learn Open\+GL}} and using-\/raylib respectably. ~\newline
+\hypertarget{index_how-cameras-work}{}\doxysubsubsection{\texorpdfstring{How Cameras Work}{How Cameras Work}}\label{index_how-cameras-work}
+\DoxyHorRuler{0}
+\hypertarget{index_graphics-terminology}{}\doxyparagraph{\texorpdfstring{Graphics Terminology}{Graphics Terminology}}\label{index_graphics-terminology}
+\DoxyHorRuler{0}
+\hypertarget{index_dependencies}{}\doxysection{\texorpdfstring{Dependencies}{Dependencies}}\label{index_dependencies}
+\DoxyHorRuler{0}
 
 
 As it is a game engine, \doxylink{namespace_techstorm}{Techstorm} has alot of dependencies and can be found within the conanfile.\+txt in the same folder as the main CMake\+Lists.\+txt file. In addition to this, the current dependencies are listed as listed below with it\textquotesingle{}s basic purpose.

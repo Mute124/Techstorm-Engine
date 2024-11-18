@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Techstorm: Dependencies</title>
+<title>Techstorm: What is Techstorm</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -91,10 +91,39 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Dependencies </div></div>
+  <div class="headertitle"><div class="title">What is <a class="el" href="d4/d26/namespace_techstorm.html">Techstorm</a> </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="dependencies"></a> </p><hr  />
+<div class="textblock"><p><a class="anchor" id="what-is-techstorm"></a> </p><hr  />
+<p><a class="el" href="d4/d26/namespace_techstorm.html">Techstorm</a> is the response to the lack of a free game engine that is built for large open worlds. <br  />
+</p>
+<h1><a class="anchor" id="architecture"></a>
+Architecture</h1>
+<hr  />
+<p>Due to the inherent nature of <a class="el" href="d4/d26/namespace_techstorm.html">Techstorm</a>, the architecture can be complex. In terms of building, there are a few things that are required to understand how <a class="el" href="d4/d26/namespace_techstorm.html">Techstorm</a> works. There are 4 groups that are used to build the engine, as outlined below:</p><ul>
+<li>Application</li>
+<li>Engine</li>
+<li><a class="el" href="d9/d6e/class_project.html" title="Write your project code here or do what you want with it. However, you MUST implement the IProject in...">Project</a></li>
+<li>Tools The Application is responsible for loading the engine and handling the project, as seen below.</li>
+</ul>
+<p><img src="flowchart.png" alt="Game Engine Application Flow Chart" title="Techstorm&apos;s high level flow chart" class="inline"/></p>
+<h2><a class="anchor" id="graphics-architecture"></a>
+Graphics Architecture</h2>
+<hr  />
+<h3><a class="anchor" id="graphics-introduction"></a>
+Graphics Introduction</h3>
+<hr  />
+<p>Despite the fact <a class="el" href="d4/d26/namespace_techstorm.html">Techstorm</a> tries to make graphics easier, it can become complex due to the nature of 3D graphics. For this reason, it is imperative that you read this carefully in order to reduce future headache. In addition, if you are not well versed in how OpenGL and Raylib works, please read the online book/tutorial <a href="https://learnopengl.com/">Learn OpenGL</a> and using-raylib respectably. <br  />
+</p>
+<h3><a class="anchor" id="how-cameras-work"></a>
+How Cameras Work</h3>
+<hr  />
+<h4><a class="anchor" id="graphics-terminology"></a>
+Graphics Terminology</h4>
+<hr  />
+<h1><a class="anchor" id="dependencies"></a>
+Dependencies</h1>
+<hr  />
 <p>As it is a game engine, <a class="el" href="d4/d26/namespace_techstorm.html">Techstorm</a> has alot of dependencies and can be found within the conanfile.txt in the same folder as the main CMakeLists.txt file. In addition to this, the current dependencies are listed as listed below with it's basic purpose.</p>
 <ul>
 <li>Jolt Physics<ul>
@@ -215,7 +244,7 @@ Functions</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Nov 15 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Mon Nov 18 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
