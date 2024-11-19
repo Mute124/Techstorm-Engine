@@ -89,6 +89,21 @@ namespace Techstorm {
 		/// </summary>
 		/// <inheritdoc />
 		virtual void preInit() {
+			// Image loading functions
+
+			AddFileRegistryLoadFunction("png", [](std::shared_ptr<FileMeta> loadFunc) {
+				return std::any_cast<Image>(LoadImage(loadFunc->path.c_str()));
+			});
+			
+			AddFileRegistryLoadFunction("jpg", [](std::shared_ptr<FileMeta> loadFunc) {
+				return std::any_cast<Image>(LoadImage(loadFunc->path.c_str()));
+			});
+
+			AddFileRegistryLoadFunction("jpeg", [](std::shared_ptr<FileMeta> loadFunc) {
+				return std::any_cast<Image>(LoadImage(loadFunc->path.c_str()));
+			});
+
+
 			InitializeFileRegistry(TS_GAME_DIR.c_str());
 		}
 

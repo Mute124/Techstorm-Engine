@@ -99,29 +99,29 @@ $(document).ready(function(){initNavTree('d7/dd3/_config_8cpp_source.html','../.
   <div class="headertitle"><div class="title">Config.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d7/dd3/_config_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<a href="../../d7/dd3/_config_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;../fs/FileSystem.h&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="../../d4/d71/_config_8h.html">Config.h</a>&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;raylib.h&gt;</span></div>
-<div class="foldopen" id="foldopen00004" data-start="{" data-end="}">
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a892299d04efa0c817355d5b4066161c8">    4</a></span><a class="code hl_function" href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a3cf7d0fabc5569eecc57d0d3a9939d62">Techstorm::ConfigFileRegistry::ConfigFileRegistry</a>(<span class="keyword">const</span> std::string&amp; searchPath)</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">        FilePathList files = LoadDirectoryFilesEx(searchPath.c_str(), nullptr, true);</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"></span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">        for (int i = 0; i &lt; files.count; i++) {</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">            std::string path = files.paths[i];</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">            std::string filename = path.substr(path.find_last_of(&quot;\\&quot;) + 1);</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">            std::string extension = filename.substr(filename.find_last_of(&quot;.&quot;) + 1);</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"></span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">            //std::cout &lt;&lt; &quot;File: &quot; &lt;&lt; filename &lt;&lt; std::endl &lt;&lt; &quot;\tat: &quot; &lt;&lt; path &lt;&lt; std::endl &lt;&lt; &quot;\t\tWith Extension of : &quot; &lt;&lt; extension &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">        }</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;libconfig.h++&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;any&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// TODO: This needs to have readConfigFile implemented.</span></div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="../../d7/dd3/_config_8cpp.html#a95950f895d0b0a2c4eda2f1dd239704c">    9</a></span>std::any <a class="code hl_function" href="../../d7/dd3/_config_8cpp.html#a95950f895d0b0a2c4eda2f1dd239704c">LoadConfigFile</a>(std::shared_ptr&lt;Techstorm::FileMeta&gt; fileMeta) {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">using namespace </span><a class="code hl_namespace" href="../../d4/d26/namespace_techstorm.html">Techstorm</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    libconfig::Config cfg;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    cfg.readFile(fileMeta-&gt;path);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">return</span> std::make_any&lt;libconfig::Config*&gt;(&amp;cfg);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
 </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a3cf7d0fabc5569eecc57d0d3a9939d62">   19</a></span><a class="code hl_function" href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a3cf7d0fabc5569eecc57d0d3a9939d62">Techstorm::ConfigFileRegistry::ConfigFileRegistry</a>()</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a3cf7d0fabc5569eecc57d0d3a9939d62">   18</a></span><a class="code hl_function" href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a3cf7d0fabc5569eecc57d0d3a9939d62">Techstorm::ConfigFileRegistry::ConfigFileRegistry</a>()</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_function" href="../../d4/d26/namespace_techstorm.html#a1e91c0559ca9e21d2d7db69bb10c5844">AddFileRegistryLoadFunction</a>(<span class="stringliteral">&quot;cfg&quot;</span>, <a class="code hl_function" href="../../d7/dd3/_config_8cpp.html#a95950f895d0b0a2c4eda2f1dd239704c">LoadConfigFile</a>);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
 </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
@@ -130,16 +130,86 @@ $(document).ready(function(){initNavTree('d7/dd3/_config_8cpp_source.html','../.
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
 </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#af3eb80d5e0c4782f72dadc693612ee51">   27</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#af3eb80d5e0c4782f72dadc693612ee51">Techstorm::ConfigFileRegistry::readConfigFiles</a>()</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a90d2ed7bb44b9c373fab7ee143217d4d">   31</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a90d2ed7bb44b9c373fab7ee143217d4d">Techstorm::ConfigFileRegistry::readConfigFile</a>(<span class="keyword">const</span> std::string&amp; name)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    std::shared_ptr&lt;RegisteredFile&gt; file = <a class="code hl_function" href="../../d4/d26/namespace_techstorm.html#aaf6125c10046d7d70355aec49eb87e8a">GetFile</a>(name);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
+</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a8748376c8a9cb5f3b830c6bd1085c843">   36</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a8748376c8a9cb5f3b830c6bd1085c843">Techstorm::ConfigFileRegistry::writeConfigFiles</a>()</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>{</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a8d30d741445314641ce4319ab74efc42">   40</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a8d30d741445314641ce4319ab74efc42">Techstorm::ConfigFileRegistry::registerConfigFiles</a>(<span class="keyword">const</span> std::string&amp; searchPath)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>{</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
+</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a7ff5aa01b4f76873ef8ef438d109483b">   44</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a7ff5aa01b4f76873ef8ef438d109483b">Techstorm::ConfigFileRegistry::registerConfigFile</a>(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> std::string&amp; path)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a38010277a0e2e9ad384c42269ce19cb1">   48</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a38010277a0e2e9ad384c42269ce19cb1">Techstorm::ConfigFileRegistry::unregisterConfigFiles</a>()</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
+</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a3384e539773e08355c18fc01c6169793">   52</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a3384e539773e08355c18fc01c6169793">Techstorm::ConfigFileRegistry::unregisterConfigFile</a>(<span class="keyword">const</span> std::string&amp; name)</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>{</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
+</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a2e49f91dfa8e3d8ec15aed9fc8fb4a68">   56</a></span>libconfig::Setting&amp; <a class="code hl_function" href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a2e49f91dfa8e3d8ec15aed9fc8fb4a68">Techstorm::ConfigFileRegistry::lookup</a>(<span class="keyword">const</span> std::string&amp; name)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>{</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    libconfig::Config <span class="keyword">const</span>* cfg = std::any_cast&lt;libconfig::Config*&gt;(<a class="code hl_function" href="../../d4/d26/namespace_techstorm.html#aaf6125c10046d7d70355aec49eb87e8a">GetFile</a>(name)-&gt;data);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">return</span> cfg-&gt;lookup(name);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
+</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">libconfig::Config&amp; Techstorm::ConfigFileRegistry::operator[](const std::string&amp; name)</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">{</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">    // TODO: insert return statement here</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">}</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">*/</span></div>
+<div class="ttc" id="a_config_8cpp_html_a95950f895d0b0a2c4eda2f1dd239704c"><div class="ttname"><a href="../../d7/dd3/_config_8cpp.html#a95950f895d0b0a2c4eda2f1dd239704c">LoadConfigFile</a></div><div class="ttdeci">std::any LoadConfigFile(std::shared_ptr&lt; Techstorm::FileMeta &gt; fileMeta)</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd3/_config_8cpp_source.html#l00009">Config.cpp:9</a></div></div>
 <div class="ttc" id="a_config_8h_html"><div class="ttname"><a href="../../d4/d71/_config_8h.html">Config.h</a></div></div>
-<div class="ttc" id="aclass_techstorm_1_1_config_file_registry_html_a3cf7d0fabc5569eecc57d0d3a9939d62"><div class="ttname"><a href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a3cf7d0fabc5569eecc57d0d3a9939d62">Techstorm::ConfigFileRegistry::ConfigFileRegistry</a></div><div class="ttdeci">ConfigFileRegistry()</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd3/_config_8cpp_source.html#l00019">Config.cpp:19</a></div></div>
+<div class="ttc" id="aclass_techstorm_1_1_config_file_registry_html_a2e49f91dfa8e3d8ec15aed9fc8fb4a68"><div class="ttname"><a href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a2e49f91dfa8e3d8ec15aed9fc8fb4a68">Techstorm::ConfigFileRegistry::lookup</a></div><div class="ttdeci">libconfig::Setting &amp; lookup(const std::string &amp;name)</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd3/_config_8cpp_source.html#l00056">Config.cpp:56</a></div></div>
+<div class="ttc" id="aclass_techstorm_1_1_config_file_registry_html_a3384e539773e08355c18fc01c6169793"><div class="ttname"><a href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a3384e539773e08355c18fc01c6169793">Techstorm::ConfigFileRegistry::unregisterConfigFile</a></div><div class="ttdeci">void unregisterConfigFile(const std::string &amp;name)</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd3/_config_8cpp_source.html#l00052">Config.cpp:52</a></div></div>
+<div class="ttc" id="aclass_techstorm_1_1_config_file_registry_html_a38010277a0e2e9ad384c42269ce19cb1"><div class="ttname"><a href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a38010277a0e2e9ad384c42269ce19cb1">Techstorm::ConfigFileRegistry::unregisterConfigFiles</a></div><div class="ttdeci">void unregisterConfigFiles()</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd3/_config_8cpp_source.html#l00048">Config.cpp:48</a></div></div>
+<div class="ttc" id="aclass_techstorm_1_1_config_file_registry_html_a3cf7d0fabc5569eecc57d0d3a9939d62"><div class="ttname"><a href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a3cf7d0fabc5569eecc57d0d3a9939d62">Techstorm::ConfigFileRegistry::ConfigFileRegistry</a></div><div class="ttdeci">ConfigFileRegistry()</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd3/_config_8cpp_source.html#l00018">Config.cpp:18</a></div></div>
 <div class="ttc" id="aclass_techstorm_1_1_config_file_registry_html_a7c787bd9f85443ad2b2362e020d38e61"><div class="ttname"><a href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a7c787bd9f85443ad2b2362e020d38e61">Techstorm::ConfigFileRegistry::~ConfigFileRegistry</a></div><div class="ttdeci">~ConfigFileRegistry()</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd3/_config_8cpp_source.html#l00023">Config.cpp:23</a></div></div>
+<div class="ttc" id="aclass_techstorm_1_1_config_file_registry_html_a7ff5aa01b4f76873ef8ef438d109483b"><div class="ttname"><a href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a7ff5aa01b4f76873ef8ef438d109483b">Techstorm::ConfigFileRegistry::registerConfigFile</a></div><div class="ttdeci">void registerConfigFile(const std::string &amp;name, const std::string &amp;path)</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd3/_config_8cpp_source.html#l00044">Config.cpp:44</a></div></div>
+<div class="ttc" id="aclass_techstorm_1_1_config_file_registry_html_a8748376c8a9cb5f3b830c6bd1085c843"><div class="ttname"><a href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a8748376c8a9cb5f3b830c6bd1085c843">Techstorm::ConfigFileRegistry::writeConfigFiles</a></div><div class="ttdeci">void writeConfigFiles()</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd3/_config_8cpp_source.html#l00036">Config.cpp:36</a></div></div>
+<div class="ttc" id="aclass_techstorm_1_1_config_file_registry_html_a8d30d741445314641ce4319ab74efc42"><div class="ttname"><a href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a8d30d741445314641ce4319ab74efc42">Techstorm::ConfigFileRegistry::registerConfigFiles</a></div><div class="ttdeci">void registerConfigFiles(const std::string &amp;searchPath)</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd3/_config_8cpp_source.html#l00040">Config.cpp:40</a></div></div>
+<div class="ttc" id="aclass_techstorm_1_1_config_file_registry_html_a90d2ed7bb44b9c373fab7ee143217d4d"><div class="ttname"><a href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#a90d2ed7bb44b9c373fab7ee143217d4d">Techstorm::ConfigFileRegistry::readConfigFile</a></div><div class="ttdeci">void readConfigFile(const std::string &amp;name)</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd3/_config_8cpp_source.html#l00031">Config.cpp:31</a></div></div>
+<div class="ttc" id="aclass_techstorm_1_1_config_file_registry_html_af3eb80d5e0c4782f72dadc693612ee51"><div class="ttname"><a href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html#af3eb80d5e0c4782f72dadc693612ee51">Techstorm::ConfigFileRegistry::readConfigFiles</a></div><div class="ttdeci">void readConfigFiles()</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dd3/_config_8cpp_source.html#l00027">Config.cpp:27</a></div></div>
+<div class="ttc" id="anamespace_techstorm_html"><div class="ttname"><a href="../../d4/d26/namespace_techstorm.html">Techstorm</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d47/_application_utils_8h_source.html#l00014">ApplicationUtils.h:14</a></div></div>
+<div class="ttc" id="anamespace_techstorm_html_a1e91c0559ca9e21d2d7db69bb10c5844"><div class="ttname"><a href="../../d4/d26/namespace_techstorm.html#a1e91c0559ca9e21d2d7db69bb10c5844">Techstorm::AddFileRegistryLoadFunction</a></div><div class="ttdeci">void AddFileRegistryLoadFunction(std::string const &amp;extension, std::function&lt; std::any(std::shared_ptr&lt; FileMeta &gt;)&gt; const &amp;loadFunc)</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d4c/_file_system_8cpp_source.html#l00024">FileSystem.cpp:24</a></div></div>
+<div class="ttc" id="anamespace_techstorm_html_aaf6125c10046d7d70355aec49eb87e8a"><div class="ttname"><a href="../../d4/d26/namespace_techstorm.html#aaf6125c10046d7d70355aec49eb87e8a">Techstorm::GetFile</a></div><div class="ttdeci">std::shared_ptr&lt; RegisteredFile &gt; GetFile(std::string const &amp;key, bool loadIfNotLoaded=true)</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d4c/_file_system_8cpp_source.html#l00039">FileSystem.cpp:39</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="../../dir_f2c5e5c6e4e4e0c9b0f6d7afea7d8b67.html">conf</a></li><li class="navelem"><a class="el" href="../../d7/dd3/_config_8cpp.html">Config.cpp</a></li>
-    <li class="footer">Generated on Mon Nov 18 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Tue Nov 19 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

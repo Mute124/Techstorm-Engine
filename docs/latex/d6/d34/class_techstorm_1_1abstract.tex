@@ -59,6 +59,10 @@ virtual uint16\+\_\+t \mbox{\hyperlink{class_techstorm_1_1abstract_a4103ef111838
 \item 
 virtual \mbox{\hyperlink{class_techstorm_1_1abstract_a4a5949bcde32483abd8b15105a2eda10}{\texorpdfstring{$\sim$}{\string~}\+ILayer\+Registry}} ()=default
 \item 
+\mbox{\hyperlink{namespace_techstorm_af6556c4d563341def4c68414537120ed}{Lua\+Library\+Registry}} \& \mbox{\hyperlink{class_techstorm_1_1abstract_a11557dafdc33521a3c5af2285f7bbe92}{get\+Lua\+Libraries}} ()
+\begin{DoxyCompactList}\small\item\em Gets the lua libraries. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_techstorm_aacc8d13353a5459666050b5aa6ed808c}{Lua\+Function\+Registry}} \& \mbox{\hyperlink{class_techstorm_1_1abstract_a5582088d505c0db0b4bb9dec107e7478}{get\+Lua\+Functions}} ()
+\begin{DoxyCompactList}\small\item\em Gets the lua functions. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_techstorm_1_1_window_decorations}{Window\+Decorations}} \& \mbox{\hyperlink{class_techstorm_1_1abstract_a1e1ac3ebe011afceaed6aaba2f3498ef}{get\+Window\+Decorations}} ()
 \begin{DoxyCompactList}\small\item\em Gets the window decorations. This includes the window title, icon, size, etc. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_techstorm_1_1abstract_aa88dc54c1571ea9c555e6438e851b517}{set\+Window\+Decorations}} (\mbox{\hyperlink{struct_techstorm_1_1_window_decorations}{Window\+Decorations}} \&window\+Decorations)
@@ -67,6 +71,8 @@ void \mbox{\hyperlink{class_techstorm_1_1abstract_aa88dc54c1571ea9c555e6438e851b
 \begin{DoxyCompactList}\small\item\em Gets the renderer instance. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_techstorm_1_1abstract_aba25eb9fe166bd646e7416a15cd6c100}{set\+Project}} (T \texorpdfstring{$\ast$}{*}project)
 \begin{DoxyCompactList}\small\item\em This function is used to set the {\itshape \doxylink{class_techstorm_1_1abstract_1_1_project_reference}{Project\+Reference}} singleton to the project. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_techstorm_1_1abstract_a40bbaee10942400085811546d34a760a}{setup\+File\+Registry\+Targets}} ()
+\item 
 virtual void \mbox{\hyperlink{class_techstorm_1_1abstract_a5a3f3dc681fb548bb40d008cdeb0352f}{pre\+Init}} ()
 \begin{DoxyCompactList}\small\item\em This is the first function that will be called on startup. This is empty because it is an optional feature but is highly reccomended to clearly outline initialization phases. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_techstorm_1_1abstract_aa41daa77787a2c41071ba34e88c8f7b7}{init}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
@@ -167,6 +173,10 @@ std\+::uint8\+\_\+t \mbox{\hyperlink{class_techstorm_1_1abstract_a0a341d59f8fedf
 \mbox{\hyperlink{class_techstorm_1_1_renderer}{Techstorm\+::\+Renderer}} \mbox{\hyperlink{class_techstorm_1_1abstract_a38b8d4b7fc1d5e7b193d098f2dc99c5f}{m\+Renderer}}
 \item 
 \mbox{\hyperlink{struct_techstorm_1_1_window_decorations}{Window\+Decorations}} \mbox{\hyperlink{class_techstorm_1_1abstract_a9308944fbd7de798a5c8e9e987600db9}{m\+Window\+Decorations}}
+\item 
+\mbox{\hyperlink{namespace_techstorm_af6556c4d563341def4c68414537120ed}{Lua\+Library\+Registry}} \mbox{\hyperlink{class_techstorm_1_1abstract_aeca2999b14b92284db9c0a9bb88e355d}{m\+Lua\+Libraries}}
+\item 
+\mbox{\hyperlink{namespace_techstorm_aacc8d13353a5459666050b5aa6ed808c}{Lua\+Function\+Registry}} \mbox{\hyperlink{class_techstorm_1_1abstract_a34a58392845bca2144f74cfe3d247de0}{m\+Lua\+Functions}}
 \end{DoxyCompactItemize}
 
 
@@ -293,6 +303,42 @@ virtual uint16\+\_\+t \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+:
 {\footnotesize\ttfamily template$<$typename K , typename D , typename T $>$ \\
 virtual K \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+::abstract}}$<$ K, D, T $>$\+::get\+Layer\+Name (\begin{DoxyParamCaption}\item[{T}]{layer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
+\Hypertarget{class_techstorm_1_1abstract_a5582088d505c0db0b4bb9dec107e7478}\label{class_techstorm_1_1abstract_a5582088d505c0db0b4bb9dec107e7478} 
+\index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!getLuaFunctions@{getLuaFunctions}}
+\index{getLuaFunctions@{getLuaFunctions}!Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}}
+\doxysubsubsection{\texorpdfstring{getLuaFunctions()}{getLuaFunctions()}}
+{\footnotesize\ttfamily template$<$typename K , typename D , typename T $>$ \\
+\mbox{\hyperlink{namespace_techstorm_aacc8d13353a5459666050b5aa6ed808c}{Lua\+Function\+Registry}} \& \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+::abstract}}$<$ K, D, T $>$\+::get\+Lua\+Functions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the lua functions. 
+
+\begin{DoxyReturn}{Returns}
+A reference to m\+Lua\+Functions
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{engine_2_project_8h_source_l00053}{53}} of file \mbox{\hyperlink{engine_2_project_8h_source}{Project.\+h}}.
+
+\Hypertarget{class_techstorm_1_1abstract_a11557dafdc33521a3c5af2285f7bbe92}\label{class_techstorm_1_1abstract_a11557dafdc33521a3c5af2285f7bbe92} 
+\index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!getLuaLibraries@{getLuaLibraries}}
+\index{getLuaLibraries@{getLuaLibraries}!Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}}
+\doxysubsubsection{\texorpdfstring{getLuaLibraries()}{getLuaLibraries()}}
+{\footnotesize\ttfamily template$<$typename K , typename D , typename T $>$ \\
+\mbox{\hyperlink{namespace_techstorm_af6556c4d563341def4c68414537120ed}{Lua\+Library\+Registry}} \& \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+::abstract}}$<$ K, D, T $>$\+::get\+Lua\+Libraries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the lua libraries. 
+
+\begin{DoxyReturn}{Returns}
+A reference to m\+Lua\+Libraries
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{engine_2_project_8h_source_l00047}{47}} of file \mbox{\hyperlink{engine_2_project_8h_source}{Project.\+h}}.
+
 \Hypertarget{class_techstorm_1_1abstract_a9e393f6cee0d2d38f0b63783c9bf472a}\label{class_techstorm_1_1abstract_a9e393f6cee0d2d38f0b63783c9bf472a} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!GetProject@{GetProject}}
 \index{GetProject@{GetProject}!Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}}
@@ -323,7 +369,7 @@ This project\textquotesingle{}s m\+Renderer variable
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{engine_2_project_8h_source_l00055}{55}} of file \mbox{\hyperlink{engine_2_project_8h_source}{Project.\+h}}.
+Definition at line \mbox{\hyperlink{engine_2_project_8h_source_l00072}{72}} of file \mbox{\hyperlink{engine_2_project_8h_source}{Project.\+h}}.
 
 \Hypertarget{class_techstorm_1_1abstract_a1e1ac3ebe011afceaed6aaba2f3498ef}\label{class_techstorm_1_1abstract_a1e1ac3ebe011afceaed6aaba2f3498ef} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!getWindowDecorations@{getWindowDecorations}}
@@ -564,12 +610,22 @@ Called right after the update function, but before texturing/rendering. Keep in 
 \index{preInit@{preInit}!Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}}
 \doxysubsubsection{\texorpdfstring{preInit()}{preInit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$typename K , typename D , typename T $>$ \\
-virtual void \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+::abstract}}$<$ K, D, T $>$\+::pre\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+virtual void \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+::abstract}}$<$ K, D, T $>$\+::pre\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
 This is the first function that will be called on startup. This is empty because it is an optional feature but is highly reccomended to clearly outline initialization phases. 
 
+
+
+Definition at line \mbox{\hyperlink{engine_2_project_8h_source_l00091}{91}} of file \mbox{\hyperlink{engine_2_project_8h_source}{Project.\+h}}.
+
+
+
+References \mbox{\hyperlink{_file_system_8cpp_source_l00019}{Techstorm\+::\+Initialize\+File\+Registry()}}, and \mbox{\hyperlink{_common_8h_source_l00011}{TS\+\_\+\+GAME\+\_\+\+DIR}}.
+
+Here is the call graph for this function\+:
+% FIG 2
 \Hypertarget{class_techstorm_1_1abstract_aa23d3d48735ffe2369924f43c7747def}\label{class_techstorm_1_1abstract_aa23d3d48735ffe2369924f43c7747def} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!preInit@{preInit}}
 \index{preInit@{preInit}!Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}}
@@ -695,6 +751,17 @@ This function is used to set the {\itshape \doxylink{class_techstorm_1_1abstract
 {\em project} & The pointer to the user\textquotesingle{}s project\\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_techstorm_1_1abstract_a40bbaee10942400085811546d34a760a}\label{class_techstorm_1_1abstract_a40bbaee10942400085811546d34a760a} 
+\index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!setupFileRegistryTargets@{setupFileRegistryTargets}}
+\index{setupFileRegistryTargets@{setupFileRegistryTargets}!Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}}
+\doxysubsubsection{\texorpdfstring{setupFileRegistryTargets()}{setupFileRegistryTargets()}}
+{\footnotesize\ttfamily template$<$typename K , typename D , typename T $>$ \\
+virtual void \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+::abstract}}$<$ K, D, T $>$\+::setup\+File\+Registry\+Targets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{engine_2_project_8h_source_l00083}{83}} of file \mbox{\hyperlink{engine_2_project_8h_source}{Project.\+h}}.
+
 \Hypertarget{class_techstorm_1_1abstract_aa88dc54c1571ea9c555e6438e851b517}\label{class_techstorm_1_1abstract_aa88dc54c1571ea9c555e6438e851b517} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!setWindowDecorations@{setWindowDecorations}}
 \index{setWindowDecorations@{setWindowDecorations}!Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}}
@@ -813,6 +880,28 @@ std\+::unordered\+\_\+map$<$T, K$>$ \mbox{\hyperlink{class_techstorm_1_1abstract
 
 Definition at line \mbox{\hyperlink{_i_layer_registry_8h_source_l00038}{38}} of file \mbox{\hyperlink{_i_layer_registry_8h_source}{ILayer\+Registry.\+h}}.
 
+\Hypertarget{class_techstorm_1_1abstract_a34a58392845bca2144f74cfe3d247de0}\label{class_techstorm_1_1abstract_a34a58392845bca2144f74cfe3d247de0} 
+\index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!mLuaFunctions@{mLuaFunctions}}
+\index{mLuaFunctions@{mLuaFunctions}!Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}}
+\doxysubsubsection{\texorpdfstring{mLuaFunctions}{mLuaFunctions}}
+{\footnotesize\ttfamily template$<$typename K , typename D , typename T $>$ \\
+\mbox{\hyperlink{namespace_techstorm_aacc8d13353a5459666050b5aa6ed808c}{Lua\+Function\+Registry}} \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+::abstract}}$<$ K, D, T $>$\+::m\+Lua\+Functions\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{engine_2_project_8h_source_l00023}{23}} of file \mbox{\hyperlink{engine_2_project_8h_source}{Project.\+h}}.
+
+\Hypertarget{class_techstorm_1_1abstract_aeca2999b14b92284db9c0a9bb88e355d}\label{class_techstorm_1_1abstract_aeca2999b14b92284db9c0a9bb88e355d} 
+\index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!mLuaLibraries@{mLuaLibraries}}
+\index{mLuaLibraries@{mLuaLibraries}!Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}}
+\doxysubsubsection{\texorpdfstring{mLuaLibraries}{mLuaLibraries}}
+{\footnotesize\ttfamily template$<$typename K , typename D , typename T $>$ \\
+\mbox{\hyperlink{namespace_techstorm_af6556c4d563341def4c68414537120ed}{Lua\+Library\+Registry}} \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+::abstract}}$<$ K, D, T $>$\+::m\+Lua\+Libraries\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{engine_2_project_8h_source_l00022}{22}} of file \mbox{\hyperlink{engine_2_project_8h_source}{Project.\+h}}.
+
 \Hypertarget{class_techstorm_1_1abstract_a55f5f1c35b36dd8266ab3887337e0d0b}\label{class_techstorm_1_1abstract_a55f5f1c35b36dd8266ab3887337e0d0b} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!model@{model}}
 \index{model@{model}!Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}}
@@ -833,7 +922,7 @@ Definition at line \mbox{\hyperlink{_game_object_8h_source_l00023}{23}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{engine_2_project_8h_source_l00018}{18}} of file \mbox{\hyperlink{engine_2_project_8h_source}{Project.\+h}}.
+Definition at line \mbox{\hyperlink{engine_2_project_8h_source_l00020}{20}} of file \mbox{\hyperlink{engine_2_project_8h_source}{Project.\+h}}.
 
 \Hypertarget{class_techstorm_1_1abstract_a9308944fbd7de798a5c8e9e987600db9}\label{class_techstorm_1_1abstract_a9308944fbd7de798a5c8e9e987600db9} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!mWindowDecorations@{mWindowDecorations}}
@@ -844,7 +933,7 @@ Definition at line \mbox{\hyperlink{engine_2_project_8h_source_l00018}{18}} of f
 
 
 
-Definition at line \mbox{\hyperlink{engine_2_project_8h_source_l00019}{19}} of file \mbox{\hyperlink{engine_2_project_8h_source}{Project.\+h}}.
+Definition at line \mbox{\hyperlink{engine_2_project_8h_source_l00021}{21}} of file \mbox{\hyperlink{engine_2_project_8h_source}{Project.\+h}}.
 
 \Hypertarget{class_techstorm_1_1abstract_a376ce35fc2ca9b1088dcaaa36a68cb24}\label{class_techstorm_1_1abstract_a376ce35fc2ca9b1088dcaaa36a68cb24} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!position@{position}}
@@ -899,7 +988,7 @@ Definition at line \mbox{\hyperlink{_game_object_8h_source_l00028}{28}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{engine_2_project_8h_source_l00037}{37}} of file \mbox{\hyperlink{engine_2_project_8h_source}{Project.\+h}}.
+Definition at line \mbox{\hyperlink{engine_2_project_8h_source_l00041}{41}} of file \mbox{\hyperlink{engine_2_project_8h_source}{Project.\+h}}.
 
 \Hypertarget{class_techstorm_1_1abstract_a1e104c5d3299a8c79fff4216a1b26421}\label{class_techstorm_1_1abstract_a1e104c5d3299a8c79fff4216a1b26421} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!tint@{tint}}

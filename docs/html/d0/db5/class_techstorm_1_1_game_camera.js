@@ -2,7 +2,7 @@ var class_techstorm_1_1_game_camera =
 [
     [ "GameCamera", "d0/db5/class_techstorm_1_1_game_camera.html#aac54bfc229b7d6f0beb96f3f4fac4726", null ],
     [ "~GameCamera", "d0/db5/class_techstorm_1_1_game_camera.html#acecc19cf54e8797d493651b036813358", null ],
-    [ "getCameraData", "d0/db5/class_techstorm_1_1_game_camera.html#abca9d20a41ff3bf7fe23958fcd6110bf", null ],
+    [ "getCameraData", "d0/db5/class_techstorm_1_1_game_camera.html#a8a026029361951f6de6b674d5b177e93", null ],
     [ "getFovy", "d0/db5/class_techstorm_1_1_game_camera.html#a72015ff2ab528d831005625c4023995a", null ],
     [ "getPosition", "d0/db5/class_techstorm_1_1_game_camera.html#a4c9481067d3fa1ddd0976fc4f73c0a26", null ],
     [ "getProjection", "d0/db5/class_techstorm_1_1_game_camera.html#a220e035d672f6a254873033732ab92c6", null ],

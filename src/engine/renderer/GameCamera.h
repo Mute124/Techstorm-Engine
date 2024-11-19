@@ -1,34 +1,38 @@
-/**
-* \file GameCamera.h
-* \brief Declares the GameCamera class
-*/
 #pragma once
 #include "../math/Vector.h"
 #include <raylib.h>
+#include <cstdint>
+#include <unordered_map>
 namespace Techstorm {
-#ifdef TS_RENDERER_2D
-	struct CameraData {
-		// TODO: Implement 2D camera
-	};
-#else // TS_RENDERER_3D
-	struct CameraData {
-		Vec3 position;
-		Vec3 target;
-		Vec3 up;
-		float fovy;
-		int projection;
-	};
-#endif
-
-	class Renderer;
-
 	/// <summary>
 	/// Represents a camera wherein the world is rendered and viewed from.
 	/// </summary>
 	class GameCamera {
 	public:
-		GameCamera() = default;
-		~GameCamera() = default;
+		GameCamera() {
+			init();
+		}
+		
+		/// <summary>
+		/// Finalizes an instance of the <see cref="GameCamera"/> class. Please note that if this is the main camera, it will make the camera with ID 0 the main camera.
+		/// </summary>
+		virtual ~GameCamera() {
+			if (isMainCamera()) {
+				sMainCamera = nullptr;
+
+				if (sCameraCount > 0) {
+					sCameras[0]->setAsMainCamera();
+				}
+			}
+
+			sCameras.erase(mCameraID);
+			sCameraCount--;
+		}
+
+		/// <summary>
+		/// Initializes this instance.
+		/// </summary>
+		void init();
 
 		/// <summary>
 		/// Updates this instance in one of two ways, depending on the camera's settings.
@@ -74,7 +78,7 @@ namespace Techstorm {
 		/// </summary>
 		/// <returns></returns>
 		int getProjection() const;
-
+		
 		/// <summary>
 		/// Sets the camera data.
 		/// </summary>
@@ -110,13 +114,39 @@ namespace Techstorm {
 		/// </summary>
 		/// <param name="projection">The projection.</param>
 		void setProjection(int projection);
+		
+		/// <summary>
+		/// Sets this instance as the main camera.
+		/// </summary>
+		void setAsMainCamera() { 
+			sMainCamera = this;
+			mIsMainCamera = true; 
+		}
 
+		/// <summary>
+		/// Checks if this instance is the main camera.
+		/// </summary>
+		/// <returns></returns>
+		bool isMainCamera() const { return mIsMainCamera; }
+
+		bool operator==(const GameCamera& other) const = default;
 	private:
-		Camera3D mCameraData;
+		static inline uint16_t sCameraCount = 0;
+		static inline std::unordered_map<uint16_t, GameCamera*> sCameras;
+		static inline GameCamera* sMainCamera = nullptr;
+		uint16_t mCameraID = 0;
 
-		static inline void SimpleCameraUpdate(GameCamera& cam) {}
-		static inline void ComplexCameraUpdate(GameCamera& cam) {}
+		Camera3D mCameraData;
+		bool mIsMainCamera = false;
+
+
+		static inline void SimpleCameraUpdate(GameCamera const& cam) {}
+		static inline void ComplexCameraUpdate(GameCamera const& cam) {}
 
 		friend class Renderer; /// \ref Renderer
+
+		
+
+
 	};
 }

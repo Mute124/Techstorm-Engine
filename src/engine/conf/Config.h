@@ -11,6 +11,7 @@ namespace Techstorm {
 		ConfigFileRegistry();
 		~ConfigFileRegistry();
 
+		void init();
 		void readConfigFiles();
 		void readConfigFile(const std::string& name);
 		void writeConfigFiles(); // Unimplemented
@@ -21,8 +22,10 @@ namespace Techstorm {
 		void unregisterConfigFiles();
 		void unregisterConfigFile(const std::string& name);
 
-		libconfig::Setting& lookup(const std::string& name);
-		std::unordered_map<std::string, std::shared_ptr<RegisteredFile>> mConfigFiles;
+		libconfig::Setting& lookup(const std::string& fileName, const std::string& lookupTarget);
+
+
 	private:
+		
 	};
 }

@@ -5,23 +5,28 @@
 #include <memory>
 #include <string>
 
-// TODO: This needs to have readConfigFile implemented.
 std::any LoadConfigFile(std::shared_ptr<Techstorm::FileMeta> fileMeta) {
 	using namespace Techstorm;
-	libconfig::Config cfg;
 
-	cfg.readFile(fileMeta->path);
-
-	return std::make_any<libconfig::Config*>(&cfg);
+	return std::make_any<uint16_t>(3);
 }
 
 Techstorm::ConfigFileRegistry::ConfigFileRegistry()
 {
-	AddFileRegistryLoadFunction("cfg", LoadConfigFile);
+
+
 }
 
 Techstorm::ConfigFileRegistry::~ConfigFileRegistry()
 {
+}
+
+void Techstorm::ConfigFileRegistry::init() {
+	AddFileRegistryLoadFunction("cfg", [](std::shared_ptr<FileMeta> fileMeta) {
+		libconfig::Config* conf = new libconfig::Config();
+		conf->readFile(fileMeta->path);
+		return std::make_any<libconfig::Config*>(conf);
+	});
 }
 
 void Techstorm::ConfigFileRegistry::readConfigFiles()
@@ -53,10 +58,13 @@ void Techstorm::ConfigFileRegistry::unregisterConfigFile(const std::string& name
 {
 }
 
-libconfig::Setting& Techstorm::ConfigFileRegistry::lookup(const std::string& name)
+libconfig::Setting& Techstorm::ConfigFileRegistry::lookup(const std::string& fileName, const std::string& lookupTarget)
 {
-	libconfig::Config const* cfg = std::any_cast<libconfig::Config*>(GetFile(name)->data);
-	return cfg->lookup(name);
+	libconfig::Config const* conf = GetFile(fileName).get()->get<libconfig::Config*>();
+	libconfig::Setting& setting = conf->lookup(lookupTarget);
+
+	return setting;
+	
 }
 
 /*

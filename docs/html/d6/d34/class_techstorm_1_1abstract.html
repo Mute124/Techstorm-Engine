@@ -163,6 +163,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4103ef111838bb69e82b09922b5a871e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a5949bcde32483abd8b15105a2eda10" id="r_a4a5949bcde32483abd8b15105a2eda10"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a4a5949bcde32483abd8b15105a2eda10">~ILayerRegistry</a> ()=default</td></tr>
 <tr class="separator:a4a5949bcde32483abd8b15105a2eda10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11557dafdc33521a3c5af2285f7bbe92" id="r_a11557dafdc33521a3c5af2285f7bbe92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d26/namespace_techstorm.html#af6556c4d563341def4c68414537120ed">LuaLibraryRegistry</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a11557dafdc33521a3c5af2285f7bbe92">getLuaLibraries</a> ()</td></tr>
+<tr class="memdesc:a11557dafdc33521a3c5af2285f7bbe92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the lua libraries.  <br /></td></tr>
+<tr class="separator:a11557dafdc33521a3c5af2285f7bbe92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5582088d505c0db0b4bb9dec107e7478" id="r_a5582088d505c0db0b4bb9dec107e7478"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d26/namespace_techstorm.html#aacc8d13353a5459666050b5aa6ed808c">LuaFunctionRegistry</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a5582088d505c0db0b4bb9dec107e7478">getLuaFunctions</a> ()</td></tr>
+<tr class="memdesc:a5582088d505c0db0b4bb9dec107e7478"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the lua functions.  <br /></td></tr>
+<tr class="separator:a5582088d505c0db0b4bb9dec107e7478"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e1ac3ebe011afceaed6aaba2f3498ef" id="r_a1e1ac3ebe011afceaed6aaba2f3498ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d61/struct_techstorm_1_1_window_decorations.html">WindowDecorations</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a1e1ac3ebe011afceaed6aaba2f3498ef">getWindowDecorations</a> ()</td></tr>
 <tr class="memdesc:a1e1ac3ebe011afceaed6aaba2f3498ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the window decorations. This includes the window title, icon, size, etc.  <br /></td></tr>
 <tr class="separator:a1e1ac3ebe011afceaed6aaba2f3498ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -176,6 +182,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aba25eb9fe166bd646e7416a15cd6c100"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#aba25eb9fe166bd646e7416a15cd6c100">setProject</a> (T *project)</td></tr>
 <tr class="memdesc:aba25eb9fe166bd646e7416a15cd6c100"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is used to set the <em><a class="el" href="../../db/dc4/class_techstorm_1_1abstract_1_1_project_reference.html" title="Represents a polymorphic singleton reference to the user&#39;s project instance through a pointer of Tech...">ProjectReference</a></em> singleton to the project.  <br /></td></tr>
 <tr class="separator:aba25eb9fe166bd646e7416a15cd6c100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40bbaee10942400085811546d34a760a" id="r_a40bbaee10942400085811546d34a760a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a40bbaee10942400085811546d34a760a">setupFileRegistryTargets</a> ()</td></tr>
+<tr class="separator:a40bbaee10942400085811546d34a760a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a3f3dc681fb548bb40d008cdeb0352f" id="r_a5a3f3dc681fb548bb40d008cdeb0352f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a5a3f3dc681fb548bb40d008cdeb0352f">preInit</a> ()</td></tr>
 <tr class="memdesc:a5a3f3dc681fb548bb40d008cdeb0352f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the first function that will be called on startup. This is empty because it is an optional feature but is highly reccomended to clearly outline initialization phases.  <br /></td></tr>
 <tr class="separator:a5a3f3dc681fb548bb40d008cdeb0352f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -301,6 +309,10 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a38b8d4b7fc1d5e7b193d098f2dc99c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9308944fbd7de798a5c8e9e987600db9" id="r_a9308944fbd7de798a5c8e9e987600db9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d61/struct_techstorm_1_1_window_decorations.html">WindowDecorations</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a9308944fbd7de798a5c8e9e987600db9">mWindowDecorations</a></td></tr>
 <tr class="separator:a9308944fbd7de798a5c8e9e987600db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeca2999b14b92284db9c0a9bb88e355d" id="r_aeca2999b14b92284db9c0a9bb88e355d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d26/namespace_techstorm.html#af6556c4d563341def4c68414537120ed">LuaLibraryRegistry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#aeca2999b14b92284db9c0a9bb88e355d">mLuaLibraries</a></td></tr>
+<tr class="separator:aeca2999b14b92284db9c0a9bb88e355d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34a58392845bca2144f74cfe3d247de0" id="r_a34a58392845bca2144f74cfe3d247de0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d26/namespace_techstorm.html#aacc8d13353a5459666050b5aa6ed808c">LuaFunctionRegistry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a34a58392845bca2144f74cfe3d247de0">mLuaFunctions</a></td></tr>
+<tr class="separator:a34a58392845bca2144f74cfe3d247de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename K, typename D, typename T&gt;<br />
@@ -626,6 +638,70 @@ template&lt;typename K , typename D , typename T &gt; </div>
 
 </div>
 </div>
+<a id="a5582088d505c0db0b4bb9dec107e7478" name="a5582088d505c0db0b4bb9dec107e7478"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5582088d505c0db0b4bb9dec107e7478">&#9670;&#160;</a></span>getLuaFunctions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename D , typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d26/namespace_techstorm.html#aacc8d13353a5459666050b5aa6ed808c">LuaFunctionRegistry</a> &amp; <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html">Techstorm::abstract</a>&lt; K, D, T &gt;::getLuaFunctions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the lua functions. </p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to mLuaFunctions</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00053">53</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
+
+</div>
+</div>
+<a id="a11557dafdc33521a3c5af2285f7bbe92" name="a11557dafdc33521a3c5af2285f7bbe92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11557dafdc33521a3c5af2285f7bbe92">&#9670;&#160;</a></span>getLuaLibraries()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename D , typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d26/namespace_techstorm.html#af6556c4d563341def4c68414537120ed">LuaLibraryRegistry</a> &amp; <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html">Techstorm::abstract</a>&lt; K, D, T &gt;::getLuaLibraries </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the lua libraries. </p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to mLuaLibraries</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00047">47</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
+
+</div>
+</div>
 <a id="a9e393f6cee0d2d38f0b63783c9bf472a" name="a9e393f6cee0d2d38f0b63783c9bf472a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9e393f6cee0d2d38f0b63783c9bf472a">&#9670;&#160;</a></span>GetProject()</h2>
 
@@ -684,7 +760,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 <p>Gets the renderer instance. </p>
 <dl class="section return"><dt>Returns</dt><dd>This project's mRenderer variable</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00055">55</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00072">72</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
 
 </div>
 </div>
@@ -1341,12 +1417,23 @@ template&lt;typename K , typename D , typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>This is the first function that will be called on startup. This is empty because it is an optional feature but is highly reccomended to clearly outline initialization phases. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00091">91</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d1/d4c/_file_system_8cpp_source.html#l00019">Techstorm::InitializeFileRegistry()</a>, and <a class="el" href="../../db/d1f/_common_8h_source.html#l00011">TS_GAME_DIR</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="../../d6/d34/class_techstorm_1_1abstract_a5a3f3dc681fb548bb40d008cdeb0352f_cgraph.png" border="0" usemap="#ad6/d34/class_techstorm_1_1abstract_a5a3f3dc681fb548bb40d008cdeb0352f_cgraph" alt=""/></div>
+</div>
 
 </div>
 </div>
@@ -1639,6 +1726,35 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="a40bbaee10942400085811546d34a760a" name="a40bbaee10942400085811546d34a760a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40bbaee10942400085811546d34a760a">&#9670;&#160;</a></span>setupFileRegistryTargets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename D , typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html">Techstorm::abstract</a>&lt; K, D, T &gt;::setupFileRegistryTargets </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00083">83</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
+
+</div>
+</div>
 <a id="aa88dc54c1571ea9c555e6438e851b517" name="aa88dc54c1571ea9c555e6438e851b517"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa88dc54c1571ea9c555e6438e851b517">&#9670;&#160;</a></span>setWindowDecorations()</h2>
 
@@ -1907,6 +2023,58 @@ template&lt;typename K , typename D , typename T &gt; </div>
 
 </div>
 </div>
+<a id="a34a58392845bca2144f74cfe3d247de0" name="a34a58392845bca2144f74cfe3d247de0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34a58392845bca2144f74cfe3d247de0">&#9670;&#160;</a></span>mLuaFunctions</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename D , typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d26/namespace_techstorm.html#aacc8d13353a5459666050b5aa6ed808c">LuaFunctionRegistry</a> <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html">Techstorm::abstract</a>&lt; K, D, T &gt;::mLuaFunctions</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00023">23</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
+
+</div>
+</div>
+<a id="aeca2999b14b92284db9c0a9bb88e355d" name="aeca2999b14b92284db9c0a9bb88e355d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeca2999b14b92284db9c0a9bb88e355d">&#9670;&#160;</a></span>mLuaLibraries</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename D , typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d26/namespace_techstorm.html#af6556c4d563341def4c68414537120ed">LuaLibraryRegistry</a> <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html">Techstorm::abstract</a>&lt; K, D, T &gt;::mLuaLibraries</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00022">22</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
+
+</div>
+</div>
 <a id="a55f5f1c35b36dd8266ab3887337e0d0b" name="a55f5f1c35b36dd8266ab3887337e0d0b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a55f5f1c35b36dd8266ab3887337e0d0b">&#9670;&#160;</a></span>model</h2>
 
@@ -1947,7 +2115,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00018">18</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00020">20</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
 
 </div>
 </div>
@@ -1973,7 +2141,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00019">19</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00021">21</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
 
 </div>
 </div>
@@ -2063,7 +2231,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00037">37</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00041">41</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
 
 </div>
 </div>
@@ -2097,7 +2265,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/d26/namespace_techstorm.html">Techstorm</a></li><li class="navelem"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html">abstract</a></li>
-    <li class="footer">Generated on Mon Nov 18 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Tue Nov 19 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

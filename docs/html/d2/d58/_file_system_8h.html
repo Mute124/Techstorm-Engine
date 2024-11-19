@@ -95,8 +95,7 @@ $(document).ready(function(){initNavTree('d2/d58/_file_system_8h.html','../../')
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">FileSystem.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -104,8 +103,14 @@ $(document).ready(function(){initNavTree('d2/d58/_file_system_8h.html','../../')
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;mutex&gt;</code><br />
 <code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &lt;unordered_set&gt;</code><br />
+<code>#include &lt;any&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
+<code>#include &lt;raylib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../de/dec/_singleton_8h_source.html">../utils/Singleton.h</a>&quot;</code><br />
+<code>#include &quot;libconfig.h++&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> Include dependency graph for FileSystem.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -125,6 +130,10 @@ $(document).ready(function(){initNavTree('d2/d58/_file_system_8h.html','../../')
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d71/class_techstorm_1_1_file_meta.html">Techstorm::FileMeta</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d03/class_techstorm_1_1_registered_file.html">Techstorm::RegisteredFile</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/class_techstorm_1_1_file_system_registry.html">Techstorm::FileSystemRegistry</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -137,20 +146,23 @@ Namespaces</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:ae7f8562ce33e4da840f779f91dab42f7" id="r_ae7f8562ce33e4da840f779f91dab42f7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#ae7f8562ce33e4da840f779f91dab42f7">Techstorm::DirectoryFiles</a> = std::vector&lt; std::string &gt;</td></tr>
 <tr class="separator:ae7f8562ce33e4da840f779f91dab42f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a722eb734aae8dcb25139fe5173dfa372" id="r_a722eb734aae8dcb25139fe5173dfa372"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#a722eb734aae8dcb25139fe5173dfa372">Techstorm::FileSystemMeta</a> = { std::string extension</td></tr>
-<tr class="separator:a722eb734aae8dcb25139fe5173dfa372"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ad005d326f9ccbbbf9be01f11f98f049d" id="r_ad005d326f9ccbbbf9be01f11f98f049d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#ad005d326f9ccbbbf9be01f11f98f049d">Techstorm::FileSystemIsProperlyFormatted</a> (const char *rootPath, const char *directoryMapPath)</td></tr>
 <tr class="separator:ad005d326f9ccbbbf9be01f11f98f049d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:aa33beb098b7e93e014fd874d0760fa4b" id="r_aa33beb098b7e93e014fd874d0760fa4b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#aa33beb098b7e93e014fd874d0760fa4b">Techstorm::path</a></td></tr>
-<tr class="separator:aa33beb098b7e93e014fd874d0760fa4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af67668cd3c5e649019a81b8ae8a15acd" id="r_af67668cd3c5e649019a81b8ae8a15acd"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#af67668cd3c5e649019a81b8ae8a15acd">Techstorm::filename</a></td></tr>
-<tr class="separator:af67668cd3c5e649019a81b8ae8a15acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24fb41ad8339291fb9302ab6c9023ef9" id="r_a24fb41ad8339291fb9302ab6c9023ef9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/dae/class_techstorm_1_1_file_system_registry.html">FileSystemRegistry</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#a24fb41ad8339291fb9302ab6c9023ef9">Techstorm::GetFileSystemRegistry</a> ()</td></tr>
+<tr class="separator:a24fb41ad8339291fb9302ab6c9023ef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cdf258db7319603e2c5e39a8b18726e" id="r_a0cdf258db7319603e2c5e39a8b18726e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#a0cdf258db7319603e2c5e39a8b18726e">Techstorm::InitializeFileRegistry</a> (const char *rootPath)</td></tr>
+<tr class="separator:a0cdf258db7319603e2c5e39a8b18726e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e91c0559ca9e21d2d7db69bb10c5844" id="r_a1e91c0559ca9e21d2d7db69bb10c5844"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#a1e91c0559ca9e21d2d7db69bb10c5844">Techstorm::AddFileRegistryLoadFunction</a> (std::string const &amp;extension, std::function&lt; std::any(std::shared_ptr&lt; <a class="el" href="../../d2/d71/class_techstorm_1_1_file_meta.html">FileMeta</a> &gt;)&gt; const &amp;loadFunc)</td></tr>
+<tr class="separator:a1e91c0559ca9e21d2d7db69bb10c5844"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3076a5eb2869c3af24c30bcc02e13a4" id="r_ab3076a5eb2869c3af24c30bcc02e13a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#ab3076a5eb2869c3af24c30bcc02e13a4">Techstorm::AddFileRegistryLoadOnRegisterExtension</a> (std::string const &amp;extension)</td></tr>
+<tr class="separator:ab3076a5eb2869c3af24c30bcc02e13a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b55d1ec56e9102233008fef6024666b" id="r_a4b55d1ec56e9102233008fef6024666b"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="../../d2/d71/class_techstorm_1_1_file_meta.html">FileMeta</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#a4b55d1ec56e9102233008fef6024666b">Techstorm::GetFileMeta</a> (std::string const &amp;key)</td></tr>
+<tr class="separator:a4b55d1ec56e9102233008fef6024666b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf6125c10046d7d70355aec49eb87e8a" id="r_aaf6125c10046d7d70355aec49eb87e8a"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="../../de/d03/class_techstorm_1_1_registered_file.html">RegisteredFile</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#aaf6125c10046d7d70355aec49eb87e8a">Techstorm::GetFile</a> (std::string const &amp;key, bool loadIfNotLoaded=true)</td></tr>
+<tr class="separator:aaf6125c10046d7d70355aec49eb87e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -158,7 +170,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="../../dir_61e8c4930a2b0e7b78d347ba3b13742a.html">fs</a></li><li class="navelem"><a class="el" href="../../d2/d58/_file_system_8h.html">FileSystem.h</a></li>
-    <li class="footer">Generated on Mon Nov 18 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Tue Nov 19 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

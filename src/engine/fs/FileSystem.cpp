@@ -21,7 +21,7 @@ void Techstorm::InitializeFileRegistry(const char* rootPath)
 	GetFileSystemRegistry().init(rootPath);
 }
 
-void Techstorm::AddFileRegistryLoadFunction(std::string const& extension, std::function<std::any(std::shared_ptr<FileMeta>)> const& loadFunc)
+void Techstorm::AddFileRegistryLoadFunction(std::string  extension, std::function<std::any(std::shared_ptr<FileMeta>)> loadFunc)
 {
 	GetFileSystemRegistry().addLoadFunction(extension, loadFunc);
 }
@@ -31,12 +31,12 @@ void Techstorm::AddFileRegistryLoadOnRegisterExtension(std::string const& extens
 	GetFileSystemRegistry().addLoadOnRegisterExtension(extension);
 }
 
-std::shared_ptr<Techstorm::FileMeta> Techstorm::GetFileMeta(std::string const& key)
+std::shared_ptr<Techstorm::FileMeta> Techstorm::GetFileMeta(std::string  key)
 {
 	return GetFileSystemRegistry().GetFileMeta(key);
 }
 
-std::shared_ptr<Techstorm::RegisteredFile> Techstorm::GetFile(std::string const& key, bool loadIfNotLoaded)
+std::shared_ptr<Techstorm::RegisteredFile> Techstorm::GetFile(std::string key, bool loadIfNotLoaded)
 {
 	return GetFileSystemRegistry().getFile(key, loadIfNotLoaded);
 }

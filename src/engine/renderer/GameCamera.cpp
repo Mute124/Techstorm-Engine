@@ -1,5 +1,16 @@
 #include "GameCamera.h"
 
+void Techstorm::GameCamera::init()
+{
+	if(sCameraCount == 0) {
+		this->setAsMainCamera();
+	}
+
+	this->mCameraID = sCameraCount++;
+
+	sCameras[this->mCameraID] = this;
+}
+
 void Techstorm::GameCamera::update()
 {
 }

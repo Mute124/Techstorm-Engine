@@ -1,0 +1,118 @@
+\doxysection{Techstorm\+::Scripting\+API Class Reference}
+\hypertarget{class_techstorm_1_1_scripting_a_p_i}{}\label{class_techstorm_1_1_scripting_a_p_i}\index{Techstorm::ScriptingAPI@{Techstorm::ScriptingAPI}}
+
+
+{\ttfamily \#include $<$Scripting\+API.\+h$>$}
+
+
+
+Inheritance diagram for Techstorm\+::Scripting\+API\+:
+% FIG 0
+
+
+Collaboration diagram for Techstorm\+::Scripting\+API\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_a301b6fde804cd5dc203d951b50aa14d4}{Scripting\+API}} ()=default
+\item 
+int \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_a59761650d84d71b91554406644e8e326}{Initialize\+Scripting}} (\mbox{\hyperlink{namespace_techstorm_af6556c4d563341def4c68414537120ed}{Lua\+Library\+Registry}} const \&libraries, \mbox{\hyperlink{namespace_techstorm_aacc8d13353a5459666050b5aa6ed808c}{Lua\+Function\+Registry}} const \&functions)
+\begin{DoxyCompactList}\small\item\em Initializes the scripting API. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_a00f762aefe81bfdf3f6c9cc5b10ee15b}{Register\+Lua}} ()
+\begin{DoxyCompactList}\small\item\em Registers the scripting API for Lua. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_ac4a2224ba04ab05a9f6baa5cac1b8510}{Register\+Angel\+Script}} ()
+\begin{DoxyCompactList}\small\item\em Registers the scripting API for Angel\+Script. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_techstorm_1_1_singleton}{Techstorm\+::\+Singleton$<$ Scripting\+API $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i}{Scripting\+API}} \& \mbox{\hyperlink{class_techstorm_1_1_singleton_a992b0c97479f1cca7c5027314207f5be}{Instance}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current singleton instance as a reference. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00028}{28}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_techstorm_1_1_scripting_a_p_i_a301b6fde804cd5dc203d951b50aa14d4}\label{class_techstorm_1_1_scripting_a_p_i_a301b6fde804cd5dc203d951b50aa14d4} 
+\index{Techstorm::ScriptingAPI@{Techstorm::ScriptingAPI}!ScriptingAPI@{ScriptingAPI}}
+\index{ScriptingAPI@{ScriptingAPI}!Techstorm::ScriptingAPI@{Techstorm::ScriptingAPI}}
+\doxysubsubsection{\texorpdfstring{ScriptingAPI()}{ScriptingAPI()}}
+{\footnotesize\ttfamily Techstorm\+::\+Scripting\+API\+::\+Scripting\+API (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_techstorm_1_1_scripting_a_p_i_a59761650d84d71b91554406644e8e326}\label{class_techstorm_1_1_scripting_a_p_i_a59761650d84d71b91554406644e8e326} 
+\index{Techstorm::ScriptingAPI@{Techstorm::ScriptingAPI}!InitializeScripting@{InitializeScripting}}
+\index{InitializeScripting@{InitializeScripting}!Techstorm::ScriptingAPI@{Techstorm::ScriptingAPI}}
+\doxysubsubsection{\texorpdfstring{InitializeScripting()}{InitializeScripting()}}
+{\footnotesize\ttfamily int Techstorm\+::\+Scripting\+API\+::\+Initialize\+Scripting (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_techstorm_af6556c4d563341def4c68414537120ed}{Lua\+Library\+Registry}} const \&}]{libraries,  }\item[{\mbox{\hyperlink{namespace_techstorm_aacc8d13353a5459666050b5aa6ed808c}{Lua\+Function\+Registry}} const \&}]{functions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes the scripting API. 
+
+\begin{DoxyReturn}{Returns}
+an integer value that represents the result of the operation.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00036}{36}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{application_2main_8cpp_source_l00010}{main()}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\Hypertarget{class_techstorm_1_1_scripting_a_p_i_ac4a2224ba04ab05a9f6baa5cac1b8510}\label{class_techstorm_1_1_scripting_a_p_i_ac4a2224ba04ab05a9f6baa5cac1b8510} 
+\index{Techstorm::ScriptingAPI@{Techstorm::ScriptingAPI}!RegisterAngelScript@{RegisterAngelScript}}
+\index{RegisterAngelScript@{RegisterAngelScript}!Techstorm::ScriptingAPI@{Techstorm::ScriptingAPI}}
+\doxysubsubsection{\texorpdfstring{RegisterAngelScript()}{RegisterAngelScript()}}
+{\footnotesize\ttfamily int Techstorm\+::\+Scripting\+API\+::\+Register\+Angel\+Script (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registers the scripting API for Angel\+Script. 
+
+\begin{DoxyReturn}{Returns}
+an integer value that represents the result of the operation.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00059}{59}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
+
+\Hypertarget{class_techstorm_1_1_scripting_a_p_i_a00f762aefe81bfdf3f6c9cc5b10ee15b}\label{class_techstorm_1_1_scripting_a_p_i_a00f762aefe81bfdf3f6c9cc5b10ee15b} 
+\index{Techstorm::ScriptingAPI@{Techstorm::ScriptingAPI}!RegisterLua@{RegisterLua}}
+\index{RegisterLua@{RegisterLua}!Techstorm::ScriptingAPI@{Techstorm::ScriptingAPI}}
+\doxysubsubsection{\texorpdfstring{RegisterLua()}{RegisterLua()}}
+{\footnotesize\ttfamily int Techstorm\+::\+Scripting\+API\+::\+Register\+Lua (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registers the scripting API for Lua. 
+
+\begin{DoxyReturn}{Returns}
+an integer value that represents the result of the operation.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00046}{46}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{application_2main_8cpp_source_l00010}{main()}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+Techstorm-\/v5/src/engine/modding/\mbox{\hyperlink{_scripting_a_p_i_8h}{Scripting\+API.\+h}}\end{DoxyCompactItemize}

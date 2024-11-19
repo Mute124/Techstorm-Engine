@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['up_0',['up',['../dc/d3d/struct_techstorm_1_1_camera_data.html#a3929c520ff1bb4fab9a9ea2f7ed150b5',1,'Techstorm::CameraData']]]
+  ['scale_0',['scale',['../d6/d34/class_techstorm_1_1abstract.html#a9b45c16a8ff92b5dede7255391a01d9b',1,'Techstorm::abstract']]],
+  ['settings_1',['settings',['../d6/d34/class_techstorm_1_1abstract.html#a4c1599f2a02023b0fd5e4880b371b965',1,'Techstorm::abstract']]]
 ];

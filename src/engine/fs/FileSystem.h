@@ -29,7 +29,7 @@ namespace Techstorm {
 		std::shared_ptr<FileMeta> meta = nullptr;
 		uint16_t index = 0;
 		std::mutex loadMutex = std::mutex();
-
+		
 		RegisteredFile() {}
 		explicit RegisteredFile(std::shared_ptr<FileMeta> const& meta) : meta(meta) {}
 
@@ -43,22 +43,41 @@ namespace Techstorm {
 	public:
 
 		FileSystemRegistry() {}
-
+		
+		/// <summary>
+		/// Initializes the specified root path.
+		/// </summary>
+		/// <param name="rootPath">The root path.</param>
 		void init(const char* rootPath);
-
+				
+		/// <summary>
+		/// Gets the file meta.
+		/// </summary>
+		/// <param name="key">The key.</param>
+		/// <returns></returns>
 		std::shared_ptr<FileMeta> GetFileMeta(std::string const& key);
-
-		void loadFile(std::shared_ptr<RegisteredFile> const& file) {
+		
+		/// <summary>
+		/// Loads the file.
+		/// </summary>
+		/// <param name="file">The file.</param>
+		void loadFile(std::shared_ptr<RegisteredFile> file) {
 			std::scoped_lock lock(file->loadMutex);
-
+			std::cout << "Loading file: " << file->meta->extension << std::endl;
 			std::function<std::any(std::shared_ptr<FileMeta>)> loadFunc = mLoadingFunctions.at(file->meta->extension);
 
 			file->data = loadFunc(file->meta);
 
 			file->isLoaded = true;
 		}
-
-		std::shared_ptr<RegisteredFile> getFile(std::string const& key, bool loadIfNotLoaded = true) {
+		
+		/// <summary>
+		/// Gets the file.
+		/// </summary>
+		/// <param name="key">The key.</param>
+		/// <param name="loadIfNotLoaded">if set to <c>true</c> [load if not loaded].</param>
+		/// <returns></returns>
+		std::shared_ptr<RegisteredFile> getFile(std::string key, bool loadIfNotLoaded = true) {
 			uint16_t index = this->mLookupTable[key];
 			std::shared_ptr<RegisteredFile> file = this->mRegisteredFiles[index];
 
@@ -66,9 +85,19 @@ namespace Techstorm {
 
 			return file;
 		}
-
-		void addLoadFunction(std::string const& extension, std::function<std::any(std::shared_ptr<FileMeta>)> const& loadFunc) { this->mLoadingFunctions[extension] = loadFunc; }
-		void addLoadOnRegisterExtension(std::string const& extension) { this->mLoadOnRegisterExtensionsSet.insert(extension); }
+		
+		/// <summary>
+		/// Adds the load function.
+		/// </summary>
+		/// <param name="extension">The extension.</param>
+		/// <param name="loadFunc">The load function.</param>
+		void addLoadFunction(std::string extension, std::function<std::any(std::shared_ptr<FileMeta>)> loadFunc) { this->mLoadingFunctions[extension] = loadFunc; }
+				
+		/// <summary>
+		/// Adds the load on register extension.
+		/// </summary>
+		/// <param name="extension">The extension.</param>
+		void addLoadOnRegisterExtension(std::string extension) { this->mLoadOnRegisterExtensionsSet.insert(extension); }
 
 	private:
 		static inline uint16_t sFileIndex = 0;
@@ -89,9 +118,9 @@ namespace Techstorm {
 
 	FileSystemRegistry& GetFileSystemRegistry();
 	void InitializeFileRegistry(const char* rootPath);
-	void AddFileRegistryLoadFunction(std::string const& extension, std::function<std::any(std::shared_ptr<FileMeta>)> const& loadFunc);
+	void AddFileRegistryLoadFunction(std::string extension, std::function<std::any(std::shared_ptr<FileMeta>)> loadFunc);
 	void AddFileRegistryLoadOnRegisterExtension(std::string const& extension);
 
-	std::shared_ptr<FileMeta> GetFileMeta(std::string const& key);
-	std::shared_ptr<RegisteredFile> GetFile(std::string const& key, bool loadIfNotLoaded = true);
+	std::shared_ptr<FileMeta> GetFileMeta(std::string key);
+	std::shared_ptr<RegisteredFile> GetFile(std::string key, bool loadIfNotLoaded = true);
 }

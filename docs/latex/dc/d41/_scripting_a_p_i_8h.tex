@@ -1,12 +1,24 @@
 \doxysection{C\+:/\+Dev/\+Techstorm-\/v5/src/engine/modding/\+Scripting\+API.h File Reference}
 \hypertarget{_scripting_a_p_i_8h}{}\label{_scripting_a_p_i_8h}\index{C:/Dev/Techstorm-\/v5/src/engine/modding/ScriptingAPI.h@{C:/Dev/Techstorm-\/v5/src/engine/modding/ScriptingAPI.h}}
-{\ttfamily \#include $<$sol/sol.\+hpp$>$}\newline
-{\ttfamily \#include $<$angelscript.\+h$>$}\newline
 {\ttfamily \#include "{}../utils/\+Singleton.\+h"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$sol/state.\+hpp$>$}\newline
+{\ttfamily \#include $<$sol/state\+\_\+view.\+hpp$>$}\newline
+{\ttfamily \#include $<$sol/types.\+hpp$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$sol/forward.\+hpp$>$}\newline
 Include dependency graph for Scripting\+API.\+h\+:
 % FIG 0
 This graph shows which files directly or indirectly include this file\+:
 % FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_techstorm_1_1_exported_function}{Techstorm\+::\+Exported\+Function}}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i}{Techstorm\+::\+Scripting\+API}}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -18,19 +30,29 @@ namespace \mbox{\hyperlink{namespace_techstorm}{Techstorm}}
 \#define \mbox{\hyperlink{_scripting_a_p_i_8h_af2bfaeb231432732b2fdd1c56da8e80d}{TS\+\_\+\+SCRIPTING\+\_\+\+LUA}}
 \item 
 \#define \mbox{\hyperlink{_scripting_a_p_i_8h_a5546a5c8c9f9db4259a42b6256bf5961}{TS\+\_\+\+SCRIPTING\+\_\+\+ANGELSCRIPT}}
+\item 
+\#define \mbox{\hyperlink{_scripting_a_p_i_8h_af49a65454b3af6c3580a532b5f86028e}{SOL\+\_\+\+ALL\+\_\+\+SAFETIES\+\_\+\+ON}}~1
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Functions}
+\doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{namespace_techstorm_afe4d0583ea45079bdba936b6ac4a1862}{Techstorm\+::\+Initialize\+Scripting}} ()
-\begin{DoxyCompactList}\small\item\em Initializes the scripting API. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{namespace_techstorm_a5f60ca8f7ae3cc28e9890e53f3629554}{Techstorm\+::\+Register\+Lua}} (sol\+::state \&lua)
-\begin{DoxyCompactList}\small\item\em Registers the scripting API for Lua. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{namespace_techstorm_a8085186186eadc95c01fa563b8e65a4f}{Techstorm\+::\+Register\+Angel\+Script}} ()
-\begin{DoxyCompactList}\small\item\em Registers the scripting API for Angel\+Script. \end{DoxyCompactList}\end{DoxyCompactItemize}
+using \mbox{\hyperlink{namespace_techstorm_af6556c4d563341def4c68414537120ed}{Techstorm\+::\+Lua\+Library\+Registry}} = std\+::vector$<$ sol\+::lib $>$
+\item 
+using \mbox{\hyperlink{namespace_techstorm_aacc8d13353a5459666050b5aa6ed808c}{Techstorm\+::\+Lua\+Function\+Registry}} = std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{struct_techstorm_1_1_exported_function}{Exported\+Function}} $>$
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
+\Hypertarget{_scripting_a_p_i_8h_af49a65454b3af6c3580a532b5f86028e}\label{_scripting_a_p_i_8h_af49a65454b3af6c3580a532b5f86028e} 
+\index{ScriptingAPI.h@{ScriptingAPI.h}!SOL\_ALL\_SAFETIES\_ON@{SOL\_ALL\_SAFETIES\_ON}}
+\index{SOL\_ALL\_SAFETIES\_ON@{SOL\_ALL\_SAFETIES\_ON}!ScriptingAPI.h@{ScriptingAPI.h}}
+\doxysubsubsection{\texorpdfstring{SOL\_ALL\_SAFETIES\_ON}{SOL\_ALL\_SAFETIES\_ON}}
+{\footnotesize\ttfamily \#define SOL\+\_\+\+ALL\+\_\+\+SAFETIES\+\_\+\+ON~1}
+
+
+
+Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00005}{5}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
+
 \Hypertarget{_scripting_a_p_i_8h_a5546a5c8c9f9db4259a42b6256bf5961}\label{_scripting_a_p_i_8h_a5546a5c8c9f9db4259a42b6256bf5961} 
 \index{ScriptingAPI.h@{ScriptingAPI.h}!TS\_SCRIPTING\_ANGELSCRIPT@{TS\_SCRIPTING\_ANGELSCRIPT}}
 \index{TS\_SCRIPTING\_ANGELSCRIPT@{TS\_SCRIPTING\_ANGELSCRIPT}!ScriptingAPI.h@{ScriptingAPI.h}}

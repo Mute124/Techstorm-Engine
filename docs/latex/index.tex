@@ -5,8 +5,9 @@
  \DoxyHorRuler{0}
 
 
-\doxylink{namespace_techstorm}{Techstorm} is the response to the lack of a free game engine that is built for large open worlds. ~\newline
-\hypertarget{index_architecture}{}\doxysection{\texorpdfstring{Architecture}{Architecture}}\label{index_architecture}
+\doxylink{namespace_techstorm}{Techstorm} is the response to the lack of a free game engine that is built for large open worlds.
+
+If you are looking for a hello world application, please see hello-\/world-\/example\hypertarget{index_architecture}{}\doxysection{\texorpdfstring{Architecture}{Architecture}}\label{index_architecture}
 \DoxyHorRuler{0}
 
 
@@ -18,6 +19,13 @@ Due to the inherent nature of \doxylink{namespace_techstorm}{Techstorm}, the arc
 \item Tools The Application is responsible for loading the engine and handling the project, as seen below.
 \end{DoxyItemize}
 
+\hypertarget{index_file-system-architecture}{}\doxysubsection{\texorpdfstring{File System Architecture}{File System Architecture}}\label{index_file-system-architecture}
+\DoxyHorRuler{0}
+
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+The design of the file system is complex and it is highly encouraged that this is read very carefully. \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+
+As of now, the file system works by recursively searching the "{}game"{} folder in the root directory (Techstorm-\/v5). The folder will contain the "{}assets"{} and "{}data"{} sub-\/directories, wherein you will put assets and data files. ~\newline
 \hypertarget{index_graphics-architecture}{}\doxysubsection{\texorpdfstring{Graphics Architecture}{Graphics Architecture}}\label{index_graphics-architecture}
 \DoxyHorRuler{0}
 \hypertarget{index_graphics-introduction}{}\doxysubsubsection{\texorpdfstring{Graphics Introduction}{Graphics Introduction}}\label{index_graphics-introduction}
@@ -92,63 +100,33 @@ If you want an indepth explanation of these dependencies and their implementatio
 \DoxyHorRuler{0}
 
 
-\doxylink{namespace_techstorm}{Techstorm} tries to be as easy to read as possible by making the code read similarly to English. In addition, \doxylink{namespace_techstorm}{Techstorm} tries to be intuitive and understandable at a quick glance, hence it uses Pascal\+Case and Camel\+Case. As such, the code conventions are simple, as outlined below.
-
-Before you look at the conventions, look at the below key.\hypertarget{index_key}{}\doxysubsection{\texorpdfstring{Key}{Key}}\label{index_key}
-\DoxyHorRuler{0}
-
-
-\tabulinesep=1mm
-\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
-\hline
-\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Case   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Meaning    }\\\cline{1-2}
-\endfirsthead
-\hline
-\endfoot
-\hline
-\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Case   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Meaning    }\\\cline{1-2}
-\endhead
-N/A   &Not applicable    \\\cline{1-2}
-\texorpdfstring{$\ast$}{*}   &Refers to anything depending on the whitespace.    \\\cline{1-2}
-Cap   &Capitalized. If in both the prefix {\bfseries{and}} suffix, that means the entire thing should be capitalized    \\\cline{1-2}
-\multirow{2}{*}{Cap 1st   }&First character is capitalized.    \\\cline{2-2}
-&Same as the above    \\\cline{1-2}
-See info   &See "{}\+Other Info"{}    \\\cline{1-2}
-Low   &Lower case. If in both the prefix {\bfseries{and}} suffix, that means the entire thing should be lowercase.    \\\cline{1-2}
-Low 1st   &First character is lowercase   \\\cline{1-2}
-\end{longtabu}
-\hypertarget{index_variables}{}\doxysubsection{\texorpdfstring{Variables}{Variables}}\label{index_variables}
+\doxylink{namespace_techstorm}{Techstorm} tries to be as easy to read as possible by making the code read similarly to English. In addition, \doxylink{namespace_techstorm}{Techstorm} tries to be intuitive and understandable at a quick glance, hence it uses Pascal\+Case and Camel\+Case. As such, the code conventions are simple and intuitive, as outlined below.\hypertarget{index_variables}{}\doxysubsection{\texorpdfstring{Variables}{Variables}}\label{index_variables}
 \DoxyHorRuler{0}
 
 
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
 \hline
-\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Case   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Prefix   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Suffix   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Other info    }\\\cline{1-4}
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Case   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Format   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Example   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Notes    }\\\cline{1-4}
 \endfirsthead
 \hline
 \endfoot
 \hline
-\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Case   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Prefix   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Suffix   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Other info    }\\\cline{1-4}
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Case   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Format   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Example   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Notes    }\\\cline{1-4}
 \endhead
-Private Variables   &\multirow{2}{*}{m\texorpdfstring{$\ast$}{*}   }&\multirow{4}{*}{N/A   }&\\\cline{1-1}\cline{4-4}
-Protected Variables   &&&\\\cline{1-2}\cline{4-4}
-Static Variables   &s   &&\\\cline{1-2}\cline{4-4}
-Constant Variable   &c   &&\\\cline{1-4}
-Constant Global   &\multirow{2}{*}{Cap   }&\multirow{2}{*}{Cap   }&\multirow{2}{*}{For this case, it will follow snake case {\bfseries{in all caps}}    }\\\cline{1-1}
-Macro    &\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}\\\cline{1-4}
-local variable   &\multirow{2}{*}{low 1st   }&\multirow{2}{*}{N/A   }&\multirow{2}{*}{camel\+Case    }\\\cline{1-1}
-Parameter variable   &\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}&\multicolumn{1}{c|}{}\\\cline{1-4}
+Private Variables   &m\+Private\+Variable   &{\ttfamily int m\+Private\+Variable = 7;}   &\\\cline{1-4}
+Protected Variables   &m\+Protected\+Variable   &{\ttfamily int m\+Protected\+Variable = 4;}   &\\\cline{1-4}
+Static Type Variables   &s\+Static\+Variable   &{\ttfamily static inline float s\+Static\+Variable = 3.\+14f;}   &This refers to a static variable that is inside a class or struct.    \\\cline{1-4}
+Constant Variable   &c\+Constant\+Variable   &{\ttfamily const double c\+Constant\+Variable = 3.\+14;}   &\\\cline{1-4}
+Constant Expression   &CONSTANT\+\_\+\+EXPRESSION\+\_\+\+VARIABLE   &{\ttfamily constexpr int CONSTANT\+\_\+\+EXPRESSION\+\_\+\+VARIABLE = 45;}   &\\\cline{1-4}
+Constant Global   &CONSTANT\+\_\+\+GLOBAL\+\_\+\+VARIABLE   &{\ttfamily const int GLOBAL\+\_\+\+VARIABLE;}   &A constant global is a variable that is not declared inside a type.    \\\cline{1-4}
+Macro   &MACRO\+\_\+\+VARIABLE   &{\ttfamily \#define MACRO\+\_\+\+VARIABLE 8}   &\\\cline{1-4}
+Local Variable   &local\+Variable   &{\ttfamily int local\+Variable = 34;}   &\\\cline{1-4}
+Parameter Variable   &parameter\+Variable   &{\ttfamily int parameter\+Variable}   &\\\cline{1-4}
+Public Variable   &public\+Variable   &{\ttfamily int public\+Variable = 3;}   &\\\cline{1-4}
 \end{longtabu}
-
-
-\begin{quote}
-\mbox{[}!\+NOTE\mbox{]} Definition of a Constant Global A constant global is a variable that is not part of any type. For example, a macro. \end{quote}
 \hypertarget{index_functions}{}\doxysubsection{\texorpdfstring{Functions}{Functions}}\label{index_functions}
 \DoxyHorRuler{0}
 
 
-Functions are simple, any that are not bound to a specific object will have the first letter lowercase. If it is a static, namespace, or global function, then it will have the first letter capitalized instead. When it comes to Preprocessor functions, it will follow the same rules as Constant Global variables, as seen below\+:
-
-\begin{quote}
- \texorpdfstring{$\vert$}{|} Constant Global \texorpdfstring{$\vert$}{|} Cap \texorpdfstring{$\vert$}{|} Cap \texorpdfstring{$\vert$}{|} For this case, it will follow snake case {\bfseries{in all caps}} \texorpdfstring{$\vert$}{|} \end{quote}
+Functions are simple, any that are not bound to a specific object will have the first letter lowercase. If it is a static, namespace, or global function, then it will have the first letter capitalized instead. When it comes to Preprocessor functions, it will follow the same rules as Constant Global variables, as seen below\+: 

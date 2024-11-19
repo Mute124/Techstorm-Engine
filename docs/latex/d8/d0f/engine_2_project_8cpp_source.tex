@@ -9,49 +9,46 @@
 \DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00005}00005\ }
 \DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00006}00006\ \textcolor{keywordtype}{void}\ Techstorm::IProject::setWindowDecorations(\mbox{\hyperlink{struct_techstorm_1_1_window_decorations}{WindowDecorations}}\&\ windowDecorations)\ \{\ mWindowDecorations\ =\ windowDecorations;\ \}}
 \DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00007}00007\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00008}00008\ \textcolor{keywordtype}{void}\ Techstorm::IProject::preInit()\ \{}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00009}00009\ \}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00010}00010\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00011}00011\ \textcolor{keywordtype}{void}\ Techstorm::IProject::init(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00012}00012\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Thread\ ID\ for\ IProject\ init"{}}\ <<\ std::this\_thread::get\_id()\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00013}00013\ \}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00014}00014\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00015}00015\ \textcolor{keywordtype}{void}\ Techstorm::IProject::postInit()\ \{\}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00008}00008\ \textcolor{keywordtype}{void}\ Techstorm::IProject::init(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00009}00009\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Thread\ ID\ for\ IProject\ init"{}}\ <<\ std::this\_thread::get\_id()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00010}00010\ \}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00012}00012\ \textcolor{keywordtype}{void}\ Techstorm::IProject::postInit()\ \{\}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00014}00014\ \textcolor{keywordtype}{void}\ Techstorm::IProject::initRenderer()\ \{}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00015}00015\ \}}
 \DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00016}00016\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00017}00017\ \textcolor{keywordtype}{void}\ Techstorm::IProject::initRenderer()\ \{}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00018}00018\ \}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00019}00019\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00020}00020\ \textcolor{keywordtype}{int}\ Techstorm::IProject::run(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00021}00021\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Thread\ ID\ for\ IProject\ run:\ "{}}\ <<\ std::this\_thread::get\_id()\ <<\ \textcolor{stringliteral}{"{}"{}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00023}00023\ \}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00024}00024\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00025}00025\ \textcolor{keywordtype}{int}\ Techstorm::IProject::prePhysicsUpdate()\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00026}00026\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00027}00027\ \textcolor{keywordtype}{int}\ Techstorm::IProject::physicsUpdate()\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00028}00028\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00029}00029\ \textcolor{keywordtype}{int}\ Techstorm::IProject::postPhysicsUpdate()\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00030}00030\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00031}00031\ \textcolor{keywordtype}{int}\ Techstorm::IProject::preObjectUpdate()\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00033}00033\ \textcolor{keywordtype}{int}\ Techstorm::IProject::objectUpdate()\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00034}00034\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00035}00035\ \textcolor{keywordtype}{int}\ Techstorm::IProject::postObjectUpdate()\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00037}00037\ \textcolor{keywordtype}{int}\ Techstorm::IProject::texture()\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00038}00038\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00039}00039\ \textcolor{keywordtype}{int}\ Techstorm::IProject::render()\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00041}00041\ \textcolor{keywordtype}{int}\ Techstorm::IProject::cleanup(\textcolor{keywordtype}{int}\ exitCode)\ \{\ \textcolor{keywordflow}{return}\ exitCode;\ \}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00042}00042\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00043}00043\ IProject*\ Techstorm::IProject::GetProject()\ \{}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{return}\ ProjectReference::Instance().project;}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00045}00045\ \}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00046}00046\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00051}00051\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ Techstorm::IProject::ProjectReference::setProjectReference(IProject*\ project)\ \{}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{if}\ (project\ !=\ \textcolor{keyword}{nullptr})\ \{}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ this-\/>project\ =\ project;}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00054}00054\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00055}00055\ \}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00017}00017\ \textcolor{keywordtype}{int}\ Techstorm::IProject::run(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00018}00018\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Thread\ ID\ for\ IProject\ run:\ "{}}\ <<\ std::this\_thread::get\_id()\ <<\ \textcolor{stringliteral}{"{}"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00020}00020\ \}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00022}00022\ \textcolor{keywordtype}{int}\ Techstorm::IProject::prePhysicsUpdate()\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00024}00024\ \textcolor{keywordtype}{int}\ Techstorm::IProject::physicsUpdate()\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00026}00026\ \textcolor{keywordtype}{int}\ Techstorm::IProject::postPhysicsUpdate()\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00028}00028\ \textcolor{keywordtype}{int}\ Techstorm::IProject::preObjectUpdate()\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00030}00030\ \textcolor{keywordtype}{int}\ Techstorm::IProject::objectUpdate()\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00032}00032\ \textcolor{keywordtype}{int}\ Techstorm::IProject::postObjectUpdate()\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00034}00034\ \textcolor{keywordtype}{int}\ Techstorm::IProject::texture()\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00036}00036\ \textcolor{keywordtype}{int}\ Techstorm::IProject::render()\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00038}00038\ \textcolor{keywordtype}{int}\ Techstorm::IProject::cleanup(\textcolor{keywordtype}{int}\ exitCode)\ \{\ \textcolor{keywordflow}{return}\ exitCode;\ \}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00040}00040\ IProject*\ Techstorm::IProject::GetProject()\ \{}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{return}\ ProjectReference::Instance().project;}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00048}00048\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ Techstorm::IProject::ProjectReference::setProjectReference(IProject*\ project)\ \{}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{if}\ (project\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ this-\/>project\ =\ project;}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8cpp_source_l00052}00052\ \}}
 
 \end{DoxyCode}

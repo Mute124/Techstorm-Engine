@@ -2,7 +2,9 @@
 
 ---
 
-Techstorm is the response to the lack of a free game engine that is built for large open worlds.  
+Techstorm is the response to the lack of a free game engine that is built for large open worlds. 
+
+If you are looking for a hello world application, please see \ref hello-world-example
 
 ## Architecture {#architecture}
 
@@ -16,6 +18,14 @@ Due to the inherent nature of Techstorm, the architecture can be complex. In ter
 The Application is responsible for loading the engine and handling the project, as seen below. 
 
 ![Game Engine Application Flow Chart](flowchart.png "Techstorm's high level flow chart")
+
+### File System Architecture {#file-system-architecture}
+
+---
+
+**The design of the file system is complex and it is highly encouraged that this is read very carefully. **
+
+As of now, the file system works by recursively searching the "game" folder in the root directory (Techstorm-v5). The folder will contain the "assets" and "data" sub-directories, wherein you will put assets and data files.  
 
 ### Graphics Architecture {#graphics-architecture}
 
@@ -35,6 +45,7 @@ Despite the fact Techstorm tries to make graphics easier, it can become complex 
 ##### Graphics Terminology {#graphics-terminology}
 
 ---
+
 
 ## Dependencies {#dependencies}
 
@@ -82,49 +93,43 @@ If you want an indepth explanation of these dependencies and their implementatio
 
 ---
 
-Techstorm tries to be as easy to read as possible by making the code read similarly to English. In addition, Techstorm tries to be intuitive and understandable at a quick glance, hence it uses PascalCase and CamelCase. As such, the code conventions are simple, as outlined below. 
+Techstorm tries to be as easy to read as possible by making the code read similarly to English (This is mandatory for engine contributions!). In addition, Techstorm tries to be intuitive and understandable at a quick glance, hence it uses PascalCase and CamelCase. As such, the code conventions are simple and intuitive. The only exception is with broad cases. 
 
-Before you look at the conventions, look at the below key. 
+Broad cases should only be used as long as there are no other applicable cases. For example, a private static variable. This variable would look like a static type variable rather than a private variable. That means it should be named with a prefix of "s" rather than a 'm'. However, please note that this only applies when the "Notes" section contains "Broad case". Additionally, There are some other important distinctions, definitions, and use cases that must be followed to stay compliant, as seen below.
 
-### Key {#key}
+### Important Convention Use Cases {#important-convention-use-cases}
 
 ---
 
-| Case     | Meaning                                                                                              |
-| -------- | ---------------------------------------------------------------------------------------------------- |
-| N/A      | Not applicable                                                                                       |
-| *        | Refers to anything depending on the whitespace.                                                      |
-| Cap      | Capitalized. If in both the prefix **and** suffix, that means the entire thing should be capitalized |
-| Cap 1st  | First character is capitalized.                                                                      |
-| ^        | Same as the above                                                                                    |
-| See info | See "Other Info"                                                                                     |
-| Low      | Lower case. If in both the prefix **and** suffix, that means the entire thing should be lowercase.   |
-| Low 1st  | First character is lowercase                                                                         |
+
+| Case                                                                                                             | Distinction |
+| ---------------------------------------------------------------------------------------------------------------- | ----------- |
+| Preprocessors Unless there are multiple logical inputs, avoid using `#if defined()` and use `#ifdef` instead.  . |             |
+
 
 ### Variables {#variables}
 
 ---
 
-| Case                | Prefix  | Suffix | Other info                                               |
-| ------------------- | ------- | ------ | -------------------------------------------------------- |
-| Private Variables   | m*      | N/A    |                                                          |
-| Protected Variables | ^       | ^      |                                                          |
-| Static Variables    | s       | ^      |                                                          |
-| Constant Variable   | c       | ^      |                                                          |
-| Constant Global     | Cap     | Cap    | For this case, it will follow snake case **in all caps** |
-| Macro               | ^       | ^      | ^                                                        |
-| local variable      | low 1st | N/A    | camelCase                                                |
-| Parameter variable  | ^       | ^      | ^                                                        |
+| Case                  | Format                       | Example                                            | Notes                                                               |
+| --------------------- | ---------------------------- | -------------------------------------------------- | ------------------------------------------------------------------- |
+| Private Variables     | mPrivateVariable             | `int mPrivateVariable = 7;`                        |                                                                     |
+| Protected Variables   | mProtectedVariable           | `int mProtectedVariable = 4;`                      |                                                                     |
+| Static Type Variables | sStaticTypeVariable          | `static inline float sStaticVariable = 3.14f;`     |                                                                     |
+| Static Variable       | StaticVariable               | `static inline int StaticVariable = 72;`           |                                                                     |
+| Constant Variable     | cConstantVariable            | `const double cConstantVariable = 3.14;`           |                                                                     |
+| Constant Expression   | CONSTANT_EXPRESSION_VARIABLE | `constexpr int CONSTANT_EXPRESSION_VARIABLE = 45;` |                                                                     |
+| Constant Global       | CONSTANT_GLOBAL_VARIABLE     | `const int GLOBAL_VARIABLE;`                       | A constant global is a variable that is not declared inside a type. |
+| Macro                 | MACRO_VARIABLE               | `#define MACRO_VARIABLE 8`                         |                                                                     |
+| Local Variable        | localVariable                | `int localVariable = 34;`                          |                                                                     |
+| Parameter Variable    | parameterVariable            | `int parameterVariable`                            |                                                                     |
+| Public Variable       | publicVariable               | `int publicVariable = 3;`                          |                                                                     |
 
-> [!NOTE] Definition of a Constant Global
-> A constant global is a variable that is not part of any type. For example, a macro.
+
 
 ### Functions {#functions}
 
 ---
 
 Functions are simple, any that are not bound to a specific object will have the first letter lowercase. If it is a static, namespace, or global function, then it will have the first letter capitalized instead. When it comes to Preprocessor functions, it will follow the same rules as Constant Global variables, as seen below:
-
->  | Constant Global     | Cap     | Cap    | For this case, it will follow snake case **in all caps** |
-
 

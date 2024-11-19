@@ -1,11 +1,13 @@
-#include <Common.h>
+#define _CRTDBG_MAP_ALLOC
 #include <crtdbg.h>
 #include <modding/ScriptingAPI.h>
-
+#include <conf/Config.h>
 #include <project.h>
 #include <raylib.h>
 #include <renderer/Renderer.h>
 #include <renderer/WindowDecorations.h>
+#include <fs/FileSystem.h>
+#include <string>
 
 int main(int argc, char* argv[]) {
 #ifdef _DEBUG
@@ -16,23 +18,24 @@ int main(int argc, char* argv[]) {
 	using namespace Techstorm;
 
 	PROJECT_TYPENAME project = PROJECT_TYPENAME();
-
+	ConfigFileRegistry& configFileRegistry = ConfigFileRegistry::Instance();
 	project.preInit();
 
 	FileSystemRegistry& fileSystemRegistry = GetFileSystemRegistry();
-	Renderer& renderer = project.getRenderer();
-	WindowDecorations& decorations = project.getWindowDecorations();
-
+	Renderer const& renderer = project.getRenderer();
+	WindowDecorations const& decorations = project.getWindowDecorations();
 	ScriptingAPI scriptingAPI;
 
 	scriptingAPI.InitializeScripting(project.getLuaLibraries(), project.getLuaFunctions());
 	scriptingAPI.RegisterLua();
 
 	InitWindow(decorations.width, decorations.height, decorations.title);
+	
+	configFileRegistry.init();
 
-	const char* iconPath = TextFormat("%s%s", TS_ASSET_DIR.c_str(), decorations.icon);
+	std::string iconPath = GetFile("png")->meta->path;
 
-	Image icon = LoadImage(iconPath);
+	Image icon = LoadImage(iconPath.c_str());
 	ImageFormat(&icon, PIXELFORMAT_UNCOMPRESSED_R8G8B8A8);
 
 	SetWindowIcons(&icon, 1);
@@ -53,15 +56,15 @@ int main(int argc, char* argv[]) {
 		project.physicsUpdate();
 		project.postPhysicsUpdate();
 
-		BeginDrawing();
-		ClearBackground(BLACK);
-
-		DrawTexture(tex, 0, 0, WHITE);
-		EndDrawing();
 	}
 
 	project.cleanup(0);
 
 	CloseWindow();
+
+
+
+	_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_DEBUG);
+	_CrtDumpMemoryLeaks();
 	return 0;
 }

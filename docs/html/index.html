@@ -95,8 +95,8 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="what-is-techstorm"></a> </p><hr  />
-<p><a class="el" href="d4/d26/namespace_techstorm.html">Techstorm</a> is the response to the lack of a free game engine that is built for large open worlds. <br  />
-</p>
+<p><a class="el" href="d4/d26/namespace_techstorm.html">Techstorm</a> is the response to the lack of a free game engine that is built for large open worlds.</p>
+<p>If you are looking for a hello world application, please see hello-world-example</p>
 <h1><a class="anchor" id="architecture"></a>
 Architecture</h1>
 <hr  />
@@ -107,6 +107,12 @@ Architecture</h1>
 <li>Tools The Application is responsible for loading the engine and handling the project, as seen below.</li>
 </ul>
 <p><img src="flowchart.png" alt="Game Engine Application Flow Chart" title="Techstorm&apos;s high level flow chart" class="inline"/></p>
+<h2><a class="anchor" id="file-system-architecture"></a>
+File System Architecture</h2>
+<hr  />
+<p>**The design of the file system is complex and it is highly encouraged that this is read very carefully. **</p>
+<p>As of now, the file system works by recursively searching the "game" folder in the root directory (Techstorm-v5). The folder will contain the "assets" and "data" sub-directories, wherein you will put assets and data files. <br  />
+</p>
 <h2><a class="anchor" id="graphics-architecture"></a>
 Graphics Architecture</h2>
 <hr  />
@@ -180,71 +186,45 @@ Dependencies</h1>
 <h1><a class="anchor" id="code-conventions"></a>
 Code Conventions</h1>
 <hr  />
-<p><a class="el" href="d4/d26/namespace_techstorm.html">Techstorm</a> tries to be as easy to read as possible by making the code read similarly to English. In addition, <a class="el" href="d4/d26/namespace_techstorm.html">Techstorm</a> tries to be intuitive and understandable at a quick glance, hence it uses PascalCase and CamelCase. As such, the code conventions are simple, as outlined below.</p>
-<p>Before you look at the conventions, look at the below key.</p>
-<h2><a class="anchor" id="key"></a>
-Key</h2>
-<hr  />
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Case   </th><th class="markdownTableHeadNone">Meaning    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">N/A   </td><td class="markdownTableBodyNone">Not applicable    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">*   </td><td class="markdownTableBodyNone">Refers to anything depending on the whitespace.    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Cap   </td><td class="markdownTableBodyNone">Capitalized. If in both the prefix <b>and</b> suffix, that means the entire thing should be capitalized    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone" rowspan="2">Cap 1st   </td><td class="markdownTableBodyNone">First character is capitalized.    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Same as the above    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">See info   </td><td class="markdownTableBodyNone">See "Other Info"    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Low   </td><td class="markdownTableBodyNone">Lower case. If in both the prefix <b>and</b> suffix, that means the entire thing should be lowercase.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Low 1st   </td><td class="markdownTableBodyNone">First character is lowercase   </td></tr>
-</table>
+<p><a class="el" href="d4/d26/namespace_techstorm.html">Techstorm</a> tries to be as easy to read as possible by making the code read similarly to English. In addition, <a class="el" href="d4/d26/namespace_techstorm.html">Techstorm</a> tries to be intuitive and understandable at a quick glance, hence it uses PascalCase and CamelCase. As such, the code conventions are simple and intuitive, as outlined below.</p>
 <h2><a class="anchor" id="variables"></a>
 Variables</h2>
 <hr  />
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Case   </th><th class="markdownTableHeadNone">Prefix   </th><th class="markdownTableHeadNone">Suffix   </th><th class="markdownTableHeadNone">Other info    </th></tr>
+<th class="markdownTableHeadNone">Case   </th><th class="markdownTableHeadNone">Format   </th><th class="markdownTableHeadNone">Example   </th><th class="markdownTableHeadNone">Notes    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Private Variables   </td><td class="markdownTableBodyNone" rowspan="2">m*   </td><td class="markdownTableBodyNone" rowspan="4">N/A   </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone">Private Variables   </td><td class="markdownTableBodyNone">mPrivateVariable   </td><td class="markdownTableBodyNone"><code>int mPrivateVariable = 7;</code>   </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Protected Variables   </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone">Protected Variables   </td><td class="markdownTableBodyNone">mProtectedVariable   </td><td class="markdownTableBodyNone"><code>int mProtectedVariable = 4;</code>   </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Static Variables   </td><td class="markdownTableBodyNone">s   </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone">Static Type Variables   </td><td class="markdownTableBodyNone">sStaticVariable   </td><td class="markdownTableBodyNone"><code>static inline float sStaticVariable = 3.14f;</code>   </td><td class="markdownTableBodyNone">This refers to a static variable that is inside a class or struct.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Constant Variable   </td><td class="markdownTableBodyNone">c   </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone">Constant Variable   </td><td class="markdownTableBodyNone">cConstantVariable   </td><td class="markdownTableBodyNone"><code>const double cConstantVariable = 3.14;</code>   </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Constant Global   </td><td class="markdownTableBodyNone" rowspan="2">Cap   </td><td class="markdownTableBodyNone" rowspan="2">Cap   </td><td class="markdownTableBodyNone" rowspan="2">For this case, it will follow snake case <b>in all caps</b>    </td></tr>
+<td class="markdownTableBodyNone">Constant Expression   </td><td class="markdownTableBodyNone">CONSTANT_EXPRESSION_VARIABLE   </td><td class="markdownTableBodyNone"><code>constexpr int CONSTANT_EXPRESSION_VARIABLE = 45;</code>   </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Macro    </td></tr>
+<td class="markdownTableBodyNone">Constant Global   </td><td class="markdownTableBodyNone">CONSTANT_GLOBAL_VARIABLE   </td><td class="markdownTableBodyNone"><code>const int GLOBAL_VARIABLE;</code>   </td><td class="markdownTableBodyNone">A constant global is a variable that is not declared inside a type.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">local variable   </td><td class="markdownTableBodyNone" rowspan="2">low 1st   </td><td class="markdownTableBodyNone" rowspan="2">N/A   </td><td class="markdownTableBodyNone" rowspan="2">camelCase    </td></tr>
+<td class="markdownTableBodyNone">Macro   </td><td class="markdownTableBodyNone">MACRO_VARIABLE   </td><td class="markdownTableBodyNone"><code>#define MACRO_VARIABLE 8</code>   </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Parameter variable   </td></tr>
+<td class="markdownTableBodyNone">Local Variable   </td><td class="markdownTableBodyNone">localVariable   </td><td class="markdownTableBodyNone"><code>int localVariable = 34;</code>   </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Parameter Variable   </td><td class="markdownTableBodyNone">parameterVariable   </td><td class="markdownTableBodyNone"><code>int parameterVariable</code>   </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Public Variable   </td><td class="markdownTableBodyNone">publicVariable   </td><td class="markdownTableBodyNone"><code>int publicVariable = 3;</code>   </td><td class="markdownTableBodyNone"></td></tr>
 </table>
-<blockquote class="doxtable">
-<p>&zwj;[!NOTE] Definition of a Constant Global A constant global is a variable that is not part of any type. For example, a macro. </p>
-</blockquote>
 <h2><a class="anchor" id="functions"></a>
 Functions</h2>
 <hr  />
-<p>Functions are simple, any that are not bound to a specific object will have the first letter lowercase. If it is a static, namespace, or global function, then it will have the first letter capitalized instead. When it comes to Preprocessor functions, it will follow the same rules as Constant Global variables, as seen below:</p>
-<blockquote class="doxtable">
-<p>&zwj; | Constant Global | Cap | Cap | For this case, it will follow snake case <b>in all caps</b> | </p>
-</blockquote>
+<p>Functions are simple, any that are not bound to a specific object will have the first letter lowercase. If it is a static, namespace, or global function, then it will have the first letter capitalized instead. When it comes to Preprocessor functions, it will follow the same rules as Constant Global variables, as seen below: </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Nov 18 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Tue Nov 19 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

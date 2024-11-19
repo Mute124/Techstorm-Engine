@@ -24,6 +24,10 @@ class \mbox{\hyperlink{class_techstorm_1_1_config_file_registry}{Config\+File\+R
 \item 
 struct \mbox{\hyperlink{struct_techstorm_1_1_engine_config}{Engine\+Config}}
 \item 
+struct \mbox{\hyperlink{struct_techstorm_1_1_exported_function}{Exported\+Function}}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_file_meta}{File\+Meta}}
+\item 
 class \mbox{\hyperlink{class_techstorm_1_1_file_system_registry}{File\+System\+Registry}}
 \item 
 class \mbox{\hyperlink{class_techstorm_1_1_game_camera}{Game\+Camera}}
@@ -52,8 +56,12 @@ class \mbox{\hyperlink{class_techstorm_1_1_object_vs_broad_phase_l_f}{Object\+Vs
 \item 
 class \mbox{\hyperlink{class_techstorm_1_1_plane_object}{Plane\+Object}}
 \item 
+class \mbox{\hyperlink{class_techstorm_1_1_registered_file}{Registered\+File}}
+\item 
 class \mbox{\hyperlink{class_techstorm_1_1_renderer}{Renderer}}
 \begin{DoxyCompactList}\small\item\em Serves as the renderer for the game. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i}{Scripting\+API}}
+\item 
 class \mbox{\hyperlink{class_techstorm_1_1_singleton}{Singleton}}
 \begin{DoxyCompactList}\small\item\em A singleton class, it does what singletons do. The template (T) must be the type that is inheriting from this class, otherwise there will be issues. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_techstorm_1_1_techstorm_engine}{Techstorm\+Engine}}
@@ -77,11 +85,13 @@ using \mbox{\hyperlink{namespace_techstorm_a49171abf7f6363db4090dfa5cf1fee47}{Fi
 \item 
 using \mbox{\hyperlink{namespace_techstorm_ae7f8562ce33e4da840f779f91dab42f7}{Directory\+Files}} = std\+::vector$<$ std\+::string $>$
 \item 
-using \mbox{\hyperlink{namespace_techstorm_a722eb734aae8dcb25139fe5173dfa372}{File\+System\+Meta}} = \{ std\+::string extension
-\item 
 using \mbox{\hyperlink{namespace_techstorm_aa6eeda8fa60b60b709cb56062f2e4d50}{Game\+Settings}} = \mbox{\hyperlink{namespace_techstorm_aa6eeda8fa60b60b709cb56062f2e4d50}{Game\+Settings}} \{ const int c\+Max\+Threads=-\/1
 \begin{DoxyCompactList}\small\item\em Serves as the settings for the game. Please note that c\+Max\+Threads must be at least 2. If you want \doxylink{namespace_techstorm}{Techstorm} to decide, set c\+Max\+Threads to -\/1. \end{DoxyCompactList}\item 
 using \mbox{\hyperlink{namespace_techstorm_a108468b55acfc7ab86572b8565488ad3}{Input\+Events}} = eventpp\+::\+Event\+Dispatcher$<$ int, void()$>$
+\item 
+using \mbox{\hyperlink{namespace_techstorm_af6556c4d563341def4c68414537120ed}{Lua\+Library\+Registry}} = std\+::vector$<$ sol\+::lib $>$
+\item 
+using \mbox{\hyperlink{namespace_techstorm_aacc8d13353a5459666050b5aa6ed808c}{Lua\+Function\+Registry}} = std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{struct_techstorm_1_1_exported_function}{Exported\+Function}} $>$
 \item 
 using \mbox{\hyperlink{namespace_techstorm_a697d286da79fa47c4b623f24b1874c37}{Object\+Layer}} = JPH\+::\+Object\+Layer
 \item 
@@ -105,12 +115,18 @@ enum class \mbox{\hyperlink{namespace_techstorm_ab0981a062221a3d61fdce049730b3e7
 \item 
 bool \mbox{\hyperlink{namespace_techstorm_ad005d326f9ccbbbf9be01f11f98f049d}{File\+System\+Is\+Properly\+Formatted}} (const char \texorpdfstring{$\ast$}{*}root\+Path, const char \texorpdfstring{$\ast$}{*}directory\+Map\+Path)
 \item 
-int \mbox{\hyperlink{namespace_techstorm_afe4d0583ea45079bdba936b6ac4a1862}{Initialize\+Scripting}} ()
-\begin{DoxyCompactList}\small\item\em Initializes the scripting API. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{namespace_techstorm_a5f60ca8f7ae3cc28e9890e53f3629554}{Register\+Lua}} (sol\+::state \&lua)
-\begin{DoxyCompactList}\small\item\em Registers the scripting API for Lua. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{namespace_techstorm_a8085186186eadc95c01fa563b8e65a4f}{Register\+Angel\+Script}} ()
-\begin{DoxyCompactList}\small\item\em Registers the scripting API for Angel\+Script. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_techstorm_1_1_file_system_registry}{File\+System\+Registry}} \& \mbox{\hyperlink{namespace_techstorm_a24fb41ad8339291fb9302ab6c9023ef9}{Get\+File\+System\+Registry}} ()
+\item 
+void \mbox{\hyperlink{namespace_techstorm_a0cdf258db7319603e2c5e39a8b18726e}{Initialize\+File\+Registry}} (const char \texorpdfstring{$\ast$}{*}root\+Path)
+\item 
+void \mbox{\hyperlink{namespace_techstorm_a1e91c0559ca9e21d2d7db69bb10c5844}{Add\+File\+Registry\+Load\+Function}} (std\+::string const \&extension, std\+::function$<$ std\+::any(std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_techstorm_1_1_file_meta}{File\+Meta}} $>$)$>$ const \&load\+Func)
+\item 
+void \mbox{\hyperlink{namespace_techstorm_ab3076a5eb2869c3af24c30bcc02e13a4}{Add\+File\+Registry\+Load\+On\+Register\+Extension}} (std\+::string const \&extension)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_techstorm_1_1_file_meta}{File\+Meta}} $>$ \mbox{\hyperlink{namespace_techstorm_a4b55d1ec56e9102233008fef6024666b}{Get\+File\+Meta}} (std\+::string const \&key)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_techstorm_1_1_registered_file}{Registered\+File}} $>$ \mbox{\hyperlink{namespace_techstorm_aaf6125c10046d7d70355aec49eb87e8a}{Get\+File}} (std\+::string const \&key, bool load\+If\+Not\+Loaded=true)
+\item 
 {\footnotesize template$<$typename T $>$ }\\T \& \mbox{\hyperlink{namespace_techstorm_a98e9633c11c071c2a51987a62ce1cc16}{Get\+Global}} (const std\+::string \&key)
 \item 
 {\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespace_techstorm_acbd4313148ac66f22420becf6668fc8d}{Set\+Global}} (const std\+::string \&key, const T \&value)
@@ -119,10 +135,6 @@ int \mbox{\hyperlink{namespace_techstorm_a8085186186eadc95c01fa563b8e65a4f}{Regi
 \begin{DoxyCompactItemize}
 \item 
 const std\+::string \mbox{\hyperlink{namespace_techstorm_ab97f45c99b730373b3122f27e49f3756}{c\+Directory\+Name}}
-\item 
-std\+::string \mbox{\hyperlink{namespace_techstorm_aa33beb098b7e93e014fd874d0760fa4b}{path}}
-\item 
-std\+::string \mbox{\hyperlink{namespace_techstorm_af67668cd3c5e649019a81b8ae8a15acd}{filename}}
 \end{DoxyCompactItemize}
 
 
@@ -145,7 +157,7 @@ Definition at line \mbox{\hyperlink{_render_layer_8h_source_l00007}{7}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{_file_system_8h_source_l00010}{10}} of file \mbox{\hyperlink{_file_system_8h_source}{File\+System.\+h}}.
+Definition at line \mbox{\hyperlink{_file_system_8h_source_l00015}{15}} of file \mbox{\hyperlink{_file_system_8h_source}{File\+System.\+h}}.
 
 \Hypertarget{namespace_techstorm_a49171abf7f6363db4090dfa5cf1fee47}\label{namespace_techstorm_a49171abf7f6363db4090dfa5cf1fee47} 
 \index{Techstorm@{Techstorm}!FilePathMeta@{FilePathMeta}}
@@ -156,16 +168,6 @@ Definition at line \mbox{\hyperlink{_file_system_8h_source_l00010}{10}} of file 
 
 
 Definition at line \mbox{\hyperlink{_file_path_meta_8h_source_l00005}{5}} of file \mbox{\hyperlink{_file_path_meta_8h_source}{File\+Path\+Meta.\+h}}.
-
-\Hypertarget{namespace_techstorm_a722eb734aae8dcb25139fe5173dfa372}\label{namespace_techstorm_a722eb734aae8dcb25139fe5173dfa372} 
-\index{Techstorm@{Techstorm}!FileSystemMeta@{FileSystemMeta}}
-\index{FileSystemMeta@{FileSystemMeta}!Techstorm@{Techstorm}}
-\doxysubsubsection{\texorpdfstring{FileSystemMeta}{FileSystemMeta}}
-{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_techstorm_a722eb734aae8dcb25139fe5173dfa372}{Techstorm\+::\+File\+System\+Meta}} = typedef \{ std\+::string extension}
-
-
-
-Definition at line \mbox{\hyperlink{_file_system_8h_source_l00012}{12}} of file \mbox{\hyperlink{_file_system_8h_source}{File\+System.\+h}}.
 
 \Hypertarget{namespace_techstorm_aa6eeda8fa60b60b709cb56062f2e4d50}\label{namespace_techstorm_aa6eeda8fa60b60b709cb56062f2e4d50} 
 \index{Techstorm@{Techstorm}!GameSettings@{GameSettings}}
@@ -190,6 +192,26 @@ Definition at line \mbox{\hyperlink{_game_settings_8h_source_l00009}{9}} of file
 
 
 Definition at line \mbox{\hyperlink{_input_8h_source_l00005}{5}} of file \mbox{\hyperlink{_input_8h_source}{Input.\+h}}.
+
+\Hypertarget{namespace_techstorm_aacc8d13353a5459666050b5aa6ed808c}\label{namespace_techstorm_aacc8d13353a5459666050b5aa6ed808c} 
+\index{Techstorm@{Techstorm}!LuaFunctionRegistry@{LuaFunctionRegistry}}
+\index{LuaFunctionRegistry@{LuaFunctionRegistry}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{LuaFunctionRegistry}{LuaFunctionRegistry}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_techstorm_aacc8d13353a5459666050b5aa6ed808c}{Techstorm\+::\+Lua\+Function\+Registry}} = typedef std\+::unordered\+\_\+map$<$std\+::string, \mbox{\hyperlink{struct_techstorm_1_1_exported_function}{Exported\+Function}}$>$}
+
+
+
+Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00026}{26}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
+
+\Hypertarget{namespace_techstorm_af6556c4d563341def4c68414537120ed}\label{namespace_techstorm_af6556c4d563341def4c68414537120ed} 
+\index{Techstorm@{Techstorm}!LuaLibraryRegistry@{LuaLibraryRegistry}}
+\index{LuaLibraryRegistry@{LuaLibraryRegistry}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{LuaLibraryRegistry}{LuaLibraryRegistry}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_techstorm_af6556c4d563341def4c68414537120ed}{Techstorm\+::\+Lua\+Library\+Registry}} = typedef std\+::vector$<$sol\+::lib$>$}
+
+
+
+Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00025}{25}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
 
 \Hypertarget{namespace_techstorm_a697d286da79fa47c4b623f24b1874c37}\label{namespace_techstorm_a697d286da79fa47c4b623f24b1874c37} 
 \index{Techstorm@{Techstorm}!ObjectLayer@{ObjectLayer}}
@@ -243,6 +265,44 @@ Definition at line \mbox{\hyperlink{_e_return_code_8h_source_l00004}{4}} of file
 
 
 \doxysubsection{Function Documentation}
+\Hypertarget{namespace_techstorm_a1e91c0559ca9e21d2d7db69bb10c5844}\label{namespace_techstorm_a1e91c0559ca9e21d2d7db69bb10c5844} 
+\index{Techstorm@{Techstorm}!AddFileRegistryLoadFunction@{AddFileRegistryLoadFunction}}
+\index{AddFileRegistryLoadFunction@{AddFileRegistryLoadFunction}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{AddFileRegistryLoadFunction()}{AddFileRegistryLoadFunction()}}
+{\footnotesize\ttfamily void Techstorm\+::\+Add\+File\+Registry\+Load\+Function (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{extension,  }\item[{std\+::function$<$ std\+::any(std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_techstorm_1_1_file_meta}{File\+Meta}} $>$)$>$ const \&}]{load\+Func }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_file_system_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{_file_system_8cpp_source}{File\+System.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_file_system_8h_source_l00094}{Techstorm\+::\+File\+System\+Registry\+::add\+Load\+Function()}}, and \mbox{\hyperlink{_file_system_8cpp_source_l00014}{Get\+File\+System\+Registry()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_config_8cpp_source_l00018}{Techstorm\+::\+Config\+File\+Registry\+::\+Config\+File\+Registry()}}.
+
+Here is the call graph for this function\+:
+% FIG 0
+Here is the caller graph for this function\+:
+% FIG 1
+\Hypertarget{namespace_techstorm_ab3076a5eb2869c3af24c30bcc02e13a4}\label{namespace_techstorm_ab3076a5eb2869c3af24c30bcc02e13a4} 
+\index{Techstorm@{Techstorm}!AddFileRegistryLoadOnRegisterExtension@{AddFileRegistryLoadOnRegisterExtension}}
+\index{AddFileRegistryLoadOnRegisterExtension@{AddFileRegistryLoadOnRegisterExtension}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{AddFileRegistryLoadOnRegisterExtension()}{AddFileRegistryLoadOnRegisterExtension()}}
+{\footnotesize\ttfamily void Techstorm\+::\+Add\+File\+Registry\+Load\+On\+Register\+Extension (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{extension }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_file_system_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{_file_system_8cpp_source}{File\+System.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_file_system_8h_source_l00100}{Techstorm\+::\+File\+System\+Registry\+::add\+Load\+On\+Register\+Extension()}}, and \mbox{\hyperlink{_file_system_8cpp_source_l00014}{Get\+File\+System\+Registry()}}.
+
+Here is the call graph for this function\+:
+% FIG 2
 \Hypertarget{namespace_techstorm_ad005d326f9ccbbbf9be01f11f98f049d}\label{namespace_techstorm_ad005d326f9ccbbbf9be01f11f98f049d} 
 \index{Techstorm@{Techstorm}!FileSystemIsProperlyFormatted@{FileSystemIsProperlyFormatted}}
 \index{FileSystemIsProperlyFormatted@{FileSystemIsProperlyFormatted}!Techstorm@{Techstorm}}
@@ -251,8 +311,62 @@ Definition at line \mbox{\hyperlink{_e_return_code_8h_source_l00004}{4}} of file
 
 
 
-Definition at line \mbox{\hyperlink{_file_system_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_file_system_8cpp_source}{File\+System.\+cpp}}.
+Definition at line \mbox{\hyperlink{_file_system_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{_file_system_8cpp_source}{File\+System.\+cpp}}.
 
+\Hypertarget{namespace_techstorm_aaf6125c10046d7d70355aec49eb87e8a}\label{namespace_techstorm_aaf6125c10046d7d70355aec49eb87e8a} 
+\index{Techstorm@{Techstorm}!GetFile@{GetFile}}
+\index{GetFile@{GetFile}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{GetFile()}{GetFile()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_techstorm_1_1_registered_file}{Techstorm\+::\+Registered\+File}} $>$ Techstorm\+::\+Get\+File (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{key,  }\item[{bool}]{load\+If\+Not\+Loaded = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_file_system_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{_file_system_8cpp_source}{File\+System.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_file_system_8h_source_l00080}{Techstorm\+::\+File\+System\+Registry\+::get\+File()}}, and \mbox{\hyperlink{_file_system_8cpp_source_l00014}{Get\+File\+System\+Registry()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_config_8cpp_source_l00056}{Techstorm\+::\+Config\+File\+Registry\+::lookup()}}, and \mbox{\hyperlink{_config_8cpp_source_l00031}{Techstorm\+::\+Config\+File\+Registry\+::read\+Config\+File()}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\Hypertarget{namespace_techstorm_a4b55d1ec56e9102233008fef6024666b}\label{namespace_techstorm_a4b55d1ec56e9102233008fef6024666b} 
+\index{Techstorm@{Techstorm}!GetFileMeta@{GetFileMeta}}
+\index{GetFileMeta@{GetFileMeta}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{GetFileMeta()}{GetFileMeta()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_techstorm_1_1_file_meta}{Techstorm\+::\+File\+Meta}} $>$ Techstorm\+::\+Get\+File\+Meta (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{key }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_file_system_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{_file_system_8cpp_source}{File\+System.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_file_system_8cpp_source_l00080}{Techstorm\+::\+File\+System\+Registry\+::\+Get\+File\+Meta()}}, and \mbox{\hyperlink{_file_system_8cpp_source_l00014}{Get\+File\+System\+Registry()}}.
+
+Here is the call graph for this function\+:
+% FIG 5
+\Hypertarget{namespace_techstorm_a24fb41ad8339291fb9302ab6c9023ef9}\label{namespace_techstorm_a24fb41ad8339291fb9302ab6c9023ef9} 
+\index{Techstorm@{Techstorm}!GetFileSystemRegistry@{GetFileSystemRegistry}}
+\index{GetFileSystemRegistry@{GetFileSystemRegistry}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{GetFileSystemRegistry()}{GetFileSystemRegistry()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_techstorm_1_1_file_system_registry}{Techstorm\+::\+File\+System\+Registry}} \& Techstorm\+::\+Get\+File\+System\+Registry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_file_system_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_file_system_8cpp_source}{File\+System.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{_file_system_8cpp_source_l00024}{Add\+File\+Registry\+Load\+Function()}}, \mbox{\hyperlink{_file_system_8cpp_source_l00029}{Add\+File\+Registry\+Load\+On\+Register\+Extension()}}, \mbox{\hyperlink{_file_system_8cpp_source_l00039}{Get\+File()}}, \mbox{\hyperlink{_file_system_8cpp_source_l00034}{Get\+File\+Meta()}}, and \mbox{\hyperlink{_file_system_8cpp_source_l00019}{Initialize\+File\+Registry()}}.
+
+Here is the caller graph for this function\+:
+% FIG 6
 \Hypertarget{namespace_techstorm_a98e9633c11c071c2a51987a62ce1cc16}\label{namespace_techstorm_a98e9633c11c071c2a51987a62ce1cc16} 
 \index{Techstorm@{Techstorm}!GetGlobal@{GetGlobal}}
 \index{GetGlobal@{GetGlobal}!Techstorm@{Techstorm}}
@@ -269,70 +383,29 @@ Definition at line \mbox{\hyperlink{_globals_8h_source_l00031}{31}} of file \mbo
 References \mbox{\hyperlink{_globals_8h_source_l00023}{Techstorm\+::\+Globals\+Container\+::get()}}, and \mbox{\hyperlink{_singleton_8h_source_l00017}{Techstorm\+::\+Singleton$<$ Globals\+Container $>$\+::\+Instance()}}.
 
 Here is the call graph for this function\+:
-% FIG 0
-\Hypertarget{namespace_techstorm_afe4d0583ea45079bdba936b6ac4a1862}\label{namespace_techstorm_afe4d0583ea45079bdba936b6ac4a1862} 
-\index{Techstorm@{Techstorm}!InitializeScripting@{InitializeScripting}}
-\index{InitializeScripting@{InitializeScripting}!Techstorm@{Techstorm}}
-\doxysubsubsection{\texorpdfstring{InitializeScripting()}{InitializeScripting()}}
-{\footnotesize\ttfamily int Techstorm\+::\+Initialize\+Scripting (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+% FIG 7
+\Hypertarget{namespace_techstorm_a0cdf258db7319603e2c5e39a8b18726e}\label{namespace_techstorm_a0cdf258db7319603e2c5e39a8b18726e} 
+\index{Techstorm@{Techstorm}!InitializeFileRegistry@{InitializeFileRegistry}}
+\index{InitializeFileRegistry@{InitializeFileRegistry}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{InitializeFileRegistry()}{InitializeFileRegistry()}}
+{\footnotesize\ttfamily void Techstorm\+::\+Initialize\+File\+Registry (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{root\+Path }\end{DoxyParamCaption})}
 
 
 
-Initializes the scripting API. 
-
-Initializes the scripting.
-
-\begin{DoxyReturn}{Returns}
-an integer value that represents the result of the operation.
-\end{DoxyReturn}
-
-
-\begin{DoxyReturn}{Returns}
-
-\end{DoxyReturn}
-
-
-Definition at line \mbox{\hyperlink{_scripting_a_p_i_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{_scripting_a_p_i_8cpp_source}{Scripting\+API.\+cpp}}.
-
-\Hypertarget{namespace_techstorm_a8085186186eadc95c01fa563b8e65a4f}\label{namespace_techstorm_a8085186186eadc95c01fa563b8e65a4f} 
-\index{Techstorm@{Techstorm}!RegisterAngelScript@{RegisterAngelScript}}
-\index{RegisterAngelScript@{RegisterAngelScript}!Techstorm@{Techstorm}}
-\doxysubsubsection{\texorpdfstring{RegisterAngelScript()}{RegisterAngelScript()}}
-{\footnotesize\ttfamily int Techstorm\+::\+Register\+Angel\+Script (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+Definition at line \mbox{\hyperlink{_file_system_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{_file_system_8cpp_source}{File\+System.\+cpp}}.
 
 
 
-Registers the scripting API for Angel\+Script. 
-
-\begin{DoxyReturn}{Returns}
-an integer value that represents the result of the operation.
-\end{DoxyReturn}
-
-
-Definition at line \mbox{\hyperlink{_scripting_a_p_i_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{_scripting_a_p_i_8cpp_source}{Scripting\+API.\+cpp}}.
-
-\Hypertarget{namespace_techstorm_a5f60ca8f7ae3cc28e9890e53f3629554}\label{namespace_techstorm_a5f60ca8f7ae3cc28e9890e53f3629554} 
-\index{Techstorm@{Techstorm}!RegisterLua@{RegisterLua}}
-\index{RegisterLua@{RegisterLua}!Techstorm@{Techstorm}}
-\doxysubsubsection{\texorpdfstring{RegisterLua()}{RegisterLua()}}
-{\footnotesize\ttfamily int Techstorm\+::\+Register\+Lua (\begin{DoxyParamCaption}\item[{sol\+::state \&}]{lua }\end{DoxyParamCaption})}
+References \mbox{\hyperlink{_file_system_8cpp_source_l00014}{Get\+File\+System\+Registry()}}, and \mbox{\hyperlink{_file_system_8cpp_source_l00044}{Techstorm\+::\+File\+System\+Registry\+::init()}}.
 
 
 
-Registers the scripting API for Lua. 
+Referenced by \mbox{\hyperlink{engine_2_project_8h_source_l00091}{Techstorm\+::abstract$<$ K, D, T $>$\+::pre\+Init()}}.
 
-
-\begin{DoxyParams}{Parameters}
-{\em lua} & The lua state to register the API to.\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-an integer value that represents the result of the operation.
-\end{DoxyReturn}
-
-
-Definition at line \mbox{\hyperlink{_scripting_a_p_i_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{_scripting_a_p_i_8cpp_source}{Scripting\+API.\+cpp}}.
-
+Here is the call graph for this function\+:
+% FIG 8
+Here is the caller graph for this function\+:
+% FIG 9
 \Hypertarget{namespace_techstorm_acbd4313148ac66f22420becf6668fc8d}\label{namespace_techstorm_acbd4313148ac66f22420becf6668fc8d} 
 \index{Techstorm@{Techstorm}!SetGlobal@{SetGlobal}}
 \index{SetGlobal@{SetGlobal}!Techstorm@{Techstorm}}
@@ -349,7 +422,7 @@ Definition at line \mbox{\hyperlink{_globals_8h_source_l00038}{38}} of file \mbo
 References \mbox{\hyperlink{_singleton_8h_source_l00017}{Techstorm\+::\+Singleton$<$ Globals\+Container $>$\+::\+Instance()}}, and \mbox{\hyperlink{_globals_8h_source_l00014}{Techstorm\+::\+Globals\+Container\+::set()}}.
 
 Here is the call graph for this function\+:
-% FIG 1
+% FIG 10
 
 
 \doxysubsection{Variable Documentation}
@@ -362,32 +435,4 @@ Here is the call graph for this function\+:
 
 
 Definition at line \mbox{\hyperlink{_file_path_meta_8h_source_l00007}{7}} of file \mbox{\hyperlink{_file_path_meta_8h_source}{File\+Path\+Meta.\+h}}.
-
-\Hypertarget{namespace_techstorm_af67668cd3c5e649019a81b8ae8a15acd}\label{namespace_techstorm_af67668cd3c5e649019a81b8ae8a15acd} 
-\index{Techstorm@{Techstorm}!filename@{filename}}
-\index{filename@{filename}!Techstorm@{Techstorm}}
-\doxysubsubsection{\texorpdfstring{filename}{filename}}
-{\footnotesize\ttfamily std\+::string Techstorm\+::filename}
-
-
-
-Definition at line \mbox{\hyperlink{_file_system_8h_source_l00015}{15}} of file \mbox{\hyperlink{_file_system_8h_source}{File\+System.\+h}}.
-
-
-
-Referenced by \mbox{\hyperlink{_file_system_8cpp_source_l00008}{Techstorm\+::\+File\+System\+Registry\+::\+File\+System\+Registry()}}.
-
-\Hypertarget{namespace_techstorm_aa33beb098b7e93e014fd874d0760fa4b}\label{namespace_techstorm_aa33beb098b7e93e014fd874d0760fa4b} 
-\index{Techstorm@{Techstorm}!path@{path}}
-\index{path@{path}!Techstorm@{Techstorm}}
-\doxysubsubsection{\texorpdfstring{path}{path}}
-{\footnotesize\ttfamily std\+::string Techstorm\+::path}
-
-
-
-Definition at line \mbox{\hyperlink{_file_system_8h_source_l00014}{14}} of file \mbox{\hyperlink{_file_system_8h_source}{File\+System.\+h}}.
-
-
-
-Referenced by \mbox{\hyperlink{_file_system_8cpp_source_l00008}{Techstorm\+::\+File\+System\+Registry\+::\+File\+System\+Registry()}}.
 
