@@ -1,25 +1,67 @@
-#include <iostream>
+#include "../fs/FileSystem.h"
 #include "Config.h"
-#include <raylib.h>
-Techstorm::ConfigFileRegistry::ConfigFileRegistry(const std::string& searchPath)
-{
-	/*
-		FilePathList files = LoadDirectoryFilesEx(searchPath.c_str(), nullptr, true);
+#include "libconfig.h++"
+#include <any>
+#include <memory>
+#include <string>
 
-		for (int i = 0; i < files.count; i++) {
-			std::string path = files.paths[i];
-			std::string filename = path.substr(path.find_last_of("\\") + 1);
-			std::string extension = filename.substr(filename.find_last_of(".") + 1);
+// TODO: This needs to have readConfigFile implemented.
+std::any LoadConfigFile(std::shared_ptr<Techstorm::FileMeta> fileMeta) {
+	using namespace Techstorm;
+	libconfig::Config cfg;
 
-			//std::cout << "File: " << filename << std::endl << "\tat: " << path << std::endl << "\t\tWith Extension of : " << extension << std::endl;
-		}
-	*/
+	cfg.readFile(fileMeta->path);
+
+	return std::make_any<libconfig::Config*>(&cfg);
 }
 
 Techstorm::ConfigFileRegistry::ConfigFileRegistry()
 {
+	AddFileRegistryLoadFunction("cfg", LoadConfigFile);
 }
 
 Techstorm::ConfigFileRegistry::~ConfigFileRegistry()
 {
 }
+
+void Techstorm::ConfigFileRegistry::readConfigFiles()
+{
+}
+
+void Techstorm::ConfigFileRegistry::readConfigFile(const std::string& name)
+{
+	std::shared_ptr<RegisteredFile> file = GetFile(name);
+}
+
+void Techstorm::ConfigFileRegistry::writeConfigFiles()
+{
+}
+
+void Techstorm::ConfigFileRegistry::registerConfigFiles(const std::string& searchPath)
+{
+}
+
+void Techstorm::ConfigFileRegistry::registerConfigFile(const std::string& name, const std::string& path)
+{
+}
+
+void Techstorm::ConfigFileRegistry::unregisterConfigFiles()
+{
+}
+
+void Techstorm::ConfigFileRegistry::unregisterConfigFile(const std::string& name)
+{
+}
+
+libconfig::Setting& Techstorm::ConfigFileRegistry::lookup(const std::string& name)
+{
+	libconfig::Config const* cfg = std::any_cast<libconfig::Config*>(GetFile(name)->data);
+	return cfg->lookup(name);
+}
+
+/*
+libconfig::Config& Techstorm::ConfigFileRegistry::operator[](const std::string& name)
+{
+	// TODO: insert return statement here
+}
+*/

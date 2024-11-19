@@ -1,6 +1,7 @@
 #include <Common.h>
 #include <crtdbg.h>
 #include <modding/ScriptingAPI.h>
+
 #include <project.h>
 #include <raylib.h>
 #include <renderer/Renderer.h>
@@ -15,8 +16,10 @@ int main(int argc, char* argv[]) {
 	using namespace Techstorm;
 
 	PROJECT_TYPENAME project = PROJECT_TYPENAME();
+
 	project.preInit();
 
+	FileSystemRegistry& fileSystemRegistry = GetFileSystemRegistry();
 	Renderer& renderer = project.getRenderer();
 	WindowDecorations& decorations = project.getWindowDecorations();
 
@@ -39,6 +42,8 @@ int main(int argc, char* argv[]) {
 
 	SetTargetFPS(decorations.targetFPS);
 
+	Texture tex = LoadTextureFromImage(fileSystemRegistry.getFile("png")->get<Image>());
+
 	while (!WindowShouldClose()) {
 		project.preObjectUpdate();
 		project.objectUpdate();
@@ -47,6 +52,12 @@ int main(int argc, char* argv[]) {
 		project.prePhysicsUpdate();
 		project.physicsUpdate();
 		project.postPhysicsUpdate();
+
+		BeginDrawing();
+		ClearBackground(BLACK);
+
+		DrawTexture(tex, 0, 0, WHITE);
+		EndDrawing();
 	}
 
 	project.cleanup(0);
