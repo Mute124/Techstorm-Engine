@@ -90,7 +90,7 @@ include("cmake/cpm.cmake")
 CPMAddPackage(
     NAME raylib
     GIT_REPOSITORY https://github.com/raysan5/raylib.git
-    GIT_TAG 5.0
+    GIT_TAG 5.5
 )
 
 # find_package(ZLIB REQUIRED)
@@ -98,6 +98,7 @@ find_package(joltphysics REQUIRED)
 find_package(libconfig REQUIRED)
 find_package(Angelscript REQUIRED)
 find_package(sol2 REQUIRED)
+find_package(eventpp REQUIRED)
 
 
 set(DOUBLE_PRECISION OFF)

@@ -14,7 +14,7 @@ int main(int argc, char* argv[]) {
 	// Enable leak detection
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 #endif
-
+	
 	using namespace Techstorm;
 
 	PROJECT_TYPENAME project = PROJECT_TYPENAME();

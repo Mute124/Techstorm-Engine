@@ -1,6 +1,7 @@
 #include "Renderer.h"
 
 #include <iostream>
+/*
 // unused, but here for a bit
 Camera ConvertCamera(Techstorm::CameraData* data) {
 	using namespace Techstorm;
@@ -19,6 +20,7 @@ Camera ConvertCamera(Techstorm::CameraData* data) {
 
 	return cam;
 }
+*/
 
 void Techstorm::Renderer::initialize()
 {

@@ -17,6 +17,7 @@ add_library(engine_lib SHARED
     "renderer/GameObject.h" 
     "renderer/GameObject.cpp"
     "input/Input.h" 
+    "input/Input.cpp"
     "math/Vector.cpp" 
     "renderer/GameCamera.h" 
     "renderer/GameCamera.cpp" 
@@ -63,7 +64,7 @@ target_link_libraries(engine_lib PUBLIC
     libconfig_libconfig_libconfig++_DEPS_TARGET
     sol2::sol2
     Angelscript::angelscript
-    
+    eventpp::eventpp
 )
 
 # Set output name for Windows/Linux

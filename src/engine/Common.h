@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <string>
 #include <thread>
+#include "utils/Singleton.h"
 
 const std::string TS_ASSET_DIR = std::string(TS_TOP_LAYER) + "/game/assets/";
 const std::string TS_DATA_DIR = std::string(TS_TOP_LAYER) + "/game/data/";

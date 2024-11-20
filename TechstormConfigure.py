@@ -95,7 +95,7 @@ def InstallPackagesStep():
         subprocess.check_call(['conan', 'install', '.', '--output-folder=build', '--build=missing', '-s', 'build_type=Release'])
 
         # Create a file in the cache folder that indicates that release packages are installed
-        buildTypeIndicator = open("../cache/installedRelease.pkgstate", "w")
+        buildTypeIndicator = open("cache/installedRelease.pkgstate", "w")
         buildTypeIndicator.close()
 
         print("Done installing release packages.\n")
@@ -106,7 +106,7 @@ def InstallPackagesStep():
         subprocess.check_call(['conan', 'install', '.', '--output-folder=build', '--build=missing', '-s', 'build_type=Distribution'])
 
         # Create a file in the cache folder that indicates that distribution packages are installed
-        buildTypeIndicator = open("../cache/installedDistribution.pkgstate", "w")
+        buildTypeIndicator = open("cache/installedDistribution.pkgstate", "w")
         buildTypeIndicator.close()
 
         print("Done installing distribution packages.\n")
