@@ -1,62 +1,91 @@
 ﻿
-
-# Project shared library
-add_library(engine_lib SHARED 
-	"engine.cpp"
+set(ENGINE_SOURCES 
+	# Engine Core
+    "Common.h" 
+    "Common.cpp"
     "engine.h" 
+    "engine.cpp"
     "BasicCore.h" 
+    
+    # Project
     "Project.h" 
     "Project.cpp" 
+
+	# Renderer
     "renderer/Window.h" 
     "renderer/Window.cpp" 
     "renderer/Renderer.h" 
     "renderer/Renderer.cpp"
-    "math/Vector.h" 
     "renderer/Color.h" 
-    "Utils/Singleton.h" 
     "renderer/GameObject.h" 
     "renderer/GameObject.cpp"
-    "input/Input.h" 
-    "input/Input.cpp"
-    "math/Vector.cpp" 
     "renderer/GameCamera.h" 
     "renderer/GameCamera.cpp" 
-    "Common.h" 
     "renderer/RenderLayer.h" 
     "renderer/GameObjectRegistry.h"
     "renderer/GameObjectRegistry.cpp" 
-    "utils/DoublyLinkedList.h" 
-    "world/world.h" 
-    "dbg/Logging.h" 
     "renderer/objects/PlaneObject.h"
-    "world/tools/Terrain.h" 
     "renderer/IGameObjectGate.h"
+    "renderer/WindowDecorations.h"
+
+    # Utils
+    "Utils/Singleton.h" 
+    "utils/DoublyLinkedList.h" 
     "utils/Gate.h" 
-    "physics/PhysicsCommon.h"
-    #"physics/Layers.h" 
-    #"physics/ObjectLPF.h" 
-    #"physics/BroadPhaseLayerRegistry.h" 
-    #"physics/ILayerRegistry.h" 
-    #"physics/BPLayerInterface.h" 
-    #"physics/ObjectVsBroadPhaseLayerFilter.h" 
-    #"physics/ObjectContactListener.h" 
-    #"physics/BodyActivationListener.h" 
-    "physics/Physics.h" 
-    #"physics/PhysicsInitializer.h" 
-    "physics/Physics.cpp"
+    "utils/Globals.h"
+
+    # Math
+    "math/Vector.h" 
+    "math/Vector.cpp" 
+	
+    # Input
+    "input/Input.h" 
+    "input/Input.cpp"
+
+    # Config
     "conf/Config.h"
     "conf/Config.cpp"
-    "utils/Globals.h"
+
+    # File system
     "fs/FileSystem.h"
     "fs/FileSystem.cpp"
-    "renderer/WindowDecorations.h"
-    "EReturnCode.h"
+
+    # Physics
+    "physics/Physics.h" 
+    "physics/Physics.cpp"
+    "physics/Listeners.h"
+    "physics/Listeners.cpp"
+    "physics/Layers.h"
+    "physics/Layers.cpp"
+
+    # Modding
     "modding/ScriptingAPI.h"
     "modding/ScriptingAPI.cpp"
+
+    # Debugging
+    "EReturnCode.h"
+    "dbg/Logging.h" 
+
+    # Game Tools
+    "world/world.h" 
+    "world/tools/Terrain.h" 
 )
 
-target_include_directories(engine_lib PRIVATE ${PROJECT_SOURCE_DIR}/include )
-target_link_libraries(engine_lib PUBLIC
+# Project shared library
+add_library(Techstorm SHARED 
+    ${ENGINE_SOURCES}
+)
+
+# Organize files in Visual Studio
+foreach(source IN LISTS ENGINE_SOURCES)
+    get_filename_component(source_path "${source}" PATH)
+    string(REPLACE "/" "\\" source_path_msvc "${source_path}")
+    source_group("${source_path_msvc}" FILES "${source}")
+endforeach()
+
+target_include_directories(Techstorm PRIVATE ${PROJECT_SOURCE_DIR}/include )
+
+target_link_libraries(Techstorm PUBLIC
     raylib 
     joltphysics::joltphysics 
     joltphysics_DEPS_TARGET
@@ -65,11 +94,12 @@ target_link_libraries(engine_lib PUBLIC
     sol2::sol2
     Angelscript::angelscript
     eventpp::eventpp
+    
 )
 
 # Set output name for Windows/Linux
 if(WIN32)
-    set_target_properties(engine_lib PROPERTIES OUTPUT_NAME "engine_lib.dll" )
+    set_target_properties(Techstorm PROPERTIES OUTPUT_NAME "Techstorm.dll" )
 elseif(UNIX)
-    set_target_properties(engine_lib PROPERTIES OUTPUT_NAME "engine_lib.so") 
+    set_target_properties(Techstorm PROPERTIES OUTPUT_NAME "Techstorm.so") 
 endif()

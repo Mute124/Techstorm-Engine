@@ -8,7 +8,7 @@
 #include <unordered_set>
 #include <any>
 #include <functional>
-#include <raylib.h>
+
 #include "../utils/Singleton.h"
 #include "libconfig.h++"
 namespace Techstorm {

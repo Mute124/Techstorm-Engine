@@ -6,6 +6,7 @@
 #include "modding/ScriptingAPI.h"
 #include "GameSettings.h"
 #include "fs/FileSystem.h"
+#include "conf/Config.h"
 #include <stdint.h>
 
 namespace Techstorm {
@@ -105,6 +106,8 @@ namespace Techstorm {
 
 
 			InitializeFileRegistry(TS_GAME_DIR.c_str());
+
+			
 		}
 
 		/// <summary>

@@ -3,7 +3,7 @@
 #include <raylib.h>
 #include <raymath.h>
 #include "../utils/DoublyLinkedList.h"
-
+#include "../physics/Physics.h"
 namespace Techstorm {
 	/// <summary>
 	/// Represents an object that can be rendered in the screen. This is an abstract class that contains all the common properties of a game object.
@@ -21,6 +21,8 @@ namespace Techstorm {
 		// Defines what layer the object is on
 		int depth = 0;
 		Model model;
+
+		
 
 		// positional variables
 		Vector3 position = Vector3Zero();
@@ -106,6 +108,8 @@ namespace Techstorm {
 
 	private:
 	};
+	
+
 
 	/// <summary>
 	/// A game object that can be rendered to the screen. Inherits from <see cref="IGameObject" />, and already provides the basic rendering functionality. If you override this
@@ -133,4 +137,22 @@ namespace Techstorm {
 		/// <inheritdoc />
 		virtual void destroy() override;
 	};
+	/*struct PhysicsObjectSettings {
+		const JPH::BodyCreationSettings cBodyCreationSettings;
+		const JPH::EActivation activationState;
+		JPH::BodyInterface& bodyInterface = GetBodyInterface();
+	};
+	class IPhysicsGameObject abstract : public IGameObject {
+	public:
+		JPH::BodyID id;
+		JPH::BodyInterface& bodyInterface;
+
+		IPhysicsGameObject(PhysicsObjectSettings const& settings) : IGameObject(), bodyInterface(settings.bodyInterface) {
+			this->id = bodyInterface.CreateAndAddBody(settings.cBodyCreationSettings, settings.activationState);
+		}
+
+		virtual ~IPhysicsGameObject() {
+			this->bodyInterface.RemoveBody(this->id);
+		}
+	};*/
 }

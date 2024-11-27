@@ -13,6 +13,10 @@ void Techstorm::GameCamera::init()
 
 void Techstorm::GameCamera::update()
 {
+//	UpdateCameraPro(
+//		&this->mCameraData,
+	//)
+
 }
 
 /// <summary>

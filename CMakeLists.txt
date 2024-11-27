@@ -99,6 +99,7 @@ find_package(libconfig REQUIRED)
 find_package(Angelscript REQUIRED)
 find_package(sol2 REQUIRED)
 find_package(eventpp REQUIRED)
+find_package(SDL2 REQUIRED CONFIG)
 
 
 set(DOUBLE_PRECISION OFF)

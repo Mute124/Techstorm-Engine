@@ -1,6 +1,7 @@
 #include "Input.h"
 
-inline int Techstorm::InputRegistry::registerAction(InputAction* action, std::function<void(InputAction*)> const& callback) {
+inline int Techstorm::InputRegistry::registerActionCallback(InputAction* action, std::function<void(InputAction*)> const& callback) {
+	// Since callbacks are stored in an unordered_map, the next available id/slot is the map's size + 1.
 	int id = mActions[action].size() + 1;
 	
 	mActions[action].try_emplace(id, callback);
@@ -17,11 +18,20 @@ inline void Techstorm::InputRegistry::unregisterCallback(InputAction* action, in
 }
 
 inline void Techstorm::InputRegistry::checkAll() {
-	// Check all registered InputActions
+	/*
+	* Iterate through all registered actions in mActions (and then through all of it's callbacks)
+	*/
 	for(auto const& actions : mActions) {
+
 		// Check all registered callbacks
 		for (auto const& checks : actions.second) {
 			checks.second(actions.first);
 		}
+	
 	}
 }
+#ifdef TS_ENABLE_CONTROLLER_SUPPORT
+
+
+
+#endif

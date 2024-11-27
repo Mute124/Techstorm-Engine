@@ -10,6 +10,7 @@ add_executable(main_app
 	"main.cpp"
 	"ApplicationUtils.h"
 	"ApplicationUtils.cpp"
+
 	${TS_MAIN_APPLICATION_RC}
 )
 

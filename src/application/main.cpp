@@ -1,41 +1,43 @@
-#define _CRTDBG_MAP_ALLOC
-#include <crtdbg.h>
+#include <Common.h>
 #include <modding/ScriptingAPI.h>
-#include <conf/Config.h>
-#include <project.h>
-#include <raylib.h>
 #include <renderer/Renderer.h>
 #include <renderer/WindowDecorations.h>
-#include <fs/FileSystem.h>
-#include <string>
+#include <conf/Config.h>
+
+#include <project.h>
+
+#include <raylib.h>
+#include <thread>
 
 int main(int argc, char* argv[]) {
 #ifdef _DEBUG
 	// Enable leak detection
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 #endif
-	
+
 	using namespace Techstorm;
 
 	PROJECT_TYPENAME project = PROJECT_TYPENAME();
-	ConfigFileRegistry& configFileRegistry = ConfigFileRegistry::Instance();
 	project.preInit();
 
-	FileSystemRegistry& fileSystemRegistry = GetFileSystemRegistry();
-	Renderer const& renderer = project.getRenderer();
-	WindowDecorations const& decorations = project.getWindowDecorations();
+	InitializeConfigRegistry();
+	ConfigFileRegistry& configRegistry = GetConfigFileRegistry();
+	
+	Renderer& renderer = project.getRenderer();
+	WindowDecorations& decorations = project.getWindowDecorations();
+	
 	ScriptingAPI scriptingAPI;
 
 	scriptingAPI.InitializeScripting(project.getLuaLibraries(), project.getLuaFunctions());
 	scriptingAPI.RegisterLua();
 
+	decorations.title = LookupConfig("Project.cfg", "projectWindowTitle");
+
 	InitWindow(decorations.width, decorations.height, decorations.title);
-	
-	configFileRegistry.init();
 
-	std::string iconPath = GetFile("png")->meta->path;
+	const char* iconPath = TextFormat("%s%s", TS_ASSET_DIR.c_str(), decorations.icon);
 
-	Image icon = LoadImage(iconPath.c_str());
+	Image icon = LoadImage(iconPath);
 	ImageFormat(&icon, PIXELFORMAT_UNCOMPRESSED_R8G8B8A8);
 
 	SetWindowIcons(&icon, 1);
@@ -44,8 +46,6 @@ int main(int argc, char* argv[]) {
 	project.postInit();
 
 	SetTargetFPS(decorations.targetFPS);
-
-	Texture tex = LoadTextureFromImage(fileSystemRegistry.getFile("png")->get<Image>());
 
 	while (!WindowShouldClose()) {
 		project.preObjectUpdate();
@@ -56,15 +56,11 @@ int main(int argc, char* argv[]) {
 		project.physicsUpdate();
 		project.postPhysicsUpdate();
 
+		std::this_thread::yield();
 	}
 
 	project.cleanup(0);
 
 	CloseWindow();
-
-
-
-	_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_DEBUG);
-	_CrtDumpMemoryLeaks();
 	return 0;
 }

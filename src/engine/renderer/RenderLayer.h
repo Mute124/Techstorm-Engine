@@ -6,6 +6,7 @@ namespace Techstorm {
 
 	using Depth = int;
 
+
 	/*
 	class GameObjectsList : public DoublyLinkedList<GameObject*> {
 	public:
