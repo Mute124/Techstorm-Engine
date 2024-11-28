@@ -76,6 +76,8 @@ add_library(Techstorm SHARED
     ${ENGINE_SOURCES}
 )
 
+
+
 # Organize files in Visual Studio
 foreach(source IN LISTS ENGINE_SOURCES)
     get_filename_component(source_path "${source}" PATH)

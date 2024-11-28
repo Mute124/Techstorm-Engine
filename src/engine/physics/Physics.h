@@ -25,8 +25,6 @@ JPH_SUPPRESS_WARNINGS
 using namespace JPH::literals;
 
 namespace Techstorm {
-
-
 	// Callback for traces, connect this to your own trace function if you have one
 	static void TraceImpl(const char* inFMT, ...)
 	{
@@ -73,6 +71,7 @@ namespace Techstorm {
 	public:
 		PhysicsEngine() = default;
 
+		void init(const AllocatedPhysicsResources resources, JPH::JobSystem* jobSystem, JPH::TempAllocator* tempAllocator, JPH::ContactListener* contactListener);
 		void init(const AllocatedPhysicsResources resources);
 
 		void update(const float cDeltaTime);
@@ -80,7 +79,7 @@ namespace Techstorm {
 		void optimizeBroadPhase();
 
 		JPH::BodyInterface& getBodyInterface() const;
-		JPH::PhysicsSystem* mPhysicsSystem = nullptr;									// The physics system that simulates the world
+
 	private:
 		// A work around to keep the body interface references.
 		class BodyInterfaceHolder {
@@ -89,15 +88,13 @@ namespace Techstorm {
 
 			explicit BodyInterfaceHolder(JPH::BodyInterface& bodyInterface);
 			~BodyInterfaceHolder();
-
-
 		};
 
 		//float					mUpdateFrequency = 60.0f;									// Physics update frequency, measured in Hz (cycles per second)
 		int						mCollisionSteps = 1;										// How many collision detection steps per physics update
 
 		BodyInterfaceHolder* mBodyInterfaceHolder;
-
+		JPH::PhysicsSystem* mPhysicsSystem = nullptr;									// The physics system that simulates the world
 		bool mIsInitialized = false;
 		AllocatedPhysicsResources mResources;
 

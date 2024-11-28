@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sol_5fall_5fsafeties_5fon_0',['SOL_ALL_SAFETIES_ON',['../dc/d41/_scripting_a_p_i_8h.html#af49a65454b3af6c3580a532b5f86028e',1,'ScriptingAPI.h']]]
+  ['jph_5fenable_5fasserts_0',['JPH_ENABLE_ASSERTS',['../d0/d80/_physics_common_8h.html#aad6ea5922f815569f1588a2e095a8e21',1,'PhysicsCommon.h']]]
 ];

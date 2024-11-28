@@ -1,6 +1,6 @@
 #include "Layers.h"
 
-inline bool Techstorm::ObjectLayerPairFilterImpl::ShouldCollide(JPH::ObjectLayer inObject1, JPH::ObjectLayer inObject2) const
+  bool Techstorm::ObjectLayerPairFilterImpl::ShouldCollide(JPH::ObjectLayer inObject1, JPH::ObjectLayer inObject2) const
 {
 	using namespace JPH;
 	switch (inObject1)
@@ -15,26 +15,26 @@ inline bool Techstorm::ObjectLayerPairFilterImpl::ShouldCollide(JPH::ObjectLayer
 	}
 }
 
-inline Techstorm::BPLayerInterfaceImpl::BPLayerInterfaceImpl()
+  Techstorm::BPLayerInterfaceImpl::BPLayerInterfaceImpl()
 {
 	// Create a mapping table from object to broad phase layer
 	mObjectToBroadPhase[Layers::NON_MOVING] = BroadPhaseLayers::NON_MOVING;
 	mObjectToBroadPhase[Layers::MOVING] = BroadPhaseLayers::MOVING;
 }
 
-inline JPH::uint Techstorm::BPLayerInterfaceImpl::GetNumBroadPhaseLayers() const
+  JPH::uint Techstorm::BPLayerInterfaceImpl::GetNumBroadPhaseLayers() const
 {
 	return BroadPhaseLayers::NUM_LAYERS;
 }
 
-inline JPH::BroadPhaseLayer Techstorm::BPLayerInterfaceImpl::GetBroadPhaseLayer(JPH::ObjectLayer inLayer) const
+  JPH::BroadPhaseLayer Techstorm::BPLayerInterfaceImpl::GetBroadPhaseLayer(JPH::ObjectLayer inLayer) const
 {
 	using namespace JPH;
 	JPH_ASSERT(inLayer < Layers::NUM_LAYERS);
 	return mObjectToBroadPhase[inLayer];
 }
 #if defined(JPH_EXTERNAL_PROFILE) || defined(JPH_PROFILE_ENABLED)
-	inline const char* Techstorm::BPLayerInterfaceImpl::GetBroadPhaseLayerName(JPH::BroadPhaseLayer inLayer)
+	  const char* Techstorm::BPLayerInterfaceImpl::GetBroadPhaseLayerName(JPH::BroadPhaseLayer inLayer)
 	{
 		using namespace JPH;
 		switch ((JPH::BroadPhaseLayer::Type)inLayer)
@@ -46,7 +46,7 @@ inline JPH::BroadPhaseLayer Techstorm::BPLayerInterfaceImpl::GetBroadPhaseLayer(
 	}
 #endif
 
-inline bool Techstorm::ObjectVsBroadPhaseLayerFilterImpl::ShouldCollide(JPH::ObjectLayer inLayer1, JPH::BroadPhaseLayer inLayer2) const
+  bool Techstorm::ObjectVsBroadPhaseLayerFilterImpl::ShouldCollide(JPH::ObjectLayer inLayer1, JPH::BroadPhaseLayer inLayer2) const
 {
 	using namespace JPH;
 	switch (inLayer1)

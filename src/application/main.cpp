@@ -10,10 +10,7 @@
 #include <thread>
 
 int main(int argc, char* argv[]) {
-#ifdef _DEBUG
-	// Enable leak detection
-	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-#endif
+
 
 	using namespace Techstorm;
 
@@ -48,6 +45,8 @@ int main(int argc, char* argv[]) {
 	SetTargetFPS(decorations.targetFPS);
 
 	while (!WindowShouldClose()) {
+		renderer.update();
+
 		project.preObjectUpdate();
 		project.objectUpdate();
 		project.postObjectUpdate();
@@ -56,6 +55,10 @@ int main(int argc, char* argv[]) {
 		project.physicsUpdate();
 		project.postPhysicsUpdate();
 
+		renderer.texture(renderer.mCamera);
+		renderer.render(renderer.mCamera);
+		
+		// This is here because it reduces CPU consumption
 		std::this_thread::yield();
 	}
 

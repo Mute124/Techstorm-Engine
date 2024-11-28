@@ -25,24 +25,24 @@
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00021}00021\ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_a24fb41ad8339291fb9302ab6c9023ef9}{GetFileSystemRegistry}}().\mbox{\hyperlink{class_techstorm_1_1_file_system_registry_ac6438ed0f0f712b28c51182a2442201f}{init}}(rootPath);}
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00022}00022\ \}}
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00023}00023\ }
-\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00024}\mbox{\hyperlink{namespace_techstorm_a1e91c0559ca9e21d2d7db69bb10c5844}{00024}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_techstorm_a1e91c0559ca9e21d2d7db69bb10c5844}{Techstorm::AddFileRegistryLoadFunction}}(std::string\ \textcolor{keyword}{const}\&\ extension,\ std::function<std::any(std::shared\_ptr<FileMeta>)>\ \textcolor{keyword}{const}\&\ loadFunc)}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00024}\mbox{\hyperlink{namespace_techstorm_a5f058c32f71198b022da348a2f6b0c32}{00024}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_techstorm_a5f058c32f71198b022da348a2f6b0c32}{Techstorm::AddFileRegistryLoadFunction}}(std::string\ \ extension,\ std::function<std::any(std::shared\_ptr<FileMeta>)>\ loadFunc)}
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00025}00025\ \{}
-\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_a24fb41ad8339291fb9302ab6c9023ef9}{GetFileSystemRegistry}}().\mbox{\hyperlink{class_techstorm_1_1_file_system_registry_aaf73c733d1de958f2f070d8d5dbbf74b}{addLoadFunction}}(extension,\ loadFunc);}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_a24fb41ad8339291fb9302ab6c9023ef9}{GetFileSystemRegistry}}().\mbox{\hyperlink{class_techstorm_1_1_file_system_registry_a9710928035f7a07fb177e86a2b13e5aa}{addLoadFunction}}(extension,\ loadFunc);}
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00027}00027\ \}}
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00028}00028\ }
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00029}\mbox{\hyperlink{namespace_techstorm_ab3076a5eb2869c3af24c30bcc02e13a4}{00029}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_techstorm_ab3076a5eb2869c3af24c30bcc02e13a4}{Techstorm::AddFileRegistryLoadOnRegisterExtension}}(std::string\ \textcolor{keyword}{const}\&\ extension)}
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00030}00030\ \{}
-\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_a24fb41ad8339291fb9302ab6c9023ef9}{GetFileSystemRegistry}}().\mbox{\hyperlink{class_techstorm_1_1_file_system_registry_a507fd6fb66524f2ee0c95c8eea5fe201}{addLoadOnRegisterExtension}}(extension);}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_a24fb41ad8339291fb9302ab6c9023ef9}{GetFileSystemRegistry}}().\mbox{\hyperlink{class_techstorm_1_1_file_system_registry_acba34c2964cd2ea55a42fc16cc53551a}{addLoadOnRegisterExtension}}(extension);}
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00032}00032\ \}}
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00033}00033\ }
-\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00034}\mbox{\hyperlink{namespace_techstorm_a4b55d1ec56e9102233008fef6024666b}{00034}}\ std::shared\_ptr<Techstorm::FileMeta>\ \mbox{\hyperlink{namespace_techstorm_a4b55d1ec56e9102233008fef6024666b}{Techstorm::GetFileMeta}}(std::string\ \textcolor{keyword}{const}\&\ key)}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00034}\mbox{\hyperlink{namespace_techstorm_a8a157d5171adea6ca1020c5a15d9a142}{00034}}\ std::shared\_ptr<Techstorm::FileMeta>\ \mbox{\hyperlink{namespace_techstorm_a8a157d5171adea6ca1020c5a15d9a142}{Techstorm::GetFileMeta}}(std::string\ \ key)}
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00035}00035\ \{}
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_techstorm_a24fb41ad8339291fb9302ab6c9023ef9}{GetFileSystemRegistry}}().\mbox{\hyperlink{class_techstorm_1_1_file_system_registry_a2ac8483b68254784f8a1eda734916469}{GetFileMeta}}(key);}
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00037}00037\ \}}
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00038}00038\ }
-\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00039}\mbox{\hyperlink{namespace_techstorm_aaf6125c10046d7d70355aec49eb87e8a}{00039}}\ std::shared\_ptr<Techstorm::RegisteredFile>\ \mbox{\hyperlink{namespace_techstorm_aaf6125c10046d7d70355aec49eb87e8a}{Techstorm::GetFile}}(std::string\ \textcolor{keyword}{const}\&\ key,\ \textcolor{keywordtype}{bool}\ loadIfNotLoaded)}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00039}\mbox{\hyperlink{namespace_techstorm_a05f20a9725a9462dc9d707c5d44766fb}{00039}}\ std::shared\_ptr<Techstorm::RegisteredFile>\ \mbox{\hyperlink{namespace_techstorm_a05f20a9725a9462dc9d707c5d44766fb}{Techstorm::GetFile}}(std::string\ key,\ \textcolor{keywordtype}{bool}\ loadIfNotLoaded)}
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00040}00040\ \{}
-\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_techstorm_a24fb41ad8339291fb9302ab6c9023ef9}{GetFileSystemRegistry}}().\mbox{\hyperlink{class_techstorm_1_1_file_system_registry_a209acb7117bc2e1882d9ba198d99e5a5}{getFile}}(key,\ loadIfNotLoaded);}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_techstorm_a24fb41ad8339291fb9302ab6c9023ef9}{GetFileSystemRegistry}}().\mbox{\hyperlink{class_techstorm_1_1_file_system_registry_a7135995b37be66401a1837b12734ca4f}{getFile}}(key,\ loadIfNotLoaded);}
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00042}00042\ \}}
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00043}00043\ }
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00044}\mbox{\hyperlink{class_techstorm_1_1_file_system_registry_ac6438ed0f0f712b28c51182a2442201f}{00044}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_file_system_registry_ac6438ed0f0f712b28c51182a2442201f}{Techstorm::FileSystemRegistry::init}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ rootPath)}
@@ -74,7 +74,7 @@
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ this-\/>mRegisteredFiles[index]\ =\ std::make\_shared<RegisteredFile>(std::make\_shared<FileMeta>(meta));}
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00071}00071\ }
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>mLoadOnRegisterExtensionsSet.contains(extension))\ \{}
-\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_file_system_registry_a1bc9d0163f011ee4e9571d945eeac6e8}{loadFile}}(this-\/>mRegisteredFiles[index]);}
+\DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_file_system_registry_a2b61f3e169cc1c521aac5fda94081eee}{loadFile}}(this-\/>mRegisteredFiles[index]);}
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00075}00075\ }
 \DoxyCodeLine{\Hypertarget{_file_system_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}File\ with\ index\ ["{}}\ <<\ index\ <<\ \textcolor{stringliteral}{"{}],\ named:\ "{}}\ <<\ filename\ <<\ std::endl\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tat:\ "{}}\ <<\ path\ <<\ std::endl\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t\(\backslash\)tWith\ Extension\ of\ :\ "{}}\ <<\ extension\ <<\ std::endl;}

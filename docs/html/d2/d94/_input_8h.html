@@ -94,31 +94,29 @@ $(document).ready(function(){initNavTree('d2/d94/_input_8h.html','../../'); init
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Input.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;eventpp/eventdispatcher.h&gt;</code><br />
-</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> Include dependency graph for Input.h:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../d3/d53/_input_8h__incl.png" border="0" usemap="#a_c_1_2_dev_2_techstorm-v5_2src_2engine_2input_2_input_8h" alt=""/></div>
-</div>
-</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../d1/de6/_input_8h__dep__incl.png" border="0" usemap="#a_c_1_2_dev_2_techstorm-v5_2src_2engine_2input_2_input_8hdep" alt=""/></div>
-</div>
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;unordered_map&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
+<code>#include &lt;optional&gt;</code><br />
+<code>#include &lt;array&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../de/dec/_singleton_8h_source.html">../utils/Singleton.h</a>&quot;</code><br />
 </div>
 <p><a href="../../d2/d94/_input_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d74/class_techstorm_1_1_input_dispatcher.html">Techstorm::InputDispatcher</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html">Techstorm::InputAction</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a search key/input category for the input system. <b>Please pay attention when using this because any slight change in <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a> keys will give you entirely different input results.</b>  <a href="../../d9/d02/class_techstorm_1_1_input_action.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d16/class_techstorm_1_1_input_registry.html">Techstorm::InputRegistry</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The input registry is used to register InputActions (<a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a>) and their callbacks. Remember that this is a singleton, so you may use this statically.  <a href="../../dc/d16/class_techstorm_1_1_input_registry.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -126,18 +124,70 @@ Namespaces</h2></td></tr>
 <tr class="memitem:d4/d26/namespace_techstorm" id="r_d4/d26/namespace_techstorm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html">Techstorm</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a108468b55acfc7ab86572b8565488ad3" id="r_a108468b55acfc7ab86572b8565488ad3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#a108468b55acfc7ab86572b8565488ad3">Techstorm::InputEvents</a> = eventpp::EventDispatcher&lt; int, void()&gt;</td></tr>
-<tr class="separator:a108468b55acfc7ab86572b8565488ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a1890f37b6ab2bb002b462b309b8987cc" id="r_a1890f37b6ab2bb002b462b309b8987cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d94/_input_8h.html#a1890f37b6ab2bb002b462b309b8987cc">TS_ENABLE_CONTROLLER_SUPPORT</a></td></tr>
+<tr class="separator:a1890f37b6ab2bb002b462b309b8987cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a7ecb9dba2f9073f147a682772c49885d" id="r_a7ecb9dba2f9073f147a682772c49885d"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#a7ecb9dba2f9073f147a682772c49885d">Techstorm::EInputType</a> { <a class="el" href="../../d4/d26/namespace_techstorm.html#a7ecb9dba2f9073f147a682772c49885dadb96d0096c7139c5ee3fd155a357fb77">Techstorm::INPUT_KEYBOARD</a>
+, <a class="el" href="../../d4/d26/namespace_techstorm.html#a7ecb9dba2f9073f147a682772c49885dab569600ed95905ffd61f59ba74ca35ec">Techstorm::INPUT_MOUSE</a>
+, <a class="el" href="../../d4/d26/namespace_techstorm.html#a7ecb9dba2f9073f147a682772c49885dae7bb3cb1d97b054348b144a429fa1b6e">Techstorm::INPUT_CONTROLLER</a>
+ }</td></tr>
+<tr class="memdesc:a7ecb9dba2f9073f147a682772c49885d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The enumeration for the different input device categories. This is here because the input system is going to be expanded in the future and it will be useful to maintaining developer sanity.  <a href="../../d4/d26/namespace_techstorm.html#a7ecb9dba2f9073f147a682772c49885d">More...</a><br /></td></tr>
+<tr class="separator:a7ecb9dba2f9073f147a682772c49885d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3289ce49929ae6003fcbc78c954af69d" id="r_a3289ce49929ae6003fcbc78c954af69d"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#a3289ce49929ae6003fcbc78c954af69d">Techstorm::EInputTrigger</a> { <br />
+&#160;&#160;<a class="el" href="../../d4/d26/namespace_techstorm.html#a3289ce49929ae6003fcbc78c954af69da4d4d492eccd5ffa943f9c7278c171995">Techstorm::INPUT_TRIGGER_PRESSED</a>
+, <a class="el" href="../../d4/d26/namespace_techstorm.html#a3289ce49929ae6003fcbc78c954af69da6ef288157def0b4b0a97c80e805156c7">Techstorm::INPUT_TRIGGER_RELEASED</a>
+, <a class="el" href="../../d4/d26/namespace_techstorm.html#a3289ce49929ae6003fcbc78c954af69da1564a8c76f7b4fc7cd4956fedb29723b">Techstorm::INPUT_TRIGGER_DOWN</a>
+, <a class="el" href="../../d4/d26/namespace_techstorm.html#a3289ce49929ae6003fcbc78c954af69daf80f7288e88dab43dc40c1292831e1ae">Techstorm::INPUT_TRIGGER_UP</a>
+, <br />
+&#160;&#160;<a class="el" href="../../d4/d26/namespace_techstorm.html#a3289ce49929ae6003fcbc78c954af69daecbcb28c1bd554fb19fe98a5c74aaf23">Techstorm::INPUT_TRIGGER_REPEAT</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a3289ce49929ae6003fcbc78c954af69d"><td class="mdescLeft">&#160;</td><td class="mdescRight">What sort of action should trigger the InputAction? <b>Please pay attention when using this because any slight change in InputAction keys will give you entirely different input results.</b>  <a href="../../d4/d26/namespace_techstorm.html#a3289ce49929ae6003fcbc78c954af69d">More...</a><br /></td></tr>
+<tr class="separator:a3289ce49929ae6003fcbc78c954af69d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a1bcf30a4f9fdd5660bb8dc8d0bdd90d8" id="r_a1bcf30a4f9fdd5660bb8dc8d0bdd90d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d16/class_techstorm_1_1_input_registry.html">InputRegistry</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#a1bcf30a4f9fdd5660bb8dc8d0bdd90d8">Techstorm::GetInputRegistry</a> ()</td></tr>
+<tr class="memdesc:a1bcf30a4f9fdd5660bb8dc8d0bdd90d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current instance of the <a class="el" href="../../dc/d16/class_techstorm_1_1_input_registry.html" title="The input registry is used to register InputActions (InputAction) and their callbacks....">InputRegistry</a> singleton <a class="el" href="../../dc/d16/class_techstorm_1_1_input_registry.html" title="The input registry is used to register InputActions (InputAction) and their callbacks....">InputRegistry</a>. This is a quality of life function, and calling it like other singletons is perfectly okay.  <br /></td></tr>
+<tr class="separator:a1bcf30a4f9fdd5660bb8dc8d0bdd90d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3125a1b1ffec2b381e3647a1bcf4e5d" id="r_ab3125a1b1ffec2b381e3647a1bcf4e5d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#ab3125a1b1ffec2b381e3647a1bcf4e5d">Techstorm::RegisterActionCallback</a> (<a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html">InputAction</a> *action, std::function&lt; void(<a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html">InputAction</a> *)&gt; const &amp;callback)</td></tr>
+<tr class="memdesc:ab3125a1b1ffec2b381e3647a1bcf4e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a callback by using the provided action (<a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a>) and the callback parameter values. This works as a key-value pair, where the key is the action and the value is the callback. This works the same way as the RegisterActionCallback function (<a class="el" href="../../dc/d16/class_techstorm_1_1_input_registry.html#a0d156b86669ec14db159f658b8ca6891" title="Registers a pointer of InputAction to the callback given. This works as a key-value pair,...">InputRegistry::registerActionCallback</a>), but it registers the callback in the current input registry (<a class="el" href="../../dc/d16/class_techstorm_1_1_input_registry.html" title="The input registry is used to register InputActions (InputAction) and their callbacks....">InputRegistry</a>). This is simply a quality of life function, and calling it like other singletons is perfectly okay.  <br /></td></tr>
+<tr class="separator:ab3125a1b1ffec2b381e3647a1bcf4e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0c43a65dc477ec3c9572b9f3a1487a4" id="r_ab0c43a65dc477ec3c9572b9f3a1487a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#ab0c43a65dc477ec3c9572b9f3a1487a4">Techstorm::UnregisterAction</a> (<a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html">InputAction</a> *action)</td></tr>
+<tr class="memdesc:ab0c43a65dc477ec3c9572b9f3a1487a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters ALL callbacks for the provided <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a>; action (<a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a>), and unregisters it from the current input registry (<a class="el" href="../../dc/d16/class_techstorm_1_1_input_registry.html" title="The input registry is used to register InputActions (InputAction) and their callbacks....">InputRegistry</a>). This is simply a quality of life function, and calling it like other singletons is perfectly okay.  <br /></td></tr>
+<tr class="separator:ab0c43a65dc477ec3c9572b9f3a1487a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0e349acbbd3184937cf23323ad96f5c" id="r_ab0e349acbbd3184937cf23323ad96f5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#ab0e349acbbd3184937cf23323ad96f5c">Techstorm::UnregisterCallback</a> (<a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html">InputAction</a> *action, int id)</td></tr>
+<tr class="memdesc:ab0e349acbbd3184937cf23323ad96f5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters a specific callback, denoted by id, for the provided <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a>; action (<a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a>). This is simply a quality of life function, and calling it like other singletons is perfectly okay.  <br /></td></tr>
+<tr class="separator:ab0e349acbbd3184937cf23323ad96f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a1890f37b6ab2bb002b462b309b8987cc" name="a1890f37b6ab2bb002b462b309b8987cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1890f37b6ab2bb002b462b309b8987cc">&#9670;&#160;</a></span>TS_ENABLE_CONTROLLER_SUPPORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TS_ENABLE_CONTROLLER_SUPPORT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d94/_input_8h_source.html#l00010">10</a> of file <a class="el" href="../../d2/d94/_input_8h_source.html">Input.h</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="../../dir_551ad5bdf126dfe6830e1af9f390776b.html">input</a></li><li class="navelem"><a class="el" href="../../d2/d94/_input_8h.html">Input.h</a></li>
-    <li class="footer">Generated on Tue Nov 19 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Wed Nov 27 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

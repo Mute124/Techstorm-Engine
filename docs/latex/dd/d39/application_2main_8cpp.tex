@@ -1,14 +1,13 @@
 \doxysection{C\+:/\+Dev/\+Techstorm-\/v5/src/application/main.cpp File Reference}
 \hypertarget{application_2main_8cpp}{}\label{application_2main_8cpp}\index{C:/Dev/Techstorm-\/v5/src/application/main.cpp@{C:/Dev/Techstorm-\/v5/src/application/main.cpp}}
 {\ttfamily \#include $<$Common.\+h$>$}\newline
-{\ttfamily \#include $<$crtdbg.\+h$>$}\newline
 {\ttfamily \#include $<$modding/\+Scripting\+API.\+h$>$}\newline
-{\ttfamily \#include $<$project.\+h$>$}\newline
-{\ttfamily \#include $<$raylib.\+h$>$}\newline
 {\ttfamily \#include $<$renderer/\+Renderer.\+h$>$}\newline
 {\ttfamily \#include $<$renderer/\+Window\+Decorations.\+h$>$}\newline
-Include dependency graph for main.\+cpp\+:
-% FIG 0
+{\ttfamily \#include $<$conf/\+Config.\+h$>$}\newline
+{\ttfamily \#include $<$project.\+h$>$}\newline
+{\ttfamily \#include $<$raylib.\+h$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,11 +24,9 @@ int \mbox{\hyperlink{application_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{m
 
 
 
-Definition at line \mbox{\hyperlink{application_2main_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{application_2main_8cpp_source}{main.\+cpp}}.
+Definition at line \mbox{\hyperlink{application_2main_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{application_2main_8cpp_source}{main.\+cpp}}.
 
 
 
-References \mbox{\hyperlink{_file_system_8h_source_l00080}{Techstorm\+::\+File\+System\+Registry\+::get\+File()}}, \mbox{\hyperlink{_window_decorations_8h_source_l00012}{Techstorm\+::\+Window\+Decorations\+::height}}, \mbox{\hyperlink{_window_decorations_8h_source_l00015}{Techstorm\+::\+Window\+Decorations\+::icon}}, \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00036}{Techstorm\+::\+Scripting\+API\+::\+Initialize\+Scripting()}}, \mbox{\hyperlink{project_2_project_8h_source_l00005}{PROJECT\+\_\+\+TYPENAME}}, \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00046}{Techstorm\+::\+Scripting\+API\+::\+Register\+Lua()}}, \mbox{\hyperlink{_window_decorations_8h_source_l00014}{Techstorm\+::\+Window\+Decorations\+::target\+FPS}}, \mbox{\hyperlink{_window_decorations_8h_source_l00010}{Techstorm\+::\+Window\+Decorations\+::title}}, \mbox{\hyperlink{_common_8h_source_l00009}{TS\+\_\+\+ASSET\+\_\+\+DIR}}, and \mbox{\hyperlink{_window_decorations_8h_source_l00011}{Techstorm\+::\+Window\+Decorations\+::width}}.
+References \mbox{\hyperlink{_window_decorations_8h_source_l00012}{Techstorm\+::\+Window\+Decorations\+::height}}, \mbox{\hyperlink{_window_decorations_8h_source_l00015}{Techstorm\+::\+Window\+Decorations\+::icon}}, \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00036}{Techstorm\+::\+Scripting\+API\+::\+Initialize\+Scripting()}}, \mbox{\hyperlink{project_2_project_8h_source_l00005}{PROJECT\+\_\+\+TYPENAME}}, \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00046}{Techstorm\+::\+Scripting\+API\+::\+Register\+Lua()}}, \mbox{\hyperlink{_window_decorations_8h_source_l00014}{Techstorm\+::\+Window\+Decorations\+::target\+FPS}}, \mbox{\hyperlink{_window_decorations_8h_source_l00010}{Techstorm\+::\+Window\+Decorations\+::title}}, \mbox{\hyperlink{_common_8h_source_l00012}{TS\+\_\+\+ASSET\+\_\+\+DIR}}, and \mbox{\hyperlink{_window_decorations_8h_source_l00011}{Techstorm\+::\+Window\+Decorations\+::width}}.
 
-Here is the call graph for this function\+:
-% FIG 1

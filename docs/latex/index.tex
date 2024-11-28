@@ -100,7 +100,25 @@ If you want an indepth explanation of these dependencies and their implementatio
 \DoxyHorRuler{0}
 
 
-\doxylink{namespace_techstorm}{Techstorm} tries to be as easy to read as possible by making the code read similarly to English. In addition, \doxylink{namespace_techstorm}{Techstorm} tries to be intuitive and understandable at a quick glance, hence it uses Pascal\+Case and Camel\+Case. As such, the code conventions are simple and intuitive, as outlined below.\hypertarget{index_variables}{}\doxysubsection{\texorpdfstring{Variables}{Variables}}\label{index_variables}
+\doxylink{namespace_techstorm}{Techstorm} tries to be as easy to read as possible by making the code read similarly to English (This is mandatory for engine contributions!). In addition, \doxylink{namespace_techstorm}{Techstorm} tries to be intuitive and understandable at a quick glance, hence it uses Pascal\+Case and Camel\+Case. As such, the code conventions are simple and intuitive. The only exception is with broad cases.
+
+Broad cases should only be used as long as there are no other applicable cases. For example, a private static variable. This variable would look like a static type variable rather than a private variable. That means it should be named with a prefix of "{}s"{} rather than a \textquotesingle{}m\textquotesingle{}. However, please note that this only applies when the "{}\+Notes"{} section contains "{}\+Broad case"{}. Additionally, There are some other important distinctions, definitions, and use cases that must be followed to stay compliant, as seen below.\hypertarget{index_important-convention-use-cases}{}\doxysubsection{\texorpdfstring{Important Convention Use Cases}{Important Convention Use Cases}}\label{index_important-convention-use-cases}
+\DoxyHorRuler{0}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Case   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Distinction    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Case   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Distinction    }\\\cline{1-2}
+\endhead
+Preprocessors Unless there are multiple logical inputs, avoid using {\ttfamily \#if defined()} and use {\ttfamily \#ifdef} instead. .   &\\\cline{1-2}
+\end{longtabu}
+\hypertarget{index_variables}{}\doxysubsection{\texorpdfstring{Variables}{Variables}}\label{index_variables}
 \DoxyHorRuler{0}
 
 
@@ -116,7 +134,8 @@ If you want an indepth explanation of these dependencies and their implementatio
 \endhead
 Private Variables   &m\+Private\+Variable   &{\ttfamily int m\+Private\+Variable = 7;}   &\\\cline{1-4}
 Protected Variables   &m\+Protected\+Variable   &{\ttfamily int m\+Protected\+Variable = 4;}   &\\\cline{1-4}
-Static Type Variables   &s\+Static\+Variable   &{\ttfamily static inline float s\+Static\+Variable = 3.\+14f;}   &This refers to a static variable that is inside a class or struct.    \\\cline{1-4}
+Static Type Variables   &s\+Static\+Type\+Variable   &{\ttfamily static inline float s\+Static\+Variable = 3.\+14f;}   &\\\cline{1-4}
+Static Variable   &Static\+Variable   &{\ttfamily static inline int Static\+Variable = 72;}   &\\\cline{1-4}
 Constant Variable   &c\+Constant\+Variable   &{\ttfamily const double c\+Constant\+Variable = 3.\+14;}   &\\\cline{1-4}
 Constant Expression   &CONSTANT\+\_\+\+EXPRESSION\+\_\+\+VARIABLE   &{\ttfamily constexpr int CONSTANT\+\_\+\+EXPRESSION\+\_\+\+VARIABLE = 45;}   &\\\cline{1-4}
 Constant Global   &CONSTANT\+\_\+\+GLOBAL\+\_\+\+VARIABLE   &{\ttfamily const int GLOBAL\+\_\+\+VARIABLE;}   &A constant global is a variable that is not declared inside a type.    \\\cline{1-4}

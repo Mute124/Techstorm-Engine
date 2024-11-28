@@ -186,7 +186,17 @@ Dependencies</h1>
 <h1><a class="anchor" id="code-conventions"></a>
 Code Conventions</h1>
 <hr  />
-<p><a class="el" href="d4/d26/namespace_techstorm.html">Techstorm</a> tries to be as easy to read as possible by making the code read similarly to English. In addition, <a class="el" href="d4/d26/namespace_techstorm.html">Techstorm</a> tries to be intuitive and understandable at a quick glance, hence it uses PascalCase and CamelCase. As such, the code conventions are simple and intuitive, as outlined below.</p>
+<p><a class="el" href="d4/d26/namespace_techstorm.html">Techstorm</a> tries to be as easy to read as possible by making the code read similarly to English (This is mandatory for engine contributions!). In addition, <a class="el" href="d4/d26/namespace_techstorm.html">Techstorm</a> tries to be intuitive and understandable at a quick glance, hence it uses PascalCase and CamelCase. As such, the code conventions are simple and intuitive. The only exception is with broad cases.</p>
+<p>Broad cases should only be used as long as there are no other applicable cases. For example, a private static variable. This variable would look like a static type variable rather than a private variable. That means it should be named with a prefix of "s" rather than a 'm'. However, please note that this only applies when the "Notes" section contains "Broad case". Additionally, There are some other important distinctions, definitions, and use cases that must be followed to stay compliant, as seen below.</p>
+<h2><a class="anchor" id="important-convention-use-cases"></a>
+Important Convention Use Cases</h2>
+<hr  />
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Case   </th><th class="markdownTableHeadNone">Distinction    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Preprocessors Unless there are multiple logical inputs, avoid using <code>#if defined()</code> and use <code>#ifdef</code> instead. .   </td><td class="markdownTableBodyNone"></td></tr>
+</table>
 <h2><a class="anchor" id="variables"></a>
 Variables</h2>
 <hr  />
@@ -198,20 +208,22 @@ Variables</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Protected Variables   </td><td class="markdownTableBodyNone">mProtectedVariable   </td><td class="markdownTableBodyNone"><code>int mProtectedVariable = 4;</code>   </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Static Type Variables   </td><td class="markdownTableBodyNone">sStaticVariable   </td><td class="markdownTableBodyNone"><code>static inline float sStaticVariable = 3.14f;</code>   </td><td class="markdownTableBodyNone">This refers to a static variable that is inside a class or struct.    </td></tr>
+<td class="markdownTableBodyNone">Static Type Variables   </td><td class="markdownTableBodyNone">sStaticTypeVariable   </td><td class="markdownTableBodyNone"><code>static inline float sStaticVariable = 3.14f;</code>   </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Static Variable   </td><td class="markdownTableBodyNone">StaticVariable   </td><td class="markdownTableBodyNone"><code>static inline int StaticVariable = 72;</code>   </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Constant Variable   </td><td class="markdownTableBodyNone">cConstantVariable   </td><td class="markdownTableBodyNone"><code>const double cConstantVariable = 3.14;</code>   </td><td class="markdownTableBodyNone"></td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Constant Expression   </td><td class="markdownTableBodyNone">CONSTANT_EXPRESSION_VARIABLE   </td><td class="markdownTableBodyNone"><code>constexpr int CONSTANT_EXPRESSION_VARIABLE = 45;</code>   </td><td class="markdownTableBodyNone"></td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Constant Global   </td><td class="markdownTableBodyNone">CONSTANT_GLOBAL_VARIABLE   </td><td class="markdownTableBodyNone"><code>const int GLOBAL_VARIABLE;</code>   </td><td class="markdownTableBodyNone">A constant global is a variable that is not declared inside a type.    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Macro   </td><td class="markdownTableBodyNone">MACRO_VARIABLE   </td><td class="markdownTableBodyNone"><code>#define MACRO_VARIABLE 8</code>   </td><td class="markdownTableBodyNone"></td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Local Variable   </td><td class="markdownTableBodyNone">localVariable   </td><td class="markdownTableBodyNone"><code>int localVariable = 34;</code>   </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Parameter Variable   </td><td class="markdownTableBodyNone">parameterVariable   </td><td class="markdownTableBodyNone"><code>int parameterVariable</code>   </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyNone">Local Variable   </td><td class="markdownTableBodyNone">localVariable   </td><td class="markdownTableBodyNone"><code>int localVariable = 34;</code>   </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Parameter Variable   </td><td class="markdownTableBodyNone">parameterVariable   </td><td class="markdownTableBodyNone"><code>int parameterVariable</code>   </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Public Variable   </td><td class="markdownTableBodyNone">publicVariable   </td><td class="markdownTableBodyNone"><code>int publicVariable = 3;</code>   </td><td class="markdownTableBodyNone"></td></tr>
 </table>
 <h2><a class="anchor" id="functions"></a>
@@ -224,7 +236,7 @@ Functions</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Nov 19 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Wed Nov 27 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

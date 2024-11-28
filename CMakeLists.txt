@@ -87,11 +87,16 @@ endif()
 
 include("cmake/cpm.cmake")
 
+# Absolutely DO NOT remove this. It will break all rendering functionality
+set(BUILD_SHARED_LIBS ON CACHE BOOL "" FORCE) 
 CPMAddPackage(
     NAME raylib
     GIT_REPOSITORY https://github.com/raysan5/raylib.git
     GIT_TAG 5.5
+    OPTIONS
+        "BUILD_SHARED_LIBS=ON"
 )
+
 
 # find_package(ZLIB REQUIRED)
 find_package(joltphysics REQUIRED)
@@ -116,7 +121,8 @@ set(USE_LZCNT ON)
 set(USE_TZCNT ON)
 set(USE_F16C ON)
 set(USE_FMADD ON)
-set(BUILD_SHARED_LIBS ON)
+
+
 
 # Include subdirectories
 add_subdirectory("src/engine")

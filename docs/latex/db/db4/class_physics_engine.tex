@@ -1,0 +1,145 @@
+\doxysection{Physics\+Engine Class Reference}
+\hypertarget{class_physics_engine}{}\label{class_physics_engine}\index{PhysicsEngine@{PhysicsEngine}}
+
+
+{\ttfamily \#include $<$Physics\+Prototype.\+h$>$}
+
+Inheritance diagram for Physics\+Engine\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{db/db4/class_physics_engine}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_physics_engine_ae323fe119f294a4ffb42852b38b02e43}{Physics\+Engine}} ()=default
+\item 
+void \mbox{\hyperlink{class_physics_engine_aabfa54a376c35880bd8a669391d22444}{init}} (const \mbox{\hyperlink{struct_allocated_physics_resources}{Allocated\+Physics\+Resources}} resources)
+\item 
+void \mbox{\hyperlink{class_physics_engine_a2c36ce16ce3b0908e8d04ddece7c2914}{update}} (const float c\+Delta\+Time)
+\item 
+void \mbox{\hyperlink{class_physics_engine_ab07cd90671d6b23946949f920839b6ec}{optimize\+Broad\+Phase}} ()
+\item 
+JPH\+::\+Body\+Interface \& \mbox{\hyperlink{class_physics_engine_a9f834f634f5d057bde3ba4cb5d98001a}{get\+Body\+Interface}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+JPH\+::\+Physics\+System \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_physics_engine_a7ff9b3b709ca5b8012dd9631646cff63}{m\+Physics\+System}} = nullptr
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_techstorm_1_1_singleton}{Techstorm\+::\+Singleton$<$ Physics\+Engine $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_techstorm_1_1_physics_engine}{Physics\+Engine}} \& \mbox{\hyperlink{class_techstorm_1_1_singleton_a992b0c97479f1cca7c5027314207f5be}{Instance}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current singleton instance as a reference. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_physics_prototype_8h_source_l00267}{267}} of file \mbox{\hyperlink{_physics_prototype_8h_source}{Physics\+Prototype.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_physics_engine_ae323fe119f294a4ffb42852b38b02e43}\label{class_physics_engine_ae323fe119f294a4ffb42852b38b02e43} 
+\index{PhysicsEngine@{PhysicsEngine}!PhysicsEngine@{PhysicsEngine}}
+\index{PhysicsEngine@{PhysicsEngine}!PhysicsEngine@{PhysicsEngine}}
+\doxysubsubsection{\texorpdfstring{PhysicsEngine()}{PhysicsEngine()}}
+{\footnotesize\ttfamily Physics\+Engine\+::\+Physics\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_physics_engine_a9f834f634f5d057bde3ba4cb5d98001a}\label{class_physics_engine_a9f834f634f5d057bde3ba4cb5d98001a} 
+\index{PhysicsEngine@{PhysicsEngine}!getBodyInterface@{getBodyInterface}}
+\index{getBodyInterface@{getBodyInterface}!PhysicsEngine@{PhysicsEngine}}
+\doxysubsubsection{\texorpdfstring{getBodyInterface()}{getBodyInterface()}}
+{\footnotesize\ttfamily JPH\+::\+Body\+Interface \& Physics\+Engine\+::get\+Body\+Interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_physics_prototype_8h_source_l00345}{345}} of file \mbox{\hyperlink{_physics_prototype_8h_source}{Physics\+Prototype.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_prototype_physics_terrain_8h_source_l00483}{Prototype\+Physics\+Terrain()}}.
+
+\Hypertarget{class_physics_engine_aabfa54a376c35880bd8a669391d22444}\label{class_physics_engine_aabfa54a376c35880bd8a669391d22444} 
+\index{PhysicsEngine@{PhysicsEngine}!init@{init}}
+\index{init@{init}!PhysicsEngine@{PhysicsEngine}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Physics\+Engine\+::init (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_allocated_physics_resources}{Allocated\+Physics\+Resources}}}]{resources }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_physics_prototype_8h_source_l00271}{271}} of file \mbox{\hyperlink{_physics_prototype_8h_source}{Physics\+Prototype.\+h}}.
+
+
+
+References \mbox{\hyperlink{_physics_prototype_8h_source_l00251}{Allocated\+Physics\+Resources\+::c\+Max\+Bodies}}, \mbox{\hyperlink{_physics_prototype_8h_source_l00253}{Allocated\+Physics\+Resources\+::c\+Max\+Body\+Pairs}}, \mbox{\hyperlink{_physics_prototype_8h_source_l00254}{Allocated\+Physics\+Resources\+::c\+Max\+Contact\+Constraints}}, \mbox{\hyperlink{_physics_prototype_8h_source_l00252}{Allocated\+Physics\+Resources\+::c\+Num\+Body\+Mutexes}}, \mbox{\hyperlink{_physics_prototype_8h_source_l00346}{m\+Physics\+System}}, and \mbox{\hyperlink{_physics_prototype_8h_source_l00256}{Allocated\+Physics\+Resources\+::pre\+Allocated\+Memory}}.
+
+
+
+Referenced by \mbox{\hyperlink{_prototype_physics_terrain_8h_source_l00483}{Prototype\+Physics\+Terrain()}}.
+
+\Hypertarget{class_physics_engine_ab07cd90671d6b23946949f920839b6ec}\label{class_physics_engine_ab07cd90671d6b23946949f920839b6ec} 
+\index{PhysicsEngine@{PhysicsEngine}!optimizeBroadPhase@{optimizeBroadPhase}}
+\index{optimizeBroadPhase@{optimizeBroadPhase}!PhysicsEngine@{PhysicsEngine}}
+\doxysubsubsection{\texorpdfstring{optimizeBroadPhase()}{optimizeBroadPhase()}}
+{\footnotesize\ttfamily void Physics\+Engine\+::optimize\+Broad\+Phase (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_physics_prototype_8h_source_l00341}{341}} of file \mbox{\hyperlink{_physics_prototype_8h_source}{Physics\+Prototype.\+h}}.
+
+
+
+References \mbox{\hyperlink{_physics_prototype_8h_source_l00346}{m\+Physics\+System}}.
+
+
+
+Referenced by \mbox{\hyperlink{_prototype_physics_terrain_8h_source_l00483}{Prototype\+Physics\+Terrain()}}.
+
+\Hypertarget{class_physics_engine_a2c36ce16ce3b0908e8d04ddece7c2914}\label{class_physics_engine_a2c36ce16ce3b0908e8d04ddece7c2914} 
+\index{PhysicsEngine@{PhysicsEngine}!update@{update}}
+\index{update@{update}!PhysicsEngine@{PhysicsEngine}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Physics\+Engine\+::update (\begin{DoxyParamCaption}\item[{const float}]{c\+Delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_physics_prototype_8h_source_l00337}{337}} of file \mbox{\hyperlink{_physics_prototype_8h_source}{Physics\+Prototype.\+h}}.
+
+
+
+References \mbox{\hyperlink{_physics_prototype_8h_source_l00346}{m\+Physics\+System}}.
+
+
+
+Referenced by \mbox{\hyperlink{_prototype_physics_terrain_8h_source_l00483}{Prototype\+Physics\+Terrain()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_physics_engine_a7ff9b3b709ca5b8012dd9631646cff63}\label{class_physics_engine_a7ff9b3b709ca5b8012dd9631646cff63} 
+\index{PhysicsEngine@{PhysicsEngine}!mPhysicsSystem@{mPhysicsSystem}}
+\index{mPhysicsSystem@{mPhysicsSystem}!PhysicsEngine@{PhysicsEngine}}
+\doxysubsubsection{\texorpdfstring{mPhysicsSystem}{mPhysicsSystem}}
+{\footnotesize\ttfamily JPH\+::\+Physics\+System\texorpdfstring{$\ast$}{*} Physics\+Engine\+::m\+Physics\+System = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{_physics_prototype_8h_source_l00346}{346}} of file \mbox{\hyperlink{_physics_prototype_8h_source}{Physics\+Prototype.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_physics_prototype_8h_source_l00271}{init()}}, \mbox{\hyperlink{_physics_prototype_8h_source_l00341}{optimize\+Broad\+Phase()}}, and \mbox{\hyperlink{_physics_prototype_8h_source_l00337}{update()}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+Techstorm-\/v5/src/application/prototyping/\mbox{\hyperlink{_physics_prototype_8h}{Physics\+Prototype.\+h}}\end{DoxyCompactItemize}

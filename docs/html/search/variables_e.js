@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['x_0',['x',['../d9/db6/struct_techstorm_1_1_vec3.html#ab7d948636261d85d2cf0a4cc10c3b305',1,'Techstorm::Vec3::x'],['../d4/d88/struct_techstorm_1_1_vec2.html#a0b00367be3790e37867070f197d996a1',1,'Techstorm::Vec2::x'],['../dc/d7f/struct_techstorm_1_1_vec4.html#abd17e07f8588f74b1ab6f8f6bb4e9f66',1,'Techstorm::Vec4::x']]]
+  ['renderer_0',['renderer',['../d0/de6/class_techstorm_1_1_techstorm_engine.html#aafd9794d40326e8082a46636b4983d88',1,'Techstorm::TechstormEngine']]],
+  ['rotation_1',['rotation',['../d0/dd1/class_game_object.html#ae2d2785c50d645a728cee32be422cf85',1,'GameObject']]],
+  ['rotationangle_2',['rotationAngle',['../d6/d34/class_techstorm_1_1abstract.html#a4579f8a2409ba917291c4892f784e82d',1,'Techstorm::abstract']]],
+  ['rotationaxis_3',['rotationAxis',['../d6/d34/class_techstorm_1_1abstract.html#aa194976991e491e2a79b438fc9fe39ab',1,'Techstorm::abstract']]]
 ];

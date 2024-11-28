@@ -1,0 +1,36 @@
+\doxysection{Listeners.\+h}
+\hypertarget{_listeners_8h_source}{}\label{_listeners_8h_source}\index{C:/Dev/Techstorm-\/v5/src/engine/physics/Listeners.h@{C:/Dev/Techstorm-\/v5/src/engine/physics/Listeners.h}}
+\mbox{\hyperlink{_listeners_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <Jolt/Jolt.h>}}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <Jolt/Physics/Body/Body.h>}}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <Jolt/Physics/Collision/ContactListener.h>}}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <Jolt/Physics/Body/BodyActivationListener.h>}}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00007}00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_techstorm}{Techstorm}}\ \{}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00008}00008\ \ \ \ \ \textcolor{comment}{//\ An\ example\ contact\ listener}}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00009}\mbox{\hyperlink{class_techstorm_1_1_object_contact_listener}{00009}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_techstorm_1_1_object_contact_listener}{ObjectContactListener}}\ :\ \textcolor{keyword}{public}\ JPH::ContactListener}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00010}00010\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ See:\ ContactListener}}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ JPH::ValidateResult\ \mbox{\hyperlink{class_techstorm_1_1_object_contact_listener_a4f86b59c5dd8074ce802fbd8511f42c3}{OnContactValidate}}(\textcolor{keyword}{const}\ JPH::Body\&\ inBody1,\ \textcolor{keyword}{const}\ JPH::Body\&\ inBody2,\ JPH::RVec3Arg\ inBaseOffset,\ \textcolor{keyword}{const}\ JPH::CollideShapeResult\&\ inCollisionResult)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_object_contact_listener_aca598f7b447d960aac85d33a6341f9d0}{OnContactAdded}}(\textcolor{keyword}{const}\ JPH::Body\&\ inBody1,\ \textcolor{keyword}{const}\ JPH::Body\&\ inBody2,\ \textcolor{keyword}{const}\ JPH::ContactManifold\&\ inManifold,\ JPH::ContactSettings\&\ ioSettings)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_object_contact_listener_a86bc0e109f69b9f28e4b1e8b9a2cabed}{OnContactPersisted}}(\textcolor{keyword}{const}\ JPH::Body\&\ inBody1,\ \textcolor{keyword}{const}\ JPH::Body\&\ inBody2,\ \textcolor{keyword}{const}\ JPH::ContactManifold\&\ inManifold,\ JPH::ContactSettings\&\ ioSettings)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_object_contact_listener_a866c234ec41bb6b8de0762fcdaf775ee}{OnContactRemoved}}(\textcolor{keyword}{const}\ JPH::SubShapeIDPair\&\ inSubShapePair)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00020}00020\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//\ An\ example\ activation\ listener}}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00023}\mbox{\hyperlink{class_techstorm_1_1_my_body_activation_listener}{00023}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_techstorm_1_1_my_body_activation_listener}{MyBodyActivationListener}}\ :\ \textcolor{keyword}{public}\ JPH::BodyActivationListener}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00024}00024\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_my_body_activation_listener_a20c7c669f8ba510ae8773fa0a5164e49}{OnBodyActivated}}(\textcolor{keyword}{const}\ JPH::BodyID\&\ inBodyID,\ JPH::uint64\ inBodyUserData)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_my_body_activation_listener_a62aa66e6321ce3f5be313a6f99a564ba}{OnBodyDeactivated}}(\textcolor{keyword}{const}\ JPH::BodyID\&\ inBodyID,\ JPH::uint64\ inBodyUserData)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00029}00029\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_listeners_8h_source_l00030}00030\ \}}
+
+\end{DoxyCode}

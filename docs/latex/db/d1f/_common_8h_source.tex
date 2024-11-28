@@ -3,21 +3,279 @@
 \mbox{\hyperlink{_common_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_common_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{\Hypertarget{_common_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00002}\mbox{\hyperlink{_common_8h_ab96ac5087a1fde76921d36f47d2a0777}{00002}}\ \textcolor{preprocessor}{\#define\ TS\_ENABLE\_HAPTICS}}
 \DoxyCodeLine{\Hypertarget{_common_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
 \DoxyCodeLine{\Hypertarget{_common_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <cstdarg>}}
 \DoxyCodeLine{\Hypertarget{_common_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <cstdint>}}
 \DoxyCodeLine{\Hypertarget{_common_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{\Hypertarget{_common_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <thread>}}
-\DoxyCodeLine{\Hypertarget{_common_8h_source_l00008}00008\ }
-\DoxyCodeLine{\Hypertarget{_common_8h_source_l00009}\mbox{\hyperlink{_common_8h_a72ba4f35051f760d2253c5d175be8a7d}{00009}}\ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{_common_8h_a72ba4f35051f760d2253c5d175be8a7d}{TS\_ASSET\_DIR}}\ =\ std::string(TS\_TOP\_LAYER)\ +\ \textcolor{stringliteral}{"{}/game/assets/"{}};}
-\DoxyCodeLine{\Hypertarget{_common_8h_source_l00010}\mbox{\hyperlink{_common_8h_a5012bb03b199275504f5455b800711df}{00010}}\ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{_common_8h_a5012bb03b199275504f5455b800711df}{TS\_DATA\_DIR}}\ =\ std::string(TS\_TOP\_LAYER)\ +\ \textcolor{stringliteral}{"{}/game/data/"{}};}
-\DoxyCodeLine{\Hypertarget{_common_8h_source_l00011}\mbox{\hyperlink{_common_8h_a4a0ec9e061a2c5f56774b5c6e4fb512c}{00011}}\ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{_common_8h_a4a0ec9e061a2c5f56774b5c6e4fb512c}{TS\_GAME\_DIR}}\ =\ std::string(TS\_TOP\_LAYER)\ +\ \textcolor{stringliteral}{"{}/game/"{}};}
-\DoxyCodeLine{\Hypertarget{_common_8h_source_l00012}00012\ }
-\DoxyCodeLine{\Hypertarget{_common_8h_source_l00013}00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_techstorm}{Techstorm}}\ \{}
-\DoxyCodeLine{\Hypertarget{_common_8h_source_l00014}00014\ \ \ \ \ \textcolor{comment}{//std::string\ MakeDataPath(std::string\ const\&\ path);}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_singleton_8h}{utils/Singleton.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_input_8h}{input/Input.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00012}\mbox{\hyperlink{_common_8h_a72ba4f35051f760d2253c5d175be8a7d}{00012}}\ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{_common_8h_a72ba4f35051f760d2253c5d175be8a7d}{TS\_ASSET\_DIR}}\ =\ std::string(TS\_TOP\_LAYER)\ +\ \textcolor{stringliteral}{"{}/game/assets/"{}};}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00013}\mbox{\hyperlink{_common_8h_a5012bb03b199275504f5455b800711df}{00013}}\ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{_common_8h_a5012bb03b199275504f5455b800711df}{TS\_DATA\_DIR}}\ =\ std::string(TS\_TOP\_LAYER)\ +\ \textcolor{stringliteral}{"{}/game/data/"{}};}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00014}\mbox{\hyperlink{_common_8h_a4a0ec9e061a2c5f56774b5c6e4fb512c}{00014}}\ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{_common_8h_a4a0ec9e061a2c5f56774b5c6e4fb512c}{TS\_GAME\_DIR}}\ =\ std::string(TS\_TOP\_LAYER)\ +\ \textcolor{stringliteral}{"{}/game/"{}};}
 \DoxyCodeLine{\Hypertarget{_common_8h_source_l00015}00015\ }
-\DoxyCodeLine{\Hypertarget{_common_8h_source_l00016}00016\ \ \ \ \ \textcolor{comment}{//std::string\ MakeAssetPath(std::string\ const\&\ path);}}
-\DoxyCodeLine{\Hypertarget{_common_8h_source_l00017}00017\ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00016}00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_techstorm}{Techstorm}}\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{using\ }std::string;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{using\ }std::cout;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{using\ }std::endl;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{using\ }std::thread;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{using\ }std::this\_thread::sleep\_for;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{using\ }std::chrono::milliseconds;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{using\ }std::chrono::seconds;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00026}00026\ \ \ \ \ \textcolor{comment}{/*///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00029}00029\ \ \ \ \ struct\ Vec3\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ float\ x,\ y,\ z;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ Vec3(float\ x,\ float\ y,\ float\ z)\ :\ x(x),\ y(y),\ z(z)\ \{\}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ explicit\ Vec3(Vector3\ const\&\ v)\ :\ x(v.x),\ y(v.y),\ z(v.z)\ \{\}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ explicit\ Vec3(JPH::RVec3\ const\&\ v)\ :\ x(v.GetX()),\ y(v.GetY()),\ z(v.GetZ())\ \{\}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ operator\ Vector3()\ const\ \{\ return\ \{\ x,\ y,\ z\ \};\ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ operator\ JPH::RVec3()\ const\ \{\ return\ \{\ x,\ y,\ z\ \};\ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ float\ operator[](int\ index)\ const\ \{\ return\ (\&x)[index];\ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ bool\ operator==(const\ Vec3\&\ other)\ const}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ return\ x\ ==\ other.x\ \&\&\ y\ ==\ other.y\ \&\&\ z\ ==\ other.z;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ //\ math\ operators}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ Vec3\&\ operator+=(const\ Vec3\&\ other)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ other.x;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ other.y;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ z\ +=\ other.z;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ return\ *this;\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ Vec3\&\ operator-\/=(const\ Vec3\&\ other)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ x\ -\/=\ other.x;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ y\ -\/=\ other.y;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ z\ -\/=\ other.z;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ return\ *this;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ Vec3\&\ operator*=(const\ float\ scalar)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ x\ *=\ scalar;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ y\ *=\ scalar;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ z\ *=\ scalar;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ return\ *this;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00092}00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ Vec3\&\ operator/=(const\ float\ scalar)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ x\ /=\ scalar;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ y\ /=\ scalar;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ z\ /=\ scalar;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ return\ *this;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00104}00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00111}00111\ \ \ \ \ \ \ \ \ Vec3\ operator+(const\ Vec3\&\ scalar)\ const\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ return\ Vec3(x\ +\ scalar.x,\ y\ +\ scalar.y,\ z\ +\ scalar.z);}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00113}00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00120}00120\ \ \ \ \ \ \ \ \ Vec3\ operator-\/(const\ Vec3\&\ scalar)\ const\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ return\ Vec3(x\ -\/\ scalar.x,\ y\ -\/\ scalar.y,\ z\ -\/\ scalar.z);}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00122}00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00129}00129\ \ \ \ \ \ \ \ \ Vec3\ operator*(const\ float\ scalar)\ const\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ return\ Vec3(x\ *\ scalar,\ y\ *\ scalar,\ z\ *\ scalar);}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00131}00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00138}00138\ \ \ \ \ \ \ \ \ Vec3\ operator/(const\ float\ scalar)\ const\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ return\ Vec3(x\ /\ scalar,\ y\ /\ scalar,\ z\ /\ scalar);}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00140}00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00147}00147\ \ \ \ \ \ \ \ \ Vec3\&\ operator=(Vec3\ const\&\ other)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ other.x;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ other.y;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ other.z;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ return\ *this;\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00152}00152\ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00159}00159\ \ \ \ \ \ \ \ \ Vec3\&\ operator=(JPH::RVec3\ const\&\ other)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ other.x;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ other.y;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ other.z;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ return\ *this;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00164}00164\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00171}00171\ \ \ \ \ \ \ \ \ Vec3\&\ operator=(Vector3\ const\&\ other)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ other.x;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ other.y;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ other.z;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ return\ *this;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00176}00176\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00178}00178\ \ \ \ \ \ \ \ \ //\ math\ functions}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00180}00180\ \ \ \ \ \ \ \ \ //\ Non\ chainable}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00181}00181\ \ \ \ \ \ \ \ \ //-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00182}00182\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00187}00187\ \ \ \ \ \ \ \ \ Vec3\ zero()\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ return\ Vec3(0,\ 0,\ 0);\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00189}00189\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00190}00190\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00195}00195\ \ \ \ \ \ \ \ \ Vec3\ one()\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ return\ Vec3(1,\ 1,\ 1);\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00197}00197\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00203}00203\ \ \ \ \ \ \ \ \ Vec3\ perpendicular()\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ return\ (Vec3)Vector3Perpendicular(operator\ Vector3());}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00205}00205\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00206}00206\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00212}00212\ \ \ \ \ \ \ \ \ Vec3\ perpendicular(const\ Vec3\&\ other)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ return\ (Vec3)Vector3Perpendicular(other.operator\ Vector3());}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00214}00214\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00215}00215\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00221}00221\ \ \ \ \ \ \ \ \ Vec3\ max(const\ Vec3\&\ other)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ return\ Vec3(x\ >\ other.x\ ?\ x\ :\ other.x,\ y\ >\ other.y\ ?\ y\ :\ other.y,\ z\ >\ other.z\ ?\ z\ :\ other.z);}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00223}00223\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00224}00224\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00230}00230\ \ \ \ \ \ \ \ \ Vec3\ min(const\ Vec3\&\ other)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ return\ Vec3(x\ <\ other.x\ ?\ x\ :\ other.x,\ y\ <\ other.y\ ?\ y\ :\ other.y,\ z\ <\ other.z\ ?\ z\ :\ other.z);}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00232}00232\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00233}00233\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00239}00239\ \ \ \ \ \ \ \ \ Vec3\ project(const\ Vec3\&\ other)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ return\ (Vec3)Vector3Project(operator\ Vector3(),\ other.operator\ Vector3());}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00241}00241\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00242}00242\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00249}00249\ \ \ \ \ \ \ \ \ Vec3\ unproject(const\ Matrix\&\ projection,\ const\ Matrix\&\ view)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ return\ (Vec3)Vector3Unproject(operator\ Vector3(),\ projection,\ view);}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00251}00251\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00252}00252\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00258}00258\ \ \ \ \ \ \ \ \ Vec3\ reject(const\ Vec3\&\ other)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ return\ (Vec3)Vector3Reject(operator\ Vector3(),\ other.operator\ Vector3());}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00260}00260\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00261}00261\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00267}00267\ \ \ \ \ \ \ \ \ Vec3\ reflect(const\ Vec3\&\ normal)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ return\ (Vec3)Vector3Reflect(operator\ Vector3(),\ normal.operator\ Vector3());}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00269}00269\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00270}00270\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00277}00277\ \ \ \ \ \ \ \ \ Vec3\ refract(const\ Vec3\&\ normal,\ float\ ratio)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ return\ (Vec3)Vector3Refract(operator\ Vector3(),\ normal.operator\ Vector3(),\ ratio);}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00279}00279\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00280}00280\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00287}00287\ \ \ \ \ \ \ \ \ Vec3\ lerp(const\ Vec3\&\ other,\ float\ t)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ return\ (Vec3)Vector3Lerp(operator\ Vector3(),\ other.operator\ Vector3(),\ t);}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00289}00289\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00290}00290\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00300}00300\ \ \ \ \ \ \ \ \ Vec3\ cubicHermite(const\ Vec3\&\ v1,\ const\ Vec3\&\ tangent1,\ const\ Vec3\&\ v2,\ const\ Vec3\&\ tangent2,\ float\ amount)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ return\ (Vec3)Vector3CubicHermite(v1.operator\ Vector3(),\ tangent1.operator\ Vector3(),\ v2.operator\ Vector3(),\ tangent2.operator\ Vector3(),\ amount);}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00302}00302\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00303}00303\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00312}00312\ \ \ \ \ \ \ \ \ Vec3\ baryCenter(const\ Vec3\&\ p,\ const\ Vec3\&\ a,\ const\ Vec3\&\ b,\ const\ Vec3\&\ c)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ return\ (Vec3)Vector3Barycenter(p.operator\ Vector3(),\ a.operator\ Vector3(),\ b.operator\ Vector3(),\ c.operator\ Vector3());}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00314}00314\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00321}00321\ \ \ \ \ \ \ \ \ float\ dot(const\ Vec3\&\ other)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ return\ x\ *\ other.x\ +\ y\ *\ other.y\ +\ z\ *\ other.z;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00323}00323\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00324}00324\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00330}00330\ \ \ \ \ \ \ \ \ float\ distance(const\ Vec3\&\ other)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ return\ sqrtf((x\ -\/\ other.x)\ *\ (x\ -\/\ other.x)\ +\ (y\ -\/\ other.y)\ *\ (y\ -\/\ other.y)\ +\ (z\ -\/\ other.z)\ *\ (z\ -\/\ other.z));}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00332}00332\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00333}00333\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00338}00338\ \ \ \ \ \ \ \ \ float\ length()\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ return\ Vector3Length(operator\ Vector3());}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00340}00340\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00341}00341\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00346}00346\ \ \ \ \ \ \ \ \ float\ lengthSquared()\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ return\ Vector3LengthSqr(operator\ Vector3());}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00348}00348\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00349}00349\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00355}00355\ \ \ \ \ \ \ \ \ float\ angle(const\ Vec3\&\ other)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ return\ Vector3Angle(operator\ Vector3(),\ other.operator\ Vector3());}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00357}00357\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00358}00358\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00359}00359\ \ \ \ \ \ \ \ \ //\ Chainable}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00360}00360\ \ \ \ \ \ \ \ \ //-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00361}00361\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00367}00367\ \ \ \ \ \ \ \ \ Vec3\&\ cross(const\ Vec3\&\ other)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ y\ *\ other.z\ -\/\ z\ *\ other.y;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ z\ *\ other.x\ -\/\ x\ *\ other.z;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ x\ *\ other.y\ -\/\ y\ *\ other.x;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ return\ *this;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00372}00372\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00373}00373\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00378}00378\ \ \ \ \ \ \ \ \ Vec3\&\ negate()\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00379}00379\ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ -\/x;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ -\/y;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ -\/z;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ return\ *this;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00383}00383\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00384}00384\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00389}00389\ \ \ \ \ \ \ \ \ Vec3\&\ normalize()\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00390}00390\ \ \ \ \ \ \ \ \ \ \ \ \ float\ length\ =\ Vector3Length(operator\ Vector3());}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ x\ /\ length;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ y\ /\ length;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ z\ =\ z\ /\ length;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ return\ *this;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00395}00395\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00396}00396\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00402}00402\ \ \ \ \ \ \ \ \ Vec3\&\ transform(Matrix\ const\&\ matrix)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ *this\ =\ Vector3Transform(operator\ Vector3(),\ matrix);}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00404}00404\ \ \ \ \ \ \ \ \ \ \ \ \ return\ *this;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00405}00405\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00406}00406\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00412}00412\ \ \ \ \ \ \ \ \ Vec3\&\ rotateByQuaternion(Quaternion\ const\&\ quaternion)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00413}00413\ \ \ \ \ \ \ \ \ \ \ \ \ *this\ =\ Vector3RotateByQuaternion(operator\ Vector3(),\ quaternion);}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00414}00414\ \ \ \ \ \ \ \ \ \ \ \ \ return\ *this;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00415}00415\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00416}00416\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00423}00423\ \ \ \ \ \ \ \ \ Vec3\&\ rotateByAxisAngle(const\ Vec3\&\ axis,\ float\ angle)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00424}00424\ \ \ \ \ \ \ \ \ \ \ \ \ *this\ =\ Vector3RotateByAxisAngle(operator\ Vector3(),\ axis.operator\ Vector3(),\ angle);}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00425}00425\ \ \ \ \ \ \ \ \ \ \ \ \ return\ *this;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00426}00426\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00427}00427\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00434}00434\ \ \ \ \ \ \ \ \ Vec3\&\ clamp(const\ Vec3\&\ min,\ const\ Vec3\&\ max)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00435}00435\ \ \ \ \ \ \ \ \ \ \ \ \ *this\ =\ Vector3Clamp(operator\ Vector3(),\ min,\ max);}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00436}00436\ \ \ \ \ \ \ \ \ \ \ \ \ return\ *this;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00437}00437\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00438}00438\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00445}00445\ \ \ \ \ \ \ \ \ Vec3\&\ clamp(float\ min,\ float\ max)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00446}00446\ \ \ \ \ \ \ \ \ \ \ \ \ *this\ =\ Vector3ClampValue(operator\ Vector3(),\ min,\ max);}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00447}00447\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00448}00448\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00455}00455\ \ \ \ \ \ \ \ \ Vec3\&\ normalizedMoveTowards(const\ Vec3\&\ target,\ float\ distance)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00456}00456\ \ \ \ \ \ \ \ \ \ \ \ \ Vec3\ direction\ =\ target\ -\/\ *this;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00457}00457\ \ \ \ \ \ \ \ \ \ \ \ \ direction.normalize();}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00458}00458\ \ \ \ \ \ \ \ \ \ \ \ \ *this\ +=\ direction\ *\ distance;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00459}00459\ \ \ \ \ \ \ \ \ \ \ \ \ return\ *this;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00460}00460\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00461}00461\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00468}00468\ \ \ \ \ \ \ \ \ Vec3\&\ moveTowards(const\ Vec3\&\ target,\ float\ distance)\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00469}00469\ \ \ \ \ \ \ \ \ \ \ \ \ *this\ =\ Vector3MoveTowards(operator\ Vector3(),\ target.operator\ Vector3(),\ distance);}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00470}00470\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00471}00471\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00476}00476\ \ \ \ \ \ \ \ \ Vec3\&\ invert()\ \{}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00477}00477\ \ \ \ \ \ \ \ \ \ \ \ \ *this\ =\ Vector3Invert(operator\ Vector3());}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00478}00478\ \ \ \ \ \ \ \ \ \ \ \ \ return\ *this;}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00479}00479\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00480}00480\ \ \ \ \ \};*/}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00481}00481\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00482}00482\ \textcolor{preprocessor}{\#ifdef\ TS\_ENABLE\_HAPTICS}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00483}00483\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_techstorm_acbc8f303afb42ae77958c4f0cc5601ba}{InitHaptics}}();}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00484}00484\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00485}00485\ \ \ \ \ \textcolor{comment}{//\ Rumbing/vibrating\ the\ controller}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00486}00486\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_techstorm_a5451a8aaa383e3936b9939fc6297d6e1}{SetControllerRumble}}(\textcolor{keywordtype}{int}\ controllerIndex,\ \textcolor{keywordtype}{int}\ leftMotorSpeed,\ \textcolor{keywordtype}{int}\ rightMotorSpeed);}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00487}00487\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_techstorm_abbe31e4f49d55c0496f4631a182e1477}{StartRumblingController}}(\textcolor{keywordtype}{int}\ controllerIndex,\ \textcolor{keywordtype}{int}\ leftMotorSpeed,\ \textcolor{keywordtype}{int}\ rightMotorSpeed);}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00488}00488\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_techstorm_aa6731e1161358e83d844e07b3a039304}{StopRumblingController}}(\textcolor{keywordtype}{int}\ controllerIndex);}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00489}00489\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00490}00490\ }
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00491}00491\ \textcolor{preprocessor}{\#ifdef\ TS\_ENABLE\_EXTENSIONS}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00492}00492\ \ \ \ \ \textcolor{comment}{//\ Not\ yet\ implemented}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00493}00493\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TS\_ENABLE\_DISCORD\_INTEGRATION}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00494}00494\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#ifndef\ TS\_SILENCE\_DISCORD\_INTEGRATION\_WARNING}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00495}00495\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#error\ "{}Discord\ integration\ is\ not\ yet\ implemented.\ To\ silence\ this\ warning,\ define\ TS\_SILENCE\_DISCORD\_INTEGRATION\_WARNING."{}}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00496}00496\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00497}00497\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00498}00498\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_common_8h_source_l00499}00499\ \}}
 
 \end{DoxyCode}

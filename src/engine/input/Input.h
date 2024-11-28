@@ -52,7 +52,7 @@ namespace Techstorm {
 	/// <seealso cref="Singleton&lt;InputRegistry&gt;" />
 	class InputRegistry : public Singleton<InputRegistry> {
 	public:
-		
+
 		/// <summary>
 		/// Registers a pointer of InputAction to the callback given. This works as a key-value pair, where the key is the action and the 
 		/// value is the callback and is the reason why the return value is important. Please do not lose it or you will not be able to unregister the callback or you may unregister the wrong one!
@@ -100,7 +100,7 @@ namespace Techstorm {
 		std::unordered_map<InputAction*, std::unordered_map<int, std::function<void(InputAction*)>>> mActions;
 	};
 	
-	/// <summary>
+/*	/// <summary>
 	/// Gets the current instance of the InputRegistry singleton <see cref="InputRegistry"/>. This is a quality of life function, and calling it like other singletons is perfectly okay.
 	/// </summary>
 	/// <returns>A reference to the current instance of the InputRegistry singleton.</returns>
@@ -128,6 +128,6 @@ namespace Techstorm {
 	/// </summary>
 	/// <param name="action">The action that the callback lies in.</param>
 	/// <param name="id">The ID of the callback. You should have gotten it in the RegisterActionCallback or InputRegistry::registerActionCallback functions.</param>
-	void UnregisterCallback(InputAction* action, int id) { GetInputRegistry().unregisterCallback(action, id); }
+	void UnregisterCallback(InputAction* action, int id) { GetInputRegistry().unregisterCallback(action, id); }*/
 
 }

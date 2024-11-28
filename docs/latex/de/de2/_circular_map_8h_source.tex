@@ -1,0 +1,27 @@
+\doxysection{Circular\+Map.\+h}
+\hypertarget{_circular_map_8h_source}{}\label{_circular_map_8h_source}\index{C:/Dev/Techstorm-\/v5/src/application/prototyping/CircularMap.h@{C:/Dev/Techstorm-\/v5/src/application/prototyping/CircularMap.h}}
+\mbox{\hyperlink{_circular_map_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_circular_map_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_circular_map_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{\Hypertarget{_circular_map_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_circular_map_8h_source_l00004}00004\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_circular_map_8h_source_l00005}\mbox{\hyperlink{class_circular_map}{00005}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_circular_map}{CircularMap}}\ \{}
+\DoxyCodeLine{\Hypertarget{_circular_map_8h_source_l00006}00006\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_circular_map_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_circular_map_8h_source_l00008}\mbox{\hyperlink{class_circular_map_aee26457f54f6d2915a055b103c353512}{00008}}\ \ \ \ \ \mbox{\hyperlink{class_circular_map_aee26457f54f6d2915a055b103c353512}{CircularMap}}(\textcolor{keywordtype}{int}\ size,\ std::unordered\_map<int,\ T>\ map)\ :\ mMap(map),\ size(size)\ \{}
+\DoxyCodeLine{\Hypertarget{_circular_map_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_circular_map_8h_source_l00010}00010\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_circular_map_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_circular_map_8h_source_l00012}\mbox{\hyperlink{class_circular_map_a6d123a2668e0ebddf1678b9be2935b32}{00012}}\ \ \ \ \ T\ \mbox{\hyperlink{class_circular_map_a6d123a2668e0ebddf1678b9be2935b32}{next}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_circular_map_8h_source_l00013}00013\ \ \ \ \ \ \ \ \ currentIndex\ =\ (currentIndex\ +\ 1)\ \%\ size;}
+\DoxyCodeLine{\Hypertarget{_circular_map_8h_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mMap[currentIndex];}
+\DoxyCodeLine{\Hypertarget{_circular_map_8h_source_l00015}00015\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_circular_map_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_circular_map_8h_source_l00017}00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_circular_map_8h_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{int}\ size;}
+\DoxyCodeLine{\Hypertarget{_circular_map_8h_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{int}\ currentIndex\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_circular_map_8h_source_l00020}00020\ \ \ \ \ std::unordered\_map<int,\ T>\ mMap;}
+\DoxyCodeLine{\Hypertarget{_circular_map_8h_source_l00021}00021\ \};}
+
+\end{DoxyCode}

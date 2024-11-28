@@ -11,6 +11,7 @@ var index =
     ] ],
     [ "Dependencies", "index.html#dependencies", null ],
     [ "Code Conventions", "index.html#code-conventions", [
+      [ "Important Convention Use Cases", "index.html#important-convention-use-cases", null ],
       [ "Variables", "index.html#variables", null ],
       [ "Functions", "index.html#functions", null ]
     ] ]

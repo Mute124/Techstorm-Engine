@@ -86,12 +86,10 @@ namespace Techstorm {
 		}
 
 		/// <summary>
-		/// This is the first function that will be called on startup. This is empty because it is an optional feature but is highly reccomended to clearly outline initialization phases.
+		/// This is the first function that will be called on startup. 
 		/// </summary>
 		/// <inheritdoc />
 		virtual void preInit() {
-			// Image loading functions
-
 			AddFileRegistryLoadFunction("png", [](std::shared_ptr<FileMeta> loadFunc) {
 				return std::any_cast<Image>(LoadImage(loadFunc->path.c_str()));
 			});
@@ -107,11 +105,12 @@ namespace Techstorm {
 
 			InitializeFileRegistry(TS_GAME_DIR.c_str());
 
-			
+
+			this->mLuaLibraries.push_back(sol::lib::base);
 		}
 
 		/// <summary>
-		/// Initializes your project. Any code you need done before the loop starts, call it here. <b>THIS MUST BE OVERRIDEN BY YOUR PROJECT CLASS!</b>
+		/// Initializes your project. This will be called after preInit and window initialization, meaning that this is the earliest point that you can use raylib. <b>THIS MUST BE OVERRIDEN BY YOUR PROJECT CLASS!</b>
 		/// </summary>
 		/// <param name="argc">Command line argument count int</param>
 		/// <param name="argv">Command line arguments array</param>
@@ -137,6 +136,8 @@ namespace Techstorm {
 		/// <returns>The game loop's exit code</returns>
 		/// <inheritdoc />
 		virtual int run(int argc, char* argv[]);
+
+		virtual int update();
 
 		/// <summary>
 		/// Pre-update step that is called in the physics or update thread (depending on thread count)

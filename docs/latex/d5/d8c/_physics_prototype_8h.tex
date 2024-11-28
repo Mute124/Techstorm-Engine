@@ -1,0 +1,88 @@
+\doxysection{C\+:/\+Dev/\+Techstorm-\/v5/src/application/prototyping/\+Physics\+Prototype.h File Reference}
+\hypertarget{_physics_prototype_8h}{}\label{_physics_prototype_8h}\index{C:/Dev/Techstorm-\/v5/src/application/prototyping/PhysicsPrototype.h@{C:/Dev/Techstorm-\/v5/src/application/prototyping/PhysicsPrototype.h}}
+{\ttfamily \#include $<$Jolt/\+Jolt.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Register\+Types.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Core/\+Factory.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Core/\+Temp\+Allocator.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Core/\+Job\+System\+Thread\+Pool.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Physics\+Settings.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Physics\+System.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Collision/\+Shape/\+Box\+Shape.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Collision/\+Shape/\+Sphere\+Shape.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Body/\+Body\+Creation\+Settings.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Body/\+Body\+Activation\+Listener.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Collision/\+Shape/\+Height\+Field\+Shape.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Collision/\+Physics\+Material\+Simple.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Collision/\+Shape/\+Mesh\+Shape.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Collision/\+Object\+Layer.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Core/\+Color.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Core/\+Core.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Core/\+Issue\+Reporting.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Core/\+Job\+System.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Core/\+Memory.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Core/\+String\+Tools.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Geometry/\+Triangle.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Math/\+Float3.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Math/\+Quat.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Math/\+Real.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Math/\+Vec3.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Body/\+Body.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Body/\+Body\+ID.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Body/\+Body\+Interface.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Body/\+Motion\+Type.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Collision/\+Broad\+Phase/\+Broad\+Phase\+Layer.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Collision/\+Contact\+Listener.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Collision/\+Shape/\+Shape.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Collision/\+Shape/\+Sub\+Shape\+IDPair.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+EActivation.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Collision/\+Cast\+Result.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Collision/\+Ray\+Cast.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Collision/\+Shape/\+Triangle\+Shape.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Collision/\+Shape\+Cast.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Collision/\+Collision\+Collector\+Impl.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_object_layer_pair_filter_impl}{Object\+Layer\+Pair\+Filter\+Impl}}
+\begin{DoxyCompactList}\small\item\em Class that determines if two object layers can collide. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_b_p_layer_interface_impl}{BPLayer\+Interface\+Impl}}
+\item 
+class \mbox{\hyperlink{class_object_vs_broad_phase_layer_filter_impl}{Object\+Vs\+Broad\+Phase\+Layer\+Filter\+Impl}}
+\begin{DoxyCompactList}\small\item\em Class that determines if an object layer can collide with a broadphase layer. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_my_contact_listener}{My\+Contact\+Listener}}
+\item 
+class \mbox{\hyperlink{class_my_body_activation_listener}{My\+Body\+Activation\+Listener}}
+\item 
+struct \mbox{\hyperlink{struct_allocated_physics_resources}{Allocated\+Physics\+Resources}}
+\item 
+class \mbox{\hyperlink{class_physics_engine}{Physics\+Engine}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_layers}{Layers}}
+\item 
+namespace \mbox{\hyperlink{namespace_broad_phase_layers}{Broad\+Phase\+Layers}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+JPH\+::\+Physics\+System \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_physics_prototype_8h_a04200ec9f91f683e0a28431c0c46e713}{Get\+Physics\+System}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_physics_prototype_8h_a04200ec9f91f683e0a28431c0c46e713}\label{_physics_prototype_8h_a04200ec9f91f683e0a28431c0c46e713} 
+\index{PhysicsPrototype.h@{PhysicsPrototype.h}!GetPhysicsSystem@{GetPhysicsSystem}}
+\index{GetPhysicsSystem@{GetPhysicsSystem}!PhysicsPrototype.h@{PhysicsPrototype.h}}
+\doxysubsubsection{\texorpdfstring{GetPhysicsSystem()}{GetPhysicsSystem()}}
+{\footnotesize\ttfamily JPH\+::\+Physics\+System \texorpdfstring{$\ast$}{*} Get\+Physics\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_physics_prototype_8h_source_l00378}{378}} of file \mbox{\hyperlink{_physics_prototype_8h_source}{Physics\+Prototype.\+h}}.
+
+
+
+References \mbox{\hyperlink{_singleton_8h_source_l00017}{Techstorm\+::\+Singleton$<$ Physics\+Engine $>$\+::\+Instance()}}, and \mbox{\hyperlink{_physics_8h_source_l00083}{Techstorm\+::\+Physics\+Engine\+::m\+Physics\+System}}.
+

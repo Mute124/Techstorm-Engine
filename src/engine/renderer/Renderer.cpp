@@ -41,7 +41,7 @@ void Techstorm::Renderer::render(GameCamera& cam)
 void Techstorm::Renderer::texture(GameCamera& cam)
 {
 	BeginTextureMode(this->mScreenBuffer);
-	ClearBackground(WHITE);
+	ClearBackground(this->mBackgroundColor);
 #ifdef TS_RENDERER_2D
 #else
 	BeginMode3D(cam.getCameraData());
@@ -55,11 +55,18 @@ void Techstorm::Renderer::texture(GameCamera& cam)
 #endif
 	EndTextureMode();
 }
+
+void Techstorm::Renderer::update()
+{
+	mCamera.update();
+}
+
 void Techstorm::Renderer::drawFBO() {
 	// TODO: Allow FBO shaders
 
-	DrawTextureRec(this->mScreenBuffer.texture, Rectangle{ 0, 0, (float)(this->mScreenBuffer.texture.width), (float)(this->mScreenBuffer.texture.height) }, Vector2{ 0, 0 }, this->mFBOTint);
+	DrawTextureRec(this->mScreenBuffer.texture, Rectangle{ 0, 0, (float)(this->mScreenBuffer.texture.width), -(float)(this->mScreenBuffer.texture.height) }, Vector2{ 0, 0 }, this->mFBOTint);
 }
+
 void Techstorm::Renderer::addGameObject(GameObject* gameObject)
 {
 	this->mGameObjects.addGameObject(gameObject);
@@ -71,6 +78,7 @@ void Techstorm::Renderer::removeGameObject(GameObject* gameObject)
 }
 
 void Techstorm::Renderer::addGameObjectGate(IGameObjectGate* gameObjectGate) {}
+
 void Techstorm::Renderer::removeGameObjectGate(IGameObjectGate* gameObjectGate) {}
 
 void Techstorm::Renderer::cleanup()
@@ -84,9 +92,9 @@ void Techstorm::Renderer::render2D(GameCamera& cam)
 #else
 void Techstorm::Renderer::render3D(GameCamera& cam)
 {
-	UpdateCamera(&cam.mCameraData, CAMERA_FIRST_PERSON);
+	//UpdateCamera(&cam.mCameraData, CAMERA_FIRST_PERSON);
 
-	texture(cam);
+	//texture(cam);
 
 	BeginDrawing();
 	drawFBO();

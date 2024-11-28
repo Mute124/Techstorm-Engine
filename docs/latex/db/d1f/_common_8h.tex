@@ -5,14 +5,28 @@
 {\ttfamily \#include $<$cstdint$>$}\newline
 {\ttfamily \#include $<$string$>$}\newline
 {\ttfamily \#include $<$thread$>$}\newline
-Include dependency graph for Common.\+h\+:
-% FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
+{\ttfamily \#include "{}utils/\+Singleton.\+h"{}}\newline
+{\ttfamily \#include "{}input/\+Input.\+h"{}}\newline
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespace_techstorm}{Techstorm}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_common_8h_ab96ac5087a1fde76921d36f47d2a0777}{TS\+\_\+\+ENABLE\+\_\+\+HAPTICS}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespace_techstorm_acbc8f303afb42ae77958c4f0cc5601ba}{Techstorm\+::\+Init\+Haptics}} ()
+\item 
+void \mbox{\hyperlink{namespace_techstorm_a5451a8aaa383e3936b9939fc6297d6e1}{Techstorm\+::\+Set\+Controller\+Rumble}} (int controller\+Index, int left\+Motor\+Speed, int right\+Motor\+Speed)
+\item 
+void \mbox{\hyperlink{namespace_techstorm_abbe31e4f49d55c0496f4631a182e1477}{Techstorm\+::\+Start\+Rumbling\+Controller}} (int controller\+Index, int left\+Motor\+Speed, int right\+Motor\+Speed)
+\item 
+void \mbox{\hyperlink{namespace_techstorm_aa6731e1161358e83d844e07b3a039304}{Techstorm\+::\+Stop\+Rumbling\+Controller}} (int controller\+Index)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -25,6 +39,19 @@ const std\+::string \mbox{\hyperlink{_common_8h_a4a0ec9e061a2c5f56774b5c6e4fb512
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_common_8h_ab96ac5087a1fde76921d36f47d2a0777}\label{_common_8h_ab96ac5087a1fde76921d36f47d2a0777} 
+\index{Common.h@{Common.h}!TS\_ENABLE\_HAPTICS@{TS\_ENABLE\_HAPTICS}}
+\index{TS\_ENABLE\_HAPTICS@{TS\_ENABLE\_HAPTICS}!Common.h@{Common.h}}
+\doxysubsubsection{\texorpdfstring{TS\_ENABLE\_HAPTICS}{TS\_ENABLE\_HAPTICS}}
+{\footnotesize\ttfamily \#define TS\+\_\+\+ENABLE\+\_\+\+HAPTICS}
+
+
+
+Definition at line \mbox{\hyperlink{_common_8h_source_l00002}{2}} of file \mbox{\hyperlink{_common_8h_source}{Common.\+h}}.
+
+
+
 \doxysubsection{Variable Documentation}
 \Hypertarget{_common_8h_a72ba4f35051f760d2253c5d175be8a7d}\label{_common_8h_a72ba4f35051f760d2253c5d175be8a7d} 
 \index{Common.h@{Common.h}!TS\_ASSET\_DIR@{TS\_ASSET\_DIR}}
@@ -34,11 +61,11 @@ const std\+::string \mbox{\hyperlink{_common_8h_a4a0ec9e061a2c5f56774b5c6e4fb512
 
 
 
-Definition at line \mbox{\hyperlink{_common_8h_source_l00009}{9}} of file \mbox{\hyperlink{_common_8h_source}{Common.\+h}}.
+Definition at line \mbox{\hyperlink{_common_8h_source_l00012}{12}} of file \mbox{\hyperlink{_common_8h_source}{Common.\+h}}.
 
 
 
-Referenced by \mbox{\hyperlink{application_2main_8cpp_source_l00010}{main()}}.
+Referenced by \mbox{\hyperlink{application_2main_8cpp_source_l00012}{main()}}.
 
 \Hypertarget{_common_8h_a5012bb03b199275504f5455b800711df}\label{_common_8h_a5012bb03b199275504f5455b800711df} 
 \index{Common.h@{Common.h}!TS\_DATA\_DIR@{TS\_DATA\_DIR}}
@@ -48,7 +75,7 @@ Referenced by \mbox{\hyperlink{application_2main_8cpp_source_l00010}{main()}}.
 
 
 
-Definition at line \mbox{\hyperlink{_common_8h_source_l00010}{10}} of file \mbox{\hyperlink{_common_8h_source}{Common.\+h}}.
+Definition at line \mbox{\hyperlink{_common_8h_source_l00013}{13}} of file \mbox{\hyperlink{_common_8h_source}{Common.\+h}}.
 
 \Hypertarget{_common_8h_a4a0ec9e061a2c5f56774b5c6e4fb512c}\label{_common_8h_a4a0ec9e061a2c5f56774b5c6e4fb512c} 
 \index{Common.h@{Common.h}!TS\_GAME\_DIR@{TS\_GAME\_DIR}}
@@ -58,9 +85,9 @@ Definition at line \mbox{\hyperlink{_common_8h_source_l00010}{10}} of file \mbox
 
 
 
-Definition at line \mbox{\hyperlink{_common_8h_source_l00011}{11}} of file \mbox{\hyperlink{_common_8h_source}{Common.\+h}}.
+Definition at line \mbox{\hyperlink{_common_8h_source_l00014}{14}} of file \mbox{\hyperlink{_common_8h_source}{Common.\+h}}.
 
 
 
-Referenced by \mbox{\hyperlink{engine_2_project_8h_source_l00091}{Techstorm\+::abstract$<$ K, D, T $>$\+::pre\+Init()}}.
+Referenced by \mbox{\hyperlink{engine_2_project_8h_source_l00092}{Techstorm\+::abstract$<$ K, D, T $>$\+::pre\+Init()}}.
 

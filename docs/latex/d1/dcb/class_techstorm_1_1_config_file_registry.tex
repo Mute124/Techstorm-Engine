@@ -4,20 +4,20 @@
 
 {\ttfamily \#include $<$Config.\+h$>$}
 
-
-
-Inheritance diagram for Techstorm\+::Config\+File\+Registry\+:
-% FIG 0
-
-
-Collaboration diagram for Techstorm\+::Config\+File\+Registry\+:
-% FIG 1
+Inheritance diagram for Techstorm\+::Config\+File\+Registry\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d1/dcb/class_techstorm_1_1_config_file_registry}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_techstorm_1_1_config_file_registry_a3cf7d0fabc5569eecc57d0d3a9939d62}{Config\+File\+Registry}} ()
 \item 
 \mbox{\hyperlink{class_techstorm_1_1_config_file_registry_a7c787bd9f85443ad2b2362e020d38e61}{\texorpdfstring{$\sim$}{\string~}\+Config\+File\+Registry}} ()
+\item 
+void \mbox{\hyperlink{class_techstorm_1_1_config_file_registry_a9ae55db91ba14c74d523070fb38249e6}{init}} ()
 \item 
 void \mbox{\hyperlink{class_techstorm_1_1_config_file_registry_af3eb80d5e0c4782f72dadc693612ee51}{read\+Config\+Files}} ()
 \item 
@@ -33,12 +33,7 @@ void \mbox{\hyperlink{class_techstorm_1_1_config_file_registry_a38010277a0e2e9ad
 \item 
 void \mbox{\hyperlink{class_techstorm_1_1_config_file_registry_a3384e539773e08355c18fc01c6169793}{unregister\+Config\+File}} (const std\+::string \&name)
 \item 
-libconfig\+::\+Setting \& \mbox{\hyperlink{class_techstorm_1_1_config_file_registry_a2e49f91dfa8e3d8ec15aed9fc8fb4a68}{lookup}} (const std\+::string \&name)
-\end{DoxyCompactItemize}
-\doxysubsubsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-std\+::unordered\+\_\+map$<$ std\+::string, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_techstorm_1_1_registered_file}{Registered\+File}} $>$ $>$ \mbox{\hyperlink{class_techstorm_1_1_config_file_registry_a0719cb83cd982f627a07fba0cac0c706}{m\+Config\+Files}}
+libconfig\+::\+Setting \& \mbox{\hyperlink{class_techstorm_1_1_config_file_registry_a6bf4ea46f4584c131d1c82f10b530b68}{lookup}} (const std\+::string \&file\+Name, const std\+::string \&lookup\+Target)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_techstorm_1_1_singleton}{Techstorm\+::\+Singleton$<$ Config\+File\+Registry $>$}}}
@@ -64,14 +59,8 @@ Definition at line \mbox{\hyperlink{_config_8h_source_l00009}{9}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{_config_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{_config_8cpp_source}{Config.\+cpp}}.
+Definition at line \mbox{\hyperlink{_config_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_config_8cpp_source}{Config.\+cpp}}.
 
-
-
-References \mbox{\hyperlink{_file_system_8cpp_source_l00024}{Techstorm\+::\+Add\+File\+Registry\+Load\+Function()}}, and \mbox{\hyperlink{_config_8cpp_source_l00009}{Load\+Config\+File()}}.
-
-Here is the call graph for this function\+:
-% FIG 2
 \Hypertarget{class_techstorm_1_1_config_file_registry_a7c787bd9f85443ad2b2362e020d38e61}\label{class_techstorm_1_1_config_file_registry_a7c787bd9f85443ad2b2362e020d38e61} 
 \index{Techstorm::ConfigFileRegistry@{Techstorm::ConfigFileRegistry}!````~ConfigFileRegistry@{\texorpdfstring{$\sim$}{\string~}ConfigFileRegistry}}
 \index{````~ConfigFileRegistry@{\texorpdfstring{$\sim$}{\string~}ConfigFileRegistry}!Techstorm::ConfigFileRegistry@{Techstorm::ConfigFileRegistry}}
@@ -80,27 +69,47 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{_config_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{_config_8cpp_source}{Config.\+cpp}}.
+Definition at line \mbox{\hyperlink{_config_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{_config_8cpp_source}{Config.\+cpp}}.
 
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_techstorm_1_1_config_file_registry_a2e49f91dfa8e3d8ec15aed9fc8fb4a68}\label{class_techstorm_1_1_config_file_registry_a2e49f91dfa8e3d8ec15aed9fc8fb4a68} 
+\Hypertarget{class_techstorm_1_1_config_file_registry_a9ae55db91ba14c74d523070fb38249e6}\label{class_techstorm_1_1_config_file_registry_a9ae55db91ba14c74d523070fb38249e6} 
+\index{Techstorm::ConfigFileRegistry@{Techstorm::ConfigFileRegistry}!init@{init}}
+\index{init@{init}!Techstorm::ConfigFileRegistry@{Techstorm::ConfigFileRegistry}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Techstorm\+::\+Config\+File\+Registry\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_config_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{_config_8cpp_source}{Config.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_file_system_8cpp_source_l00024}{Techstorm\+::\+Add\+File\+Registry\+Load\+Function()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_config_8cpp_source_l00079}{Techstorm\+::\+Initialize\+Config\+Registry()}}.
+
+\Hypertarget{class_techstorm_1_1_config_file_registry_a6bf4ea46f4584c131d1c82f10b530b68}\label{class_techstorm_1_1_config_file_registry_a6bf4ea46f4584c131d1c82f10b530b68} 
 \index{Techstorm::ConfigFileRegistry@{Techstorm::ConfigFileRegistry}!lookup@{lookup}}
 \index{lookup@{lookup}!Techstorm::ConfigFileRegistry@{Techstorm::ConfigFileRegistry}}
 \doxysubsubsection{\texorpdfstring{lookup()}{lookup()}}
-{\footnotesize\ttfamily libconfig\+::\+Setting \& Techstorm\+::\+Config\+File\+Registry\+::lookup (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily libconfig\+::\+Setting \& Techstorm\+::\+Config\+File\+Registry\+::lookup (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Name,  }\item[{const std\+::string \&}]{lookup\+Target }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{_config_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{_config_8cpp_source}{Config.\+cpp}}.
+Definition at line \mbox{\hyperlink{_config_8cpp_source_l00061}{61}} of file \mbox{\hyperlink{_config_8cpp_source}{Config.\+cpp}}.
 
 
 
 References \mbox{\hyperlink{_file_system_8cpp_source_l00039}{Techstorm\+::\+Get\+File()}}.
 
-Here is the call graph for this function\+:
-% FIG 3
+
+
+Referenced by \mbox{\hyperlink{_config_8cpp_source_l00081}{Techstorm\+::\+Lookup\+Config()}}.
+
 \Hypertarget{class_techstorm_1_1_config_file_registry_a90d2ed7bb44b9c373fab7ee143217d4d}\label{class_techstorm_1_1_config_file_registry_a90d2ed7bb44b9c373fab7ee143217d4d} 
 \index{Techstorm::ConfigFileRegistry@{Techstorm::ConfigFileRegistry}!readConfigFile@{readConfigFile}}
 \index{readConfigFile@{readConfigFile}!Techstorm::ConfigFileRegistry@{Techstorm::ConfigFileRegistry}}
@@ -109,14 +118,12 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{_config_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{_config_8cpp_source}{Config.\+cpp}}.
+Definition at line \mbox{\hyperlink{_config_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{_config_8cpp_source}{Config.\+cpp}}.
 
 
 
 References \mbox{\hyperlink{_file_system_8cpp_source_l00039}{Techstorm\+::\+Get\+File()}}.
 
-Here is the call graph for this function\+:
-% FIG 4
 \Hypertarget{class_techstorm_1_1_config_file_registry_af3eb80d5e0c4782f72dadc693612ee51}\label{class_techstorm_1_1_config_file_registry_af3eb80d5e0c4782f72dadc693612ee51} 
 \index{Techstorm::ConfigFileRegistry@{Techstorm::ConfigFileRegistry}!readConfigFiles@{readConfigFiles}}
 \index{readConfigFiles@{readConfigFiles}!Techstorm::ConfigFileRegistry@{Techstorm::ConfigFileRegistry}}
@@ -125,7 +132,7 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{_config_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{_config_8cpp_source}{Config.\+cpp}}.
+Definition at line \mbox{\hyperlink{_config_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{_config_8cpp_source}{Config.\+cpp}}.
 
 \Hypertarget{class_techstorm_1_1_config_file_registry_a7ff5aa01b4f76873ef8ef438d109483b}\label{class_techstorm_1_1_config_file_registry_a7ff5aa01b4f76873ef8ef438d109483b} 
 \index{Techstorm::ConfigFileRegistry@{Techstorm::ConfigFileRegistry}!registerConfigFile@{registerConfigFile}}
@@ -135,7 +142,7 @@ Definition at line \mbox{\hyperlink{_config_8cpp_source_l00027}{27}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{_config_8cpp_source_l00044}{44}} of file \mbox{\hyperlink{_config_8cpp_source}{Config.\+cpp}}.
+Definition at line \mbox{\hyperlink{_config_8cpp_source_l00049}{49}} of file \mbox{\hyperlink{_config_8cpp_source}{Config.\+cpp}}.
 
 \Hypertarget{class_techstorm_1_1_config_file_registry_a8d30d741445314641ce4319ab74efc42}\label{class_techstorm_1_1_config_file_registry_a8d30d741445314641ce4319ab74efc42} 
 \index{Techstorm::ConfigFileRegistry@{Techstorm::ConfigFileRegistry}!registerConfigFiles@{registerConfigFiles}}
@@ -145,7 +152,7 @@ Definition at line \mbox{\hyperlink{_config_8cpp_source_l00044}{44}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{_config_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{_config_8cpp_source}{Config.\+cpp}}.
+Definition at line \mbox{\hyperlink{_config_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{_config_8cpp_source}{Config.\+cpp}}.
 
 \Hypertarget{class_techstorm_1_1_config_file_registry_a3384e539773e08355c18fc01c6169793}\label{class_techstorm_1_1_config_file_registry_a3384e539773e08355c18fc01c6169793} 
 \index{Techstorm::ConfigFileRegistry@{Techstorm::ConfigFileRegistry}!unregisterConfigFile@{unregisterConfigFile}}
@@ -155,7 +162,7 @@ Definition at line \mbox{\hyperlink{_config_8cpp_source_l00040}{40}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{_config_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{_config_8cpp_source}{Config.\+cpp}}.
+Definition at line \mbox{\hyperlink{_config_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{_config_8cpp_source}{Config.\+cpp}}.
 
 \Hypertarget{class_techstorm_1_1_config_file_registry_a38010277a0e2e9ad384c42269ce19cb1}\label{class_techstorm_1_1_config_file_registry_a38010277a0e2e9ad384c42269ce19cb1} 
 \index{Techstorm::ConfigFileRegistry@{Techstorm::ConfigFileRegistry}!unregisterConfigFiles@{unregisterConfigFiles}}
@@ -165,7 +172,7 @@ Definition at line \mbox{\hyperlink{_config_8cpp_source_l00052}{52}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{_config_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{_config_8cpp_source}{Config.\+cpp}}.
+Definition at line \mbox{\hyperlink{_config_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{_config_8cpp_source}{Config.\+cpp}}.
 
 \Hypertarget{class_techstorm_1_1_config_file_registry_a8748376c8a9cb5f3b830c6bd1085c843}\label{class_techstorm_1_1_config_file_registry_a8748376c8a9cb5f3b830c6bd1085c843} 
 \index{Techstorm::ConfigFileRegistry@{Techstorm::ConfigFileRegistry}!writeConfigFiles@{writeConfigFiles}}
@@ -175,20 +182,7 @@ Definition at line \mbox{\hyperlink{_config_8cpp_source_l00048}{48}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{_config_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{_config_8cpp_source}{Config.\+cpp}}.
-
-
-
-\doxysubsection{Member Data Documentation}
-\Hypertarget{class_techstorm_1_1_config_file_registry_a0719cb83cd982f627a07fba0cac0c706}\label{class_techstorm_1_1_config_file_registry_a0719cb83cd982f627a07fba0cac0c706} 
-\index{Techstorm::ConfigFileRegistry@{Techstorm::ConfigFileRegistry}!mConfigFiles@{mConfigFiles}}
-\index{mConfigFiles@{mConfigFiles}!Techstorm::ConfigFileRegistry@{Techstorm::ConfigFileRegistry}}
-\doxysubsubsection{\texorpdfstring{mConfigFiles}{mConfigFiles}}
-{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_techstorm_1_1_registered_file}{Registered\+File}}$>$ $>$ Techstorm\+::\+Config\+File\+Registry\+::m\+Config\+Files}
-
-
-
-Definition at line \mbox{\hyperlink{_config_8h_source_l00025}{25}} of file \mbox{\hyperlink{_config_8h_source}{Config.\+h}}.
+Definition at line \mbox{\hyperlink{_config_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{_config_8cpp_source}{Config.\+cpp}}.
 
 
 

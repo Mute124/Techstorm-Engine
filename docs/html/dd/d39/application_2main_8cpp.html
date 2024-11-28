@@ -97,19 +97,13 @@ $(document).ready(function(){initNavTree('dd/d39/application_2main_8cpp.html','.
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="../../db/d1f/_common_8h_source.html">Common.h</a>&gt;</code><br />
-<code>#include &lt;crtdbg.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../dc/d41/_scripting_a_p_i_8h_source.html">modding/ScriptingAPI.h</a>&gt;</code><br />
-<code>#include &lt;project.h&gt;</code><br />
-<code>#include &lt;raylib.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d3/da0/_renderer_8h_source.html">renderer/Renderer.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d3/d19/_window_decorations_8h_source.html">renderer/WindowDecorations.h</a>&gt;</code><br />
-</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> Include dependency graph for main.cpp:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../d7/dbe/application_2main_8cpp__incl.png" border="0" usemap="#a_c_1_2_dev_2_techstorm-v5_2src_2application_2main_8cpp" alt=""/></div>
-</div>
+<code>#include &lt;<a class="el" href="../../d4/d71/_config_8h_source.html">conf/Config.h</a>&gt;</code><br />
+<code>#include &lt;project.h&gt;</code><br />
+<code>#include &lt;raylib.h&gt;</code><br />
+<code>#include &lt;thread&gt;</code><br />
 </div>
 <p><a href="../../dd/d39/application_2main_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -145,16 +139,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d39/application_2main_8cpp_source.html#l00010">10</a> of file <a class="el" href="../../dd/d39/application_2main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/d39/application_2main_8cpp_source.html#l00012">12</a> of file <a class="el" href="../../dd/d39/application_2main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d2/d58/_file_system_8h_source.html#l00080">Techstorm::FileSystemRegistry::getFile()</a>, <a class="el" href="../../d3/d19/_window_decorations_8h_source.html#l00012">Techstorm::WindowDecorations::height</a>, <a class="el" href="../../d3/d19/_window_decorations_8h_source.html#l00015">Techstorm::WindowDecorations::icon</a>, <a class="el" href="../../dc/d41/_scripting_a_p_i_8h_source.html#l00036">Techstorm::ScriptingAPI::InitializeScripting()</a>, <a class="el" href="../../d1/def/project_2_project_8h_source.html#l00005">PROJECT_TYPENAME</a>, <a class="el" href="../../dc/d41/_scripting_a_p_i_8h_source.html#l00046">Techstorm::ScriptingAPI::RegisterLua()</a>, <a class="el" href="../../d3/d19/_window_decorations_8h_source.html#l00014">Techstorm::WindowDecorations::targetFPS</a>, <a class="el" href="../../d3/d19/_window_decorations_8h_source.html#l00010">Techstorm::WindowDecorations::title</a>, <a class="el" href="../../db/d1f/_common_8h_source.html#l00009">TS_ASSET_DIR</a>, and <a class="el" href="../../d3/d19/_window_decorations_8h_source.html#l00011">Techstorm::WindowDecorations::width</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../dd/d39/application_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph.png" border="0" usemap="#add/d39/application_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph" alt=""/></div>
-</div>
+<p class="reference">References <a class="el" href="../../d3/d19/_window_decorations_8h_source.html#l00012">Techstorm::WindowDecorations::height</a>, <a class="el" href="../../d3/d19/_window_decorations_8h_source.html#l00015">Techstorm::WindowDecorations::icon</a>, <a class="el" href="../../dc/d41/_scripting_a_p_i_8h_source.html#l00036">Techstorm::ScriptingAPI::InitializeScripting()</a>, <a class="el" href="../../d1/def/project_2_project_8h_source.html#l00005">PROJECT_TYPENAME</a>, <a class="el" href="../../dc/d41/_scripting_a_p_i_8h_source.html#l00046">Techstorm::ScriptingAPI::RegisterLua()</a>, <a class="el" href="../../d3/d19/_window_decorations_8h_source.html#l00014">Techstorm::WindowDecorations::targetFPS</a>, <a class="el" href="../../d3/d19/_window_decorations_8h_source.html#l00010">Techstorm::WindowDecorations::title</a>, <a class="el" href="../../db/d1f/_common_8h_source.html#l00012">TS_ASSET_DIR</a>, and <a class="el" href="../../d3/d19/_window_decorations_8h_source.html#l00011">Techstorm::WindowDecorations::width</a>.</p>
 
 </div>
 </div>
@@ -164,7 +151,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_844f6ab5c2ae79211596f3dcdd81adb7.html">application</a></li><li class="navelem"><a class="el" href="../../dd/d39/application_2main_8cpp.html">main.cpp</a></li>
-    <li class="footer">Generated on Tue Nov 19 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Wed Nov 27 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

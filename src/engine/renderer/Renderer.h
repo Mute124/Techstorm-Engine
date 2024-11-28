@@ -6,18 +6,7 @@
 #include "GameObjectRegistry.h"
 #include "GameCamera.h"
 
-// Jolt includes
-#include <Jolt/Jolt.h>
-#include <Jolt/RegisterTypes.h>
-#include <Jolt/Core/Factory.h>
-#include <Jolt/Core/TempAllocator.h>
-#include <Jolt/Core/JobSystemThreadPool.h>
-#include <Jolt/Physics/PhysicsSettings.h>
-#include <Jolt/Physics/PhysicsSystem.h>
-#include <Jolt/Physics/Collision/Shape/BoxShape.h>
-#include <Jolt/Physics/Collision/Shape/SphereShape.h>
-#include <Jolt/Physics/Body/BodyCreationSettings.h>
-#include <Jolt/Physics/Body/BodyActivationListener.h>
+
 
 #include <raylib.h>
 
@@ -35,6 +24,12 @@ namespace Techstorm {
 		/// </summary>
 		Renderer() {
 			//initialize();
+			mCamera = GameCamera();
+			mCamera.setPosition(Vector3{ 0.0f, 2.0f, 4.0f });
+			mCamera.setTarget(Vector3{ 0.0f, 2.0f, 0.0f });
+			mCamera.setUp(Vector3{ 0.0f, 1.0f, 0.0f });
+			mCamera.setFovy(60.0f);
+			mCamera.setProjection(CAMERA_PERSPECTIVE);
 		}
 #endif
 		/// <summary>
@@ -53,6 +48,8 @@ namespace Techstorm {
 		/// </summary>
 		/// <param name="cam">The cam.</param>
 		void texture(GameCamera& cam);
+
+		void update();
 
 		/// <summary>
 		/// Draws the FBO/RenderTexture2D.
@@ -89,14 +86,14 @@ namespace Techstorm {
 		/// Cleanups this instance.
 		/// </summary>
 		void cleanup();
+		GameCamera mCamera;
 	private:
 		GameObjectRegistry mGameObjects;
 		RenderTexture2D mScreenBuffer;
 		Color mBackgroundColor = BLACK;
 		Color mFBOTint = WHITE;
-		GameCamera mCamera;
-
-
+		
+		
 #ifdef TS_RENDERER_2D
 		/// <summary>
 		/// Renders the 2d scene.

@@ -105,15 +105,12 @@ $(document).ready(function(){initNavTree('d5/dae/class_techstorm_1_1_file_system
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../dd/d59/class_techstorm_1_1_file_system_registry__inherit__graph.png" border="0" usemap="#a_techstorm_1_1_file_system_registry_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> Collaboration diagram for Techstorm::FileSystemRegistry:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../dd/df1/class_techstorm_1_1_file_system_registry__coll__graph.png" border="0" usemap="#a_techstorm_1_1_file_system_registry_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
+ <div class="center">
+  <img src="../../d5/dae/class_techstorm_1_1_file_system_registry.png" usemap="#Techstorm::FileSystemRegistry_map" alt=""/>
+  <map id="Techstorm::FileSystemRegistry_map" name="Techstorm::FileSystemRegistry_map">
+<area href="../../d5/d55/class_techstorm_1_1_singleton.html" alt="Techstorm::Singleton&lt; FileSystemRegistry &gt;" shape="rect" coords="0,0,259,24"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -125,18 +122,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2ac8483b68254784f8a1eda734916469" id="r_a2ac8483b68254784f8a1eda734916469"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="../../d2/d71/class_techstorm_1_1_file_meta.html">FileMeta</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/class_techstorm_1_1_file_system_registry.html#a2ac8483b68254784f8a1eda734916469">GetFileMeta</a> (std::string const &amp;key)</td></tr>
 <tr class="memdesc:a2ac8483b68254784f8a1eda734916469"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the file meta.  <br /></td></tr>
 <tr class="separator:a2ac8483b68254784f8a1eda734916469"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1bc9d0163f011ee4e9571d945eeac6e8" id="r_a1bc9d0163f011ee4e9571d945eeac6e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/class_techstorm_1_1_file_system_registry.html#a1bc9d0163f011ee4e9571d945eeac6e8">loadFile</a> (std::shared_ptr&lt; <a class="el" href="../../de/d03/class_techstorm_1_1_registered_file.html">RegisteredFile</a> &gt; const &amp;file)</td></tr>
-<tr class="memdesc:a1bc9d0163f011ee4e9571d945eeac6e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the file.  <br /></td></tr>
-<tr class="separator:a1bc9d0163f011ee4e9571d945eeac6e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a209acb7117bc2e1882d9ba198d99e5a5" id="r_a209acb7117bc2e1882d9ba198d99e5a5"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="../../de/d03/class_techstorm_1_1_registered_file.html">RegisteredFile</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/class_techstorm_1_1_file_system_registry.html#a209acb7117bc2e1882d9ba198d99e5a5">getFile</a> (std::string const &amp;key, bool loadIfNotLoaded=true)</td></tr>
-<tr class="memdesc:a209acb7117bc2e1882d9ba198d99e5a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the file.  <br /></td></tr>
-<tr class="separator:a209acb7117bc2e1882d9ba198d99e5a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf73c733d1de958f2f070d8d5dbbf74b" id="r_aaf73c733d1de958f2f070d8d5dbbf74b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/class_techstorm_1_1_file_system_registry.html#aaf73c733d1de958f2f070d8d5dbbf74b">addLoadFunction</a> (std::string const &amp;extension, std::function&lt; std::any(std::shared_ptr&lt; <a class="el" href="../../d2/d71/class_techstorm_1_1_file_meta.html">FileMeta</a> &gt;)&gt; const &amp;loadFunc)</td></tr>
-<tr class="memdesc:aaf73c733d1de958f2f070d8d5dbbf74b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the load function.  <br /></td></tr>
-<tr class="separator:aaf73c733d1de958f2f070d8d5dbbf74b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a507fd6fb66524f2ee0c95c8eea5fe201" id="r_a507fd6fb66524f2ee0c95c8eea5fe201"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/class_techstorm_1_1_file_system_registry.html#a507fd6fb66524f2ee0c95c8eea5fe201">addLoadOnRegisterExtension</a> (std::string const &amp;extension)</td></tr>
-<tr class="memdesc:a507fd6fb66524f2ee0c95c8eea5fe201"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the load on register extension.  <br /></td></tr>
-<tr class="separator:a507fd6fb66524f2ee0c95c8eea5fe201"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b61f3e169cc1c521aac5fda94081eee" id="r_a2b61f3e169cc1c521aac5fda94081eee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/class_techstorm_1_1_file_system_registry.html#a2b61f3e169cc1c521aac5fda94081eee">loadFile</a> (std::shared_ptr&lt; <a class="el" href="../../de/d03/class_techstorm_1_1_registered_file.html">RegisteredFile</a> &gt; file)</td></tr>
+<tr class="memdesc:a2b61f3e169cc1c521aac5fda94081eee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the file.  <br /></td></tr>
+<tr class="separator:a2b61f3e169cc1c521aac5fda94081eee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7135995b37be66401a1837b12734ca4f" id="r_a7135995b37be66401a1837b12734ca4f"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="../../de/d03/class_techstorm_1_1_registered_file.html">RegisteredFile</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/class_techstorm_1_1_file_system_registry.html#a7135995b37be66401a1837b12734ca4f">getFile</a> (std::string key, bool loadIfNotLoaded=true)</td></tr>
+<tr class="memdesc:a7135995b37be66401a1837b12734ca4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the file.  <br /></td></tr>
+<tr class="separator:a7135995b37be66401a1837b12734ca4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9710928035f7a07fb177e86a2b13e5aa" id="r_a9710928035f7a07fb177e86a2b13e5aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/class_techstorm_1_1_file_system_registry.html#a9710928035f7a07fb177e86a2b13e5aa">addLoadFunction</a> (std::string extension, std::function&lt; std::any(std::shared_ptr&lt; <a class="el" href="../../d2/d71/class_techstorm_1_1_file_meta.html">FileMeta</a> &gt;)&gt; loadFunc)</td></tr>
+<tr class="memdesc:a9710928035f7a07fb177e86a2b13e5aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the load function.  <br /></td></tr>
+<tr class="separator:a9710928035f7a07fb177e86a2b13e5aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acba34c2964cd2ea55a42fc16cc53551a" id="r_acba34c2964cd2ea55a42fc16cc53551a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dae/class_techstorm_1_1_file_system_registry.html#acba34c2964cd2ea55a42fc16cc53551a">addLoadOnRegisterExtension</a> (std::string extension)</td></tr>
+<tr class="memdesc:acba34c2964cd2ea55a42fc16cc53551a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the load on register extension.  <br /></td></tr>
+<tr class="separator:acba34c2964cd2ea55a42fc16cc53551a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -182,8 +179,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aaf73c733d1de958f2f070d8d5dbbf74b" name="aaf73c733d1de958f2f070d8d5dbbf74b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf73c733d1de958f2f070d8d5dbbf74b">&#9670;&#160;</a></span>addLoadFunction()</h2>
+<a id="a9710928035f7a07fb177e86a2b13e5aa" name="a9710928035f7a07fb177e86a2b13e5aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9710928035f7a07fb177e86a2b13e5aa">&#9670;&#160;</a></span>addLoadFunction()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,13 +191,13 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void Techstorm::FileSystemRegistry::addLoadFunction </td>
           <td>(</td>
-          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>extension</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::function&lt; std::any(std::shared_ptr&lt; <a class="el" href="../../d2/d71/class_techstorm_1_1_file_meta.html">FileMeta</a> &gt;)&gt; const &amp;&#160;</td>
+          <td class="paramtype">std::function&lt; std::any(std::shared_ptr&lt; <a class="el" href="../../d2/d71/class_techstorm_1_1_file_meta.html">FileMeta</a> &gt;)&gt;&#160;</td>
           <td class="paramname"><em>loadFunc</em>&#160;</td>
         </tr>
         <tr>
@@ -228,18 +225,11 @@ Additional Inherited Members</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="../../d2/d58/_file_system_8h_source.html#l00094">94</a> of file <a class="el" href="../../d2/d58/_file_system_8h_source.html">FileSystem.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d1/d4c/_file_system_8cpp_source.html#l00024">Techstorm::AddFileRegistryLoadFunction()</a>.</p>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../d5/dae/class_techstorm_1_1_file_system_registry_aaf73c733d1de958f2f070d8d5dbbf74b_icgraph.png" border="0" usemap="#ad5/dae/class_techstorm_1_1_file_system_registry_aaf73c733d1de958f2f070d8d5dbbf74b_icgraph" alt=""/></div>
-</div>
 
 </div>
 </div>
-<a id="a507fd6fb66524f2ee0c95c8eea5fe201" name="a507fd6fb66524f2ee0c95c8eea5fe201"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a507fd6fb66524f2ee0c95c8eea5fe201">&#9670;&#160;</a></span>addLoadOnRegisterExtension()</h2>
+<a id="acba34c2964cd2ea55a42fc16cc53551a" name="acba34c2964cd2ea55a42fc16cc53551a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acba34c2964cd2ea55a42fc16cc53551a">&#9670;&#160;</a></span>addLoadOnRegisterExtension()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -250,7 +240,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void Techstorm::FileSystemRegistry::addLoadOnRegisterExtension </td>
           <td>(</td>
-          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>extension</em></td><td>)</td>
           <td></td>
         </tr>
@@ -273,18 +263,11 @@ Additional Inherited Members</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="../../d2/d58/_file_system_8h_source.html#l00100">100</a> of file <a class="el" href="../../d2/d58/_file_system_8h_source.html">FileSystem.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d1/d4c/_file_system_8cpp_source.html#l00029">Techstorm::AddFileRegistryLoadOnRegisterExtension()</a>.</p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../d5/dae/class_techstorm_1_1_file_system_registry_a507fd6fb66524f2ee0c95c8eea5fe201_icgraph.png" border="0" usemap="#ad5/dae/class_techstorm_1_1_file_system_registry_a507fd6fb66524f2ee0c95c8eea5fe201_icgraph" alt=""/></div>
-</div>
 
 </div>
 </div>
-<a id="a209acb7117bc2e1882d9ba198d99e5a5" name="a209acb7117bc2e1882d9ba198d99e5a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a209acb7117bc2e1882d9ba198d99e5a5">&#9670;&#160;</a></span>getFile()</h2>
+<a id="a7135995b37be66401a1837b12734ca4f" name="a7135995b37be66401a1837b12734ca4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7135995b37be66401a1837b12734ca4f">&#9670;&#160;</a></span>getFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -295,7 +278,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">std::shared_ptr&lt; <a class="el" href="../../de/d03/class_techstorm_1_1_registered_file.html">RegisteredFile</a> &gt; Techstorm::FileSystemRegistry::getFile </td>
           <td>(</td>
-          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>key</em>, </td>
         </tr>
         <tr>
@@ -331,21 +314,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../d2/d58/_file_system_8h_source.html#l00064">loadFile()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d1/d4c/_file_system_8cpp_source.html#l00039">Techstorm::GetFile()</a>, and <a class="el" href="../../dd/d39/application_2main_8cpp_source.html#l00010">main()</a>.</p>
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../d5/dae/class_techstorm_1_1_file_system_registry_a209acb7117bc2e1882d9ba198d99e5a5_cgraph.png" border="0" usemap="#ad5/dae/class_techstorm_1_1_file_system_registry_a209acb7117bc2e1882d9ba198d99e5a5_cgraph" alt=""/></div>
-</div>
-<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../d5/dae/class_techstorm_1_1_file_system_registry_a209acb7117bc2e1882d9ba198d99e5a5_icgraph.png" border="0" usemap="#ad5/dae/class_techstorm_1_1_file_system_registry_a209acb7117bc2e1882d9ba198d99e5a5_icgraph" alt=""/></div>
-</div>
+<p class="reference">Referenced by <a class="el" href="../../d1/d4c/_file_system_8cpp_source.html#l00039">Techstorm::GetFile()</a>.</p>
 
 </div>
 </div>
@@ -377,13 +346,6 @@ Additional Inherited Members</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="../../d1/d4c/_file_system_8cpp_source.html#l00080">80</a> of file <a class="el" href="../../d1/d4c/_file_system_8cpp_source.html">FileSystem.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d1/d4c/_file_system_8cpp_source.html#l00034">Techstorm::GetFileMeta()</a>.</p>
-<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../d5/dae/class_techstorm_1_1_file_system_registry_a2ac8483b68254784f8a1eda734916469_icgraph.png" border="0" usemap="#ad5/dae/class_techstorm_1_1_file_system_registry_a2ac8483b68254784f8a1eda734916469_icgraph" alt=""/></div>
-</div>
 
 </div>
 </div>
@@ -416,25 +378,11 @@ Additional Inherited Members</h2></td></tr>
 <p class="reference">References <a class="el" href="../../d2/d58/_file_system_8h_source.html#l00020">Techstorm::FileMeta::extension</a>, <a class="el" href="../../d2/d58/_file_system_8h_source.html#l00022">Techstorm::FileMeta::filename</a>, <a class="el" href="../../d2/d58/_file_system_8h_source.html#l00064">loadFile()</a>, and <a class="el" href="../../d2/d58/_file_system_8h_source.html#l00021">Techstorm::FileMeta::path</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d1/d4c/_file_system_8cpp_source.html#l00019">Techstorm::InitializeFileRegistry()</a>.</p>
-<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="../../closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../d5/dae/class_techstorm_1_1_file_system_registry_ac6438ed0f0f712b28c51182a2442201f_cgraph.png" border="0" usemap="#ad5/dae/class_techstorm_1_1_file_system_registry_ac6438ed0f0f712b28c51182a2442201f_cgraph" alt=""/></div>
-</div>
-<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../d5/dae/class_techstorm_1_1_file_system_registry_ac6438ed0f0f712b28c51182a2442201f_icgraph.png" border="0" usemap="#ad5/dae/class_techstorm_1_1_file_system_registry_ac6438ed0f0f712b28c51182a2442201f_icgraph" alt=""/></div>
-</div>
 
 </div>
 </div>
-<a id="a1bc9d0163f011ee4e9571d945eeac6e8" name="a1bc9d0163f011ee4e9571d945eeac6e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1bc9d0163f011ee4e9571d945eeac6e8">&#9670;&#160;</a></span>loadFile()</h2>
+<a id="a2b61f3e169cc1c521aac5fda94081eee" name="a2b61f3e169cc1c521aac5fda94081eee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b61f3e169cc1c521aac5fda94081eee">&#9670;&#160;</a></span>loadFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -445,7 +393,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void Techstorm::FileSystemRegistry::loadFile </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="../../de/d03/class_techstorm_1_1_registered_file.html">RegisteredFile</a> &gt; const &amp;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="../../de/d03/class_techstorm_1_1_registered_file.html">RegisteredFile</a> &gt;&#160;</td>
           <td class="paramname"><em>file</em></td><td>)</td>
           <td></td>
         </tr>
@@ -468,13 +416,6 @@ Additional Inherited Members</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="../../d2/d58/_file_system_8h_source.html#l00064">64</a> of file <a class="el" href="../../d2/d58/_file_system_8h_source.html">FileSystem.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d2/d58/_file_system_8h_source.html#l00080">getFile()</a>, and <a class="el" href="../../d1/d4c/_file_system_8cpp_source.html#l00044">init()</a>.</p>
-<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="../../closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="../../d5/dae/class_techstorm_1_1_file_system_registry_a1bc9d0163f011ee4e9571d945eeac6e8_icgraph.png" border="0" usemap="#ad5/dae/class_techstorm_1_1_file_system_registry_a1bc9d0163f011ee4e9571d945eeac6e8_icgraph" alt=""/></div>
-</div>
 
 </div>
 </div>
@@ -513,7 +454,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/d26/namespace_techstorm.html">Techstorm</a></li><li class="navelem"><a class="el" href="../../d5/dae/class_techstorm_1_1_file_system_registry.html">FileSystemRegistry</a></li>
-    <li class="footer">Generated on Tue Nov 19 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Wed Nov 27 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

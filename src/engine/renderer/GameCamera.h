@@ -11,6 +11,8 @@ namespace Techstorm {
 	public:
 		GameCamera() {
 			init();
+
+
 		}
 		
 		/// <summary>
@@ -79,6 +81,9 @@ namespace Techstorm {
 		/// <returns></returns>
 		int getProjection() const;
 		
+		static inline GameCamera* GetMainCamera() { return GameCamera::sMainCamera; }
+
+
 		/// <summary>
 		/// Sets the camera data.
 		/// </summary>
@@ -130,13 +135,15 @@ namespace Techstorm {
 		bool isMainCamera() const { return mIsMainCamera; }
 
 		bool operator==(const GameCamera& other) const = default;
+
+		Camera3D mCameraData = { 0 };
 	private:
 		static inline uint16_t sCameraCount = 0;
 		static inline std::unordered_map<uint16_t, GameCamera*> sCameras;
 		static inline GameCamera* sMainCamera = nullptr;
 		uint16_t mCameraID = 0;
 
-		Camera3D mCameraData;
+
 		bool mIsMainCamera = false;
 
 
@@ -144,9 +151,5 @@ namespace Techstorm {
 		static inline void ComplexCameraUpdate(GameCamera const& cam) {}
 
 		friend class Renderer; /// \ref Renderer
-
-		
-
-
 	};
 }

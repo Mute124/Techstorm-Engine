@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['inputdispatcher_0',['InputDispatcher',['../d7/d74/class_techstorm_1_1_input_dispatcher.html',1,'Techstorm']]]
+  ['inputaction_0',['InputAction',['../d9/d02/class_techstorm_1_1_input_action.html',1,'Techstorm']]],
+  ['inputregistry_1',['InputRegistry',['../dc/d16/class_techstorm_1_1_input_registry.html',1,'Techstorm']]]
 ];

@@ -1,22 +1,67 @@
 \doxysection{C\+:/\+Dev/\+Techstorm-\/v5/src/engine/input/\+Input.h File Reference}
 \hypertarget{_input_8h}{}\label{_input_8h}\index{C:/Dev/Techstorm-\/v5/src/engine/input/Input.h@{C:/Dev/Techstorm-\/v5/src/engine/input/Input.h}}
-{\ttfamily \#include $<$eventpp/eventdispatcher.\+h$>$}\newline
-Include dependency graph for Input.\+h\+:
-% FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$optional$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include "{}../utils/\+Singleton.\+h"{}}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{class_techstorm_1_1_input_dispatcher}{Techstorm\+::\+Input\+Dispatcher}}
-\end{DoxyCompactItemize}
+class \mbox{\hyperlink{class_techstorm_1_1_input_action}{Techstorm\+::\+Input\+Action}}
+\begin{DoxyCompactList}\small\item\em Serves as a search key/input category for the input system. {\bfseries{Please pay attention when using this because any slight change in \doxylink{class_techstorm_1_1_input_action}{Input\+Action} keys will give you entirely different input results.}} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_techstorm_1_1_input_registry}{Techstorm\+::\+Input\+Registry}}
+\begin{DoxyCompactList}\small\item\em The input registry is used to register Input\+Actions (\doxylink{class_techstorm_1_1_input_action}{Input\+Action}) and their callbacks. Remember that this is a singleton, so you may use this statically. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespace_techstorm}{Techstorm}}
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Typedefs}
+\doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-using \mbox{\hyperlink{namespace_techstorm_a108468b55acfc7ab86572b8565488ad3}{Techstorm\+::\+Input\+Events}} = eventpp\+::\+Event\+Dispatcher$<$ int, void()$>$
+\#define \mbox{\hyperlink{_input_8h_a1890f37b6ab2bb002b462b309b8987cc}{TS\+\_\+\+ENABLE\+\_\+\+CONTROLLER\+\_\+\+SUPPORT}}
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespace_techstorm_a7ecb9dba2f9073f147a682772c49885d}{Techstorm\+::\+EInput\+Type}} \{ \mbox{\hyperlink{namespace_techstorm_a7ecb9dba2f9073f147a682772c49885dadb96d0096c7139c5ee3fd155a357fb77}{Techstorm\+::\+INPUT\+\_\+\+KEYBOARD}}
+, \mbox{\hyperlink{namespace_techstorm_a7ecb9dba2f9073f147a682772c49885dab569600ed95905ffd61f59ba74ca35ec}{Techstorm\+::\+INPUT\+\_\+\+MOUSE}}
+, \mbox{\hyperlink{namespace_techstorm_a7ecb9dba2f9073f147a682772c49885dae7bb3cb1d97b054348b144a429fa1b6e}{Techstorm\+::\+INPUT\+\_\+\+CONTROLLER}}
+ \}
+\begin{DoxyCompactList}\small\item\em The enumeration for the different input device categories. This is here because the input system is going to be expanded in the future and it will be useful to maintaining developer sanity. \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{namespace_techstorm_a3289ce49929ae6003fcbc78c954af69d}{Techstorm\+::\+EInput\+Trigger}} \{ \newline
+\mbox{\hyperlink{namespace_techstorm_a3289ce49929ae6003fcbc78c954af69da4d4d492eccd5ffa943f9c7278c171995}{Techstorm\+::\+INPUT\+\_\+\+TRIGGER\+\_\+\+PRESSED}}
+, \mbox{\hyperlink{namespace_techstorm_a3289ce49929ae6003fcbc78c954af69da6ef288157def0b4b0a97c80e805156c7}{Techstorm\+::\+INPUT\+\_\+\+TRIGGER\+\_\+\+RELEASED}}
+, \mbox{\hyperlink{namespace_techstorm_a3289ce49929ae6003fcbc78c954af69da1564a8c76f7b4fc7cd4956fedb29723b}{Techstorm\+::\+INPUT\+\_\+\+TRIGGER\+\_\+\+DOWN}}
+, \mbox{\hyperlink{namespace_techstorm_a3289ce49929ae6003fcbc78c954af69daf80f7288e88dab43dc40c1292831e1ae}{Techstorm\+::\+INPUT\+\_\+\+TRIGGER\+\_\+\+UP}}
+, \newline
+\mbox{\hyperlink{namespace_techstorm_a3289ce49929ae6003fcbc78c954af69daecbcb28c1bd554fb19fe98a5c74aaf23}{Techstorm\+::\+INPUT\+\_\+\+TRIGGER\+\_\+\+REPEAT}}
+ \}
+\begin{DoxyCompactList}\small\item\em What sort of action should trigger the Input\+Action? {\bfseries{Please pay attention when using this because any slight change in Input\+Action keys will give you entirely different input results.}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_techstorm_1_1_input_registry}{Input\+Registry}} \& \mbox{\hyperlink{namespace_techstorm_a1bcf30a4f9fdd5660bb8dc8d0bdd90d8}{Techstorm\+::\+Get\+Input\+Registry}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current instance of the \doxylink{class_techstorm_1_1_input_registry}{Input\+Registry} singleton \doxylink{class_techstorm_1_1_input_registry}{Input\+Registry}. This is a quality of life function, and calling it like other singletons is perfectly okay. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespace_techstorm_ab3125a1b1ffec2b381e3647a1bcf4e5d}{Techstorm\+::\+Register\+Action\+Callback}} (\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*}action, std\+::function$<$ void(\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*})$>$ const \&callback)
+\begin{DoxyCompactList}\small\item\em Registers a callback by using the provided action (\doxylink{class_techstorm_1_1_input_action}{Input\+Action}) and the callback parameter values. This works as a key-\/value pair, where the key is the action and the value is the callback. This works the same way as the Register\+Action\+Callback function (\doxylink{class_techstorm_1_1_input_registry_a0d156b86669ec14db159f658b8ca6891}{Input\+Registry\+::register\+Action\+Callback}), but it registers the callback in the current input registry (\doxylink{class_techstorm_1_1_input_registry}{Input\+Registry}). This is simply a quality of life function, and calling it like other singletons is perfectly okay. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_techstorm_ab0c43a65dc477ec3c9572b9f3a1487a4}{Techstorm\+::\+Unregister\+Action}} (\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*}action)
+\begin{DoxyCompactList}\small\item\em Unregisters ALL callbacks for the provided \doxylink{class_techstorm_1_1_input_action}{Input\+Action}; action (\doxylink{class_techstorm_1_1_input_action}{Input\+Action}), and unregisters it from the current input registry (\doxylink{class_techstorm_1_1_input_registry}{Input\+Registry}). This is simply a quality of life function, and calling it like other singletons is perfectly okay. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_techstorm_ab0e349acbbd3184937cf23323ad96f5c}{Techstorm\+::\+Unregister\+Callback}} (\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*}action, int id)
+\begin{DoxyCompactList}\small\item\em Unregisters a specific callback, denoted by id, for the provided \doxylink{class_techstorm_1_1_input_action}{Input\+Action}; action (\doxylink{class_techstorm_1_1_input_action}{Input\+Action}). This is simply a quality of life function, and calling it like other singletons is perfectly okay. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_input_8h_a1890f37b6ab2bb002b462b309b8987cc}\label{_input_8h_a1890f37b6ab2bb002b462b309b8987cc} 
+\index{Input.h@{Input.h}!TS\_ENABLE\_CONTROLLER\_SUPPORT@{TS\_ENABLE\_CONTROLLER\_SUPPORT}}
+\index{TS\_ENABLE\_CONTROLLER\_SUPPORT@{TS\_ENABLE\_CONTROLLER\_SUPPORT}!Input.h@{Input.h}}
+\doxysubsubsection{\texorpdfstring{TS\_ENABLE\_CONTROLLER\_SUPPORT}{TS\_ENABLE\_CONTROLLER\_SUPPORT}}
+{\footnotesize\ttfamily \#define TS\+\_\+\+ENABLE\+\_\+\+CONTROLLER\+\_\+\+SUPPORT}
+
+
+
+Definition at line \mbox{\hyperlink{_input_8h_source_l00010}{10}} of file \mbox{\hyperlink{_input_8h_source}{Input.\+h}}.
+

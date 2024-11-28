@@ -10,17 +10,15 @@
 /// See <see cref="Techstorm::IProject" /> for more information on this.
 /// </summary>
 /// <inheritdoc />
-class Project : public Techstorm::IProject {
+class Project final : public Techstorm::IProject {
 public:
 
-	Project() : IProject() {}
+	using IProject::IProject;
 
 	void preInit() override {
 		// WARNING: This MUST be called before any operations that use the file registry. The only exceptions is if you are adding load functions and adding extensions
 		// that need to be loaded on registration.
 		IProject::preInit();
 
-		this->mLuaLibraries.push_back(sol::lib::base);
 	}
-
 };

@@ -6,7 +6,8 @@ WindowDecorations& Techstorm::IProject::getWindowDecorations() { return mWindowD
 void Techstorm::IProject::setWindowDecorations(WindowDecorations& windowDecorations) { mWindowDecorations = windowDecorations; }
 
 void Techstorm::IProject::init(int argc, char* argv[]) {
-	//std::cout << "Thread ID for IProject init" << std::this_thread::get_id() << std::endl;
+	auto resources = AllocatedPhysicsResources();
+	PhysicsEngine::Instance().init(resources);
 }
 
 void Techstorm::IProject::postInit() {}
@@ -15,13 +16,18 @@ void Techstorm::IProject::initRenderer() {
 }
 
 int Techstorm::IProject::run(int argc, char* argv[]) {
-	std::cout << "Thread ID for IProject run: " << std::this_thread::get_id() << "" << std::endl;
 	return 0;
 }
-
+int Techstorm::IProject::update()
+{
+	return 0;
+}
 int Techstorm::IProject::prePhysicsUpdate() { return 0; }
 
-int Techstorm::IProject::physicsUpdate() { return 0; }
+int Techstorm::IProject::physicsUpdate() {
+	PhysicsEngine::Instance().update(1.0f / 60.0f);
+	return 0; 
+}
 
 int Techstorm::IProject::postPhysicsUpdate() { return 0; }
 
@@ -33,7 +39,10 @@ int Techstorm::IProject::postObjectUpdate() { return 0; }
 
 int Techstorm::IProject::texture() { return 0; }
 
-int Techstorm::IProject::render() { return 0; }
+int Techstorm::IProject::render() { 
+	
+	return 0;
+}
 
 int Techstorm::IProject::cleanup(int exitCode) { return exitCode; }
 

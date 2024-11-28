@@ -9,13 +9,8 @@
 {\ttfamily \#include $<$unordered\+\_\+set$>$}\newline
 {\ttfamily \#include $<$any$>$}\newline
 {\ttfamily \#include $<$functional$>$}\newline
-{\ttfamily \#include $<$raylib.\+h$>$}\newline
 {\ttfamily \#include "{}../utils/\+Singleton.\+h"{}}\newline
 {\ttfamily \#include "{}libconfig.\+h++"{}}\newline
-Include dependency graph for File\+System.\+h\+:
-% FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -44,11 +39,11 @@ bool \mbox{\hyperlink{namespace_techstorm_ad005d326f9ccbbbf9be01f11f98f049d}{Tec
 \item 
 void \mbox{\hyperlink{namespace_techstorm_a0cdf258db7319603e2c5e39a8b18726e}{Techstorm\+::\+Initialize\+File\+Registry}} (const char \texorpdfstring{$\ast$}{*}root\+Path)
 \item 
-void \mbox{\hyperlink{namespace_techstorm_a1e91c0559ca9e21d2d7db69bb10c5844}{Techstorm\+::\+Add\+File\+Registry\+Load\+Function}} (std\+::string const \&extension, std\+::function$<$ std\+::any(std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_techstorm_1_1_file_meta}{File\+Meta}} $>$)$>$ const \&load\+Func)
+void \mbox{\hyperlink{namespace_techstorm_a5f058c32f71198b022da348a2f6b0c32}{Techstorm\+::\+Add\+File\+Registry\+Load\+Function}} (std\+::string extension, std\+::function$<$ std\+::any(std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_techstorm_1_1_file_meta}{File\+Meta}} $>$)$>$ load\+Func)
 \item 
 void \mbox{\hyperlink{namespace_techstorm_ab3076a5eb2869c3af24c30bcc02e13a4}{Techstorm\+::\+Add\+File\+Registry\+Load\+On\+Register\+Extension}} (std\+::string const \&extension)
 \item 
-std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_techstorm_1_1_file_meta}{File\+Meta}} $>$ \mbox{\hyperlink{namespace_techstorm_a4b55d1ec56e9102233008fef6024666b}{Techstorm\+::\+Get\+File\+Meta}} (std\+::string const \&key)
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_techstorm_1_1_file_meta}{File\+Meta}} $>$ \mbox{\hyperlink{namespace_techstorm_a8a157d5171adea6ca1020c5a15d9a142}{Techstorm\+::\+Get\+File\+Meta}} (std\+::string key)
 \item 
-std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_techstorm_1_1_registered_file}{Registered\+File}} $>$ \mbox{\hyperlink{namespace_techstorm_aaf6125c10046d7d70355aec49eb87e8a}{Techstorm\+::\+Get\+File}} (std\+::string const \&key, bool load\+If\+Not\+Loaded=true)
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_techstorm_1_1_registered_file}{Registered\+File}} $>$ \mbox{\hyperlink{namespace_techstorm_a05f20a9725a9462dc9d707c5d44766fb}{Techstorm\+::\+Get\+File}} (std\+::string key, bool load\+If\+Not\+Loaded=true)
 \end{DoxyCompactItemize}

@@ -1,15 +1,26 @@
 #include "Physics.h"
+#include <thread>
+#include <Jolt/Core/Core.h>
+#include <Jolt/Core/Factory.h>
+#include <Jolt/Core/IssueReporting.h>
+#include <Jolt/Core/JobSystemThreadPool.h>
+#include <Jolt/Core/Memory.h>
+#include <Jolt/Core/TempAllocator.h>
+#include <Jolt/Physics/Body/BodyInterface.h>
+#include <Jolt/Physics/PhysicsSettings.h>
+#include <Jolt/Physics/PhysicsSystem.h>
+#include <Jolt/RegisterTypes.h>
 
-inline Techstorm::AllocatedPhysicsResources::AllocatedPhysicsResources() {}
+  Techstorm::AllocatedPhysicsResources::AllocatedPhysicsResources() {}
 
-inline Techstorm::AllocatedPhysicsResources::AllocatedPhysicsResources(AllocatedPhysicsResources const& resources) : cMaxBodies(resources.cMaxBodies), cNumBodyMutexes(resources.cNumBodyMutexes), cMaxBodyPairs(resources.cMaxBodyPairs), cMaxContactConstraints(resources.cMaxContactConstraints) {}
+  Techstorm::AllocatedPhysicsResources::AllocatedPhysicsResources(AllocatedPhysicsResources const& resources) : cMaxBodies(resources.cMaxBodies), cNumBodyMutexes(resources.cNumBodyMutexes), cMaxBodyPairs(resources.cMaxBodyPairs), cMaxContactConstraints(resources.cMaxContactConstraints) {}
 
-inline Techstorm::AllocatedPhysicsResources::AllocatedPhysicsResources(const JPH::uint& cMaxBodies, const JPH::uint& cNumBodyMutexes, const JPH::uint& cMaxBodyPairs, const JPH::uint& cMaxContactConstraints)
+  Techstorm::AllocatedPhysicsResources::AllocatedPhysicsResources(const JPH::uint& cMaxBodies, const JPH::uint& cNumBodyMutexes, const JPH::uint& cMaxBodyPairs, const JPH::uint& cMaxContactConstraints)
 	: cMaxBodies(cMaxBodies), cNumBodyMutexes(cNumBodyMutexes), cMaxBodyPairs(cMaxBodyPairs), cMaxContactConstraints(cMaxContactConstraints)
 {
 }
 
-inline void Techstorm::PhysicsEngine::init(const AllocatedPhysicsResources resources) {
+  void Techstorm::PhysicsEngine::init(const AllocatedPhysicsResources resources) {
 	if (!mIsInitialized) {
 		mResources = resources;
 		JPH::RegisterDefaultAllocator();
@@ -47,16 +58,16 @@ inline void Techstorm::PhysicsEngine::init(const AllocatedPhysicsResources resou
 	}
 }
 
-inline void Techstorm::PhysicsEngine::update(const float cDeltaTime) {
+  void Techstorm::PhysicsEngine::update(const float cDeltaTime) {
 	mPhysicsSystem->Update(cDeltaTime, mCollisionSteps, 4, mTempAllocator, mJobSystemThreadPool);
 }
 
-inline void Techstorm::PhysicsEngine::optimizeBroadPhase() {
+  void Techstorm::PhysicsEngine::optimizeBroadPhase() {
 	mPhysicsSystem->OptimizeBroadPhase();
 }
 
-inline JPH::BodyInterface& Techstorm::PhysicsEngine::getBodyInterface() const { return mBodyInterfaceHolder->bodyInterface; }
+  JPH::BodyInterface& Techstorm::PhysicsEngine::getBodyInterface() const { return mBodyInterfaceHolder->bodyInterface; }
 
-inline Techstorm::PhysicsEngine::BodyInterfaceHolder::BodyInterfaceHolder(JPH::BodyInterface& bodyInterface) : bodyInterface(bodyInterface) {}
+  Techstorm::PhysicsEngine::BodyInterfaceHolder::BodyInterfaceHolder(JPH::BodyInterface& bodyInterface) : bodyInterface(bodyInterface) {}
 
-inline Techstorm::PhysicsEngine::BodyInterfaceHolder::~BodyInterfaceHolder() {}
+  Techstorm::PhysicsEngine::BodyInterfaceHolder::~BodyInterfaceHolder() {}

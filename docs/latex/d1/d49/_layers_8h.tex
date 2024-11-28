@@ -1,12 +1,23 @@
 \doxysection{C\+:/\+Dev/\+Techstorm-\/v5/src/engine/physics/\+Layers.h File Reference}
 \hypertarget{_layers_8h}{}\label{_layers_8h}\index{C:/Dev/Techstorm-\/v5/src/engine/physics/Layers.h@{C:/Dev/Techstorm-\/v5/src/engine/physics/Layers.h}}
-{\ttfamily \#include "{}../utils/\+Singleton.\+h"{}}\newline
-Include dependency graph for Layers.\+h\+:
-% FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
+{\ttfamily \#include $<$Jolt/\+Jolt.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Collision/\+Object\+Layer.\+h$>$}\newline
+{\ttfamily \#include $<$Jolt/\+Physics/\+Collision/\+Broad\+Phase/\+Broad\+Phase\+Layer.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_object_layer_pair_filter_impl}{Techstorm\+::\+Object\+Layer\+Pair\+Filter\+Impl}}
+\begin{DoxyCompactList}\small\item\em Class that determines if two object layers can collide. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_techstorm_1_1_b_p_layer_interface_impl}{Techstorm\+::\+BPLayer\+Interface\+Impl}}
+\item 
+class \mbox{\hyperlink{class_techstorm_1_1_object_vs_broad_phase_layer_filter_impl}{Techstorm\+::\+Object\+Vs\+Broad\+Phase\+Layer\+Filter\+Impl}}
+\begin{DoxyCompactList}\small\item\em Class that determines if an object layer can collide with a broadphase layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespace_techstorm}{Techstorm}}
+\item 
+namespace \mbox{\hyperlink{namespace_techstorm_1_1_layers}{Techstorm\+::\+Layers}}
+\item 
+namespace \mbox{\hyperlink{namespace_techstorm_1_1_broad_phase_layers}{Techstorm\+::\+Broad\+Phase\+Layers}}
 \end{DoxyCompactItemize}
