@@ -94,7 +94,6 @@ $(document).ready(function(){initNavTree('d1/d87/class_techstorm_1_1_physics_eng
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="../../d2/dcb/class_techstorm_1_1_physics_engine-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Techstorm::PhysicsEngine Class Reference</div></div>
 </div><!--header-->
@@ -118,18 +117,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4757d1aab3c0880944b7c227b03a2343" id="r_a4757d1aab3c0880944b7c227b03a2343"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d87/class_techstorm_1_1_physics_engine.html#a4757d1aab3c0880944b7c227b03a2343">PhysicsEngine</a> ()=default</td></tr>
 <tr class="separator:a4757d1aab3c0880944b7c227b03a2343"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabfa54a376c35880bd8a669391d22444" id="r_aabfa54a376c35880bd8a669391d22444"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d87/class_techstorm_1_1_physics_engine.html#aabfa54a376c35880bd8a669391d22444">init</a> (const <a class="el" href="../../d5/d91/struct_techstorm_1_1_allocated_physics_resources.html">AllocatedPhysicsResources</a> resources)</td></tr>
+<tr class="memdesc:aabfa54a376c35880bd8a669391d22444"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the physics engine with the resources (<a class="el" href="../../d5/d91/struct_techstorm_1_1_allocated_physics_resources.html">AllocatedPhysicsResources</a>). The reason for the struct is to keep things organized and have as little parameter hell as possible.  <br /></td></tr>
 <tr class="separator:aabfa54a376c35880bd8a669391d22444"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c36ce16ce3b0908e8d04ddece7c2914" id="r_a2c36ce16ce3b0908e8d04ddece7c2914"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d87/class_techstorm_1_1_physics_engine.html#a2c36ce16ce3b0908e8d04ddece7c2914">update</a> (const float cDeltaTime)</td></tr>
+<tr class="memdesc:a2c36ce16ce3b0908e8d04ddece7c2914"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the physics engine.  <br /></td></tr>
 <tr class="separator:a2c36ce16ce3b0908e8d04ddece7c2914"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab07cd90671d6b23946949f920839b6ec" id="r_ab07cd90671d6b23946949f920839b6ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d87/class_techstorm_1_1_physics_engine.html#ab07cd90671d6b23946949f920839b6ec">optimizeBroadPhase</a> ()</td></tr>
+<tr class="memdesc:ab07cd90671d6b23946949f920839b6ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimizes the broad phase. This is simply a wrapper for Jolt's JPH::PhysicsSystem::OptimizeBroadPhase function, but it is provided here for convenience. Please note that this should NOT be called often because it is expensive, so only run it after adding alot of physics objects. Even then, calling this only once is usually enough.  <br /></td></tr>
 <tr class="separator:ab07cd90671d6b23946949f920839b6ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f834f634f5d057bde3ba4cb5d98001a" id="r_a9f834f634f5d057bde3ba4cb5d98001a"><td class="memItemLeft" align="right" valign="top">JPH::BodyInterface &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d87/class_techstorm_1_1_physics_engine.html#a9f834f634f5d057bde3ba4cb5d98001a">getBodyInterface</a> () const</td></tr>
+<tr class="memdesc:a9f834f634f5d057bde3ba4cb5d98001a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the body interface by returning the internal body interface reference (BodyInterfaceHolder). Use this if you need a reference to the body interface to add bodies or something else.  <br /></td></tr>
 <tr class="separator:a9f834f634f5d057bde3ba4cb5d98001a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a59d5b0beac4b1d88778946093fd000f1" id="r_a59d5b0beac4b1d88778946093fd000f1"><td class="memItemLeft" align="right" valign="top">JPH::PhysicsSystem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d87/class_techstorm_1_1_physics_engine.html#a59d5b0beac4b1d88778946093fd000f1">mPhysicsSystem</a> = nullptr</td></tr>
-<tr class="separator:a59d5b0beac4b1d88778946093fd000f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -140,7 +138,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d8/d65/_physics_8h_source.html#l00072">72</a> of file <a class="el" href="../../d8/d65/_physics_8h_source.html">Physics.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d65/_physics_8h_source.html#l00087">87</a> of file <a class="el" href="../../d8/d65/_physics_8h_source.html">Physics.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4757d1aab3c0880944b7c227b03a2343" name="a4757d1aab3c0880944b7c227b03a2343"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4757d1aab3c0880944b7c227b03a2343">&#9670;&#160;</a></span>PhysicsEngine()</h2>
@@ -173,9 +171,6 @@ Additional Inherited Members</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">JPH::BodyInterface &amp; PhysicsEngine::getBodyInterface </td>
@@ -184,14 +179,12 @@ Additional Inherited Members</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d6a/_physics_8cpp_source.html#l00058">58</a> of file <a class="el" href="../../d8/d6a/_physics_8cpp_source.html">Physics.cpp</a>.</p>
+<p>Gets the body interface by returning the internal body interface reference (BodyInterfaceHolder). Use this if you need a reference to the body interface to add bodies or something else. </p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the body interface</dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d6a/_physics_8cpp_source.html#l00069">69</a> of file <a class="el" href="../../d8/d6a/_physics_8cpp_source.html">Physics.cpp</a>.</p>
 
 </div>
 </div>
@@ -200,9 +193,6 @@ Additional Inherited Members</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void PhysicsEngine::init </td>
@@ -212,16 +202,19 @@ Additional Inherited Members</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d6a/_physics_8cpp_source.html#l00012">12</a> of file <a class="el" href="../../d8/d6a/_physics_8cpp_source.html">Physics.cpp</a>.</p>
+<p>Initializes the physics engine with the resources (<a class="el" href="../../d5/d91/struct_techstorm_1_1_allocated_physics_resources.html">AllocatedPhysicsResources</a>). The reason for the struct is to keep things organized and have as little parameter hell as possible. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resources</td><td>The resources.</td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="reference">References <a class="el" href="../../d8/d65/_physics_8h_source.html#l00059">Techstorm::AllocatedPhysicsResources::cMaxBodies</a>, <a class="el" href="../../d8/d65/_physics_8h_source.html#l00061">Techstorm::AllocatedPhysicsResources::cMaxBodyPairs</a>, <a class="el" href="../../d8/d65/_physics_8h_source.html#l00062">Techstorm::AllocatedPhysicsResources::cMaxContactConstraints</a>, and <a class="el" href="../../d8/d65/_physics_8h_source.html#l00060">Techstorm::AllocatedPhysicsResources::cNumBodyMutexes</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d6a/_physics_8cpp_source.html#l00023">23</a> of file <a class="el" href="../../d8/d6a/_physics_8cpp_source.html">Physics.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d8/d65/_physics_8h_source.html#l00074">Techstorm::AllocatedPhysicsResources::cMaxBodies</a>, <a class="el" href="../../d8/d65/_physics_8h_source.html#l00076">Techstorm::AllocatedPhysicsResources::cMaxBodyPairs</a>, <a class="el" href="../../d8/d65/_physics_8h_source.html#l00077">Techstorm::AllocatedPhysicsResources::cMaxContactConstraints</a>, and <a class="el" href="../../d8/d65/_physics_8h_source.html#l00075">Techstorm::AllocatedPhysicsResources::cNumBodyMutexes</a>.</p>
 
 </div>
 </div>
@@ -230,9 +223,6 @@ Additional Inherited Members</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void PhysicsEngine::optimizeBroadPhase </td>
@@ -241,14 +231,11 @@ Additional Inherited Members</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d6a/_physics_8cpp_source.html#l00054">54</a> of file <a class="el" href="../../d8/d6a/_physics_8cpp_source.html">Physics.cpp</a>.</p>
+<p>Optimizes the broad phase. This is simply a wrapper for Jolt's JPH::PhysicsSystem::OptimizeBroadPhase function, but it is provided here for convenience. Please note that this should NOT be called often because it is expensive, so only run it after adding alot of physics objects. Even then, calling this only once is usually enough. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d6a/_physics_8cpp_source.html#l00065">65</a> of file <a class="el" href="../../d8/d6a/_physics_8cpp_source.html">Physics.cpp</a>.</p>
 
 </div>
 </div>
@@ -257,9 +244,6 @@ Additional Inherited Members</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void PhysicsEngine::update </td>
@@ -269,33 +253,18 @@ Additional Inherited Members</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d6a/_physics_8cpp_source.html#l00050">50</a> of file <a class="el" href="../../d8/d6a/_physics_8cpp_source.html">Physics.cpp</a>.</p>
+<p>Updates the physics engine. </p>
+<dl class="section note"><dt>Note</dt><dd>The delta time is used for Jolt's JPH::PhysicsSystem::Update function and is in seconds. This function is already handled internally (assuming you are using the default systems). If you need to update the physics engine yourself, you can do that</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cDeltaTime</td><td>A delta time constant that will be passed to Jolt's JPH::PhysicsSystem::Update function.</td></tr>
+  </table>
+  </dd>
+</dl>
 
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a59d5b0beac4b1d88778946093fd000f1" name="a59d5b0beac4b1d88778946093fd000f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a59d5b0beac4b1d88778946093fd000f1">&#9670;&#160;</a></span>mPhysicsSystem</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">JPH::PhysicsSystem* Techstorm::PhysicsEngine::mPhysicsSystem = nullptr</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d8/d65/_physics_8h_source.html#l00083">83</a> of file <a class="el" href="../../d8/d65/_physics_8h_source.html">Physics.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d5/d8c/_physics_prototype_8h_source.html#l00378">GetPhysicsSystem()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d6a/_physics_8cpp_source.html#l00061">61</a> of file <a class="el" href="../../d8/d6a/_physics_8cpp_source.html">Physics.cpp</a>.</p>
 
 </div>
 </div>
@@ -309,7 +278,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/d26/namespace_techstorm.html">Techstorm</a></li><li class="navelem"><a class="el" href="../../d1/d87/class_techstorm_1_1_physics_engine.html">PhysicsEngine</a></li>
-    <li class="footer">Generated on Wed Nov 27 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu Nov 28 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

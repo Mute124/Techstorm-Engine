@@ -10,62 +10,59 @@
 \DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_object_registry_8h}{GameObjectRegistry.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_camera_8h}{GameCamera.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00008}00008\ }
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00009}00009\ \textcolor{comment}{//\ Jolt\ includes}}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <Jolt/Jolt.h>}}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <Jolt/RegisterTypes.h>}}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <Jolt/Core/Factory.h>}}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <Jolt/Core/TempAllocator.h>}}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <Jolt/Core/JobSystemThreadPool.h>}}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <Jolt/Physics/PhysicsSettings.h>}}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <Jolt/Physics/PhysicsSystem.h>}}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <Jolt/Physics/Collision/Shape/BoxShape.h>}}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <Jolt/Physics/Collision/Shape/SphereShape.h>}}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <Jolt/Physics/Body/BodyCreationSettings.h>}}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <Jolt/Physics/Body/BodyActivationListener.h>}}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00021}00021\ }
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00022}00022\ \textcolor{preprocessor}{\#include\ <raylib.h>}}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00023}00023\ }
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00024}00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_techstorm}{Techstorm}}\ \{}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_object}{GameObject}};}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00026}00026\ }
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00030}\mbox{\hyperlink{class_techstorm_1_1_renderer}{00030}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_techstorm_1_1_renderer}{Renderer}}\ \{}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00032}00032\ \textcolor{preprocessor}{\#ifndef\ TS\_CUSTOM\_RENDERER\_CONSTRUCTOR}}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00036}\mbox{\hyperlink{class_techstorm_1_1_renderer_a8f2fe9e6c241b6ed4199fee4f554d822}{00036}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_renderer_a8f2fe9e6c241b6ed4199fee4f554d822}{Renderer}}()\ \{}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//initialize();}}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00039}00039\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_a78370d39c27a84bb070f46ad9f025fd9}{initialize}}();}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00044}00044\ }
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_a6b465cdcb206cc609273c427472f1f91}{render}}(\mbox{\hyperlink{class_techstorm_1_1_game_camera}{GameCamera}}\&\ cam);}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_ab36d231a2601557ac2e475f7195cf7e9}{texture}}(\mbox{\hyperlink{class_techstorm_1_1_game_camera}{GameCamera}}\&\ cam);}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_adf4e8737c3fcc27873a17eb6eacd5728}{drawFBO}}();}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00061}00061\ }
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_aaa51949aa7f6e310ea7695e7691bbefa}{addGameObject}}(\mbox{\hyperlink{class_techstorm_1_1_game_object}{GameObject}}*\ gameObject);}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00067}00067\ }
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_a4faa04ea2c99117addfff3961c3b3f0a}{removeGameObject}}(\mbox{\hyperlink{class_techstorm_1_1_game_object}{GameObject}}*\ gameObject);}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00073}00073\ }
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_a41c59d81e76eb985a2959a8a9fae3d08}{addGameObjectGate}}(IGameObjectGate*\ gameObjectGate);}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00080}00080\ }
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_a8aae709fbaf80d4a2d09dd895208e9bf}{removeGameObjectGate}}(IGameObjectGate*\ gameObjectGate);}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00087}00087\ }
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_aa01832237f6fec2ceb82e6b0889f587a}{cleanup}}();}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00092}00092\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_game_object_registry}{GameObjectRegistry}}\ mGameObjects;}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ RenderTexture2D\ mScreenBuffer;}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ Color\ mBackgroundColor\ =\ BLACK;}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ Color\ mFBOTint\ =\ WHITE;}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_game_camera}{GameCamera}}\ mCamera;}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00098}00098\ }
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00099}00099\ }
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00100}00100\ \textcolor{preprocessor}{\#ifdef\ TS\_RENDERER\_2D}}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ render2D(\mbox{\hyperlink{class_techstorm_1_1_game_camera}{GameCamera}}\&\ cam);}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00106}00106\ \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ render3D(\mbox{\hyperlink{class_techstorm_1_1_game_camera}{GameCamera}}\&\ cam);}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00112}00112\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00113}00113\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00114}00114\ \}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <raylib.h>}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00013}00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_techstorm}{Techstorm}}\ \{}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_object}{GameObject}};}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00019}\mbox{\hyperlink{class_techstorm_1_1_renderer}{00019}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_techstorm_1_1_renderer}{Renderer}}\ \{}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00021}00021\ \textcolor{preprocessor}{\#ifndef\ TS\_CUSTOM\_RENDERER\_CONSTRUCTOR}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00025}\mbox{\hyperlink{class_techstorm_1_1_renderer_a8f2fe9e6c241b6ed4199fee4f554d822}{00025}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_renderer_a8f2fe9e6c241b6ed4199fee4f554d822}{Renderer}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//initialize();}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_renderer_ad4ac9f1b3630a699febce1c07187753d}{mCamera}}\ =\ \mbox{\hyperlink{class_techstorm_1_1_game_camera}{GameCamera}}();}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_renderer_ad4ac9f1b3630a699febce1c07187753d}{mCamera}}.\mbox{\hyperlink{class_techstorm_1_1_game_camera_aa96086062c165a7a9dad078881e07b0b}{setPosition}}(Vector3\{\ 0.0f,\ 2.0f,\ 4.0f\ \});}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_renderer_ad4ac9f1b3630a699febce1c07187753d}{mCamera}}.\mbox{\hyperlink{class_techstorm_1_1_game_camera_a73fd27f999cdea54f74a60bc50d4a978}{setTarget}}(Vector3\{\ 0.0f,\ 2.0f,\ 0.0f\ \});}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_renderer_ad4ac9f1b3630a699febce1c07187753d}{mCamera}}.\mbox{\hyperlink{class_techstorm_1_1_game_camera_af08a1770b367556170cd7854acbf790f}{setUp}}(Vector3\{\ 0.0f,\ 1.0f,\ 0.0f\ \});}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_renderer_ad4ac9f1b3630a699febce1c07187753d}{mCamera}}.\mbox{\hyperlink{class_techstorm_1_1_game_camera_acf366282b572d91189f4b74f0bfd8c2b}{setFovy}}(60.0f);}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_renderer_ad4ac9f1b3630a699febce1c07187753d}{mCamera}}.\mbox{\hyperlink{class_techstorm_1_1_game_camera_a63ff287e239c794a9324626e9fd37b8e}{setProjection}}(CAMERA\_PERSPECTIVE);}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00034}00034\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_a78370d39c27a84bb070f46ad9f025fd9}{initialize}}();}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_a6b465cdcb206cc609273c427472f1f91}{render}}(\mbox{\hyperlink{class_techstorm_1_1_game_camera}{GameCamera}}\&\ cam);}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_ab36d231a2601557ac2e475f7195cf7e9}{texture}}(\mbox{\hyperlink{class_techstorm_1_1_game_camera}{GameCamera}}\&\ cam);}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_a8da83a2891cc66fb1f4dcd81dffb6641}{update}}();}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_adf4e8737c3fcc27873a17eb6eacd5728}{drawFBO}}();}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_aaa51949aa7f6e310ea7695e7691bbefa}{addGameObject}}(\mbox{\hyperlink{class_techstorm_1_1_game_object}{GameObject}}*\ gameObject);}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_a4faa04ea2c99117addfff3961c3b3f0a}{removeGameObject}}(\mbox{\hyperlink{class_techstorm_1_1_game_object}{GameObject}}*\ gameObject);}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_a41c59d81e76eb985a2959a8a9fae3d08}{addGameObjectGate}}(IGameObjectGate*\ gameObjectGate);}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_a8aae709fbaf80d4a2d09dd895208e9bf}{removeGameObjectGate}}(IGameObjectGate*\ gameObjectGate);}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_aa01832237f6fec2ceb82e6b0889f587a}{cleanup}}();}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00089}\mbox{\hyperlink{class_techstorm_1_1_renderer_ad4ac9f1b3630a699febce1c07187753d}{00089}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_game_camera}{GameCamera}}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_ad4ac9f1b3630a699febce1c07187753d}{mCamera}};}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00090}00090\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00091}00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_game_object_registry}{GameObjectRegistry}}\ mGameObjects;}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00092}00092\ \ \ \ \ \ \ \ \ RenderTexture2D\ mScreenBuffer;}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ Color\ mBackgroundColor\ =\ BLACK;}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ Color\ mFBOTint\ =\ WHITE;}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00097}00097\ \textcolor{preprocessor}{\#ifdef\ TS\_RENDERER\_2D}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ render2D(\mbox{\hyperlink{class_techstorm_1_1_game_camera}{GameCamera}}\&\ cam);}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00103}00103\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ render3D(\mbox{\hyperlink{class_techstorm_1_1_game_camera}{GameCamera}}\&\ cam);}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00109}00109\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00110}00110\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_renderer_8h_source_l00111}00111\ \}}
 
 \end{DoxyCode}

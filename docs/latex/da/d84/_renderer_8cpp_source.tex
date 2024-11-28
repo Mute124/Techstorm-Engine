@@ -45,7 +45,7 @@
 \DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00041}\mbox{\hyperlink{class_techstorm_1_1_renderer_ab36d231a2601557ac2e475f7195cf7e9}{00041}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_ab36d231a2601557ac2e475f7195cf7e9}{Techstorm::Renderer::texture}}(\mbox{\hyperlink{class_techstorm_1_1_game_camera}{GameCamera}}\&\ cam)}
 \DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00042}00042\ \{}
 \DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00043}00043\ \ \ \ \ BeginTextureMode(this-\/>mScreenBuffer);}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00044}00044\ \ \ \ \ ClearBackground(WHITE);}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00044}00044\ \ \ \ \ ClearBackground(this-\/>mBackgroundColor);}
 \DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00045}00045\ \textcolor{preprocessor}{\#ifdef\ TS\_RENDERER\_2D}}
 \DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00046}00046\ \textcolor{preprocessor}{\#else}}
 \DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00047}00047\ \ \ \ \ BeginMode3D(cam.\mbox{\hyperlink{class_techstorm_1_1_game_camera_a8a026029361951f6de6b674d5b177e93}{getCameraData}}());}
@@ -59,44 +59,52 @@
 \DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00055}00055\ \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00056}00056\ \ \ \ \ EndTextureMode();}
 \DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00057}00057\ \}}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00058}\mbox{\hyperlink{class_techstorm_1_1_renderer_adf4e8737c3fcc27873a17eb6eacd5728}{00058}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_adf4e8737c3fcc27873a17eb6eacd5728}{Techstorm::Renderer::drawFBO}}()\ \{}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{comment}{//\ TODO:\ Allow\ FBO\ shaders}}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00060}00060\ }
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00061}00061\ \ \ \ \ DrawTextureRec(this-\/>mScreenBuffer.texture,\ Rectangle\{\ 0,\ 0,\ (float)(this-\/>mScreenBuffer.texture.width),\ (float)(this-\/>mScreenBuffer.texture.height)\ \},\ Vector2\{\ 0,\ 0\ \},\ this-\/>mFBOTint);}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00059}\mbox{\hyperlink{class_techstorm_1_1_renderer_a8da83a2891cc66fb1f4dcd81dffb6641}{00059}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_a8da83a2891cc66fb1f4dcd81dffb6641}{Techstorm::Renderer::update}}()}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00060}00060\ \{}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00061}00061\ \ \ \ \ mCamera.update();}
 \DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00062}00062\ \}}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00063}\mbox{\hyperlink{class_techstorm_1_1_renderer_aaa51949aa7f6e310ea7695e7691bbefa}{00063}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_aaa51949aa7f6e310ea7695e7691bbefa}{Techstorm::Renderer::addGameObject}}(\mbox{\hyperlink{class_techstorm_1_1_game_object}{GameObject}}*\ gameObject)}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00064}00064\ \{}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00065}00065\ \ \ \ \ this-\/>mGameObjects.addGameObject(gameObject);}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00066}00066\ \}}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00067}00067\ }
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00068}\mbox{\hyperlink{class_techstorm_1_1_renderer_a4faa04ea2c99117addfff3961c3b3f0a}{00068}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_a4faa04ea2c99117addfff3961c3b3f0a}{Techstorm::Renderer::removeGameObject}}(\mbox{\hyperlink{class_techstorm_1_1_game_object}{GameObject}}*\ gameObject)}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00069}00069\ \{}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{comment}{//this-\/>mGameObjects.erase(std::remove(this-\/>mGameObjects.begin(),\ this-\/>mGameObjects.end(),\ gameObject),\ this-\/>mGameObjects.end());}}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00071}00071\ \}}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00072}00072\ }
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00073}\mbox{\hyperlink{class_techstorm_1_1_renderer_a41c59d81e76eb985a2959a8a9fae3d08}{00073}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_a41c59d81e76eb985a2959a8a9fae3d08}{Techstorm::Renderer::addGameObjectGate}}(IGameObjectGate*\ gameObjectGate)\ \{\}}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00074}\mbox{\hyperlink{class_techstorm_1_1_renderer_a8aae709fbaf80d4a2d09dd895208e9bf}{00074}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_a8aae709fbaf80d4a2d09dd895208e9bf}{Techstorm::Renderer::removeGameObjectGate}}(IGameObjectGate*\ gameObjectGate)\ \{\}}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00075}00075\ }
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00076}\mbox{\hyperlink{class_techstorm_1_1_renderer_aa01832237f6fec2ceb82e6b0889f587a}{00076}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_aa01832237f6fec2ceb82e6b0889f587a}{Techstorm::Renderer::cleanup}}()}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00077}00077\ \{}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00064}\mbox{\hyperlink{class_techstorm_1_1_renderer_adf4e8737c3fcc27873a17eb6eacd5728}{00064}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_adf4e8737c3fcc27873a17eb6eacd5728}{Techstorm::Renderer::drawFBO}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{comment}{//\ TODO:\ Allow\ FBO\ shaders}}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00067}00067\ \ \ \ \ DrawTextureRec(this-\/>mScreenBuffer.texture,\ Rectangle\{\ 0,\ 0,\ (float)(this-\/>mScreenBuffer.texture.width),\ -\/(float)(this-\/>mScreenBuffer.texture.height)\ \},\ Vector2\{\ 0,\ 0\ \},\ this-\/>mFBOTint);}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00068}00068\ \}}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00070}\mbox{\hyperlink{class_techstorm_1_1_renderer_aaa51949aa7f6e310ea7695e7691bbefa}{00070}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_aaa51949aa7f6e310ea7695e7691bbefa}{Techstorm::Renderer::addGameObject}}(\mbox{\hyperlink{class_techstorm_1_1_game_object}{GameObject}}*\ gameObject)}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00071}00071\ \{}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00072}00072\ \ \ \ \ this-\/>mGameObjects.addGameObject(gameObject);}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00073}00073\ \}}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00075}\mbox{\hyperlink{class_techstorm_1_1_renderer_a4faa04ea2c99117addfff3961c3b3f0a}{00075}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_a4faa04ea2c99117addfff3961c3b3f0a}{Techstorm::Renderer::removeGameObject}}(\mbox{\hyperlink{class_techstorm_1_1_game_object}{GameObject}}*\ gameObject)}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00076}00076\ \{}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{comment}{//this-\/>mGameObjects.erase(std::remove(this-\/>mGameObjects.begin(),\ this-\/>mGameObjects.end(),\ gameObject),\ this-\/>mGameObjects.end());}}
 \DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00078}00078\ \}}
 \DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00079}00079\ }
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00080}00080\ \textcolor{preprocessor}{\#ifdef\ TS\_RENDERER\_2D}}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00081}00081\ \textcolor{keywordtype}{void}\ Techstorm::Renderer::render2D(\mbox{\hyperlink{class_techstorm_1_1_game_camera}{GameCamera}}\&\ cam)}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00082}00082\ \{}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00083}00083\ \}}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00084}00084\ \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00085}00085\ \textcolor{keywordtype}{void}\ Techstorm::Renderer::render3D(GameCamera\&\ cam)}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00086}00086\ \{}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00087}00087\ \ \ \ \ UpdateCamera(\&cam.mCameraData,\ CAMERA\_FIRST\_PERSON);}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00088}00088\ }
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00089}00089\ \ \ \ \ texture(cam);}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00090}00090\ }
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00091}00091\ \ \ \ \ BeginDrawing();}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00092}00092\ \ \ \ \ drawFBO();}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00093}00093\ \ \ \ \ EndDrawing();}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00094}00094\ \}}
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00095}00095\ }
-\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00096}00096\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00080}\mbox{\hyperlink{class_techstorm_1_1_renderer_a41c59d81e76eb985a2959a8a9fae3d08}{00080}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_a41c59d81e76eb985a2959a8a9fae3d08}{Techstorm::Renderer::addGameObjectGate}}(IGameObjectGate*\ gameObjectGate)\ \{\}}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00082}\mbox{\hyperlink{class_techstorm_1_1_renderer_a8aae709fbaf80d4a2d09dd895208e9bf}{00082}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_a8aae709fbaf80d4a2d09dd895208e9bf}{Techstorm::Renderer::removeGameObjectGate}}(IGameObjectGate*\ gameObjectGate)\ \{\}}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00084}\mbox{\hyperlink{class_techstorm_1_1_renderer_aa01832237f6fec2ceb82e6b0889f587a}{00084}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_renderer_aa01832237f6fec2ceb82e6b0889f587a}{Techstorm::Renderer::cleanup}}()}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00085}00085\ \{}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00086}00086\ \}}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00088}00088\ \textcolor{preprocessor}{\#ifdef\ TS\_RENDERER\_2D}}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00089}00089\ \textcolor{keywordtype}{void}\ Techstorm::Renderer::render2D(\mbox{\hyperlink{class_techstorm_1_1_game_camera}{GameCamera}}\&\ cam)}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00090}00090\ \{}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00091}00091\ \}}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00092}00092\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00093}00093\ \textcolor{keywordtype}{void}\ Techstorm::Renderer::render3D(GameCamera\&\ cam)}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00094}00094\ \{}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{comment}{//UpdateCamera(\&cam.mCameraData,\ CAMERA\_FIRST\_PERSON);}}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00097}00097\ \ \ \ \ \textcolor{comment}{//texture(cam);}}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00099}00099\ \ \ \ \ BeginDrawing();}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00100}00100\ \ \ \ \ drawFBO();}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00101}00101\ \ \ \ \ EndDrawing();}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00102}00102\ \}}
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_renderer_8cpp_source_l00104}00104\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

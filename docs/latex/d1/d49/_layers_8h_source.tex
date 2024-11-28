@@ -32,37 +32,32 @@
 \DoxyCodeLine{\Hypertarget{_layers_8h_source_l00028}00028\ }
 \DoxyCodeLine{\Hypertarget{_layers_8h_source_l00030}\mbox{\hyperlink{class_techstorm_1_1_object_layer_pair_filter_impl}{00030}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_techstorm_1_1_object_layer_pair_filter_impl}{ObjectLayerPairFilterImpl}}\ :\ \textcolor{keyword}{public}\ JPH::ObjectLayerPairFilter}
 \DoxyCodeLine{\Hypertarget{_layers_8h_source_l00031}00031\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_techstorm_1_1_object_layer_pair_filter_impl_a4264e415c9e6b5ff9ad5c340c884691f}{ShouldCollide}}(JPH::ObjectLayer\ inObject1,\ JPH::ObjectLayer\ inObject2)\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00034}00034\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00035}00035\ }
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//\ Each\ broadphase\ layer\ results\ in\ a\ separate\ bounding\ volume\ tree\ in\ the\ broad\ phase.\ You\ at\ least\ want\ to\ have}}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00038}00038\ }
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00039}00039\ \ \ \ \ \textcolor{comment}{//\ BroadPhaseLayerInterface\ implementation}}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//\ This\ defines\ a\ mapping\ between\ object\ and\ broadphase\ layers.}}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00041}\mbox{\hyperlink{class_techstorm_1_1_b_p_layer_interface_impl}{00041}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_techstorm_1_1_b_p_layer_interface_impl}{BPLayerInterfaceImpl}}\ final\ :\ \textcolor{keyword}{public}\ JPH::BroadPhaseLayerInterface}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00042}00042\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_b_p_layer_interface_impl_a27ca33deade1ae8681190196b93bc30e}{BPLayerInterfaceImpl}}();}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00045}00045\ }
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ JPH::uint\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_b_p_layer_interface_impl_a3f0d806b695b8ba730474d52eb635504}{GetNumBroadPhaseLayers}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00047}00047\ }
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ JPH::BroadPhaseLayer\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_b_p_layer_interface_impl_af0e7ce2bcd02d7bd5c1c39fe60706027}{GetBroadPhaseLayer}}(JPH::ObjectLayer\ inLayer)\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00049}00049\ }
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00050}00050\ \textcolor{preprocessor}{\#if\ defined(JPH\_EXTERNAL\_PROFILE)\ ||\ defined(JPH\_PROFILE\_ENABLED)}}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ GetBroadPhaseLayerName(BroadPhaseLayer\ inLayer)\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00052}00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ JPH\_EXTERNAL\_PROFILE\ ||\ JPH\_PROFILE\_ENABLED}}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00053}00053\ }
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ JPH::BroadPhaseLayer\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mObjectToBroadPhase[Layers::NUM\_LAYERS];}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00056}00056\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00057}00057\ }
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00059}\mbox{\hyperlink{class_techstorm_1_1_object_vs_broad_phase_layer_filter_impl}{00059}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_techstorm_1_1_object_vs_broad_phase_layer_filter_impl}{ObjectVsBroadPhaseLayerFilterImpl}}\ :\ \textcolor{keyword}{public}\ JPH::ObjectVsBroadPhaseLayerFilter}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00060}00060\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00061}00061\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_object_vs_broad_phase_layer_filter_impl_ab508f358f7f4c7c72b0f3e86db7d0f61}{ShouldCollide}}(JPH::ObjectLayer\ inLayer1,\ JPH::BroadPhaseLayer\ inLayer2)\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00063}00063\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00064}00064\ \}}
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{public}:\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_techstorm_1_1_object_layer_pair_filter_impl_a4264e415c9e6b5ff9ad5c340c884691f}{ShouldCollide}}(JPH::ObjectLayer\ inObject1,\ JPH::ObjectLayer\ inObject2)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00040}00040\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00042}\mbox{\hyperlink{class_techstorm_1_1_b_p_layer_interface_impl}{00042}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_techstorm_1_1_b_p_layer_interface_impl}{BPLayerInterfaceImpl}}\ final\ :\ \textcolor{keyword}{public}\ JPH::BroadPhaseLayerInterface}
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00043}00043\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{public}:\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_b_p_layer_interface_impl_a27ca33deade1ae8681190196b93bc30e}{BPLayerInterfaceImpl}}();}
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ JPH::uint\ \mbox{\hyperlink{class_techstorm_1_1_b_p_layer_interface_impl_a3f0d806b695b8ba730474d52eb635504}{GetNumBroadPhaseLayers}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ JPH::BroadPhaseLayer\ \mbox{\hyperlink{class_techstorm_1_1_b_p_layer_interface_impl_af0e7ce2bcd02d7bd5c1c39fe60706027}{GetBroadPhaseLayer}}(JPH::ObjectLayer\ inLayer)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00063}00063\ \textcolor{preprocessor}{\#if\ defined(JPH\_EXTERNAL\_PROFILE)\ ||\ defined(JPH\_PROFILE\_ENABLED)}}
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ GetBroadPhaseLayerName(BroadPhaseLayer\ inLayer)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00065}00065\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ JPH\_EXTERNAL\_PROFILE\ ||\ JPH\_PROFILE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00067}00067\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ JPH::BroadPhaseLayer\ mObjectToBroadPhase[Layers::NUM\_LAYERS];}
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00069}00069\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00072}\mbox{\hyperlink{class_techstorm_1_1_object_vs_broad_phase_layer_filter_impl}{00072}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_techstorm_1_1_object_vs_broad_phase_layer_filter_impl}{ObjectVsBroadPhaseLayerFilterImpl}}\ :\ \textcolor{keyword}{public}\ JPH::ObjectVsBroadPhaseLayerFilter}
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00073}00073\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00074}00074\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_techstorm_1_1_object_vs_broad_phase_layer_filter_impl_ab508f358f7f4c7c72b0f3e86db7d0f61}{ShouldCollide}}(JPH::ObjectLayer\ inLayer1,\ JPH::BroadPhaseLayer\ inLayer2)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00076}00076\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_layers_8h_source_l00077}00077\ \}}
 
 \end{DoxyCode}

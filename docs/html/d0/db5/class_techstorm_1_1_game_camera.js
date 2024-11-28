@@ -19,5 +19,6 @@ var class_techstorm_1_1_game_camera =
     [ "setTarget", "d0/db5/class_techstorm_1_1_game_camera.html#a73fd27f999cdea54f74a60bc50d4a978", null ],
     [ "setUp", "d0/db5/class_techstorm_1_1_game_camera.html#af08a1770b367556170cd7854acbf790f", null ],
     [ "update", "d0/db5/class_techstorm_1_1_game_camera.html#a81bd0e99bc7e3eb0a3211d8f81d04f85", null ],
-    [ "Renderer", "d0/db5/class_techstorm_1_1_game_camera.html#a70538530bc36e033e360880ef311df61", null ]
+    [ "Renderer", "d0/db5/class_techstorm_1_1_game_camera.html#a70538530bc36e033e360880ef311df61", null ],
+    [ "mCameraData", "d0/db5/class_techstorm_1_1_game_camera.html#a2a3d338485c5db7bf490f49fe5eec73e", null ]
 ];

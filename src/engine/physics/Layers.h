@@ -29,36 +29,49 @@ namespace Techstorm {
 	/// Class that determines if two object layers can collide
 	class ObjectLayerPairFilterImpl : public JPH::ObjectLayerPairFilter
 	{
-	public:
+	public:		
+		/// <summary>
+		/// This is a function that will decide if two object layers can collide. The layers that this uses is the namespace called: Layers. 
+		/// </summary>
+		/// <param name="inObject1">The layer of the first object.</param>
+		/// <param name="inObject2">The layer of the second object.</param>
+		/// <returns></returns>
 		virtual bool ShouldCollide(JPH::ObjectLayer inObject1, JPH::ObjectLayer inObject2) const override;
 	};
 
-	// Each broadphase layer results in a separate bounding volume tree in the broad phase. You at least want to have
-
-
-	// BroadPhaseLayerInterface implementation
-	// This defines a mapping between object and broadphase layers.
 	class BPLayerInterfaceImpl final : public JPH::BroadPhaseLayerInterface
 	{
-	public:
+	public:		
+		/// <summary>
+		/// Initializes a new instance of the <see cref="BPLayerInterfaceImpl"/> class.
+		/// </summary>
 		BPLayerInterfaceImpl();
-
-		virtual JPH::uint					GetNumBroadPhaseLayers() const override;
-
-		virtual JPH::BroadPhaseLayer			GetBroadPhaseLayer(JPH::ObjectLayer inLayer) const override;
+				
+		/// <summary>
+		/// Gets the number of broad phase layers. This is a virtual function, so feel free to override it and suit it to your needs.
+		/// </summary>
+		/// <returns>A JPH::uint that denotes the number of broad phase layers.</returns>
+		virtual JPH::uint GetNumBroadPhaseLayers() const override;
+		
+		/// <summary>
+		/// Gets the broad phase layer.
+		/// </summary>
+		/// <param name="inLayer">The in layer.</param>
+		/// <returns></returns>
+		virtual JPH::BroadPhaseLayer GetBroadPhaseLayer(JPH::ObjectLayer inLayer) const override;
 
 #if defined(JPH_EXTERNAL_PROFILE) || defined(JPH_PROFILE_ENABLED)
 		virtual const char* GetBroadPhaseLayerName(BroadPhaseLayer inLayer) const override;
 #endif // JPH_EXTERNAL_PROFILE || JPH_PROFILE_ENABLED
 
 	private:
-		JPH::BroadPhaseLayer					mObjectToBroadPhase[Layers::NUM_LAYERS];
+		JPH::BroadPhaseLayer mObjectToBroadPhase[Layers::NUM_LAYERS];
 	};
 
 	/// Class that determines if an object layer can collide with a broadphase layer
 	class ObjectVsBroadPhaseLayerFilterImpl : public JPH::ObjectVsBroadPhaseLayerFilter
 	{
 	public:
-		virtual bool				ShouldCollide(JPH::ObjectLayer inLayer1, JPH::BroadPhaseLayer inLayer2) const override;
+		virtual bool ShouldCollide(JPH::ObjectLayer inLayer1, JPH::BroadPhaseLayer inLayer2) const override;
 	};
 }

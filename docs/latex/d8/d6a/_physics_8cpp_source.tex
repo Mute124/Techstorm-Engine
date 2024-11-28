@@ -3,66 +3,77 @@
 \mbox{\hyperlink{_physics_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_physics_8h}{Physics.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00002}00002\ }
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00003}\mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources_a600b81112798d31deb945a5a8d92cca7}{00003}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources_a600b81112798d31deb945a5a8d92cca7}{Techstorm::AllocatedPhysicsResources::AllocatedPhysicsResources}}()\ \{\}}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00004}00004\ }
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00005}\mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources_af5809840be160867bffea6ec5317f71c}{00005}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources_a600b81112798d31deb945a5a8d92cca7}{Techstorm::AllocatedPhysicsResources::AllocatedPhysicsResources}}(\mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources}{AllocatedPhysicsResources}}\ \textcolor{keyword}{const}\&\ resources)\ :\ cMaxBodies(resources.cMaxBodies),\ cNumBodyMutexes(resources.cNumBodyMutexes),\ cMaxBodyPairs(resources.cMaxBodyPairs),\ cMaxContactConstraints(resources.cMaxContactConstraints)\ \{\}}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00006}00006\ }
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00007}\mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources_aa502f9e7001a563361c0a5f1ac4cbde4}{00007}}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources_a600b81112798d31deb945a5a8d92cca7}{Techstorm::AllocatedPhysicsResources::AllocatedPhysicsResources}}(\textcolor{keyword}{const}\ JPH::uint\&\ cMaxBodies,\ \textcolor{keyword}{const}\ JPH::uint\&\ cNumBodyMutexes,\ \textcolor{keyword}{const}\ JPH::uint\&\ cMaxBodyPairs,\ \textcolor{keyword}{const}\ JPH::uint\&\ cMaxContactConstraints)}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00008}00008\ \ \ \ \ :\ cMaxBodies(cMaxBodies),\ cNumBodyMutexes(cNumBodyMutexes),\ cMaxBodyPairs(cMaxBodyPairs),\ cMaxContactConstraints(cMaxContactConstraints)}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00009}00009\ \{}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00010}00010\ \}}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00011}00011\ }
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00012}\mbox{\hyperlink{class_techstorm_1_1_physics_engine_aabfa54a376c35880bd8a669391d22444}{00012}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_physics_engine_aabfa54a376c35880bd8a669391d22444}{Techstorm::PhysicsEngine::init}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources}{AllocatedPhysicsResources}}\ resources)\ \{}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (!mIsInitialized)\ \{}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ mResources\ =\ resources;}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ JPH::RegisterDefaultAllocator();}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00016}00016\ }
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Install\ trace\ and\ assert\ callbacks}}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ JPH::Trace\ =\ TraceImpl;}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ JPH\_IF\_ENABLE\_ASSERTS(JPH::AssertFailed\ =\ AssertFailedImpl;)}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00020}00020\ }
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ JPH::Factory::sInstance\ =\ \textcolor{keyword}{new}\ JPH::Factory();}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <Jolt/Core/Core.h>}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <Jolt/Core/Factory.h>}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <Jolt/Core/IssueReporting.h>}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <Jolt/Core/JobSystemThreadPool.h>}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <Jolt/Core/Memory.h>}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <Jolt/Core/TempAllocator.h>}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <Jolt/Physics/Body/BodyInterface.h>}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <Jolt/Physics/PhysicsSettings.h>}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <Jolt/Physics/PhysicsSystem.h>}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <Jolt/RegisterTypes.h>}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00014}\mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources_a600b81112798d31deb945a5a8d92cca7}{00014}}\ \ \ \mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources_a600b81112798d31deb945a5a8d92cca7}{Techstorm::AllocatedPhysicsResources::AllocatedPhysicsResources}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00016}\mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources_af5809840be160867bffea6ec5317f71c}{00016}}\ \ \ \mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources_a600b81112798d31deb945a5a8d92cca7}{Techstorm::AllocatedPhysicsResources::AllocatedPhysicsResources}}(\mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources}{AllocatedPhysicsResources}}\ \textcolor{keyword}{const}\&\ resources)\ :\ cMaxBodies(resources.cMaxBodies),\ cNumBodyMutexes(resources.cNumBodyMutexes),\ cMaxBodyPairs(resources.cMaxBodyPairs),\ cMaxContactConstraints(resources.cMaxContactConstraints)\ \{\}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00018}\mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources_aa502f9e7001a563361c0a5f1ac4cbde4}{00018}}\ \ \ \mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources_a600b81112798d31deb945a5a8d92cca7}{Techstorm::AllocatedPhysicsResources::AllocatedPhysicsResources}}(\textcolor{keyword}{const}\ JPH::uint\&\ cMaxBodies,\ \textcolor{keyword}{const}\ JPH::uint\&\ cNumBodyMutexes,\ \textcolor{keyword}{const}\ JPH::uint\&\ cMaxBodyPairs,\ \textcolor{keyword}{const}\ JPH::uint\&\ cMaxContactConstraints)}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00019}00019\ \ \ \ \ :\ cMaxBodies(cMaxBodies),\ cNumBodyMutexes(cNumBodyMutexes),\ cMaxBodyPairs(cMaxBodyPairs),\ cMaxContactConstraints(cMaxContactConstraints)}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00020}00020\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00021}00021\ \}}
 \DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00022}00022\ }
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ JPH::RegisterTypes();}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00024}00024\ }
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ mTempAllocator\ =\ \textcolor{keyword}{new}\ JPH::TempAllocatorImpl(mResources.preAllocatedMemory);}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00026}00026\ }
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ mJobSystemThreadPool\ =\ \textcolor{keyword}{new}\ JPH::JobSystemThreadPool(JPH::cMaxPhysicsJobs,\ JPH::cMaxPhysicsBarriers,\ thread::hardware\_concurrency()\ -\/\ 1);}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00028}00028\ }
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ mPhysicsSystem\ =\ \textcolor{keyword}{new}\ JPH::PhysicsSystem();}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Now\ we\ can\ create\ the\ actual\ physics\ system.\ This\ is\ not\ nullptr.}}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ mPhysicsSystem-\/>Init(}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ resources.\mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources_ac69d14699eb17224c3f182e5baba04ff}{cMaxBodies}},}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ resources.\mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources_a25163e37774dc874a0402de18bbb61ac}{cNumBodyMutexes}},}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ resources.\mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources_adef55b23c0f6c4ef638c0df3fe487cd9}{cMaxBodyPairs}},}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ resources.\mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources_a27d4d3a699b1ae5f7ec62c37171b99f2}{cMaxContactConstraints}},}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ mBroadPhaseLayerInterface,}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ mObjectVsBroadPhaseLayerFilter,}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ mObjectLayerPairFilter}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00041}00041\ }
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ mPhysicsSystem-\/>SetBodyActivationListener(mBodyActivationListener);}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ mPhysicsSystem-\/>SetContactListener(mContactListener);}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00044}00044\ }
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ mBodyInterfaceHolder\ =\ \textcolor{keyword}{new}\ BodyInterfaceHolder(mPhysicsSystem-\/>GetBodyInterface());}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00046}00046\ }
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00047}00047\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00048}00048\ \}}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00049}00049\ }
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00050}\mbox{\hyperlink{class_techstorm_1_1_physics_engine_a2c36ce16ce3b0908e8d04ddece7c2914}{00050}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_physics_engine_a2c36ce16ce3b0908e8d04ddece7c2914}{Techstorm::PhysicsEngine::update}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ cDeltaTime)\ \{}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00051}00051\ \ \ \ \ mPhysicsSystem-\/>Update(cDeltaTime,\ mCollisionSteps,\ 4,\ mTempAllocator,\ mJobSystemThreadPool);}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00052}00052\ \}}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00053}00053\ }
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00054}\mbox{\hyperlink{class_techstorm_1_1_physics_engine_ab07cd90671d6b23946949f920839b6ec}{00054}}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_physics_engine_ab07cd90671d6b23946949f920839b6ec}{Techstorm::PhysicsEngine::optimizeBroadPhase}}()\ \{}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00055}00055\ \ \ \ \ mPhysicsSystem-\/>OptimizeBroadPhase();}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00056}00056\ \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00023}\mbox{\hyperlink{class_techstorm_1_1_physics_engine_aabfa54a376c35880bd8a669391d22444}{00023}}\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_physics_engine_aabfa54a376c35880bd8a669391d22444}{Techstorm::PhysicsEngine::init}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources}{AllocatedPhysicsResources}}\ resources)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{if}\ (!mIsInitialized)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ mResources\ =\ resources;}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ JPH::RegisterDefaultAllocator();}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Install\ trace\ and\ assert\ callbacks}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ JPH::Trace\ =\ DefaultPhysicsTrace;}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ JPH\_IF\_ENABLE\_ASSERTS(JPH::AssertFailed\ =\ DefaultPhysicsAssertFailed;)}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ JPH::Factory::sInstance\ =\ \textcolor{keyword}{new}\ JPH::Factory();}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ JPH::RegisterTypes();}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ mTempAllocator\ =\ \textcolor{keyword}{new}\ JPH::TempAllocatorImpl(mResources.preAllocatedMemory);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ mJobSystemThreadPool\ =\ \textcolor{keyword}{new}\ JPH::JobSystemThreadPool(JPH::cMaxPhysicsJobs,\ JPH::cMaxPhysicsBarriers,\ thread::hardware\_concurrency()\ -\/\ 1);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ mPhysicsSystem\ =\ \textcolor{keyword}{new}\ JPH::PhysicsSystem();}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Now\ we\ can\ create\ the\ actual\ physics\ system.\ This\ is\ not\ nullptr.}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ mPhysicsSystem-\/>Init(}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ resources.\mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources_ac69d14699eb17224c3f182e5baba04ff}{cMaxBodies}},}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ resources.\mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources_a25163e37774dc874a0402de18bbb61ac}{cNumBodyMutexes}},}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ resources.\mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources_adef55b23c0f6c4ef638c0df3fe487cd9}{cMaxBodyPairs}},}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ resources.\mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources_a27d4d3a699b1ae5f7ec62c37171b99f2}{cMaxContactConstraints}},}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ mBroadPhaseLayerInterface,}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ mObjectVsBroadPhaseLayerFilter,}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ mObjectLayerPairFilter}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ mPhysicsSystem-\/>SetBodyActivationListener(mBodyActivationListener);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ mPhysicsSystem-\/>SetContactListener(mContactListener);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ mBodyInterfaceHolder\ =\ \textcolor{keyword}{new}\ BodyInterfaceHolder(mPhysicsSystem-\/>GetBodyInterface());}
 \DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00057}00057\ }
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00058}\mbox{\hyperlink{class_techstorm_1_1_physics_engine_a9f834f634f5d057bde3ba4cb5d98001a}{00058}}\ \textcolor{keyword}{inline}\ JPH::BodyInterface\&\ \mbox{\hyperlink{class_techstorm_1_1_physics_engine_a9f834f634f5d057bde3ba4cb5d98001a}{Techstorm::PhysicsEngine::getBodyInterface}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mBodyInterfaceHolder-\/>bodyInterface;\ \}}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00059}00059\ }
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00060}00060\ \textcolor{keyword}{inline}\ Techstorm::PhysicsEngine::BodyInterfaceHolder::BodyInterfaceHolder(JPH::BodyInterface\&\ bodyInterface)\ :\ bodyInterface(bodyInterface)\ \{\}}
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00061}00061\ }
-\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00062}00062\ \textcolor{keyword}{inline}\ Techstorm::PhysicsEngine::BodyInterfaceHolder::\string~BodyInterfaceHolder()\ \{\}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00061}\mbox{\hyperlink{class_techstorm_1_1_physics_engine_a2c36ce16ce3b0908e8d04ddece7c2914}{00061}}\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_physics_engine_a2c36ce16ce3b0908e8d04ddece7c2914}{Techstorm::PhysicsEngine::update}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ cDeltaTime)\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00062}00062\ \ \ \ \ mPhysicsSystem-\/>Update(cDeltaTime,\ mCollisionSteps,\ 4,\ mTempAllocator,\ mJobSystemThreadPool);}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00063}00063\ \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00065}\mbox{\hyperlink{class_techstorm_1_1_physics_engine_ab07cd90671d6b23946949f920839b6ec}{00065}}\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_physics_engine_ab07cd90671d6b23946949f920839b6ec}{Techstorm::PhysicsEngine::optimizeBroadPhase}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00066}00066\ \ \ \ \ mPhysicsSystem-\/>OptimizeBroadPhase();}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00067}00067\ \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00069}\mbox{\hyperlink{class_techstorm_1_1_physics_engine_a9f834f634f5d057bde3ba4cb5d98001a}{00069}}\ \ \ JPH::BodyInterface\&\ \mbox{\hyperlink{class_techstorm_1_1_physics_engine_a9f834f634f5d057bde3ba4cb5d98001a}{Techstorm::PhysicsEngine::getBodyInterface}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mBodyInterfaceHolder-\/>bodyInterface;\ \}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00071}00071\ \ \ Techstorm::PhysicsEngine::BodyInterfaceHolder::BodyInterfaceHolder(JPH::BodyInterface\&\ bodyInterface)\ :\ bodyInterface(bodyInterface)\ \{\}}
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_physics_8cpp_source_l00073}00073\ \ \ Techstorm::PhysicsEngine::BodyInterfaceHolder::\string~BodyInterfaceHolder()\ \{\}}
 
 \end{DoxyCode}

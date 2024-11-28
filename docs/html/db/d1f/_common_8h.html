@@ -93,19 +93,17 @@ $(document).ready(function(){initNavTree('db/d1f/_common_8h.html','../../'); ini
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">Common.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;cstdarg&gt;</code><br />
-<code>#include &lt;cstdint&gt;</code><br />
+
+<p>Common includes and definitions that are used throughout the engine. There are going to be very limited amounts of actual engine includes, so this is not a replacement for that. Instead, this is a way to centralize the includes and definitions that are used throughout the engine.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;thread&gt;</code><br />
-<code>#include &quot;<a class="el" href="../../de/dec/_singleton_8h_source.html">utils/Singleton.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d2/d94/_input_8h_source.html">input/Input.h</a>&quot;</code><br />
 </div>
 <p><a href="../../db/d1f/_common_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -114,49 +112,23 @@ Namespaces</h2></td></tr>
 <tr class="memitem:d4/d26/namespace_techstorm" id="r_d4/d26/namespace_techstorm"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html">Techstorm</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ab96ac5087a1fde76921d36f47d2a0777" id="r_ab96ac5087a1fde76921d36f47d2a0777"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d1f/_common_8h.html#ab96ac5087a1fde76921d36f47d2a0777">TS_ENABLE_HAPTICS</a></td></tr>
-<tr class="separator:ab96ac5087a1fde76921d36f47d2a0777"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:acbc8f303afb42ae77958c4f0cc5601ba" id="r_acbc8f303afb42ae77958c4f0cc5601ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#acbc8f303afb42ae77958c4f0cc5601ba">Techstorm::InitHaptics</a> ()</td></tr>
-<tr class="separator:acbc8f303afb42ae77958c4f0cc5601ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5451a8aaa383e3936b9939fc6297d6e1" id="r_a5451a8aaa383e3936b9939fc6297d6e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#a5451a8aaa383e3936b9939fc6297d6e1">Techstorm::SetControllerRumble</a> (int controllerIndex, int leftMotorSpeed, int rightMotorSpeed)</td></tr>
-<tr class="separator:a5451a8aaa383e3936b9939fc6297d6e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbe31e4f49d55c0496f4631a182e1477" id="r_abbe31e4f49d55c0496f4631a182e1477"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#abbe31e4f49d55c0496f4631a182e1477">Techstorm::StartRumblingController</a> (int controllerIndex, int leftMotorSpeed, int rightMotorSpeed)</td></tr>
-<tr class="separator:abbe31e4f49d55c0496f4631a182e1477"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6731e1161358e83d844e07b3a039304" id="r_aa6731e1161358e83d844e07b3a039304"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#aa6731e1161358e83d844e07b3a039304">Techstorm::StopRumblingController</a> (int controllerIndex)</td></tr>
-<tr class="separator:aa6731e1161358e83d844e07b3a039304"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a72ba4f35051f760d2253c5d175be8a7d" id="r_a72ba4f35051f760d2253c5d175be8a7d"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d1f/_common_8h.html#a72ba4f35051f760d2253c5d175be8a7d">TS_ASSET_DIR</a> = std::string(TS_TOP_LAYER) + &quot;/game/assets/&quot;</td></tr>
+<tr class="memdesc:a72ba4f35051f760d2253c5d175be8a7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Since the location of the shared libraries and executables can vary, this is a simple solution to this. During Distribution builds, the path is more exact, however the rest are not because these will be in the build directory rather than the final distribution directory.  <br /></td></tr>
 <tr class="separator:a72ba4f35051f760d2253c5d175be8a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5012bb03b199275504f5455b800711df" id="r_a5012bb03b199275504f5455b800711df"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d1f/_common_8h.html#a5012bb03b199275504f5455b800711df">TS_DATA_DIR</a> = std::string(TS_TOP_LAYER) + &quot;/game/data/&quot;</td></tr>
 <tr class="separator:a5012bb03b199275504f5455b800711df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a0ec9e061a2c5f56774b5c6e4fb512c" id="r_a4a0ec9e061a2c5f56774b5c6e4fb512c"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d1f/_common_8h.html#a4a0ec9e061a2c5f56774b5c6e4fb512c">TS_GAME_DIR</a> = std::string(TS_TOP_LAYER) + &quot;/game/&quot;</td></tr>
 <tr class="separator:a4a0ec9e061a2c5f56774b5c6e4fb512c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ab96ac5087a1fde76921d36f47d2a0777" name="ab96ac5087a1fde76921d36f47d2a0777"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab96ac5087a1fde76921d36f47d2a0777">&#9670;&#160;</a></span>TS_ENABLE_HAPTICS</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Common includes and definitions that are used throughout the engine. There are going to be very limited amounts of actual engine includes, so this is not a replacement for that. Instead, this is a way to centralize the includes and definitions that are used throughout the engine. </p>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000001">Todo:</a></b></dt><dd>Add more haptic features</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This file has a few configurations that are based on defines. TS_ENABLE_HAPTICS is used to enable/disable haptic features (ie. controller rumble), whereas TS_ENABLE_EXTENSIONS is used to enable/disable extensions. </dd></dl>
 
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TS_ENABLE_HAPTICS</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../db/d1f/_common_8h_source.html#l00002">2</a> of file <a class="el" href="../../db/d1f/_common_8h_source.html">Common.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
+<p class="definition">Definition in file <a class="el" href="../../db/d1f/_common_8h_source.html">Common.h</a>.</p>
+</div><h2 class="groupheader">Variable Documentation</h2>
 <a id="a72ba4f35051f760d2253c5d175be8a7d" name="a72ba4f35051f760d2253c5d175be8a7d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a72ba4f35051f760d2253c5d175be8a7d">&#9670;&#160;</a></span>TS_ASSET_DIR</h2>
 
@@ -169,7 +141,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d1f/_common_8h_source.html#l00012">12</a> of file <a class="el" href="../../db/d1f/_common_8h_source.html">Common.h</a>.</p>
+<p>Since the location of the shared libraries and executables can vary, this is a simple solution to this. During Distribution builds, the path is more exact, however the rest are not because these will be in the build directory rather than the final distribution directory. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../db/d1f/_common_8h_source.html#l00021">21</a> of file <a class="el" href="../../db/d1f/_common_8h_source.html">Common.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/d39/application_2main_8cpp_source.html#l00012">main()</a>.</p>
 
@@ -187,7 +161,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d1f/_common_8h_source.html#l00013">13</a> of file <a class="el" href="../../db/d1f/_common_8h_source.html">Common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d1f/_common_8h_source.html#l00022">22</a> of file <a class="el" href="../../db/d1f/_common_8h_source.html">Common.h</a>.</p>
 
 </div>
 </div>
@@ -203,7 +177,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/d1f/_common_8h_source.html#l00014">14</a> of file <a class="el" href="../../db/d1f/_common_8h_source.html">Common.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d1f/_common_8h_source.html#l00023">23</a> of file <a class="el" href="../../db/d1f/_common_8h_source.html">Common.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00092">Techstorm::abstract&lt; K, D, T &gt;::preInit()</a>.</p>
 
@@ -215,7 +189,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="../../db/d1f/_common_8h.html">Common.h</a></li>
-    <li class="footer">Generated on Wed Nov 27 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu Nov 28 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

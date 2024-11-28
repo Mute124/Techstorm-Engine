@@ -1,5 +1,8 @@
+/// \file Physics.h
+/// \brief This file contains Techstorm's physics engine and is built on JoltPhysics. 
+/// \note This is a work in progress, so it is not very extensible. With that being said, it is able to do its job but it is not as flexible as it could be.
+/// \includegraph
 #pragma once
-
 
 #include <Jolt/Jolt.h>
 
@@ -20,14 +23,24 @@
 #include "../Common.h"
 #include "Layers.h"
 #include "Listeners.h"
+
+// Shut the compiler up. 
 JPH_SUPPRESS_WARNINGS
 
 using namespace JPH::literals;
 
 namespace Techstorm {
-	// Callback for traces, connect this to your own trace function if you have one
-	static void TraceImpl(const char* inFMT, ...)
+
+	/// <summary>
+	/// This is the already provided trace function for the physics engine. 
+	/// \note Keep in mind this is used exclusively by the physics engine, so there is not much use besides that. 
+	/// \todo TODO: Implement this more properly
+	/// </summary>
+	/// <param name="inFMT">The format to print.</param>
+	/// <param name="">Variable arguments for the trace.</param>
+	static void DefaultPhysicsTrace(const char* inFMT, ...)
 	{
+		// TODO: See above documentation
 		// Format the message
 		va_list list;
 		va_start(list, inFMT);
@@ -40,10 +53,19 @@ namespace Techstorm {
 	}
 
 #ifdef JPH_ENABLE_ASSERTS
-
-	// Callback for asserts, connect this to your own assert handler if you have one
-	static bool AssertFailedImpl(const char* inExpression, const char* inMessage, const char* inFile, JPH::uint inLine)
+	
+	/// <summary>
+	/// This is the already provided failed assertion function. Keep in mind this is used exclusively by the physics engine, so there is not much use besides that. 
+	/// \todo Implement this more properly
+	/// </summary>
+	/// <param name="inExpression">The assert expression that failed.</param>
+	/// <param name="inMessage">The assertion message.</param>
+	/// <param name="inFile">The file that the assert was in.</param>
+	/// <param name="inLine">The line that the assert was on.</param>
+	/// <returns></returns>
+	static bool DefaultPhysicsAssertFailed(const char* inExpression, const char* inMessage, const char* inFile, JPH::uint inLine)
 	{
+		// TODO: See above documentation
 		// Print to the TTY
 		cout << inFile << ":" << inLine << ": (" << inExpression << ") " << (inMessage != nullptr ? inMessage : "") << endl;
 
@@ -70,18 +92,41 @@ namespace Techstorm {
 	class PhysicsEngine : public Techstorm::Singleton<PhysicsEngine> {
 	public:
 		PhysicsEngine() = default;
-
-		void init(const AllocatedPhysicsResources resources, JPH::JobSystem* jobSystem, JPH::TempAllocator* tempAllocator, JPH::ContactListener* contactListener);
+		
+		/// <summary>
+		/// Initializes the physics engine with the resources (<see cref="AllocatedPhysicsResources"/>). The reason for the struct is to keep things organized and have as little parameter hell as
+		/// possible.
+		/// </summary> 
+		/// <param name="resources">The resources.</param>
 		void init(const AllocatedPhysicsResources resources);
-
+		
+		/// <summary>
+		/// Updates the physics engine.
+		/// \note The delta time is used for Jolt's JPH::PhysicsSystem::Update function and is in seconds. This function is already handled internally (assuming you are using the default systems).
+		/// If you need to update the physics engine yourself, you can do that
+		/// </summary>
+		/// <param name="cDeltaTime">A delta time constant that will be passed to Jolt's JPH::PhysicsSystem::Update function.</param>
 		void update(const float cDeltaTime);
-
+		
+		/// <summary>
+		/// Optimizes the broad phase. This is simply a wrapper for Jolt's JPH::PhysicsSystem::OptimizeBroadPhase function, but it is provided here for convenience. 
+		/// \note Please note that this should NOT be called often because it is expensive, so only run it after adding alot of physics objects. Even then, calling this only once is usually enough.
+		/// </summary>
 		void optimizeBroadPhase();
-
+		
+		/// <summary>
+		/// Gets the body interface by returning the internal body interface reference (<see cref="BodyInterfaceHolder"/>). Use this if you need a reference to the body interface to add bodies or 
+		/// something else.
+		/// </summary>
+		/// <returns>A reference to the body interface</returns>
 		JPH::BodyInterface& getBodyInterface() const;
 
 	private:
-		// A work around to keep the body interface references.
+				
+		/// <summary>
+		/// Since the body interface reference was required as a member variable and it could not be created in the constructor, the BodyInterfaceHolder class was created to essentially wrap around
+		/// the JPH::BodyInterface. 
+		/// </summary>
 		class BodyInterfaceHolder {
 		public:
 			JPH::BodyInterface& bodyInterface;
@@ -90,11 +135,10 @@ namespace Techstorm {
 			~BodyInterfaceHolder();
 		};
 
-		//float					mUpdateFrequency = 60.0f;									// Physics update frequency, measured in Hz (cycles per second)
-		int						mCollisionSteps = 1;										// How many collision detection steps per physics update
+		int	mCollisionSteps = 1;
 
 		BodyInterfaceHolder* mBodyInterfaceHolder;
-		JPH::PhysicsSystem* mPhysicsSystem = nullptr;									// The physics system that simulates the world
+		JPH::PhysicsSystem* mPhysicsSystem = nullptr;
 		bool mIsInitialized = false;
 		AllocatedPhysicsResources mResources;
 
@@ -104,9 +148,9 @@ namespace Techstorm {
 		ObjectVsBroadPhaseLayerFilterImpl mObjectVsBroadPhaseLayerFilter;
 		ObjectLayerPairFilterImpl mObjectLayerPairFilter;
 
-		JPH::ContactListener* mContactListener = nullptr;									// Contact listener implementation
-		JPH::PhysicsSettings  mPhysicsSettings;											// Main physics simulation settings
-		JPH::BodyActivationListener* mBodyActivationListener = nullptr;					// Body activation listener implementation
+		JPH::ContactListener* mContactListener = nullptr;
+		JPH::PhysicsSettings  mPhysicsSettings;
+		JPH::BodyActivationListener* mBodyActivationListener = nullptr;
 	};
 
 

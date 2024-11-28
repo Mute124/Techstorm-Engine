@@ -1,6 +1,6 @@
 #include "Input.h"
 
-inline int Techstorm::InputRegistry::registerActionCallback(InputAction* action, std::function<void(InputAction*)> const& callback) {
+int Techstorm::InputRegistry::registerActionCallback(InputAction* action, std::function<void(InputAction*)> const& callback) {
 	// Since callbacks are stored in an unordered_map, the next available id/slot is the map's size + 1.
 	int id = mActions[action].size() + 1;
 	
@@ -9,15 +9,15 @@ inline int Techstorm::InputRegistry::registerActionCallback(InputAction* action,
 	return id;
 }
 
-inline void Techstorm::InputRegistry::unregisterAction(InputAction* action) {
+void Techstorm::InputRegistry::unregisterAction(InputAction* action) {
 	mActions.erase(action);
 }
 
-inline void Techstorm::InputRegistry::unregisterCallback(InputAction* action, int id) {
+void Techstorm::InputRegistry::unregisterCallback(InputAction* action, int id) {
 	mActions[action].erase(id);
 }
 
-inline void Techstorm::InputRegistry::checkAll() {
+void Techstorm::InputRegistry::checkAll() {
 	/*
 	* Iterate through all registered actions in mActions (and then through all of it's callbacks)
 	*/

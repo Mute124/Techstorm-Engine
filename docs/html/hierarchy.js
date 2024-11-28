@@ -33,7 +33,8 @@ var hierarchy =
     [ "IGameObject", null, [
       [ "Techstorm::GameObject", "d4/de0/class_techstorm_1_1_game_object.html", [
         [ "Techstorm::PlaneObject", "da/d48/class_techstorm_1_1_plane_object.html", null ]
-      ] ]
+      ] ],
+      [ "Techstorm::abstract< K, D, T >", "d6/d34/class_techstorm_1_1abstract.html", null ]
     ] ],
     [ "ILayerRegistry", null, [
       [ "Techstorm::LayerRegistry< T >", "db/d5d/class_techstorm_1_1_layer_registry.html", null ]

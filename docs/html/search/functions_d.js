@@ -3,7 +3,7 @@ var searchData=
   ['read_5fgrid_5ffrom_5ffile_0',['read_grid_from_file',['../d0/df5/class_generator.html#a07cf79db4a7837045f12f02eea3bd165',1,'Generator']]],
   ['readconfigfile_1',['readConfigFile',['../d1/dcb/class_techstorm_1_1_config_file_registry.html#a90d2ed7bb44b9c373fab7ee143217d4d',1,'Techstorm::ConfigFileRegistry']]],
   ['readconfigfiles_2',['readConfigFiles',['../d1/dcb/class_techstorm_1_1_config_file_registry.html#af3eb80d5e0c4782f72dadc693612ee51',1,'Techstorm::ConfigFileRegistry']]],
-  ['registeractioncallback_3',['registeractioncallback',['../dc/d16/class_techstorm_1_1_input_registry.html#a0d156b86669ec14db159f658b8ca6891',1,'Techstorm::InputRegistry::registerActionCallback()'],['../d4/d26/namespace_techstorm.html#ab3125a1b1ffec2b381e3647a1bcf4e5d',1,'Techstorm::RegisterActionCallback()']]],
+  ['registeractioncallback_3',['registerActionCallback',['../dc/d16/class_techstorm_1_1_input_registry.html#a0d156b86669ec14db159f658b8ca6891',1,'Techstorm::InputRegistry']]],
   ['registerangelscript_4',['RegisterAngelScript',['../de/d97/class_techstorm_1_1_scripting_a_p_i.html#ac4a2224ba04ab05a9f6baa5cac1b8510',1,'Techstorm::ScriptingAPI']]],
   ['registerconfigfile_5',['registerConfigFile',['../d1/dcb/class_techstorm_1_1_config_file_registry.html#a7ff5aa01b4f76873ef8ef438d109483b',1,'Techstorm::ConfigFileRegistry']]],
   ['registerconfigfiles_6',['registerConfigFiles',['../d1/dcb/class_techstorm_1_1_config_file_registry.html#a8d30d741445314641ce4319ab74efc42',1,'Techstorm::ConfigFileRegistry']]],

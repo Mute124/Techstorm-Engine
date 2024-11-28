@@ -1,11 +1,16 @@
+/// \file Input.h
+/// 
+/// \brief The input system for Techstorm.
+/// 
+/// \details The input system for Techstorm works by a Laissez-faire system where the user can register InputActions (<see cref="InputAction"/>) by using functions as callbacks. The reason for this
+/// is because it is much easier to do it this way (and it is also more efficient & flexible). Plus, it also allows you to register multiple callbacks for the same InputAction, which may be useful.
 #pragma once
-#include <iostream>
-#include <unordered_map>
-#include <vector>
 #include <functional>
-#include <optional>
-#include <array>
+#include <string>
+#include <unordered_map>
+
 #include "../utils/Singleton.h"
+
 
 #define TS_ENABLE_CONTROLLER_SUPPORT
 namespace Techstorm {
@@ -20,7 +25,8 @@ namespace Techstorm {
 	};
 	
 	/// <summary>
-	/// What sort of action should trigger the InputAction? <b>Please pay attention when using this because any slight change in InputAction keys will give you entirely different input results.</b>
+	/// What sort of action should trigger the InputAction? 
+	/// \warning Please pay attention when using this because any slight change in InputAction keys will give you entirely different input results.
 	/// </summary>
 	enum class EInputTrigger {
 		INPUT_TRIGGER_PRESSED,
@@ -32,7 +38,7 @@ namespace Techstorm {
 	
 	/// <summary>
 	/// Serves as a search key/input category for the input system. 
-	/// <b>Please pay attention when using this because any slight change in InputAction keys will give you entirely different input results.</b>
+	/// \warning Please pay attention when using this because any slight change in InputAction keys will give you entirely different input results.
 	/// </summary>
 	/// <remarks>
 	/// InputAction contains a name (std::string), an key (int), a device type (<see cref="EInputType"/>) and a trigger (<see cref="EInputTrigger"/>) that will be used to distinguish between
@@ -47,7 +53,9 @@ namespace Techstorm {
 	};
 
 	/// <summary>
-	/// The input registry is used to register InputActions (<see cref="InputAction"/>) and their callbacks. Remember that this is a singleton, so you may use this statically.
+	/// The input registry is used to register InputActions (<see cref="InputAction"/>) and their callbacks by using a Laissez-faire system. 
+	/// \note Remember that this is a singleton, so you may use this statically.
+	/// \todo Create examples of how to use this.
 	/// </summary>
 	/// <seealso cref="Singleton&lt;InputRegistry&gt;" />
 	class InputRegistry : public Singleton<InputRegistry> {
@@ -55,7 +63,8 @@ namespace Techstorm {
 
 		/// <summary>
 		/// Registers a pointer of InputAction to the callback given. This works as a key-value pair, where the key is the action and the 
-		/// value is the callback and is the reason why the return value is important. Please do not lose it or you will not be able to unregister the callback or you may unregister the wrong one!
+		/// value is the callback and is the reason why the return value is important. 
+		/// \warning Please do not lose it or you will not be able to unregister the callback or you may unregister the wrong one!
 		/// </summary>
 		/// <param name="action">The InputAction to be used as a key.</param>
 		/// <param name="callback">The callback that will be used to handle the InputAction.</param>
@@ -99,35 +108,6 @@ namespace Techstorm {
 #endif
 		std::unordered_map<InputAction*, std::unordered_map<int, std::function<void(InputAction*)>>> mActions;
 	};
-	
-/*	/// <summary>
-	/// Gets the current instance of the InputRegistry singleton <see cref="InputRegistry"/>. This is a quality of life function, and calling it like other singletons is perfectly okay.
-	/// </summary>
-	/// <returns>A reference to the current instance of the InputRegistry singleton.</returns>
-	InputRegistry& GetInputRegistry() { return InputRegistry::Instance(); }
-			
-	/// <summary>
-	/// Registers a callback by using the provided action (<see cref="InputAction"/>) and the callback parameter values. This works as a key-value pair, where the key is the action and the 
-	/// value is the callback. This works the same way as the RegisterActionCallback function (InputRegistry::registerActionCallback), but it registers the callback
-	/// in the current input registry (<see cref="InputRegistry"/>). This is simply a quality of life function, and calling it like other singletons is perfectly okay.
-	/// </summary>
-	/// <param name="action">The action.</param>
-	/// <param name="callback">The callback.</param>
-	int RegisterActionCallback(InputAction* action, std::function<void(InputAction*)> const& callback) { return GetInputRegistry().registerActionCallback(action, callback); }
-	
-	/// <summary>
-	/// Unregisters ALL callbacks for the provided InputAction; action (<see cref="InputAction"/>), and unregisters it from the current input registry (<see cref="InputRegistry"/>). 
-	/// This is simply a quality of life function, and calling it like other singletons is perfectly okay.
-	/// </summary>
-	/// <param name="action">The action that will have its callbacks deleted.</param>
-	void UnregisterAction(InputAction* action) { GetInputRegistry().unregisterAction(action); }
-		
-	/// <summary>
-	/// Unregisters a specific callback, denoted by id, for the provided InputAction; action (<see cref="InputAction"/>). This is simply a quality of life function, and calling it like 
-	/// other singletons is perfectly okay.
-	/// </summary>
-	/// <param name="action">The action that the callback lies in.</param>
-	/// <param name="id">The ID of the callback. You should have gotten it in the RegisterActionCallback or InputRegistry::registerActionCallback functions.</param>
-	void UnregisterCallback(InputAction* action, int id) { GetInputRegistry().unregisterCallback(action, id); }*/
+
 
 }

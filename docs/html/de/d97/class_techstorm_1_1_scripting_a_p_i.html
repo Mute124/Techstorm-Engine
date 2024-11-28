@@ -98,6 +98,9 @@ $(document).ready(function(){initNavTree('de/d97/class_techstorm_1_1_scripting_a
 </div><!--header-->
 <div class="contents">
 
+<p>Everything related to the scripting API, i.e loading/unloading libraries, registering functions, etc. As is mentioned at the file's documentation, only lua is supported at the moment.  
+ <a href="../../de/d97/class_techstorm_1_1_scripting_a_p_i.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="../../dc/d41/_scripting_a_p_i_8h_source.html">ScriptingAPI.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> Inheritance diagram for Techstorm::ScriptingAPI:</div>
@@ -122,7 +125,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a00f762aefe81bfdf3f6c9cc5b10ee15b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers the scripting API for Lua.  <br /></td></tr>
 <tr class="separator:a00f762aefe81bfdf3f6c9cc5b10ee15b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4a2224ba04ab05a9f6baa5cac1b8510" id="r_ac4a2224ba04ab05a9f6baa5cac1b8510"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d97/class_techstorm_1_1_scripting_a_p_i.html#ac4a2224ba04ab05a9f6baa5cac1b8510">RegisterAngelScript</a> ()</td></tr>
-<tr class="memdesc:ac4a2224ba04ab05a9f6baa5cac1b8510"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers the scripting API for AngelScript.  <br /></td></tr>
+<tr class="memdesc:ac4a2224ba04ab05a9f6baa5cac1b8510"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers the scripting API for AngelScript. This is just for organization sake and it could be merged with the lua version, but it wont be.  <br /></td></tr>
 <tr class="separator:ac4a2224ba04ab05a9f6baa5cac1b8510"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
@@ -133,8 +136,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a992b0c97479f1cca7c5027314207f5be inherit pub_static_methods_class_techstorm_1_1_singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../dc/d41/_scripting_a_p_i_8h_source.html#l00028">28</a> of file <a class="el" href="../../dc/d41/_scripting_a_p_i_8h_source.html">ScriptingAPI.h</a>.</p>
+<div class="textblock"><p>Everything related to the scripting API, i.e loading/unloading libraries, registering functions, etc. As is mentioned at the file's documentation, only lua is supported at the moment. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d5/d55/class_techstorm_1_1_singleton.html">Singleton&lt;ScriptingAPI&gt;</a></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../dc/d41/_scripting_a_p_i_8h_source.html#l00048">48</a> of file <a class="el" href="../../dc/d41/_scripting_a_p_i_8h_source.html">ScriptingAPI.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a301b6fde804cd5dc203d951b50aa14d4" name="a301b6fde804cd5dc203d951b50aa14d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a301b6fde804cd5dc203d951b50aa14d4">&#9670;&#160;</a></span>ScriptingAPI()</h2>
@@ -199,7 +204,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Initializes the scripting API. </p>
 <dl class="section return"><dt>Returns</dt><dd>an integer value that represents the result of the operation.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d41/_scripting_a_p_i_8h_source.html#l00036">36</a> of file <a class="el" href="../../dc/d41/_scripting_a_p_i_8h_source.html">ScriptingAPI.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d41/_scripting_a_p_i_8h_source.html#l00056">56</a> of file <a class="el" href="../../dc/d41/_scripting_a_p_i_8h_source.html">ScriptingAPI.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/d39/application_2main_8cpp_source.html#l00012">main()</a>.</p>
 
@@ -228,10 +233,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Registers the scripting API for AngelScript. </p>
+<p>Registers the scripting API for AngelScript. This is just for organization sake and it could be merged with the lua version, but it wont be. </p>
 <dl class="section return"><dt>Returns</dt><dd>an integer value that represents the result of the operation.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d41/_scripting_a_p_i_8h_source.html#l00059">59</a> of file <a class="el" href="../../dc/d41/_scripting_a_p_i_8h_source.html">ScriptingAPI.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d41/_scripting_a_p_i_8h_source.html#l00079">79</a> of file <a class="el" href="../../dc/d41/_scripting_a_p_i_8h_source.html">ScriptingAPI.h</a>.</p>
 
 </div>
 </div>
@@ -261,7 +266,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Registers the scripting API for Lua. </p>
 <dl class="section return"><dt>Returns</dt><dd>an integer value that represents the result of the operation.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d41/_scripting_a_p_i_8h_source.html#l00046">46</a> of file <a class="el" href="../../dc/d41/_scripting_a_p_i_8h_source.html">ScriptingAPI.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d41/_scripting_a_p_i_8h_source.html#l00066">66</a> of file <a class="el" href="../../dc/d41/_scripting_a_p_i_8h_source.html">ScriptingAPI.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/d39/application_2main_8cpp_source.html#l00012">main()</a>.</p>
 
@@ -276,7 +281,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/d26/namespace_techstorm.html">Techstorm</a></li><li class="navelem"><a class="el" href="../../de/d97/class_techstorm_1_1_scripting_a_p_i.html">ScriptingAPI</a></li>
-    <li class="footer">Generated on Wed Nov 27 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu Nov 28 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

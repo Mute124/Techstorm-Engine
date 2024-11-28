@@ -20,10 +20,12 @@ void \mbox{\hyperlink{class_techstorm_1_1_plane_object_ac1b1f1708fb15875a3e388d1
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_techstorm_1_1_game_object}{Techstorm\+::\+Game\+Object}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_techstorm_1_1_game_object_a185afdc862c8ef4e7da0083f2814321c}{Game\+Object}} ()
-\item 
 virtual void \mbox{\hyperlink{class_techstorm_1_1_game_object_a38bfdc8ae3a6a364341f478773fcba91}{update}} () override
 \begin{DoxyCompactList}\small\item\em Updates this instance and is called every frame before texturing/rendering. Keep in mind that this will run on the update thread, so make sure what you are doing is {\bfseries{thread safe}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_techstorm_1_1_game_object_a824a42b64dbfa8bc05f9765555996db5}{pre\+Physics\+Update}} () override
+\begin{DoxyCompactList}\small\item\em Called right before the physics update. Do anything you need to do before the physics update here. Keep in mind that this can either run on the update thread or the physics thread, so make sure what you are doing is {\bfseries{thread safe}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_techstorm_1_1_game_object_a5712be1bc55365f5a1753ebe2029de27}{post\+Update}} () override
+\begin{DoxyCompactList}\small\item\em Called right after the update function, but before texturing/rendering. Keep in mind that this will run on the update thread, so make sure what you are doing is {\bfseries{thread safe}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_techstorm_1_1_game_object_adcc7c7dac445cd30b29624051abb9dad}{destroy}} () override
 \begin{DoxyCompactList}\small\item\em Destroys this instance, and is called right before the object is removed from memory. This must be implemented by the user. \end{DoxyCompactList}\end{DoxyCompactItemize}
 

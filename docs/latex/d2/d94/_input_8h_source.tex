@@ -38,7 +38,7 @@
 \DoxyCodeLine{\Hypertarget{_input_8h_source_l00048}00048\ }
 \DoxyCodeLine{\Hypertarget{_input_8h_source_l00053}\mbox{\hyperlink{class_techstorm_1_1_input_registry}{00053}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_techstorm_1_1_input_registry}{InputRegistry}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_techstorm_1_1_singleton}{Singleton}}<InputRegistry>\ \{}
 \DoxyCodeLine{\Hypertarget{_input_8h_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{_input_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_input_8h_source_l00055}00055\ }
 \DoxyCodeLine{\Hypertarget{_input_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1_input_registry_a0d156b86669ec14db159f658b8ca6891}{registerActionCallback}}(\mbox{\hyperlink{class_techstorm_1_1_input_action}{InputAction}}*\ action,\ std::function<\textcolor{keywordtype}{void}(\mbox{\hyperlink{class_techstorm_1_1_input_action}{InputAction}}*)>\ \textcolor{keyword}{const}\&\ callback);}
 \DoxyCodeLine{\Hypertarget{_input_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{\Hypertarget{_input_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1_input_registry_aaf864bfdc99b4ca5806569558c4fe316}{unregisterAction}}(\mbox{\hyperlink{class_techstorm_1_1_input_action}{InputAction}}*\ action);}
@@ -66,13 +66,14 @@
 \DoxyCodeLine{\Hypertarget{_input_8h_source_l00100}00100\ \ \ \ \ \ \ \ \ std::unordered\_map<\mbox{\hyperlink{class_techstorm_1_1_input_action}{InputAction}}*,\ std::unordered\_map<int,\ std::function<void(\mbox{\hyperlink{class_techstorm_1_1_input_action}{InputAction}}*)>>>\ mActions;}
 \DoxyCodeLine{\Hypertarget{_input_8h_source_l00101}00101\ \ \ \ \ \};}
 \DoxyCodeLine{\Hypertarget{_input_8h_source_l00102}00102\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_input_8h_source_l00107}\mbox{\hyperlink{namespace_techstorm_a1bcf30a4f9fdd5660bb8dc8d0bdd90d8}{00107}}\ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_input_registry}{InputRegistry}}\&\ \mbox{\hyperlink{namespace_techstorm_a1bcf30a4f9fdd5660bb8dc8d0bdd90d8}{GetInputRegistry}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_techstorm_1_1_singleton_a992b0c97479f1cca7c5027314207f5be}{InputRegistry::Instance}}();\ \}}
+\DoxyCodeLine{\Hypertarget{_input_8h_source_l00103}00103\ \textcolor{comment}{/*\ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_input_8h_source_l00107}00107\ \ \ \ \ InputRegistry\&\ GetInputRegistry()\ \{\ return\ InputRegistry::Instance();\ \}}
 \DoxyCodeLine{\Hypertarget{_input_8h_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_input_8h_source_l00116}\mbox{\hyperlink{namespace_techstorm_ab3125a1b1ffec2b381e3647a1bcf4e5d}{00116}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespace_techstorm_ab3125a1b1ffec2b381e3647a1bcf4e5d}{RegisterActionCallback}}(\mbox{\hyperlink{class_techstorm_1_1_input_action}{InputAction}}*\ action,\ std::function<\textcolor{keywordtype}{void}(\mbox{\hyperlink{class_techstorm_1_1_input_action}{InputAction}}*)>\ \textcolor{keyword}{const}\&\ callback)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_techstorm_a1bcf30a4f9fdd5660bb8dc8d0bdd90d8}{GetInputRegistry}}().\mbox{\hyperlink{class_techstorm_1_1_input_registry_a0d156b86669ec14db159f658b8ca6891}{registerActionCallback}}(action,\ callback);\ \}}
+\DoxyCodeLine{\Hypertarget{_input_8h_source_l00116}00116\ \ \ \ \ int\ RegisterActionCallback(InputAction*\ action,\ std::function<void(InputAction*)>\ const\&\ callback)\ \{\ return\ GetInputRegistry().registerActionCallback(action,\ callback);\ \}}
 \DoxyCodeLine{\Hypertarget{_input_8h_source_l00117}00117\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_input_8h_source_l00123}\mbox{\hyperlink{namespace_techstorm_ab0c43a65dc477ec3c9572b9f3a1487a4}{00123}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_techstorm_ab0c43a65dc477ec3c9572b9f3a1487a4}{UnregisterAction}}(\mbox{\hyperlink{class_techstorm_1_1_input_action}{InputAction}}*\ action)\ \{\ \mbox{\hyperlink{namespace_techstorm_a1bcf30a4f9fdd5660bb8dc8d0bdd90d8}{GetInputRegistry}}().\mbox{\hyperlink{class_techstorm_1_1_input_registry_aaf864bfdc99b4ca5806569558c4fe316}{unregisterAction}}(action);\ \}}
+\DoxyCodeLine{\Hypertarget{_input_8h_source_l00123}00123\ \ \ \ \ void\ UnregisterAction(InputAction*\ action)\ \{\ GetInputRegistry().unregisterAction(action);\ \}}
 \DoxyCodeLine{\Hypertarget{_input_8h_source_l00124}00124\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_input_8h_source_l00131}\mbox{\hyperlink{namespace_techstorm_ab0e349acbbd3184937cf23323ad96f5c}{00131}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_techstorm_ab0e349acbbd3184937cf23323ad96f5c}{UnregisterCallback}}(\mbox{\hyperlink{class_techstorm_1_1_input_action}{InputAction}}*\ action,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \{\ \mbox{\hyperlink{namespace_techstorm_a1bcf30a4f9fdd5660bb8dc8d0bdd90d8}{GetInputRegistry}}().\mbox{\hyperlink{class_techstorm_1_1_input_registry_a535be693e06547f3273610283b8f7b59}{unregisterCallback}}(action,\ \textcolor{keywordtype}{id});\ \}}
+\DoxyCodeLine{\Hypertarget{_input_8h_source_l00131}00131\ \ \ \ \ void\ UnregisterCallback(InputAction*\ action,\ int\ id)\ \{\ GetInputRegistry().unregisterCallback(action,\ id);\ \}*/}
 \DoxyCodeLine{\Hypertarget{_input_8h_source_l00132}00132\ }
 \DoxyCodeLine{\Hypertarget{_input_8h_source_l00133}00133\ \}}
 

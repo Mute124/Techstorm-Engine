@@ -25,7 +25,7 @@ class \mbox{\hyperlink{class_techstorm_1_1_config_file_registry}{Config\+File\+R
 struct \mbox{\hyperlink{struct_techstorm_1_1_engine_config}{Engine\+Config}}
 \item 
 struct \mbox{\hyperlink{struct_techstorm_1_1_exported_function}{Exported\+Function}}
-\item 
+\begin{DoxyCompactList}\small\item\em Represents a function that can be exported to lua. The reason for it\textquotesingle{}s existence is because it makes it easier to export functions to lua. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_techstorm_1_1_file_meta}{File\+Meta}}
 \item 
 class \mbox{\hyperlink{class_techstorm_1_1_file_system_registry}{File\+System\+Registry}}
@@ -33,7 +33,7 @@ class \mbox{\hyperlink{class_techstorm_1_1_file_system_registry}{File\+System\+R
 class \mbox{\hyperlink{class_techstorm_1_1_game_camera}{Game\+Camera}}
 \begin{DoxyCompactList}\small\item\em Represents a camera wherein the world is rendered and viewed from. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_techstorm_1_1_game_object}{Game\+Object}}
-\begin{DoxyCompactList}\small\item\em A game object that can be rendered to the screen. Inherits from IGame\+Object, and already provides the basic rendering functionality. If you override this class, you should inherit the function. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em A game object that can be rendered to the screen. Inherits from IGame\+Object, and already provides the basic rendering functionality. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_techstorm_1_1_game_object_registry}{Game\+Object\+Registry}}
 \begin{DoxyCompactList}\small\item\em Game object registry, it stores all game objects in the world and manages their updating, rendering, destruction, creation, etc. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_techstorm_1_1_gate}{Gate}}
@@ -63,7 +63,7 @@ class \mbox{\hyperlink{class_techstorm_1_1_registered_file}{Registered\+File}}
 class \mbox{\hyperlink{class_techstorm_1_1_renderer}{Renderer}}
 \begin{DoxyCompactList}\small\item\em Serves as the renderer for the game. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i}{Scripting\+API}}
-\item 
+\begin{DoxyCompactList}\small\item\em Everything related to the scripting API, i.\+e loading/unloading libraries, registering functions, etc. As is mentioned at the file\textquotesingle{}s documentation, only lua is supported at the moment. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_techstorm_1_1_singleton}{Singleton}}
 \begin{DoxyCompactList}\small\item\em A singleton class, it does what singletons do. The template (T) must be the type that is inheriting from this class, otherwise there will be issues. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_techstorm_1_1_techstorm_engine}{Techstorm\+Engine}}
@@ -125,14 +125,6 @@ enum class \mbox{\hyperlink{namespace_techstorm_a3289ce49929ae6003fcbc78c954af69
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{namespace_techstorm_acbc8f303afb42ae77958c4f0cc5601ba}{Init\+Haptics}} ()
-\item 
-void \mbox{\hyperlink{namespace_techstorm_a5451a8aaa383e3936b9939fc6297d6e1}{Set\+Controller\+Rumble}} (int controller\+Index, int left\+Motor\+Speed, int right\+Motor\+Speed)
-\item 
-void \mbox{\hyperlink{namespace_techstorm_abbe31e4f49d55c0496f4631a182e1477}{Start\+Rumbling\+Controller}} (int controller\+Index, int left\+Motor\+Speed, int right\+Motor\+Speed)
-\item 
-void \mbox{\hyperlink{namespace_techstorm_aa6731e1161358e83d844e07b3a039304}{Stop\+Rumbling\+Controller}} (int controller\+Index)
-\item 
 \mbox{\hyperlink{class_techstorm_1_1_config_file_registry}{Config\+File\+Registry}} \& \mbox{\hyperlink{namespace_techstorm_afae7d54e50b01e66aed0ffd14031056c}{Get\+Config\+File\+Registry}} ()
 \item 
 void \mbox{\hyperlink{namespace_techstorm_a2b72a42193d6d2dc6bbb26a25656da6c}{Initialize\+Config\+Registry}} ()
@@ -153,14 +145,6 @@ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_techstorm_1_1_file_meta}{File\+
 \item 
 std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_techstorm_1_1_registered_file}{Registered\+File}} $>$ \mbox{\hyperlink{namespace_techstorm_a05f20a9725a9462dc9d707c5d44766fb}{Get\+File}} (std\+::string key, bool load\+If\+Not\+Loaded=true)
 \item 
-\mbox{\hyperlink{class_techstorm_1_1_input_registry}{Input\+Registry}} \& \mbox{\hyperlink{namespace_techstorm_a1bcf30a4f9fdd5660bb8dc8d0bdd90d8}{Get\+Input\+Registry}} ()
-\begin{DoxyCompactList}\small\item\em Gets the current instance of the \doxylink{class_techstorm_1_1_input_registry}{Input\+Registry} singleton \doxylink{class_techstorm_1_1_input_registry}{Input\+Registry}. This is a quality of life function, and calling it like other singletons is perfectly okay. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{namespace_techstorm_ab3125a1b1ffec2b381e3647a1bcf4e5d}{Register\+Action\+Callback}} (\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*}action, std\+::function$<$ void(\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*})$>$ const \&callback)
-\begin{DoxyCompactList}\small\item\em Registers a callback by using the provided action (\doxylink{class_techstorm_1_1_input_action}{Input\+Action}) and the callback parameter values. This works as a key-\/value pair, where the key is the action and the value is the callback. This works the same way as the Register\+Action\+Callback function (\doxylink{class_techstorm_1_1_input_registry_a0d156b86669ec14db159f658b8ca6891}{Input\+Registry\+::register\+Action\+Callback}), but it registers the callback in the current input registry (\doxylink{class_techstorm_1_1_input_registry}{Input\+Registry}). This is simply a quality of life function, and calling it like other singletons is perfectly okay. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{namespace_techstorm_ab0c43a65dc477ec3c9572b9f3a1487a4}{Unregister\+Action}} (\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*}action)
-\begin{DoxyCompactList}\small\item\em Unregisters ALL callbacks for the provided \doxylink{class_techstorm_1_1_input_action}{Input\+Action}; action (\doxylink{class_techstorm_1_1_input_action}{Input\+Action}), and unregisters it from the current input registry (\doxylink{class_techstorm_1_1_input_registry}{Input\+Registry}). This is simply a quality of life function, and calling it like other singletons is perfectly okay. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{namespace_techstorm_ab0e349acbbd3184937cf23323ad96f5c}{Unregister\+Callback}} (\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*}action, int id)
-\begin{DoxyCompactList}\small\item\em Unregisters a specific callback, denoted by id, for the provided \doxylink{class_techstorm_1_1_input_action}{Input\+Action}; action (\doxylink{class_techstorm_1_1_input_action}{Input\+Action}). This is simply a quality of life function, and calling it like other singletons is perfectly okay. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\T \& \mbox{\hyperlink{namespace_techstorm_a98e9633c11c071c2a51987a62ce1cc16}{Get\+Global}} (const std\+::string \&key)
 \item 
 {\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespace_techstorm_acbd4313148ac66f22420becf6668fc8d}{Set\+Global}} (const std\+::string \&key, const T \&value)
@@ -225,7 +209,7 @@ Definition at line \mbox{\hyperlink{_game_settings_8h_source_l00009}{9}} of file
 
 
 
-Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00026}{26}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
+Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00042}{42}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
 
 \Hypertarget{namespace_techstorm_af6556c4d563341def4c68414537120ed}\label{namespace_techstorm_af6556c4d563341def4c68414537120ed} 
 \index{Techstorm@{Techstorm}!LuaLibraryRegistry@{LuaLibraryRegistry}}
@@ -235,7 +219,7 @@ Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00026}{26}} of f
 
 
 
-Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00025}{25}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
+Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00041}{41}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
 
 
 
@@ -460,41 +444,6 @@ Definition at line \mbox{\hyperlink{_globals_8h_source_l00031}{31}} of file \mbo
 
 References \mbox{\hyperlink{_globals_8h_source_l00023}{Techstorm\+::\+Globals\+Container\+::get()}}, and \mbox{\hyperlink{_singleton_8h_source_l00017}{Techstorm\+::\+Singleton$<$ Globals\+Container $>$\+::\+Instance()}}.
 
-\Hypertarget{namespace_techstorm_a1bcf30a4f9fdd5660bb8dc8d0bdd90d8}\label{namespace_techstorm_a1bcf30a4f9fdd5660bb8dc8d0bdd90d8} 
-\index{Techstorm@{Techstorm}!GetInputRegistry@{GetInputRegistry}}
-\index{GetInputRegistry@{GetInputRegistry}!Techstorm@{Techstorm}}
-\doxysubsubsection{\texorpdfstring{GetInputRegistry()}{GetInputRegistry()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_techstorm_1_1_input_registry}{Input\+Registry}} \& Techstorm\+::\+Get\+Input\+Registry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Gets the current instance of the \doxylink{class_techstorm_1_1_input_registry}{Input\+Registry} singleton \doxylink{class_techstorm_1_1_input_registry}{Input\+Registry}. This is a quality of life function, and calling it like other singletons is perfectly okay. 
-
-\begin{DoxyReturn}{Returns}
-A reference to the current instance of the \doxylink{class_techstorm_1_1_input_registry}{Input\+Registry} singleton.
-\end{DoxyReturn}
-
-
-Definition at line \mbox{\hyperlink{_input_8h_source_l00107}{107}} of file \mbox{\hyperlink{_input_8h_source}{Input.\+h}}.
-
-
-
-References \mbox{\hyperlink{_singleton_8h_source_l00017}{Techstorm\+::\+Singleton$<$ Input\+Registry $>$\+::\+Instance()}}.
-
-
-
-Referenced by \mbox{\hyperlink{_input_8h_source_l00116}{Register\+Action\+Callback()}}, \mbox{\hyperlink{_input_8h_source_l00123}{Unregister\+Action()}}, and \mbox{\hyperlink{_input_8h_source_l00131}{Unregister\+Callback()}}.
-
-\Hypertarget{namespace_techstorm_acbc8f303afb42ae77958c4f0cc5601ba}\label{namespace_techstorm_acbc8f303afb42ae77958c4f0cc5601ba} 
-\index{Techstorm@{Techstorm}!InitHaptics@{InitHaptics}}
-\index{InitHaptics@{InitHaptics}!Techstorm@{Techstorm}}
-\doxysubsubsection{\texorpdfstring{InitHaptics()}{InitHaptics()}}
-{\footnotesize\ttfamily void Techstorm\+::\+Init\+Haptics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line \mbox{\hyperlink{_common_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{_common_8cpp_source}{Common.\+cpp}}.
-
 \Hypertarget{namespace_techstorm_a2b72a42193d6d2dc6bbb26a25656da6c}\label{namespace_techstorm_a2b72a42193d6d2dc6bbb26a25656da6c} 
 \index{Techstorm@{Techstorm}!InitializeConfigRegistry@{InitializeConfigRegistry}}
 \index{InitializeConfigRegistry@{InitializeConfigRegistry}!Techstorm@{Techstorm}}
@@ -541,45 +490,6 @@ Definition at line \mbox{\hyperlink{_config_8cpp_source_l00081}{81}} of file \mb
 
 References \mbox{\hyperlink{_singleton_8h_source_l00017}{Techstorm\+::\+Singleton$<$ Config\+File\+Registry $>$\+::\+Instance()}}, and \mbox{\hyperlink{_config_8cpp_source_l00061}{Techstorm\+::\+Config\+File\+Registry\+::lookup()}}.
 
-\Hypertarget{namespace_techstorm_ab3125a1b1ffec2b381e3647a1bcf4e5d}\label{namespace_techstorm_ab3125a1b1ffec2b381e3647a1bcf4e5d} 
-\index{Techstorm@{Techstorm}!RegisterActionCallback@{RegisterActionCallback}}
-\index{RegisterActionCallback@{RegisterActionCallback}!Techstorm@{Techstorm}}
-\doxysubsubsection{\texorpdfstring{RegisterActionCallback()}{RegisterActionCallback()}}
-{\footnotesize\ttfamily int Techstorm\+::\+Register\+Action\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*}}]{action,  }\item[{std\+::function$<$ void(\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*})$>$ const \&}]{callback }\end{DoxyParamCaption})}
-
-
-
-Registers a callback by using the provided action (\doxylink{class_techstorm_1_1_input_action}{Input\+Action}) and the callback parameter values. This works as a key-\/value pair, where the key is the action and the value is the callback. This works the same way as the Register\+Action\+Callback function (\doxylink{class_techstorm_1_1_input_registry_a0d156b86669ec14db159f658b8ca6891}{Input\+Registry\+::register\+Action\+Callback}), but it registers the callback in the current input registry (\doxylink{class_techstorm_1_1_input_registry}{Input\+Registry}). This is simply a quality of life function, and calling it like other singletons is perfectly okay. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em action} & The action.\\
-\hline
-{\em callback} & The callback.\\
-\hline
-\end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{_input_8h_source_l00116}{116}} of file \mbox{\hyperlink{_input_8h_source}{Input.\+h}}.
-
-
-
-References \mbox{\hyperlink{_input_8h_source_l00107}{Get\+Input\+Registry()}}, and \mbox{\hyperlink{_input_8cpp_source_l00003}{Techstorm\+::\+Input\+Registry\+::register\+Action\+Callback()}}.
-
-\Hypertarget{namespace_techstorm_a5451a8aaa383e3936b9939fc6297d6e1}\label{namespace_techstorm_a5451a8aaa383e3936b9939fc6297d6e1} 
-\index{Techstorm@{Techstorm}!SetControllerRumble@{SetControllerRumble}}
-\index{SetControllerRumble@{SetControllerRumble}!Techstorm@{Techstorm}}
-\doxysubsubsection{\texorpdfstring{SetControllerRumble()}{SetControllerRumble()}}
-{\footnotesize\ttfamily void Techstorm\+::\+Set\+Controller\+Rumble (\begin{DoxyParamCaption}\item[{int}]{controller\+Index,  }\item[{int}]{left\+Motor\+Speed,  }\item[{int}]{right\+Motor\+Speed }\end{DoxyParamCaption})}
-
-
-
-Definition at line \mbox{\hyperlink{_common_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{_common_8cpp_source}{Common.\+cpp}}.
-
-
-
-Referenced by \mbox{\hyperlink{_common_8cpp_source_l00034}{Start\+Rumbling\+Controller()}}, and \mbox{\hyperlink{_common_8cpp_source_l00039}{Stop\+Rumbling\+Controller()}}.
-
 \Hypertarget{namespace_techstorm_acbd4313148ac66f22420becf6668fc8d}\label{namespace_techstorm_acbd4313148ac66f22420becf6668fc8d} 
 \index{Techstorm@{Techstorm}!SetGlobal@{SetGlobal}}
 \index{SetGlobal@{SetGlobal}!Techstorm@{Techstorm}}
@@ -594,82 +504,6 @@ Definition at line \mbox{\hyperlink{_globals_8h_source_l00038}{38}} of file \mbo
 
 
 References \mbox{\hyperlink{_singleton_8h_source_l00017}{Techstorm\+::\+Singleton$<$ Globals\+Container $>$\+::\+Instance()}}, and \mbox{\hyperlink{_globals_8h_source_l00014}{Techstorm\+::\+Globals\+Container\+::set()}}.
-
-\Hypertarget{namespace_techstorm_abbe31e4f49d55c0496f4631a182e1477}\label{namespace_techstorm_abbe31e4f49d55c0496f4631a182e1477} 
-\index{Techstorm@{Techstorm}!StartRumblingController@{StartRumblingController}}
-\index{StartRumblingController@{StartRumblingController}!Techstorm@{Techstorm}}
-\doxysubsubsection{\texorpdfstring{StartRumblingController()}{StartRumblingController()}}
-{\footnotesize\ttfamily void Techstorm\+::\+Start\+Rumbling\+Controller (\begin{DoxyParamCaption}\item[{int}]{controller\+Index,  }\item[{int}]{left\+Motor\+Speed,  }\item[{int}]{right\+Motor\+Speed }\end{DoxyParamCaption})}
-
-
-
-Definition at line \mbox{\hyperlink{_common_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{_common_8cpp_source}{Common.\+cpp}}.
-
-
-
-References \mbox{\hyperlink{_common_8cpp_source_l00024}{Set\+Controller\+Rumble()}}.
-
-\Hypertarget{namespace_techstorm_aa6731e1161358e83d844e07b3a039304}\label{namespace_techstorm_aa6731e1161358e83d844e07b3a039304} 
-\index{Techstorm@{Techstorm}!StopRumblingController@{StopRumblingController}}
-\index{StopRumblingController@{StopRumblingController}!Techstorm@{Techstorm}}
-\doxysubsubsection{\texorpdfstring{StopRumblingController()}{StopRumblingController()}}
-{\footnotesize\ttfamily void Techstorm\+::\+Stop\+Rumbling\+Controller (\begin{DoxyParamCaption}\item[{int}]{controller\+Index }\end{DoxyParamCaption})}
-
-
-
-Definition at line \mbox{\hyperlink{_common_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{_common_8cpp_source}{Common.\+cpp}}.
-
-
-
-References \mbox{\hyperlink{_common_8cpp_source_l00024}{Set\+Controller\+Rumble()}}.
-
-\Hypertarget{namespace_techstorm_ab0c43a65dc477ec3c9572b9f3a1487a4}\label{namespace_techstorm_ab0c43a65dc477ec3c9572b9f3a1487a4} 
-\index{Techstorm@{Techstorm}!UnregisterAction@{UnregisterAction}}
-\index{UnregisterAction@{UnregisterAction}!Techstorm@{Techstorm}}
-\doxysubsubsection{\texorpdfstring{UnregisterAction()}{UnregisterAction()}}
-{\footnotesize\ttfamily void Techstorm\+::\+Unregister\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*}}]{action }\end{DoxyParamCaption})}
-
-
-
-Unregisters ALL callbacks for the provided \doxylink{class_techstorm_1_1_input_action}{Input\+Action}; action (\doxylink{class_techstorm_1_1_input_action}{Input\+Action}), and unregisters it from the current input registry (\doxylink{class_techstorm_1_1_input_registry}{Input\+Registry}). This is simply a quality of life function, and calling it like other singletons is perfectly okay. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em action} & The action that will have its callbacks deleted.\\
-\hline
-\end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{_input_8h_source_l00123}{123}} of file \mbox{\hyperlink{_input_8h_source}{Input.\+h}}.
-
-
-
-References \mbox{\hyperlink{_input_8h_source_l00107}{Get\+Input\+Registry()}}, and \mbox{\hyperlink{_input_8cpp_source_l00012}{Techstorm\+::\+Input\+Registry\+::unregister\+Action()}}.
-
-\Hypertarget{namespace_techstorm_ab0e349acbbd3184937cf23323ad96f5c}\label{namespace_techstorm_ab0e349acbbd3184937cf23323ad96f5c} 
-\index{Techstorm@{Techstorm}!UnregisterCallback@{UnregisterCallback}}
-\index{UnregisterCallback@{UnregisterCallback}!Techstorm@{Techstorm}}
-\doxysubsubsection{\texorpdfstring{UnregisterCallback()}{UnregisterCallback()}}
-{\footnotesize\ttfamily void Techstorm\+::\+Unregister\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*}}]{action,  }\item[{int}]{id }\end{DoxyParamCaption})}
-
-
-
-Unregisters a specific callback, denoted by id, for the provided \doxylink{class_techstorm_1_1_input_action}{Input\+Action}; action (\doxylink{class_techstorm_1_1_input_action}{Input\+Action}). This is simply a quality of life function, and calling it like other singletons is perfectly okay. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em action} & The action that the callback lies in.\\
-\hline
-{\em id} & The ID of the callback. You should have gotten it in the Register\+Action\+Callback or \doxylink{class_techstorm_1_1_input_registry_a0d156b86669ec14db159f658b8ca6891}{Input\+Registry\+::register\+Action\+Callback} functions.\\
-\hline
-\end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{_input_8h_source_l00131}{131}} of file \mbox{\hyperlink{_input_8h_source}{Input.\+h}}.
-
-
-
-References \mbox{\hyperlink{_input_8h_source_l00107}{Get\+Input\+Registry()}}, and \mbox{\hyperlink{_input_8cpp_source_l00016}{Techstorm\+::\+Input\+Registry\+::unregister\+Callback()}}.
 
 
 

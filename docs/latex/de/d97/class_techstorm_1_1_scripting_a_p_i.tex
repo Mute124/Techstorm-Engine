@@ -2,6 +2,11 @@
 \hypertarget{class_techstorm_1_1_scripting_a_p_i}{}\label{class_techstorm_1_1_scripting_a_p_i}\index{Techstorm::ScriptingAPI@{Techstorm::ScriptingAPI}}
 
 
+Everything related to the scripting API, i.\+e loading/unloading libraries, registering functions, etc. As is mentioned at the file\textquotesingle{}s documentation, only lua is supported at the moment.  
+
+
+
+
 {\ttfamily \#include $<$Scripting\+API.\+h$>$}
 
 Inheritance diagram for Techstorm\+::Scripting\+API\+:\begin{figure}[H]
@@ -20,7 +25,7 @@ int \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_a59761650d84d71b9155440
 int \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_a00f762aefe81bfdf3f6c9cc5b10ee15b}{Register\+Lua}} ()
 \begin{DoxyCompactList}\small\item\em Registers the scripting API for Lua. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_ac4a2224ba04ab05a9f6baa5cac1b8510}{Register\+Angel\+Script}} ()
-\begin{DoxyCompactList}\small\item\em Registers the scripting API for Angel\+Script. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Registers the scripting API for Angel\+Script. This is just for organization sake and it could be merged with the lua version, but it wont be. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_techstorm_1_1_singleton}{Techstorm\+::\+Singleton$<$ Scripting\+API $>$}}}
 \begin{DoxyCompactItemize}
@@ -30,9 +35,16 @@ static \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i}{Scripting\+API}} \&
 
 
 \doxysubsection{Detailed Description}
+Everything related to the scripting API, i.\+e loading/unloading libraries, registering functions, etc. As is mentioned at the file\textquotesingle{}s documentation, only lua is supported at the moment. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_techstorm_1_1_singleton}{Singleton$<$\+Scripting\+API$>$}
 
 
-Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00028}{28}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00048}{48}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
 
 
 
@@ -61,7 +73,7 @@ an integer value that represents the result of the operation.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00036}{36}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
+Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00056}{56}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
 
 
 
@@ -75,14 +87,14 @@ Referenced by \mbox{\hyperlink{application_2main_8cpp_source_l00012}{main()}}.
 
 
 
-Registers the scripting API for Angel\+Script. 
+Registers the scripting API for Angel\+Script. This is just for organization sake and it could be merged with the lua version, but it wont be. 
 
 \begin{DoxyReturn}{Returns}
 an integer value that represents the result of the operation.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00059}{59}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
+Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00079}{79}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
 
 \Hypertarget{class_techstorm_1_1_scripting_a_p_i_a00f762aefe81bfdf3f6c9cc5b10ee15b}\label{class_techstorm_1_1_scripting_a_p_i_a00f762aefe81bfdf3f6c9cc5b10ee15b} 
 \index{Techstorm::ScriptingAPI@{Techstorm::ScriptingAPI}!RegisterLua@{RegisterLua}}
@@ -99,7 +111,7 @@ an integer value that represents the result of the operation.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00046}{46}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
+Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00066}{66}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
 
 
 

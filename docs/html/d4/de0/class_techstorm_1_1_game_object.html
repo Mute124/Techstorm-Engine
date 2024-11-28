@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('d4/de0/class_techstorm_1_1_game_object
 </div><!--header-->
 <div class="contents">
 
-<p>A game object that can be rendered to the screen. Inherits from IGameObject, and already provides the basic rendering functionality. If you override this class, you should inherit the function.  
+<p>A game object that can be rendered to the screen. Inherits from IGameObject, and already provides the basic rendering functionality.  
  <a href="../../d4/de0/class_techstorm_1_1_game_object.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>&gt;</code></p>
@@ -116,51 +116,27 @@ $(document).ready(function(){initNavTree('d4/de0/class_techstorm_1_1_game_object
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a185afdc862c8ef4e7da0083f2814321c" id="r_a185afdc862c8ef4e7da0083f2814321c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de0/class_techstorm_1_1_game_object.html#a185afdc862c8ef4e7da0083f2814321c">GameObject</a> ()</td></tr>
-<tr class="separator:a185afdc862c8ef4e7da0083f2814321c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaca78ab748cdac47a8c9d65084a925be" id="r_aaca78ab748cdac47a8c9d65084a925be"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de0/class_techstorm_1_1_game_object.html#aaca78ab748cdac47a8c9d65084a925be">render</a> () override</td></tr>
 <tr class="memdesc:aaca78ab748cdac47a8c9d65084a925be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders this instance. This is not a pure virtual and is empty because it is up to the user to use this as they see fit without forcing them to implement it.  <br /></td></tr>
 <tr class="separator:aaca78ab748cdac47a8c9d65084a925be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38bfdc8ae3a6a364341f478773fcba91" id="r_a38bfdc8ae3a6a364341f478773fcba91"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de0/class_techstorm_1_1_game_object.html#a38bfdc8ae3a6a364341f478773fcba91">update</a> () override</td></tr>
 <tr class="memdesc:a38bfdc8ae3a6a364341f478773fcba91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates this instance and is called every frame before texturing/rendering. Keep in mind that this will run on the update thread, so make sure what you are doing is <b>thread safe</b>.  <br /></td></tr>
 <tr class="separator:a38bfdc8ae3a6a364341f478773fcba91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a824a42b64dbfa8bc05f9765555996db5" id="r_a824a42b64dbfa8bc05f9765555996db5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de0/class_techstorm_1_1_game_object.html#a824a42b64dbfa8bc05f9765555996db5">prePhysicsUpdate</a> () override</td></tr>
+<tr class="memdesc:a824a42b64dbfa8bc05f9765555996db5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called right before the physics update. Do anything you need to do before the physics update here. Keep in mind that this can either run on the update thread or the physics thread, so make sure what you are doing is <b>thread safe</b>.  <br /></td></tr>
+<tr class="separator:a824a42b64dbfa8bc05f9765555996db5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5712be1bc55365f5a1753ebe2029de27" id="r_a5712be1bc55365f5a1753ebe2029de27"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de0/class_techstorm_1_1_game_object.html#a5712be1bc55365f5a1753ebe2029de27">postUpdate</a> () override</td></tr>
+<tr class="memdesc:a5712be1bc55365f5a1753ebe2029de27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called right after the update function, but before texturing/rendering. Keep in mind that this will run on the update thread, so make sure what you are doing is <b>thread safe</b>.  <br /></td></tr>
+<tr class="separator:a5712be1bc55365f5a1753ebe2029de27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcc7c7dac445cd30b29624051abb9dad" id="r_adcc7c7dac445cd30b29624051abb9dad"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de0/class_techstorm_1_1_game_object.html#adcc7c7dac445cd30b29624051abb9dad">destroy</a> () override</td></tr>
 <tr class="memdesc:adcc7c7dac445cd30b29624051abb9dad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys this instance, and is called right before the object is removed from memory. This must be implemented by the user.  <br /></td></tr>
 <tr class="separator:adcc7c7dac445cd30b29624051abb9dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A game object that can be rendered to the screen. Inherits from IGameObject, and already provides the basic rendering functionality. If you override this class, you should inherit the function. </p>
+<div class="textblock"><p>A game object that can be rendered to the screen. Inherits from IGameObject, and already provides the basic rendering functionality. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00118">118</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a185afdc862c8ef4e7da0083f2814321c" name="a185afdc862c8ef4e7da0083f2814321c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a185afdc862c8ef4e7da0083f2814321c">&#9670;&#160;</a></span>GameObject()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Techstorm::GameObject::GameObject </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00120">120</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00093">93</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="adcc7c7dac445cd30b29624051abb9dad" name="adcc7c7dac445cd30b29624051abb9dad"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adcc7c7dac445cd30b29624051abb9dad">&#9670;&#160;</a></span>destroy()</h2>
 
@@ -187,6 +163,64 @@ Public Member Functions</h2></td></tr>
 <p>Destroys this instance, and is called right before the object is removed from memory. This must be implemented by the user. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d3/df6/_game_object_8cpp_source.html#l00009">9</a> of file <a class="el" href="../../d3/df6/_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5712be1bc55365f5a1753ebe2029de27" name="a5712be1bc55365f5a1753ebe2029de27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5712be1bc55365f5a1753ebe2029de27">&#9670;&#160;</a></span>postUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Techstorm::GameObject::postUpdate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called right after the update function, but before texturing/rendering. Keep in mind that this will run on the update thread, so make sure what you are doing is <b>thread safe</b>. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00123">123</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+
+</div>
+</div>
+<a id="a824a42b64dbfa8bc05f9765555996db5" name="a824a42b64dbfa8bc05f9765555996db5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a824a42b64dbfa8bc05f9765555996db5">&#9670;&#160;</a></span>prePhysicsUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Techstorm::GameObject::prePhysicsUpdate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called right before the physics update. Do anything you need to do before the physics update here. Keep in mind that this can either run on the update thread or the physics thread, so make sure what you are doing is <b>thread safe</b>. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00115">115</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
 
 </div>
 </div>
@@ -260,7 +294,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/d26/namespace_techstorm.html">Techstorm</a></li><li class="navelem"><a class="el" href="../../d4/de0/class_techstorm_1_1_game_object.html">GameObject</a></li>
-    <li class="footer">Generated on Wed Nov 27 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu Nov 28 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

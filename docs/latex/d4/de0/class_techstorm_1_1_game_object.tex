@@ -2,7 +2,7 @@
 \hypertarget{class_techstorm_1_1_game_object}{}\label{class_techstorm_1_1_game_object}\index{Techstorm::GameObject@{Techstorm::GameObject}}
 
 
-A game object that can be rendered to the screen. Inherits from IGame\+Object, and already provides the basic rendering functionality. If you override this class, you should inherit the function.  
+A game object that can be rendered to the screen. Inherits from IGame\+Object, and already provides the basic rendering functionality.  
 
 
 
@@ -18,33 +18,22 @@ Inheritance diagram for Techstorm\+::Game\+Object\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_techstorm_1_1_game_object_a185afdc862c8ef4e7da0083f2814321c}{Game\+Object}} ()
-\item 
 virtual void \mbox{\hyperlink{class_techstorm_1_1_game_object_aaca78ab748cdac47a8c9d65084a925be}{render}} () override
 \begin{DoxyCompactList}\small\item\em Renders this instance. This is not a pure virtual and is empty because it is up to the user to use this as they see fit without forcing them to implement it. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_techstorm_1_1_game_object_a38bfdc8ae3a6a364341f478773fcba91}{update}} () override
 \begin{DoxyCompactList}\small\item\em Updates this instance and is called every frame before texturing/rendering. Keep in mind that this will run on the update thread, so make sure what you are doing is {\bfseries{thread safe}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_techstorm_1_1_game_object_a824a42b64dbfa8bc05f9765555996db5}{pre\+Physics\+Update}} () override
+\begin{DoxyCompactList}\small\item\em Called right before the physics update. Do anything you need to do before the physics update here. Keep in mind that this can either run on the update thread or the physics thread, so make sure what you are doing is {\bfseries{thread safe}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_techstorm_1_1_game_object_a5712be1bc55365f5a1753ebe2029de27}{post\+Update}} () override
+\begin{DoxyCompactList}\small\item\em Called right after the update function, but before texturing/rendering. Keep in mind that this will run on the update thread, so make sure what you are doing is {\bfseries{thread safe}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_techstorm_1_1_game_object_adcc7c7dac445cd30b29624051abb9dad}{destroy}} () override
 \begin{DoxyCompactList}\small\item\em Destroys this instance, and is called right before the object is removed from memory. This must be implemented by the user. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-A game object that can be rendered to the screen. Inherits from IGame\+Object, and already provides the basic rendering functionality. If you override this class, you should inherit the function. 
+A game object that can be rendered to the screen. Inherits from IGame\+Object, and already provides the basic rendering functionality. 
 
-Definition at line \mbox{\hyperlink{_game_object_8h_source_l00118}{118}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
-
-
-
-\doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_techstorm_1_1_game_object_a185afdc862c8ef4e7da0083f2814321c}\label{class_techstorm_1_1_game_object_a185afdc862c8ef4e7da0083f2814321c} 
-\index{Techstorm::GameObject@{Techstorm::GameObject}!GameObject@{GameObject}}
-\index{GameObject@{GameObject}!Techstorm::GameObject@{Techstorm::GameObject}}
-\doxysubsubsection{\texorpdfstring{GameObject()}{GameObject()}}
-{\footnotesize\ttfamily Techstorm\+::\+Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Definition at line \mbox{\hyperlink{_game_object_8h_source_l00120}{120}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
+Definition at line \mbox{\hyperlink{_game_object_8h_source_l00093}{93}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
 
 
 
@@ -62,6 +51,34 @@ Destroys this instance, and is called right before the object is removed from me
 
 
 Definition at line \mbox{\hyperlink{_game_object_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
+
+\Hypertarget{class_techstorm_1_1_game_object_a5712be1bc55365f5a1753ebe2029de27}\label{class_techstorm_1_1_game_object_a5712be1bc55365f5a1753ebe2029de27} 
+\index{Techstorm::GameObject@{Techstorm::GameObject}!postUpdate@{postUpdate}}
+\index{postUpdate@{postUpdate}!Techstorm::GameObject@{Techstorm::GameObject}}
+\doxysubsubsection{\texorpdfstring{postUpdate()}{postUpdate()}}
+{\footnotesize\ttfamily virtual void Techstorm\+::\+Game\+Object\+::post\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called right after the update function, but before texturing/rendering. Keep in mind that this will run on the update thread, so make sure what you are doing is {\bfseries{thread safe}}. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_object_8h_source_l00123}{123}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
+
+\Hypertarget{class_techstorm_1_1_game_object_a824a42b64dbfa8bc05f9765555996db5}\label{class_techstorm_1_1_game_object_a824a42b64dbfa8bc05f9765555996db5} 
+\index{Techstorm::GameObject@{Techstorm::GameObject}!prePhysicsUpdate@{prePhysicsUpdate}}
+\index{prePhysicsUpdate@{prePhysicsUpdate}!Techstorm::GameObject@{Techstorm::GameObject}}
+\doxysubsubsection{\texorpdfstring{prePhysicsUpdate()}{prePhysicsUpdate()}}
+{\footnotesize\ttfamily virtual void Techstorm\+::\+Game\+Object\+::pre\+Physics\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called right before the physics update. Do anything you need to do before the physics update here. Keep in mind that this can either run on the update thread or the physics thread, so make sure what you are doing is {\bfseries{thread safe}}. 
+
+
+
+Definition at line \mbox{\hyperlink{_game_object_8h_source_l00115}{115}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
 
 \Hypertarget{class_techstorm_1_1_game_object_aaca78ab748cdac47a8c9d65084a925be}\label{class_techstorm_1_1_game_object_aaca78ab748cdac47a8c9d65084a925be} 
 \index{Techstorm::GameObject@{Techstorm::GameObject}!render@{render}}

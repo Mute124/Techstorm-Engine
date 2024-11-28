@@ -1,14 +1,23 @@
+/// \file Common.h
+/// 
+/// \brief Common includes and definitions that are used throughout the engine. There are going to be very limited amounts of actual engine includes, so this is not a replacement for that. 
+/// Instead, this is a way to centralize the includes and definitions that are used throughout the engine.
+/// 
+/// \todo Add more haptic features
+/// 
+/// \remarks This file has a few configurations that are based on defines. TS_ENABLE_HAPTICS is used to enable/disable haptic features (ie. controller rumble), whereas TS_ENABLE_EXTENSIONS is used
+/// to enable/disable extensions.
 #pragma once
-#define TS_ENABLE_HAPTICS
+
+#include <chrono>
 #include <iostream>
-#include <cstdarg>
-#include <cstdint>
 #include <string>
 #include <thread>
-#include "utils/Singleton.h"
-#include "input/Input.h"
 
-
+/// <summary>
+/// Since the location of the shared libraries and executables can vary, this is a simple solution to this. During Distribution builds, the path is more exact, however the rest are not because these
+/// will be in the build directory rather than the final distribution directory.
+/// </summary>
 const std::string TS_ASSET_DIR = std::string(TS_TOP_LAYER) + "/game/assets/";
 const std::string TS_DATA_DIR = std::string(TS_TOP_LAYER) + "/game/data/";
 const std::string TS_GAME_DIR = std::string(TS_TOP_LAYER) + "/game/";
@@ -479,15 +488,30 @@ namespace Techstorm {
 		}
 	};*/
 
+/// This is a module for haptic experiences (ie. controller rumble) and helps make more immersive experiences. 
+/// \todo Add more haptic features, like monitor flashing and such.
 #ifdef TS_ENABLE_HAPTICS
+
+	/// <summary>
+	/// Initializes the haptics module. Keep in mind this only works if TS_ENABLE_HAPTICS is defined.
+	/// </summary>
 	void InitHaptics();
 	
-	// Rumbing/vibrating the controller
+	/// <summary>
+	/// Sets the controller rumble. Keep in mind this only works if TS_ENABLE_HAPTICS is defined.
+	/// </summary>
 	void SetControllerRumble(int controllerIndex, int leftMotorSpeed, int rightMotorSpeed);
+	
+	/// <summary>
+	/// Starts the controller rumble. Keep in mind this only works if TS_ENABLE_HAPTICS is defined.
+	/// </summary>
 	void StartRumblingController(int controllerIndex, int leftMotorSpeed, int rightMotorSpeed);
+	
 	void StopRumblingController(int controllerIndex);
 #endif
 
+	/// \brief This #ifdef is to enable/disable extensions. Currently this is not implemented, but is planned for the future.
+	/// \todo Implement extensions
 #ifdef TS_ENABLE_EXTENSIONS
 	// Not yet implemented
 	#ifdef TS_ENABLE_DISCORD_INTEGRATION

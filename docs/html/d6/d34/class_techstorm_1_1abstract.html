@@ -115,7 +115,7 @@ $(document).ready(function(){initNavTree('d6/d34/class_techstorm_1_1abstract.htm
   <img src="../../d6/d34/class_techstorm_1_1abstract.png" usemap="#Techstorm::abstract_3C_20K_2C_20D_2C_20T_20_3E_map" alt=""/>
   <map id="Techstorm::abstract_3C_20K_2C_20D_2C_20T_20_3E_map" name="Techstorm::abstract_3C_20K_2C_20D_2C_20T_20_3E_map">
 <area href="../../d5/d55/class_techstorm_1_1_singleton.html" alt="Techstorm::Singleton&lt; D &gt;" shape="rect" coords="0,0,207,24"/>
-<area href="../../d6/d46/class_techstorm_1_1_gate.html" alt="Techstorm::Gate&lt; GameObject * &gt;" shape="rect" coords="217,0,424,24"/>
+<area href="../../d6/d46/class_techstorm_1_1_gate.html" alt="Techstorm::Gate&lt; GameObject * &gt;" shape="rect" coords="434,0,641,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -183,10 +183,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a40bbaee10942400085811546d34a760a" id="r_a40bbaee10942400085811546d34a760a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a40bbaee10942400085811546d34a760a">setupFileRegistryTargets</a> ()</td></tr>
 <tr class="separator:a40bbaee10942400085811546d34a760a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a3f3dc681fb548bb40d008cdeb0352f" id="r_a5a3f3dc681fb548bb40d008cdeb0352f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a5a3f3dc681fb548bb40d008cdeb0352f">preInit</a> ()</td></tr>
-<tr class="memdesc:a5a3f3dc681fb548bb40d008cdeb0352f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the first function that will be called on startup. This is empty because it is an optional feature but is highly reccomended to clearly outline initialization phases.  <br /></td></tr>
+<tr class="memdesc:a5a3f3dc681fb548bb40d008cdeb0352f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the first function that will be called on startup.  <br /></td></tr>
 <tr class="separator:a5a3f3dc681fb548bb40d008cdeb0352f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa41daa77787a2c41071ba34e88c8f7b7" id="r_aa41daa77787a2c41071ba34e88c8f7b7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#aa41daa77787a2c41071ba34e88c8f7b7">init</a> (int argc, char *argv[])</td></tr>
-<tr class="memdesc:aa41daa77787a2c41071ba34e88c8f7b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes your project. Any code you need done before the loop starts, call it here. <b>THIS MUST BE OVERRIDEN BY YOUR PROJECT CLASS!</b>  <br /></td></tr>
+<tr class="memdesc:aa41daa77787a2c41071ba34e88c8f7b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes your project. This will be called after preInit and window initialization, meaning that this is the earliest point that you can use raylib. <b>THIS MUST BE OVERRIDEN BY YOUR PROJECT CLASS!</b>  <br /></td></tr>
 <tr class="separator:aa41daa77787a2c41071ba34e88c8f7b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadbb5bf000a4530c90327652cec15f12" id="r_aadbb5bf000a4530c90327652cec15f12"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#aadbb5bf000a4530c90327652cec15f12">postInit</a> ()</td></tr>
 <tr class="memdesc:aadbb5bf000a4530c90327652cec15f12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does a post initialization of the project. This is empty because it is not neccesary to override.  <br /></td></tr>
@@ -197,6 +197,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad8cec4638371d31feeb40bcc9343df1c" id="r_ad8cec4638371d31feeb40bcc9343df1c"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#ad8cec4638371d31feeb40bcc9343df1c">run</a> (int argc, char *argv[])</td></tr>
 <tr class="memdesc:ad8cec4638371d31feeb40bcc9343df1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the actual game and is called after the init functions.  <br /></td></tr>
 <tr class="separator:ad8cec4638371d31feeb40bcc9343df1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fd2a9004046a8a57e321d0ae99951c5" id="r_a6fd2a9004046a8a57e321d0ae99951c5"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a6fd2a9004046a8a57e321d0ae99951c5">update</a> ()</td></tr>
+<tr class="separator:a6fd2a9004046a8a57e321d0ae99951c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab14ebe5a7c51e1483ce935c2193a170a" id="r_ab14ebe5a7c51e1483ce935c2193a170a"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#ab14ebe5a7c51e1483ce935c2193a170a">prePhysicsUpdate</a> ()</td></tr>
 <tr class="memdesc:ab14ebe5a7c51e1483ce935c2193a170a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pre-update step that is called in the physics or update thread (depending on thread count)  <br /></td></tr>
 <tr class="separator:ab14ebe5a7c51e1483ce935c2193a170a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -234,18 +236,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abd76d7ab5c43c2482cede1cbf7044c5a" id="r_abd76d7ab5c43c2482cede1cbf7044c5a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#abd76d7ab5c43c2482cede1cbf7044c5a">render</a> ()</td></tr>
 <tr class="memdesc:abd76d7ab5c43c2482cede1cbf7044c5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders this instance. This is not a pure virtual and is empty because it is up to the user to use this as they see fit without forcing them to implement it.  <br /></td></tr>
 <tr class="separator:abd76d7ab5c43c2482cede1cbf7044c5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ccd09df4a03d97b58d232dd82d9c54e" id="r_a2ccd09df4a03d97b58d232dd82d9c54e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a2ccd09df4a03d97b58d232dd82d9c54e">onCollisionValidation</a> (<a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a0ed72fb77264955cbb13e298dcf92051">IGameObject</a> *other)=0</td></tr>
-<tr class="memdesc:a2ccd09df4a03d97b58d232dd82d9c54e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Action on collision validation.  <br /></td></tr>
-<tr class="separator:a2ccd09df4a03d97b58d232dd82d9c54e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8926e5c448241a55a9a2a770e8f85bae" id="r_a8926e5c448241a55a9a2a770e8f85bae"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a8926e5c448241a55a9a2a770e8f85bae">onCollisionEnter</a> (<a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a0ed72fb77264955cbb13e298dcf92051">IGameObject</a> *other)=0</td></tr>
-<tr class="memdesc:a8926e5c448241a55a9a2a770e8f85bae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Action upon entering collision. This is called the frame the collision happens.  <br /></td></tr>
-<tr class="separator:a8926e5c448241a55a9a2a770e8f85bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac045cdc2a81e589df5c621220ca06049" id="r_ac045cdc2a81e589df5c621220ca06049"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#ac045cdc2a81e589df5c621220ca06049">onCollisionExit</a> (<a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a0ed72fb77264955cbb13e298dcf92051">IGameObject</a> *other)=0</td></tr>
-<tr class="memdesc:ac045cdc2a81e589df5c621220ca06049"><td class="mdescLeft">&#160;</td><td class="mdescRight">Action upon exiting collision.  <br /></td></tr>
-<tr class="separator:ac045cdc2a81e589df5c621220ca06049"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a290254b4265e2bb2ca7455eee955e4" id="r_a4a290254b4265e2bb2ca7455eee955e4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a4a290254b4265e2bb2ca7455eee955e4">onCollisionStay</a> (<a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a0ed72fb77264955cbb13e298dcf92051">IGameObject</a> *other)=0</td></tr>
-<tr class="memdesc:a4a290254b4265e2bb2ca7455eee955e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Action upon remaining in collision.  <br /></td></tr>
-<tr class="separator:a4a290254b4265e2bb2ca7455eee955e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec38bee941f0f8a0cb48880746c2d205" id="r_aec38bee941f0f8a0cb48880746c2d205"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#aec38bee941f0f8a0cb48880746c2d205">prePhysicsUpdate</a> ()=0</td></tr>
 <tr class="memdesc:aec38bee941f0f8a0cb48880746c2d205"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called right before the physics update. Do anything you need to do before the physics update here. Keep in mind that this can either run on the update thread or the physics thread, so make sure what you are doing is <b>thread safe</b>.  <br /></td></tr>
 <tr class="separator:aec38bee941f0f8a0cb48880746c2d205"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -261,6 +251,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa46fb3338c2570e22ded414e462582d6" id="r_aa46fb3338c2570e22ded414e462582d6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#aa46fb3338c2570e22ded414e462582d6">cleanup</a> ()=0</td></tr>
 <tr class="memdesc:aa46fb3338c2570e22ded414e462582d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cleanups this instance.  <br /></td></tr>
 <tr class="separator:aa46fb3338c2570e22ded414e462582d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e8b6f4d6d5b6928eac74465e0a62db6" id="r_a3e8b6f4d6d5b6928eac74465e0a62db6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a3e8b6f4d6d5b6928eac74465e0a62db6">IPhysicsGameObject</a> (JPH::BodyCreationSettings const &amp;bodySettings, JPH::EActivation activationState)</td></tr>
+<tr class="separator:a3e8b6f4d6d5b6928eac74465e0a62db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0f5ad4e289f98389e410b33ec03b41c" id="r_aa0f5ad4e289f98389e410b33ec03b41c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#aa0f5ad4e289f98389e410b33ec03b41c">~IPhysicsGameObject</a> () override</td></tr>
+<tr class="separator:aa0f5ad4e289f98389e410b33ec03b41c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ccd09df4a03d97b58d232dd82d9c54e" id="r_a2ccd09df4a03d97b58d232dd82d9c54e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a2ccd09df4a03d97b58d232dd82d9c54e">onCollisionValidation</a> (<a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a0ed72fb77264955cbb13e298dcf92051">IGameObject</a> *other)=0</td></tr>
+<tr class="memdesc:a2ccd09df4a03d97b58d232dd82d9c54e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Action on collision validation.  <br /></td></tr>
+<tr class="separator:a2ccd09df4a03d97b58d232dd82d9c54e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8926e5c448241a55a9a2a770e8f85bae" id="r_a8926e5c448241a55a9a2a770e8f85bae"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a8926e5c448241a55a9a2a770e8f85bae">onCollisionEnter</a> (<a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a0ed72fb77264955cbb13e298dcf92051">IGameObject</a> *other)=0</td></tr>
+<tr class="memdesc:a8926e5c448241a55a9a2a770e8f85bae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Action upon entering collision. This is called the frame the collision happens.  <br /></td></tr>
+<tr class="separator:a8926e5c448241a55a9a2a770e8f85bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac045cdc2a81e589df5c621220ca06049" id="r_ac045cdc2a81e589df5c621220ca06049"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#ac045cdc2a81e589df5c621220ca06049">onCollisionExit</a> (<a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a0ed72fb77264955cbb13e298dcf92051">IGameObject</a> *other)=0</td></tr>
+<tr class="memdesc:ac045cdc2a81e589df5c621220ca06049"><td class="mdescLeft">&#160;</td><td class="mdescRight">Action upon exiting collision.  <br /></td></tr>
+<tr class="separator:ac045cdc2a81e589df5c621220ca06049"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a290254b4265e2bb2ca7455eee955e4" id="r_a4a290254b4265e2bb2ca7455eee955e4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a4a290254b4265e2bb2ca7455eee955e4">onCollisionStay</a> (<a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a0ed72fb77264955cbb13e298dcf92051">IGameObject</a> *other)=0</td></tr>
+<tr class="memdesc:a4a290254b4265e2bb2ca7455eee955e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Action upon remaining in collision.  <br /></td></tr>
+<tr class="separator:a4a290254b4265e2bb2ca7455eee955e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_techstorm_1_1_gate"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_techstorm_1_1_gate')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d6/d46/class_techstorm_1_1_gate.html">Techstorm::Gate&lt; GameObject * &gt;</a></td></tr>
 <tr class="memitem:aaa68be86ae0d2c83e05e62190edecfd9 inherit pub_methods_class_techstorm_1_1_gate" id="r_aaa68be86ae0d2c83e05e62190edecfd9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d46/class_techstorm_1_1_gate.html#aaa68be86ae0d2c83e05e62190edecfd9">process</a> (<a class="el" href="../../d4/de0/class_techstorm_1_1_game_object.html">GameObject</a> * entree)=0</td></tr>
 <tr class="memdesc:aaa68be86ae0d2c83e05e62190edecfd9 inherit pub_methods_class_techstorm_1_1_gate"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes the specified entree.  <br /></td></tr>
@@ -294,6 +300,10 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a4579f8a2409ba917291c4892f784e82d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e104c5d3299a8c79fff4216a1b26421" id="r_a1e104c5d3299a8c79fff4216a1b26421"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a1e104c5d3299a8c79fff4216a1b26421">tint</a> = WHITE</td></tr>
 <tr class="separator:a1e104c5d3299a8c79fff4216a1b26421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0fdff03123508f69b3451dbb55d666d" id="r_ae0fdff03123508f69b3451dbb55d666d"><td class="memItemLeft" align="right" valign="top">JPH::BodyID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#ae0fdff03123508f69b3451dbb55d666d">id</a></td></tr>
+<tr class="separator:ae0fdff03123508f69b3451dbb55d666d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80c55b2bc8896523e105601392a2475f" id="r_a80c55b2bc8896523e105601392a2475f"><td class="memItemLeft" align="right" valign="top">JPH::BodyInterface &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a80c55b2bc8896523e105601392a2475f">bodyInterface</a></td></tr>
+<tr class="separator:a80c55b2bc8896523e105601392a2475f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -373,6 +383,35 @@ template&lt;typename K , typename D , typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa0f5ad4e289f98389e410b33ec03b41c" name="aa0f5ad4e289f98389e410b33ec03b41c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0f5ad4e289f98389e410b33ec03b41c">&#9670;&#160;</a></span>~IPhysicsGameObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename D , typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html">Techstorm::abstract</a>&lt; K, D, T &gt;::~<a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a3e8b6f4d6d5b6928eac74465e0a62db6">IPhysicsGameObject</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00141">141</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
 
 </div>
 </div>
@@ -874,7 +913,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes your project. Any code you need done before the loop starts, call it here. <b>THIS MUST BE OVERRIDEN BY YOUR PROJECT CLASS!</b> </p>
+<p>Initializes your project. This will be called after preInit and window initialization, meaning that this is the earliest point that you can use raylib. <b>THIS MUST BE OVERRIDEN BY YOUR PROJECT CLASS!</b> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">argc</td><td>Command line argument count int</td></tr>
@@ -911,6 +950,46 @@ template&lt;typename K , typename D , typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Initializes the renderer and should be called after initWindow. </p>
+
+</div>
+</div>
+<a id="a3e8b6f4d6d5b6928eac74465e0a62db6" name="a3e8b6f4d6d5b6928eac74465e0a62db6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e8b6f4d6d5b6928eac74465e0a62db6">&#9670;&#160;</a></span>IPhysicsGameObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename D , typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html">Techstorm::abstract</a>&lt; K, D, T &gt;::IPhysicsGameObject </td>
+          <td>(</td>
+          <td class="paramtype">JPH::BodyCreationSettings const &amp;&#160;</td>
+          <td class="paramname"><em>bodySettings</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">JPH::EActivation&#160;</td>
+          <td class="paramname"><em>activationState</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00137">137</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
 
 </div>
 </div>
@@ -1420,11 +1499,11 @@ template&lt;typename K , typename D , typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>This is the first function that will be called on startup. This is empty because it is an optional feature but is highly reccomended to clearly outline initialization phases. </p>
+<p>This is the first function that will be called on startup. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00092">92</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d4c/_file_system_8cpp_source.html#l00024">Techstorm::AddFileRegistryLoadFunction()</a>, <a class="el" href="../../d1/d4c/_file_system_8cpp_source.html#l00019">Techstorm::InitializeFileRegistry()</a>, and <a class="el" href="../../db/d1f/_common_8h_source.html#l00014">TS_GAME_DIR</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d4c/_file_system_8cpp_source.html#l00024">Techstorm::AddFileRegistryLoadFunction()</a>, <a class="el" href="../../d1/d4c/_file_system_8cpp_source.html#l00019">Techstorm::InitializeFileRegistry()</a>, and <a class="el" href="../../db/d1f/_common_8h_source.html#l00023">TS_GAME_DIR</a>.</p>
 
 </div>
 </div>
@@ -1629,7 +1708,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 
 <p>Renders this instance. This is not a pure virtual and is empty because it is up to the user to use this as they see fit without forcing them to implement it. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00047">47</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00048">48</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
 
 </div>
 </div>
@@ -1888,8 +1967,35 @@ template&lt;typename K , typename D , typename T &gt; </div>
 
 </div>
 </div>
+<a id="a6fd2a9004046a8a57e321d0ae99951c5" name="a6fd2a9004046a8a57e321d0ae99951c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fd2a9004046a8a57e321d0ae99951c5">&#9670;&#160;</a></span>update() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename D , typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html">Techstorm::abstract</a>&lt; K, D, T &gt;::update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ac9ebe837a4fbcec732e81ddf8b38ab2c" name="ac9ebe837a4fbcec732e81ddf8b38ab2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9ebe837a4fbcec732e81ddf8b38ab2c">&#9670;&#160;</a></span>update()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9ebe837a4fbcec732e81ddf8b38ab2c">&#9670;&#160;</a></span>update() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1918,6 +2024,24 @@ template&lt;typename K , typename D , typename T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a80c55b2bc8896523e105601392a2475f" name="a80c55b2bc8896523e105601392a2475f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80c55b2bc8896523e105601392a2475f">&#9670;&#160;</a></span>bodyInterface</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename D , typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">JPH::BodyInterface&amp; <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html">Techstorm::abstract</a>&lt; K, D, T &gt;::bodyInterface</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00135">135</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+
+</div>
+</div>
 <a id="a93214f9f4d74e58ff7ed49e089c68213" name="a93214f9f4d74e58ff7ed49e089c68213"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a93214f9f4d74e58ff7ed49e089c68213">&#9670;&#160;</a></span>depth</h2>
 
@@ -1932,7 +2056,25 @@ template&lt;typename K , typename D , typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00022">22</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00023">23</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+
+</div>
+</div>
+<a id="ae0fdff03123508f69b3451dbb55d666d" name="ae0fdff03123508f69b3451dbb55d666d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0fdff03123508f69b3451dbb55d666d">&#9670;&#160;</a></span>id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename D , typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">JPH::BodyID <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html">Techstorm::abstract</a>&lt; K, D, T &gt;::id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00134">134</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
 
 </div>
 </div>
@@ -2080,7 +2222,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00023">23</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00024">24</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
 
 </div>
 </div>
@@ -2150,7 +2292,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00028">28</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00029">29</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
 
 </div>
 </div>
@@ -2168,7 +2310,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00032">32</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00033">33</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
 
 </div>
 </div>
@@ -2186,7 +2328,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00029">29</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00030">30</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
 
 </div>
 </div>
@@ -2204,7 +2346,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00030">30</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00031">31</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
 
 </div>
 </div>
@@ -2240,7 +2382,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00033">33</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00034">34</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
 
 </div>
 </div>
@@ -2256,7 +2398,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/d26/namespace_techstorm.html">Techstorm</a></li><li class="navelem"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html">abstract</a></li>
-    <li class="footer">Generated on Wed Nov 27 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu Nov 28 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

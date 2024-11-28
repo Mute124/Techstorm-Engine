@@ -111,24 +111,24 @@ $(document).ready(function(){initNavTree('d8/d8c/class_techstorm_1_1_b_p_layer_i
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a27ca33deade1ae8681190196b93bc30e" id="r_a27ca33deade1ae8681190196b93bc30e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d8c/class_techstorm_1_1_b_p_layer_interface_impl.html#a27ca33deade1ae8681190196b93bc30e">BPLayerInterfaceImpl</a> ()</td></tr>
+<tr class="memdesc:a27ca33deade1ae8681190196b93bc30e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="../../d8/d8c/class_techstorm_1_1_b_p_layer_interface_impl.html">BPLayerInterfaceImpl</a> class.  <br /></td></tr>
 <tr class="separator:a27ca33deade1ae8681190196b93bc30e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f0d806b695b8ba730474d52eb635504" id="r_a3f0d806b695b8ba730474d52eb635504"><td class="memItemLeft" align="right" valign="top">virtual JPH::uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d8c/class_techstorm_1_1_b_p_layer_interface_impl.html#a3f0d806b695b8ba730474d52eb635504">GetNumBroadPhaseLayers</a> () const override</td></tr>
+<tr class="memdesc:a3f0d806b695b8ba730474d52eb635504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of broad phase layers. This is a virtual function, so feel free to override it and suit it to your needs.  <br /></td></tr>
 <tr class="separator:a3f0d806b695b8ba730474d52eb635504"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0e7ce2bcd02d7bd5c1c39fe60706027" id="r_af0e7ce2bcd02d7bd5c1c39fe60706027"><td class="memItemLeft" align="right" valign="top">virtual JPH::BroadPhaseLayer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d8c/class_techstorm_1_1_b_p_layer_interface_impl.html#af0e7ce2bcd02d7bd5c1c39fe60706027">GetBroadPhaseLayer</a> (JPH::ObjectLayer inLayer) const override</td></tr>
+<tr class="memdesc:af0e7ce2bcd02d7bd5c1c39fe60706027"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the broad phase layer.  <br /></td></tr>
 <tr class="separator:af0e7ce2bcd02d7bd5c1c39fe60706027"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d1/d49/_layers_8h_source.html#l00041">41</a> of file <a class="el" href="../../d1/d49/_layers_8h_source.html">Layers.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d49/_layers_8h_source.html#l00042">42</a> of file <a class="el" href="../../d1/d49/_layers_8h_source.html">Layers.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a27ca33deade1ae8681190196b93bc30e" name="a27ca33deade1ae8681190196b93bc30e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a27ca33deade1ae8681190196b93bc30e">&#9670;&#160;</a></span>BPLayerInterfaceImpl()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">BPLayerInterfaceImpl::BPLayerInterfaceImpl </td>
@@ -137,12 +137,9 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="../../d8/d8c/class_techstorm_1_1_b_p_layer_interface_impl.html">BPLayerInterfaceImpl</a> class. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/dce/_layers_8cpp_source.html#l00018">18</a> of file <a class="el" href="../../d7/dce/_layers_8cpp_source.html">Layers.cpp</a>.</p>
 
@@ -168,10 +165,19 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Gets the broad phase layer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inLayer</td><td>The in layer.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/dce/_layers_8cpp_source.html#l00030">30</a> of file <a class="el" href="../../d7/dce/_layers_8cpp_source.html">Layers.cpp</a>.</p>
 
@@ -195,10 +201,13 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Gets the number of broad phase layers. This is a virtual function, so feel free to override it and suit it to your needs. </p>
+<dl class="section return"><dt>Returns</dt><dd>A JPH::uint that denotes the number of broad phase layers.</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/dce/_layers_8cpp_source.html#l00025">25</a> of file <a class="el" href="../../d7/dce/_layers_8cpp_source.html">Layers.cpp</a>.</p>
 
@@ -214,7 +223,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/d26/namespace_techstorm.html">Techstorm</a></li><li class="navelem"><a class="el" href="../../d8/d8c/class_techstorm_1_1_b_p_layer_interface_impl.html">BPLayerInterfaceImpl</a></li>
-    <li class="footer">Generated on Wed Nov 27 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu Nov 28 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

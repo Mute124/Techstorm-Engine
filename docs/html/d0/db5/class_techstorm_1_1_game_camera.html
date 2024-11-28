@@ -93,6 +93,8 @@ $(document).ready(function(){initNavTree('d0/db5/class_techstorm_1_1_game_camera
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="../../db/df6/class_techstorm_1_1_game_camera-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Techstorm::GameCamera Class Reference</div></div>
@@ -162,6 +164,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa43cca88ebc813e9801c26b915624a67" id="r_aa43cca88ebc813e9801c26b915624a67"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/db5/class_techstorm_1_1_game_camera.html#aa43cca88ebc813e9801c26b915624a67">operator==</a> (const <a class="el" href="../../d0/db5/class_techstorm_1_1_game_camera.html">GameCamera</a> &amp;other) const =default</td></tr>
 <tr class="separator:aa43cca88ebc813e9801c26b915624a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a7507e726a5a7609ccd3de52352a117c3" id="r_a7507e726a5a7609ccd3de52352a117c3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d0/db5/class_techstorm_1_1_game_camera.html">GameCamera</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/db5/class_techstorm_1_1_game_camera.html#a7507e726a5a7609ccd3de52352a117c3">GetMainCamera</a> ()</td></tr>
+<tr class="separator:a7507e726a5a7609ccd3de52352a117c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a2a3d338485c5db7bf490f49fe5eec73e" id="r_a2a3d338485c5db7bf490f49fe5eec73e"><td class="memItemLeft" align="right" valign="top">Camera3D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/db5/class_techstorm_1_1_game_camera.html#a2a3d338485c5db7bf490f49fe5eec73e">mCameraData</a> = { 0 }</td></tr>
+<tr class="separator:a2a3d338485c5db7bf490f49fe5eec73e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:a70538530bc36e033e360880ef311df61" id="r_a70538530bc36e033e360880ef311df61"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/db5/class_techstorm_1_1_game_camera.html#a70538530bc36e033e360880ef311df61">Renderer</a></td></tr>
@@ -197,7 +209,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d41/_game_camera_8h_source.html#l00012">12</a> of file <a class="el" href="../../d3/d41/_game_camera_8h_source.html">GameCamera.h</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00003">init()</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00004">init()</a>.</p>
 
 </div>
 </div>
@@ -226,9 +238,9 @@ Friends</h2></td></tr>
 
 <p>Finalizes an instance of the <a class="el" href="../../d0/db5/class_techstorm_1_1_game_camera.html" title="Represents a camera wherein the world is rendered and viewed from.">GameCamera</a> class. Please note that if this is the main camera, it will make the camera with ID 0 the main camera. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d41/_game_camera_8h_source.html#l00019">19</a> of file <a class="el" href="../../d3/d41/_game_camera_8h_source.html">GameCamera.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d41/_game_camera_8h_source.html#l00021">21</a> of file <a class="el" href="../../d3/d41/_game_camera_8h_source.html">GameCamera.h</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d3/d41/_game_camera_8h_source.html#l00130">isMainCamera()</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/d41/_game_camera_8h_source.html#l00135">isMainCamera()</a>.</p>
 
 </div>
 </div>
@@ -251,7 +263,7 @@ Friends</h2></td></tr>
 <p>Gets the camera data. </p>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the underlying mCameraData variable</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00027">27</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00026">26</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../da/d84/_renderer_8cpp_source.html#l00041">Techstorm::Renderer::texture()</a>.</p>
 
@@ -262,9 +274,6 @@ Friends</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">float Techstorm::GameCamera::getFovy </td>
@@ -273,18 +282,40 @@ Friends</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Gets the camera's fovy (Field of View Y). For more information, please see the section on it in the documentation. </p>
 <dl class="section return"><dt>Returns</dt><dd>The camera's fovy</dd></dl>
 <p><a class="el" href="../../index.html#how-cameras-work">How Cameras Work</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00054">54</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00053">53</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7507e726a5a7609ccd3de52352a117c3" name="a7507e726a5a7609ccd3de52352a117c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7507e726a5a7609ccd3de52352a117c3">&#9670;&#160;</a></span>GetMainCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d0/db5/class_techstorm_1_1_game_camera.html">GameCamera</a> * Techstorm::GameCamera::GetMainCamera </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d3/d41/_game_camera_8h_source.html#l00084">84</a> of file <a class="el" href="../../d3/d41/_game_camera_8h_source.html">GameCamera.h</a>.</p>
 
 </div>
 </div>
@@ -293,9 +324,6 @@ Friends</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Vector3 Techstorm::GameCamera::getPosition </td>
@@ -304,17 +332,12 @@ Friends</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Gets the position. </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00034">34</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00033">33</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
 
 </div>
 </div>
@@ -323,9 +346,6 @@ Friends</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int Techstorm::GameCamera::getProjection </td>
@@ -334,17 +354,12 @@ Friends</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Gets the camera's projection. </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00060">60</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00059">59</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
 
 </div>
 </div>
@@ -353,9 +368,6 @@ Friends</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Vector3 Techstorm::GameCamera::getTarget </td>
@@ -364,17 +376,12 @@ Friends</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Gets the target. </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00041">41</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00040">40</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
 
 </div>
 </div>
@@ -383,9 +390,6 @@ Friends</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Vector3 Techstorm::GameCamera::getUp </td>
@@ -394,17 +398,12 @@ Friends</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Gets up. </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00047">47</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00046">46</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
 
 </div>
 </div>
@@ -425,9 +424,9 @@ Friends</h2></td></tr>
 
 <p>Initializes this instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00003">3</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00004">4</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d3/d41/_game_camera_8h_source.html#l00121">setAsMainCamera()</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/d41/_game_camera_8h_source.html#l00126">setAsMainCamera()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d3/d41/_game_camera_8h_source.html#l00012">GameCamera()</a>.</p>
 
@@ -459,9 +458,9 @@ Friends</h2></td></tr>
 <p>Checks if this instance is the main camera. </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d41/_game_camera_8h_source.html#l00130">130</a> of file <a class="el" href="../../d3/d41/_game_camera_8h_source.html">GameCamera.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d41/_game_camera_8h_source.html#l00135">135</a> of file <a class="el" href="../../d3/d41/_game_camera_8h_source.html">GameCamera.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d3/d41/_game_camera_8h_source.html#l00019">~GameCamera()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d3/d41/_game_camera_8h_source.html#l00021">~GameCamera()</a>.</p>
 
 </div>
 </div>
@@ -516,9 +515,9 @@ Friends</h2></td></tr>
 
 <p>Sets this instance as the main camera. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d41/_game_camera_8h_source.html#l00121">121</a> of file <a class="el" href="../../d3/d41/_game_camera_8h_source.html">GameCamera.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d41/_game_camera_8h_source.html#l00126">126</a> of file <a class="el" href="../../d3/d41/_game_camera_8h_source.html">GameCamera.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00003">init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00004">init()</a>.</p>
 
 </div>
 </div>
@@ -527,9 +526,6 @@ Friends</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Techstorm::GameCamera::setCameraData </td>
@@ -539,11 +535,6 @@ Friends</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Sets the camera data. </p>
@@ -554,7 +545,7 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00066">66</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00065">65</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
 
 </div>
 </div>
@@ -563,9 +554,6 @@ Friends</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Techstorm::GameCamera::setFovy </td>
@@ -575,11 +563,6 @@ Friends</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Sets the fovy. </p>
@@ -590,7 +573,9 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00090">90</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00089">89</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d3/da0/_renderer_8h_source.html#l00025">Techstorm::Renderer::Renderer()</a>.</p>
 
 </div>
 </div>
@@ -599,9 +584,6 @@ Friends</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Techstorm::GameCamera::setPosition </td>
@@ -611,11 +593,6 @@ Friends</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Sets the position. </p>
@@ -626,7 +603,9 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00072">72</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00071">71</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d3/da0/_renderer_8h_source.html#l00025">Techstorm::Renderer::Renderer()</a>.</p>
 
 </div>
 </div>
@@ -635,9 +614,6 @@ Friends</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Techstorm::GameCamera::setProjection </td>
@@ -647,11 +623,6 @@ Friends</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Sets the projection. </p>
@@ -662,7 +633,9 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00096">96</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00095">95</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d3/da0/_renderer_8h_source.html#l00025">Techstorm::Renderer::Renderer()</a>.</p>
 
 </div>
 </div>
@@ -671,9 +644,6 @@ Friends</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Techstorm::GameCamera::setTarget </td>
@@ -683,11 +653,6 @@ Friends</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Sets the target. </p>
@@ -698,7 +663,9 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00078">78</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00077">77</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d3/da0/_renderer_8h_source.html#l00025">Techstorm::Renderer::Renderer()</a>.</p>
 
 </div>
 </div>
@@ -707,9 +674,6 @@ Friends</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Techstorm::GameCamera::setUp </td>
@@ -719,11 +683,6 @@ Friends</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Sets up. </p>
@@ -734,7 +693,9 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00084">84</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html#l00083">83</a> of file <a class="el" href="../../d9/d6a/_game_camera_8cpp_source.html">GameCamera.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d3/da0/_renderer_8h_source.html#l00025">Techstorm::Renderer::Renderer()</a>.</p>
 
 </div>
 </div>
@@ -789,7 +750,24 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d41/_game_camera_8h_source.html#l00146">146</a> of file <a class="el" href="../../d3/d41/_game_camera_8h_source.html">GameCamera.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d41/_game_camera_8h_source.html#l00153">153</a> of file <a class="el" href="../../d3/d41/_game_camera_8h_source.html">GameCamera.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a2a3d338485c5db7bf490f49fe5eec73e" name="a2a3d338485c5db7bf490f49fe5eec73e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a3d338485c5db7bf490f49fe5eec73e">&#9670;&#160;</a></span>mCameraData</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Camera3D Techstorm::GameCamera::mCameraData = { 0 }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d3/d41/_game_camera_8h_source.html#l00139">139</a> of file <a class="el" href="../../d3/d41/_game_camera_8h_source.html">GameCamera.h</a>.</p>
 
 </div>
 </div>
@@ -804,7 +782,7 @@ Friends</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/d26/namespace_techstorm.html">Techstorm</a></li><li class="navelem"><a class="el" href="../../d0/db5/class_techstorm_1_1_game_camera.html">GameCamera</a></li>
-    <li class="footer">Generated on Wed Nov 27 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Thu Nov 28 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

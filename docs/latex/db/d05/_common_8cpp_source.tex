@@ -20,12 +20,12 @@
 \DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00016}00016\ }
 \DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00017}00017\ \textcolor{preprocessor}{\#ifdef\ TS\_ENABLE\_HAPTICS}}
 \DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00018}00018\ }
-\DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00019}\mbox{\hyperlink{namespace_techstorm_acbc8f303afb42ae77958c4f0cc5601ba}{00019}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_techstorm_acbc8f303afb42ae77958c4f0cc5601ba}{Techstorm::InitHaptics}}()}
+\DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00019}00019\ \textcolor{keywordtype}{void}\ Techstorm::InitHaptics()}
 \DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00020}00020\ \{}
 \DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00021}00021\ }
 \DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00022}00022\ \}}
 \DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00023}00023\ }
-\DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00024}\mbox{\hyperlink{namespace_techstorm_a5451a8aaa383e3936b9939fc6297d6e1}{00024}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_techstorm_a5451a8aaa383e3936b9939fc6297d6e1}{Techstorm::SetControllerRumble}}(\textcolor{keywordtype}{int}\ controllerIndex,\ \textcolor{keywordtype}{int}\ leftMotorSpeed,\ \textcolor{keywordtype}{int}\ rightMotorSpeed)}
+\DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00024}00024\ \textcolor{keywordtype}{void}\ Techstorm::SetControllerRumble(\textcolor{keywordtype}{int}\ controllerIndex,\ \textcolor{keywordtype}{int}\ leftMotorSpeed,\ \textcolor{keywordtype}{int}\ rightMotorSpeed)}
 \DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00025}00025\ \{}
 \DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00026}00026\ \textcolor{preprocessor}{\#ifdef\ WIN32}}
 \DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00027}00027\ \ \ \ \ XINPUT\_VIBRATION\ vibration\ =\ \{\};}
@@ -35,14 +35,14 @@
 \DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00031}00031\ \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00032}00032\ \}}
 \DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00033}00033\ }
-\DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00034}\mbox{\hyperlink{namespace_techstorm_abbe31e4f49d55c0496f4631a182e1477}{00034}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_techstorm_abbe31e4f49d55c0496f4631a182e1477}{Techstorm::StartRumblingController}}(\textcolor{keywordtype}{int}\ controllerIndex,\ \textcolor{keywordtype}{int}\ leftMotorSpeed,\ \textcolor{keywordtype}{int}\ rightMotorSpeed)}
+\DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00034}00034\ \textcolor{keywordtype}{void}\ Techstorm::StartRumblingController(\textcolor{keywordtype}{int}\ controllerIndex,\ \textcolor{keywordtype}{int}\ leftMotorSpeed,\ \textcolor{keywordtype}{int}\ rightMotorSpeed)}
 \DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00035}00035\ \{}
-\DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_a5451a8aaa383e3936b9939fc6297d6e1}{SetControllerRumble}}(controllerIndex,\ leftMotorSpeed,\ rightMotorSpeed);}
+\DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00036}00036\ \ \ \ \ SetControllerRumble(controllerIndex,\ leftMotorSpeed,\ rightMotorSpeed);}
 \DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00037}00037\ \}}
 \DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00038}00038\ }
-\DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00039}\mbox{\hyperlink{namespace_techstorm_aa6731e1161358e83d844e07b3a039304}{00039}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_techstorm_aa6731e1161358e83d844e07b3a039304}{Techstorm::StopRumblingController}}(\textcolor{keywordtype}{int}\ controllerIndex)}
+\DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00039}00039\ \textcolor{keywordtype}{void}\ Techstorm::StopRumblingController(\textcolor{keywordtype}{int}\ controllerIndex)}
 \DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00040}00040\ \{}
-\DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_a5451a8aaa383e3936b9939fc6297d6e1}{SetControllerRumble}}(controllerIndex,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00041}00041\ \ \ \ \ SetControllerRumble(controllerIndex,\ 0,\ 0);}
 \DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00042}00042\ \}}
 \DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00043}00043\ }
 \DoxyCodeLine{\Hypertarget{_common_8cpp_source_l00044}00044\ \textcolor{preprocessor}{\#endif}}

@@ -26,8 +26,8 @@
 		JPH::RegisterDefaultAllocator();
 
 		// Install trace and assert callbacks
-		JPH::Trace = TraceImpl;
-		JPH_IF_ENABLE_ASSERTS(JPH::AssertFailed = AssertFailedImpl;)
+		JPH::Trace = DefaultPhysicsTrace;
+		JPH_IF_ENABLE_ASSERTS(JPH::AssertFailed = DefaultPhysicsAssertFailed;)
 
 			JPH::Factory::sInstance = new JPH::Factory();
 

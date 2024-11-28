@@ -78,17 +78,9 @@ var namespace_techstorm =
     [ "GetFileMeta", "d4/d26/namespace_techstorm.html#a8a157d5171adea6ca1020c5a15d9a142", null ],
     [ "GetFileSystemRegistry", "d4/d26/namespace_techstorm.html#a24fb41ad8339291fb9302ab6c9023ef9", null ],
     [ "GetGlobal", "d4/d26/namespace_techstorm.html#a98e9633c11c071c2a51987a62ce1cc16", null ],
-    [ "GetInputRegistry", "d4/d26/namespace_techstorm.html#a1bcf30a4f9fdd5660bb8dc8d0bdd90d8", null ],
-    [ "InitHaptics", "d4/d26/namespace_techstorm.html#acbc8f303afb42ae77958c4f0cc5601ba", null ],
     [ "InitializeConfigRegistry", "d4/d26/namespace_techstorm.html#a2b72a42193d6d2dc6bbb26a25656da6c", null ],
     [ "InitializeFileRegistry", "d4/d26/namespace_techstorm.html#a0cdf258db7319603e2c5e39a8b18726e", null ],
     [ "LookupConfig", "d4/d26/namespace_techstorm.html#addbe8297c758588e97c3395d420bbfce", null ],
-    [ "RegisterActionCallback", "d4/d26/namespace_techstorm.html#ab3125a1b1ffec2b381e3647a1bcf4e5d", null ],
-    [ "SetControllerRumble", "d4/d26/namespace_techstorm.html#a5451a8aaa383e3936b9939fc6297d6e1", null ],
     [ "SetGlobal", "d4/d26/namespace_techstorm.html#acbd4313148ac66f22420becf6668fc8d", null ],
-    [ "StartRumblingController", "d4/d26/namespace_techstorm.html#abbe31e4f49d55c0496f4631a182e1477", null ],
-    [ "StopRumblingController", "d4/d26/namespace_techstorm.html#aa6731e1161358e83d844e07b3a039304", null ],
-    [ "UnregisterAction", "d4/d26/namespace_techstorm.html#ab0c43a65dc477ec3c9572b9f3a1487a4", null ],
-    [ "UnregisterCallback", "d4/d26/namespace_techstorm.html#ab0e349acbbd3184937cf23323ad96f5c", null ],
     [ "cDirectoryName", "d4/d26/namespace_techstorm.html#ab97f45c99b730373b3122f27e49f3756", null ]
 ];

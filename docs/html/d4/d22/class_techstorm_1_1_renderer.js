@@ -9,5 +9,7 @@ var class_techstorm_1_1_renderer =
     [ "removeGameObject", "d4/d22/class_techstorm_1_1_renderer.html#a4faa04ea2c99117addfff3961c3b3f0a", null ],
     [ "removeGameObjectGate", "d4/d22/class_techstorm_1_1_renderer.html#a8aae709fbaf80d4a2d09dd895208e9bf", null ],
     [ "render", "d4/d22/class_techstorm_1_1_renderer.html#a6b465cdcb206cc609273c427472f1f91", null ],
-    [ "texture", "d4/d22/class_techstorm_1_1_renderer.html#ab36d231a2601557ac2e475f7195cf7e9", null ]
+    [ "texture", "d4/d22/class_techstorm_1_1_renderer.html#ab36d231a2601557ac2e475f7195cf7e9", null ],
+    [ "update", "d4/d22/class_techstorm_1_1_renderer.html#a8da83a2891cc66fb1f4dcd81dffb6641", null ],
+    [ "mCamera", "d4/d22/class_techstorm_1_1_renderer.html#ad4ac9f1b3630a699febce1c07187753d", null ]
 ];

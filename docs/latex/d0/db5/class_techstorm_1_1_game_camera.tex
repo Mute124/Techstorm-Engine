@@ -50,6 +50,16 @@ bool \mbox{\hyperlink{class_techstorm_1_1_game_camera_a86c8cb3d0b24f0d5980eb9d6e
 \begin{DoxyCompactList}\small\item\em Checks if this instance is the main camera. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_techstorm_1_1_game_camera_aa43cca88ebc813e9801c26b915624a67}{operator==}} (const \mbox{\hyperlink{class_techstorm_1_1_game_camera}{Game\+Camera}} \&other) const =default
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_techstorm_1_1_game_camera}{Game\+Camera}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_techstorm_1_1_game_camera_a7507e726a5a7609ccd3de52352a117c3}{Get\+Main\+Camera}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Camera3D \mbox{\hyperlink{class_techstorm_1_1_game_camera_a2a3d338485c5db7bf490f49fe5eec73e}{m\+Camera\+Data}} = \{ 0 \}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -77,7 +87,7 @@ Definition at line \mbox{\hyperlink{_game_camera_8h_source_l00012}{12}} of file 
 
 
 
-References \mbox{\hyperlink{_game_camera_8cpp_source_l00003}{init()}}.
+References \mbox{\hyperlink{_game_camera_8cpp_source_l00004}{init()}}.
 
 \Hypertarget{class_techstorm_1_1_game_camera_a8aac95d689cd7a4c6ca2e877dedd9bd8}\label{class_techstorm_1_1_game_camera_a8aac95d689cd7a4c6ca2e877dedd9bd8} 
 \index{Techstorm::GameCamera@{Techstorm::GameCamera}!````~GameCamera@{\texorpdfstring{$\sim$}{\string~}GameCamera}}
@@ -91,11 +101,11 @@ Finalizes an instance of the \doxylink{class_techstorm_1_1_game_camera}{Game\+Ca
 
 
 
-Definition at line \mbox{\hyperlink{_game_camera_8h_source_l00019}{19}} of file \mbox{\hyperlink{_game_camera_8h_source}{Game\+Camera.\+h}}.
+Definition at line \mbox{\hyperlink{_game_camera_8h_source_l00021}{21}} of file \mbox{\hyperlink{_game_camera_8h_source}{Game\+Camera.\+h}}.
 
 
 
-References \mbox{\hyperlink{_game_camera_8h_source_l00130}{is\+Main\+Camera()}}.
+References \mbox{\hyperlink{_game_camera_8h_source_l00135}{is\+Main\+Camera()}}.
 
 
 
@@ -115,7 +125,7 @@ A reference to the underlying m\+Camera\+Data variable
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
+Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
 
 
 
@@ -125,7 +135,7 @@ Referenced by \mbox{\hyperlink{_renderer_8cpp_source_l00041}{Techstorm\+::\+Rend
 \index{Techstorm::GameCamera@{Techstorm::GameCamera}!getFovy@{getFovy}}
 \index{getFovy@{getFovy}!Techstorm::GameCamera@{Techstorm::GameCamera}}
 \doxysubsubsection{\texorpdfstring{getFovy()}{getFovy()}}
-{\footnotesize\ttfamily float Techstorm\+::\+Game\+Camera\+::get\+Fovy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily float Techstorm\+::\+Game\+Camera\+::get\+Fovy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -136,13 +146,23 @@ The camera\textquotesingle{}s fovy
 \end{DoxyReturn}
 \doxysectlink{index_how-cameras-work}{How Cameras Work}{3} 
 
-Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00054}{54}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
+Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
+
+\Hypertarget{class_techstorm_1_1_game_camera_a7507e726a5a7609ccd3de52352a117c3}\label{class_techstorm_1_1_game_camera_a7507e726a5a7609ccd3de52352a117c3} 
+\index{Techstorm::GameCamera@{Techstorm::GameCamera}!GetMainCamera@{GetMainCamera}}
+\index{GetMainCamera@{GetMainCamera}!Techstorm::GameCamera@{Techstorm::GameCamera}}
+\doxysubsubsection{\texorpdfstring{GetMainCamera()}{GetMainCamera()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_techstorm_1_1_game_camera}{Game\+Camera}} \texorpdfstring{$\ast$}{*} Techstorm\+::\+Game\+Camera\+::\+Get\+Main\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_camera_8h_source_l00084}{84}} of file \mbox{\hyperlink{_game_camera_8h_source}{Game\+Camera.\+h}}.
 
 \Hypertarget{class_techstorm_1_1_game_camera_a4c9481067d3fa1ddd0976fc4f73c0a26}\label{class_techstorm_1_1_game_camera_a4c9481067d3fa1ddd0976fc4f73c0a26} 
 \index{Techstorm::GameCamera@{Techstorm::GameCamera}!getPosition@{getPosition}}
 \index{getPosition@{getPosition}!Techstorm::GameCamera@{Techstorm::GameCamera}}
 \doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
-{\footnotesize\ttfamily Vector3 Techstorm\+::\+Game\+Camera\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Vector3 Techstorm\+::\+Game\+Camera\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -153,13 +173,13 @@ Gets the position.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
+Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
 
 \Hypertarget{class_techstorm_1_1_game_camera_a220e035d672f6a254873033732ab92c6}\label{class_techstorm_1_1_game_camera_a220e035d672f6a254873033732ab92c6} 
 \index{Techstorm::GameCamera@{Techstorm::GameCamera}!getProjection@{getProjection}}
 \index{getProjection@{getProjection}!Techstorm::GameCamera@{Techstorm::GameCamera}}
 \doxysubsubsection{\texorpdfstring{getProjection()}{getProjection()}}
-{\footnotesize\ttfamily int Techstorm\+::\+Game\+Camera\+::get\+Projection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily int Techstorm\+::\+Game\+Camera\+::get\+Projection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -170,13 +190,13 @@ Gets the camera\textquotesingle{}s projection.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00060}{60}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
+Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
 
 \Hypertarget{class_techstorm_1_1_game_camera_a11ad3bf335b9132b3729c15529a5b72e}\label{class_techstorm_1_1_game_camera_a11ad3bf335b9132b3729c15529a5b72e} 
 \index{Techstorm::GameCamera@{Techstorm::GameCamera}!getTarget@{getTarget}}
 \index{getTarget@{getTarget}!Techstorm::GameCamera@{Techstorm::GameCamera}}
 \doxysubsubsection{\texorpdfstring{getTarget()}{getTarget()}}
-{\footnotesize\ttfamily Vector3 Techstorm\+::\+Game\+Camera\+::get\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Vector3 Techstorm\+::\+Game\+Camera\+::get\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -187,13 +207,13 @@ Gets the target.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
+Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
 
 \Hypertarget{class_techstorm_1_1_game_camera_a9c54de854558cd10bdbec268238570e9}\label{class_techstorm_1_1_game_camera_a9c54de854558cd10bdbec268238570e9} 
 \index{Techstorm::GameCamera@{Techstorm::GameCamera}!getUp@{getUp}}
 \index{getUp@{getUp}!Techstorm::GameCamera@{Techstorm::GameCamera}}
 \doxysubsubsection{\texorpdfstring{getUp()}{getUp()}}
-{\footnotesize\ttfamily Vector3 Techstorm\+::\+Game\+Camera\+::get\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Vector3 Techstorm\+::\+Game\+Camera\+::get\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -204,7 +224,7 @@ Gets up.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
+Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
 
 \Hypertarget{class_techstorm_1_1_game_camera_afacfa15d0e7443d82efd3b24c8aa8440}\label{class_techstorm_1_1_game_camera_afacfa15d0e7443d82efd3b24c8aa8440} 
 \index{Techstorm::GameCamera@{Techstorm::GameCamera}!init@{init}}
@@ -218,11 +238,11 @@ Initializes this instance.
 
 
 
-Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
+Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
 
 
 
-References \mbox{\hyperlink{_game_camera_8h_source_l00121}{set\+As\+Main\+Camera()}}.
+References \mbox{\hyperlink{_game_camera_8h_source_l00126}{set\+As\+Main\+Camera()}}.
 
 
 
@@ -243,11 +263,11 @@ Checks if this instance is the main camera.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_game_camera_8h_source_l00130}{130}} of file \mbox{\hyperlink{_game_camera_8h_source}{Game\+Camera.\+h}}.
+Definition at line \mbox{\hyperlink{_game_camera_8h_source_l00135}{135}} of file \mbox{\hyperlink{_game_camera_8h_source}{Game\+Camera.\+h}}.
 
 
 
-Referenced by \mbox{\hyperlink{_game_camera_8h_source_l00019}{\texorpdfstring{$\sim$}{\string~}\+Game\+Camera()}}.
+Referenced by \mbox{\hyperlink{_game_camera_8h_source_l00021}{\texorpdfstring{$\sim$}{\string~}\+Game\+Camera()}}.
 
 \Hypertarget{class_techstorm_1_1_game_camera_aa43cca88ebc813e9801c26b915624a67}\label{class_techstorm_1_1_game_camera_aa43cca88ebc813e9801c26b915624a67} 
 \index{Techstorm::GameCamera@{Techstorm::GameCamera}!operator==@{operator==}}
@@ -267,17 +287,17 @@ Sets this instance as the main camera.
 
 
 
-Definition at line \mbox{\hyperlink{_game_camera_8h_source_l00121}{121}} of file \mbox{\hyperlink{_game_camera_8h_source}{Game\+Camera.\+h}}.
+Definition at line \mbox{\hyperlink{_game_camera_8h_source_l00126}{126}} of file \mbox{\hyperlink{_game_camera_8h_source}{Game\+Camera.\+h}}.
 
 
 
-Referenced by \mbox{\hyperlink{_game_camera_8cpp_source_l00003}{init()}}.
+Referenced by \mbox{\hyperlink{_game_camera_8cpp_source_l00004}{init()}}.
 
 \Hypertarget{class_techstorm_1_1_game_camera_aa471cc33035a5c7cb28eff0d31955563}\label{class_techstorm_1_1_game_camera_aa471cc33035a5c7cb28eff0d31955563} 
 \index{Techstorm::GameCamera@{Techstorm::GameCamera}!setCameraData@{setCameraData}}
 \index{setCameraData@{setCameraData}!Techstorm::GameCamera@{Techstorm::GameCamera}}
 \doxysubsubsection{\texorpdfstring{setCameraData()}{setCameraData()}}
-{\footnotesize\ttfamily void Techstorm\+::\+Game\+Camera\+::set\+Camera\+Data (\begin{DoxyParamCaption}\item[{Camera3D const \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void Techstorm\+::\+Game\+Camera\+::set\+Camera\+Data (\begin{DoxyParamCaption}\item[{Camera3D const \&}]{data }\end{DoxyParamCaption})}
 
 
 
@@ -290,13 +310,13 @@ Sets the camera data.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00066}{66}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
+Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
 
 \Hypertarget{class_techstorm_1_1_game_camera_acf366282b572d91189f4b74f0bfd8c2b}\label{class_techstorm_1_1_game_camera_acf366282b572d91189f4b74f0bfd8c2b} 
 \index{Techstorm::GameCamera@{Techstorm::GameCamera}!setFovy@{setFovy}}
 \index{setFovy@{setFovy}!Techstorm::GameCamera@{Techstorm::GameCamera}}
 \doxysubsubsection{\texorpdfstring{setFovy()}{setFovy()}}
-{\footnotesize\ttfamily void Techstorm\+::\+Game\+Camera\+::set\+Fovy (\begin{DoxyParamCaption}\item[{float}]{fovy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void Techstorm\+::\+Game\+Camera\+::set\+Fovy (\begin{DoxyParamCaption}\item[{float}]{fovy }\end{DoxyParamCaption})}
 
 
 
@@ -309,13 +329,17 @@ Sets the fovy.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00090}{90}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
+Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00089}{89}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{_renderer_8h_source_l00025}{Techstorm\+::\+Renderer\+::\+Renderer()}}.
 
 \Hypertarget{class_techstorm_1_1_game_camera_aa96086062c165a7a9dad078881e07b0b}\label{class_techstorm_1_1_game_camera_aa96086062c165a7a9dad078881e07b0b} 
 \index{Techstorm::GameCamera@{Techstorm::GameCamera}!setPosition@{setPosition}}
 \index{setPosition@{setPosition}!Techstorm::GameCamera@{Techstorm::GameCamera}}
 \doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
-{\footnotesize\ttfamily void Techstorm\+::\+Game\+Camera\+::set\+Position (\begin{DoxyParamCaption}\item[{Vector3}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void Techstorm\+::\+Game\+Camera\+::set\+Position (\begin{DoxyParamCaption}\item[{Vector3}]{position }\end{DoxyParamCaption})}
 
 
 
@@ -328,13 +352,17 @@ Sets the position.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00072}{72}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
+Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00071}{71}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{_renderer_8h_source_l00025}{Techstorm\+::\+Renderer\+::\+Renderer()}}.
 
 \Hypertarget{class_techstorm_1_1_game_camera_a63ff287e239c794a9324626e9fd37b8e}\label{class_techstorm_1_1_game_camera_a63ff287e239c794a9324626e9fd37b8e} 
 \index{Techstorm::GameCamera@{Techstorm::GameCamera}!setProjection@{setProjection}}
 \index{setProjection@{setProjection}!Techstorm::GameCamera@{Techstorm::GameCamera}}
 \doxysubsubsection{\texorpdfstring{setProjection()}{setProjection()}}
-{\footnotesize\ttfamily void Techstorm\+::\+Game\+Camera\+::set\+Projection (\begin{DoxyParamCaption}\item[{int}]{projection }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void Techstorm\+::\+Game\+Camera\+::set\+Projection (\begin{DoxyParamCaption}\item[{int}]{projection }\end{DoxyParamCaption})}
 
 
 
@@ -347,13 +375,17 @@ Sets the projection.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00096}{96}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
+Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00095}{95}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{_renderer_8h_source_l00025}{Techstorm\+::\+Renderer\+::\+Renderer()}}.
 
 \Hypertarget{class_techstorm_1_1_game_camera_a73fd27f999cdea54f74a60bc50d4a978}\label{class_techstorm_1_1_game_camera_a73fd27f999cdea54f74a60bc50d4a978} 
 \index{Techstorm::GameCamera@{Techstorm::GameCamera}!setTarget@{setTarget}}
 \index{setTarget@{setTarget}!Techstorm::GameCamera@{Techstorm::GameCamera}}
 \doxysubsubsection{\texorpdfstring{setTarget()}{setTarget()}}
-{\footnotesize\ttfamily void Techstorm\+::\+Game\+Camera\+::set\+Target (\begin{DoxyParamCaption}\item[{Vector3}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void Techstorm\+::\+Game\+Camera\+::set\+Target (\begin{DoxyParamCaption}\item[{Vector3}]{target }\end{DoxyParamCaption})}
 
 
 
@@ -366,13 +398,17 @@ Sets the target.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00078}{78}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
+Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00077}{77}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{_renderer_8h_source_l00025}{Techstorm\+::\+Renderer\+::\+Renderer()}}.
 
 \Hypertarget{class_techstorm_1_1_game_camera_af08a1770b367556170cd7854acbf790f}\label{class_techstorm_1_1_game_camera_af08a1770b367556170cd7854acbf790f} 
 \index{Techstorm::GameCamera@{Techstorm::GameCamera}!setUp@{setUp}}
 \index{setUp@{setUp}!Techstorm::GameCamera@{Techstorm::GameCamera}}
 \doxysubsubsection{\texorpdfstring{setUp()}{setUp()}}
-{\footnotesize\ttfamily void Techstorm\+::\+Game\+Camera\+::set\+Up (\begin{DoxyParamCaption}\item[{Vector3}]{up }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void Techstorm\+::\+Game\+Camera\+::set\+Up (\begin{DoxyParamCaption}\item[{Vector3}]{up }\end{DoxyParamCaption})}
 
 
 
@@ -385,7 +421,11 @@ Sets up.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
+Definition at line \mbox{\hyperlink{_game_camera_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{_game_camera_8cpp_source}{Game\+Camera.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{_renderer_8h_source_l00025}{Techstorm\+::\+Renderer\+::\+Renderer()}}.
 
 \Hypertarget{class_techstorm_1_1_game_camera_a81bd0e99bc7e3eb0a3211d8f81d04f85}\label{class_techstorm_1_1_game_camera_a81bd0e99bc7e3eb0a3211d8f81d04f85} 
 \index{Techstorm::GameCamera@{Techstorm::GameCamera}!update@{update}}
@@ -412,7 +452,20 @@ Definition at line \mbox{\hyperlink{_camera_8cpp_source_l00004}{4}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{_game_camera_8h_source_l00146}{146}} of file \mbox{\hyperlink{_game_camera_8h_source}{Game\+Camera.\+h}}.
+Definition at line \mbox{\hyperlink{_game_camera_8h_source_l00153}{153}} of file \mbox{\hyperlink{_game_camera_8h_source}{Game\+Camera.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_techstorm_1_1_game_camera_a2a3d338485c5db7bf490f49fe5eec73e}\label{class_techstorm_1_1_game_camera_a2a3d338485c5db7bf490f49fe5eec73e} 
+\index{Techstorm::GameCamera@{Techstorm::GameCamera}!mCameraData@{mCameraData}}
+\index{mCameraData@{mCameraData}!Techstorm::GameCamera@{Techstorm::GameCamera}}
+\doxysubsubsection{\texorpdfstring{mCameraData}{mCameraData}}
+{\footnotesize\ttfamily Camera3D Techstorm\+::\+Game\+Camera\+::m\+Camera\+Data = \{ 0 \}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_camera_8h_source_l00139}{139}} of file \mbox{\hyperlink{_game_camera_8h_source}{Game\+Camera.\+h}}.
 
 
 

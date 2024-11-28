@@ -10,8 +10,6 @@
 #include <thread>
 
 int main(int argc, char* argv[]) {
-
-
 	using namespace Techstorm;
 
 	PROJECT_TYPENAME project = PROJECT_TYPENAME();
