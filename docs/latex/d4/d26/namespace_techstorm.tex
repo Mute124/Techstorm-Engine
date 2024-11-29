@@ -41,9 +41,9 @@ class \mbox{\hyperlink{class_techstorm_1_1_gate}{Gate}}
 class \mbox{\hyperlink{class_techstorm_1_1_globals_container}{Globals\+Container}}
 \item 
 class \mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}}
-\begin{DoxyCompactList}\small\item\em Serves as a search key/input category for the input system. {\bfseries{Please pay attention when using this because any slight change in \doxylink{class_techstorm_1_1_input_action}{Input\+Action} keys will give you entirely different input results.}} \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Serves as a search key/input category for the input system. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_techstorm_1_1_input_registry}{Input\+Registry}}
-\begin{DoxyCompactList}\small\item\em The input registry is used to register Input\+Actions (\doxylink{class_techstorm_1_1_input_action}{Input\+Action}) and their callbacks. Remember that this is a singleton, so you may use this statically. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The input registry is used to register Input\+Actions (\doxylink{class_techstorm_1_1_input_action}{Input\+Action}) and their callbacks by using a Laissez-\/faire system. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_techstorm_1_1_layer_registry}{Layer\+Registry}}
 \item 
 class \mbox{\hyperlink{class_techstorm_1_1_my_body_activation_listener}{My\+Body\+Activation\+Listener}}
@@ -121,15 +121,25 @@ enum class \mbox{\hyperlink{namespace_techstorm_a3289ce49929ae6003fcbc78c954af69
 , \newline
 \mbox{\hyperlink{namespace_techstorm_a3289ce49929ae6003fcbc78c954af69daecbcb28c1bd554fb19fe98a5c74aaf23}{INPUT\+\_\+\+TRIGGER\+\_\+\+REPEAT}}
  \}
-\begin{DoxyCompactList}\small\item\em What sort of action should trigger the Input\+Action? {\bfseries{Please pay attention when using this because any slight change in Input\+Action keys will give you entirely different input results.}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em What sort of action should trigger the Input\+Action? \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespace_techstorm_acbc8f303afb42ae77958c4f0cc5601ba}{Init\+Haptics}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the haptics module. Keep in mind this only works if TS\+\_\+\+ENABLE\+\_\+\+HAPTICS is defined. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_techstorm_a5451a8aaa383e3936b9939fc6297d6e1}{Set\+Controller\+Rumble}} (int controller\+Index, int left\+Motor\+Speed, int right\+Motor\+Speed)
+\begin{DoxyCompactList}\small\item\em Sets the controller rumble. Keep in mind this only works if TS\+\_\+\+ENABLE\+\_\+\+HAPTICS is defined. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_techstorm_abbe31e4f49d55c0496f4631a182e1477}{Start\+Rumbling\+Controller}} (int controller\+Index, int left\+Motor\+Speed, int right\+Motor\+Speed)
+\begin{DoxyCompactList}\small\item\em Starts the controller rumble. Keep in mind this only works if TS\+\_\+\+ENABLE\+\_\+\+HAPTICS is defined. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_techstorm_aa6731e1161358e83d844e07b3a039304}{Stop\+Rumbling\+Controller}} (int controller\+Index)
 \item 
 \mbox{\hyperlink{class_techstorm_1_1_config_file_registry}{Config\+File\+Registry}} \& \mbox{\hyperlink{namespace_techstorm_afae7d54e50b01e66aed0ffd14031056c}{Get\+Config\+File\+Registry}} ()
 \item 
 void \mbox{\hyperlink{namespace_techstorm_a2b72a42193d6d2dc6bbb26a25656da6c}{Initialize\+Config\+Registry}} ()
 \item 
 libconfig\+::\+Setting \& \mbox{\hyperlink{namespace_techstorm_addbe8297c758588e97c3395d420bbfce}{Lookup\+Config}} (const std\+::string \&file\+Name, const std\+::string \&lookup\+Target)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespace_techstorm_a33a453260254fd2ee617b9fdc4e56568}{Get\+Config\+String}} (std\+::string file\+Name, std\+::string lookup\+Target)
 \item 
 bool \mbox{\hyperlink{namespace_techstorm_ad005d326f9ccbbbf9be01f11f98f049d}{File\+System\+Is\+Properly\+Formatted}} (const char \texorpdfstring{$\ast$}{*}root\+Path, const char \texorpdfstring{$\ast$}{*}directory\+Map\+Path)
 \item 
@@ -232,8 +242,11 @@ Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00041}{41}} of f
 
 
 
-What sort of action should trigger the \doxylink{class_techstorm_1_1_input_action}{Input\+Action}? {\bfseries{Please pay attention when using this because any slight change in \doxylink{class_techstorm_1_1_input_action}{Input\+Action} keys will give you entirely different input results.}} 
+What sort of action should trigger the \doxylink{class_techstorm_1_1_input_action}{Input\+Action}? 
 
+\begin{DoxyWarning}{Warning}
+Please pay attention when using this because any slight change in \doxylink{class_techstorm_1_1_input_action}{Input\+Action} keys will give you entirely different input results. 
+\end{DoxyWarning}
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{INPUT\_TRIGGER\_PRESSED@{INPUT\_TRIGGER\_PRESSED}!Techstorm@{Techstorm}}\index{Techstorm@{Techstorm}!INPUT\_TRIGGER\_PRESSED@{INPUT\_TRIGGER\_PRESSED}}}\Hypertarget{namespace_techstorm_a3289ce49929ae6003fcbc78c954af69da4d4d492eccd5ffa943f9c7278c171995}\label{namespace_techstorm_a3289ce49929ae6003fcbc78c954af69da4d4d492eccd5ffa943f9c7278c171995} 
 INPUT\+\_\+\+TRIGGER\+\_\+\+PRESSED&\\
@@ -258,7 +271,7 @@ INPUT\+\_\+\+TRIGGER\+\_\+\+REPEAT&\\
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{_input_8h_source_l00025}{25}} of file \mbox{\hyperlink{_input_8h_source}{Input.\+h}}.
+Definition at line \mbox{\hyperlink{_input_8h_source_l00031}{31}} of file \mbox{\hyperlink{_input_8h_source}{Input.\+h}}.
 
 \Hypertarget{namespace_techstorm_a7ecb9dba2f9073f147a682772c49885d}\label{namespace_techstorm_a7ecb9dba2f9073f147a682772c49885d} 
 \index{Techstorm@{Techstorm}!EInputType@{EInputType}}
@@ -286,7 +299,7 @@ INPUT\+\_\+\+CONTROLLER&\\
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{_input_8h_source_l00016}{16}} of file \mbox{\hyperlink{_input_8h_source}{Input.\+h}}.
+Definition at line \mbox{\hyperlink{_input_8h_source_l00021}{21}} of file \mbox{\hyperlink{_input_8h_source}{Input.\+h}}.
 
 \Hypertarget{namespace_techstorm_ab0981a062221a3d61fdce049730b3e79}\label{namespace_techstorm_ab0981a062221a3d61fdce049730b3e79} 
 \index{Techstorm@{Techstorm}!EReturnCode@{EReturnCode}}
@@ -383,6 +396,24 @@ Definition at line \mbox{\hyperlink{_config_8cpp_source_l00077}{77}} of file \mb
 
 References \mbox{\hyperlink{_singleton_8h_source_l00017}{Techstorm\+::\+Singleton$<$ Config\+File\+Registry $>$\+::\+Instance()}}.
 
+\Hypertarget{namespace_techstorm_a33a453260254fd2ee617b9fdc4e56568}\label{namespace_techstorm_a33a453260254fd2ee617b9fdc4e56568} 
+\index{Techstorm@{Techstorm}!GetConfigString@{GetConfigString}}
+\index{GetConfigString@{GetConfigString}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{GetConfigString()}{GetConfigString()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} Techstorm\+::\+Get\+Config\+String (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name,  }\item[{std\+::string}]{lookup\+Target }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_config_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{_config_8cpp_source}{Config.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_config_8cpp_source_l00081}{Lookup\+Config()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_scripting_a_p_i_8cpp_source_l00020}{Techstorm\+::\+Scripting\+API\+::\+Register\+Lua()}}.
+
 \Hypertarget{namespace_techstorm_a05f20a9725a9462dc9d707c5d44766fb}\label{namespace_techstorm_a05f20a9725a9462dc9d707c5d44766fb} 
 \index{Techstorm@{Techstorm}!GetFile@{GetFile}}
 \index{GetFile@{GetFile}!Techstorm@{Techstorm}}
@@ -444,6 +475,22 @@ Definition at line \mbox{\hyperlink{_globals_8h_source_l00031}{31}} of file \mbo
 
 References \mbox{\hyperlink{_globals_8h_source_l00023}{Techstorm\+::\+Globals\+Container\+::get()}}, and \mbox{\hyperlink{_singleton_8h_source_l00017}{Techstorm\+::\+Singleton$<$ Globals\+Container $>$\+::\+Instance()}}.
 
+\Hypertarget{namespace_techstorm_acbc8f303afb42ae77958c4f0cc5601ba}\label{namespace_techstorm_acbc8f303afb42ae77958c4f0cc5601ba} 
+\index{Techstorm@{Techstorm}!InitHaptics@{InitHaptics}}
+\index{InitHaptics@{InitHaptics}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{InitHaptics()}{InitHaptics()}}
+{\footnotesize\ttfamily void Techstorm\+::\+Init\+Haptics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the haptics module. Keep in mind this only works if TS\+\_\+\+ENABLE\+\_\+\+HAPTICS is defined. 
+
+This is a module for haptic experiences (ie. controller rumble) and helps make more immersive experiences. \begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000002}{Todo}}]Add more haptic features, like monitor flashing and such. \end{DoxyRefDesc}
+
+
+Definition at line \mbox{\hyperlink{_common_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{_common_8cpp_source}{Common.\+cpp}}.
+
 \Hypertarget{namespace_techstorm_a2b72a42193d6d2dc6bbb26a25656da6c}\label{namespace_techstorm_a2b72a42193d6d2dc6bbb26a25656da6c} 
 \index{Techstorm@{Techstorm}!InitializeConfigRegistry@{InitializeConfigRegistry}}
 \index{InitializeConfigRegistry@{InitializeConfigRegistry}!Techstorm@{Techstorm}}
@@ -490,6 +537,28 @@ Definition at line \mbox{\hyperlink{_config_8cpp_source_l00081}{81}} of file \mb
 
 References \mbox{\hyperlink{_singleton_8h_source_l00017}{Techstorm\+::\+Singleton$<$ Config\+File\+Registry $>$\+::\+Instance()}}, and \mbox{\hyperlink{_config_8cpp_source_l00061}{Techstorm\+::\+Config\+File\+Registry\+::lookup()}}.
 
+
+
+Referenced by \mbox{\hyperlink{_config_8cpp_source_l00083}{Get\+Config\+String()}}.
+
+\Hypertarget{namespace_techstorm_a5451a8aaa383e3936b9939fc6297d6e1}\label{namespace_techstorm_a5451a8aaa383e3936b9939fc6297d6e1} 
+\index{Techstorm@{Techstorm}!SetControllerRumble@{SetControllerRumble}}
+\index{SetControllerRumble@{SetControllerRumble}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{SetControllerRumble()}{SetControllerRumble()}}
+{\footnotesize\ttfamily void Techstorm\+::\+Set\+Controller\+Rumble (\begin{DoxyParamCaption}\item[{int}]{controller\+Index,  }\item[{int}]{left\+Motor\+Speed,  }\item[{int}]{right\+Motor\+Speed }\end{DoxyParamCaption})}
+
+
+
+Sets the controller rumble. Keep in mind this only works if TS\+\_\+\+ENABLE\+\_\+\+HAPTICS is defined. 
+
+
+
+Definition at line \mbox{\hyperlink{_common_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{_common_8cpp_source}{Common.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{_common_8cpp_source_l00034}{Start\+Rumbling\+Controller()}}, and \mbox{\hyperlink{_common_8cpp_source_l00039}{Stop\+Rumbling\+Controller()}}.
+
 \Hypertarget{namespace_techstorm_acbd4313148ac66f22420becf6668fc8d}\label{namespace_techstorm_acbd4313148ac66f22420becf6668fc8d} 
 \index{Techstorm@{Techstorm}!SetGlobal@{SetGlobal}}
 \index{SetGlobal@{SetGlobal}!Techstorm@{Techstorm}}
@@ -504,6 +573,38 @@ Definition at line \mbox{\hyperlink{_globals_8h_source_l00038}{38}} of file \mbo
 
 
 References \mbox{\hyperlink{_singleton_8h_source_l00017}{Techstorm\+::\+Singleton$<$ Globals\+Container $>$\+::\+Instance()}}, and \mbox{\hyperlink{_globals_8h_source_l00014}{Techstorm\+::\+Globals\+Container\+::set()}}.
+
+\Hypertarget{namespace_techstorm_abbe31e4f49d55c0496f4631a182e1477}\label{namespace_techstorm_abbe31e4f49d55c0496f4631a182e1477} 
+\index{Techstorm@{Techstorm}!StartRumblingController@{StartRumblingController}}
+\index{StartRumblingController@{StartRumblingController}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{StartRumblingController()}{StartRumblingController()}}
+{\footnotesize\ttfamily void Techstorm\+::\+Start\+Rumbling\+Controller (\begin{DoxyParamCaption}\item[{int}]{controller\+Index,  }\item[{int}]{left\+Motor\+Speed,  }\item[{int}]{right\+Motor\+Speed }\end{DoxyParamCaption})}
+
+
+
+Starts the controller rumble. Keep in mind this only works if TS\+\_\+\+ENABLE\+\_\+\+HAPTICS is defined. 
+
+
+
+Definition at line \mbox{\hyperlink{_common_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{_common_8cpp_source}{Common.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_common_8cpp_source_l00024}{Set\+Controller\+Rumble()}}.
+
+\Hypertarget{namespace_techstorm_aa6731e1161358e83d844e07b3a039304}\label{namespace_techstorm_aa6731e1161358e83d844e07b3a039304} 
+\index{Techstorm@{Techstorm}!StopRumblingController@{StopRumblingController}}
+\index{StopRumblingController@{StopRumblingController}!Techstorm@{Techstorm}}
+\doxysubsubsection{\texorpdfstring{StopRumblingController()}{StopRumblingController()}}
+{\footnotesize\ttfamily void Techstorm\+::\+Stop\+Rumbling\+Controller (\begin{DoxyParamCaption}\item[{int}]{controller\+Index }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_common_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{_common_8cpp_source}{Common.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_common_8cpp_source_l00024}{Set\+Controller\+Rumble()}}.
 
 
 

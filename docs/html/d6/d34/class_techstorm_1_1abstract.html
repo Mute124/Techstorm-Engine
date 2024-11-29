@@ -231,22 +231,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a23a04a87e0f50937d2d9ff899f5cc14b" id="r_a23a04a87e0f50937d2d9ff899f5cc14b"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a23a04a87e0f50937d2d9ff899f5cc14b">~IGameObject</a> ()=default</td></tr>
 <tr class="separator:a23a04a87e0f50937d2d9ff899f5cc14b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9cf38cda2120b17bc25dfa44913102e" id="r_aa9cf38cda2120b17bc25dfa44913102e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#aa9cf38cda2120b17bc25dfa44913102e">texture</a> ()=0</td></tr>
-<tr class="memdesc:aa9cf38cda2120b17bc25dfa44913102e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Textures this instance.  <br /></td></tr>
+<tr class="memdesc:aa9cf38cda2120b17bc25dfa44913102e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a pure virtual function that is the drawing function for when objects are being textured to the render texture. If you do not have anything different to do here, then you may just call <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a9fbec32fc6a853a44b400eefab6c28c3" title="Assuming that the FBO is enabled, this will render the FBO and apply any post-processing effects to t...">render()</a> instead, but this must be implemented in order for the object to be rendered.  <br /></td></tr>
 <tr class="separator:aa9cf38cda2120b17bc25dfa44913102e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd76d7ab5c43c2482cede1cbf7044c5a" id="r_abd76d7ab5c43c2482cede1cbf7044c5a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#abd76d7ab5c43c2482cede1cbf7044c5a">render</a> ()</td></tr>
 <tr class="memdesc:abd76d7ab5c43c2482cede1cbf7044c5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders this instance. This is not a pure virtual and is empty because it is up to the user to use this as they see fit without forcing them to implement it.  <br /></td></tr>
 <tr class="separator:abd76d7ab5c43c2482cede1cbf7044c5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec38bee941f0f8a0cb48880746c2d205" id="r_aec38bee941f0f8a0cb48880746c2d205"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#aec38bee941f0f8a0cb48880746c2d205">prePhysicsUpdate</a> ()=0</td></tr>
-<tr class="memdesc:aec38bee941f0f8a0cb48880746c2d205"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called right before the physics update. Do anything you need to do before the physics update here. Keep in mind that this can either run on the update thread or the physics thread, so make sure what you are doing is <b>thread safe</b>.  <br /></td></tr>
+<tr class="memdesc:aec38bee941f0f8a0cb48880746c2d205"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called right before the physics update. Do anything you need to do before the physics update here.  <br /></td></tr>
 <tr class="separator:aec38bee941f0f8a0cb48880746c2d205"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9ebe837a4fbcec732e81ddf8b38ab2c" id="r_ac9ebe837a4fbcec732e81ddf8b38ab2c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#ac9ebe837a4fbcec732e81ddf8b38ab2c">update</a> ()=0</td></tr>
-<tr class="memdesc:ac9ebe837a4fbcec732e81ddf8b38ab2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates this instance and is called every frame before texturing/rendering. Keep in mind that this will run on the update thread, so make sure what you are doing is <b>thread safe</b>.  <br /></td></tr>
+<tr class="memdesc:ac9ebe837a4fbcec732e81ddf8b38ab2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates this instance and is called every frame before texturing/rendering.  <br /></td></tr>
 <tr class="separator:ac9ebe837a4fbcec732e81ddf8b38ab2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bbad12f7eeef8bfcccc6295e3895ee0" id="r_a9bbad12f7eeef8bfcccc6295e3895ee0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a9bbad12f7eeef8bfcccc6295e3895ee0">postUpdate</a> ()=0</td></tr>
-<tr class="memdesc:a9bbad12f7eeef8bfcccc6295e3895ee0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called right after the update function, but before texturing/rendering. Keep in mind that this will run on the update thread, so make sure what you are doing is <b>thread safe</b>.  <br /></td></tr>
+<tr class="memdesc:a9bbad12f7eeef8bfcccc6295e3895ee0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called right after the update function, but before texturing/rendering.  <br /></td></tr>
 <tr class="separator:a9bbad12f7eeef8bfcccc6295e3895ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c78ff5c43eb03bbf20e7c58db8e2dd2" id="r_a1c78ff5c43eb03bbf20e7c58db8e2dd2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a1c78ff5c43eb03bbf20e7c58db8e2dd2">destroy</a> ()=0</td></tr>
-<tr class="memdesc:a1c78ff5c43eb03bbf20e7c58db8e2dd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys this instance, and is called right before the object is removed from memory. This must be implemented by the user.  <br /></td></tr>
+<tr class="memdesc:a1c78ff5c43eb03bbf20e7c58db8e2dd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys this instance, and is called right before the object is removed from memory.  <br /></td></tr>
 <tr class="separator:a1c78ff5c43eb03bbf20e7c58db8e2dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa46fb3338c2570e22ded414e462582d6" id="r_aa46fb3338c2570e22ded414e462582d6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#aa46fb3338c2570e22ded414e462582d6">cleanup</a> ()=0</td></tr>
 <tr class="memdesc:aa46fb3338c2570e22ded414e462582d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cleanups this instance.  <br /></td></tr>
@@ -328,6 +328,7 @@ class Techstorm::abstract&lt; K, D, T &gt;</div><p>This is an <b>abstract interf
 <p>Same thing as a gate, but for game objects.</p>
 <p>Represents an object that can be rendered in the screen. This is an abstract class that contains all the common properties of a game object.</p>
 <p>You may implement this yourself to create your own game objects and drawing code, or you can inherit from <a class="el" href="../../d4/de0/class_techstorm_1_1_game_object.html" title="A game object that can be rendered to the screen. Inherits from IGameObject, and already provides the...">Techstorm::GameObject</a> to use the default implementation. However, if you inherit from this class, be sure you have a basic understanding of Raylib's and OpenGL's rendering system. If not, see https://learnopengl.com/ and https://www.raylib.com/ for a good place to start. In addition, it is not advised for you to inherit this yourself because it will require you to implement rendering code. However, it is recommended if your game requires a rendering system that is not provided by default. </p>
+<p>The IGameObject class is abstract and cannot be instantiated directly. Instead, you should inherit from this class and implement the pure virtual functions. As of version 0.0.3, the pure virtual functions are: <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a9fbec32fc6a853a44b400eefab6c28c3" title="Assuming that the FBO is enabled, this will render the FBO and apply any post-processing effects to t...">render()</a>, <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a3e03fcd5f137aab15e5331078e86ada0" title="Textures all GameObjects before render() is called and after update functions are called....">texture()</a>, <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a6fd2a9004046a8a57e321d0ae99951c5">update()</a>, <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#ab14ebe5a7c51e1483ce935c2193a170a" title="Pre-update step that is called in the physics or update thread (depending on thread count)">prePhysicsUpdate()</a>, <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a9bbad12f7eeef8bfcccc6295e3895ee0" title="Called right after the update function, but before texturing/rendering.">postUpdate()</a>, <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a1c78ff5c43eb03bbf20e7c58db8e2dd2" title="Destroys this instance, and is called right before the object is removed from memory.">destroy()</a>, and <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a4ed7d940db9a878ec9884a71b4c393f4">cleanup()</a>. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d6/d46/class_techstorm_1_1_gate.html">Gate&lt;GameObject*&gt;</a></dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/da9/_engine_component_8h_source.html#l00012">12</a> of file <a class="el" href="../../d4/da9/_engine_component_8h_source.html">EngineComponent.h</a>.</p>
@@ -411,7 +412,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00141">141</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00146">146</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
 
 </div>
 </div>
@@ -496,6 +497,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Cleanups this instance. </p>
+<dl class="section note"><dt>Note</dt><dd>This must be implemented by the user.</dd></dl>
 
 </div>
 </div>
@@ -588,7 +590,8 @@ template&lt;typename K , typename D , typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Destroys this instance, and is called right before the object is removed from memory. This must be implemented by the user. </p>
+<p>Destroys this instance, and is called right before the object is removed from memory. </p>
+<dl class="section note"><dt>Note</dt><dd>This must be implemented by the user.</dd></dl>
 
 </div>
 </div>
@@ -989,7 +992,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00137">137</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00142">142</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
 
 </div>
 </div>
@@ -1470,7 +1473,8 @@ template&lt;typename K , typename D , typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Called right after the update function, but before texturing/rendering. Keep in mind that this will run on the update thread, so make sure what you are doing is <b>thread safe</b>. </p>
+<p>Called right after the update function, but before texturing/rendering. </p>
+<dl class="section note"><dt>Note</dt><dd>Keep in mind that this will run on the update thread, so make sure what you are doing is <b>thread safe</b>.</dd></dl>
 
 </div>
 </div>
@@ -1503,7 +1507,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00092">92</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d4c/_file_system_8cpp_source.html#l00024">Techstorm::AddFileRegistryLoadFunction()</a>, <a class="el" href="../../d1/d4c/_file_system_8cpp_source.html#l00019">Techstorm::InitializeFileRegistry()</a>, and <a class="el" href="../../db/d1f/_common_8h_source.html#l00023">TS_GAME_DIR</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d4c/_file_system_8cpp_source.html#l00024">Techstorm::AddFileRegistryLoadFunction()</a>, <a class="el" href="../../d1/d4c/_file_system_8cpp_source.html#l00019">Techstorm::InitializeFileRegistry()</a>, and <a class="el" href="../../db/d1f/_common_8h_source.html#l00027">TS_GAME_DIR</a>.</p>
 
 </div>
 </div>
@@ -1619,7 +1623,8 @@ template&lt;typename K , typename D , typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Called right before the physics update. Do anything you need to do before the physics update here. Keep in mind that this can either run on the update thread or the physics thread, so make sure what you are doing is <b>thread safe</b>. </p>
+<p>Called right before the physics update. Do anything you need to do before the physics update here. </p>
+<dl class="section note"><dt>Note</dt><dd>Keep in mind that this can either run on the update thread or the physics thread, so make sure what you are doing is <b>thread safe</b>.</dd></dl>
 
 </div>
 </div>
@@ -1708,7 +1713,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 
 <p>Renders this instance. This is not a pure virtual and is empty because it is up to the user to use this as they see fit without forcing them to implement it. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00048">48</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00055">55</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
 
 </div>
 </div>
@@ -1963,7 +1968,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Textures this instance. </p>
+<p>This is a pure virtual function that is the drawing function for when objects are being textured to the render texture. If you do not have anything different to do here, then you may just call <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a9fbec32fc6a853a44b400eefab6c28c3" title="Assuming that the FBO is enabled, this will render the FBO and apply any post-processing effects to t...">render()</a> instead, but this must be implemented in order for the object to be rendered. </p>
 
 </div>
 </div>
@@ -2019,7 +2024,8 @@ template&lt;typename K , typename D , typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Updates this instance and is called every frame before texturing/rendering. Keep in mind that this will run on the update thread, so make sure what you are doing is <b>thread safe</b>. </p>
+<p>Updates this instance and is called every frame before texturing/rendering. </p>
+<dl class="section note"><dt>Note</dt><dd>Keep in mind that this will run on the update thread, so make sure what you are doing is <b>thread safe</b>.</dd></dl>
 
 </div>
 </div>
@@ -2038,7 +2044,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00135">135</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00140">140</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
 
 </div>
 </div>
@@ -2055,8 +2061,9 @@ template&lt;typename K , typename D , typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000006">Todo:</a></b></dt><dd>add support for multiple layers. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00023">23</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00030">30</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
 
 </div>
 </div>
@@ -2074,7 +2081,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00134">134</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00139">139</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
 
 </div>
 </div>
@@ -2222,7 +2229,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00024">24</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00032">32</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
 
 </div>
 </div>
@@ -2292,7 +2299,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00029">29</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00035">35</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
 
 </div>
 </div>
@@ -2310,7 +2317,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00033">33</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00039">39</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
 
 </div>
 </div>
@@ -2328,7 +2335,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00030">30</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00036">36</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
 
 </div>
 </div>
@@ -2346,7 +2353,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00031">31</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00037">37</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
 
 </div>
 </div>
@@ -2382,7 +2389,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00034">34</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d91/_game_object_8h_source.html#l00040">40</a> of file <a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>.</p>
 
 </div>
 </div>
@@ -2398,7 +2405,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/d26/namespace_techstorm.html">Techstorm</a></li><li class="navelem"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html">abstract</a></li>
-    <li class="footer">Generated on Thu Nov 28 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Nov 29 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -32,4 +32,6 @@ namespace Techstorm {
 	ConfigFileRegistry& GetConfigFileRegistry();
 	void InitializeConfigRegistry();
 	libconfig::Setting& LookupConfig(const std::string& fileName, const std::string& lookupTarget);
+
+	const char* GetConfigString(std::string fileName, std::string lookupTarget);
 }

@@ -148,10 +148,10 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d44/class_techstorm_1_1_globals_container.html">GlobalsContainer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html">InputAction</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a search key/input category for the input system. <b>Please pay attention when using this because any slight change in <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a> keys will give you entirely different input results.</b>  <a href="../../d9/d02/class_techstorm_1_1_input_action.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a search key/input category for the input system.  <a href="../../d9/d02/class_techstorm_1_1_input_action.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d16/class_techstorm_1_1_input_registry.html">InputRegistry</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The input registry is used to register InputActions (<a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a>) and their callbacks. Remember that this is a singleton, so you may use this statically.  <a href="../../dc/d16/class_techstorm_1_1_input_registry.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The input registry is used to register InputActions (<a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system.">InputAction</a>) and their callbacks by using a Laissez-faire system.  <a href="../../dc/d16/class_techstorm_1_1_input_registry.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d5d/class_techstorm_1_1_layer_registry.html">LayerRegistry</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -240,17 +240,30 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="../../d4/d26/namespace_techstorm.html#a3289ce49929ae6003fcbc78c954af69daecbcb28c1bd554fb19fe98a5c74aaf23">INPUT_TRIGGER_REPEAT</a>
 <br />
  }</td></tr>
-<tr class="memdesc:a3289ce49929ae6003fcbc78c954af69d"><td class="mdescLeft">&#160;</td><td class="mdescRight">What sort of action should trigger the InputAction? <b>Please pay attention when using this because any slight change in InputAction keys will give you entirely different input results.</b>  <a href="../../d4/d26/namespace_techstorm.html#a3289ce49929ae6003fcbc78c954af69d">More...</a><br /></td></tr>
+<tr class="memdesc:a3289ce49929ae6003fcbc78c954af69d"><td class="mdescLeft">&#160;</td><td class="mdescRight">What sort of action should trigger the InputAction?  <a href="../../d4/d26/namespace_techstorm.html#a3289ce49929ae6003fcbc78c954af69d">More...</a><br /></td></tr>
 <tr class="separator:a3289ce49929ae6003fcbc78c954af69d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:acbc8f303afb42ae77958c4f0cc5601ba" id="r_acbc8f303afb42ae77958c4f0cc5601ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#acbc8f303afb42ae77958c4f0cc5601ba">InitHaptics</a> ()</td></tr>
+<tr class="memdesc:acbc8f303afb42ae77958c4f0cc5601ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the haptics module. Keep in mind this only works if TS_ENABLE_HAPTICS is defined.  <br /></td></tr>
+<tr class="separator:acbc8f303afb42ae77958c4f0cc5601ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5451a8aaa383e3936b9939fc6297d6e1" id="r_a5451a8aaa383e3936b9939fc6297d6e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#a5451a8aaa383e3936b9939fc6297d6e1">SetControllerRumble</a> (int controllerIndex, int leftMotorSpeed, int rightMotorSpeed)</td></tr>
+<tr class="memdesc:a5451a8aaa383e3936b9939fc6297d6e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the controller rumble. Keep in mind this only works if TS_ENABLE_HAPTICS is defined.  <br /></td></tr>
+<tr class="separator:a5451a8aaa383e3936b9939fc6297d6e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbe31e4f49d55c0496f4631a182e1477" id="r_abbe31e4f49d55c0496f4631a182e1477"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#abbe31e4f49d55c0496f4631a182e1477">StartRumblingController</a> (int controllerIndex, int leftMotorSpeed, int rightMotorSpeed)</td></tr>
+<tr class="memdesc:abbe31e4f49d55c0496f4631a182e1477"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the controller rumble. Keep in mind this only works if TS_ENABLE_HAPTICS is defined.  <br /></td></tr>
+<tr class="separator:abbe31e4f49d55c0496f4631a182e1477"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6731e1161358e83d844e07b3a039304" id="r_aa6731e1161358e83d844e07b3a039304"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#aa6731e1161358e83d844e07b3a039304">StopRumblingController</a> (int controllerIndex)</td></tr>
+<tr class="separator:aa6731e1161358e83d844e07b3a039304"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afae7d54e50b01e66aed0ffd14031056c" id="r_afae7d54e50b01e66aed0ffd14031056c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/dcb/class_techstorm_1_1_config_file_registry.html">ConfigFileRegistry</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#afae7d54e50b01e66aed0ffd14031056c">GetConfigFileRegistry</a> ()</td></tr>
 <tr class="separator:afae7d54e50b01e66aed0ffd14031056c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b72a42193d6d2dc6bbb26a25656da6c" id="r_a2b72a42193d6d2dc6bbb26a25656da6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#a2b72a42193d6d2dc6bbb26a25656da6c">InitializeConfigRegistry</a> ()</td></tr>
 <tr class="separator:a2b72a42193d6d2dc6bbb26a25656da6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addbe8297c758588e97c3395d420bbfce" id="r_addbe8297c758588e97c3395d420bbfce"><td class="memItemLeft" align="right" valign="top">libconfig::Setting &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#addbe8297c758588e97c3395d420bbfce">LookupConfig</a> (const std::string &amp;fileName, const std::string &amp;lookupTarget)</td></tr>
 <tr class="separator:addbe8297c758588e97c3395d420bbfce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33a453260254fd2ee617b9fdc4e56568" id="r_a33a453260254fd2ee617b9fdc4e56568"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#a33a453260254fd2ee617b9fdc4e56568">GetConfigString</a> (std::string fileName, std::string lookupTarget)</td></tr>
+<tr class="separator:a33a453260254fd2ee617b9fdc4e56568"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad005d326f9ccbbbf9be01f11f98f049d" id="r_ad005d326f9ccbbbf9be01f11f98f049d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#ad005d326f9ccbbbf9be01f11f98f049d">FileSystemIsProperlyFormatted</a> (const char *rootPath, const char *directoryMapPath)</td></tr>
 <tr class="separator:ad005d326f9ccbbbf9be01f11f98f049d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24fb41ad8339291fb9302ab6c9023ef9" id="r_a24fb41ad8339291fb9302ab6c9023ef9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/dae/class_techstorm_1_1_file_system_registry.html">FileSystemRegistry</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d26/namespace_techstorm.html#a24fb41ad8339291fb9302ab6c9023ef9">GetFileSystemRegistry</a> ()</td></tr>
@@ -397,7 +410,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>What sort of action should trigger the <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a>? <b>Please pay attention when using this because any slight change in <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a> keys will give you entirely different input results.</b> </p>
+<p>What sort of action should trigger the <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system.">InputAction</a>? </p>
+<dl class="section warning"><dt>Warning</dt><dd>Please pay attention when using this because any slight change in <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system.">InputAction</a> keys will give you entirely different input results. </dd></dl>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3289ce49929ae6003fcbc78c954af69da4d4d492eccd5ffa943f9c7278c171995" name="a3289ce49929ae6003fcbc78c954af69da4d4d492eccd5ffa943f9c7278c171995"></a>INPUT_TRIGGER_PRESSED&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a3289ce49929ae6003fcbc78c954af69da6ef288157def0b4b0a97c80e805156c7" name="a3289ce49929ae6003fcbc78c954af69da6ef288157def0b4b0a97c80e805156c7"></a>INPUT_TRIGGER_RELEASED&#160;</td><td class="fielddoc"></td></tr>
@@ -406,7 +420,7 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a3289ce49929ae6003fcbc78c954af69daecbcb28c1bd554fb19fe98a5c74aaf23" name="a3289ce49929ae6003fcbc78c954af69daecbcb28c1bd554fb19fe98a5c74aaf23"></a>INPUT_TRIGGER_REPEAT&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d94/_input_8h_source.html#l00025">25</a> of file <a class="el" href="../../d2/d94/_input_8h_source.html">Input.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d94/_input_8h_source.html#l00031">31</a> of file <a class="el" href="../../d2/d94/_input_8h_source.html">Input.h</a>.</p>
 
 </div>
 </div>
@@ -437,7 +451,7 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a7ecb9dba2f9073f147a682772c49885dae7bb3cb1d97b054348b144a429fa1b6e" name="a7ecb9dba2f9073f147a682772c49885dae7bb3cb1d97b054348b144a429fa1b6e"></a>INPUT_CONTROLLER&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d94/_input_8h_source.html#l00016">16</a> of file <a class="el" href="../../d2/d94/_input_8h_source.html">Input.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d94/_input_8h_source.html#l00021">21</a> of file <a class="el" href="../../d2/d94/_input_8h_source.html">Input.h</a>.</p>
 
 </div>
 </div>
@@ -581,6 +595,40 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a33a453260254fd2ee617b9fdc4e56568" name="a33a453260254fd2ee617b9fdc4e56568"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33a453260254fd2ee617b9fdc4e56568">&#9670;&#160;</a></span>GetConfigString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * Techstorm::GetConfigString </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>lookupTarget</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d7/dd3/_config_8cpp_source.html#l00083">83</a> of file <a class="el" href="../../d7/dd3/_config_8cpp_source.html">Config.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d7/dd3/_config_8cpp_source.html#l00081">LookupConfig()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d11/_scripting_a_p_i_8cpp_source.html#l00020">Techstorm::ScriptingAPI::RegisterLua()</a>.</p>
+
+</div>
+</div>
 <a id="a05f20a9725a9462dc9d707c5d44766fb" name="a05f20a9725a9462dc9d707c5d44766fb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a05f20a9725a9462dc9d707c5d44766fb">&#9670;&#160;</a></span>GetFile()</h2>
 
@@ -682,6 +730,28 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="acbc8f303afb42ae77958c4f0cc5601ba" name="acbc8f303afb42ae77958c4f0cc5601ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbc8f303afb42ae77958c4f0cc5601ba">&#9670;&#160;</a></span>InitHaptics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Techstorm::InitHaptics </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the haptics module. Keep in mind this only works if TS_ENABLE_HAPTICS is defined. </p>
+<p>This is a module for haptic experiences (ie. controller rumble) and helps make more immersive experiences. </p><dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000002">Todo:</a></b></dt><dd>Add more haptic features, like monitor flashing and such. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../db/d05/_common_8cpp_source.html#l00019">19</a> of file <a class="el" href="../../db/d05/_common_8cpp_source.html">Common.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a2b72a42193d6d2dc6bbb26a25656da6c" name="a2b72a42193d6d2dc6bbb26a25656da6c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b72a42193d6d2dc6bbb26a25656da6c">&#9670;&#160;</a></span>InitializeConfigRegistry()</h2>
 
@@ -757,6 +827,48 @@ template&lt;typename T &gt; </div>
 
 <p class="reference">References <a class="el" href="../../de/dec/_singleton_8h_source.html#l00017">Techstorm::Singleton&lt; ConfigFileRegistry &gt;::Instance()</a>, and <a class="el" href="../../d7/dd3/_config_8cpp_source.html#l00061">Techstorm::ConfigFileRegistry::lookup()</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d7/dd3/_config_8cpp_source.html#l00083">GetConfigString()</a>.</p>
+
+</div>
+</div>
+<a id="a5451a8aaa383e3936b9939fc6297d6e1" name="a5451a8aaa383e3936b9939fc6297d6e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5451a8aaa383e3936b9939fc6297d6e1">&#9670;&#160;</a></span>SetControllerRumble()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Techstorm::SetControllerRumble </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>controllerIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>leftMotorSpeed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>rightMotorSpeed</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the controller rumble. Keep in mind this only works if TS_ENABLE_HAPTICS is defined. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../db/d05/_common_8cpp_source.html#l00024">24</a> of file <a class="el" href="../../db/d05/_common_8cpp_source.html">Common.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d05/_common_8cpp_source.html#l00034">StartRumblingController()</a>, and <a class="el" href="../../db/d05/_common_8cpp_source.html#l00039">StopRumblingController()</a>.</p>
+
 </div>
 </div>
 <a id="acbd4313148ac66f22420becf6668fc8d" name="acbd4313148ac66f22420becf6668fc8d"></a>
@@ -793,6 +905,68 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="abbe31e4f49d55c0496f4631a182e1477" name="abbe31e4f49d55c0496f4631a182e1477"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbe31e4f49d55c0496f4631a182e1477">&#9670;&#160;</a></span>StartRumblingController()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Techstorm::StartRumblingController </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>controllerIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>leftMotorSpeed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>rightMotorSpeed</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Starts the controller rumble. Keep in mind this only works if TS_ENABLE_HAPTICS is defined. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../db/d05/_common_8cpp_source.html#l00034">34</a> of file <a class="el" href="../../db/d05/_common_8cpp_source.html">Common.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../db/d05/_common_8cpp_source.html#l00024">SetControllerRumble()</a>.</p>
+
+</div>
+</div>
+<a id="aa6731e1161358e83d844e07b3a039304" name="aa6731e1161358e83d844e07b3a039304"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6731e1161358e83d844e07b3a039304">&#9670;&#160;</a></span>StopRumblingController()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Techstorm::StopRumblingController </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>controllerIndex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../db/d05/_common_8cpp_source.html#l00039">39</a> of file <a class="el" href="../../db/d05/_common_8cpp_source.html">Common.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../db/d05/_common_8cpp_source.html#l00024">SetControllerRumble()</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="ab97f45c99b730373b3122f27e49f3756" name="ab97f45c99b730373b3122f27e49f3756"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab97f45c99b730373b3122f27e49f3756">&#9670;&#160;</a></span>cDirectoryName</h2>
@@ -816,7 +990,7 @@ template&lt;typename T &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/d26/namespace_techstorm.html">Techstorm</a></li>
-    <li class="footer">Generated on Thu Nov 28 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Nov 29 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

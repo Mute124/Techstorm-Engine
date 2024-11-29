@@ -8,11 +8,15 @@
 /// \remarks This file has a few configurations that are based on defines. TS_ENABLE_HAPTICS is used to enable/disable haptic features (ie. controller rumble), whereas TS_ENABLE_EXTENSIONS is used
 /// to enable/disable extensions.
 #pragma once
-
-#include <chrono>
+#define TS_ENABLE_HAPTICS
 #include <iostream>
+#include <cstdarg>
+#include <cstdint>
 #include <string>
 #include <thread>
+
+#include "utils/Singleton.h"
+#include "input/Input.h"
 
 /// <summary>
 /// Since the location of the shared libraries and executables can vary, this is a simple solution to this. During Distribution builds, the path is more exact, however the rest are not because these

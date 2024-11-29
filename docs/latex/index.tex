@@ -5,12 +5,60 @@
  \DoxyHorRuler{0}
 
 
-\doxylink{namespace_techstorm}{Techstorm} is the response to the lack of a free game engine that is built for large open worlds.
+\doxylink{namespace_techstorm}{Techstorm} is the response to the lack of a free game engine that is built for large open worlds. While Unity or Unreal can make open world games, there are alot of hoops that must be jumped through first, which is why there is a need for it. \doxylink{namespace_techstorm}{Techstorm} aims to be flexible and moldable to suit needs without having to make major changes. It also aims to be easy to work with and a limited number of complex components.
 
 If you are looking for a hello world application, please see hello-\/world-\/example\hypertarget{index_architecture}{}\doxysection{\texorpdfstring{Architecture}{Architecture}}\label{index_architecture}
 \DoxyHorRuler{0}
+\hypertarget{index_building}{}\doxysubsection{\texorpdfstring{Building}{Building}}\label{index_building}
+\DoxyHorRuler{0}
+\hypertarget{index_automatic-building}{}\doxysubsubsection{\texorpdfstring{Automatic Building}{Automatic Building}}\label{index_automatic-building}
+The building process of \doxylink{namespace_techstorm}{Techstorm} is simple because of a provided Python script. To run said script, go to the directory where you cloned the repository in a command line application. Once there, simply run\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ python3\ Build.py}
+
+\end{DoxyCode}
+ This is all you will need to do because it will do the following\+:
+\begin{DoxyItemize}
+\item Install \& setup Conan if not already done
+\item Install \& build packages
+\begin{DoxyItemize}
+\item For both Debug and Release
+\end{DoxyItemize}
+\item Configure, build, and generate the CMake project
+\item Open VS2022 solution
+\end{DoxyItemize}
+
+Keep in mind this {\bfseries{will}} take a while for the first time, so go drink water (We know that you have not done this yet today), go for a quick walk, or go to the bathroom. Once this is done, that is it! Pretty easy, right?\hypertarget{index_autotoc_md4}{}\doxysubsubsection{\texorpdfstring{Manual Building}{Manual Building}}\label{index_autotoc_md4}
+\DoxyHorRuler{0}
 
 
+\begin{quote}
+The following instructions are {\bfseries{NOT YET COMPLETE}}. For now, please see \doxysectlink{index_automatic-building}{Automatic Building}{3} \end{quote}
+In the event that you would like to build directly, start at what ever point you would like.\hypertarget{index_installing-and-setting-up-conan}{}\doxyparagraph{\texorpdfstring{Installing And Setting Up Conan}{Installing And Setting Up Conan}}\label{index_installing-and-setting-up-conan}
+\DoxyHorRuler{0}
+
+
+The following instructions are based on Conan 2.\+9\textquotesingle{}s documentation. If you would like to use their documentation to install Conan, please see \href{https://docs.conan.io/2/tutorial/consuming_packages/build_simple_cmake_project.html}{\texttt{ their installation tutorial}}. With that said, first make sure that you have python by using\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ python3\ -\/-\/version}
+
+\end{DoxyCode}
+
+
+If you got an error, congrats! You do not have python. If it worked and you have a version greater than or equal to 3.\+6, please run\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$\ pip\ install\ conan}
+
+\end{DoxyCode}
+
+
+\begin{quote}
+According to their documentation, ensure your {\bfseries{pip version}} matches your {\bfseries{python version}}. \end{quote}
+\hypertarget{index_flow-architecture}{}\doxysubsection{\texorpdfstring{Flow}{Flow}}\label{index_flow-architecture}
 Due to the inherent nature of \doxylink{namespace_techstorm}{Techstorm}, the architecture can be complex. In terms of building, there are a few things that are required to understand how \doxylink{namespace_techstorm}{Techstorm} works. There are 4 groups that are used to build the engine, as outlined below\+:
 \begin{DoxyItemize}
 \item Application
@@ -23,9 +71,17 @@ Due to the inherent nature of \doxylink{namespace_techstorm}{Techstorm}, the arc
 \DoxyHorRuler{0}
 
 
-\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+The design of the file system is complex and it is highly encouraged that this is read very carefully. \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+\texorpdfstring{$>$}{>}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+The design of the file system will cause errors if it is used improperly. As a result, it is highly encouraged that this is read very carefully. \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
 
-As of now, the file system works by recursively searching the "{}game"{} folder in the root directory (Techstorm-\/v5). The folder will contain the "{}assets"{} and "{}data"{} sub-\/directories, wherein you will put assets and data files. ~\newline
+As of now, the file system works by recursively searching the "{}game"{} folder in the root directory (Techstorm-\/v5). The folder will contain the "{}assets"{} and "{}data"{} sub-\/directories, wherein you will put assets and data files. Any file that is within the search area will be registered. For a detailed analysis of how it works, please see detailed-\/file-\/registry.
+
+When it comes to file loading, the {\bfseries{extension matters}}. This is because the File\+System\+Registry loads files based on the loading function assigned to the extension. For this reason, when getting the file, you must have the filename along with the extension or just the extension (highly discouraged, see why-\/not-\/extensions). For this example, {\ttfamily Example\+File.\+txt} will be used to represent a file. In order to get a file, please see below\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::shared\_ptr<RegisteredFile>\ file\ =\ GetFileSystemRegistry().getFile("{}ExampleFile.txt"{});}
+
+\end{DoxyCode}
 \hypertarget{index_graphics-architecture}{}\doxysubsection{\texorpdfstring{Graphics Architecture}{Graphics Architecture}}\label{index_graphics-architecture}
 \DoxyHorRuler{0}
 \hypertarget{index_graphics-introduction}{}\doxysubsubsection{\texorpdfstring{Graphics Introduction}{Graphics Introduction}}\label{index_graphics-introduction}

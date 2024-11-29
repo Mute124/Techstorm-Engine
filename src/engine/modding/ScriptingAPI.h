@@ -53,36 +53,22 @@ namespace Techstorm {
 		/// Initializes the scripting API.
 		/// </summary>
 		/// <returns>an integer value that represents the result of the operation.</returns>
-		int InitializeScripting(LuaLibraryRegistry const& libraries, LuaFunctionRegistry const& functions)
-		{
-			this->mLibraries = libraries;
-			return 0;
-		}
+		int InitializeScripting(LuaLibraryRegistry const& libraries, LuaFunctionRegistry const& functions);
 
 		/// <summary>
 		/// Registers the scripting API for Lua.
 		/// </summary>
 		/// <returns>an integer value that represents the result of the operation.</returns>
-		int RegisterLua()
-		{
-			for (auto it = std::begin(Techstorm::ScriptingAPI::mLibraries); it != std::end(Techstorm::ScriptingAPI::mLibraries); it++) {
-				this->mLua.open_libraries(*it);
-			}
-
-			return 0;
-		}
+		int RegisterLua();
 
 		/// <summary>
 		/// Registers the scripting API for AngelScript. This is just for organization sake and it could be merged with the lua version, but it wont be.
 		/// </summary>
 		/// <returns>an integer value that represents the result of the operation.</returns>
-		int RegisterAngelScript()
-		{
-			return 0;
-		}
-
-	private:
+		int RegisterAngelScript();
 		sol::state mLua;
+	private:
+		
 
 		LuaLibraryRegistry mLibraries;
 		LuaFunctionRegistry mFunctions;

@@ -106,17 +106,17 @@ virtual int \mbox{\hyperlink{class_techstorm_1_1abstract_a74842f17611091afa5575d
 virtual \mbox{\hyperlink{class_techstorm_1_1abstract_a23a04a87e0f50937d2d9ff899f5cc14b}{\texorpdfstring{$\sim$}{\string~}\+IGame\+Object}} ()=default
 \item 
 virtual void \mbox{\hyperlink{class_techstorm_1_1abstract_aa9cf38cda2120b17bc25dfa44913102e}{texture}} ()=0
-\begin{DoxyCompactList}\small\item\em Textures this instance. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em This is a pure virtual function that is the drawing function for when objects are being textured to the render texture. If you do not have anything different to do here, then you may just call \doxylink{class_techstorm_1_1abstract_a9fbec32fc6a853a44b400eefab6c28c3}{render()} instead, but this must be implemented in order for the object to be rendered. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_techstorm_1_1abstract_abd76d7ab5c43c2482cede1cbf7044c5a}{render}} ()
 \begin{DoxyCompactList}\small\item\em Renders this instance. This is not a pure virtual and is empty because it is up to the user to use this as they see fit without forcing them to implement it. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_techstorm_1_1abstract_aec38bee941f0f8a0cb48880746c2d205}{pre\+Physics\+Update}} ()=0
-\begin{DoxyCompactList}\small\item\em Called right before the physics update. Do anything you need to do before the physics update here. Keep in mind that this can either run on the update thread or the physics thread, so make sure what you are doing is {\bfseries{thread safe}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Called right before the physics update. Do anything you need to do before the physics update here. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_techstorm_1_1abstract_ac9ebe837a4fbcec732e81ddf8b38ab2c}{update}} ()=0
-\begin{DoxyCompactList}\small\item\em Updates this instance and is called every frame before texturing/rendering. Keep in mind that this will run on the update thread, so make sure what you are doing is {\bfseries{thread safe}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Updates this instance and is called every frame before texturing/rendering. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_techstorm_1_1abstract_a9bbad12f7eeef8bfcccc6295e3895ee0}{post\+Update}} ()=0
-\begin{DoxyCompactList}\small\item\em Called right after the update function, but before texturing/rendering. Keep in mind that this will run on the update thread, so make sure what you are doing is {\bfseries{thread safe}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Called right after the update function, but before texturing/rendering. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_techstorm_1_1abstract_a1c78ff5c43eb03bbf20e7c58db8e2dd2}{destroy}} ()=0
-\begin{DoxyCompactList}\small\item\em Destroys this instance, and is called right before the object is removed from memory. This must be implemented by the user. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Destroys this instance, and is called right before the object is removed from memory. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_techstorm_1_1abstract_aa46fb3338c2570e22ded414e462582d6}{cleanup}} ()=0
 \begin{DoxyCompactList}\small\item\em Cleanups this instance. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_techstorm_1_1abstract_a3e8b6f4d6d5b6928eac74465e0a62db6}{IPhysics\+Game\+Object}} (JPH\+::\+Body\+Creation\+Settings const \&body\+Settings, JPH\+::\+EActivation activation\+State)
@@ -199,6 +199,8 @@ Represents an object that can be rendered in the screen. This is an abstract cla
 
 You may implement this yourself to create your own game objects and drawing code, or you can inherit from \doxylink{class_techstorm_1_1_game_object}{Techstorm\+::\+Game\+Object} to use the default implementation. However, if you inherit from this class, be sure you have a basic understanding of Raylib\textquotesingle{}s and Open\+GL\textquotesingle{}s rendering system. If not, see https\+://learnopengl.\+com/ and https\+://www.\+raylib.\+com/ for a good place to start. In addition, it is not advised for you to inherit this yourself because it will require you to implement rendering code. However, it is recommended if your game requires a rendering system that is not provided by default. 
 
+The IGame\+Object class is abstract and cannot be instantiated directly. Instead, you should inherit from this class and implement the pure virtual functions. As of version 0.\+0.\+3, the pure virtual functions are\+: \doxylink{class_techstorm_1_1abstract_a9fbec32fc6a853a44b400eefab6c28c3}{render()}, \doxylink{class_techstorm_1_1abstract_a3e03fcd5f137aab15e5331078e86ada0}{texture()}, \doxylink{class_techstorm_1_1abstract_a6fd2a9004046a8a57e321d0ae99951c5}{update()}, \doxylink{class_techstorm_1_1abstract_ab14ebe5a7c51e1483ce935c2193a170a}{pre\+Physics\+Update()}, \doxylink{class_techstorm_1_1abstract_a9bbad12f7eeef8bfcccc6295e3895ee0}{post\+Update()}, \doxylink{class_techstorm_1_1abstract_a1c78ff5c43eb03bbf20e7c58db8e2dd2}{destroy()}, and \doxylink{class_techstorm_1_1abstract_a4ed7d940db9a878ec9884a71b4c393f4}{cleanup()}. 
+
 \begin{DoxySeeAlso}{See also}
 \doxylink{class_techstorm_1_1_gate}{Gate$<$\+Game\+Object\texorpdfstring{$\ast$}{*}$>$}
 
@@ -234,7 +236,7 @@ virtual \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+::abstract}}$<$
 
 
 
-Definition at line \mbox{\hyperlink{_game_object_8h_source_l00141}{141}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
+Definition at line \mbox{\hyperlink{_game_object_8h_source_l00146}{146}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
 
 
 
@@ -264,6 +266,9 @@ virtual void \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+::abstract
 
 Cleanups this instance. 
 
+\begin{DoxyNote}{Note}
+This must be implemented by the user.
+\end{DoxyNote}
 \Hypertarget{class_techstorm_1_1abstract_a74842f17611091afa5575df2eed637ec}\label{class_techstorm_1_1abstract_a74842f17611091afa5575df2eed637ec} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!cleanup@{cleanup}}
 \index{cleanup@{cleanup}!Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}}
@@ -299,8 +304,11 @@ virtual void \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+::abstract
 
 
 
-Destroys this instance, and is called right before the object is removed from memory. This must be implemented by the user. 
+Destroys this instance, and is called right before the object is removed from memory. 
 
+\begin{DoxyNote}{Note}
+This must be implemented by the user.
+\end{DoxyNote}
 \Hypertarget{class_techstorm_1_1abstract_aaeabbad9b06c3582df9284c92293e41c}\label{class_techstorm_1_1abstract_aaeabbad9b06c3582df9284c92293e41c} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!getlayer@{getlayer}}
 \index{getlayer@{getlayer}!Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}}
@@ -456,7 +464,7 @@ Initializes the renderer and should be called after init\+Window.
 
 
 
-Definition at line \mbox{\hyperlink{_game_object_8h_source_l00137}{137}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
+Definition at line \mbox{\hyperlink{_game_object_8h_source_l00142}{142}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
 
 \Hypertarget{class_techstorm_1_1abstract_a411f97cf451c7654b9e2ecef8efda390}\label{class_techstorm_1_1abstract_a411f97cf451c7654b9e2ecef8efda390} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!isLayer@{isLayer}}
@@ -633,8 +641,11 @@ virtual void \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+::abstract
 
 
 
-Called right after the update function, but before texturing/rendering. Keep in mind that this will run on the update thread, so make sure what you are doing is {\bfseries{thread safe}}. 
+Called right after the update function, but before texturing/rendering. 
 
+\begin{DoxyNote}{Note}
+Keep in mind that this will run on the update thread, so make sure what you are doing is {\bfseries{thread safe}}.
+\end{DoxyNote}
 \Hypertarget{class_techstorm_1_1abstract_a5a3f3dc681fb548bb40d008cdeb0352f}\label{class_techstorm_1_1abstract_a5a3f3dc681fb548bb40d008cdeb0352f} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!preInit@{preInit}}
 \index{preInit@{preInit}!Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}}
@@ -652,7 +663,7 @@ Definition at line \mbox{\hyperlink{engine_2_project_8h_source_l00092}{92}} of f
 
 
 
-References \mbox{\hyperlink{_file_system_8cpp_source_l00024}{Techstorm\+::\+Add\+File\+Registry\+Load\+Function()}}, \mbox{\hyperlink{_file_system_8cpp_source_l00019}{Techstorm\+::\+Initialize\+File\+Registry()}}, and \mbox{\hyperlink{_common_8h_source_l00023}{TS\+\_\+\+GAME\+\_\+\+DIR}}.
+References \mbox{\hyperlink{_file_system_8cpp_source_l00024}{Techstorm\+::\+Add\+File\+Registry\+Load\+Function()}}, \mbox{\hyperlink{_file_system_8cpp_source_l00019}{Techstorm\+::\+Initialize\+File\+Registry()}}, and \mbox{\hyperlink{_common_8h_source_l00027}{TS\+\_\+\+GAME\+\_\+\+DIR}}.
 
 \Hypertarget{class_techstorm_1_1abstract_aa23d3d48735ffe2369924f43c7747def}\label{class_techstorm_1_1abstract_aa23d3d48735ffe2369924f43c7747def} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!preInit@{preInit}}
@@ -698,8 +709,11 @@ virtual void \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+::abstract
 
 
 
-Called right before the physics update. Do anything you need to do before the physics update here. Keep in mind that this can either run on the update thread or the physics thread, so make sure what you are doing is {\bfseries{thread safe}}. 
+Called right before the physics update. Do anything you need to do before the physics update here. 
 
+\begin{DoxyNote}{Note}
+Keep in mind that this can either run on the update thread or the physics thread, so make sure what you are doing is {\bfseries{thread safe}}.
+\end{DoxyNote}
 \Hypertarget{class_techstorm_1_1abstract_a141bceb7b0643d59cb5190b661c47977}\label{class_techstorm_1_1abstract_a141bceb7b0643d59cb5190b661c47977} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!removeLayer@{removeLayer}}
 \index{removeLayer@{removeLayer}!Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}}
@@ -734,7 +748,7 @@ Renders this instance. This is not a pure virtual and is empty because it is up 
 
 
 
-Definition at line \mbox{\hyperlink{_game_object_8h_source_l00048}{48}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
+Definition at line \mbox{\hyperlink{_game_object_8h_source_l00055}{55}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
 
 \Hypertarget{class_techstorm_1_1abstract_ad8cec4638371d31feeb40bcc9343df1c}\label{class_techstorm_1_1abstract_ad8cec4638371d31feeb40bcc9343df1c} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!run@{run}}
@@ -848,7 +862,7 @@ virtual void \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+::abstract
 
 
 
-Textures this instance. 
+This is a pure virtual function that is the drawing function for when objects are being textured to the render texture. If you do not have anything different to do here, then you may just call \doxylink{class_techstorm_1_1abstract_a9fbec32fc6a853a44b400eefab6c28c3}{render()} instead, but this must be implemented in order for the object to be rendered. 
 
 \Hypertarget{class_techstorm_1_1abstract_a6fd2a9004046a8a57e321d0ae99951c5}\label{class_techstorm_1_1abstract_a6fd2a9004046a8a57e321d0ae99951c5} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!update@{update}}
@@ -866,8 +880,11 @@ virtual void \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+::abstract
 
 
 
-Updates this instance and is called every frame before texturing/rendering. Keep in mind that this will run on the update thread, so make sure what you are doing is {\bfseries{thread safe}}. 
+Updates this instance and is called every frame before texturing/rendering. 
 
+\begin{DoxyNote}{Note}
+Keep in mind that this will run on the update thread, so make sure what you are doing is {\bfseries{thread safe}}.
+\end{DoxyNote}
 
 
 \doxysubsection{Member Data Documentation}
@@ -880,7 +897,7 @@ JPH\+::\+Body\+Interface\& \mbox{\hyperlink{class_techstorm_1_1abstract}{Techsto
 
 
 
-Definition at line \mbox{\hyperlink{_game_object_8h_source_l00135}{135}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
+Definition at line \mbox{\hyperlink{_game_object_8h_source_l00140}{140}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
 
 \Hypertarget{class_techstorm_1_1abstract_a93214f9f4d74e58ff7ed49e089c68213}\label{class_techstorm_1_1abstract_a93214f9f4d74e58ff7ed49e089c68213} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!depth@{depth}}
@@ -889,9 +906,11 @@ Definition at line \mbox{\hyperlink{_game_object_8h_source_l00135}{135}} of file
 {\footnotesize\ttfamily template$<$typename K , typename D , typename T $>$ \\
 int \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+::abstract}}$<$ K, D, T $>$\+::depth = 0}
 
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000006}{Todo}}]add support for multiple layers. \end{DoxyRefDesc}
 
 
-Definition at line \mbox{\hyperlink{_game_object_8h_source_l00023}{23}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
+Definition at line \mbox{\hyperlink{_game_object_8h_source_l00030}{30}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
 
 \Hypertarget{class_techstorm_1_1abstract_ae0fdff03123508f69b3451dbb55d666d}\label{class_techstorm_1_1abstract_ae0fdff03123508f69b3451dbb55d666d} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!id@{id}}
@@ -902,7 +921,7 @@ JPH\+::\+Body\+ID \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+::abs
 
 
 
-Definition at line \mbox{\hyperlink{_game_object_8h_source_l00134}{134}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
+Definition at line \mbox{\hyperlink{_game_object_8h_source_l00139}{139}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
 
 \Hypertarget{class_techstorm_1_1abstract_a0a341d59f8fedff00417ed8ae9d4fc40}\label{class_techstorm_1_1abstract_a0a341d59f8fedff00417ed8ae9d4fc40} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!mLayerCount@{mLayerCount}}
@@ -968,7 +987,7 @@ Model \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+::abstract}}$<$ K
 
 
 
-Definition at line \mbox{\hyperlink{_game_object_8h_source_l00024}{24}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
+Definition at line \mbox{\hyperlink{_game_object_8h_source_l00032}{32}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
 
 \Hypertarget{class_techstorm_1_1abstract_a38b8d4b7fc1d5e7b193d098f2dc99c5f}\label{class_techstorm_1_1abstract_a38b8d4b7fc1d5e7b193d098f2dc99c5f} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!mRenderer@{mRenderer}}
@@ -1001,7 +1020,7 @@ Vector3 \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+::abstract}}$<$
 
 
 
-Definition at line \mbox{\hyperlink{_game_object_8h_source_l00029}{29}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
+Definition at line \mbox{\hyperlink{_game_object_8h_source_l00035}{35}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
 
 \Hypertarget{class_techstorm_1_1abstract_a4579f8a2409ba917291c4892f784e82d}\label{class_techstorm_1_1abstract_a4579f8a2409ba917291c4892f784e82d} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!rotationAngle@{rotationAngle}}
@@ -1012,7 +1031,7 @@ float \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+::abstract}}$<$ K
 
 
 
-Definition at line \mbox{\hyperlink{_game_object_8h_source_l00033}{33}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
+Definition at line \mbox{\hyperlink{_game_object_8h_source_l00039}{39}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
 
 \Hypertarget{class_techstorm_1_1abstract_aa194976991e491e2a79b438fc9fe39ab}\label{class_techstorm_1_1abstract_aa194976991e491e2a79b438fc9fe39ab} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!rotationAxis@{rotationAxis}}
@@ -1023,7 +1042,7 @@ Vector3 \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+::abstract}}$<$
 
 
 
-Definition at line \mbox{\hyperlink{_game_object_8h_source_l00030}{30}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
+Definition at line \mbox{\hyperlink{_game_object_8h_source_l00036}{36}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
 
 \Hypertarget{class_techstorm_1_1abstract_a9b45c16a8ff92b5dede7255391a01d9b}\label{class_techstorm_1_1abstract_a9b45c16a8ff92b5dede7255391a01d9b} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!scale@{scale}}
@@ -1034,7 +1053,7 @@ Vector3 \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+::abstract}}$<$
 
 
 
-Definition at line \mbox{\hyperlink{_game_object_8h_source_l00031}{31}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
+Definition at line \mbox{\hyperlink{_game_object_8h_source_l00037}{37}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
 
 \Hypertarget{class_techstorm_1_1abstract_a4c1599f2a02023b0fd5e4880b371b965}\label{class_techstorm_1_1abstract_a4c1599f2a02023b0fd5e4880b371b965} 
 \index{Techstorm::abstract$<$ K, D, T $>$@{Techstorm::abstract$<$ K, D, T $>$}!settings@{settings}}
@@ -1056,7 +1075,7 @@ Color \mbox{\hyperlink{class_techstorm_1_1abstract}{Techstorm\+::abstract}}$<$ K
 
 
 
-Definition at line \mbox{\hyperlink{_game_object_8h_source_l00034}{34}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
+Definition at line \mbox{\hyperlink{_game_object_8h_source_l00040}{40}} of file \mbox{\hyperlink{_game_object_8h_source}{Game\+Object.\+h}}.
 
 
 

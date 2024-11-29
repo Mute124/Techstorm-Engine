@@ -26,6 +26,11 @@ int \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_a00f762aefe81bfdf3f6c9c
 \begin{DoxyCompactList}\small\item\em Registers the scripting API for Lua. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_ac4a2224ba04ab05a9f6baa5cac1b8510}{Register\+Angel\+Script}} ()
 \begin{DoxyCompactList}\small\item\em Registers the scripting API for Angel\+Script. This is just for organization sake and it could be merged with the lua version, but it wont be. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sol\+::state \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_a104eacfc2e607b7fd805daab1081c8e1}{m\+Lua}}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_techstorm_1_1_singleton}{Techstorm\+::\+Singleton$<$ Scripting\+API $>$}}}
 \begin{DoxyCompactItemize}
@@ -62,7 +67,7 @@ Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00048}{48}} of f
 \index{Techstorm::ScriptingAPI@{Techstorm::ScriptingAPI}!InitializeScripting@{InitializeScripting}}
 \index{InitializeScripting@{InitializeScripting}!Techstorm::ScriptingAPI@{Techstorm::ScriptingAPI}}
 \doxysubsubsection{\texorpdfstring{InitializeScripting()}{InitializeScripting()}}
-{\footnotesize\ttfamily int Techstorm\+::\+Scripting\+API\+::\+Initialize\+Scripting (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_techstorm_af6556c4d563341def4c68414537120ed}{Lua\+Library\+Registry}} const \&}]{libraries,  }\item[{\mbox{\hyperlink{namespace_techstorm_aacc8d13353a5459666050b5aa6ed808c}{Lua\+Function\+Registry}} const \&}]{functions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily int Techstorm\+::\+Scripting\+API\+::\+Initialize\+Scripting (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_techstorm_af6556c4d563341def4c68414537120ed}{Lua\+Library\+Registry}} const \&}]{libraries,  }\item[{\mbox{\hyperlink{namespace_techstorm_aacc8d13353a5459666050b5aa6ed808c}{Lua\+Function\+Registry}} const \&}]{functions }\end{DoxyParamCaption})}
 
 
 
@@ -73,7 +78,7 @@ an integer value that represents the result of the operation.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00056}{56}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
+Definition at line \mbox{\hyperlink{_scripting_a_p_i_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{_scripting_a_p_i_8cpp_source}{Scripting\+API.\+cpp}}.
 
 
 
@@ -83,7 +88,7 @@ Referenced by \mbox{\hyperlink{application_2main_8cpp_source_l00012}{main()}}.
 \index{Techstorm::ScriptingAPI@{Techstorm::ScriptingAPI}!RegisterAngelScript@{RegisterAngelScript}}
 \index{RegisterAngelScript@{RegisterAngelScript}!Techstorm::ScriptingAPI@{Techstorm::ScriptingAPI}}
 \doxysubsubsection{\texorpdfstring{RegisterAngelScript()}{RegisterAngelScript()}}
-{\footnotesize\ttfamily int Techstorm\+::\+Scripting\+API\+::\+Register\+Angel\+Script (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily int Techstorm\+::\+Scripting\+API\+::\+Register\+Angel\+Script (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -94,13 +99,13 @@ an integer value that represents the result of the operation.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00079}{79}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
+Definition at line \mbox{\hyperlink{_scripting_a_p_i_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{_scripting_a_p_i_8cpp_source}{Scripting\+API.\+cpp}}.
 
 \Hypertarget{class_techstorm_1_1_scripting_a_p_i_a00f762aefe81bfdf3f6c9cc5b10ee15b}\label{class_techstorm_1_1_scripting_a_p_i_a00f762aefe81bfdf3f6c9cc5b10ee15b} 
 \index{Techstorm::ScriptingAPI@{Techstorm::ScriptingAPI}!RegisterLua@{RegisterLua}}
 \index{RegisterLua@{RegisterLua}!Techstorm::ScriptingAPI@{Techstorm::ScriptingAPI}}
 \doxysubsubsection{\texorpdfstring{RegisterLua()}{RegisterLua()}}
-{\footnotesize\ttfamily int Techstorm\+::\+Scripting\+API\+::\+Register\+Lua (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily int Techstorm\+::\+Scripting\+API\+::\+Register\+Lua (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -111,7 +116,11 @@ an integer value that represents the result of the operation.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00066}{66}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
+Definition at line \mbox{\hyperlink{_scripting_a_p_i_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{_scripting_a_p_i_8cpp_source}{Scripting\+API.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{_config_8cpp_source_l00083}{Techstorm\+::\+Get\+Config\+String()}}.
 
 
 
@@ -119,6 +128,24 @@ Referenced by \mbox{\hyperlink{application_2main_8cpp_source_l00012}{main()}}.
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_techstorm_1_1_scripting_a_p_i_a104eacfc2e607b7fd805daab1081c8e1}\label{class_techstorm_1_1_scripting_a_p_i_a104eacfc2e607b7fd805daab1081c8e1} 
+\index{Techstorm::ScriptingAPI@{Techstorm::ScriptingAPI}!mLua@{mLua}}
+\index{mLua@{mLua}!Techstorm::ScriptingAPI@{Techstorm::ScriptingAPI}}
+\doxysubsubsection{\texorpdfstring{mLua}{mLua}}
+{\footnotesize\ttfamily sol\+::state Techstorm\+::\+Scripting\+API\+::m\+Lua}
+
+
+
+Definition at line \mbox{\hyperlink{_scripting_a_p_i_8h_source_l00069}{69}} of file \mbox{\hyperlink{_scripting_a_p_i_8h_source}{Scripting\+API.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{application_2main_8cpp_source_l00012}{main()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Dev/\+Techstorm-\/v5/src/engine/modding/\mbox{\hyperlink{_scripting_a_p_i_8h}{Scripting\+API.\+h}}\end{DoxyCompactItemize}
+C\+:/\+Dev/\+Techstorm-\/v5/src/engine/modding/\mbox{\hyperlink{_scripting_a_p_i_8h}{Scripting\+API.\+h}}\item 
+C\+:/\+Dev/\+Techstorm-\/v5/src/engine/modding/\mbox{\hyperlink{_scripting_a_p_i_8cpp}{Scripting\+API.\+cpp}}\end{DoxyCompactItemize}

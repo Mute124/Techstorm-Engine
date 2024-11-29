@@ -1,0 +1,6 @@
+include(CMakeDependentOption)
+include(EnumOption)
+
+option(TS_BUILD_EXAMPLES "Build Examples For Techstorm" OFF)
+option(TS_BUILD_TOOLS "Build Tools For Techstorm" OFF)
+option(TS_ENABLE_TESTING "Enable Unit Tests For Techstorm" OFF)

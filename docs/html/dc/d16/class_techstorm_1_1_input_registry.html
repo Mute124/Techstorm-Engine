@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('dc/d16/class_techstorm_1_1_input_regis
 </div><!--header-->
 <div class="contents">
 
-<p>The input registry is used to register InputActions (<a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a>) and their callbacks. Remember that this is a singleton, so you may use this statically.  
+<p>The input registry is used to register InputActions (<a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system.">InputAction</a>) and their callbacks by using a Laissez-faire system.  
  <a href="../../dc/d16/class_techstorm_1_1_input_registry.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d2/d94/_input_8h_source.html">Input.h</a>&gt;</code></p>
@@ -118,13 +118,13 @@ $(document).ready(function(){initNavTree('dc/d16/class_techstorm_1_1_input_regis
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0d156b86669ec14db159f658b8ca6891" id="r_a0d156b86669ec14db159f658b8ca6891"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d16/class_techstorm_1_1_input_registry.html#a0d156b86669ec14db159f658b8ca6891">registerActionCallback</a> (<a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html">InputAction</a> *action, std::function&lt; void(<a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html">InputAction</a> *)&gt; const &amp;callback)</td></tr>
-<tr class="memdesc:a0d156b86669ec14db159f658b8ca6891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a pointer of <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a> to the callback given. This works as a key-value pair, where the key is the action and the value is the callback and is the reason why the return value is important. Please do not lose it or you will not be able to unregister the callback or you may unregister the wrong one!  <br /></td></tr>
+<tr class="memdesc:a0d156b86669ec14db159f658b8ca6891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a pointer of <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system.">InputAction</a> to the callback given. This works as a key-value pair, where the key is the action and the value is the callback and is the reason why the return value is important.  <br /></td></tr>
 <tr class="separator:a0d156b86669ec14db159f658b8ca6891"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf864bfdc99b4ca5806569558c4fe316" id="r_aaf864bfdc99b4ca5806569558c4fe316"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d16/class_techstorm_1_1_input_registry.html#aaf864bfdc99b4ca5806569558c4fe316">unregisterAction</a> (<a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html">InputAction</a> *action)</td></tr>
-<tr class="memdesc:aaf864bfdc99b4ca5806569558c4fe316"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters <b>ALL</b> callbacks for a given <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a>. This is useful if a keybind is no longer needed and you want to remove all callbacks in that category from the input system. For example, this is useful when the player is joining a game. See <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a> for more information on what an <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a> is.  <br /></td></tr>
+<tr class="memdesc:aaf864bfdc99b4ca5806569558c4fe316"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters <b>ALL</b> callbacks for a given <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system.">InputAction</a>. This is useful if a keybind is no longer needed and you want to remove all callbacks in that category from the input system. For example, this is useful when the player is joining a game. See <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system.">InputAction</a> for more information on what an <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system.">InputAction</a> is.  <br /></td></tr>
 <tr class="separator:aaf864bfdc99b4ca5806569558c4fe316"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a535be693e06547f3273610283b8f7b59" id="r_a535be693e06547f3273610283b8f7b59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d16/class_techstorm_1_1_input_registry.html#a535be693e06547f3273610283b8f7b59">unregisterCallback</a> (<a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html">InputAction</a> *action, int id)</td></tr>
-<tr class="memdesc:a535be693e06547f3273610283b8f7b59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters a specific callback for a given <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a>.  <br /></td></tr>
+<tr class="memdesc:a535be693e06547f3273610283b8f7b59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters a specific callback for a given <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system.">InputAction</a>.  <br /></td></tr>
 <tr class="separator:a535be693e06547f3273610283b8f7b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
@@ -141,10 +141,12 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a992b0c97479f1cca7c5027314207f5be inherit pub_static_methods_class_techstorm_1_1_singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The input registry is used to register InputActions (<a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a>) and their callbacks. Remember that this is a singleton, so you may use this statically. </p>
+<div class="textblock"><p>The input registry is used to register InputActions (<a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system.">InputAction</a>) and their callbacks by using a Laissez-faire system. </p>
+<dl class="section note"><dt>Note</dt><dd>Remember that this is a singleton, so you may use this statically. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000004">Todo:</a></b></dt><dd>Create examples of how to use this. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d5/d55/class_techstorm_1_1_singleton.html">Singleton&lt;InputRegistry&gt;</a></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d94/_input_8h_source.html#l00053">53</a> of file <a class="el" href="../../d2/d94/_input_8h_source.html">Input.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d94/_input_8h_source.html#l00061">61</a> of file <a class="el" href="../../d2/d94/_input_8h_source.html">Input.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a61e94e573ddad6b5332dc7f4ce88067f" name="a61e94e573ddad6b5332dc7f4ce88067f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a61e94e573ddad6b5332dc7f4ce88067f">&#9670;&#160;</a></span>checkAll()</h2>
@@ -164,7 +166,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -180,9 +182,6 @@ Additional Inherited Members</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int Techstorm::InputRegistry::registerActionCallback </td>
@@ -202,18 +201,14 @@ Additional Inherited Members</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Registers a pointer of <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a> to the callback given. This works as a key-value pair, where the key is the action and the value is the callback and is the reason why the return value is important. Please do not lose it or you will not be able to unregister the callback or you may unregister the wrong one! </p>
+<p>Registers a pointer of <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system.">InputAction</a> to the callback given. This works as a key-value pair, where the key is the action and the value is the callback and is the reason why the return value is important. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Please do not lose it or you will not be able to unregister the callback or you may unregister the wrong one!</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">action</td><td>The <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a> to be used as a key.</td></tr>
-    <tr><td class="paramname">callback</td><td>The callback that will be used to handle the <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a>.</td></tr>
+    <tr><td class="paramname">action</td><td>The <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system.">InputAction</a> to be used as a key.</td></tr>
+    <tr><td class="paramname">callback</td><td>The callback that will be used to handle the <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system.">InputAction</a>.</td></tr>
   </table>
   </dd>
 </dl>
@@ -228,9 +223,6 @@ Additional Inherited Members</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Techstorm::InputRegistry::unregisterAction </td>
@@ -240,14 +232,9 @@ Additional Inherited Members</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Unregisters <b>ALL</b> callbacks for a given <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a>. This is useful if a keybind is no longer needed and you want to remove all callbacks in that category from the input system. For example, this is useful when the player is joining a game. See <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a> for more information on what an <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a> is. </p>
+<p>Unregisters <b>ALL</b> callbacks for a given <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system.">InputAction</a>. This is useful if a keybind is no longer needed and you want to remove all callbacks in that category from the input system. For example, this is useful when the player is joining a game. See <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system.">InputAction</a> for more information on what an <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system.">InputAction</a> is. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">action</td><td>The input action to unregister.</td></tr>
@@ -264,9 +251,6 @@ Additional Inherited Members</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Techstorm::InputRegistry::unregisterCallback </td>
@@ -286,14 +270,9 @@ Additional Inherited Members</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Unregisters a specific callback for a given <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system. Please pay attention when using this beca...">InputAction</a>. </p>
+<p>Unregisters a specific callback for a given <a class="el" href="../../d9/d02/class_techstorm_1_1_input_action.html" title="Serves as a search key/input category for the input system.">InputAction</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">action</td><td>The action that owns the callback.</td></tr>
@@ -316,7 +295,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/d26/namespace_techstorm.html">Techstorm</a></li><li class="navelem"><a class="el" href="../../dc/d16/class_techstorm_1_1_input_registry.html">InputRegistry</a></li>
-    <li class="footer">Generated on Thu Nov 28 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Nov 29 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

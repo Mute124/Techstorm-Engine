@@ -35,13 +35,14 @@ var searchData=
   ['ts_5fdbl_5flnk_5flst_5ffunc_5foverride_5fdecl_32',['TS_DBL_LNK_LST_FUNC_OVERRIDE_DECL',['../d9/dbe/_doubly_linked_list_8h.html#a683902619dd708341b7dd1bac7017e5b',1,'DoublyLinkedList.h']]],
   ['ts_5fenable_5fasserts_33',['TS_ENABLE_ASSERTS',['../d0/d80/_physics_common_8h.html#a8a6c26f609309143da6679d6dd35cd11',1,'PhysicsCommon.h']]],
   ['ts_5fenable_5fcontroller_5fsupport_34',['TS_ENABLE_CONTROLLER_SUPPORT',['../d2/d94/_input_8h.html#a1890f37b6ab2bb002b462b309b8987cc',1,'Input.h']]],
-  ['ts_5fgame_5fdir_35',['TS_GAME_DIR',['../db/d1f/_common_8h.html#a4a0ec9e061a2c5f56774b5c6e4fb512c',1,'Common.h']]],
-  ['ts_5frenderer_5fraylib_36',['TS_RENDERER_RAYLIB',['../de/d42/_window_8h.html#aed2b31b93a12082f156287e40f4a15c0',1,'Window.h']]],
-  ['ts_5fscripting_5fangelscript_37',['TS_SCRIPTING_ANGELSCRIPT',['../dc/d41/_scripting_a_p_i_8h.html#a5546a5c8c9f9db4259a42b6256bf5961',1,'ScriptingAPI.h']]],
-  ['ts_5fscripting_5flua_38',['TS_SCRIPTING_LUA',['../dc/d41/_scripting_a_p_i_8h.html#af2bfaeb231432732b2fdd1c56da8e80d',1,'ScriptingAPI.h']]],
-  ['ts_5fsingleton_39',['TS_SINGLETON',['../de/dec/_singleton_8h.html#a13f61705a5f9df0e0852e1a16e06e273',1,'Singleton.h']]],
-  ['tsapp_2eh_40',['TSApp.h',['../df/d0e/_t_s_app_8h.html',1,'']]],
-  ['type_41',['type',['../d9/d02/class_techstorm_1_1_input_action.html#ab208be7a5d091ec44e16a6034baf7ee7',1,'Techstorm::InputAction']]],
-  ['types_2eh_42',['Types.h',['../d0/db6/_types_8h.html',1,'']]],
-  ['types_2ehpp_43',['types.hpp',['../dd/de3/types_8hpp.html',1,'']]]
+  ['ts_5fenable_5fhaptics_35',['TS_ENABLE_HAPTICS',['../db/d1f/_common_8h.html#ab96ac5087a1fde76921d36f47d2a0777',1,'Common.h']]],
+  ['ts_5fgame_5fdir_36',['TS_GAME_DIR',['../db/d1f/_common_8h.html#a4a0ec9e061a2c5f56774b5c6e4fb512c',1,'Common.h']]],
+  ['ts_5frenderer_5fraylib_37',['TS_RENDERER_RAYLIB',['../de/d42/_window_8h.html#aed2b31b93a12082f156287e40f4a15c0',1,'Window.h']]],
+  ['ts_5fscripting_5fangelscript_38',['TS_SCRIPTING_ANGELSCRIPT',['../dc/d41/_scripting_a_p_i_8h.html#a5546a5c8c9f9db4259a42b6256bf5961',1,'ScriptingAPI.h']]],
+  ['ts_5fscripting_5flua_39',['TS_SCRIPTING_LUA',['../dc/d41/_scripting_a_p_i_8h.html#af2bfaeb231432732b2fdd1c56da8e80d',1,'ScriptingAPI.h']]],
+  ['ts_5fsingleton_40',['TS_SINGLETON',['../de/dec/_singleton_8h.html#a13f61705a5f9df0e0852e1a16e06e273',1,'Singleton.h']]],
+  ['tsapp_2eh_41',['TSApp.h',['../df/d0e/_t_s_app_8h.html',1,'']]],
+  ['type_42',['type',['../d9/d02/class_techstorm_1_1_input_action.html#ab208be7a5d091ec44e16a6034baf7ee7',1,'Techstorm::InputAction']]],
+  ['types_2eh_43',['Types.h',['../d0/db6/_types_8h.html',1,'']]],
+  ['types_2ehpp_44',['types.hpp',['../dd/de3/types_8hpp.html',1,'']]]
 ];

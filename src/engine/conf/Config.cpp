@@ -79,3 +79,5 @@ Techstorm::ConfigFileRegistry& Techstorm::GetConfigFileRegistry() { return Confi
 void Techstorm::InitializeConfigRegistry() { ConfigFileRegistry::Instance().init(); }
 
 libconfig::Setting& Techstorm::LookupConfig(const std::string& fileName, const std::string& lookupTarget) { return ConfigFileRegistry::Instance().lookup(fileName, lookupTarget); }
+
+const char* Techstorm::GetConfigString(std::string fileName, std::string lookupTarget) { return LookupConfig(fileName, lookupTarget).c_str(); }

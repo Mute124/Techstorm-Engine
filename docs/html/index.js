@@ -1,6 +1,13 @@
 var index =
 [
     [ "Architecture", "index.html#architecture", [
+      [ "Building", "index.html#building", [
+        [ "Automatic Building", "index.html#automatic-building", null ],
+        [ "Manual Building", "index.html#autotoc_md4", [
+          [ "Installing And Setting Up Conan", "index.html#installing-and-setting-up-conan", null ]
+        ] ]
+      ] ],
+      [ "Flow", "index.html#flow-architecture", null ],
       [ "File System Architecture", "index.html#file-system-architecture", null ],
       [ "Graphics Architecture", "index.html#graphics-architecture", [
         [ "Graphics Introduction", "index.html#graphics-introduction", null ],

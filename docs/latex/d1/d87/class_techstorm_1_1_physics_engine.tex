@@ -20,7 +20,7 @@ void \mbox{\hyperlink{class_techstorm_1_1_physics_engine_aabfa54a376c35880bd8a66
 void \mbox{\hyperlink{class_techstorm_1_1_physics_engine_a2c36ce16ce3b0908e8d04ddece7c2914}{update}} (const float c\+Delta\+Time)
 \begin{DoxyCompactList}\small\item\em Updates the physics engine. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_techstorm_1_1_physics_engine_ab07cd90671d6b23946949f920839b6ec}{optimize\+Broad\+Phase}} ()
-\begin{DoxyCompactList}\small\item\em Optimizes the broad phase. This is simply a wrapper for Jolt\textquotesingle{}s JPH\+::\+Physics\+System\+::\+Optimize\+Broad\+Phase function, but it is provided here for convenience. Please note that this should NOT be called often because it is expensive, so only run it after adding alot of physics objects. Even then, calling this only once is usually enough. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Optimizes the broad phase. This is simply a wrapper for Jolt\textquotesingle{}s JPH\+::\+Physics\+System\+::\+Optimize\+Broad\+Phase function, but it is provided here for convenience. \end{DoxyCompactList}\item 
 JPH\+::\+Body\+Interface \& \mbox{\hyperlink{class_techstorm_1_1_physics_engine_a9f834f634f5d057bde3ba4cb5d98001a}{get\+Body\+Interface}} () const
 \begin{DoxyCompactList}\small\item\em Gets the body interface by returning the internal body interface reference (Body\+Interface\+Holder). Use this if you need a reference to the body interface to add bodies or something else. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
@@ -34,7 +34,7 @@ static \mbox{\hyperlink{class_techstorm_1_1_physics_engine}{Physics\+Engine}} \&
 \doxysubsection{Detailed Description}
 
 
-Definition at line \mbox{\hyperlink{_physics_8h_source_l00087}{87}} of file \mbox{\hyperlink{_physics_8h_source}{Physics.\+h}}.
+Definition at line \mbox{\hyperlink{_physics_8h_source_l00092}{92}} of file \mbox{\hyperlink{_physics_8h_source}{Physics.\+h}}.
 
 
 
@@ -86,7 +86,7 @@ Definition at line \mbox{\hyperlink{_physics_8cpp_source_l00023}{23}} of file \m
 
 
 
-References \mbox{\hyperlink{_physics_8h_source_l00074}{Techstorm\+::\+Allocated\+Physics\+Resources\+::c\+Max\+Bodies}}, \mbox{\hyperlink{_physics_8h_source_l00076}{Techstorm\+::\+Allocated\+Physics\+Resources\+::c\+Max\+Body\+Pairs}}, \mbox{\hyperlink{_physics_8h_source_l00077}{Techstorm\+::\+Allocated\+Physics\+Resources\+::c\+Max\+Contact\+Constraints}}, and \mbox{\hyperlink{_physics_8h_source_l00075}{Techstorm\+::\+Allocated\+Physics\+Resources\+::c\+Num\+Body\+Mutexes}}.
+References \mbox{\hyperlink{_physics_8h_source_l00079}{Techstorm\+::\+Allocated\+Physics\+Resources\+::c\+Max\+Bodies}}, \mbox{\hyperlink{_physics_8h_source_l00081}{Techstorm\+::\+Allocated\+Physics\+Resources\+::c\+Max\+Body\+Pairs}}, \mbox{\hyperlink{_physics_8h_source_l00082}{Techstorm\+::\+Allocated\+Physics\+Resources\+::c\+Max\+Contact\+Constraints}}, and \mbox{\hyperlink{_physics_8h_source_l00080}{Techstorm\+::\+Allocated\+Physics\+Resources\+::c\+Num\+Body\+Mutexes}}.
 
 \Hypertarget{class_techstorm_1_1_physics_engine_ab07cd90671d6b23946949f920839b6ec}\label{class_techstorm_1_1_physics_engine_ab07cd90671d6b23946949f920839b6ec} 
 \index{Techstorm::PhysicsEngine@{Techstorm::PhysicsEngine}!optimizeBroadPhase@{optimizeBroadPhase}}
@@ -96,8 +96,11 @@ References \mbox{\hyperlink{_physics_8h_source_l00074}{Techstorm\+::\+Allocated\
 
 
 
-Optimizes the broad phase. This is simply a wrapper for Jolt\textquotesingle{}s JPH\+::\+Physics\+System\+::\+Optimize\+Broad\+Phase function, but it is provided here for convenience. Please note that this should NOT be called often because it is expensive, so only run it after adding alot of physics objects. Even then, calling this only once is usually enough. 
+Optimizes the broad phase. This is simply a wrapper for Jolt\textquotesingle{}s JPH\+::\+Physics\+System\+::\+Optimize\+Broad\+Phase function, but it is provided here for convenience. 
 
+\begin{DoxyNote}{Note}
+Please note that this should NOT be called often because it is expensive, so only run it after adding alot of physics objects. Even then, calling this only once is usually enough. 
+\end{DoxyNote}
 
 
 Definition at line \mbox{\hyperlink{_physics_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{_physics_8cpp_source}{Physics.\+cpp}}.

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest>
+	<version>1.0.0.0</version>
+	<name>TestMod</name>
+	<description>This is a TestMod</description>
+	<tags>
+		<tag>Test</tag>
+	</tags>
+	<files>
+		<scripts type="lua">
+			
+		</scripts>
+
+	</files>
+	
+</manifest>

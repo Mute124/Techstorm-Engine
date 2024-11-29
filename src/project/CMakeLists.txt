@@ -1,6 +1,6 @@
 ﻿set(PROJECT_SOURCES
 	"project.cpp"
-	"project.h")
+	"project.h"
 )
 
 # Project shared library. Change the name to whatever you want but be sure to change it in the Application's CMakeLists.txt file

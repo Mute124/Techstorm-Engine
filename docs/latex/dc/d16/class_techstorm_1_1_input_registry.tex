@@ -2,7 +2,7 @@
 \hypertarget{class_techstorm_1_1_input_registry}{}\label{class_techstorm_1_1_input_registry}\index{Techstorm::InputRegistry@{Techstorm::InputRegistry}}
 
 
-The input registry is used to register Input\+Actions (\doxylink{class_techstorm_1_1_input_action}{Input\+Action}) and their callbacks. Remember that this is a singleton, so you may use this statically.  
+The input registry is used to register Input\+Actions (\doxylink{class_techstorm_1_1_input_action}{Input\+Action}) and their callbacks by using a Laissez-\/faire system.  
 
 
 
@@ -19,7 +19,7 @@ Inheritance diagram for Techstorm\+::Input\+Registry\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{class_techstorm_1_1_input_registry_a0d156b86669ec14db159f658b8ca6891}{register\+Action\+Callback}} (\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*}action, std\+::function$<$ void(\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*})$>$ const \&callback)
-\begin{DoxyCompactList}\small\item\em Registers a pointer of \doxylink{class_techstorm_1_1_input_action}{Input\+Action} to the callback given. This works as a key-\/value pair, where the key is the action and the value is the callback and is the reason why the return value is important. Please do not lose it or you will not be able to unregister the callback or you may unregister the wrong one! \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Registers a pointer of \doxylink{class_techstorm_1_1_input_action}{Input\+Action} to the callback given. This works as a key-\/value pair, where the key is the action and the value is the callback and is the reason why the return value is important. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_techstorm_1_1_input_registry_aaf864bfdc99b4ca5806569558c4fe316}{unregister\+Action}} (\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*}action)
 \begin{DoxyCompactList}\small\item\em Unregisters {\bfseries{ALL}} callbacks for a given \doxylink{class_techstorm_1_1_input_action}{Input\+Action}. This is useful if a keybind is no longer needed and you want to remove all callbacks in that category from the input system. For example, this is useful when the player is joining a game. See \doxylink{class_techstorm_1_1_input_action}{Input\+Action} for more information on what an \doxylink{class_techstorm_1_1_input_action}{Input\+Action} is. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_techstorm_1_1_input_registry_a535be693e06547f3273610283b8f7b59}{unregister\+Callback}} (\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*}action, int id)
@@ -38,8 +38,13 @@ static \mbox{\hyperlink{class_techstorm_1_1_input_registry}{Input\+Registry}} \&
 
 
 \doxysubsection{Detailed Description}
-The input registry is used to register Input\+Actions (\doxylink{class_techstorm_1_1_input_action}{Input\+Action}) and their callbacks. Remember that this is a singleton, so you may use this statically. 
+The input registry is used to register Input\+Actions (\doxylink{class_techstorm_1_1_input_action}{Input\+Action}) and their callbacks by using a Laissez-\/faire system. 
 
+\begin{DoxyNote}{Note}
+Remember that this is a singleton, so you may use this statically. 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000004}{Todo}}]Create examples of how to use this. \end{DoxyRefDesc}
 \begin{DoxySeeAlso}{See also}
 \doxylink{class_techstorm_1_1_singleton}{Singleton$<$\+Input\+Registry$>$}
 
@@ -47,7 +52,7 @@ The input registry is used to register Input\+Actions (\doxylink{class_techstorm
 \end{DoxySeeAlso}
 
 
-Definition at line \mbox{\hyperlink{_input_8h_source_l00053}{53}} of file \mbox{\hyperlink{_input_8h_source}{Input.\+h}}.
+Definition at line \mbox{\hyperlink{_input_8h_source_l00061}{61}} of file \mbox{\hyperlink{_input_8h_source}{Input.\+h}}.
 
 
 
@@ -56,7 +61,7 @@ Definition at line \mbox{\hyperlink{_input_8h_source_l00053}{53}} of file \mbox{
 \index{Techstorm::InputRegistry@{Techstorm::InputRegistry}!checkAll@{checkAll}}
 \index{checkAll@{checkAll}!Techstorm::InputRegistry@{Techstorm::InputRegistry}}
 \doxysubsubsection{\texorpdfstring{checkAll()}{checkAll()}}
-{\footnotesize\ttfamily void Techstorm\+::\+Input\+Registry\+::check\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+{\footnotesize\ttfamily void Techstorm\+::\+Input\+Registry\+::check\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -70,12 +75,15 @@ Definition at line \mbox{\hyperlink{_input_8cpp_source_l00020}{20}} of file \mbo
 \index{Techstorm::InputRegistry@{Techstorm::InputRegistry}!registerActionCallback@{registerActionCallback}}
 \index{registerActionCallback@{registerActionCallback}!Techstorm::InputRegistry@{Techstorm::InputRegistry}}
 \doxysubsubsection{\texorpdfstring{registerActionCallback()}{registerActionCallback()}}
-{\footnotesize\ttfamily int Techstorm\+::\+Input\+Registry\+::register\+Action\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*}}]{action,  }\item[{std\+::function$<$ void(\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*})$>$ const \&}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily int Techstorm\+::\+Input\+Registry\+::register\+Action\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*}}]{action,  }\item[{std\+::function$<$ void(\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*})$>$ const \&}]{callback }\end{DoxyParamCaption})}
 
 
 
-Registers a pointer of \doxylink{class_techstorm_1_1_input_action}{Input\+Action} to the callback given. This works as a key-\/value pair, where the key is the action and the value is the callback and is the reason why the return value is important. Please do not lose it or you will not be able to unregister the callback or you may unregister the wrong one! 
+Registers a pointer of \doxylink{class_techstorm_1_1_input_action}{Input\+Action} to the callback given. This works as a key-\/value pair, where the key is the action and the value is the callback and is the reason why the return value is important. 
 
+\begin{DoxyWarning}{Warning}
+Please do not lose it or you will not be able to unregister the callback or you may unregister the wrong one!
+\end{DoxyWarning}
 
 \begin{DoxyParams}{Parameters}
 {\em action} & The \doxylink{class_techstorm_1_1_input_action}{Input\+Action} to be used as a key.\\
@@ -94,7 +102,7 @@ Definition at line \mbox{\hyperlink{_input_8cpp_source_l00003}{3}} of file \mbox
 \index{Techstorm::InputRegistry@{Techstorm::InputRegistry}!unregisterAction@{unregisterAction}}
 \index{unregisterAction@{unregisterAction}!Techstorm::InputRegistry@{Techstorm::InputRegistry}}
 \doxysubsubsection{\texorpdfstring{unregisterAction()}{unregisterAction()}}
-{\footnotesize\ttfamily void Techstorm\+::\+Input\+Registry\+::unregister\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*}}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void Techstorm\+::\+Input\+Registry\+::unregister\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*}}]{action }\end{DoxyParamCaption})}
 
 
 
@@ -113,7 +121,7 @@ Definition at line \mbox{\hyperlink{_input_8cpp_source_l00012}{12}} of file \mbo
 \index{Techstorm::InputRegistry@{Techstorm::InputRegistry}!unregisterCallback@{unregisterCallback}}
 \index{unregisterCallback@{unregisterCallback}!Techstorm::InputRegistry@{Techstorm::InputRegistry}}
 \doxysubsubsection{\texorpdfstring{unregisterCallback()}{unregisterCallback()}}
-{\footnotesize\ttfamily void Techstorm\+::\+Input\+Registry\+::unregister\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*}}]{action,  }\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void Techstorm\+::\+Input\+Registry\+::unregister\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_techstorm_1_1_input_action}{Input\+Action}} \texorpdfstring{$\ast$}{*}}]{action,  }\item[{int}]{id }\end{DoxyParamCaption})}
 
 
 

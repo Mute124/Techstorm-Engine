@@ -1,0 +1,1 @@
+print(LookupConfigOption("Project.cfg", "projectWindowTitle"))

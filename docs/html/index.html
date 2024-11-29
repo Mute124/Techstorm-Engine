@@ -95,11 +95,46 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="what-is-techstorm"></a> </p><hr  />
-<p><a class="el" href="d4/d26/namespace_techstorm.html">Techstorm</a> is the response to the lack of a free game engine that is built for large open worlds.</p>
+<p><a class="el" href="d4/d26/namespace_techstorm.html">Techstorm</a> is the response to the lack of a free game engine that is built for large open worlds. While Unity or Unreal can make open world games, there are alot of hoops that must be jumped through first, which is why there is a need for it. <a class="el" href="d4/d26/namespace_techstorm.html">Techstorm</a> aims to be flexible and moldable to suit needs without having to make major changes. It also aims to be easy to work with and a limited number of complex components.</p>
 <p>If you are looking for a hello world application, please see hello-world-example</p>
 <h1><a class="anchor" id="architecture"></a>
 Architecture</h1>
 <hr  />
+<h2><a class="anchor" id="building"></a>
+Building</h2>
+<hr  />
+<h3><a class="anchor" id="automatic-building"></a>
+Automatic Building</h3>
+<p>The building process of <a class="el" href="d4/d26/namespace_techstorm.html">Techstorm</a> is simple because of a provided Python script. To run said script, go to the directory where you cloned the repository in a command line application. Once there, simply run: </p><div class="fragment"><div class="line">$ python3 Build.py</div>
+</div><!-- fragment --><p> This is all you will need to do because it will do the following:</p><ul>
+<li>Install &amp; setup Conan if not already done</li>
+<li>Install &amp; build packages<ul>
+<li>For both Debug and Release</li>
+</ul>
+</li>
+<li>Configure, build, and generate the CMake project</li>
+<li>Open VS2022 solution</li>
+</ul>
+<p>Keep in mind this <b>will</b> take a while for the first time, so go drink water (We know that you have not done this yet today), go for a quick walk, or go to the bathroom. Once this is done, that is it! Pretty easy, right?</p>
+<h3><a class="anchor" id="autotoc_md4"></a>
+Manual Building</h3>
+<hr  />
+<blockquote class="doxtable">
+<p>&zwj;The following instructions are <b>NOT YET COMPLETE</b>. For now, please see <a class="el" href="index.html#automatic-building">Automatic Building</a> </p>
+</blockquote>
+<p>In the event that you would like to build directly, start at what ever point you would like.</p>
+<h4><a class="anchor" id="installing-and-setting-up-conan"></a>
+Installing And Setting Up Conan</h4>
+<hr  />
+<p>The following instructions are based on Conan 2.9's documentation. If you would like to use their documentation to install Conan, please see <a href="https://docs.conan.io/2/tutorial/consuming_packages/build_simple_cmake_project.html">their installation tutorial</a>. With that said, first make sure that you have python by using:</p>
+<div class="fragment"><div class="line">$ python3 --version</div>
+</div><!-- fragment --><p>If you got an error, congrats! You do not have python. If it worked and you have a version greater than or equal to 3.6, please run:</p>
+<div class="fragment"><div class="line">$ pip install conan</div>
+</div><!-- fragment --><blockquote class="doxtable">
+<p>&zwj;According to their documentation, ensure your <b>pip version</b> matches your <b>python version</b>. </p>
+</blockquote>
+<h2><a class="anchor" id="flow-architecture"></a>
+Flow</h2>
 <p>Due to the inherent nature of <a class="el" href="d4/d26/namespace_techstorm.html">Techstorm</a>, the architecture can be complex. In terms of building, there are a few things that are required to understand how <a class="el" href="d4/d26/namespace_techstorm.html">Techstorm</a> works. There are 4 groups that are used to build the engine, as outlined below:</p><ul>
 <li>Application</li>
 <li>Engine</li>
@@ -110,10 +145,11 @@ Architecture</h1>
 <h2><a class="anchor" id="file-system-architecture"></a>
 File System Architecture</h2>
 <hr  />
-<p>**The design of the file system is complex and it is highly encouraged that this is read very carefully. **</p>
-<p>As of now, the file system works by recursively searching the "game" folder in the root directory (Techstorm-v5). The folder will contain the "assets" and "data" sub-directories, wherein you will put assets and data files. <br  />
-</p>
-<h2><a class="anchor" id="graphics-architecture"></a>
+<p>&gt;**The design of the file system will cause errors if it is used improperly. As a result, it is highly encouraged that this is read very carefully. **</p>
+<p>As of now, the file system works by recursively searching the "game" folder in the root directory (Techstorm-v5). The folder will contain the "assets" and "data" sub-directories, wherein you will put assets and data files. Any file that is within the search area will be registered. For a detailed analysis of how it works, please see detailed-file-registry.</p>
+<p>When it comes to file loading, the <b>extension matters</b>. This is because the FileSystemRegistry loads files based on the loading function assigned to the extension. For this reason, when getting the file, you must have the filename along with the extension or just the extension (highly discouraged, see why-not-extensions). For this example, <code>ExampleFile.txt</code> will be used to represent a file. In order to get a file, please see below:</p>
+<div class="fragment"><div class="line">std::shared_ptr&lt;RegisteredFile&gt; file = GetFileSystemRegistry().getFile(&quot;ExampleFile.txt&quot;);</div>
+</div><!-- fragment --><h2><a class="anchor" id="graphics-architecture"></a>
 Graphics Architecture</h2>
 <hr  />
 <h3><a class="anchor" id="graphics-introduction"></a>
@@ -236,7 +272,7 @@ Functions</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Nov 28 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Nov 29 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

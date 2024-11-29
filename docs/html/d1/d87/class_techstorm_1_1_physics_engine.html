@@ -123,7 +123,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2c36ce16ce3b0908e8d04ddece7c2914"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the physics engine.  <br /></td></tr>
 <tr class="separator:a2c36ce16ce3b0908e8d04ddece7c2914"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab07cd90671d6b23946949f920839b6ec" id="r_ab07cd90671d6b23946949f920839b6ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d87/class_techstorm_1_1_physics_engine.html#ab07cd90671d6b23946949f920839b6ec">optimizeBroadPhase</a> ()</td></tr>
-<tr class="memdesc:ab07cd90671d6b23946949f920839b6ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimizes the broad phase. This is simply a wrapper for Jolt's JPH::PhysicsSystem::OptimizeBroadPhase function, but it is provided here for convenience. Please note that this should NOT be called often because it is expensive, so only run it after adding alot of physics objects. Even then, calling this only once is usually enough.  <br /></td></tr>
+<tr class="memdesc:ab07cd90671d6b23946949f920839b6ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimizes the broad phase. This is simply a wrapper for Jolt's JPH::PhysicsSystem::OptimizeBroadPhase function, but it is provided here for convenience.  <br /></td></tr>
 <tr class="separator:ab07cd90671d6b23946949f920839b6ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f834f634f5d057bde3ba4cb5d98001a" id="r_a9f834f634f5d057bde3ba4cb5d98001a"><td class="memItemLeft" align="right" valign="top">JPH::BodyInterface &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d87/class_techstorm_1_1_physics_engine.html#a9f834f634f5d057bde3ba4cb5d98001a">getBodyInterface</a> () const</td></tr>
 <tr class="memdesc:a9f834f634f5d057bde3ba4cb5d98001a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the body interface by returning the internal body interface reference (BodyInterfaceHolder). Use this if you need a reference to the body interface to add bodies or something else.  <br /></td></tr>
@@ -138,7 +138,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d8/d65/_physics_8h_source.html#l00087">87</a> of file <a class="el" href="../../d8/d65/_physics_8h_source.html">Physics.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d65/_physics_8h_source.html#l00092">92</a> of file <a class="el" href="../../d8/d65/_physics_8h_source.html">Physics.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4757d1aab3c0880944b7c227b03a2343" name="a4757d1aab3c0880944b7c227b03a2343"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4757d1aab3c0880944b7c227b03a2343">&#9670;&#160;</a></span>PhysicsEngine()</h2>
@@ -214,7 +214,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d6a/_physics_8cpp_source.html#l00023">23</a> of file <a class="el" href="../../d8/d6a/_physics_8cpp_source.html">Physics.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d8/d65/_physics_8h_source.html#l00074">Techstorm::AllocatedPhysicsResources::cMaxBodies</a>, <a class="el" href="../../d8/d65/_physics_8h_source.html#l00076">Techstorm::AllocatedPhysicsResources::cMaxBodyPairs</a>, <a class="el" href="../../d8/d65/_physics_8h_source.html#l00077">Techstorm::AllocatedPhysicsResources::cMaxContactConstraints</a>, and <a class="el" href="../../d8/d65/_physics_8h_source.html#l00075">Techstorm::AllocatedPhysicsResources::cNumBodyMutexes</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/d65/_physics_8h_source.html#l00079">Techstorm::AllocatedPhysicsResources::cMaxBodies</a>, <a class="el" href="../../d8/d65/_physics_8h_source.html#l00081">Techstorm::AllocatedPhysicsResources::cMaxBodyPairs</a>, <a class="el" href="../../d8/d65/_physics_8h_source.html#l00082">Techstorm::AllocatedPhysicsResources::cMaxContactConstraints</a>, and <a class="el" href="../../d8/d65/_physics_8h_source.html#l00080">Techstorm::AllocatedPhysicsResources::cNumBodyMutexes</a>.</p>
 
 </div>
 </div>
@@ -233,7 +233,8 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Optimizes the broad phase. This is simply a wrapper for Jolt's JPH::PhysicsSystem::OptimizeBroadPhase function, but it is provided here for convenience. Please note that this should NOT be called often because it is expensive, so only run it after adding alot of physics objects. Even then, calling this only once is usually enough. </p>
+<p>Optimizes the broad phase. This is simply a wrapper for Jolt's JPH::PhysicsSystem::OptimizeBroadPhase function, but it is provided here for convenience. </p>
+<dl class="section note"><dt>Note</dt><dd>Please note that this should NOT be called often because it is expensive, so only run it after adding alot of physics objects. Even then, calling this only once is usually enough. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d6a/_physics_8cpp_source.html#l00065">65</a> of file <a class="el" href="../../d8/d6a/_physics_8cpp_source.html">Physics.cpp</a>.</p>
 
@@ -278,7 +279,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/d26/namespace_techstorm.html">Techstorm</a></li><li class="navelem"><a class="el" href="../../d1/d87/class_techstorm_1_1_physics_engine.html">PhysicsEngine</a></li>
-    <li class="footer">Generated on Thu Nov 28 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Nov 29 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

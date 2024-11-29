@@ -38,32 +38,18 @@
 \DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{public}:}
 \DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00050}\mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_a301b6fde804cd5dc203d951b50aa14d4}{00050}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_a301b6fde804cd5dc203d951b50aa14d4}{ScriptingAPI}}()\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00051}00051\ }
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00056}\mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_a59761650d84d71b91554406644e8e326}{00056}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_a59761650d84d71b91554406644e8e326}{InitializeScripting}}(\mbox{\hyperlink{namespace_techstorm_af6556c4d563341def4c68414537120ed}{LuaLibraryRegistry}}\ \textcolor{keyword}{const}\&\ libraries,\ \mbox{\hyperlink{namespace_techstorm_aacc8d13353a5459666050b5aa6ed808c}{LuaFunctionRegistry}}\ \textcolor{keyword}{const}\&\ functions)}
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>mLibraries\ =\ libraries;}
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00061}00061\ }
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00066}\mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_a00f762aefe81bfdf3f6c9cc5b10ee15b}{00066}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_a00f762aefe81bfdf3f6c9cc5b10ee15b}{RegisterLua}}()}
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ std::begin(Techstorm::ScriptingAPI::mLibraries);\ it\ !=\ std::end(Techstorm::ScriptingAPI::mLibraries);\ it++)\ \{}
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>mLua.open\_libraries(*it);}
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00071}00071\ }
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00074}00074\ }
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00079}\mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_ac4a2224ba04ab05a9f6baa5cac1b8510}{00079}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_ac4a2224ba04ab05a9f6baa5cac1b8510}{RegisterAngelScript}}()}
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00083}00083\ }
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00084}00084\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ sol::state\ mLua;}
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00086}00086\ }
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_af6556c4d563341def4c68414537120ed}{LuaLibraryRegistry}}\ mLibraries;}
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_aacc8d13353a5459666050b5aa6ed808c}{LuaFunctionRegistry}}\ mFunctions;}
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00089}00089\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00090}00090\ \}}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_a59761650d84d71b91554406644e8e326}{InitializeScripting}}(\mbox{\hyperlink{namespace_techstorm_af6556c4d563341def4c68414537120ed}{LuaLibraryRegistry}}\ \textcolor{keyword}{const}\&\ libraries,\ \mbox{\hyperlink{namespace_techstorm_aacc8d13353a5459666050b5aa6ed808c}{LuaFunctionRegistry}}\ \textcolor{keyword}{const}\&\ functions);}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_a00f762aefe81bfdf3f6c9cc5b10ee15b}{RegisterLua}}();}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_ac4a2224ba04ab05a9f6baa5cac1b8510}{RegisterAngelScript}}();}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00069}\mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_a104eacfc2e607b7fd805daab1081c8e1}{00069}}\ \ \ \ \ \ \ \ \ sol::state\ \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_a104eacfc2e607b7fd805daab1081c8e1}{mLua}};}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00070}00070\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_af6556c4d563341def4c68414537120ed}{LuaLibraryRegistry}}\ mLibraries;}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_aacc8d13353a5459666050b5aa6ed808c}{LuaFunctionRegistry}}\ mFunctions;}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00075}00075\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_scripting_a_p_i_8h_source_l00076}00076\ \}}
 
 \end{DoxyCode}

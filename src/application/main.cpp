@@ -28,6 +28,13 @@ int main(int argc, char* argv[]) {
 
 	decorations.title = LookupConfig("Project.cfg", "projectWindowTitle");
 
+	
+	//std::shared_ptr<RegisteredFile> file = GetFile("Test.lua");
+
+	sol::load_result file = scriptingAPI.mLua.load_file("C:\\Dev\\Techstorm-v5\\game\\Test.lua");
+	sol::protected_function_result script2result = file();
+	
+
 	InitWindow(decorations.width, decorations.height, decorations.title);
 
 	const char* iconPath = TextFormat("%s%s", TS_ASSET_DIR.c_str(), decorations.icon);
