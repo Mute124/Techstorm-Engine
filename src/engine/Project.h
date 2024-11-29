@@ -1,3 +1,9 @@
+/**
+* \file Project.h
+* 
+* \brief This file contains the IProject interface that is required for Techstorm to run the user's project. The reason for the boilerplate is because it allows the engine to take a Laissez-faire approach and allow the user to do whatever they want.
+* with all their code being able to be called from the engine.
+*/
 #pragma once
 #include "renderer/Renderer.h"
 #include "renderer/Window.h"
@@ -12,13 +18,13 @@
 namespace Techstorm {
 	/// <summary>
 	/// This is an <b>abstract interface singleton</b> that all projects must implement and set the <i>ProjectReference</i> singleton to
-	/// their project. If this boilerplate code is not done, Techstorm will not know what to run. In terms of functionality, this interface
-	/// just holds the functions and variables that Techstorm will call (besides some initialization). <b>Do not directly call window
-	/// code in here or your project will crash!</b>
+	/// their project. In terms of functionality, this interface just holds the functions and variables that Techstorm will call (besides some initialization). 
+	/// \note If this boilerplate code is not done, Techstorm will not know what to run.
+	/// \warning <b>Do not directly call window code in here or your project will crash!</b>
 	/// </summary>
 	class IProject abstract {
 	protected:
-		Techstorm::Renderer mRenderer;
+		Renderer mRenderer;
 		WindowDecorations mWindowDecorations;
 		LuaLibraryRegistry mLuaLibraries;
 		LuaFunctionRegistry mLuaFunctions;
@@ -42,7 +48,7 @@ namespace Techstorm {
 		GameSettings settings;
 
 		/// <summary>
-		/// Gets the lua libraries.
+		/// Returns the currently active libraries for lua.
 		/// </summary>
 		/// <returns>A reference to mLuaLibraries</returns>
 		LuaLibraryRegistry& getLuaLibraries() { return mLuaLibraries; }

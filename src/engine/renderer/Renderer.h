@@ -13,6 +13,8 @@
 namespace Techstorm {
 	class GameObject;
 
+
+
 	/// <summary>
 	/// Serves as the renderer for the game.
 	/// </summary>
@@ -108,4 +110,5 @@ namespace Techstorm {
 		void render3D(GameCamera& cam);
 #endif
 	};
+
 }
