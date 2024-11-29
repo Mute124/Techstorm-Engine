@@ -6,8 +6,11 @@ WindowDecorations& Techstorm::IProject::getWindowDecorations() { return mWindowD
 void Techstorm::IProject::setWindowDecorations(WindowDecorations& windowDecorations) { mWindowDecorations = windowDecorations; }
 
 void Techstorm::IProject::init(int argc, char* argv[]) {
+	std::cout << "Initializing Project" << std::endl;
+	mRenderer.initialize();
 	auto resources = AllocatedPhysicsResources();
 	PhysicsEngine::Instance().init(resources);
+
 }
 
 void Techstorm::IProject::postInit() {}
@@ -37,10 +40,13 @@ int Techstorm::IProject::objectUpdate() { return 0; }
 
 int Techstorm::IProject::postObjectUpdate() { return 0; }
 
-int Techstorm::IProject::texture() { return 0; }
+int Techstorm::IProject::texture() { 
+	mRenderer.texture(mRenderer.mCamera);
+	return 0; 
+}
 
 int Techstorm::IProject::render() { 
-	
+	mRenderer.render(mRenderer.mCamera);
 	return 0;
 }
 

@@ -27,6 +27,8 @@ var namespace_techstorm =
     [ "InputAction", "d9/d02/class_techstorm_1_1_input_action.html", "d9/d02/class_techstorm_1_1_input_action" ],
     [ "InputRegistry", "dc/d16/class_techstorm_1_1_input_registry.html", "dc/d16/class_techstorm_1_1_input_registry" ],
     [ "LayerRegistry", "db/d5d/class_techstorm_1_1_layer_registry.html", "db/d5d/class_techstorm_1_1_layer_registry" ],
+    [ "Mod", "d3/d3c/class_techstorm_1_1_mod.html", "d3/d3c/class_techstorm_1_1_mod" ],
+    [ "ModLoader", "da/d6d/class_techstorm_1_1_mod_loader.html", "da/d6d/class_techstorm_1_1_mod_loader" ],
     [ "MyBodyActivationListener", "dd/dd3/class_techstorm_1_1_my_body_activation_listener.html", "dd/dd3/class_techstorm_1_1_my_body_activation_listener" ],
     [ "ObjectContactListener", "d9/d66/class_techstorm_1_1_object_contact_listener.html", "d9/d66/class_techstorm_1_1_object_contact_listener" ],
     [ "ObjectLayerPairFilterImpl", "d9/d0b/class_techstorm_1_1_object_layer_pair_filter_impl.html", "d9/d0b/class_techstorm_1_1_object_layer_pair_filter_impl" ],

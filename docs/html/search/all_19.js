@@ -6,5 +6,7 @@ var searchData=
   ['_7eilayerregistry_3',['~ILayerRegistry',['../d6/d34/class_techstorm_1_1abstract.html#a4a5949bcde32483abd8b15105a2eda10',1,'Techstorm::abstract']]],
   ['_7eiphysicsgameobject_4',['~IPhysicsGameObject',['../d6/d34/class_techstorm_1_1abstract.html#aa0f5ad4e289f98389e410b33ec03b41c',1,'Techstorm::abstract']]],
   ['_7elayerregistry_5',['~LayerRegistry',['../db/d5d/class_techstorm_1_1_layer_registry.html#af9d0b1f70047143779fd67cd3b66bc8e',1,'Techstorm::LayerRegistry']]],
-  ['_7ewindow_6',['~Window',['../da/d10/class_techstorm_1_1_window.html#a0baa895bc297dd7720c63a7f5bd1c43b',1,'Techstorm::Window']]]
+  ['_7emod_6',['~Mod',['../d3/d3c/class_techstorm_1_1_mod.html#a3ebb393f6f60c7ace80937fdfdac13bb',1,'Techstorm::Mod']]],
+  ['_7emodloader_7',['~ModLoader',['../da/d6d/class_techstorm_1_1_mod_loader.html#a7994bc17f3f6449bbffbda6884f4562c',1,'Techstorm::ModLoader']]],
+  ['_7ewindow_8',['~Window',['../da/d10/class_techstorm_1_1_window.html#a0baa895bc297dd7720c63a7f5bd1c43b',1,'Techstorm::Window']]]
 ];

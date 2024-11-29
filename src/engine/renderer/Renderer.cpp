@@ -24,8 +24,9 @@ Camera ConvertCamera(Techstorm::CameraData* data) {
 
 void Techstorm::Renderer::initialize()
 {
+	std::cout << "Initializing renderer" << std::endl;
 	// TODO: Implement Renderer::initialize
-	Vector2 size = GetWindowScaleDPI();
+	Vector2 size = { GetScreenWidth(), GetScreenHeight() };
 	this->mScreenBuffer = LoadRenderTexture(size.x, size.y);
 }
 
@@ -48,7 +49,7 @@ void Techstorm::Renderer::texture(GameCamera& cam)
 #endif
 
 	mGameObjects.render();
-
+	DrawCube(Vector3{ 0.0f, 0.0f, 0.0f }, 1.0f, 1.0f, 1.0f, RED);
 #ifdef TS_RENDERER_2D
 #else
 	EndMode3D();

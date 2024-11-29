@@ -90,6 +90,7 @@ namespace Techstorm {
 		/// </summary>
 		/// <inheritdoc />
 		virtual void preInit() {
+			std::cout << "IProject::preInit" << std::endl;
 			AddFileRegistryLoadFunction("png", [](std::shared_ptr<FileMeta> loadFunc) {
 				return std::any_cast<Image>(LoadImage(loadFunc->path.c_str()));
 			});
@@ -107,6 +108,7 @@ namespace Techstorm {
 
 
 			this->mLuaLibraries.push_back(sol::lib::base);
+
 		}
 
 		/// <summary>

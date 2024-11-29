@@ -9,65 +9,65 @@
 \DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_config_8h}{conf/Config.h}}>}}
 \DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00006}00006\ }
 \DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <project.h>}}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00008}00008\ }
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <raylib.h>}}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <raylib.h>}}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00010}00010\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespace_techstorm}{Techstorm}};}
 \DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00011}00011\ }
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00012}\mbox{\hyperlink{application_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00012}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{application_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespace_techstorm}{Techstorm}};}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00014}00014\ }
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{project_2_project_8h_ad07ec4803fb514a35902f4d7b85638df}{PROJECT\_TYPENAME}}\ project\ =\ \mbox{\hyperlink{project_2_project_8h_ad07ec4803fb514a35902f4d7b85638df}{PROJECT\_TYPENAME}}();}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00016}00016\ \ \ \ \ project.preInit();}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00017}00017\ }
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00018}00018\ \ \ \ \ InitializeConfigRegistry();}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00019}00019\ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_config_file_registry}{ConfigFileRegistry}}\&\ configRegistry\ =\ GetConfigFileRegistry();}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00020}00020\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00021}00021\ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_renderer}{Renderer}}\&\ renderer\ =\ project.getRenderer();}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{struct_techstorm_1_1_window_decorations}{WindowDecorations}}\&\ decorations\ =\ project.getWindowDecorations();}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00023}00023\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i}{ScriptingAPI}}\ scriptingAPI;}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00026}00026\ \ \ \ \ scriptingAPI.\mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_a59761650d84d71b91554406644e8e326}{InitializeScripting}}(project.getLuaLibraries(),\ project.getLuaFunctions());}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00027}00027\ \ \ \ \ scriptingAPI.\mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_a00f762aefe81bfdf3f6c9cc5b10ee15b}{RegisterLua}}();}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00028}00028\ }
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00029}00029\ \ \ \ \ decorations.\mbox{\hyperlink{struct_techstorm_1_1_window_decorations_a4da13fe3c3fa928c3e1f584fae3c0ee6}{title}}\ =\ LookupConfig(\textcolor{stringliteral}{"{}Project.cfg"{}},\ \textcolor{stringliteral}{"{}projectWindowTitle"{}});}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00030}00030\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//std::shared\_ptr<RegisteredFile>\ file\ =\ GetFile("{}Test.lua"{});}}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00033}00033\ \ \ \ \ sol::load\_result\ file\ =\ scriptingAPI.\mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_a104eacfc2e607b7fd805daab1081c8e1}{mLua}}.load\_file(\textcolor{stringliteral}{"{}C:\(\backslash\)\(\backslash\)Dev\(\backslash\)\(\backslash\)Techstorm-\/v5\(\backslash\)\(\backslash\)game\(\backslash\)\(\backslash\)Test.lua"{}});}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00034}00034\ \ \ \ \ sol::protected\_function\_result\ script2result\ =\ file();}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00035}00035\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00037}00037\ \ \ \ \ InitWindow(decorations.\mbox{\hyperlink{struct_techstorm_1_1_window_decorations_a273a970284e324b89ba9c7611c0145fa}{width}},\ decorations.\mbox{\hyperlink{struct_techstorm_1_1_window_decorations_a0660189429bb5ed37d721cc2b6009b17}{height}},\ decorations.\mbox{\hyperlink{struct_techstorm_1_1_window_decorations_a4da13fe3c3fa928c3e1f584fae3c0ee6}{title}});}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00012}\mbox{\hyperlink{application_2main_8cpp_aa966620e1cb032bd393c9bf429f7912f}{00012}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{application_2main_8cpp_aa966620e1cb032bd393c9bf429f7912f}{InitWindow}}(\mbox{\hyperlink{struct_techstorm_1_1_window_decorations}{WindowDecorations}}\&\ decorations)\ \{}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00013}00013\ \ \ \ \ decorations.\mbox{\hyperlink{struct_techstorm_1_1_window_decorations_a4da13fe3c3fa928c3e1f584fae3c0ee6}{title}}\ =\ \mbox{\hyperlink{namespace_techstorm_addbe8297c758588e97c3395d420bbfce}{LookupConfig}}(\textcolor{stringliteral}{"{}Project.cfg"{}},\ \textcolor{stringliteral}{"{}projectWindowTitle"{}});}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00014}00014\ \ \ \ \ SetConfigFlags(FLAG\_MSAA\_4X\_HINT\ |\ FLAG\_INTERLACED\_HINT);}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{application_2main_8cpp_aa966620e1cb032bd393c9bf429f7912f}{InitWindow}}(decorations.\mbox{\hyperlink{struct_techstorm_1_1_window_decorations_a273a970284e324b89ba9c7611c0145fa}{width}},\ decorations.\mbox{\hyperlink{struct_techstorm_1_1_window_decorations_a0660189429bb5ed37d721cc2b6009b17}{height}},\ decorations.\mbox{\hyperlink{struct_techstorm_1_1_window_decorations_a4da13fe3c3fa928c3e1f584fae3c0ee6}{title}});}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ iconPath\ =\ TextFormat(\textcolor{stringliteral}{"{}\%s\%s"{}},\ \mbox{\hyperlink{_common_8h_a72ba4f35051f760d2253c5d175be8a7d}{TS\_ASSET\_DIR}}.c\_str(),\ decorations.\mbox{\hyperlink{struct_techstorm_1_1_window_decorations_a0d9d9ccf12fa5480c5ac21c28c09accc}{icon}});}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00019}00019\ \ \ \ \ Image\ icon\ =\ LoadImage(iconPath);}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00020}00020\ \ \ \ \ ImageFormat(\&icon,\ PIXELFORMAT\_UNCOMPRESSED\_R8G8B8A8);}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00022}00022\ \ \ \ \ SetWindowIcons(\&icon,\ 1);}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00025}\mbox{\hyperlink{application_2main_8cpp_a383a924c3fb3bd7455a424b2a4e8d969}{00025}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{application_2main_8cpp_a383a924c3fb3bd7455a424b2a4e8d969}{HandleFrame}}(\mbox{\hyperlink{project_2_project_8h_ad07ec4803fb514a35902f4d7b85638df}{PROJECT\_TYPENAME}}\&\ project)\ \{}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00026}00026\ \ \ \ \ project.getRenderer().update();}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00028}00028\ \ \ \ \ project.preObjectUpdate();}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00029}00029\ \ \ \ \ project.objectUpdate();}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00030}00030\ \ \ \ \ project.postObjectUpdate();}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00032}00032\ \ \ \ \ project.prePhysicsUpdate();}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00033}00033\ \ \ \ \ project.physicsUpdate();}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00034}00034\ \ \ \ \ project.postPhysicsUpdate();}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00036}00036\ \ \ \ \ project.texture();}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00037}00037\ \ \ \ \ project.render();}
 \DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00038}00038\ }
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ iconPath\ =\ TextFormat(\textcolor{stringliteral}{"{}\%s\%s"{}},\ \mbox{\hyperlink{_common_8h_a72ba4f35051f760d2253c5d175be8a7d}{TS\_ASSET\_DIR}}.c\_str(),\ decorations.\mbox{\hyperlink{struct_techstorm_1_1_window_decorations_a0d9d9ccf12fa5480c5ac21c28c09accc}{icon}});}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00041}00041\ \ \ \ \ Image\ icon\ =\ LoadImage(iconPath);}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00042}00042\ \ \ \ \ ImageFormat(\&icon,\ PIXELFORMAT\_UNCOMPRESSED\_R8G8B8A8);}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00044}00044\ \ \ \ \ SetWindowIcons(\&icon,\ 1);}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00045}00045\ }
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00046}00046\ \ \ \ \ project.init(argc,\ argv);}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00047}00047\ \ \ \ \ project.postInit();}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00049}00049\ \ \ \ \ SetTargetFPS(decorations.\mbox{\hyperlink{struct_techstorm_1_1_window_decorations_a06c54d45bb16b660ccb1ffabd71e7291}{targetFPS}});}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keywordflow}{while}\ (!WindowShouldClose())\ \{}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ renderer.\mbox{\hyperlink{class_techstorm_1_1_renderer_a8da83a2891cc66fb1f4dcd81dffb6641}{update}}();}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00053}00053\ }
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ project.preObjectUpdate();}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ project.objectUpdate();}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ project.postObjectUpdate();}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{comment}{//\ This\ is\ here\ because\ it\ reduces\ CPU\ consumption}}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00040}00040\ \ \ \ \ std::this\_thread::yield();}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00043}\mbox{\hyperlink{application_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00043}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{application_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{project_2_project_8h_ad07ec4803fb514a35902f4d7b85638df}{PROJECT\_TYPENAME}}\ project\ =\ \mbox{\hyperlink{project_2_project_8h_ad07ec4803fb514a35902f4d7b85638df}{PROJECT\_TYPENAME}}();}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00045}00045\ \ \ \ \ project.preInit();}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00047}00047\ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_a2b72a42193d6d2dc6bbb26a25656da6c}{InitializeConfigRegistry}}();}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_config_file_registry}{ConfigFileRegistry}}\&\ configRegistry\ =\ \mbox{\hyperlink{namespace_techstorm_afae7d54e50b01e66aed0ffd14031056c}{GetConfigFileRegistry}}();}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00049}00049\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_renderer}{Renderer}}\&\ renderer\ =\ project.getRenderer();}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00051}00051\ \ \ \ \ \mbox{\hyperlink{struct_techstorm_1_1_window_decorations}{WindowDecorations}}\&\ decorations\ =\ project.getWindowDecorations();}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00052}00052\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i}{ScriptingAPI}}\ scriptingAPI;}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00055}00055\ \ \ \ \ scriptingAPI.\mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_a59761650d84d71b91554406644e8e326}{InitializeScripting}}(project.getLuaLibraries(),\ project.getLuaFunctions());}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00056}00056\ \ \ \ \ scriptingAPI.\mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i_a00f762aefe81bfdf3f6c9cc5b10ee15b}{RegisterLua}}();}
 \DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00057}00057\ }
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ project.prePhysicsUpdate();}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ project.physicsUpdate();}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ project.postPhysicsUpdate();}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00061}00061\ }
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ renderer.\mbox{\hyperlink{class_techstorm_1_1_renderer_ab36d231a2601557ac2e475f7195cf7e9}{texture}}(renderer.\mbox{\hyperlink{class_techstorm_1_1_renderer_ad4ac9f1b3630a699febce1c07187753d}{mCamera}});}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ renderer.\mbox{\hyperlink{class_techstorm_1_1_renderer_a6b465cdcb206cc609273c427472f1f91}{render}}(renderer.\mbox{\hyperlink{class_techstorm_1_1_renderer_ad4ac9f1b3630a699febce1c07187753d}{mCamera}});}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ is\ here\ because\ it\ reduces\ CPU\ consumption}}
-\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ std::this\_thread::yield();}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00058}00058\ \ \ \ \ \mbox{\hyperlink{application_2main_8cpp_aa966620e1cb032bd393c9bf429f7912f}{InitWindow}}(decorations);}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00060}00060\ \ \ \ \ project.init(argc,\ argv);}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00061}00061\ \ \ \ \ project.postInit();}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00062}00062\ \ \ \ \ DisableCursor();}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00063}00063\ \ \ \ \ SetTargetFPS(decorations.\mbox{\hyperlink{struct_techstorm_1_1_window_decorations_a06c54d45bb16b660ccb1ffabd71e7291}{targetFPS}});}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{while}\ (!WindowShouldClose())\ \{}
+\DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{application_2main_8cpp_a383a924c3fb3bd7455a424b2a4e8d969}{HandleFrame}}(project);}
 \DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00067}00067\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00068}00068\ }
 \DoxyCodeLine{\Hypertarget{application_2main_8cpp_source_l00069}00069\ \ \ \ \ project.cleanup(0);}

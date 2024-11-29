@@ -3,12 +3,19 @@
 	<version>1.0.0.0</version>
 	<name>TestMod</name>
 	<description>This is a TestMod</description>
+	<author>Example Mod Author</author>
 	<tags>
 		<tag>Test</tag>
 	</tags>
 	<files>
-		<scripts type="lua">
-			
+		<scripts lang="lua">
+			<!--Example client script, see the documentation on modding for more info-->
+			<script>
+				
+				<name>ClientTestScript</name>
+				<file>scripts/client/TestScript.lua</file>
+				<when>0</when>
+			</script>
 		</scripts>
 
 	</files>

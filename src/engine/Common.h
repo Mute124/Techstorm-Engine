@@ -35,6 +35,7 @@ namespace Techstorm {
 	using std::this_thread::sleep_for;
 	using std::chrono::milliseconds;
 	using std::chrono::seconds;
+	using std::unordered_map;
 
 	/*/// <summary>
 	/// Represents a 3D vector. It will wrap raylib's Vector3 and Jolt's RVec3 to allow seamless integration. This also wraps raylib's vector math functions.
@@ -492,8 +493,9 @@ namespace Techstorm {
 		}
 	};*/
 
-/// This is a module for haptic experiences (ie. controller rumble) and helps make more immersive experiences. 
-/// \todo Add more haptic features, like monitor flashing and such.
+
+	/// This is a module for haptic experiences (ie. controller rumble) and helps make more immersive experiences. 
+	/// \todo Add more haptic features, like monitor flashing and such.
 #ifdef TS_ENABLE_HAPTICS
 
 	/// <summary>

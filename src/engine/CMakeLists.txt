@@ -61,10 +61,16 @@ set(ENGINE_SOURCES
     # Modding
     "modding/ScriptingAPI.h"
     "modding/ScriptingAPI.cpp"
+    "modding/ModLoader.h"
+    "modding/ModLoader.cpp"
+    "modding/Mod.h"
+    "modding/Mod.cpp"
 
     # Debugging
     "EReturnCode.h"
     "dbg/Logging.h" 
+    "dbg/Debugging.h"
+    "dbg/Errors.h"
 
     # Game Tools
     "world/world.h" 

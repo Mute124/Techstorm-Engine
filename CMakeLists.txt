@@ -16,7 +16,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # The version of CPM to install if it is not already installed
 set(CPM_INSTALL_VERSION 0.40.2)
-
 # Output directories
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib") # Static libraries
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin") # Shared libraries (.so/.dll)

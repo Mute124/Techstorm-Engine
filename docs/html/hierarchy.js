@@ -32,7 +32,8 @@ var hierarchy =
     [ "GridCell", "d4/d3c/struct_grid_cell.html", null ],
     [ "IGameObject", null, [
       [ "Techstorm::GameObject", "d4/de0/class_techstorm_1_1_game_object.html", [
-        [ "Techstorm::PlaneObject", "da/d48/class_techstorm_1_1_plane_object.html", null ]
+        [ "Techstorm::PlaneObject", "da/d48/class_techstorm_1_1_plane_object.html", null ],
+        [ "Terrain", "d1/dee/class_terrain.html", null ]
       ] ],
       [ "Techstorm::abstract< K, D, T >", "d6/d34/class_techstorm_1_1abstract.html", null ]
     ] ],
@@ -44,6 +45,8 @@ var hierarchy =
       [ "Project", "d9/d6e/class_project.html", null ]
     ] ],
     [ "MarchingCubes", "dc/dbe/class_marching_cubes.html", null ],
+    [ "Techstorm::Mod", "d3/d3c/class_techstorm_1_1_mod.html", null ],
+    [ "Techstorm::ModLoader", "da/d6d/class_techstorm_1_1_mod_loader.html", null ],
     [ "JPH::ObjectLayerPairFilter", null, [
       [ "ObjectLayerPairFilterImpl", "de/d9a/class_object_layer_pair_filter_impl.html", null ],
       [ "Techstorm::ObjectLayerPairFilterImpl", "d9/d0b/class_techstorm_1_1_object_layer_pair_filter_impl.html", null ]
@@ -84,7 +87,6 @@ var hierarchy =
     [ "Techstorm::Singleton< TechstormEngine >", "d5/d55/class_techstorm_1_1_singleton.html", [
       [ "Techstorm::TechstormEngine", "d0/de6/class_techstorm_1_1_techstorm_engine.html", null ]
     ] ],
-    [ "Terrain", "d1/dee/class_terrain.html", null ],
     [ "TerrainSector", "d4/d42/class_terrain_sector.html", null ],
     [ "Terrain::TriangleStruct", "da/d89/struct_terrain_1_1_triangle_struct.html", null ],
     [ "Techstorm::Vec2", "d4/d88/struct_techstorm_1_1_vec2.html", null ],

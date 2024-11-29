@@ -2,12 +2,17 @@
 
 void Techstorm::GameObjectRegistry::addGameObject(GameObject* gameObject)
 {
+	std::cout << "Pushing GameObject of type " << typeid(*gameObject).name() << " to GameObjectRegistry" << std::endl;
 	if (gameObject != nullptr) {
 		for (auto& gate : mGameObjectsGateSink) {
 			gate->process(gameObject);
 		}
 
 		this->mGameObjectsSink.push_back(gameObject);
+		std::cout << "GameObjectRegistry::addGameObject: GameObject added" << std::endl;
+	}
+	else {
+		std::cout << "GameObjectRegistry::addGameObject: GameObject is null" << std::endl;
 	}
 }
 void Techstorm::GameObjectRegistry::addGameObjectGate(IGameObjectGate* gameObjectGate) {
@@ -26,6 +31,6 @@ void Techstorm::GameObjectRegistry::update()
 void Techstorm::GameObjectRegistry::render()
 {
 	for (auto& obj : this->mGameObjectsSink) {
-		obj->render();
+		obj->texture();
 	}
 }
