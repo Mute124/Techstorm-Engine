@@ -7,6 +7,10 @@
 #include <project.h>
 #include <raylib.h>
 #include <thread>
+
+
+
+
 using namespace Techstorm;
 
 void InitWindow(WindowDecorations& decorations) {
@@ -40,6 +44,7 @@ void HandleFrame(PROJECT_TYPENAME& project) {
 	std::this_thread::yield();
 }
 
+
 int main(int argc, char* argv[]) {
 	PROJECT_TYPENAME project = PROJECT_TYPENAME();
 	project.preInit();
@@ -60,6 +65,8 @@ int main(int argc, char* argv[]) {
 	project.init(argc, argv);
 	project.postInit();
 	DisableCursor();
+
+
 	SetTargetFPS(decorations.targetFPS);
 
 	while (!WindowShouldClose()) {

@@ -48,7 +48,7 @@ void Techstorm::Renderer::texture(GameCamera& cam)
 	BeginMode3D(cam.getCameraData());
 #endif
 
-	mGameObjects.render();
+	mGameObjects.texture();
 	DrawCube(Vector3{ 0.0f, 0.0f, 0.0f }, 1.0f, 1.0f, 1.0f, RED);
 #ifdef TS_RENDERER_2D
 #else
@@ -99,6 +99,7 @@ void Techstorm::Renderer::render3D(GameCamera& cam)
 
 	BeginDrawing();
 	drawFBO();
+	mGameObjects.render();
 	EndDrawing();
 }
 

@@ -27,6 +27,8 @@ set(ENGINE_SOURCES
     "renderer/objects/PlaneObject.h"
     "renderer/IGameObjectGate.h"
     "renderer/WindowDecorations.h"
+    "renderer/GameUI.h"
+    "renderer/GameUI.cpp"
 
     # Utils
     "Utils/Singleton.h" 
@@ -102,7 +104,8 @@ target_link_libraries(Techstorm PUBLIC
     sol2::sol2
     Angelscript::angelscript
     eventpp::eventpp
-    
+    rmlui::rmlui
+    rmlui_DEPS_TARGET
 )
 
 # Set output name for Windows/Linux

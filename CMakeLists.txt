@@ -104,6 +104,8 @@ find_package(Angelscript REQUIRED)
 find_package(sol2 REQUIRED)
 find_package(eventpp REQUIRED)
 find_package(SDL2 REQUIRED CONFIG)
+find_package(rmlui REQUIRED)
+
 
 
 set(DOUBLE_PRECISION OFF)
@@ -120,7 +122,7 @@ set(USE_LZCNT ON)
 set(USE_TZCNT ON)
 set(USE_F16C ON)
 set(USE_FMADD ON)
-
+set(RMLUI_SAMPLES ON CACHE BOOL "" FORCE)
 
 
 # Include subdirectories

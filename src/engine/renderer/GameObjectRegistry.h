@@ -36,6 +36,12 @@ namespace Techstorm {
 		/// </summary>
 		void render();
 
+		void texture() {
+			for (auto& obj : this->mGameObjectsSink) {
+				obj->texture();
+			}
+		}
+
 	private:
 		std::vector<GameObject*> mGameObjectsSink;
 		std::vector<IGameObjectGate*> mGameObjectsGateSink;

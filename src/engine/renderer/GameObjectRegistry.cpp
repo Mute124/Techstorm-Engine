@@ -31,6 +31,6 @@ void Techstorm::GameObjectRegistry::update()
 void Techstorm::GameObjectRegistry::render()
 {
 	for (auto& obj : this->mGameObjectsSink) {
-		obj->texture();
+		obj->render();
 	}
 }
