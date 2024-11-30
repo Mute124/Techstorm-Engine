@@ -27,6 +27,11 @@ void InitWindow(WindowDecorations& decorations) {
 	SetWindowIcons(&icon, 1);
 }
 
+void InitScripting(ScriptingAPI& scriptingAPI, PROJECT_TYPENAME& project) {
+	scriptingAPI.InitializeScripting(project.getLuaLibraries(), project.getLuaFunctions());
+	scriptingAPI.RegisterLua();
+}
+
 void HandleFrame(PROJECT_TYPENAME& project) {
 	project.getRenderer().update();
 
@@ -70,14 +75,13 @@ int main(int argc, char* argv[]) {
 	
 	ScriptingAPI scriptingAPI;
 
-	scriptingAPI.InitializeScripting(project.getLuaLibraries(), project.getLuaFunctions());
-	scriptingAPI.RegisterLua();
+	InitScripting(scriptingAPI, project);
 
 	InitWindow(decorations);
 
 	project.init(argc, argv);
 	project.postInit();
-	DisableCursor();
+	
 
 	/*// Initializes the shell which provides common functionality used by the included samples.
 	if (!Shell::Initialize()) {
