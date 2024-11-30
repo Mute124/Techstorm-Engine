@@ -103,8 +103,11 @@ var menudata={children:[
 {text:"g",url:"functions_vars.html#index_g"},
 {text:"h",url:"functions_vars.html#index_h"},
 {text:"i",url:"functions_vars.html#index_i"},
+<<<<<<< HEAD
 {text:"k",url:"functions_vars.html#index_k"},
 {text:"l",url:"functions_vars.html#index_l"},
+=======
+>>>>>>> 54653e5aab996b3ca5dfae6c481ea281d8cba5dc
 {text:"m",url:"functions_vars.html#index_m"},
 {text:"n",url:"functions_vars.html#index_n"},
 {text:"o",url:"functions_vars.html#index_o"},

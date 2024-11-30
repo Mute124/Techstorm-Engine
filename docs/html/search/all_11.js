@@ -1,6 +1,7 @@
 var searchData=
 [
   ['scale_0',['scale',['../d6/d34/class_techstorm_1_1abstract.html#a9b45c16a8ff92b5dede7255391a01d9b',1,'Techstorm::abstract']]],
+<<<<<<< HEAD
   ['scaley_1',['scaleY',['../d1/dee/class_terrain.html#a2f3f1479e2bd7980efe3947bf1fb5dd7',1,'Terrain']]],
   ['screen_5fheight_2',['screen_height',['../da/d9c/_prototyping_terrain_8h.html#a6974d08a74da681b3957b2fead2608b8',1,'SCREEN_HEIGHT:&#160;PrototypingTerrain.h'],['../da/da6/_chunk_testing_8h.html#a6974d08a74da681b3957b2fead2608b8',1,'SCREEN_HEIGHT:&#160;ChunkTesting.h']]],
   ['screen_5fwidth_3',['screen_width',['../da/d9c/_prototyping_terrain_8h.html#a2cd109632a6dcccaa80b43561b1ab700',1,'SCREEN_WIDTH:&#160;PrototypingTerrain.h'],['../da/da6/_chunk_testing_8h.html#a2cd109632a6dcccaa80b43561b1ab700',1,'SCREEN_WIDTH:&#160;ChunkTesting.h']]],
@@ -49,4 +50,34 @@ var searchData=
   ['successful_5foperation_5fwith_5fcaught_5fexception_46',['SUCCESSFUL_OPERATION_WITH_CAUGHT_EXCEPTION',['../d4/d26/namespace_techstorm.html#ab0981a062221a3d61fdce049730b3e79aa39792c4fe2be6d4b965945c0e47de5e',1,'Techstorm']]],
   ['successful_5foperation_5fwith_5fwarning_47',['SUCCESSFUL_OPERATION_WITH_WARNING',['../d4/d26/namespace_techstorm.html#ab0981a062221a3d61fdce049730b3e79a580f5f107dba3aaffb9cd457c554977a',1,'Techstorm']]],
   ['system_20architecture_48',['File System Architecture',['../index.html#file-system-architecture',1,'']]]
+=======
+  ['scriptingapi_2ecpp_1',['ScriptingAPI.cpp',['../d0/d11/_scripting_a_p_i_8cpp.html',1,'']]],
+  ['scriptingapi_2eh_2',['ScriptingAPI.h',['../dc/d41/_scripting_a_p_i_8h.html',1,'']]],
+  ['set_3',['set',['../d7/d44/class_techstorm_1_1_globals_container.html#ae01848f20f2ed641f2616fc33bd0faa7',1,'Techstorm::GlobalsContainer::set(const std::string &amp;key, const T &amp;value)'],['../d7/d44/class_techstorm_1_1_globals_container.html#aa042c3377878ebbc77751e870a8c46c4',1,'Techstorm::GlobalsContainer::set(const std::string &amp;key, const std::any &amp;value)']]],
+  ['setcameradata_4',['setCameraData',['../d0/db5/class_techstorm_1_1_game_camera.html#aa471cc33035a5c7cb28eff0d31955563',1,'Techstorm::GameCamera']]],
+  ['setfovy_5',['setFovy',['../d0/db5/class_techstorm_1_1_game_camera.html#acf366282b572d91189f4b74f0bfd8c2b',1,'Techstorm::GameCamera']]],
+  ['setglobal_6',['SetGlobal',['../d4/d26/namespace_techstorm.html#acbd4313148ac66f22420becf6668fc8d',1,'Techstorm']]],
+  ['setposition_7',['setPosition',['../d0/db5/class_techstorm_1_1_game_camera.html#aa96086062c165a7a9dad078881e07b0b',1,'Techstorm::GameCamera']]],
+  ['setproject_8',['setProject',['../d6/d34/class_techstorm_1_1abstract.html#aba25eb9fe166bd646e7416a15cd6c100',1,'Techstorm::abstract']]],
+  ['setprojection_9',['setProjection',['../d0/db5/class_techstorm_1_1_game_camera.html#a63ff287e239c794a9324626e9fd37b8e',1,'Techstorm::GameCamera']]],
+  ['setprojectreference_10',['setProjectReference',['../db/dc4/class_techstorm_1_1abstract_1_1_project_reference.html#a9c44bf1abb52d594ec4f1b8591558e41',1,'Techstorm::abstract::ProjectReference']]],
+  ['setrelationship_11',['setRelationship',['../d3/d51/class_techstorm_1_1_object_l_p_f_1_1_l_p_f_relationships.html#a6e4a34e7840ae8cb5f4c0bd3e6d809ae',1,'Techstorm::ObjectLPF::LPFRelationships']]],
+  ['settarget_12',['setTarget',['../d0/db5/class_techstorm_1_1_game_camera.html#a73fd27f999cdea54f74a60bc50d4a978',1,'Techstorm::GameCamera']]],
+  ['settings_13',['settings',['../d6/d34/class_techstorm_1_1abstract.html#a4c1599f2a02023b0fd5e4880b371b965',1,'Techstorm::abstract']]],
+  ['setup_14',['setUp',['../d0/db5/class_techstorm_1_1_game_camera.html#af08a1770b367556170cd7854acbf790f',1,'Techstorm::GameCamera']]],
+  ['setwindowdecorations_15',['setWindowDecorations',['../d6/d34/class_techstorm_1_1abstract.html#aa88dc54c1571ea9c555e6438e851b517',1,'Techstorm::abstract']]],
+  ['shouldclose_16',['shouldClose',['../da/d10/class_techstorm_1_1_window.html#a461329f275325be87a740208fef6a909',1,'Techstorm::Window']]],
+  ['shouldcollide_17',['shouldcollide',['../d3/d51/class_techstorm_1_1_object_l_p_f_1_1_l_p_f_relationships.html#a0484c704cdae1d792108c56d8b497158',1,'Techstorm::ObjectLPF::LPFRelationships::ShouldCollide()'],['../dc/d2b/class_techstorm_1_1_object_l_p_f.html#a93b20454ad1ee73ccde3f69606946d44',1,'Techstorm::ObjectLPF::ShouldCollide()'],['../d3/d19/class_techstorm_1_1_object_vs_broad_phase_l_f.html#a4323c1f5316bcdccb4d6cfc3de060d15',1,'Techstorm::ObjectVsBroadPhaseLF::ShouldCollide()']]],
+  ['singleton_18',['Singleton',['../d5/d55/class_techstorm_1_1_singleton.html',1,'Techstorm']]],
+  ['singleton_2eh_19',['Singleton.h',['../de/dec/_singleton_8h.html',1,'']]],
+  ['singleton_3c_20d_20_3e_20',['Singleton&lt; D &gt;',['../d5/d55/class_techstorm_1_1_singleton.html',1,'Techstorm']]],
+  ['singleton_3c_20globalscontainer_20_3e_21',['Singleton&lt; GlobalsContainer &gt;',['../d5/d55/class_techstorm_1_1_singleton.html',1,'Techstorm']]],
+  ['singleton_3c_20projectreference_20_3e_22',['Singleton&lt; ProjectReference &gt;',['../d5/d55/class_techstorm_1_1_singleton.html',1,'Techstorm']]],
+  ['singleton_3c_20techstormengine_20_3e_23',['Singleton&lt; TechstormEngine &gt;',['../d5/d55/class_techstorm_1_1_singleton.html',1,'Techstorm']]],
+  ['start_24',['start',['../d6/d34/class_techstorm_1_1abstract.html#ad5427abdf676b8cafbc8892231d609f7',1,'Techstorm::abstract']]],
+  ['stop_25',['stop',['../d6/d34/class_techstorm_1_1abstract.html#afdc02bf2b0df014965f798433da7bf82',1,'Techstorm::abstract']]],
+  ['successful_5foperation_26',['SUCCESSFUL_OPERATION',['../d4/d26/namespace_techstorm.html#ab0981a062221a3d61fdce049730b3e79a8a95d44f1a581d3abec3a3a1d6f92fe1',1,'Techstorm']]],
+  ['successful_5foperation_5fwith_5fcaught_5fexception_27',['SUCCESSFUL_OPERATION_WITH_CAUGHT_EXCEPTION',['../d4/d26/namespace_techstorm.html#ab0981a062221a3d61fdce049730b3e79aa39792c4fe2be6d4b965945c0e47de5e',1,'Techstorm']]],
+  ['successful_5foperation_5fwith_5fwarning_28',['SUCCESSFUL_OPERATION_WITH_WARNING',['../d4/d26/namespace_techstorm.html#ab0981a062221a3d61fdce049730b3e79a580f5f107dba3aaffb9cd457c554977a',1,'Techstorm']]]
+>>>>>>> 54653e5aab996b3ca5dfae6c481ea281d8cba5dc
 ];

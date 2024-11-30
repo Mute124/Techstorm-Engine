@@ -1,4 +1,5 @@
 #include "Common.h"
+<<<<<<< HEAD
 #include <iostream>
 #ifdef TS_ENABLE_HAPTICS
 #ifdef WIN32
@@ -42,3 +43,5 @@ void Techstorm::StopRumblingController(int controllerIndex)
 }
 
 #endif
+=======
+>>>>>>> 54653e5aab996b3ca5dfae6c481ea281d8cba5dc

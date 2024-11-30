@@ -96,7 +96,6 @@ CPMAddPackage(
         "BUILD_SHARED_LIBS=ON"
 )
 
-
 # find_package(ZLIB REQUIRED)
 find_package(joltphysics REQUIRED)
 find_package(libconfig REQUIRED)

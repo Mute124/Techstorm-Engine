@@ -1,4 +1,5 @@
 #include <Common.h>
+<<<<<<< HEAD
 #include <modding/ScriptingAPI.h>
 #include <renderer/Renderer.h>
 #include <renderer/WindowDecorations.h>
@@ -64,6 +65,23 @@ public:
 };*/
 
 int main(int argc, char* argv[]) {
+=======
+#include <crtdbg.h>
+#include <modding/ScriptingAPI.h>
+#include <project.h>
+#include <raylib.h>
+#include <renderer/Renderer.h>
+#include <renderer/WindowDecorations.h>
+
+int main(int argc, char* argv[]) {
+#ifdef _DEBUG
+	// Enable leak detection
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+#endif
+
+	using namespace Techstorm;
+
+>>>>>>> 54653e5aab996b3ca5dfae6c481ea281d8cba5dc
 	PROJECT_TYPENAME project = PROJECT_TYPENAME();
 	project.preInit();
 
@@ -75,9 +93,25 @@ int main(int argc, char* argv[]) {
 	
 	ScriptingAPI scriptingAPI;
 
+<<<<<<< HEAD
 	InitScripting(scriptingAPI, project);
 
 	InitWindow(decorations);
+=======
+	ScriptingAPI scriptingAPI;
+
+	scriptingAPI.InitializeScripting(project.getLuaLibraries(), project.getLuaFunctions());
+	scriptingAPI.RegisterLua();
+
+	InitWindow(decorations.width, decorations.height, decorations.title);
+>>>>>>> 54653e5aab996b3ca5dfae6c481ea281d8cba5dc
+
+	const char* iconPath = TextFormat("%s%s", TS_ASSET_DIR.c_str(), decorations.icon);
+
+	Image icon = LoadImage(iconPath);
+	ImageFormat(&icon, PIXELFORMAT_UNCOMPRESSED_R8G8B8A8);
+
+	SetWindowIcons(&icon, 1);
 
 	project.init(argc, argv);
 	project.postInit();

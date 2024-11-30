@@ -28,7 +28,11 @@ namespace Techstorm {
 		WindowDecorations mWindowDecorations;
 		LuaLibraryRegistry mLuaLibraries;
 		LuaFunctionRegistry mLuaFunctions;
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> 54653e5aab996b3ca5dfae6c481ea281d8cba5dc
 		/// <summary>
 		/// Represents a polymorphic singleton reference to the user's project instance through a pointer of Techstorm::IProject. This is
 		/// mandatory for Techstorm to run the user's engine.
@@ -48,7 +52,11 @@ namespace Techstorm {
 		GameSettings settings;
 
 		/// <summary>
+<<<<<<< HEAD
 		/// Returns the currently active libraries for lua.
+=======
+		/// Gets the lua libraries.
+>>>>>>> 54653e5aab996b3ca5dfae6c481ea281d8cba5dc
 		/// </summary>
 		/// <returns>A reference to mLuaLibraries</returns>
 		LuaLibraryRegistry& getLuaLibraries() { return mLuaLibraries; }
@@ -86,9 +94,17 @@ namespace Techstorm {
 		template<typename T>
 		void setProject(T* project);
 
+<<<<<<< HEAD
 		// This should contain what files need to be loaded when registered and the functions to load certain extensions.
 		virtual void setupFileRegistryTargets() {
 			
+=======
+		/// <summary>
+		/// This is the first function that will be called on startup. This is empty because it is an optional feature but is highly reccomended to clearly outline initialization phases.
+		/// </summary>
+		/// <inheritdoc />
+		virtual void preInit() {
+>>>>>>> 54653e5aab996b3ca5dfae6c481ea281d8cba5dc
 		}
 
 		/// <summary>

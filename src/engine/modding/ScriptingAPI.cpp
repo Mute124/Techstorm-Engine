@@ -1,4 +1,5 @@
 #include "ScriptingAPI.h"
+<<<<<<< HEAD
 #include "../conf/Config.h"
 /// <summary>
 /// Initializes the scripting API.
@@ -37,3 +38,5 @@ int Techstorm::ScriptingAPI::RegisterAngelScript()
 {
 	return 0;
 }
+=======
+>>>>>>> 54653e5aab996b3ca5dfae6c481ea281d8cba5dc

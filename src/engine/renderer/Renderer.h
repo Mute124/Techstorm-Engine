@@ -5,7 +5,10 @@
 
 #include "GameObjectRegistry.h"
 #include "GameCamera.h"
+<<<<<<< HEAD
 
+=======
+>>>>>>> 54653e5aab996b3ca5dfae6c481ea281d8cba5dc
 
 
 #include <raylib.h>
@@ -94,8 +97,14 @@ namespace Techstorm {
 		RenderTexture2D mScreenBuffer;
 		Color mBackgroundColor = BLACK;
 		Color mFBOTint = WHITE;
+<<<<<<< HEAD
 		
 		
+=======
+		GameCamera mCamera;
+
+
+>>>>>>> 54653e5aab996b3ca5dfae6c481ea281d8cba5dc
 #ifdef TS_RENDERER_2D
 		/// <summary>
 		/// Renders the 2d scene.

@@ -93,7 +93,11 @@ void Techstorm::Renderer::render2D(GameCamera& cam)
 #else
 void Techstorm::Renderer::render3D(GameCamera& cam)
 {
+<<<<<<< HEAD
 	//UpdateCamera(&cam.mCameraData, CAMERA_FIRST_PERSON);
+=======
+	UpdateCamera(&cam.mCameraData, CAMERA_FIRST_PERSON);
+>>>>>>> 54653e5aab996b3ca5dfae6c481ea281d8cba5dc
 
 	//texture(cam);
 

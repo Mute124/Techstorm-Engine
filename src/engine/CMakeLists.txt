@@ -19,8 +19,16 @@ set(ENGINE_SOURCES
     "renderer/Color.h" 
     "renderer/GameObject.h" 
     "renderer/GameObject.cpp"
+<<<<<<< HEAD
     "renderer/GameCamera.h" 
     "renderer/GameCamera.cpp" 
+=======
+    "input/Input.h" 
+    "math/Vector.cpp" 
+    "renderer/GameCamera.h" 
+    "renderer/GameCamera.cpp" 
+    "Common.h" 
+>>>>>>> 54653e5aab996b3ca5dfae6c481ea281d8cba5dc
     "renderer/RenderLayer.h" 
     "renderer/GameObjectRegistry.h"
     "renderer/GameObjectRegistry.cpp" 

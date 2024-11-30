@@ -1,5 +1,6 @@
 var searchData=
 [
+<<<<<<< HEAD
   ['mat_0',['mat',['../d7/d58/class_chunk.html#ab93e7c959b06604d3fa7ecd085006d35',1,'Chunk']]],
   ['mcamera_1',['mCamera',['../d4/d22/class_techstorm_1_1_renderer.html#ad4ac9f1b3630a699febce1c07187753d',1,'Techstorm::Renderer']]],
   ['mcameradata_2',['mCameraData',['../d0/db5/class_techstorm_1_1_game_camera.html#a2a3d338485c5db7bf490f49fe5eec73e',1,'Techstorm::GameCamera']]],
@@ -18,4 +19,7 @@ var searchData=
   ['mphysicssystem_15',['mPhysicsSystem',['../db/db4/class_physics_engine.html#a7ff9b3b709ca5b8012dd9631646cff63',1,'PhysicsEngine']]],
   ['mrenderer_16',['mRenderer',['../d6/d34/class_techstorm_1_1abstract.html#a38b8d4b7fc1d5e7b193d098f2dc99c5f',1,'Techstorm::abstract']]],
   ['mwindowdecorations_17',['mWindowDecorations',['../d6/d34/class_techstorm_1_1abstract.html#a9308944fbd7de798a5c8e9e987600db9',1,'Techstorm::abstract']]]
+=======
+  ['up_0',['up',['../dc/d3d/struct_techstorm_1_1_camera_data.html#a3929c520ff1bb4fab9a9ea2f7ed150b5',1,'Techstorm::CameraData']]]
+>>>>>>> 54653e5aab996b3ca5dfae6c481ea281d8cba5dc
 ];

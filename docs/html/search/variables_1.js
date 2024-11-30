@@ -1,5 +1,6 @@
 var searchData=
 [
+<<<<<<< HEAD
   ['camera_0',['camera',['../d1/dee/class_terrain.html#aee103207204dd4317c1dd140a9608f76',1,'Terrain::camera'],['../da/da6/_chunk_testing_8h.html#a2008f4ab70b5e4104c2ca43932536ddf',1,'camera:&#160;ChunkTesting.h'],['../da/d9c/_prototyping_terrain_8h.html#a2008f4ab70b5e4104c2ca43932536ddf',1,'camera:&#160;PrototypingTerrain.h']]],
   ['cdirectoryname_1',['cDirectoryName',['../d4/d26/namespace_techstorm.html#ab97f45c99b730373b3122f27e49f3756',1,'Techstorm']]],
   ['cfunction_2',['cFunction',['../da/d2c/struct_techstorm_1_1_exported_function.html#aa41164dbac30d6d1050fdca0ceb651d2',1,'Techstorm::ExportedFunction']]],
@@ -14,4 +15,7 @@ var searchData=
   ['colors_11',['colors',['../d1/dee/class_terrain.html#a3577f2539a2a9eae8ded49ec5a3ffc66',1,'Terrain']]],
   ['csamplecount_12',['cSampleCount',['../d1/dee/class_terrain.html#afcc05e2ab2a7b457361aef5f7a64b19e',1,'Terrain']]],
   ['cubevao_13',['cubeVAO',['../d7/d58/class_chunk.html#aa09b0010e6644769b67bdc11dba25965',1,'Chunk']]]
+=======
+  ['depth_0',['depth',['../d6/d34/class_techstorm_1_1abstract.html#a93214f9f4d74e58ff7ed49e089c68213',1,'Techstorm::abstract']]]
+>>>>>>> 54653e5aab996b3ca5dfae6c481ea281d8cba5dc
 ];
