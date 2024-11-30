@@ -8,9 +8,10 @@
 #include <raylib.h>
 #include <thread>
 
-
-
-
+/*
+#include <renderer/GameUI.h>
+#include "Shell.h"
+#include <backends/RmlUi_Backend.h>*/
 using namespace Techstorm;
 
 void InitWindow(WindowDecorations& decorations) {
@@ -43,7 +44,19 @@ void HandleFrame(PROJECT_TYPENAME& project) {
 	// This is here because it reduces CPU consumption
 	std::this_thread::yield();
 }
+/*
+class UI : public GameObject {
+public:
 
+
+	Rml::Context* context = nullptr;
+	UI(Rml::Context* context) : context(context), GameObject() {
+	}
+	void render() override {
+		context->Render();
+	}
+
+};*/
 
 int main(int argc, char* argv[]) {
 	PROJECT_TYPENAME project = PROJECT_TYPENAME();
@@ -66,10 +79,40 @@ int main(int argc, char* argv[]) {
 	project.postInit();
 	DisableCursor();
 
+	/*// Initializes the shell which provides common functionality used by the included samples.
+	if (!Shell::Initialize()) {
+		std::cout << "Failed to initialize shell" << std::endl;
+		return -1;
+	}
+
+
+
+	Rml::Context* context = Rml::CreateContext("main", Rml::Vector2i(decorations.width, decorations.height));
+	if (!context)
+	{
+		Rml::Shutdown();
+		
+		return -1;
+	}
+	// The RmlUi debugger is optional but very useful. Try it by pressing 'F8' after starting this sample.
+	Rml::Debugger::Initialise(context);
+
+	// Fonts should be loaded before any documents are loaded.
+	Shell::LoadFonts();
+
+	// Load and show the demo document.
+	if (Rml::ElementDocument* document = context->LoadDocument("demo.rml"))
+		document->Show();
+	else 
+		std::cout << "Failed to load demo document" << std::endl;
+
+
+	project.getRenderer().addGameObject(new UI(context));*/
 
 	SetTargetFPS(decorations.targetFPS);
 
 	while (!WindowShouldClose()) {
+		//context->Update();
 		HandleFrame(project);
 	}
 

@@ -99,6 +99,7 @@ void Techstorm::Renderer::render3D(GameCamera& cam)
 
 	BeginDrawing();
 	drawFBO();
+
 	mGameObjects.render();
 	EndDrawing();
 }

@@ -1,5 +1,10 @@
 #pragma once
 #include "../Common.h"
+#include <string>
+#include <type_traits>
+
+#ifdef TS_ENABLE_HTML_UI
+
 #include <RmlUi/Config/Config.h>
 #include <RmlUi/Core.h>
 #include <RmlUi/Core/FileInterface.h>
@@ -8,12 +13,11 @@
 #include <RmlUi/Core/Types.h>
 #include <RmlUi/Core/Vertex.h>
 #include <RmlUi/Debugger.h>
-#include <string>
-#include <type_traits>
 
+#endif // TS_ENABLE_HTML_UI
 
 namespace Techstorm {
-
+#ifdef TS_ENABLE_HTML_UI
 	using UIVertex = Rml::Vertex;
 	using FileHandle = Rml::FileHandle;
 	using Rml::TextureHandle;
@@ -50,7 +54,6 @@ namespace Techstorm {
 		bool seek(FileHandle file, long offset, int origin) { return Seek(file, offset, origin); }
 		size_t tell(FileHandle file) { return Tell(file); }
 
-	private:
 		string mRootPath;
 
 		// These functions are private because they will be wrapped by functions that follow code conventions
@@ -59,16 +62,6 @@ namespace Techstorm {
 		size_t Read(void* buffer, size_t size, Rml::FileHandle file) override;
 		bool Seek(Rml::FileHandle file, long offset, int origin) override;
 		size_t Tell(Rml::FileHandle file) override;
-	};
-	
-	template<FileInterfaceType T>
-	class IGameUI abstract {
-	public:
-		IGameUI() = default;
-		virtual ~IGameUI() = default;
-
-		virtual Rml::SystemInterface* getFileInterface() = 0;
-		virtual void init() = 0;
 	};
 
 	class UISystemInterface : public Rml::SystemInterface {
@@ -83,22 +76,40 @@ namespace Techstorm {
 
 
 	};
+	template<FileInterfaceType T>
+	class IGameUI abstract {
+	public:
+		IGameUI() = default;
+		virtual ~IGameUI() = default;
+
+		virtual GameUIFileInterface* getFileInterface() = 0;
+		virtual UISystemInterface* getSystemInterface() = 0;
+		virtual void init() = 0;
+	};
+
 
 	class GameUI : public IGameUI<Rml::FileInterface> {
 	public:
-		UISystemInterface* getFileInterface() override;
+		GameUIFileInterface* getFileInterface() override;
+		UISystemInterface* getSystemInterface() override { return mSystemInterface; }
+
 		void init() override;
 
 	private:
-		UISystemInterface* mFileInterface = new UISystemInterface();
+		UISystemInterface* mSystemInterface = new UISystemInterface();
+		GameUIFileInterface* mFileInterface = new GameUIFileInterface(TS_ASSET_DIR);
 	};
 
 	template<FileInterfaceType T>
 	void InitUI(GameUIRenderer* uiRenderer, IGameUI<T>* ui) {
 		ui->init();
-
-		Rml::SetSystemInterface(ui->getFileInterface());
+		Rml::SetFileInterface(ui->getFileInterface());
+		Rml::SetSystemInterface(ui->getSystemInterface());
 		Rml::SetRenderInterface(uiRenderer);
 		Rml::Initialise();
 	}
+#endif // TS_ENABLE_HTML_UI
+
+
+
 }

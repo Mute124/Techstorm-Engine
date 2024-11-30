@@ -2,6 +2,9 @@
 #include <raylib.h>
 #include <rlgl.h>
 #include <string>
+
+#ifdef TS_ENABLE_HTML_UI
+
 #include <RmlUi/Config/Config.h>
 #include <RmlUi/Core/Core.h>
 #include <RmlUi/Core/FileInterface.h>
@@ -31,14 +34,14 @@ void Techstorm::GameUIRenderer::SetScissorRegion(int x, int y, int width, int he
 {
 }
 
-Techstorm::UISystemInterface* Techstorm::GameUI::getFileInterface()
+Techstorm::GameUIFileInterface* Techstorm::GameUI::getFileInterface()
 {
 	return mFileInterface;
 }
 
 void Techstorm::GameUI::init()
 {
-	mFileInterface = new UISystemInterface();
+	mSystemInterface = new UISystemInterface();
 }
 
 #pragma region FileInterfaceFunctions
@@ -85,3 +88,4 @@ size_t Techstorm::GameUIFileInterface::Tell(Rml::FileHandle file)
 
 #pragma endregion 
 
+#endif // TS_ENABLE_HTML_UI

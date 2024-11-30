@@ -12,6 +12,9 @@ add_executable(main_app
 	"ApplicationUtils.cpp"
 
 	${TS_MAIN_APPLICATION_RC}
+	
+    #"Shell.h"
+    #"Shell.cpp"
 )
 
 # Link to the project shared library
