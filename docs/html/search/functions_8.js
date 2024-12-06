@@ -1,10 +1,23 @@
 var searchData=
 [
-  ['layerexists_0',['layerexists',['../d6/d34/class_techstorm_1_1abstract.html#a02a6fa8f41288396db2f637d9b424d59',1,'Techstorm::abstract::layerExists()'],['../db/d5d/class_techstorm_1_1_layer_registry.html#a3ccff4d94a207eaadbf58e8eb81accb4',1,'Techstorm::LayerRegistry::layerExists(std::string key)']]],
-  ['layerregistry_1',['LayerRegistry',['../db/d5d/class_techstorm_1_1_layer_registry.html#a7ef84d35555c7efd1e6b012dd4b0ab00',1,'Techstorm::LayerRegistry']]],
-  ['loadconfigfile_2',['LoadConfigFile',['../d7/dd3/_config_8cpp.html#a95950f895d0b0a2c4eda2f1dd239704c',1,'Config.cpp']]],
-  ['loadfile_3',['loadFile',['../d5/dae/class_techstorm_1_1_file_system_registry.html#a2b61f3e169cc1c521aac5fda94081eee',1,'Techstorm::FileSystemRegistry']]],
-  ['loadmeshes_4',['loadmeshes',['../da/da6/_chunk_testing_8h.html#a563aba938007825acdba52e5c557b0e2',1,'loadMeshes(Vector3 *vertices, Vector3 *normals, Vector2 *texcoords, int numVertices, int *indices, int numTriangles):&#160;ChunkTesting.h'],['../da/d9c/_prototyping_terrain_8h.html#a563aba938007825acdba52e5c557b0e2',1,'loadMeshes(Vector3 *vertices, Vector3 *normals, Vector2 *texcoords, int numVertices, int *indices, int numTriangles):&#160;PrototypingTerrain.h']]],
-  ['lookup_5',['lookup',['../d1/dcb/class_techstorm_1_1_config_file_registry.html#a6bf4ea46f4584c131d1c82f10b530b68',1,'Techstorm::ConfigFileRegistry']]],
-  ['lookupconfig_6',['LookupConfig',['../d4/d26/namespace_techstorm.html#addbe8297c758588e97c3395d420bbfce',1,'Techstorm']]]
+  ['igameobject_0',['IGameObject',['../d6/d34/class_techstorm_1_1abstract.html#a0ed72fb77264955cbb13e298dcf92051',1,'Techstorm::abstract']]],
+  ['init_1',['init',['../db/db4/class_physics_engine.html#aabfa54a376c35880bd8a669391d22444',1,'PhysicsEngine::init()'],['../d1/dee/class_terrain.html#a639445439b7dd392bf8288b85f54be20',1,'Terrain::init()'],['../d1/dcb/class_techstorm_1_1_config_file_registry.html#a9ae55db91ba14c74d523070fb38249e6',1,'Techstorm::ConfigFileRegistry::init()'],['../d6/d34/class_techstorm_1_1abstract.html#aa6c42d61eba99c33b1d080811d8db026',1,'Techstorm::abstract::init()'],['../d5/dae/class_techstorm_1_1_file_system_registry.html#ac6438ed0f0f712b28c51182a2442201f',1,'Techstorm::FileSystemRegistry::init()'],['../d1/d87/class_techstorm_1_1_physics_engine.html#aabfa54a376c35880bd8a669391d22444',1,'Techstorm::PhysicsEngine::init()'],['../d6/d34/class_techstorm_1_1abstract.html#aa41daa77787a2c41071ba34e88c8f7b7',1,'Techstorm::abstract::init()'],['../d0/db5/class_techstorm_1_1_game_camera.html#afacfa15d0e7443d82efd3b24c8aa8440',1,'Techstorm::GameCamera::init()']]],
+  ['inithaptics_2',['InitHaptics',['../d4/d26/namespace_techstorm.html#acbc8f303afb42ae77958c4f0cc5601ba',1,'Techstorm']]],
+  ['initialize_3',['initialize',['../d4/d22/class_techstorm_1_1_renderer.html#a78370d39c27a84bb070f46ad9f025fd9',1,'Techstorm::Renderer::initialize()'],['../da/d10/class_techstorm_1_1_window.html#a54d8ad108ed853f7552517f08ad59540',1,'Techstorm::Window::initialize()'],['../d1/d5b/class_render_interface___v_k.html#aec4e0388baefa69764c997d45e4bef1d',1,'RenderInterface_VK::Initialize()'],['../d7/d0d/namespace_shell.html#afa8a9ce6af8d26bcda3757514e2c439b',1,'Shell::Initialize()'],['../d1/d62/namespace_backend.html#a3c8846fad91d184aa3a93d3cbe885100',1,'Backend::Initialize()'],['../db/d05/namespace_rml_g_l3.html#a556471062988d6c7df091fda59ddba65',1,'RmlGL3::Initialize()']]],
+  ['initializeconfigregistry_4',['InitializeConfigRegistry',['../d4/d26/namespace_techstorm.html#a2b72a42193d6d2dc6bbb26a25656da6c',1,'Techstorm']]],
+  ['initializefileregistry_5',['InitializeFileRegistry',['../d4/d26/namespace_techstorm.html#a0cdf258db7319603e2c5e39a8b18726e',1,'Techstorm']]],
+  ['initializescripting_6',['InitializeScripting',['../de/d97/class_techstorm_1_1_scripting_a_p_i.html#a59761650d84d71b91554406644e8e326',1,'Techstorm::ScriptingAPI']]],
+  ['initrenderer_7',['initRenderer',['../d6/d34/class_techstorm_1_1abstract.html#ab68fbb923a1c47d66846caa774010575',1,'Techstorm::abstract']]],
+  ['initscripting_8',['InitScripting',['../dd/d39/application_2main_8cpp.html#a06e9af07ffabb99e2fc50c15c43e3993',1,'main.cpp']]],
+  ['initwindow_9',['InitWindow',['../dd/d39/application_2main_8cpp.html#aa966620e1cb032bd393c9bf429f7912f',1,'main.cpp']]],
+  ['insert_10',['Insert',['../d0/de2/class_gfx_1_1_uniforms.html#a43e42558b7ebe5b11c7dd852e6fafb1c',1,'Gfx::Uniforms']]],
+  ['instance_11',['Instance',['../d5/d55/class_techstorm_1_1_singleton.html#a992b0c97479f1cca7c5027314207f5be',1,'Techstorm::Singleton']]],
+  ['interpolate_12',['interpolate',['../dc/dbe/class_marching_cubes.html#a7d8037a8a8a5b5c39fc723596e9bb118',1,'MarchingCubes']]],
+  ['iphysicsgameobject_13',['IPhysicsGameObject',['../d6/d34/class_techstorm_1_1abstract.html#a3e8b6f4d6d5b6928eac74465e0a62db6',1,'Techstorm::abstract']]],
+  ['iscomposing_14',['IsComposing',['../d7/df2/class_text_input_method_editor___win32.html#a2eb79c5f71412e4ffbb1b400aaf86cfd',1,'TextInputMethodEditor_Win32']]],
+  ['isculled_15',['isCulled',['../d0/dd1/class_game_object.html#a5f67e8b9f3646072bda08f2067d62b3d',1,'GameObject']]],
+  ['islayer_16',['islayer',['../d6/d34/class_techstorm_1_1abstract.html#a411f97cf451c7654b9e2ecef8efda390',1,'Techstorm::abstract::isLayer()'],['../db/d5d/class_techstorm_1_1_layer_registry.html#ab6a0fb8cac11b9cce76d6355b22d462f',1,'Techstorm::LayerRegistry::isLayer()']]],
+  ['ismaincamera_17',['isMainCamera',['../d0/db5/class_techstorm_1_1_game_camera.html#a86c8cb3d0b24f0d5980eb9d6e7c09969',1,'Techstorm::GameCamera']]],
+  ['isready_18',['isReady',['../da/d10/class_techstorm_1_1_window.html#a4499b89994a32752cfc5e546f2dc5d8c',1,'Techstorm::Window']]],
+  ['isswapchainvalid_19',['IsSwapchainValid',['../d1/d5b/class_render_interface___v_k.html#aa4f89b8b42e3b5772d62de54ab2f5b3d',1,'RenderInterface_VK']]]
 ];

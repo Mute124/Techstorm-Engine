@@ -1,10 +1,13 @@
 #include "ScriptingAPI.h"
 #include "../conf/Config.h"
+
+#ifdef TS_ENABLE_MODDING
+
 /// <summary>
 /// Initializes the scripting API.
 /// </summary>
 /// <returns>an integer value that represents the result of the operation.</returns>
-int Techstorm::ScriptingAPI::InitializeScripting(LuaLibraryRegistry const& libraries, LuaFunctionRegistry const& functions)
+int Techstorm::ScriptingAPI::initializeScripting(ScriptingLibraryRegistry const& libraries, ScriptingFunctionRegistry const& functions)
 {
 	this->mLibraries = libraries;
 	return 0;
@@ -17,7 +20,7 @@ void greet(const std::string& name, int age) {
 /// Registers the scripting API for Lua.
 /// </summary>
 /// <returns>an integer value that represents the result of the operation.</returns>
-int Techstorm::ScriptingAPI::RegisterLua()
+int Techstorm::ScriptingAPI::registerLua()
 {
 	for (auto it = std::begin(Techstorm::ScriptingAPI::mLibraries); it != std::end(Techstorm::ScriptingAPI::mLibraries); it++) {
 		this->mLua.open_libraries(*it);
@@ -33,7 +36,9 @@ int Techstorm::ScriptingAPI::RegisterLua()
 /// Registers the scripting API for AngelScript. This is just for organization sake and it could be merged with the lua version, but it wont be.
 /// </summary>
 /// <returns>an integer value that represents the result of the operation.</returns>
-int Techstorm::ScriptingAPI::RegisterAngelScript()
+int Techstorm::ScriptingAPI::registerAngelScript()
 {
 	return 0;
 }
+
+#endif

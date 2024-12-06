@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include "GameObject.h"
+#include "IGameObject.h"
 #include "../Common.h"
 #include "IGameObjectGate.h"
 
@@ -17,7 +17,7 @@ namespace Techstorm {
 		/// </summary>
 		/// <param name="gameObject">The game object pointer to add.</param>
 		/// <seealso cref="GameObject"/>
-		void addGameObject(GameObject* gameObject);
+		void addGameObject(IGameObject* gameObject);
 
 		/// <summary>
 		/// Adds a game object gate pointer of IGameObjectGate to mGameObjectsGateSink.
@@ -43,7 +43,7 @@ namespace Techstorm {
 		}
 
 	private:
-		std::vector<GameObject*> mGameObjectsSink;
+		std::vector<IGameObject*> mGameObjectsSink;
 		std::vector<IGameObjectGate*> mGameObjectsGateSink;
 
 		friend class Renderer;

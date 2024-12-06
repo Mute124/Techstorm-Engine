@@ -4,5 +4,8 @@ var searchData=
   ['circularmap_1',['CircularMap',['../d0/db8/class_circular_map.html',1,'']]],
   ['circularmap_3c_20color_20_3e_2',['CircularMap&lt; Color &gt;',['../d0/db8/class_circular_map.html',1,'']]],
   ['cmdlineargumentshandler_3',['CMDLineArgumentsHandler',['../d0/d85/class_techstorm_1_1_dev_tools_1_1_setup_tool_1_1_c_m_d_line_arguments_handler.html',1,'Techstorm::DevTools::SetupTool']]],
-  ['configfileregistry_4',['ConfigFileRegistry',['../d1/dcb/class_techstorm_1_1_config_file_registry.html',1,'Techstorm']]]
+  ['compiledfilter_4',['CompiledFilter',['../df/d66/struct_compiled_filter.html',1,'']]],
+  ['compiledgeometrydata_5',['CompiledGeometryData',['../d1/da7/struct_gfx_1_1_compiled_geometry_data.html',1,'Gfx']]],
+  ['compiledshader_6',['CompiledShader',['../db/de4/struct_compiled_shader.html',1,'']]],
+  ['configfileregistry_7',['ConfigFileRegistry',['../d1/dcb/class_techstorm_1_1_config_file_registry.html',1,'Techstorm']]]
 ];

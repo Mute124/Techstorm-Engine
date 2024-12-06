@@ -8,8 +8,10 @@ var searchData=
   ['physicsprototype_2eh_5',['PhysicsPrototype.h',['../d5/d8c/_physics_prototype_8h.html',1,'']]],
   ['planeobject_2ecpp_6',['PlaneObject.cpp',['../db/d4a/_plane_object_8cpp.html',1,'']]],
   ['planeobject_2eh_7',['PlaneObject.h',['../d9/dd7/_plane_object_8h.html',1,'']]],
-  ['project_2ecpp_8',['project.cpp',['../d8/d0f/engine_2_project_8cpp.html',1,'(Global Namespace)'],['../dc/d55/project_2_project_8cpp.html',1,'(Global Namespace)']]],
-  ['project_2eh_9',['project.h',['../d8/d7d/engine_2_project_8h.html',1,'(Global Namespace)'],['../d1/def/project_2_project_8h.html',1,'(Global Namespace)']]],
-  ['prototypephysicsterrain_2eh_10',['PrototypePhysicsTerrain.h',['../d0/d02/_prototype_physics_terrain_8h.html',1,'']]],
-  ['prototypingterrain_2eh_11',['PrototypingTerrain.h',['../da/d9c/_prototyping_terrain_8h.html',1,'']]]
+  ['platformextensions_2ecpp_8',['PlatformExtensions.cpp',['../d4/d46/_platform_extensions_8cpp.html',1,'']]],
+  ['platformextensions_2eh_9',['PlatformExtensions.h',['../df/de1/_platform_extensions_8h.html',1,'']]],
+  ['project_2ecpp_10',['project.cpp',['../d8/d0f/engine_2_project_8cpp.html',1,'(Global Namespace)'],['../dc/d55/project_2_project_8cpp.html',1,'(Global Namespace)']]],
+  ['project_2eh_11',['project.h',['../d8/d7d/engine_2_project_8h.html',1,'(Global Namespace)'],['../d1/def/project_2_project_8h.html',1,'(Global Namespace)']]],
+  ['prototypephysicsterrain_2eh_12',['PrototypePhysicsTerrain.h',['../d0/d02/_prototype_physics_terrain_8h.html',1,'']]],
+  ['prototypingterrain_2eh_13',['PrototypingTerrain.h',['../da/d9c/_prototyping_terrain_8h.html',1,'']]]
 ];

@@ -1,0 +1,119 @@
+\doxysection{Game\+UI.\+h}
+\hypertarget{_game_u_i_8h_source}{}\label{_game_u_i_8h_source}\index{C:/Dev/Techstorm-\/v5/src/engine/renderer/GameUI.h@{C:/Dev/Techstorm-\/v5/src/engine/renderer/GameUI.h}}
+\mbox{\hyperlink{_game_u_i_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}../Common.h"{}}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00006}00006\ \textcolor{preprocessor}{\#ifdef\ TS\_ENABLE\_HTML\_UI}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <RmlUi/Config/Config.h>}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <RmlUi/Core.h>}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <RmlUi/Core/FileInterface.h>}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <RmlUi/Core/Math.h>}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <RmlUi/Core/RenderInterface.h>}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <RmlUi/Core/Types.h>}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <RmlUi/Core/Vertex.h>}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <RmlUi/Debugger.h>}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00017}00017\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TS\_ENABLE\_HTML\_UI}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00019}00019\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_techstorm}{Techstorm}}\ \{}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00020}00020\ \textcolor{preprocessor}{\#ifdef\ TS\_ENABLE\_HTML\_UI}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{using\ }UIVertex\ =\ Rml::Vertex;}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{using\ }FileHandle\ =\ Rml::FileHandle;}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{using\ }Rml::TextureHandle;}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00025}00025\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{concept\ }FileInterfaceType\ =\ std::convertible\_to<T*,\ Rml::FileInterface*>;}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{class\ }GameUIRenderer\ :\ \textcolor{keyword}{public}\ Rml::RenderInterface\ \{}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Inherited\ via\ RenderInterface}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RenderGeometry(Rml::Vertex*\ vertices,\ \textcolor{keywordtype}{int}\ num\_vertices,\ \textcolor{keywordtype}{int}*\ indices,\ \textcolor{keywordtype}{int}\ num\_indices,\ Rml::TextureHandle\ texture,\ \textcolor{keyword}{const}\ Rml::Vector2f\&\ translation)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ EnableScissorRegion(\textcolor{keywordtype}{bool}\ enable)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetScissorRegion(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00043}00043\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{class\ }GameUIFileInterface\ :\ \textcolor{keyword}{public}\ Rml::FileInterface\ \{}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ GameUIFileInterface(\textcolor{keyword}{const}\ std::string\&\ root);}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \string~GameUIFileInterface()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ FileHandle\ open(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ path)\ \{\ \textcolor{keywordflow}{return}\ Open(path);\ \}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ close(FileHandle\ file)\ \{\ Close(file);\ \}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ read(\textcolor{keywordtype}{void}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ size,\ FileHandle\ file)\ \{\ \textcolor{keywordflow}{return}\ Read(buffer,\ size,\ file);\ \}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ seek(FileHandle\ file,\ \textcolor{keywordtype}{long}\ offset,\ \textcolor{keywordtype}{int}\ origin)\ \{\ \textcolor{keywordflow}{return}\ Seek(file,\ offset,\ origin);\ \}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ tell(FileHandle\ file)\ \{\ \textcolor{keywordflow}{return}\ Tell(file);\ \}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ mRootPath;}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ These\ functions\ are\ private\ because\ they\ will\ be\ wrapped\ by\ functions\ that\ follow\ code\ conventions}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ Rml::FileHandle\ Open(\textcolor{keyword}{const}\ std::string\&\ path)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Close(Rml::FileHandle\ file)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Read(\textcolor{keywordtype}{void}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ size,\ Rml::FileHandle\ file)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Seek(Rml::FileHandle\ file,\ \textcolor{keywordtype}{long}\ offset,\ \textcolor{keywordtype}{int}\ origin)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ Tell(Rml::FileHandle\ file)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00065}00065\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00067}00067\ \ \ \ \ \textcolor{keyword}{class\ }UISystemInterface\ :\ \textcolor{keyword}{public}\ Rml::SystemInterface\ \{}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00068}00068\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetElapsedTime()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ start\ =\ std::chrono::steady\_clock::now();}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ current\ =\ std::chrono::steady\_clock::now();}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<double>\ diff\ =\ current\ -\/\ start;}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ diff.count();}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00078}00078\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00079}00079\ \ \ \ \ \textcolor{keyword}{template}<FileInterfaceType\ T>}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00080}00080\ \ \ \ \ \textcolor{keyword}{class\ }IGameUI\ \textcolor{keyword}{abstract}\ \{}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00081}00081\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ IGameUI()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~IGameUI()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ GameUIFileInterface*\ getFileInterface()\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ UISystemInterface*\ getSystemInterface()\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ init()\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00088}00088\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00091}00091\ \ \ \ \ \textcolor{keyword}{class\ }GameUI\ :\ \textcolor{keyword}{public}\ IGameUI<Rml::FileInterface>\ \{}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00092}00092\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ GameUIFileInterface*\ getFileInterface()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ UISystemInterface*\ getSystemInterface()\textcolor{keyword}{\ override\ }\{\ \textcolor{keywordflow}{return}\ mSystemInterface;\ \}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ init()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00098}00098\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ UISystemInterface*\ mSystemInterface\ =\ \textcolor{keyword}{new}\ UISystemInterface();}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00100}00100\ \ \ \ \ \ \ \ \ GameUIFileInterface*\ mFileInterface\ =\ \textcolor{keyword}{new}\ GameUIFileInterface(\mbox{\hyperlink{_common_8h_a72ba4f35051f760d2253c5d175be8a7d}{TS\_ASSET\_DIR}});}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00101}00101\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00103}00103\ \ \ \ \ \textcolor{keyword}{template}<FileInterfaceType\ T>}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00104}00104\ \ \ \ \ \textcolor{keywordtype}{void}\ InitUI(GameUIRenderer*\ uiRenderer,\ IGameUI<T>*\ ui)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ ui-\/>init();}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00106}00106\ \ \ \ \ \ \ \ \ Rml::SetFileInterface(ui-\/>getFileInterface());}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00107}00107\ \ \ \ \ \ \ \ \ Rml::SetSystemInterface(ui-\/>getSystemInterface());}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00108}00108\ \ \ \ \ \ \ \ \ Rml::SetRenderInterface(uiRenderer);}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00109}00109\ \ \ \ \ \ \ \ \ Rml::Initialise();}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00110}00110\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00111}00111\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TS\_ENABLE\_HTML\_UI}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00113}00113\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8h_source_l00115}00115\ \}}
+
+\end{DoxyCode}

@@ -154,7 +154,7 @@ $(document).ready(function(){initNavTree('da/d84/_renderer_8cpp_source.html','..
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    BeginMode3D(cam.<a class="code hl_function" href="../../d0/db5/class_techstorm_1_1_game_camera.html#a8a026029361951f6de6b674d5b177e93">getCameraData</a>());</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    mGameObjects.render();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    mGameObjects.texture();</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    DrawCube(Vector3{ 0.0f, 0.0f, 0.0f }, 1.0f, 1.0f, 1.0f, RED);</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#ifdef TS_RENDERER_2D</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#else</span></div>
@@ -216,10 +216,12 @@ $(document).ready(function(){initNavTree('da/d84/_renderer_8cpp_source.html','..
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    BeginDrawing();</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    drawFBO();</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    EndDrawing();</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    mGameObjects.render();</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    EndDrawing();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="a_renderer_8h_html"><div class="ttname"><a href="../../d3/da0/_renderer_8h.html">Renderer.h</a></div></div>
 <div class="ttc" id="aclass_techstorm_1_1_game_camera_html"><div class="ttname"><a href="../../d0/db5/class_techstorm_1_1_game_camera.html">Techstorm::GameCamera</a></div><div class="ttdoc">Represents a camera wherein the world is rendered and viewed from.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d41/_game_camera_8h_source.html#l00010">GameCamera.h:10</a></div></div>
 <div class="ttc" id="aclass_techstorm_1_1_game_camera_html_a8a026029361951f6de6b674d5b177e93"><div class="ttname"><a href="../../d0/db5/class_techstorm_1_1_game_camera.html#a8a026029361951f6de6b674d5b177e93">Techstorm::GameCamera::getCameraData</a></div><div class="ttdeci">Camera3D getCameraData()</div><div class="ttdoc">Gets the camera data.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d6a/_game_camera_8cpp_source.html#l00026">GameCamera.cpp:26</a></div></div>
@@ -240,7 +242,7 @@ $(document).ready(function(){initNavTree('da/d84/_renderer_8cpp_source.html','..
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="../../dir_eedbc0f69b08006c72429a8d2b33a57d.html">renderer</a></li><li class="navelem"><a class="el" href="../../da/d84/_renderer_8cpp.html">Renderer.cpp</a></li>
-    <li class="footer">Generated on Sat Nov 30 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Dec 1 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

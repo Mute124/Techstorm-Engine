@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('d6/d34/class_techstorm_1_1abstract.htm
 </div><!--header-->
 <div class="contents">
 
-<p>This is an <b>abstract interface singleton</b> that all projects must implement and set the <em><a class="el" href="../../db/dc4/class_techstorm_1_1abstract_1_1_project_reference.html" title="Represents a polymorphic singleton reference to the user&#39;s project instance through a pointer of Tech...">ProjectReference</a></em> singleton to their project. If this boilerplate code is not done, <a class="el" href="../../d4/d26/namespace_techstorm.html">Techstorm</a> will not know what to run. In terms of functionality, this interface just holds the functions and variables that <a class="el" href="../../d4/d26/namespace_techstorm.html">Techstorm</a> will call (besides some initialization). <b>Do not directly call window code in here or your project will crash!</b>  
+<p>This is an <b>abstract interface singleton</b> that all projects must implement and set the <em><a class="el" href="../../db/dc4/class_techstorm_1_1abstract_1_1_project_reference.html" title="Represents a polymorphic singleton reference to the user&#39;s project instance through a pointer of Tech...">ProjectReference</a></em> singleton to their project. In terms of functionality, this interface just holds the functions and variables that <a class="el" href="../../d4/d26/namespace_techstorm.html">Techstorm</a> will call (besides some initialization).  
  <a href="../../d6/d34/class_techstorm_1_1abstract.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d4/da9/_engine_component_8h_source.html">EngineComponent.h</a>&gt;</code></p>
@@ -162,7 +162,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4a5949bcde32483abd8b15105a2eda10" id="r_a4a5949bcde32483abd8b15105a2eda10"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a4a5949bcde32483abd8b15105a2eda10">~ILayerRegistry</a> ()=default</td></tr>
 <tr class="separator:a4a5949bcde32483abd8b15105a2eda10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11557dafdc33521a3c5af2285f7bbe92" id="r_a11557dafdc33521a3c5af2285f7bbe92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d26/namespace_techstorm.html#af6556c4d563341def4c68414537120ed">LuaLibraryRegistry</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a11557dafdc33521a3c5af2285f7bbe92">getLuaLibraries</a> ()</td></tr>
-<tr class="memdesc:a11557dafdc33521a3c5af2285f7bbe92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the lua libraries.  <br /></td></tr>
+<tr class="memdesc:a11557dafdc33521a3c5af2285f7bbe92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the currently active libraries for lua.  <br /></td></tr>
 <tr class="separator:a11557dafdc33521a3c5af2285f7bbe92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5582088d505c0db0b4bb9dec107e7478" id="r_a5582088d505c0db0b4bb9dec107e7478"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d26/namespace_techstorm.html#aacc8d13353a5459666050b5aa6ed808c">LuaFunctionRegistry</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a5582088d505c0db0b4bb9dec107e7478">getLuaFunctions</a> ()</td></tr>
 <tr class="memdesc:a5582088d505c0db0b4bb9dec107e7478"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the lua functions.  <br /></td></tr>
@@ -298,7 +298,7 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a9b45c16a8ff92b5dede7255391a01d9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4579f8a2409ba917291c4892f784e82d" id="r_a4579f8a2409ba917291c4892f784e82d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a4579f8a2409ba917291c4892f784e82d">rotationAngle</a></td></tr>
 <tr class="separator:a4579f8a2409ba917291c4892f784e82d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e104c5d3299a8c79fff4216a1b26421" id="r_a1e104c5d3299a8c79fff4216a1b26421"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a1e104c5d3299a8c79fff4216a1b26421">tint</a> = WHITE</td></tr>
+<tr class="memitem:a1e104c5d3299a8c79fff4216a1b26421" id="r_a1e104c5d3299a8c79fff4216a1b26421"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d0b/_rml_ui___renderer___g_l3_8cpp.html#aef39ea06ec027f46e65b8280775df70aacb5feb1b7314637725a2e73bdc9f7295">Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a1e104c5d3299a8c79fff4216a1b26421">tint</a> = WHITE</td></tr>
 <tr class="separator:a1e104c5d3299a8c79fff4216a1b26421"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0fdff03123508f69b3451dbb55d666d" id="r_ae0fdff03123508f69b3451dbb55d666d"><td class="memItemLeft" align="right" valign="top">JPH::BodyID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#ae0fdff03123508f69b3451dbb55d666d">id</a></td></tr>
 <tr class="separator:ae0fdff03123508f69b3451dbb55d666d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -313,8 +313,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a5ffaf50160cf875987e8d989f326578d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a341d59f8fedff00417ed8ae9d4fc40" id="r_a0a341d59f8fedff00417ed8ae9d4fc40"><td class="memItemLeft" align="right" valign="top">std::uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a0a341d59f8fedff00417ed8ae9d4fc40">mLayerCount</a></td></tr>
 <tr class="separator:a0a341d59f8fedff00417ed8ae9d4fc40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38b8d4b7fc1d5e7b193d098f2dc99c5f" id="r_a38b8d4b7fc1d5e7b193d098f2dc99c5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d22/class_techstorm_1_1_renderer.html">Techstorm::Renderer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a38b8d4b7fc1d5e7b193d098f2dc99c5f">mRenderer</a></td></tr>
-<tr class="separator:a38b8d4b7fc1d5e7b193d098f2dc99c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66d6f10e34cf6f75bc318743ba215882" id="r_a66d6f10e34cf6f75bc318743ba215882"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d22/class_techstorm_1_1_renderer.html">Renderer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a66d6f10e34cf6f75bc318743ba215882">mRenderer</a></td></tr>
+<tr class="separator:a66d6f10e34cf6f75bc318743ba215882"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9308944fbd7de798a5c8e9e987600db9" id="r_a9308944fbd7de798a5c8e9e987600db9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d61/struct_techstorm_1_1_window_decorations.html">WindowDecorations</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a9308944fbd7de798a5c8e9e987600db9">mWindowDecorations</a></td></tr>
 <tr class="separator:a9308944fbd7de798a5c8e9e987600db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeca2999b14b92284db9c0a9bb88e355d" id="r_aeca2999b14b92284db9c0a9bb88e355d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d26/namespace_techstorm.html#af6556c4d563341def4c68414537120ed">LuaLibraryRegistry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#aeca2999b14b92284db9c0a9bb88e355d">mLuaLibraries</a></td></tr>
@@ -324,9 +324,11 @@ Protected Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename K, typename D, typename T&gt;<br />
-class Techstorm::abstract&lt; K, D, T &gt;</div><p>This is an <b>abstract interface singleton</b> that all projects must implement and set the <em><a class="el" href="../../db/dc4/class_techstorm_1_1abstract_1_1_project_reference.html" title="Represents a polymorphic singleton reference to the user&#39;s project instance through a pointer of Tech...">ProjectReference</a></em> singleton to their project. If this boilerplate code is not done, <a class="el" href="../../d4/d26/namespace_techstorm.html">Techstorm</a> will not know what to run. In terms of functionality, this interface just holds the functions and variables that <a class="el" href="../../d4/d26/namespace_techstorm.html">Techstorm</a> will call (besides some initialization). <b>Do not directly call window code in here or your project will crash!</b> </p>
+class Techstorm::abstract&lt; K, D, T &gt;</div><p>This is an <b>abstract interface singleton</b> that all projects must implement and set the <em><a class="el" href="../../db/dc4/class_techstorm_1_1abstract_1_1_project_reference.html" title="Represents a polymorphic singleton reference to the user&#39;s project instance through a pointer of Tech...">ProjectReference</a></em> singleton to their project. In terms of functionality, this interface just holds the functions and variables that <a class="el" href="../../d4/d26/namespace_techstorm.html">Techstorm</a> will call (besides some initialization). </p>
 <p>Same thing as a gate, but for game objects.</p>
 <p>Represents an object that can be rendered in the screen. This is an abstract class that contains all the common properties of a game object.</p>
+<dl class="section note"><dt>Note</dt><dd>If this boilerplate code is not done, <a class="el" href="../../d4/d26/namespace_techstorm.html">Techstorm</a> will not know what to run. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd><b>Do not directly call window code in here or your project will crash!</b></dd></dl>
 <p>You may implement this yourself to create your own game objects and drawing code, or you can inherit from <a class="el" href="../../d4/de0/class_techstorm_1_1_game_object.html" title="A game object that can be rendered to the screen. Inherits from IGameObject, and already provides the...">Techstorm::GameObject</a> to use the default implementation. However, if you inherit from this class, be sure you have a basic understanding of Raylib's and OpenGL's rendering system. If not, see https://learnopengl.com/ and https://www.raylib.com/ for a good place to start. In addition, it is not advised for you to inherit this yourself because it will require you to implement rendering code. However, it is recommended if your game requires a rendering system that is not provided by default. </p>
 <p>The IGameObject class is abstract and cannot be instantiated directly. Instead, you should inherit from this class and implement the pure virtual functions. As of version 0.0.3, the pure virtual functions are: <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a9fbec32fc6a853a44b400eefab6c28c3" title="Assuming that the FBO is enabled, this will render the FBO and apply any post-processing effects to t...">render()</a>, <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a3e03fcd5f137aab15e5331078e86ada0" title="Textures all GameObjects before render() is called and after update functions are called....">texture()</a>, <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a6fd2a9004046a8a57e321d0ae99951c5">update()</a>, <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#ab14ebe5a7c51e1483ce935c2193a170a" title="Pre-update step that is called in the physics or update thread (depending on thread count)">prePhysicsUpdate()</a>, <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a9bbad12f7eeef8bfcccc6295e3895ee0" title="Called right after the update function, but before texturing/rendering.">postUpdate()</a>, <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a1c78ff5c43eb03bbf20e7c58db8e2dd2" title="Destroys this instance, and is called right before the object is removed from memory.">destroy()</a>, and <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html#a4ed7d940db9a878ec9884a71b4c393f4">cleanup()</a>. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d6/d46/class_techstorm_1_1_gate.html">Gate&lt;GameObject*&gt;</a></dd></dl>
@@ -706,7 +708,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 <p>Gets the lua functions. </p>
 <dl class="section return"><dt>Returns</dt><dd>A reference to mLuaFunctions</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00054">54</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00060">60</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
 
 </div>
 </div>
@@ -735,10 +737,10 @@ template&lt;typename K , typename D , typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the lua libraries. </p>
+<p>Returns the currently active libraries for lua. </p>
 <dl class="section return"><dt>Returns</dt><dd>A reference to mLuaLibraries</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00048">48</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00054">54</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
 
 </div>
 </div>
@@ -800,7 +802,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 <p>Gets the renderer instance. </p>
 <dl class="section return"><dt>Returns</dt><dd>This project's mRenderer variable</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00073">73</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00079">79</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
 
 </div>
 </div>
@@ -1505,7 +1507,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 
 <p>This is the first function that will be called on startup. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00092">92</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00098">98</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d1/d4c/_file_system_8cpp_source.html#l00024">Techstorm::AddFileRegistryLoadFunction()</a>, <a class="el" href="../../d1/d4c/_file_system_8cpp_source.html#l00019">Techstorm::InitializeFileRegistry()</a>, and <a class="el" href="../../db/d1f/_common_8h_source.html#l00027">TS_GAME_DIR</a>.</p>
 
@@ -1826,7 +1828,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00084">84</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00090">90</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
 
 </div>
 </div>
@@ -2185,7 +2187,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00024">24</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00030">30</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
 
 </div>
 </div>
@@ -2211,7 +2213,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00023">23</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00029">29</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
 
 </div>
 </div>
@@ -2233,8 +2235,8 @@ template&lt;typename K , typename D , typename T &gt; </div>
 
 </div>
 </div>
-<a id="a38b8d4b7fc1d5e7b193d098f2dc99c5f" name="a38b8d4b7fc1d5e7b193d098f2dc99c5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38b8d4b7fc1d5e7b193d098f2dc99c5f">&#9670;&#160;</a></span>mRenderer</h2>
+<a id="a66d6f10e34cf6f75bc318743ba215882" name="a66d6f10e34cf6f75bc318743ba215882"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66d6f10e34cf6f75bc318743ba215882">&#9670;&#160;</a></span>mRenderer</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2245,7 +2247,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d4/d22/class_techstorm_1_1_renderer.html">Techstorm::Renderer</a> <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html">Techstorm::abstract</a>&lt; K, D, T &gt;::mRenderer</td>
+          <td class="memname"><a class="el" href="../../d4/d22/class_techstorm_1_1_renderer.html">Renderer</a> <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html">Techstorm::abstract</a>&lt; K, D, T &gt;::mRenderer</td>
         </tr>
       </table>
   </td>
@@ -2255,7 +2257,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00021">21</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00027">27</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
 
 </div>
 </div>
@@ -2281,7 +2283,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00022">22</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00028">28</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
 
 </div>
 </div>
@@ -2371,7 +2373,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00042">42</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html#l00048">48</a> of file <a class="el" href="../../d8/d7d/engine_2_project_8h_source.html">Project.h</a>.</p>
 
 </div>
 </div>
@@ -2384,7 +2386,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 template&lt;typename K , typename D , typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">Color <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html">Techstorm::abstract</a>&lt; K, D, T &gt;::tint = WHITE</td>
+          <td class="memname"><a class="el" href="../../d5/d0b/_rml_ui___renderer___g_l3_8cpp.html#aef39ea06ec027f46e65b8280775df70aacb5feb1b7314637725a2e73bdc9f7295">Color</a> <a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html">Techstorm::abstract</a>&lt; K, D, T &gt;::tint = WHITE</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2405,7 +2407,7 @@ template&lt;typename K , typename D , typename T &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/d26/namespace_techstorm.html">Techstorm</a></li><li class="navelem"><a class="el" href="../../d6/d34/class_techstorm_1_1abstract.html">abstract</a></li>
-    <li class="footer">Generated on Sat Nov 30 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Dec 1 2024 for Techstorm by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -8,7 +8,7 @@
 /// \remarks This file has a few configurations that are based on defines. TS_ENABLE_HAPTICS is used to enable/disable haptic features (ie. controller rumble), whereas TS_ENABLE_EXTENSIONS is used
 /// to enable/disable extensions.
 #pragma once
-#define TS_ENABLE_HAPTICS
+
 #include <iostream>
 #include <cstdarg>
 #include <cstdint>
@@ -492,6 +492,9 @@ namespace Techstorm {
 			return *this;
 		}
 	};*/
+
+
+
 
 
 	/// This is a module for haptic experiences (ie. controller rumble) and helps make more immersive experiences. 

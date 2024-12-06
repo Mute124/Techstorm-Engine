@@ -8,7 +8,7 @@ namespace Techstorm {
 	/// <typeparam name="T"></typeparam>
 	/// <seealso cref="GameObjectRegistry" />
 	template<typename T>
-	class Gate {
+	class IGate abstract {
 	public:
 
 		/// <summary>

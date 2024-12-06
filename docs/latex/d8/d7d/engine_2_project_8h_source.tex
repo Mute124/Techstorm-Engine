@@ -2,111 +2,112 @@
 \hypertarget{engine_2_project_8h_source}{}\label{engine_2_project_8h_source}\index{C:/Dev/Techstorm-\/v5/src/engine/Project.h@{C:/Dev/Techstorm-\/v5/src/engine/Project.h}}
 \mbox{\hyperlink{engine_2_project_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_renderer_8h}{renderer/Renderer.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_window_8h}{renderer/Window.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_window_decorations_8h}{renderer/WindowDecorations.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_singleton_8h}{utils/Singleton.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_scripting_a_p_i_8h}{modding/ScriptingAPI.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_settings_8h}{GameSettings.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_file_system_8h}{fs/FileSystem.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_config_8h}{conf/Config.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00011}00011\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00012}00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_techstorm}{Techstorm}}\ \{}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{class\ }IProject\ \textcolor{keyword}{abstract}\ \{}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00021}\mbox{\hyperlink{class_techstorm_1_1abstract_a38b8d4b7fc1d5e7b193d098f2dc99c5f}{00021}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_renderer}{Techstorm::Renderer}}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a38b8d4b7fc1d5e7b193d098f2dc99c5f}{mRenderer}};}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00022}\mbox{\hyperlink{class_techstorm_1_1abstract_a9308944fbd7de798a5c8e9e987600db9}{00022}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_techstorm_1_1_window_decorations}{WindowDecorations}}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a9308944fbd7de798a5c8e9e987600db9}{mWindowDecorations}};}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00023}\mbox{\hyperlink{class_techstorm_1_1abstract_aeca2999b14b92284db9c0a9bb88e355d}{00023}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_af6556c4d563341def4c68414537120ed}{LuaLibraryRegistry}}\ \mbox{\hyperlink{class_techstorm_1_1abstract_aeca2999b14b92284db9c0a9bb88e355d}{mLuaLibraries}};}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00024}\mbox{\hyperlink{class_techstorm_1_1abstract_a34a58392845bca2144f74cfe3d247de0}{00024}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_aacc8d13353a5459666050b5aa6ed808c}{LuaFunctionRegistry}}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a34a58392845bca2144f74cfe3d247de0}{mLuaFunctions}};}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00030}\mbox{\hyperlink{class_techstorm_1_1abstract_1_1_project_reference}{00030}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_techstorm_1_1abstract_1_1_project_reference}{ProjectReference}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_techstorm_1_1_singleton}{Singleton}}<ProjectReference>\ \{}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00032}\mbox{\hyperlink{class_techstorm_1_1abstract_1_1_project_reference_ae002c732567a3adfa7b022955bca3c40}{00032}}\ \ \ \ \ \ \ \ \ \ \ \ \ IProject*\ project\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00033}00033\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00038}\mbox{\hyperlink{class_techstorm_1_1abstract_1_1_project_reference_a9c44bf1abb52d594ec4f1b8591558e41}{00038}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1abstract_1_1_project_reference_a9c44bf1abb52d594ec4f1b8591558e41}{setProjectReference}}(IProject*\ project);}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00042}\mbox{\hyperlink{class_techstorm_1_1abstract_a4c1599f2a02023b0fd5e4880b371b965}{00042}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_aa6eeda8fa60b60b709cb56062f2e4d50}{GameSettings}}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a4c1599f2a02023b0fd5e4880b371b965}{settings}};}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00048}\mbox{\hyperlink{class_techstorm_1_1abstract_a11557dafdc33521a3c5af2285f7bbe92}{00048}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_af6556c4d563341def4c68414537120ed}{LuaLibraryRegistry}}\&\ \mbox{\hyperlink{class_techstorm_1_1abstract_a11557dafdc33521a3c5af2285f7bbe92}{getLuaLibraries}}()\ \{\ \textcolor{keywordflow}{return}\ mLuaLibraries;\ \}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00007}00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_renderer_8h}{renderer/Renderer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_window_8h}{renderer/Window.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_window_decorations_8h}{renderer/WindowDecorations.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_singleton_8h}{utils/Singleton.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_scripting_a_p_i_8h}{modding/ScriptingAPI.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_settings_8h}{GameSettings.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_file_system_8h}{fs/FileSystem.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_config_8h}{conf/Config.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00018}00018\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_techstorm}{Techstorm}}\ \{}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{class\ }IProject\ \textcolor{keyword}{abstract}\ \{}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00027}\mbox{\hyperlink{class_techstorm_1_1abstract_a66d6f10e34cf6f75bc318743ba215882}{00027}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_renderer}{Renderer}}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a66d6f10e34cf6f75bc318743ba215882}{mRenderer}};}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00028}\mbox{\hyperlink{class_techstorm_1_1abstract_a9308944fbd7de798a5c8e9e987600db9}{00028}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_techstorm_1_1_window_decorations}{WindowDecorations}}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a9308944fbd7de798a5c8e9e987600db9}{mWindowDecorations}};}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00029}\mbox{\hyperlink{class_techstorm_1_1abstract_aeca2999b14b92284db9c0a9bb88e355d}{00029}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_af6556c4d563341def4c68414537120ed}{LuaLibraryRegistry}}\ \mbox{\hyperlink{class_techstorm_1_1abstract_aeca2999b14b92284db9c0a9bb88e355d}{mLuaLibraries}};}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00030}\mbox{\hyperlink{class_techstorm_1_1abstract_a34a58392845bca2144f74cfe3d247de0}{00030}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_aacc8d13353a5459666050b5aa6ed808c}{LuaFunctionRegistry}}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a34a58392845bca2144f74cfe3d247de0}{mLuaFunctions}};}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00036}\mbox{\hyperlink{class_techstorm_1_1abstract_1_1_project_reference}{00036}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_techstorm_1_1abstract_1_1_project_reference}{ProjectReference}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_techstorm_1_1_singleton}{Singleton}}<ProjectReference>\ \{}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00038}\mbox{\hyperlink{class_techstorm_1_1abstract_1_1_project_reference_ae002c732567a3adfa7b022955bca3c40}{00038}}\ \ \ \ \ \ \ \ \ \ \ \ \ IProject*\ project\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00044}\mbox{\hyperlink{class_techstorm_1_1abstract_1_1_project_reference_a9c44bf1abb52d594ec4f1b8591558e41}{00044}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1abstract_1_1_project_reference_a9c44bf1abb52d594ec4f1b8591558e41}{setProjectReference}}(IProject*\ project);}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00048}\mbox{\hyperlink{class_techstorm_1_1abstract_a4c1599f2a02023b0fd5e4880b371b965}{00048}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_aa6eeda8fa60b60b709cb56062f2e4d50}{GameSettings}}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a4c1599f2a02023b0fd5e4880b371b965}{settings}};}
 \DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00049}00049\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00054}\mbox{\hyperlink{class_techstorm_1_1abstract_a5582088d505c0db0b4bb9dec107e7478}{00054}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_aacc8d13353a5459666050b5aa6ed808c}{LuaFunctionRegistry}}\&\ \mbox{\hyperlink{class_techstorm_1_1abstract_a5582088d505c0db0b4bb9dec107e7478}{getLuaFunctions}}()\ \{\ \textcolor{keywordflow}{return}\ mLuaFunctions;\ \}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00054}\mbox{\hyperlink{class_techstorm_1_1abstract_a11557dafdc33521a3c5af2285f7bbe92}{00054}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_af6556c4d563341def4c68414537120ed}{LuaLibraryRegistry}}\&\ \mbox{\hyperlink{class_techstorm_1_1abstract_a11557dafdc33521a3c5af2285f7bbe92}{getLuaLibraries}}()\ \{\ \textcolor{keywordflow}{return}\ mLuaLibraries;\ \}}
 \DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00055}00055\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00060}\mbox{\hyperlink{class_techstorm_1_1abstract_a1e1ac3ebe011afceaed6aaba2f3498ef}{00060}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_techstorm_1_1_window_decorations}{WindowDecorations}}\&\ \mbox{\hyperlink{class_techstorm_1_1abstract_a1e1ac3ebe011afceaed6aaba2f3498ef}{getWindowDecorations}}();}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00060}\mbox{\hyperlink{class_techstorm_1_1abstract_a5582088d505c0db0b4bb9dec107e7478}{00060}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_aacc8d13353a5459666050b5aa6ed808c}{LuaFunctionRegistry}}\&\ \mbox{\hyperlink{class_techstorm_1_1abstract_a5582088d505c0db0b4bb9dec107e7478}{getLuaFunctions}}()\ \{\ \textcolor{keywordflow}{return}\ mLuaFunctions;\ \}}
 \DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00061}00061\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00067}\mbox{\hyperlink{class_techstorm_1_1abstract_aa88dc54c1571ea9c555e6438e851b517}{00067}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1abstract_aa88dc54c1571ea9c555e6438e851b517}{setWindowDecorations}}(\mbox{\hyperlink{struct_techstorm_1_1_window_decorations}{WindowDecorations}}\&\ windowDecorations);}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00068}00068\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00073}\mbox{\hyperlink{class_techstorm_1_1abstract_ab56d71e5112dc3bbf74416db21e961f0}{00073}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_renderer}{Renderer}}\&\ \mbox{\hyperlink{class_techstorm_1_1abstract_ab56d71e5112dc3bbf74416db21e961f0}{getRenderer}}()\ \{\ \textcolor{keywordflow}{return}\ mRenderer;\ \}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00066}\mbox{\hyperlink{class_techstorm_1_1abstract_a1e1ac3ebe011afceaed6aaba2f3498ef}{00066}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_techstorm_1_1_window_decorations}{WindowDecorations}}\&\ \mbox{\hyperlink{class_techstorm_1_1abstract_a1e1ac3ebe011afceaed6aaba2f3498ef}{getWindowDecorations}}();}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00073}\mbox{\hyperlink{class_techstorm_1_1abstract_aa88dc54c1571ea9c555e6438e851b517}{00073}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1abstract_aa88dc54c1571ea9c555e6438e851b517}{setWindowDecorations}}(\mbox{\hyperlink{struct_techstorm_1_1_window_decorations}{WindowDecorations}}\&\ windowDecorations);}
 \DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00074}00074\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00081}\mbox{\hyperlink{class_techstorm_1_1abstract_aba25eb9fe166bd646e7416a15cd6c100}{00081}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1abstract_aba25eb9fe166bd646e7416a15cd6c100}{setProject}}(T*\ project);}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00082}00082\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ should\ contain\ what\ files\ need\ to\ be\ loaded\ when\ registered\ and\ the\ functions\ to\ load\ certain\ extensions.}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00084}\mbox{\hyperlink{class_techstorm_1_1abstract_a40bbaee10942400085811546d34a760a}{00084}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a40bbaee10942400085811546d34a760a}{setupFileRegistryTargets}}()\ \{}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00087}00087\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00092}\mbox{\hyperlink{class_techstorm_1_1abstract_a5a3f3dc681fb548bb40d008cdeb0352f}{00092}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a5a3f3dc681fb548bb40d008cdeb0352f}{preInit}}()\ \{}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}IProject::preInit"{}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_a5f058c32f71198b022da348a2f6b0c32}{AddFileRegistryLoadFunction}}(\textcolor{stringliteral}{"{}png"{}},\ [](std::shared\_ptr<FileMeta>\ loadFunc)\ \{}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::any\_cast<Image>(LoadImage(loadFunc-\/>path.c\_str()));}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_a5f058c32f71198b022da348a2f6b0c32}{AddFileRegistryLoadFunction}}(\textcolor{stringliteral}{"{}jpg"{}},\ [](std::shared\_ptr<FileMeta>\ loadFunc)\ \{}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::any\_cast<Image>(LoadImage(loadFunc-\/>path.c\_str()));}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00101}00101\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_a5f058c32f71198b022da348a2f6b0c32}{AddFileRegistryLoadFunction}}(\textcolor{stringliteral}{"{}jpeg"{}},\ [](std::shared\_ptr<FileMeta>\ loadFunc)\ \{}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::any\_cast<Image>(LoadImage(loadFunc-\/>path.c\_str()));}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00105}00105\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00106}00106\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_a0cdf258db7319603e2c5e39a8b18726e}{InitializeFileRegistry}}(\mbox{\hyperlink{_common_8h_a4a0ec9e061a2c5f56774b5c6e4fb512c}{TS\_GAME\_DIR}}.c\_str());}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00108}00108\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00109}00109\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>mLuaLibraries.push\_back(sol::lib::base);}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00079}\mbox{\hyperlink{class_techstorm_1_1abstract_ab56d71e5112dc3bbf74416db21e961f0}{00079}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_techstorm_1_1_renderer}{Renderer}}\&\ \mbox{\hyperlink{class_techstorm_1_1abstract_ab56d71e5112dc3bbf74416db21e961f0}{getRenderer}}()\ \{\ \textcolor{keywordflow}{return}\ mRenderer;\ \}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00087}\mbox{\hyperlink{class_techstorm_1_1abstract_aba25eb9fe166bd646e7416a15cd6c100}{00087}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1abstract_aba25eb9fe166bd646e7416a15cd6c100}{setProject}}(T*\ project);}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ should\ contain\ what\ files\ need\ to\ be\ loaded\ when\ registered\ and\ the\ functions\ to\ load\ certain\ extensions.}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00090}\mbox{\hyperlink{class_techstorm_1_1abstract_a40bbaee10942400085811546d34a760a}{00090}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a40bbaee10942400085811546d34a760a}{setupFileRegistryTargets}}()\ \{}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00092}00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00098}\mbox{\hyperlink{class_techstorm_1_1abstract_a5a3f3dc681fb548bb40d008cdeb0352f}{00098}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a5a3f3dc681fb548bb40d008cdeb0352f}{preInit}}()\ \{}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}IProject::preInit"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_a5f058c32f71198b022da348a2f6b0c32}{AddFileRegistryLoadFunction}}(\textcolor{stringliteral}{"{}png"{}},\ [](std::shared\_ptr<FileMeta>\ loadFunc)\ \{}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::any\_cast<Image>(LoadImage(loadFunc-\/>path.c\_str()));}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_a5f058c32f71198b022da348a2f6b0c32}{AddFileRegistryLoadFunction}}(\textcolor{stringliteral}{"{}jpg"{}},\ [](std::shared\_ptr<FileMeta>\ loadFunc)\ \{}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::any\_cast<Image>(LoadImage(loadFunc-\/>path.c\_str()));}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_a5f058c32f71198b022da348a2f6b0c32}{AddFileRegistryLoadFunction}}(\textcolor{stringliteral}{"{}jpeg"{}},\ [](std::shared\_ptr<FileMeta>\ loadFunc)\ \{}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::any\_cast<Image>(LoadImage(loadFunc-\/>path.c\_str()));}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
 \DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00111}00111\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00112}00112\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00113}00113\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00120}\mbox{\hyperlink{class_techstorm_1_1abstract_aa41daa77787a2c41071ba34e88c8f7b7}{00120}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1abstract_aa41daa77787a2c41071ba34e88c8f7b7}{init}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[]);}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00121}00121\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00125}\mbox{\hyperlink{class_techstorm_1_1abstract_aadbb5bf000a4530c90327652cec15f12}{00125}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1abstract_aadbb5bf000a4530c90327652cec15f12}{postInit}}();}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00126}00126\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00131}\mbox{\hyperlink{class_techstorm_1_1abstract_ab68fbb923a1c47d66846caa774010575}{00131}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1abstract_ab68fbb923a1c47d66846caa774010575}{initRenderer}}();}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_techstorm_a0cdf258db7319603e2c5e39a8b18726e}{InitializeFileRegistry}}(\mbox{\hyperlink{_common_8h_a4a0ec9e061a2c5f56774b5c6e4fb512c}{TS\_GAME\_DIR}}.c\_str());}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>mLuaLibraries.push\_back(sol::lib::base);}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00118}00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00126}\mbox{\hyperlink{class_techstorm_1_1abstract_aa41daa77787a2c41071ba34e88c8f7b7}{00126}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1abstract_aa41daa77787a2c41071ba34e88c8f7b7}{init}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[]);}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00131}\mbox{\hyperlink{class_techstorm_1_1abstract_aadbb5bf000a4530c90327652cec15f12}{00131}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1abstract_aadbb5bf000a4530c90327652cec15f12}{postInit}}();}
 \DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00132}00132\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00140}\mbox{\hyperlink{class_techstorm_1_1abstract_ad8cec4638371d31feeb40bcc9343df1c}{00140}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1abstract_ad8cec4638371d31feeb40bcc9343df1c}{run}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[]);}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00141}00141\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00142}\mbox{\hyperlink{class_techstorm_1_1abstract_a6fd2a9004046a8a57e321d0ae99951c5}{00142}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a6fd2a9004046a8a57e321d0ae99951c5}{update}}();}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00143}00143\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00149}\mbox{\hyperlink{class_techstorm_1_1abstract_ab14ebe5a7c51e1483ce935c2193a170a}{00149}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1abstract_ab14ebe5a7c51e1483ce935c2193a170a}{prePhysicsUpdate}}();}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00150}00150\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00156}\mbox{\hyperlink{class_techstorm_1_1abstract_af0490b5e95acad9f94578cd01286f693}{00156}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1abstract_af0490b5e95acad9f94578cd01286f693}{physicsUpdate}}();}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00157}00157\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00163}\mbox{\hyperlink{class_techstorm_1_1abstract_ad2ada7b55e6d6d393621f3535fd59de7}{00163}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1abstract_ad2ada7b55e6d6d393621f3535fd59de7}{postPhysicsUpdate}}();}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00164}00164\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00171}\mbox{\hyperlink{class_techstorm_1_1abstract_aaf76324c67b6b4419486bf2e69161077}{00171}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1abstract_aaf76324c67b6b4419486bf2e69161077}{preObjectUpdate}}();}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00172}00172\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00178}\mbox{\hyperlink{class_techstorm_1_1abstract_a83f04019a2f6e4b40ddcfe474a76f980}{00178}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a83f04019a2f6e4b40ddcfe474a76f980}{objectUpdate}}();}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00179}00179\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00185}\mbox{\hyperlink{class_techstorm_1_1abstract_a8dc719d2e5e4a477d1378d06fa38bab2}{00185}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a8dc719d2e5e4a477d1378d06fa38bab2}{postObjectUpdate}}();}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00186}00186\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00193}\mbox{\hyperlink{class_techstorm_1_1abstract_a3e03fcd5f137aab15e5331078e86ada0}{00193}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a3e03fcd5f137aab15e5331078e86ada0}{texture}}();}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00194}00194\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00201}\mbox{\hyperlink{class_techstorm_1_1abstract_a9fbec32fc6a853a44b400eefab6c28c3}{00201}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a9fbec32fc6a853a44b400eefab6c28c3}{render}}();}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00202}00202\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00209}\mbox{\hyperlink{class_techstorm_1_1abstract_a74842f17611091afa5575df2eed637ec}{00209}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a74842f17611091afa5575df2eed637ec}{cleanup}}(\textcolor{keywordtype}{int}\ exitCode);}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00210}00210\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00215}\mbox{\hyperlink{class_techstorm_1_1abstract_a9e393f6cee0d2d38f0b63783c9bf472a}{00215}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ IProject*\ \mbox{\hyperlink{class_techstorm_1_1abstract_a9e393f6cee0d2d38f0b63783c9bf472a}{GetProject}}();}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00216}00216\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00137}\mbox{\hyperlink{class_techstorm_1_1abstract_ab68fbb923a1c47d66846caa774010575}{00137}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_techstorm_1_1abstract_ab68fbb923a1c47d66846caa774010575}{initRenderer}}();}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00146}\mbox{\hyperlink{class_techstorm_1_1abstract_ad8cec4638371d31feeb40bcc9343df1c}{00146}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1abstract_ad8cec4638371d31feeb40bcc9343df1c}{run}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[]);}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00148}\mbox{\hyperlink{class_techstorm_1_1abstract_a6fd2a9004046a8a57e321d0ae99951c5}{00148}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a6fd2a9004046a8a57e321d0ae99951c5}{update}}();}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00155}\mbox{\hyperlink{class_techstorm_1_1abstract_ab14ebe5a7c51e1483ce935c2193a170a}{00155}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1abstract_ab14ebe5a7c51e1483ce935c2193a170a}{prePhysicsUpdate}}();}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00162}\mbox{\hyperlink{class_techstorm_1_1abstract_af0490b5e95acad9f94578cd01286f693}{00162}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1abstract_af0490b5e95acad9f94578cd01286f693}{physicsUpdate}}();}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00169}\mbox{\hyperlink{class_techstorm_1_1abstract_ad2ada7b55e6d6d393621f3535fd59de7}{00169}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1abstract_ad2ada7b55e6d6d393621f3535fd59de7}{postPhysicsUpdate}}();}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00177}\mbox{\hyperlink{class_techstorm_1_1abstract_aaf76324c67b6b4419486bf2e69161077}{00177}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1abstract_aaf76324c67b6b4419486bf2e69161077}{preObjectUpdate}}();}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00184}\mbox{\hyperlink{class_techstorm_1_1abstract_a83f04019a2f6e4b40ddcfe474a76f980}{00184}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a83f04019a2f6e4b40ddcfe474a76f980}{objectUpdate}}();}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00191}\mbox{\hyperlink{class_techstorm_1_1abstract_a8dc719d2e5e4a477d1378d06fa38bab2}{00191}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a8dc719d2e5e4a477d1378d06fa38bab2}{postObjectUpdate}}();}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00199}\mbox{\hyperlink{class_techstorm_1_1abstract_a3e03fcd5f137aab15e5331078e86ada0}{00199}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a3e03fcd5f137aab15e5331078e86ada0}{texture}}();}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00207}\mbox{\hyperlink{class_techstorm_1_1abstract_a9fbec32fc6a853a44b400eefab6c28c3}{00207}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a9fbec32fc6a853a44b400eefab6c28c3}{render}}();}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00215}\mbox{\hyperlink{class_techstorm_1_1abstract_a74842f17611091afa5575df2eed637ec}{00215}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_techstorm_1_1abstract_a74842f17611091afa5575df2eed637ec}{cleanup}}(\textcolor{keywordtype}{int}\ exitCode);}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00221}\mbox{\hyperlink{class_techstorm_1_1abstract_a9e393f6cee0d2d38f0b63783c9bf472a}{00221}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ IProject*\ \mbox{\hyperlink{class_techstorm_1_1abstract_a9e393f6cee0d2d38f0b63783c9bf472a}{GetProject}}();}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00222}00222\ \ \ \ \ \};}
 \DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00223}00223\ }
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00224}00224\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00225}00225\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ IProject::setProject(T*\ project)\ \{}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00226}00226\ \ \ \ \ \ \ \ \ ProjectReference::Instance().setProjectReference(project);}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00227}00227\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00228}00228\ \}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00229}00229\ }
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00230}00230\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00231}00231\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ IProject::setProject(T*\ project)\ \{}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00232}00232\ \ \ \ \ \ \ \ \ ProjectReference::Instance().setProjectReference(project);}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00233}00233\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{engine_2_project_8h_source_l00234}00234\ \}}
 
 \end{DoxyCode}

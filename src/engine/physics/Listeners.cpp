@@ -34,3 +34,7 @@
 {
 	//cout << "A body went to sleep" << endl;
 }
+
+  void Techstorm::ContactListenerGate::process(ContactListenerGateParams entree)
+  {
+  }

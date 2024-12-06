@@ -26,8 +26,8 @@ namespace Techstorm {
 	protected:
 		Renderer mRenderer;
 		WindowDecorations mWindowDecorations;
-		LuaLibraryRegistry mLuaLibraries;
-		LuaFunctionRegistry mLuaFunctions;
+		ScriptingLibraryRegistry mLuaLibraries;
+		ScriptingFunctionRegistry mLuaFunctions;
 		
 		/// <summary>
 		/// Represents a polymorphic singleton reference to the user's project instance through a pointer of Techstorm::IProject. This is
@@ -51,13 +51,13 @@ namespace Techstorm {
 		/// Returns the currently active libraries for lua.
 		/// </summary>
 		/// <returns>A reference to mLuaLibraries</returns>
-		LuaLibraryRegistry& getLuaLibraries() { return mLuaLibraries; }
+		ScriptingLibraryRegistry& getLuaLibraries() { return mLuaLibraries; }
 
 		/// <summary>
 		/// Gets the lua functions.
 		/// </summary>
 		/// <returns>A reference to mLuaFunctions</returns>
-		LuaFunctionRegistry& getLuaFunctions() { return mLuaFunctions; }
+		ScriptingFunctionRegistry& getLuaFunctions() { return mLuaFunctions; }
 
 		/// <summary>
 		/// Gets the window decorations. This includes the window title, icon, size, etc.

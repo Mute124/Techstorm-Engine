@@ -1,6 +1,7 @@
 #pragma once
 #include "../engine/Project.h"
 
+#define PROJECT_TYPENAME Project
 
 /// <summary>
 /// Write your project code here or do what you want with it. However,

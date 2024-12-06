@@ -62,13 +62,13 @@ namespace Techstorm {
 		/// Adds the game object.
 		/// </summary>
 		/// <param name="gameObject">The game object pointer to add.</param>
-		void addGameObject(GameObject* gameObject);
+		void addGameObject(IGameObject* gameObject);
 
 		/// <summary>
 		/// Removes a game object.
 		/// </summary>
 		/// <param name="gameObject">The game object pointer to remove.</param>
-		void removeGameObject(GameObject* gameObject);
+		void removeGameObject(IGameObject* gameObject);
 
 		/// <summary>
 		/// Adds a game object gate.

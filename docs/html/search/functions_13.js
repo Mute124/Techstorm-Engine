@@ -1,12 +1,6 @@
 var searchData=
 [
-  ['_7econfigfileregistry_0',['~ConfigFileRegistry',['../d1/dcb/class_techstorm_1_1_config_file_registry.html#a7c787bd9f85443ad2b2362e020d38e61',1,'Techstorm::ConfigFileRegistry']]],
-  ['_7egamecamera_1',['~GameCamera',['../d0/db5/class_techstorm_1_1_game_camera.html#a8aac95d689cd7a4c6ca2e877dedd9bd8',1,'Techstorm::GameCamera']]],
-  ['_7eigameobject_2',['~IGameObject',['../d6/d34/class_techstorm_1_1abstract.html#a23a04a87e0f50937d2d9ff899f5cc14b',1,'Techstorm::abstract']]],
-  ['_7eilayerregistry_3',['~ILayerRegistry',['../d6/d34/class_techstorm_1_1abstract.html#a4a5949bcde32483abd8b15105a2eda10',1,'Techstorm::abstract']]],
-  ['_7eiphysicsgameobject_4',['~IPhysicsGameObject',['../d6/d34/class_techstorm_1_1abstract.html#aa0f5ad4e289f98389e410b33ec03b41c',1,'Techstorm::abstract']]],
-  ['_7elayerregistry_5',['~LayerRegistry',['../db/d5d/class_techstorm_1_1_layer_registry.html#af9d0b1f70047143779fd67cd3b66bc8e',1,'Techstorm::LayerRegistry']]],
-  ['_7emod_6',['~Mod',['../d3/d3c/class_techstorm_1_1_mod.html#a3ebb393f6f60c7ace80937fdfdac13bb',1,'Techstorm::Mod']]],
-  ['_7emodloader_7',['~ModLoader',['../da/d6d/class_techstorm_1_1_mod_loader.html#a7994bc17f3f6449bbffbda6884f4562c',1,'Techstorm::ModLoader']]],
-  ['_7ewindow_8',['~Window',['../da/d10/class_techstorm_1_1_window.html#a0baa895bc297dd7720c63a7f5bd1c43b',1,'Techstorm::Window']]]
+  ['write_5fto_5fply_0',['write_to_ply',['../de/da5/utilities_8cpp.html#a7df65ced688bee29b75448b7befe7c1c',1,'write_to_ply(std::vector&lt; std::vector&lt; Point &gt; &gt; &amp;triangles, const char *path):&#160;utilities.cpp'],['../dc/d5f/utilities_8hpp.html#a7df65ced688bee29b75448b7befe7c1c',1,'write_to_ply(std::vector&lt; std::vector&lt; Point &gt; &gt; &amp;triangles, const char *path):&#160;utilities.cpp']]],
+  ['write_5ftriangles_5fto_5ffile_1',['write_triangles_to_file',['../de/da5/utilities_8cpp.html#a5c5b6c7de37c6284a345717479a327c0',1,'write_triangles_to_file(std::vector&lt; std::vector&lt; Point &gt; &gt; triangles, const char *path):&#160;utilities.cpp'],['../dc/d5f/utilities_8hpp.html#a5c5b6c7de37c6284a345717479a327c0',1,'write_triangles_to_file(std::vector&lt; std::vector&lt; Point &gt; &gt; triangles, const char *path):&#160;utilities.cpp']]],
+  ['writeconfigfiles_2',['writeConfigFiles',['../d1/dcb/class_techstorm_1_1_config_file_registry.html#a8748376c8a9cb5f3b830c6bd1085c843',1,'Techstorm::ConfigFileRegistry']]]
 ];

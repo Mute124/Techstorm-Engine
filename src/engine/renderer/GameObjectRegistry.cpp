@@ -1,6 +1,6 @@
 #include "GameObjectRegistry.h"
 
-void Techstorm::GameObjectRegistry::addGameObject(GameObject* gameObject)
+void Techstorm::GameObjectRegistry::addGameObject(IGameObject* gameObject)
 {
 	std::cout << "Pushing GameObject of type " << typeid(*gameObject).name() << " to GameObjectRegistry" << std::endl;
 	if (gameObject != nullptr) {
@@ -24,7 +24,7 @@ void Techstorm::GameObjectRegistry::addGameObjectGate(IGameObjectGate* gameObjec
 void Techstorm::GameObjectRegistry::update()
 {
 	for (auto& obj : this->mGameObjectsSink) {
-		obj->update();
+		//obj->update();
 	}
 }
 

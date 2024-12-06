@@ -23,26 +23,62 @@ Techstorm::Application::GameThreadInfo Techstorm::Application::CalculateGameThre
 	return GameThreadInfo();
 }
 
-int Techstorm::Application::RunUpdateThread()
-{
-	int exitCode = 0;
-
-	while(exitCode == 0) {
-	}
-
-	return 0;
-}
-
-int Techstorm::Application::RunPhysicsThread()
-{
-	return 0;
-}
-
-int Techstorm::Application::RunWorkerThread()
-{
-	return 0;
-}
-
 void Techstorm::Application::DecorateWindow(WindowDecorations& decorations)
 {
 }
+/*
+void Techstorm::Application::GameMainThread::run(std::shared_ptr<Project> userProject)
+{
+	/*userProject->preInit();
+	InitializeConfigRegistry();
+	ConfigFileRegistry& configRegistry = GetConfigFileRegistry();
+
+	Renderer& renderer = userProject->getRenderer();
+	WindowDecorations& decorations = userProject->getWindowDecorations();
+
+	decorations.title = LookupConfig("Project.cfg", "projectWindowTitle");
+	SetConfigFlags(FLAG_MSAA_4X_HINT | FLAG_INTERLACED_HINT);
+	InitWindow(decorations.width, decorations.height, decorations.title);
+
+	const char* iconPath = TextFormat("%s%s", TS_ASSET_DIR.c_str(), decorations.icon);
+
+	Image icon = LoadImage(iconPath);
+	ImageFormat(&icon, PIXELFORMAT_UNCOMPRESSED_R8G8B8A8);
+
+	SetWindowIcons(&icon, 1);
+
+	this->idleUntilOthersAreReady();
+
+	while(!this->ShouldExit()) {
+		this->SetExit(!WindowShouldClose());
+		// This is here because it reduces CPU consumption
+		std::this_thread::yield();
+	}
+}
+
+void Techstorm::Application::GameWorkThread::run(std::shared_ptr<Project> userProject)
+{
+	this->idleUntilOthersAreReady();
+	while(!this->ShouldExit()) {
+		// This is here because it reduces CPU consumption
+		std::this_thread::yield();
+	}
+}
+
+void Techstorm::Application::GameUpdateThread::run(std::shared_ptr<Project> userProject)
+{
+	this->idleUntilOthersAreReady();
+	while(!this->ShouldExit()) {
+		userProject->preObjectUpdate();
+		userProject->objectUpdate();
+		userProject->postObjectUpdate();
+
+		userProject->prePhysicsUpdate();
+		userProject->physicsUpdate();
+		userProject->postPhysicsUpdate();
+
+		// This is here because it reduces CPU consumption
+		std::this_thread::yield();
+	}
+}
+*/

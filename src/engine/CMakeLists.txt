@@ -1,91 +1,175 @@
 ﻿
-set(ENGINE_SOURCES 
-	# Engine Core
+# The sources are seperated into different variables for organization reasons
+set(TS_ENGINE_CORE_SOURCES
     "Common.h" 
     "Common.cpp"
     "engine.h" 
     "engine.cpp"
     "BasicCore.h" 
-    
-    # Project
+
     "Project.h" 
     "Project.cpp" 
+)
 
-	# Renderer
+set(TS_ENGINE_RENDERER_SOURCES
     "renderer/Window.h" 
     "renderer/Window.cpp" 
+
     "renderer/Renderer.h" 
     "renderer/Renderer.cpp"
+
     "renderer/Color.h" 
-    "renderer/GameObject.h" 
+
+    "renderer/IRenderable.h"
+
+    "renderer/IGameObject.h" 
+    "renderer/GameObject.h"
     "renderer/GameObject.cpp"
+    "renderer/PhysicsObject.h"
+	"renderer/PhysicsObject.cpp"
+
+    "renderer/IEntity.h"
+    "renderer/Entity.h"
+	"renderer/Entity.cpp"
+
     "renderer/GameCamera.h" 
     "renderer/GameCamera.cpp" 
+
     "renderer/RenderLayer.h" 
+
     "renderer/GameObjectRegistry.h"
     "renderer/GameObjectRegistry.cpp" 
-    "renderer/objects/PlaneObject.h"
-    "renderer/IGameObjectGate.h"
-    "renderer/WindowDecorations.h"
-    "renderer/GameUI.h"
-    "renderer/GameUI.cpp"
 
-    # Utils
+    "renderer/objects/PlaneObject.h"
+
+    "renderer/IGameObjectGate.h"
+
+    "renderer/WindowDecorations.h"
+
+    "renderer/GameUI.h"
+    "renderer/GameUI.cpp"    
+)
+
+set(TS_UTIL_SOURCES
     "Utils/Singleton.h" 
     "utils/DoublyLinkedList.h" 
     "utils/Gate.h" 
     "utils/Globals.h"
+)
 
-    # Math
+set(TS_MATH_SOURCES
     "math/Vector.h" 
     "math/Vector.cpp" 
-	
-    # Input
+)
+
+set(TS_INPUT_SOURCES
     "input/Input.h" 
     "input/Input.cpp"
+)
 
-    # Config
+set(TS_CONFIG_SOURCES
     "conf/Config.h"
     "conf/Config.cpp"
+)
 
-    # File system
+set(TS_FILESYSTEM_SOURCES
     "fs/FileSystem.h"
     "fs/FileSystem.cpp"
+)
 
-    # Physics
+set(TS_PHYSICS_SOURCES
     "physics/Physics.h" 
     "physics/Physics.cpp"
     "physics/Listeners.h"
     "physics/Listeners.cpp"
     "physics/Layers.h"
     "physics/Layers.cpp"
-
-    # Modding
-    "modding/ScriptingAPI.h"
-    "modding/ScriptingAPI.cpp"
-    "modding/ModLoader.h"
-    "modding/ModLoader.cpp"
-    "modding/Mod.h"
-    "modding/Mod.cpp"
-
-    # Debugging
-    "EReturnCode.h"
-    "dbg/Logging.h" 
-    "dbg/Debugging.h"
-    "dbg/Errors.h"
-
-    # Game Tools
-    "world/world.h" 
-    "world/tools/Terrain.h" 
-
 )
 
-# Project shared library
+set(TS_MODDING_SOURCES
+    "modding/ScriptingAPI.h"
+    "modding/ScriptingAPI.cpp"
+    "modding/ModManager.h"
+    "modding/ModManager.cpp"
+    "modding/Mod.h"
+    "modding/Mod.cpp"    
+)
+
+set(TS_DEBUGGING_SOURCES 
+    "EReturnCode.h"
+
+    "dbg/Logging.h" 
+    "dbg/Logging.cpp"
+
+    "dbg/ELoggingMode.h"
+    "dbg/ELogLevel.h"
+
+    "dbg/Debugging.h"
+    "dbg/Errors.h"
+)
+
+set(TS_WORLD_SOURCES
+    "world/world.h" 
+    "world/tools/Terrain.h" 
+)
+
+set(ENGINE_SOURCES 
+	# Engine Core
+    ${TS_ENGINE_CORE_SOURCES}
+    ${TS_ENGINE_RENDERER_SOURCES}
+    ${TS_UTIL_SOURCES}
+	${TS_MATH_SOURCES}
+    ${TS_INPUT_SOURCES}
+    ${TS_CONFIG_SOURCES}
+    ${TS_FILESYSTEM_SOURCES}
+	${TS_PHYSICS_SOURCES}
+	${TS_MODDING_SOURCES}
+	${TS_DEBUGGING_SOURCES}
+    ${TS_WORLD_SOURCES}
+)
+
+# Please note that this is NOT the final list of dependencies, some are toggled based on options
+set(TS_ENGINE_DEPENDENCIES
+    raylib 
+
+    joltphysics::joltphysics 
+    joltphysics_DEPS_TARGET
+
+    libconfig::libconfig
+    libconfig_libconfig_libconfig++_DEPS_TARGET
+
+    eventpp::eventpp
+
+    rmlui::rmlui
+    rmlui_DEPS_TARGET
+
+    spdlog::spdlog
+)
+
+include("${CMAKE_SOURCE_DIR}/CMakeOptions.txt")
+
+# Set modding related targets based on options
+if(${TS_ENABLE_MODDING})
+    if(${TS_ENABLE_ANGELSCRIPT})
+        set(TS_ENGINE_DEPENDENCIES
+            ${TS_ENGINE_DEPENDENCIES}
+		    Angelscript::angelscript
+        )
+        
+    endif()
+
+    if(${TS_ENABLE_LUA})
+        set(TS_ENGINE_DEPENDENCIES
+            ${TS_ENGINE_DEPENDENCIES}
+			sol2::sol2
+        )
+    endif()
+endif()
+
+
 add_library(Techstorm SHARED 
     ${ENGINE_SOURCES}
 )
-
-
 
 # Organize files in Visual Studio
 foreach(source IN LISTS ENGINE_SOURCES)
@@ -97,16 +181,7 @@ endforeach()
 target_include_directories(Techstorm PRIVATE ${PROJECT_SOURCE_DIR}/include )
 
 target_link_libraries(Techstorm PUBLIC
-    raylib 
-    joltphysics::joltphysics 
-    joltphysics_DEPS_TARGET
-    libconfig::libconfig
-    libconfig_libconfig_libconfig++_DEPS_TARGET
-    sol2::sol2
-    Angelscript::angelscript
-    eventpp::eventpp
-    rmlui::rmlui
-    rmlui_DEPS_TARGET
+    ${TS_ENGINE_DEPENDENCIES}
 )
 
 # Set output name for Windows/Linux

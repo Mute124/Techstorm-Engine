@@ -9,6 +9,8 @@ var dir_eedbc0f69b08006c72429a8d2b33a57d =
     [ "GameObject.h", "df/d91/_game_object_8h.html", "df/d91/_game_object_8h" ],
     [ "GameObjectRegistry.cpp", "d7/d03/_game_object_registry_8cpp.html", null ],
     [ "GameObjectRegistry.h", "d9/dfc/_game_object_registry_8h.html", "d9/dfc/_game_object_registry_8h" ],
+    [ "GameUI.cpp", "d7/dcf/_game_u_i_8cpp.html", null ],
+    [ "GameUI.h", "d6/d90/_game_u_i_8h.html", null ],
     [ "IGameObjectGate.cpp", "df/d87/_i_game_object_gate_8cpp.html", null ],
     [ "IGameObjectGate.h", "db/d88/_i_game_object_gate_8h.html", "db/d88/_i_game_object_gate_8h" ],
     [ "Renderer.cpp", "da/d84/_renderer_8cpp.html", null ],

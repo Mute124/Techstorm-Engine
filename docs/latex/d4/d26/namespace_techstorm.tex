@@ -15,7 +15,7 @@ namespace \mbox{\hyperlink{namespace_techstorm_1_1_layers}{Layers}}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{class_techstorm_1_1abstract}{abstract}}
-\begin{DoxyCompactList}\small\item\em This is an {\bfseries{abstract interface singleton}} that all projects must implement and set the {\itshape \doxylink{class_techstorm_1_1abstract_1_1_project_reference}{Project\+Reference}} singleton to their project. If this boilerplate code is not done, \doxylink{namespace_techstorm}{Techstorm} will not know what to run. In terms of functionality, this interface just holds the functions and variables that \doxylink{namespace_techstorm}{Techstorm} will call (besides some initialization). {\bfseries{Do not directly call window code in here or your project will crash!}} \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em This is an {\bfseries{abstract interface singleton}} that all projects must implement and set the {\itshape \doxylink{class_techstorm_1_1abstract_1_1_project_reference}{Project\+Reference}} singleton to their project. In terms of functionality, this interface just holds the functions and variables that \doxylink{namespace_techstorm}{Techstorm} will call (besides some initialization). \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct_techstorm_1_1_allocated_physics_resources}{Allocated\+Physics\+Resources}}
 \item 
 class \mbox{\hyperlink{class_techstorm_1_1_b_p_layer_interface_impl}{BPLayer\+Interface\+Impl}}
@@ -69,7 +69,7 @@ class \mbox{\hyperlink{class_techstorm_1_1_renderer}{Renderer}}
 class \mbox{\hyperlink{class_techstorm_1_1_scripting_a_p_i}{Scripting\+API}}
 \begin{DoxyCompactList}\small\item\em Everything related to the scripting API, i.\+e loading/unloading libraries, registering functions, etc. As is mentioned at the file\textquotesingle{}s documentation, only lua is supported at the moment. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_techstorm_1_1_singleton}{Singleton}}
-\begin{DoxyCompactList}\small\item\em A singleton class, it does what singletons do. The template (T) must be the type that is inheriting from this class, otherwise there will be issues. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em A singleton class, it does what singletons do. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_techstorm_1_1_techstorm_engine}{Techstorm\+Engine}}
 \item 
 struct \mbox{\hyperlink{struct_techstorm_1_1_vec2}{Vec2}}
@@ -360,7 +360,7 @@ References \mbox{\hyperlink{_file_system_8h_source_l00094}{Techstorm\+::\+File\+
 
 
 
-Referenced by \mbox{\hyperlink{_config_8cpp_source_l00024}{Techstorm\+::\+Config\+File\+Registry\+::init()}}, and \mbox{\hyperlink{engine_2_project_8h_source_l00092}{Techstorm\+::abstract$<$ K, D, T $>$\+::pre\+Init()}}.
+Referenced by \mbox{\hyperlink{_config_8cpp_source_l00024}{Techstorm\+::\+Config\+File\+Registry\+::init()}}, and \mbox{\hyperlink{engine_2_project_8h_source_l00098}{Techstorm\+::abstract$<$ K, D, T $>$\+::pre\+Init()}}.
 
 \Hypertarget{namespace_techstorm_ab3076a5eb2869c3af24c30bcc02e13a4}\label{namespace_techstorm_ab3076a5eb2869c3af24c30bcc02e13a4} 
 \index{Techstorm@{Techstorm}!AddFileRegistryLoadOnRegisterExtension@{AddFileRegistryLoadOnRegisterExtension}}
@@ -398,11 +398,11 @@ Definition at line \mbox{\hyperlink{_config_8cpp_source_l00077}{77}} of file \mb
 
 
 
-References \mbox{\hyperlink{_singleton_8h_source_l00017}{Techstorm\+::\+Singleton$<$ Config\+File\+Registry $>$\+::\+Instance()}}.
+References \mbox{\hyperlink{_singleton_8h_source_l00027}{Techstorm\+::\+Singleton$<$ Config\+File\+Registry $>$\+::\+Instance()}}.
 
 
 
-Referenced by \mbox{\hyperlink{application_2main_8cpp_source_l00043}{main()}}.
+Referenced by \mbox{\hyperlink{application_2main_8cpp_source_l00066}{main()}}.
 
 \Hypertarget{namespace_techstorm_a33a453260254fd2ee617b9fdc4e56568}\label{namespace_techstorm_a33a453260254fd2ee617b9fdc4e56568} 
 \index{Techstorm@{Techstorm}!GetConfigString@{GetConfigString}}
@@ -481,7 +481,7 @@ Definition at line \mbox{\hyperlink{_globals_8h_source_l00031}{31}} of file \mbo
 
 
 
-References \mbox{\hyperlink{_globals_8h_source_l00023}{Techstorm\+::\+Globals\+Container\+::get()}}, and \mbox{\hyperlink{_singleton_8h_source_l00017}{Techstorm\+::\+Singleton$<$ Globals\+Container $>$\+::\+Instance()}}.
+References \mbox{\hyperlink{_globals_8h_source_l00023}{Techstorm\+::\+Globals\+Container\+::get()}}, and \mbox{\hyperlink{_singleton_8h_source_l00027}{Techstorm\+::\+Singleton$<$ Globals\+Container $>$\+::\+Instance()}}.
 
 \Hypertarget{namespace_techstorm_acbc8f303afb42ae77958c4f0cc5601ba}\label{namespace_techstorm_acbc8f303afb42ae77958c4f0cc5601ba} 
 \index{Techstorm@{Techstorm}!InitHaptics@{InitHaptics}}
@@ -511,11 +511,11 @@ Definition at line \mbox{\hyperlink{_config_8cpp_source_l00079}{79}} of file \mb
 
 
 
-References \mbox{\hyperlink{_config_8cpp_source_l00024}{Techstorm\+::\+Config\+File\+Registry\+::init()}}, and \mbox{\hyperlink{_singleton_8h_source_l00017}{Techstorm\+::\+Singleton$<$ Config\+File\+Registry $>$\+::\+Instance()}}.
+References \mbox{\hyperlink{_config_8cpp_source_l00024}{Techstorm\+::\+Config\+File\+Registry\+::init()}}, and \mbox{\hyperlink{_singleton_8h_source_l00027}{Techstorm\+::\+Singleton$<$ Config\+File\+Registry $>$\+::\+Instance()}}.
 
 
 
-Referenced by \mbox{\hyperlink{application_2main_8cpp_source_l00043}{main()}}.
+Referenced by \mbox{\hyperlink{application_2main_8cpp_source_l00066}{main()}}.
 
 \Hypertarget{namespace_techstorm_a0cdf258db7319603e2c5e39a8b18726e}\label{namespace_techstorm_a0cdf258db7319603e2c5e39a8b18726e} 
 \index{Techstorm@{Techstorm}!InitializeFileRegistry@{InitializeFileRegistry}}
@@ -533,7 +533,7 @@ References \mbox{\hyperlink{_file_system_8cpp_source_l00014}{Get\+File\+System\+
 
 
 
-Referenced by \mbox{\hyperlink{engine_2_project_8h_source_l00092}{Techstorm\+::abstract$<$ K, D, T $>$\+::pre\+Init()}}.
+Referenced by \mbox{\hyperlink{engine_2_project_8h_source_l00098}{Techstorm\+::abstract$<$ K, D, T $>$\+::pre\+Init()}}.
 
 \Hypertarget{namespace_techstorm_addbe8297c758588e97c3395d420bbfce}\label{namespace_techstorm_addbe8297c758588e97c3395d420bbfce} 
 \index{Techstorm@{Techstorm}!LookupConfig@{LookupConfig}}
@@ -547,11 +547,11 @@ Definition at line \mbox{\hyperlink{_config_8cpp_source_l00081}{81}} of file \mb
 
 
 
-References \mbox{\hyperlink{_singleton_8h_source_l00017}{Techstorm\+::\+Singleton$<$ Config\+File\+Registry $>$\+::\+Instance()}}, and \mbox{\hyperlink{_config_8cpp_source_l00061}{Techstorm\+::\+Config\+File\+Registry\+::lookup()}}.
+References \mbox{\hyperlink{_singleton_8h_source_l00027}{Techstorm\+::\+Singleton$<$ Config\+File\+Registry $>$\+::\+Instance()}}, and \mbox{\hyperlink{_config_8cpp_source_l00061}{Techstorm\+::\+Config\+File\+Registry\+::lookup()}}.
 
 
 
-Referenced by \mbox{\hyperlink{_config_8cpp_source_l00083}{Get\+Config\+String()}}, and \mbox{\hyperlink{application_2main_8cpp_source_l00012}{Init\+Window()}}.
+Referenced by \mbox{\hyperlink{_config_8cpp_source_l00083}{Get\+Config\+String()}}, and \mbox{\hyperlink{application_2main_8cpp_source_l00017}{Init\+Window()}}.
 
 \Hypertarget{namespace_techstorm_a5451a8aaa383e3936b9939fc6297d6e1}\label{namespace_techstorm_a5451a8aaa383e3936b9939fc6297d6e1} 
 \index{Techstorm@{Techstorm}!SetControllerRumble@{SetControllerRumble}}
@@ -584,7 +584,7 @@ Definition at line \mbox{\hyperlink{_globals_8h_source_l00038}{38}} of file \mbo
 
 
 
-References \mbox{\hyperlink{_singleton_8h_source_l00017}{Techstorm\+::\+Singleton$<$ Globals\+Container $>$\+::\+Instance()}}, and \mbox{\hyperlink{_globals_8h_source_l00014}{Techstorm\+::\+Globals\+Container\+::set()}}.
+References \mbox{\hyperlink{_singleton_8h_source_l00027}{Techstorm\+::\+Singleton$<$ Globals\+Container $>$\+::\+Instance()}}, and \mbox{\hyperlink{_globals_8h_source_l00014}{Techstorm\+::\+Globals\+Container\+::set()}}.
 
 \Hypertarget{namespace_techstorm_abbe31e4f49d55c0496f4631a182e1477}\label{namespace_techstorm_abbe31e4f49d55c0496f4631a182e1477} 
 \index{Techstorm@{Techstorm}!StartRumblingController@{StartRumblingController}}

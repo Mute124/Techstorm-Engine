@@ -68,12 +68,12 @@ void Techstorm::Renderer::drawFBO() {
 	DrawTextureRec(this->mScreenBuffer.texture, Rectangle{ 0, 0, (float)(this->mScreenBuffer.texture.width), -(float)(this->mScreenBuffer.texture.height) }, Vector2{ 0, 0 }, this->mFBOTint);
 }
 
-void Techstorm::Renderer::addGameObject(GameObject* gameObject)
+void Techstorm::Renderer::addGameObject(IGameObject* gameObject)
 {
 	this->mGameObjects.addGameObject(gameObject);
 }
 
-void Techstorm::Renderer::removeGameObject(GameObject* gameObject)
+void Techstorm::Renderer::removeGameObject(IGameObject* gameObject)
 {
 	//this->mGameObjects.erase(std::remove(this->mGameObjects.begin(), this->mGameObjects.end(), gameObject), this->mGameObjects.end());
 }
