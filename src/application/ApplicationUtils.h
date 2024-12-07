@@ -12,7 +12,18 @@
 #include <memory>
 #include <mutex>
 
+#include <Common.h>
+#include <modding/ScriptingAPI.h>
+#include <renderer/Renderer.h>
+#include <renderer/WindowDecorations.h>
+#include <conf/Config.h>
 
+#include <project.h>
+#include <raylib.h>
+#include <thread>
+
+#include <utils/MiscUtils.h>
+#include <dbg/Logging.h>
 namespace Techstorm::Application {
 	
 /*	class GameThread : public Singleton<GameThread> {
@@ -138,6 +149,7 @@ namespace Techstorm::Application {
 
 	class FrameManager : public Singleton<FrameManager> {
 	public:
+
 		float sFrameTime = 0.0f; // This is provided by the main thread. This is read only and should only be set by the main thread
 		volatile bool sIsWaitingForOthers = false; // This is read only and should only be set by the main thread
 		volatile bool sExit = false;
@@ -157,7 +169,9 @@ namespace Techstorm::Application {
 			while (sIsWaitingForOthers && !sExit) {
 				std::this_thread::sleep_for(std::chrono::milliseconds(1));
 			}
-			std::cout << "Update thread started\n";
+
+			Log("Update thread started");
+
 			while (!sExit) {
 				
 				userProject->preObjectUpdate();
@@ -183,7 +197,8 @@ namespace Techstorm::Application {
 			while (sIsWaitingForOthers && !sExit) {
 				std::this_thread::sleep_for(std::chrono::milliseconds(1));
 			}
-			std::cout << "Worker thread started\n";
+			Log("Worker thread started");
+
 			while (!sExit) {
 				// This is here because it reduces CPU consumption
 				std::this_thread::yield();
@@ -211,18 +226,25 @@ namespace Techstorm::Application {
 			while (sIsWaitingForOthers && !sExit) {
 				
 				if (isWorkerWaiting && isUpdateWaiting) {
-					std::cout << "All threads are ready\n";
+
+
+					Log("All threads are ready");
+
 					sIsWaitingForOthers = false;
 					break;
 				}
 				else {
-					std::cout << "Waiting for threads...\n";
+					Log("Waiting for threads...", ELogLevel::TRACE);
 					std::this_thread::sleep_for(std::chrono::milliseconds(1));
 					
 				}
 
 
 			}
+		}
+
+		void killThreads() {
+			sExit = true;
 		}
 	private:
 
@@ -233,6 +255,9 @@ namespace Techstorm::Application {
 		//GameMainThread mMainThreadStatus;
 		//ThreadStatus renderThreadStatus;
 	};
+
+
+
 
 	using GameThreadInfo = std::unordered_map<std::string, bool>;
 

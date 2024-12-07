@@ -25,6 +25,7 @@
 const std::string TS_ASSET_DIR = std::string(TS_TOP_LAYER) + "/game/assets/";
 const std::string TS_DATA_DIR = std::string(TS_TOP_LAYER) + "/game/data/";
 const std::string TS_GAME_DIR = std::string(TS_TOP_LAYER) + "/game/";
+const std::string TS_TEMP_DIR = std::string(TS_TOP_LAYER) + "/temp/";
 
 namespace Techstorm {
 
@@ -494,7 +495,24 @@ namespace Techstorm {
 	};*/
 
 
+	template<typename T>
+	class ReferenceHolder {
+	public:
 
+		explicit ReferenceHolder(T& value) : mValue(value) {}
+
+		void set(T& value) {
+			mValue = value;
+		}
+
+		T& get() {
+			return mValue;
+		}
+
+
+	private:
+		T& mValue;
+	};
 
 
 	/// This is a module for haptic experiences (ie. controller rumble) and helps make more immersive experiences. 

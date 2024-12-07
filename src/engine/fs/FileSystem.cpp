@@ -6,6 +6,8 @@
 #include <ostream>
 #include <string>
 
+
+
 bool Techstorm::FileSystemIsProperlyFormatted(const char* rootPath, const char* directoryMapPath)
 {
 	return false;
@@ -43,7 +45,12 @@ std::shared_ptr<Techstorm::RegisteredFile> Techstorm::GetFile(std::string key, b
 
 void Techstorm::FileSystemRegistry::init(const char* rootPath)
 {
+	Log("Initializing File Registry...");
+
+	Log("Scanning " + std::string(rootPath) + " for files...");
 	FilePathList files = LoadDirectoryFilesEx(rootPath, nullptr, true);
+	Log("Found " + std::to_string(files.count) + " files.");
+
 
 	for (int i = 0; i < files.count; i++) {
 		std::string path = files.paths[i];
@@ -73,7 +80,10 @@ void Techstorm::FileSystemRegistry::init(const char* rootPath)
 			loadFile(this->mRegisteredFiles[index]);
 		}
 
-		std::cout << "File with index [" << index << "], named: " << filename << std::endl << "\tat: " << path << std::endl << "\t\tWith Extension of : " << extension << std::endl;
+		std::string output = "";
+
+		output = std::format("File with index[{}], named: {} with an extension of {} was registered", index, filename, path, extension);
+		Log(output, ELogLevel::TRACE);
 	}
 }
 

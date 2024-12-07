@@ -150,6 +150,7 @@ endif()
 find_package(eventpp REQUIRED)
 find_package(SDL2 REQUIRED CONFIG)
 find_package(rmlui REQUIRED)
+find_package(fmt REQUIRED)
 
 set(DOUBLE_PRECISION OFF)
 set(GENERATE_DEBUG_SYMBOLS OFF)

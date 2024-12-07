@@ -55,6 +55,7 @@ set(TS_UTIL_SOURCES
     "utils/DoublyLinkedList.h" 
     "utils/Gate.h" 
     "utils/Globals.h"
+    "utils/MiscUtils.h"
 )
 
 set(TS_MATH_SOURCES
@@ -144,6 +145,8 @@ set(TS_ENGINE_DEPENDENCIES
     rmlui_DEPS_TARGET
 
     spdlog::spdlog
+
+    fmt::fmt
 )
 
 include("${CMAKE_SOURCE_DIR}/CMakeOptions.txt")

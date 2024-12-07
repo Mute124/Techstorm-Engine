@@ -11,6 +11,8 @@
 
 #include "../utils/Singleton.h"
 #include "libconfig.h++"
+#include "../dbg/Logging.h"
+
 namespace Techstorm {
 	using DirectoryFiles = std::vector<std::string>;
 
@@ -63,9 +65,9 @@ namespace Techstorm {
 		/// <param name="file">The file.</param>
 		void loadFile(std::shared_ptr<RegisteredFile> file) {
 			std::scoped_lock lock(file->loadMutex);
-			std::cout << "Loading file: " << file->meta->extension << std::endl;
+			Log("Loading file: " + file->meta->filename + " (" + file->meta->extension + ")", ELogLevel::TRACE);
 			std::function<std::any(std::shared_ptr<FileMeta>)> loadFunc = mLoadingFunctions.at(file->meta->extension);
-
+				
 			file->data = loadFunc(file->meta);
 
 			file->isLoaded = true;

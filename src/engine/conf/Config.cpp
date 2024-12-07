@@ -4,6 +4,7 @@
 #include <any>
 #include <memory>
 #include <string>
+#include "../dbg/Logging.h"
 
 std::any LoadConfigFile(std::shared_ptr<Techstorm::FileMeta> fileMeta) {
 	using namespace Techstorm;
@@ -22,7 +23,12 @@ Techstorm::ConfigFileRegistry::~ConfigFileRegistry()
 }
 
 void Techstorm::ConfigFileRegistry::init() {
+	Log("Initializing config registry.");
+
+	// only show this in the log file
+	Log("Setting config file load functions.", ELogLevel::TRACE);
 	AddFileRegistryLoadFunction("cfg", [](std::shared_ptr<FileMeta> fileMeta) {
+		Log("Loading config file: " + fileMeta->path, ELogLevel::TRACE);
 		libconfig::Config* conf = new libconfig::Config();
 		conf->readFile(fileMeta->path);
 		return std::make_any<libconfig::Config*>(conf);
@@ -63,6 +69,8 @@ libconfig::Setting& Techstorm::ConfigFileRegistry::lookup(const std::string& fil
 	libconfig::Config const* conf = GetFile(fileName).get()->get<libconfig::Config*>();
 	libconfig::Setting& setting = conf->lookup(lookupTarget);
 
+	Log("Looking up value in :" + fileName + " for key: " + lookupTarget + " and found value: " + setting.c_str(), ELogLevel::TRACE);
+	
 	return setting;
 	
 }
