@@ -9,13 +9,11 @@
 /// <returns>an integer value that represents the result of the operation.</returns>
 int Techstorm::ScriptingAPI::initializeScripting(ScriptingLibraryRegistry const& libraries, ScriptingFunctionRegistry const& functions)
 {
+	Log("Opening scripting API libraries...");
 	this->mLibraries = libraries;
 	return 0;
 }
-// Define a simple function with parameters
-void greet(const std::string& name, int age) {
-	std::cout << "Hello, " << name << "! You are " << age << " years old." << std::endl;
-}
+
 /// <summary>
 /// Registers the scripting API for Lua.
 /// </summary>
@@ -23,6 +21,7 @@ void greet(const std::string& name, int age) {
 int Techstorm::ScriptingAPI::registerLua()
 {
 	for (auto it = std::begin(Techstorm::ScriptingAPI::mLibraries); it != std::end(Techstorm::ScriptingAPI::mLibraries); it++) {
+		
 		this->mLua.open_libraries(*it);
 	}
 
@@ -40,5 +39,7 @@ int Techstorm::ScriptingAPI::registerAngelScript()
 {
 	return 0;
 }
+
+
 
 #endif

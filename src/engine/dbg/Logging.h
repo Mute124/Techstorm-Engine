@@ -22,6 +22,8 @@
 #include <fmt/format.h>
 
 #define TS_DEFAULT_LOG_LEVEL Techstorm::ELogLevel::TRACE
+
+
 namespace Techstorm {	
 
 	/// <summary>
@@ -29,6 +31,10 @@ namespace Techstorm {
 	/// </summary>
 	class IConsoleSink abstract {
 	public:
+		virtual void parseLog(const std::string& message, ELogLevel level, const std::source_location& location) = 0;
+		virtual void parsePrompt(const std::string& message) = 0;
+
+		virtual std::vector<std::string>& getBuffer() = 0;
 	};
 
 	using DefaultColorSink = std::shared_ptr<spdlog::sinks::stdout_color_sink_mt>;
@@ -72,6 +78,11 @@ namespace Techstorm {
 
 		Logger()
 		{
+
+		}
+
+		void init(LoggerConfig config) {
+			this->mConfig = config;
 			InitSpdlog();
 			log("Logger initialized");
 		}

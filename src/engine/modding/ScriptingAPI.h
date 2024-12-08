@@ -15,7 +15,7 @@
 #include <string>
 #include <unordered_map>
 #include <string>
-
+#include "../dbg/Logging.h"
 #ifdef TS_ENABLE_MODDING
 
 
@@ -65,7 +65,7 @@ namespace Techstorm {
 	struct ExportedFunction {
 		const std::string cName; // What the function is called (i.e "Print")
 #ifdef TS_ENABLE_LUA
-		const sol::function cFunction;
+		sol::function cFunction;
 #endif
 	};
 
@@ -109,6 +109,7 @@ namespace Techstorm {
 
 	private:
 		
+
 		sol::state mLua;
 		ScriptingLibraryRegistry mLibraries;
 		ScriptingFunctionRegistry mFunctions;

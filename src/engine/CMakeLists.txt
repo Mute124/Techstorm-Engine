@@ -107,6 +107,9 @@ set(TS_DEBUGGING_SOURCES
 
     "dbg/Debugging.h"
     "dbg/Errors.h"
+
+    "dbg/Console.h"
+	"dbg/Console.cpp"
 )
 
 set(TS_WORLD_SOURCES
