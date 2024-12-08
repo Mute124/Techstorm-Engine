@@ -58,6 +58,9 @@ namespace Techstorm {
 		/// </summary>
 		void drawFBO();
 
+		void addStandaloneDrawCall(std::function<void()> drawCall);
+
+
 		/// <summary>
 		/// Adds the game object.
 		/// </summary>

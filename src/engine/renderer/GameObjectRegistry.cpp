@@ -30,7 +30,12 @@ void Techstorm::GameObjectRegistry::update()
 
 void Techstorm::GameObjectRegistry::render()
 {
+	for (auto& drawCall : this->mStandaloneDrawCalls) {
+		drawCall();
+	}
+
 	for (auto& obj : this->mGameObjectsSink) {
+
 		obj->render();
 	}
 }

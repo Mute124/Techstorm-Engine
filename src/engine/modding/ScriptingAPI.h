@@ -16,9 +16,8 @@
 #include <unordered_map>
 #include <string>
 #include "../dbg/Logging.h"
+
 #ifdef TS_ENABLE_MODDING
-
-
 	#ifdef TS_ENABLE_LUA
 		/// \brief Protects against safety issues when using lua because it makes the API more stable.
 		#define SOL_ALL_SAFETIES_ON 1
@@ -108,8 +107,6 @@ namespace Techstorm {
 
 
 	private:
-		
-
 		sol::state mLua;
 		ScriptingLibraryRegistry mLibraries;
 		ScriptingFunctionRegistry mFunctions;

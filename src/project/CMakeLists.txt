@@ -1,4 +1,28 @@
-﻿set(PROJECT_SOURCES
+﻿include("${CMAKE_SOURCE_DIR}/CMakeOptions.txt")
+
+if(${TS_BUILD_EXAMPLES})
+   set(BASIC_SAMPLE_SOURCES
+        "samples/basic/BasicSampleGroup.h"
+        "samples/basic/HelloWorldSample.h"
+        "samples/basic/HelloWorldSample.cpp"
+		
+   )
+
+
+    set(SAMPLE_SOURCES 
+        ${BASIC_SAMPLE_SOURCES}
+
+        "samples/SamplesProject.h"
+        "samples/SamplesGroup.h"
+        "samples/Sample.h"
+    )
+else() 
+	set(SAMPLE_SOURCES
+	)
+endif()
+
+set(PROJECT_SOURCES
+    ${SAMPLE_SOURCES}
 	"project.cpp"
 	"project.h"
 )

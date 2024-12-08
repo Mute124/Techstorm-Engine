@@ -4,7 +4,7 @@
 #include "IGameObject.h"
 #include "../Common.h"
 #include "IGameObjectGate.h"
-
+#include <functional>
 namespace Techstorm {
 	/// <summary>
 	/// Game object registry, it stores all game objects in the world and manages their updating, rendering, destruction, creation, etc.
@@ -26,6 +26,8 @@ namespace Techstorm {
 		/// <seealso cref="IGameObjectGate"/>
 		void addGameObjectGate(IGameObjectGate* gameObjectGate);
 
+		void addStandaloneDrawCall(std::function<void()> drawCall) { this->mStandaloneDrawCalls.push_back(drawCall); }
+
 		/// <summary>
 		/// Updates all game objects in the instance (world).
 		/// </summary>
@@ -43,6 +45,7 @@ namespace Techstorm {
 		}
 
 	private:
+		std::vector<std::function<void()>> mStandaloneDrawCalls;
 		std::vector<IGameObject*> mGameObjectsSink;
 		std::vector<IGameObjectGate*> mGameObjectsGateSink;
 

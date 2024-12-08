@@ -158,11 +158,11 @@ namespace Techstorm::Application {
 		volatile bool isWorkerWaiting = false;
 		volatile bool isUpdateWaiting = false;
 
-		std::shared_ptr<Project> userProject;
+		std::shared_ptr<PROJECT_TYPENAME> userProject;
 		std::jthread updateThread;
 		std::jthread workThread;
 
-		int RunUpdateThread(Project* userProject)
+		int RunUpdateThread(PROJECT_TYPENAME* userProject)
 		{
 			isUpdateWaiting = true;
 
@@ -174,6 +174,8 @@ namespace Techstorm::Application {
 
 			while (!sExit) {
 				
+				userProject->update();
+
 				userProject->preObjectUpdate();
 				userProject->objectUpdate();
 				userProject->postObjectUpdate();
@@ -191,7 +193,7 @@ namespace Techstorm::Application {
 			return 0;
 		}
 
-		int RunWorkerThread(Project* userProject)
+		int RunWorkerThread(PROJECT_TYPENAME* userProject)
 		{
 			isWorkerWaiting = true;
 			while (sIsWaitingForOthers && !sExit) {
@@ -208,7 +210,7 @@ namespace Techstorm::Application {
 			return 0;
 		}
 
-		void launchThreads(Project& gameSettings)
+		void launchThreads(PROJECT_TYPENAME& gameSettings)
 		{
 			sIsWaitingForOthers = true;
 			updateThread = std::jthread([&]() {

@@ -1,5 +1,5 @@
 #include "Logging.h"
-
+#include "../Common.h"
 
 
 void Techstorm::Logger::log(const std::string& message, ELogLevel level, const std::source_location& location)

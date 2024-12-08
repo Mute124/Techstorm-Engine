@@ -68,6 +68,11 @@ void Techstorm::Renderer::drawFBO() {
 	DrawTextureRec(this->mScreenBuffer.texture, Rectangle{ 0, 0, (float)(this->mScreenBuffer.texture.width), -(float)(this->mScreenBuffer.texture.height) }, Vector2{ 0, 0 }, this->mFBOTint);
 }
 
+ void Techstorm::Renderer::addStandaloneDrawCall(std::function<void()> drawCall) { 
+	 mGameObjects.addStandaloneDrawCall(drawCall); 
+	 //this->mDrawCalls.push_back(drawCall); 
+}
+
 void Techstorm::Renderer::addGameObject(IGameObject* gameObject)
 {
 	this->mGameObjects.addGameObject(gameObject);

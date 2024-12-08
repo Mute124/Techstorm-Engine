@@ -14,6 +14,6 @@ option(TS_ENABLE_LUA "Should Lua be enabled for modding" ON)
 option(TS_CUSTOM_APPLICATION_HANDLING "Should Techstorm's run application automatically handle things" ON)
 
 # Build target options
-option(TS_BUILD_EXAMPLES "Build Examples For Techstorm" OFF) # Not implemented yet
+option(TS_BUILD_EXAMPLES "Build Examples For Techstorm" ON) # Not implemented yet
 option(TS_BUILD_TOOLS "Build Tools For Techstorm" OFF)
 option(TS_ENABLE_TESTING "Enable Unit Tests For Techstorm" OFF) # Not implimented yet

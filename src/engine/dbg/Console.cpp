@@ -1,5 +1,5 @@
 #include "Console.h"
-
+std::string dummyPrompt = "> ";
 void Techstorm::Console::parseInput(const std::string& input)
 {
 }
@@ -7,6 +7,7 @@ void Techstorm::Console::parseInput(const std::string& input)
 std::string& Techstorm::Console::getPrompt()
 {
     // TODO: insert return statement here
+    return dummyPrompt;
 }
 
 void Techstorm::Console::draw()

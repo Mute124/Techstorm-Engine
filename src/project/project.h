@@ -1,7 +1,16 @@
 #pragma once
 #include "../engine/Project.h"
 
+#ifndef TS_SAMPLES
 #define PROJECT_TYPENAME Project
+
+
+
+#else
+// TODO: Add samples here
+#include "samples/SamplesProject.h"
+#define PROJECT_TYPENAME SamplesProject
+#endif
 
 /// <summary>
 /// Write your project code here or do what you want with it. However,
