@@ -2,14 +2,11 @@
 #include "../engine/Project.h"
 
 #ifndef TS_SAMPLES
-#define PROJECT_TYPENAME Project
-
-
-
+	#define PROJECT_TYPENAME Project
 #else
-// TODO: Add samples here
-#include "samples/SamplesProject.h"
-#define PROJECT_TYPENAME SamplesProject
+	// TODO: Add samples here
+	#include "samples/SamplesProject.h"
+	#define PROJECT_TYPENAME SamplesProject
 #endif
 
 /// <summary>

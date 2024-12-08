@@ -1,19 +1,16 @@
 #pragma once
 #include <vector>
 #include <memory>
+
 #include "../utils/Singleton.h"
 
 #include "GameObjectRegistry.h"
 #include "GameCamera.h"
 
-
-
 #include <raylib.h>
 
 namespace Techstorm {
 	class GameObject;
-
-
 
 	/// <summary>
 	/// Serves as the renderer for the game.
@@ -91,6 +88,7 @@ namespace Techstorm {
 		/// Cleanups this instance.
 		/// </summary>
 		void cleanup();
+
 		GameCamera mCamera;
 	private:
 		GameObjectRegistry mGameObjects;
