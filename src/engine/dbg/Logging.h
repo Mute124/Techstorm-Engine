@@ -1,25 +1,23 @@
 #pragma once
-#include "../Common.h"
-#include <raylib.h>
 #include "../utils/Singleton.h"
 #include "ELoggingMode.h"
 #include "ELogLevel.h"
 
-#include <source_location>
-#include <string>
-#include <spdlog/spdlog.h>
-#include "spdlog/cfg/env.h"   // support for loading levels from the environment variable
-#include "spdlog/fmt/ostr.h"  // support for user defined types
-#include <spdlog/sinks/stdout_color_sinks.h>
-#include <spdlog/sinks/basic_file_sink.h>
-
-#include <unordered_map>
-#include <spdlog/common.h>
-#include <spdlog/logger.h>
 #include <cstdarg>
 #include <memory>
+#include <source_location>
+#include <stdio.h>
+#include <string>
 #include <vadefs.h>
-#include <fmt/format.h>
+#include <vector>
+
+#include <raylib.h>
+
+#include <spdlog/common.h>
+#include <spdlog/logger.h>
+#include <spdlog/sinks/basic_file_sink.h>
+#include <spdlog/sinks/stdout_color_sinks.h>
+
 
 #define TS_DEFAULT_LOG_LEVEL Techstorm::ELogLevel::TRACE
 
