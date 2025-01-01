@@ -13,7 +13,7 @@ if(${TS_BUILD_EXAMPLES})
         ${BASIC_SAMPLE_SOURCES}
 
         "samples/SamplesProject.h"
-        "samples/SamplesGroup.h"
+        "samples/SampleGroup.h"
         "samples/Sample.h"
     )
 else() 

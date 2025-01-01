@@ -49,7 +49,8 @@ public:
 };*/
 
 int main(int argc, char* argv[]) {
-	Log("Pre-Initializing project...");
+	
+	//Log("Pre-Initializing project...");
 	PROJECT_TYPENAME project = PROJECT_TYPENAME();
 	project.preInit();
 	Log("Project pre-initialized.");

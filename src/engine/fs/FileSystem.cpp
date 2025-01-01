@@ -5,6 +5,11 @@
 #include <memory>
 #include <ostream>
 #include <string>
+#include "../dbg/ELogLevel.h"
+#include "../dbg/Logging.h"
+#include <any>
+#include <format>
+#include <functional>
 
 
 
@@ -45,7 +50,7 @@ std::shared_ptr<Techstorm::RegisteredFile> Techstorm::GetFile(std::string key, b
 
 void Techstorm::FileSystemRegistry::init(const char* rootPath)
 {
-	Log("Initializing File Registry...");
+	Logger::Instance().log("Initializing File Registry...");
 
 	Log("Scanning " + std::string(rootPath) + " for files...");
 	FilePathList files = LoadDirectoryFilesEx(rootPath, nullptr, true);

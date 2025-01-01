@@ -1,4 +1,5 @@
 ﻿
+
 # The sources are seperated into different variables for organization reasons
 set(TS_ENGINE_CORE_SOURCES
     "Common.h" 
@@ -47,7 +48,9 @@ set(TS_ENGINE_RENDERER_SOURCES
     "renderer/WindowDecorations.h"
 
     "renderer/GameUI.h"
-    "renderer/GameUI.cpp"    
+    "renderer/GameUI.cpp"
+
+
 )
 
 set(TS_UTIL_SOURCES
@@ -106,6 +109,10 @@ set(TS_DEBUGGING_SOURCES
     "dbg/ELogLevel.h"
 
     "dbg/Debugging.h"
+
+    "dbg/Debugger.h"
+	"dbg/Debugger.cpp"
+
     "dbg/Errors.h"
 
     "dbg/Console.h"
@@ -148,8 +155,10 @@ set(TS_ENGINE_DEPENDENCIES
     rmlui_DEPS_TARGET
 
     spdlog::spdlog
+    
 
-    fmt::fmt
+    # fmt::fmt
+    
 )
 
 include("${CMAKE_SOURCE_DIR}/CMakeOptions.txt")

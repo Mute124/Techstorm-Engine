@@ -128,6 +128,12 @@ CPMAddPackage(
 )
 
 CPMAddPackage(
+    NAME raylib_nuklear
+    GIT_REPOSITORY https://github.com/RobLoach/raylib-nuklear.git
+    GIT_TAG v5.5.0
+)
+
+CPMAddPackage(
     NAME spdlog
     GIT_REPOSITORY https://github.com/gabime/spdlog.git
     GIT_TAG v1.15.0
@@ -151,6 +157,8 @@ find_package(eventpp REQUIRED)
 find_package(SDL2 REQUIRED CONFIG)
 find_package(rmlui REQUIRED)
 find_package(fmt REQUIRED)
+find_package(nuklear REQUIRED)
+
 
 set(DOUBLE_PRECISION OFF)
 set(GENERATE_DEBUG_SYMBOLS OFF)

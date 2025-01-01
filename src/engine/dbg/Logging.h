@@ -61,23 +61,18 @@ namespace Techstorm {
 
 	struct LoggerConfig {
 		ELoggingMode mode = ELoggingMode::UNKNOWN;
-		ELogLevel terminalLogLevel = ELogLevel::DEBUG;
+		ELogLevel terminalLogLevel = ELogLevel::WARNING;
 		ELogLevel fileLogLevel = ELogLevel::TRACE;
-		ELogLevel loggerLevel = ELogLevel::TRACE;
+		ELogLevel loggerLevel = ELogLevel::DEBUG;
 		
 		std::string format = "[Techstorm] [%^%l%$] %v";
 		std::string logFile =  CreateLogFileName();
 	};
 
 	spdlog::level::level_enum GetSpdlogLevel(ELogLevel level);
-
+	
 	class Logger : public Singleton<Logger> {
 	public:
-
-		Logger()
-		{
-
-		}
 
 		void init(LoggerConfig config) {
 			this->mConfig = config;
@@ -85,7 +80,62 @@ namespace Techstorm {
 			log("Logger initialized");
 		}
 
-		void log(const std::string& message, ELogLevel level = ELogLevel::DEBUG, const std::source_location& location = std::source_location::current());
+		void log(std::string message, ELogLevel level = ELogLevel::DEBUG, const std::source_location& location = std::source_location::current())
+		{
+			std::string locFileName = location.file_name();
+
+			// shorten the filename to only the last part of it
+			locFileName = locFileName.substr(locFileName.find_last_of("/\\") + 1);
+
+
+			int locLine = location.line();
+
+			std::string finalMessage = "[" + locFileName + ":" + std::to_string(locLine) + "] " + message;
+
+			try
+			{
+/*
+				switch (level)
+				{
+				case Techstorm::ELogLevel::TRACE:
+					mLogger->trace(finalMessage);
+					break;
+				case Techstorm::ELogLevel::DEBUG:
+					mLogger->debug(finalMessage);
+					break;
+				case Techstorm::ELogLevel::INFO:
+					mLogger->info(finalMessage);
+					break;
+				case Techstorm::ELogLevel::WARNING:
+					mLogger->warn(finalMessage);
+					break;
+				case Techstorm::ELogLevel::ERROR:
+					mLogger->error(finalMessage);
+					break;
+				case Techstorm::ELogLevel::FATAL:
+					mLogger->critical(finalMessage);
+					break;
+				case Techstorm::ELogLevel::NONE:
+					break;
+				default:
+#ifdef RELEASE
+					// if on release, log this as an error
+					std::string failMsg = "Failed to log the message: " + finalMessage;
+					failMsg << "Because the log level " << level << " is not supported!";
+					mLogger->error(failMsg);
+
+#else
+					mLogger->trace(finalMessage);
+#endif
+					break;
+				}
+*/
+			}
+			catch (const std::exception& e)
+			{
+				//std::cout << "Failed to log the message: " << finalMessage << " because: " << e.what() << std::endl;
+			}
+		}
 
 		static inline void RaylibLogCallback(int logLevel, const char* message, va_list args) {
 			
@@ -118,13 +168,13 @@ namespace Techstorm {
 
 		void InitSpdlog()
 		{
-			auto console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
+			std::shared_ptr<spdlog::sinks::stdout_color_sink_mt> console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
 			console_sink->set_level(GetSpdlogLevel(mConfig.terminalLogLevel));
 			console_sink->set_pattern(mConfig.format);
 
 
 
-			auto file_sink = std::make_shared<spdlog::sinks::basic_file_sink_mt>(mConfig.logFile, true);
+			std::shared_ptr<spdlog::sinks::basic_file_sink_mt> file_sink = std::make_shared<spdlog::sinks::basic_file_sink_mt>(mConfig.logFile, true);
 			file_sink->set_level(GetSpdlogLevel(mConfig.fileLogLevel));
 			
 			std::string loggerName = typeid(*this).name();
@@ -136,12 +186,16 @@ namespace Techstorm {
 			loggerName = loggerName.substr(0, loggerName.find_last_of("::"));
 	
 
-			mLogger = new spdlog::logger(loggerName, {console_sink, file_sink});
+			mLogger = new spdlog::logger("multi_sink", {console_sink, file_sink});
 			mLogger->set_level(GetSpdlogLevel(mConfig.loggerLevel));
-
-			SetTraceLogCallback(&RaylibLogCallback);
+			mLogger->warn("this should appear in both console and file");
+			mLogger->info("this message should not appear in the console, only in the file");
+			
+			//SetTraceLogCallback(&RaylibLogCallback);
 		}
 	};
 
-	void Log(const std::string& message, ELogLevel level = ELogLevel::DEBUG, const std::source_location& location = std::source_location::current());
+	inline void Log(std::string message, ELogLevel level = ELogLevel::DEBUG, const std::source_location& location = std::source_location::current()) {
+		Logger::Instance().log(message, level, location);
+	}
 }

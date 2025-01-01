@@ -16,6 +16,8 @@
 
 #endif // TS_ENABLE_HTML_UI
 
+#include <raygui.h>
+
 namespace Techstorm {
 #ifdef TS_ENABLE_HTML_UI
 	using UIVertex = Rml::Vertex;
@@ -110,6 +112,13 @@ namespace Techstorm {
 	}
 #endif // TS_ENABLE_HTML_UI
 
-	
+	class IGUIContainer {
+	public:
+
+		virtual void LoadStyle(std::string const& stylesheetFileName) = 0;
+		
+		
+		int a = 0;
+	};
 
 }

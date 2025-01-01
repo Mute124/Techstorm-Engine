@@ -90,6 +90,17 @@ namespace Techstorm {
 		
 			mLua.new_usertype<T>(args);
 		}
+		
+		/// <summary>
+		/// Exposes all functions that fall under the perview of config. As of version 0.0.3, this is only the lookup function and more will be added in the future. 
+		/// </summary>
+		void registerConfigFunctions();
+		
+		/// <summary>
+		/// Exposes all functions that fall under the perview of file system. This includes file loading, reading, writing, etc. 
+		/// </summary>
+		void registerFileSystemFunctions();
+
 
 		/// <summary>
 		/// Registers the scripting API for Lua.
@@ -97,13 +108,19 @@ namespace Techstorm {
 		/// <returns>an integer value that represents the result of the operation.</returns>
 		int registerLua();
 
+#ifdef TS_ENABLE_ANGELSCRIPT
 		/// <summary>
 		/// Registers the scripting API for AngelScript. This is just for organization sake and it could be merged with the lua version, but it wont be.
 		/// </summary>
 		/// <returns>an integer value that represents the result of the operation.</returns>
 		int registerAngelScript();
-		
-		sol::state_view getState() { return mLua.operator lua_State *(); }
+				
+#endif
+		/// <summary>
+		/// Returns mLua as a state_view.
+		/// </summary>
+		/// <returns>a state_view that represents the lua state (mLua).</returns>
+		sol::state_view getState() { return mLua.operator lua_State * (); }
 
 
 	private:

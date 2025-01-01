@@ -14,7 +14,8 @@
 #include "fs/FileSystem.h"
 #include "conf/Config.h"
 #include <stdint.h>
-
+#include "dbg/Debugger.h"
+#include <bitset>
 namespace Techstorm {
 	/// <summary>
 	/// This is an <b>abstract interface singleton</b> that all projects must implement and set the <i>ProjectReference</i> singleton to
@@ -96,7 +97,9 @@ namespace Techstorm {
 		/// </summary>
 		/// <inheritdoc />
 		virtual void preInit() {
-			std::cout << "IProject::preInit" << std::endl;
+			Logger::Instance().init(LoggerConfig());
+			//std::cout << "IProject::preInit" << std::endl;
+			Log("Test");
 			AddFileRegistryLoadFunction("png", [](std::shared_ptr<FileMeta> loadFunc) {
 				return std::any_cast<Image>(LoadImage(loadFunc->path.c_str()));
 			});
@@ -109,9 +112,8 @@ namespace Techstorm {
 				return std::any_cast<Image>(LoadImage(loadFunc->path.c_str()));
 			});
 
-
-			InitializeFileRegistry(TS_GAME_DIR.c_str());
-
+			std::string gameDir = TS_GAME_DIR;
+			InitializeFileRegistry(gameDir.c_str());
 
 			this->mLuaLibraries.push_back(sol::lib::base);
 

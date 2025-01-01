@@ -3,6 +3,8 @@
 
 #ifdef TS_ENABLE_MODDING
 
+
+
 /// <summary>
 /// Initializes the scripting API.
 /// </summary>
@@ -12,6 +14,14 @@ int Techstorm::ScriptingAPI::initializeScripting(ScriptingLibraryRegistry const&
 	Log("Opening scripting API libraries...");
 	this->mLibraries = libraries;
 	return 0;
+}
+
+void Techstorm::ScriptingAPI::registerConfigFunctions() {
+	this->mLua.set_function("LookupConfigOption", &GetConfigString);
+}
+
+void Techstorm::ScriptingAPI::registerFileSystemFunctions()
+{
 }
 
 /// <summary>
@@ -25,12 +35,12 @@ int Techstorm::ScriptingAPI::registerLua()
 		this->mLua.open_libraries(*it);
 	}
 
-	mLua.set_function("LookupConfigOption", &GetConfigString);
+	this->registerConfigFunctions();
 
 
 	return 0;
 }
-
+#ifdef TS_ENABLE_ANGELSCRIPT
 /// <summary>
 /// Registers the scripting API for AngelScript. This is just for organization sake and it could be merged with the lua version, but it wont be.
 /// </summary>
@@ -40,6 +50,6 @@ int Techstorm::ScriptingAPI::registerAngelScript()
 	return 0;
 }
 
-
+#endif
 
 #endif

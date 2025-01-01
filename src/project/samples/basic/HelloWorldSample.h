@@ -7,6 +7,8 @@ public:
 	HelloWorldSample() : Sample("HelloWorld") {}
 
 	void init() override {
+		int a = 0;
+		
 		
 	}
 	
